@@ -9,7 +9,7 @@ export interface EmscriptenInstantiatedModule extends EmscriptenModule {
  * If the module is instantiated, it is returned.
  *
  * @param createModule function which creates a new Emscripten WASM module
- * @returns EmscriptenFunctionModule
+ * @returns EmscriptenInstantiatedModule
  */
 export const useWasm = (
   createModule: EmscriptenModuleFactory<EmscriptenInstantiatedModule>
