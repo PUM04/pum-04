@@ -8,8 +8,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # Include the header files in the build
 include_directories($(PROJECT_SOURCE_DIR)/src)
 
-# Build for automatic testing
-add_executable(Test src/test.cpp src/hello_class.cpp)
+file(GLOB_RECURSE test_src CONFIGURE_DEPENDS "src/*.h" "src/*.cpp" "test/*.h" "test/*.cpp")
 
-# Build for deploying
-add_executable(Hello src/hello.cpp src/hello_class.cpp)
+# Build for automatic testing
+add_executable(Test ${test_src})

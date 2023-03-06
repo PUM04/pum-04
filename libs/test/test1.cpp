@@ -1,7 +1,5 @@
-#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "../doctest.h"
-
-#include "hello_class.h"
+#include "doctest.h"
+#include "../src/hello_class.h"
 
 TEST_CASE("Testing HelloClass") {
   auto *test = new HelloClass(1, "test");
