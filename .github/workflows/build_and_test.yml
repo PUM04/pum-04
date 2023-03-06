@@ -2,15 +2,11 @@ on:
   [push, workflow_dispatch]
 
 jobs:
-  setup:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
   eslint:
     needs: setup
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3 
         with:
           node-version: 18
@@ -22,6 +18,7 @@ jobs:
     needs: setup
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: egor-tensin/setup-clang@v1
         with:
           version: latest
