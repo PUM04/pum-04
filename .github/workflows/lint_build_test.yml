@@ -1,3 +1,4 @@
+run-name: "Checks linting, builds and runs tests"
 on:
   [push, workflow_dispatch]
 
@@ -21,6 +22,6 @@ jobs:
           version: latest
           platform: x64
       - run: cmake libs/
-      - run: clang-tidy -p . libs/src/* --header-filter=libs/src/*.h
+      - run: clang-tidy -p . libs/src/* --header-filter=libs/src/*.h --use-color
       - run: clang-format libs/src/* --dry-run -Werror
 
