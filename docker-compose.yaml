@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  react_ts:
+    build: ./frontend
+    container_name: react_ts
+    ports: 
+      - '3000:3000'
+    volumes:
+      - ./frontend/src:/app/src
+    stdin_open: true
+    tty: true
+
+
+
