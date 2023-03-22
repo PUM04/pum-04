@@ -1,0 +1,17 @@
+Checks: '
+    bugprone*,
+    clang-analyzer*,
+    cert*,
+    cppcore*,
+    misc*,
+    modernize*,
+    -modernize-use-trailing-return-type,
+    performance*,
+    portability*,
+    readability*,
+    google*,
+    -google-runtime-references,
+    -llvm-header-guard, 
+    hicpp*,
+    -hicpp-signed-bitwise,
+    -*-braces-around-statements'

@@ -1,4 +1,7 @@
-import { useState, useEffect } from "react";
+/**
+ * @file Contains hooks for loading and instantianting WebAssembly modules.
+ */
+import { useState, useEffect } from 'react';
 
 export interface EmscriptenInstantiatedModule extends EmscriptenModule {
   [x: string | number | symbol]: any;
@@ -9,7 +12,7 @@ export interface EmscriptenInstantiatedModule extends EmscriptenModule {
  * If the module is instantiated, it is returned.
  *
  * @param createModule function which creates a new Emscripten WASM module
- * @returns EmscriptenInstantiatedModule
+ * @returns an instantiated Emscripten module
  */
 export const useWasm = (
   createModule: EmscriptenModuleFactory<EmscriptenInstantiatedModule>
@@ -29,18 +32,18 @@ export const useWasm = (
  * This hook compiles and instantiates a .wasm binary and returns its exports.
  * If already instantiated, it is returned.
  *
- * @param file path to .wasm file
- * @returns exported function definitions
+ * @param {string} file path to .wasm file
+ * @returns {EmscriptenInstantiatedModule} exported function definitions
  */
 export const useWasmFile = (file: string): Record<string, CallableFunction> => {
   const [wasmModule, setWasmModule] = useState<WebAssembly.Exports>();
   useEffect(() => {
     const loadWasm = async () => {
       const wasmContent = await fetch(file);
-      const wasmModule = await WebAssembly.instantiateStreaming(wasmContent);
+      const wasm = await WebAssembly.instantiateStreaming(wasmContent);
 
-      if (wasmModule === undefined) throw Error("Could not load WASM.");
-      setWasmModule(wasmModule.instance.exports);
+      if (wasm === undefined) throw Error('Could not load WASM.');
+      setWasmModule(wasm.instance.exports);
     };
     loadWasm();
   }, [file]);

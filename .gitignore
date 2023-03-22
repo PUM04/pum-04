@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# CMake files
+cmake_install.cmake
+CMakeCache.txt
+CMakeFiles/
+compile_commands.json
+Makefile
