@@ -57,9 +57,20 @@
         ]
       }
     ],
-    "no-console": "off"
+    "no-console": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   },
   "root": true,
+
   "ignorePatterns": [
     "vite-env.d.ts",
     "vite.config.ts",
