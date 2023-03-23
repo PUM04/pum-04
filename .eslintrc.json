@@ -67,5 +67,9 @@
     "dist/**",
     "public/**",
     "assets/**"
+  ],
+  "import/no-extraneous-dependencies": [
+    "error",
+    { "devDependencies": ["**/*.test.tsx", "**/*.spec.tsx"] }
   ]
 }
