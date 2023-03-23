@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
 import { useWasm } from './hooks/wasm';
-import CalculatorModule from './cpp/Calculator';
+import CalculatorModule from './cpp/Calculator.js';
 
 /**
  * Top level component.
