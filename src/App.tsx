@@ -4,8 +4,8 @@
 import React, { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
-import { useWasm } from "./hooks/wasm";
-import CalculatorModule from "./cpp/Calculator";
+import { useWasm } from './hooks/wasm';
+import CalculatorModule from './cpp/Calculator';
 
 /**
  * Top level component.
@@ -29,8 +29,9 @@ function App(): JSX.Element {
       <h1>Vite + React</h1>
       <div className="card">
         <button
+          type="button"
           onClick={() => {
-            setCount((count) => {
+            setCount(() => {
               if (count >= 10) {
                 return new calcModule.Calculator().subtract(count, count);
               }
