@@ -1,4 +1,8 @@
+/**
+ * @file Contains basic test examples for testing with React.
+ */
 // Testing utilities
+import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
 
