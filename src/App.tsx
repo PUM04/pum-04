@@ -10,10 +10,8 @@ import {
   CartesianGrid,
   XAxis,
   YAxis,
-  BoxPlot,
 } from 'recharts';
 import {
-  VictoryBar,
   VictoryAxis,
   VictoryBoxPlot,
   VictoryChart,
