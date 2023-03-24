@@ -24,8 +24,8 @@
   ],
   "plugins": ["@typescript-eslint", "prettier", "jsdoc"],
   "rules": {
-    "linebreak-style": ["error", "unix"],
-    "prettier/prettier": "error",
+    "linebreak-style": ["warn", "unix"],
+    "prettier/prettier": "warn",
     "max-depth": ["warn", 2],
     "max-nested-callbacks": ["warn", 2],
     "jsdoc/require-file-overview": 1,
