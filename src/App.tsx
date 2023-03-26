@@ -3,6 +3,8 @@
  */
 import React, { useState } from 'react';
 import reactLogo from './assets/react.svg';
+import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
 import './App.css';
 
 /**
@@ -25,12 +27,20 @@ function App(): JSX.Element {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button
+
+        <Button
+          color="secondary"
           type="button"
           onClick={() => setCount((currentCount) => currentCount + 1)}
         >
           count is {count}
-        </button>
+        </Button>
+        <Button
+          color="primary"
+          type="button"
+        >
+          Just a visual MUI button
+        </Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
