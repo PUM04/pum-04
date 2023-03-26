@@ -2,8 +2,8 @@
  * @file Contains the App top level component.
  */
 import React, { useState } from 'react';
-import reactLogo from './assets/react.svg';
 import Button from '@mui/material/Button';
+import reactLogo from './assets/react.svg';
 import './App.css';
 
 /**
@@ -28,15 +28,15 @@ function App(): JSX.Element {
       <div className="card">
 
         <Button
-          color="secondary"
-          type="button"
-          onClick={() => setCount((currentCount) => currentCount + 1)}
+         color="secondary"
+         type="button"
+         onClick={() => setCount((currentCount) => currentCount + 1)}
         >
           count is {count}
         </Button>
         <Button
-          color="primary"
-          type="button"
+         color="primary"
+         type="button"
         >
           Just a visual MUI button
         </Button>
