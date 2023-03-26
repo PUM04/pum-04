@@ -4,7 +4,6 @@
 import React, { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import Button from '@mui/material/Button';
-import Paper from '@mui/material/Paper';
 import './App.css';
 
 /**
