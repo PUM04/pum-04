@@ -57,6 +57,10 @@
         ]
       }
     ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      { "devDependencies": ["**/*.test.tsx", "**/*.spec.tsx"] }
+    ],
     "no-console": "off"
   },
   "root": true,
@@ -66,6 +70,7 @@
     "node_modules/**",
     "dist/**",
     "public/**",
-    "assets/**"
+    "assets/**",
+    "**/CMakeFiles/**"
   ]
 }
