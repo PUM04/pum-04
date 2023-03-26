@@ -26,18 +26,10 @@ function App(): JSX.Element {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-
-        <Button
-         color="secondary"
-         type="button"
-         onClick={() => setCount((currentCount) => currentCount + 1)}
-        >
+        <Button color="secondary" type="button" onClick={() => setCount((currentCount) => currentCount + 1)}>
           count is {count}
         </Button>
-        <Button
-         color="primary"
-         type="button"
-        >
+        <Button color="primary" type="button">
           Just a visual MUI button
         </Button>
         <p>
