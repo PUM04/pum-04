@@ -1,21 +1,35 @@
 #include "doctest.h"
-#include "../src/hello_class.h"
 
-TEST_CASE("Testing HelloClass 2") {
-  auto *test = new HelloClass(1, "test");
+struct Counter {
+    int count;
 
-  // Specify things that must be correct for the following tests to be run
-  // If a REQUIRE fails the test will terminate
-  REQUIRE(test->get_number() == 1);
-  REQUIRE(test->get_text() == "test");
+    int add(int i) {
+        return this->count += i;
+    }
+};
 
-  // It is possible to warn without actually counting it as a failed test
-  WARN(test->get_number() > 0);
+TEST_CASE("Test Multiply Function") {
+    struct Counter counter;
+    counter.count = 1;
 
-  // For each subcase the testcase will be executed from the start
-  SUBCASE("Test multiplication 2") {
-    CHECK(test->multiply_num(3) == 3);
-    CHECK(test->multiply_num(2) == 6);
-    CHECK(test->multiply_num(-1) == -6);
-  }
+    // Specify requirements for the following tests 
+    // If this fails the test case will terminate
+    REQUIRE(counter.count == 1);
+
+    // Subcases can also be nested
+    SUBCASE("Test Positive Adding") {
+        SUBCASE("Test Small Numbers") {
+            CHECK(counter.add(1) == 2);
+        }
+        SUBCASE("Test Big Numbers") {
+            CHECK(counter.add(999) == 1000);
+        }
+    }
+
+    // For each subcase the testcase is executed from the start
+    // Notice that the counter was reset to one again
+    SUBCASE("Test Negative Adding") {
+        CHECK(counter.add(-1) == 0);
+        CHECK(counter.add(-3) == -3);
+    }
 }
