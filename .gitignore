@@ -21,6 +21,8 @@ dist-ssr
 *.ntvs*
 *.njsproj
 *.sln
+*.wasm
+**/cpp/*.js
 *.sw?
 
 # CMake files
