@@ -57,9 +57,11 @@
         ]
       }
     ],
-    "no-console": "off"
+    "no-console": "off",
+    "import/extensions": ["off"]
   },
   "root": true,
+
   "ignorePatterns": [
     "vite-env.d.ts",
     "vite.config.ts",

@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import reactLogo from './assets/react.svg';
 import './App.css';
+import { useWasm } from './hooks/wasm';
+import CalculatorModule from './cpp/Calculator';
 
 /**
  * Top level component.
@@ -13,6 +15,7 @@ import './App.css';
  */
 function App(): JSX.Element {
   const [count, setCount] = useState(0);
+  const calcModule = useWasm(CalculatorModule);
 
   return (
     <div className="App">
@@ -26,7 +29,24 @@ function App(): JSX.Element {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <Button color="secondary" type="button" onClick={() => setCount((currentCount) => currentCount + 1)}>
+        <button
+          type="button"
+          onClick={() => {
+            setCount(() => {
+              if (count >= 10) {
+                return new calcModule.Calculator().subtract(count, count);
+              }
+              return calcModule.increment(count);
+            });
+          }}
+        >
+          count is {count}
+        </button>
+        <Button
+          color="secondary"
+          type="button"
+          onClick={() => setCount((currentCount) => currentCount + 1)}
+        >
           count is {count}
         </Button>
         <Button color="primary" type="button">
