@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 
+# Define C++ std
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 project(Clang-tidy-test VERSION 1.0)
 
 # Export the compile commands for clang-tidy
