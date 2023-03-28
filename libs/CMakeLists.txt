@@ -15,4 +15,4 @@ include_directories($(PROJECT_SOURCE_DIR)/src)
 file(GLOB_RECURSE test_src CONFIGURE_DEPENDS "src/*.h" "src/*.cpp" "test/*.h" "test/*.cpp")
 
 # Build for automatic testing
-add_executable(Test ${test_src})
+add_executable(test_runner ${test_src})
