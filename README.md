@@ -1,9 +1,22 @@
 
-# docker-setup
-This repository contains some examples of how docker is used and a start of the Docker configuration to be used by the project.
+# pum-04
+## Linting and formatting with ESLint and Prettier
+The ESLint rules are automatically checked in GitHub Actions on each push to the repo. The formatting is done with Prettier.
+### Setting up and running
+Install dependencies
+`npm i`
 
+Run ESLint to check for errors and warnings `npm run lint`
 
-# Running
+Some warnings and errors, for example, those related to formatting can be automatically fixed by running
+`npm run lint:fix`
+### Config
+The linting rules are configured in the `.eslintrc.json` file. Most of the rules are from the Airbnb, Prettier, and JSdoc plugins.
+### Integrating with an IDE or text editor
+ESLint and Prettier are both available as plugins for the majority of the most common IDEs and text editors. The plugins help with highlighting linting errors and warnings, as well as formatting during development.
+
+## docker-setup
+### Running
 Install docker and clone the repo then start the container
 ```sh
 docker compose up --build
@@ -11,7 +24,7 @@ docker compose up --build
 React app can be accessed by entering localhost:3000 in your web browser or using the container IP found with docker inspect "CONTAINER ID"
 > NOTE: Windows users might have to remove/comment the "volumes" in docker-compose.yaml file 
 
-# Learning
+### Learning
 Recommended videos for running a container, understanding Dockerfile and docker-compose.yaml
 
 |Subject| Video|
@@ -22,7 +35,7 @@ Recommended videos for running a container, understanding Dockerfile and docker-
 > WINDOWS USERS: Docker volumes are used for real time updating files in the container, these apparently have problems working with windows. So WSL is recommended for development in windows. Docker volumes are defined in the docker-compose.yaml file. It should work without WSL if you remove the volumes from docker-compose.yaml file but you might have to create a new container for every change to the code. **This is according to one of the tutorial vidoes, so not verified.**
 
 >Workaround: Changes to files come into the container, however the file is not saved inside the container so changes do not take effect. Workaround is to enter the container and manually open the file with vi and enter :wq
-## Useful commands
+#### Useful commands
 
 
 If one does not like using CLI there are docker extensions to vscode and also a docker GUI. 
@@ -53,8 +66,8 @@ docker compose run "SERVICE NAME" bash
 ```
 
 
-# Troubleshooting
-## Linux: Have to run sudo on every docker command
+### Troubleshooting
+#### Linux: Have to run sudo on every docker command
 
 Create the docker group if it does not exist
 
@@ -88,10 +101,10 @@ Reboot if still got error
 reboot
 ```
 
-## Error while running docker compose file
+#### Error while running docker compose file
 If there is no error with the file itself a pc reboot sometimes works
 
-## cannot acces website on localhost
+#### cannot acces website on localhost
 try using the network for the docker container instead
 
 ```sh
