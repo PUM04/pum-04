@@ -2,6 +2,7 @@
  * @file Contains the App top level component.
  */
 import React, { useState } from 'react';
+import Button from '@mui/material/Button';
 import reactLogo from './assets/react.svg';
 import './App.css';
 import { useWasm } from './hooks/wasm';
@@ -41,6 +42,16 @@ function App(): JSX.Element {
         >
           count is {count}
         </button>
+        <Button
+          color="secondary"
+          type="button"
+          onClick={() => setCount((currentCount) => currentCount + 1)}
+        >
+          count is {count}
+        </Button>
+        <Button color="primary" type="button">
+          Just a visual MUI button
+        </Button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
