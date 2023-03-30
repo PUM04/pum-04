@@ -21,7 +21,8 @@ jobs:
         with:
           version: latest
           platform: x64
-      - run: cmake libs/
-      - run: clang-tidy -p . libs/src/* --header-filter=libs/src/*.h --use-color
-      - run: clang-format libs/src/* --dry-run -Werror
+      - run: cd backend_test
+      - run: emcmake cmake .
+      - run: clang-tidy -p . ../src/cpp/* --header-filter=../src/cpp/*.h --use-color
+      - run: clang-format ../src/cpp/* --dry-run -Werror
 
