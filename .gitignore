@@ -32,5 +32,9 @@ CMakeFiles/
 compile_commands.json
 Makefile
 
+# CPP Tests
+test_runner.cjs
+test_runner.wasm
+
 #local test results
 coverage
