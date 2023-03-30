@@ -98,3 +98,28 @@ try using the network for the docker container instead
 docker inspect "CONTAINER ID"
 ```
 find the IPAddress for the container and enter "ip:port" in the webbrowser 
+
+## Testing the backend with Doctest
+### Writing tests
+Simply include ```#include "test_framework/doctest.h"``` in every file tests will be written in.
+A simple tutorial for writing tests can be found [here.](https://github.com/doctest/doctest/blob/master/doc/markdown/tutorial.md)
+
+### Build and run
+Emcc and node needs to be installed on the system to be able to build and run the tests.
+
+#### Run using the script (Linux)
+Simply navigate to the backend_test folder and run
+```bash
+./test_run.sh
+```
+Note that the script might need to be set as a runnable with
+```bash
+chmod +x test_run.sh
+```
+
+#### Run manually
+1. Navigate to the backend_test folder
+2. ```emcmake cmake .```
+3. ```emmake cmake --build .```
+4. Rename test_runner.js to test_runner.cjs (I'm looking for ways to circumvent this)
+5. ```node test_runner.cjs```
