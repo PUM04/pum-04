@@ -30,4 +30,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: mymindstorm/setup-emsdk@v11
-      - run: ./test_run.sh
+      - run: ./backend_test/test_run.sh
