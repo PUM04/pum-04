@@ -18,11 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: egor-tensin/setup-clang@v1
+      - uses: mymindstorm/setup-emsdk@v11
         with:
           version: latest
           platform: x64
-      - run: cd backend_test
-      - run: emcmake cmake .
+      - run: cd backend_test && emcmake cmake .
       - run: clang-tidy -p . ../src/cpp/* --header-filter=../src/cpp/*.h --use-color
       - run: clang-format ../src/cpp/* --dry-run -Werror
 
