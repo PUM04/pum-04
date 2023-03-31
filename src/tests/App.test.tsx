@@ -17,13 +17,13 @@ describe('App', () => {
 
   // Testcase
   it('should render button count', async () => {
-    const buttonCount = await screen.findByRole('button');
+    const buttonCount = await screen.findByTestId('count-button');
     expect(buttonCount.innerHTML).toBe('count is 0');
   });
 
   // Another testcase
   it('should update count on click', async () => {
-    const buttonCount = await screen.findByRole('button');
+    const buttonCount = await screen.findByTestId('count-button');
     expect(buttonCount.innerHTML).toBe('count is 0');
 
     await user.click(buttonCount);
@@ -35,7 +35,7 @@ describe('App', () => {
 
   // Another testcase
   it('count should roll over from 10 to 0', async () => {
-    const buttonCount = await screen.findByRole('button');
+    const buttonCount = await screen.findByTestId('count-button');
     expect(buttonCount.innerHTML).toBe('count is 0');
 
     const clickActions = [];
