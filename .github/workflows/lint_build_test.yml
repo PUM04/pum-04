@@ -25,6 +25,7 @@ jobs:
       - run: cd backend_test && emcmake cmake .
       - run: clang-tidy -p . ../src/cpp/*.cpp --header-filter=../src/cpp/*.h --use-color
       - run: clang-format ../src/cpp/*.cpp --dry-run -Werror
+
   backend-test:
     runs-on: ubuntu-latest
     steps:
@@ -32,3 +33,13 @@ jobs:
       - uses: mymindstorm/setup-emsdk@v11
       - run: cd backend_test && emcmake cmake . && emmake cmake --build . && mv test_runner.js test_runner.cjs
       - run: node backend_test/test_runner.cjs
+
+  frontend-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm i
+      - run: npm run test
