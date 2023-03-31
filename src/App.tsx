@@ -4,8 +4,6 @@
 import React, { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import './App.css';
-import { useWasm } from './hooks/wasm';
-import CalculatorModule from './cpp/Calculator';
 
 /**
  * Top level component.
@@ -14,7 +12,6 @@ import CalculatorModule from './cpp/Calculator';
  */
 function App(): JSX.Element {
   const [count, setCount] = useState(0);
-  const calcModule = useWasm(CalculatorModule);
 
   return (
     <div className="App">
@@ -33,9 +30,9 @@ function App(): JSX.Element {
           onClick={() => {
             setCount(() => {
               if (count >= 10) {
-                return new calcModule.Calculator().subtract(count, count);
+                return 0;
               }
-              return calcModule.increment(count);
+              return count + 1;
             });
           }}
         >
