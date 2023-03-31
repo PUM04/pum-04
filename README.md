@@ -136,3 +136,39 @@ chmod +x test_run.sh
 3. ```emmake cmake --build .```
 4. Rename test_runner.js to test_runner.cjs (I'm looking for ways to circumvent this)
 5. ```node test_runner.cjs```
+   
+## Testing the frontend
+The tests run in GitHub Actions on each push to the repo.
+### Writing tests
+
+#### Jest
+Tests are written using the framework Jest.  
+Information about the Jest syntax can be found [here](https://jestjs.io/docs/using-matchers).  
+A testfile should be placed inside the `/src/test` folder and have the name `<component-to-test>.test.tsx` or `<component-to-test>.test.ts`  
+Asset files are mocked since the functionality does not depend on them. 
+
+#### testing-library
+Testing-library can help when writing tests for React components, but it is not needed for testing functions that can run outside a component. 
+The library provides methods for getting elements from the DOM and perform simulated user events.  
+Information about querying the dom can be found [here](https://testing-library.com/docs/queries/about).  
+Information about user events can be found [here](https://testing-library.com/docs/user-event/intro#writing-tests-with-userevent).  
+
+### Running
+Dependencies needs to be installed, install with  
+`npm i`  
+
+Run all tests that contains the name "Component"  
+`npm run test <Component>`  
+
+Run all tests with  
+`npm run test`
+
+Watch files for changes and rerun tests related to changed files
+`npm run test:watch`
+
+Watch files for changes and rerun all tests when something changes
+`npm run test:watchAll`
+
+### Coverage
+Code coverage is collected for all tests. After each testrun a short report will be printed in the terminal.  
+To see a more detailed coverage report open the locally generated file `<project-root>/coverage/lcov-report/index.html` in a browser.
