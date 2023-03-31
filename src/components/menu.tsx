@@ -17,6 +17,7 @@ import Example from './example';
 import '../App.css';
 
 const drawerWidth = 200;
+const size = 60;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
 }>(({ theme, open }) => ({
@@ -26,13 +27,13 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  marginLeft: `-5%`,
+  marginLeft: 0,
   ...(open && {
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: 0,
+    marginLeft: drawerWidth,
   }),
 }));
 
@@ -43,14 +44,14 @@ interface AppBarProps extends MuiAppBarProps {
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
 })<AppBarProps>(({ theme, open }) => ({
-  width: '5%',
-  right: '95%',
+  width: size,
+  right: `calc(100% - ${size}px)`,
   transition: theme.transitions.create(['margin', 'width'], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
   ...(open && {
-    width: `5%`,
+    width: drawerWidth,
     marginRight: `${drawerWidth}px`,
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
@@ -95,7 +96,7 @@ export default function Menu() {
               color="inherit"
               aria-label="open drawer"
               onClick={handleDrawerOpen}
-              edge="end"
+              edge="start"
               sx={{ ...(open && { display: 'none' }) }}
             >
               <MenuIcon />
