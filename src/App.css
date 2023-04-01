@@ -1,7 +1,8 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  float:left;
+  padding: 0rem;
   text-align: center;
 }
 
@@ -27,6 +28,54 @@
   }
 }
 
+.grid-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  width: 100%;
+}
+.header{
+  background-color: #004688;
+}
+.legend{
+  background-color:#AECDEB;
+  padding: 10px;
+}
+.dropdown-menu{
+  margin: 10px;
+}
+.vertical{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.dropdown-menu{
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+  background-color: #DEE8FA;
+}
+.mainbar{
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+.graph-window{
+  max-width: 800;
+  margin-top: 50;
+  margin-left: 15;
+  margin-bottom: 10;
+  margin-right: 60;
+  background-color : #AECDEB
+}
+.sidebar{
+  background-color:#AECDEB;
+}
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
