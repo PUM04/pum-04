@@ -57,31 +57,53 @@ function App(): JSX.Element {
         >
           count is {count}
         </Button>
+      // ----------------------------metric extractor----------------------------
+      // --------------------------WARNING SHITTY CODE--------------------------
         <Button
           color="primary"
           type="button"
           onClick={() => {
-            const reader = new FileReader();
-            reader.onload = () => {
-              const contents = reader.result;
-
-            };
-            let regexStart = /{method="/g
-            let regexEnd = /{method="\w*/g
+            let regexStart = /{method="/g;
+            let regexEnd = /{method="\w*/g;
+            let newRegex = /(?<={method=")\w*/g; //fuck I hate RegEx I hope this works
             let metrics: Map<String,Map<number,number>> = new Map<String,Map<number,number>>();
-            var lines = "file".split('\n'); //"file" is dummy
+            
+            // this will then display a text file
+            let text = filereader.result as string;
+            let lines = text.split('\n');
             lines.forEach(element => {
               if(element.includes("{method=\"")){
-                let metricName = element.substring(element.search(regexStart),element.search(regexEnd))
-                let metricStats = new Map<number,number>();
-                metrics.set(metricName,metricStats);
-                //add entries to metricStats
+                console.log(element);
+                //let metricName = element.substring(element.search(regexStart),element.search(regexEnd))
+                let match = element.match(newRegex);
+                if (match !== null) {
+                  let metricName = match[0];
+                  let metricStats = new Map<number,number>();
+                  if(metricName!=""){
+                    console.log(metricName);
+                    console.log(metricStats);
+                    metrics.set(metricName,metricStats);
+                  }
+                  //add entries to metricStats
+                }
               }
             });
+            if(metrics.size != 0){
+              console.log("Info in file!");
+              console.log(metrics);
+              metrics.forEach(element => {
+                console.log(metrics.keys);
+              });
+            }
+            else{
+              console.log("No info in file! :(")
+            }
+            
           }}
         >
           Extract metrics
         </Button>
+        //  --------------------------------END OF SHITTY CODE--------------------------------
         <Button color="primary" type="button">
           Just a visual MUI button
         </Button>
