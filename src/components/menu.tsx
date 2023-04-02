@@ -91,7 +91,7 @@ export default function Menu() {
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar position="fixed" open={open}>
-          <Toolbar>
+          <Toolbar variant="dense">
             <IconButton
               color="inherit"
               aria-label="open drawer"
