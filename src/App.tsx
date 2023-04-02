@@ -49,6 +49,31 @@ function App(): JSX.Element {
         >
           count is {count}
         </Button>
+        <Button
+          color="primary"
+          type="button"
+          onClick={() => {
+            const reader = new FileReader();
+            reader.onload = () => {
+              const contents = reader.result;
+
+            };
+            let regexStart = /{method="/g
+            let regexEnd = /{method="\w*/g
+            let metrics: Map<String,Map<number,number>> = new Map<String,Map<number,number>>();
+            var lines = "file".split('\n'); //"file" is dummy
+            lines.forEach(element => {
+              if(element.includes("{method=\"")){
+                let metricName = element.substring(element.search(regexStart),element.search(regexEnd))
+                let metricStats = new Map<number,number>();
+                metrics.set(metricName,metricStats);
+                //add entries to metricStats
+              }
+            });
+          }}
+        >
+          Extract metrics
+        </Button>
         <Button color="primary" type="button">
           Just a visual MUI button
         </Button>
