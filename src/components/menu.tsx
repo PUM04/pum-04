@@ -1,7 +1,7 @@
 /**
  * @file Contains an interactive drawermenu
  */
-import React from 'react';
+import React, { useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -14,6 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Example from './example';
+import DragAndDropzone from './DragAndDropzone';
 import '../App.css';
 
 const drawerWidth = 200;
@@ -77,6 +78,17 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 export default function Menu() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  // -------------------- FileReader example --------------------
+  const [files, setFiles] = useState<File[]>([]);
+  const filereader = new FileReader();
+
+  if (files.length > 0) filereader.readAsText(files[0]);
+
+  filereader.onload = () => {
+    console.log(`file contents read: ${filereader.result}`);
+  };
+  filereader.onabort = () => console.log('file reading was aborted');
+  filereader.onerror = () => console.log('file reading has failed');
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -127,6 +139,10 @@ export default function Menu() {
           </DrawerHeader>
           <Divider />
           <Divider />
+          <div>
+            <p>Uploaded files: {JSON.stringify(files)}</p>
+            <DragAndDropzone setter={setFiles} value={files} />
+          </div>
         </Drawer>
         <Main open={open}>
           <DrawerHeader />
