@@ -52,7 +52,9 @@ function App(): JSX.Element {
         <p>Uploaded files: {JSON.stringify(files)}</p>
         <DragAndDropzone setter={setFiles} value={files} />
       </div>
-      {/*Everything under here test webassembly and will not stay till final product*/}
+      {/* 
+      Everything under here test webassembly and will not stay till final product 
+      */}
       <div className="card">
         <button
           type="button"
