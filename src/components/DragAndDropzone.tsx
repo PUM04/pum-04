@@ -40,8 +40,8 @@ export default function DragAndDropzone(props: DropzoneProps) {
               style={{
                 display: 'flex',
                 justifyContent: 'center',
-                cursor: 'pointer',                 
-              }}          
+                cursor: 'pointer',
+              }}
             >
               <p>Upload files</p>
             </Box>
