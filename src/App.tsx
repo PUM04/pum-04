@@ -1,7 +1,7 @@
 /**
  * @file Contains the App top level component.
  */
-import React, { useState } from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import './App.css';
 import { GraphComponent, InfoboxComponent } from './components/basecomponent';
@@ -13,17 +13,19 @@ import { GraphComponent, InfoboxComponent } from './components/basecomponent';
  */
 function App(): JSX.Element {
   return (
-    <Box sx={{ flexDirection: 'column', display: 'inline-flex' }}>
-      <div
-        style={{
-          margin: '5%',
-          maxWidth: '100vw',
+    <div className="grid-container">
+      meny? kan ta bort
+      <Box
+        sx={{
+          flexDirection: 'column',
+          display: 'inline-flex',
+          backgroundColor: 'grey',
         }}
-      />
-      <GraphComponent />
-      <InfoboxComponent />
-      <div />
-    </Box>
+      >
+        <GraphComponent />
+        <InfoboxComponent />
+      </Box>
+    </div>
   );
 }
 

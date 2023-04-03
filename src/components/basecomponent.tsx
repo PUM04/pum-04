@@ -3,6 +3,7 @@
  */
 import Box from '@mui/material/Box';
 import React from 'react';
+
 /**
  * Component that contains all graphs
  *
@@ -14,13 +15,17 @@ export function GraphComponent(): JSX.Element {
       sx={{
         flexDirection: 'column',
         display: 'inline-flex',
-        backgroundColor: 'red',
+        backgroundColor: 'primary.lightSoft',
         '&:hover': {
-          backgroundColor: 'grey',
+          backgroundColor: 'blue',
           opacity: [0.9, 0.8, 0.7],
         },
       }}
     >
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
@@ -40,10 +45,11 @@ export function InfoboxComponent(): JSX.Element {
       sx={{
         flexDirection: 'row',
         display: 'inline-flex',
+        backgroundColor: 'primary.accent2',
         flexWrap: 'wrap',
         justifyContent: 'space-evenly',
         '&:hover': {
-          backgroundColor: 'grey',
+          backgroundColor: 'red',
           opacity: [0.9, 0.8, 0.7],
         },
       }}
