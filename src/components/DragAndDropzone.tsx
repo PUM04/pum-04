@@ -36,12 +36,12 @@ export default function DragAndDropzone(props: DropzoneProps) {
             <input {...getInputProps()} />
             <Box
               component="span"
-              sx={{ p: 2, border: '1px dashed grey' }}
+              sx={{ p: 2, border: '2px dashed grey', borderRadius: '10px' }}
               style={{
                 display: 'flex',
                 justifyContent: 'center',
-                cursor: 'pointer',
-              }}
+                cursor: 'pointer',                 
+              }}          
             >
               <p>Upload files</p>
             </Box>
