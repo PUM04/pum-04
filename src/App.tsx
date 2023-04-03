@@ -7,6 +7,8 @@ import DragAndDropzone from './components/DragAndDropzone';
 import './App.css';
 import { useWasm } from './hooks/wasm';
 import CalculatorModule from './cpp/Calculator';
+import FileHandlerModule from './cpp/FileHandler';
+
 
 /**
  * Top level component.
@@ -18,6 +20,13 @@ function App(): JSX.Element {
   const [files, setFiles] = useState<File[]>([]);
 
   const calcModule = useWasm(CalculatorModule);
+  const fileHandlerModule = useWasm(FileHandlerModule);
+  let fileHandler;
+
+  if (fileHandlerModule != undefined) {
+    fileHandler= new fileHandlerModule.FileHandler()
+  }
+
   // -------------------- FileReader example --------------------
   const filereader = new FileReader();
 
@@ -46,6 +55,7 @@ function App(): JSX.Element {
               }
               return calcModule.increment(count);
             });
+            fileHandler.add_file(filereader.result as string);
           }}
         >
           count is {count}
@@ -57,8 +67,6 @@ function App(): JSX.Element {
         >
           count is {count}
         </Button>
-      // ----------------------------metric extractor----------------------------
-      // --------------------------WARNING SHITTY CODE--------------------------
         <Button
           color="primary"
           type="button"
@@ -103,7 +111,6 @@ function App(): JSX.Element {
         >
           Extract metrics
         </Button>
-        //  --------------------------------END OF SHITTY CODE--------------------------------
         <Button color="primary" type="button">
           Just a visual MUI button
         </Button>
