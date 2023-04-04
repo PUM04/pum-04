@@ -1,26 +1,65 @@
+/**
+ * @file contains a dropdown-menu with checkboxes
+ */
+
 import React from 'react';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-
-
-import ListSubheader from '@mui/material/ListSubheader';
+// import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
-import SendIcon from '@mui/icons-material/Send';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import StarBorder from '@mui/icons-material/StarBorder';
+import Checkbox from '@mui/material/Checkbox';
 
+/**
+ * Dropdown-menu with checkboxes for dynamic content
+ *
+ * @returns a dropdop component designed for menu
+ */
 export default function Dropdown() {
-    const [open, setOpen] = React.useState(true);
-
-    const handleClick = () => {
+  // should probably have some params for setting the content
+  const [open, setOpen] = React.useState(true);
+  const [content, setContent] = React.useState([
+    { metric: 'metric_1', selected: true },
+    { metric: 'metric_2', selected: true },
+    { metric: 'metric_3', selected: true },
+  ]); // Just an examplesStructure of how metric might be stored. should not be in final code
+  const [checked, setChecked] = React.useState(true);
+  const handleClick = () => {
     setOpen(!open);
+  };
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(event.target.checked);
+    setOpen(open);
+    const newContent = [...content];
+    // controlls the sub-checkboxes with the main checkbox
+      // ERROR: Assignment to property of function parameter 'contentItem', needs to be fixed
+    if (checked) {
+      newContent.forEach((contentItem) => {
+        contentItem.selected = false;
+      });
+    } else {
+      newContent.forEach((contentItem) => {
+        contentItem.selected = true;
+      });
+    }
+    setContent(newContent);
+  };
+  const contentClick = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // Sets the corresponding checkbox to it opposite value
+    const newContent = [...content];
+    const item = newContent.find((a) => a.metric === event.target.name);
+    if (item != null) item.selected = !item.selected;
+    setContent(newContent);
+    // controlls the main checkbox with the sub-checkboxes
+    let anyChecked = false;
+    content.forEach((contentItem) => {
+      if (contentItem.selected) anyChecked = true;
+    });
+    setChecked(anyChecked);
   };
 
   return (
@@ -35,38 +74,34 @@ export default function Dropdown() {
           height: 1,
         },
       }}
-    >                  
-     <List
-      sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}
-      component="nav"
-      aria-labelledby="nested-list-subheader"
-      subheader={
-        <ListSubheader component="div" id="nested-list-subheader">
-          Nested List Items
-        </ListSubheader>
-      }
     >
-            
       <ListItemButton onClick={handleClick}>
         <ListItemIcon>
-          <InboxIcon />
+          <Checkbox
+            checked={checked}
+            onChange={handleChange}
+            inputProps={{ 'aria-label': 'controlled' }}
+          />
         </ListItemIcon>
-        <ListItemText primary="Inbox" />
+        <ListItemText primary="Metrics" />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          <ListItemButton sx={{ pl: 4 }}>
-            <ListItemIcon>
-              <StarBorder />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItemButton>
+          {content.map(({ metric, selected }) => (
+            <ListItemButton>
+              <ListItemIcon>
+                <Checkbox
+                  checked={selected}
+                  onChange={contentClick}
+                  name={metric}
+                />
+              </ListItemIcon>
+              <ListItemText primary={metric} />
+            </ListItemButton>
+          ))}
         </List>
       </Collapse>
-    </List>
     </Box>
-
-    
   );
 }
