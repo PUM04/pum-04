@@ -1,6 +1,10 @@
 /**
  * @file Contains the App top level component.
  */
+ 
+import Box from '@mui/material/Box';
+import { GraphComponent, InfoboxComponent } from './components/basecomponent';
+
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import DragAndDropzone from './components/DragAndDropzone';
@@ -48,19 +52,37 @@ function App(): JSX.Element {
   // -------------------- FileReader example --------------------
   return (
     <div className="App">
+      <div className="grid-container">
+        meny? kan ta bort
+        <Box
+          sx={{
+            flexDirection: 'column',
+            display: 'inline-flex',
+            backgroundColor: 'grey',
+          }}
+        >
+          <GraphComponent />
+          <InfoboxComponent />
+        </Box>
+      </div>
+
       <div>
         <p>Uploaded files: {JSON.stringify(files)}</p>
         <DragAndDropzone setter={setFiles} value={files} />
       </div>
+      {/* 
+      Everything under here test webassembly and will not stay till final product 
+      */}
       <div className="card">
         <button
+          data-testid="count-button"
           type="button"
           onClick={() => {
             setCount(() => {
               if (count >= 10) {
-                return new calcModule.Calculator().subtract(count, count);
+                return 0;
               }
-              return calcModule.increment(count);
+              return count + 1;
             });
           }}
         >
@@ -73,6 +95,7 @@ function App(): JSX.Element {
         >
           count is {count}
         </Button>
+
         <Button
           color="primary"
           type="button"
