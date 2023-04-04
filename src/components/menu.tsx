@@ -14,6 +14,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Example from './example';
 import DragAndDropzone from './DragAndDropzone';
 import { GraphComponent, InfoboxComponent } from './BaseComponent';
+import Dropdown from './Dropdown';
 import '../App.css';
 
 const drawerWidth = 200;
@@ -139,6 +140,10 @@ export default function Menu() {
           </DrawerHeader>
           <Divider />
           <Divider />
+          <div>
+            <p>dropdown, snälla...</p>
+            <Dropdown />
+          </div>
           <div>
             <p>Uploaded files: {JSON.stringify(files)}</p>
             <DragAndDropzone setter={setFiles} value={files} />
