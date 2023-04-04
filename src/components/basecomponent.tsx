@@ -15,14 +15,12 @@ export function GraphComponent(): JSX.Element {
       sx={{
         flexDirection: 'column',
         display: 'inline-flex',
-        backgroundColor: 'primary.lightSoft',
+        backgroundColor: 'primary.light',
         '&:hover': {
-          backgroundColor: 'blue',
-          opacity: [0.9, 0.8, 0.7],
+          backgroundColor: 'primary.dark',
         },
       }}
     >
-      <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
@@ -45,12 +43,11 @@ export function InfoboxComponent(): JSX.Element {
       sx={{
         flexDirection: 'row',
         display: 'inline-flex',
-        backgroundColor: 'primary.accent2',
+        backgroundColor: 'primary.light',
         flexWrap: 'wrap',
         justifyContent: 'space-evenly',
         '&:hover': {
-          backgroundColor: 'red',
-          opacity: [0.9, 0.8, 0.7],
+          backgroundColor: 'primary.main',
         },
       }}
     >

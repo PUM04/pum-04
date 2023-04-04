@@ -16,7 +16,7 @@ RUN npm install
 #install some nice to haves should be removed in production image
 RUN apt update
 RUN apt install python3 -y
-RUN apt install vim -y
+#RUN apt install vim -y
 RUN apt install sudo -y 
 RUN apt install git -y
 
