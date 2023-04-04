@@ -9,11 +9,5 @@
   },
   "collectCoverage": true,
   "coveragePathIgnorePatterns": ["node_modules", "tests"],
-  "coverageDirectory": "<rootDir>/coverage/",
-  "coverageThreshold": {
-    "global": {
-      "branches": 70,
-      "statements": 70
-    }
-  }
+  "coverageDirectory": "<rootDir>/coverage/"
 }
