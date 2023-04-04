@@ -13,6 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Example from './example';
 import DragAndDropzone from './DragAndDropzone';
+import { GraphComponent, InfoboxComponent } from './BaseComponent';
 import '../App.css';
 
 const drawerWidth = 200;
@@ -145,6 +146,18 @@ export default function Menu() {
         </Drawer>
         <Main open={open}>
           <DrawerHeader />
+
+          <Box
+            sx={{
+              flexDirection: 'column',
+              display: 'inline-flex',
+              backgroundColor: 'grey',
+            }}
+          >
+            <GraphComponent />
+            <InfoboxComponent />
+          </Box>
+
           <Example />
           <p>Hej</p>
         </Main>
