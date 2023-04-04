@@ -3,7 +3,7 @@
  */
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-import reactLogo from './assets/react.svg';
+import DragAndDropzone from './components/DragAndDropzone';
 import './App.css';
 
 /**
@@ -13,18 +13,26 @@ import './App.css';
  */
 function App(): JSX.Element {
   const [count, setCount] = useState(0);
+  const [files, setFiles] = useState<File[]>([]);
 
+  // -------------------- FileReader example --------------------
+  const filereader = new FileReader();
+
+  if (files.length > 0) filereader.readAsText(files[0]);
+
+  filereader.onload = () => {
+    console.log(`file contents read: ${filereader.result}`);
+  };
+  filereader.onabort = () => console.log('file reading was aborted');
+  filereader.onerror = () => console.log('file reading has failed');
+
+  // -------------------- FileReader example --------------------
   return (
     <div className="App">
       <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <p>Uploaded files: {JSON.stringify(files)}</p>
+        <DragAndDropzone setter={setFiles} value={files} />
       </div>
-      <h1>Vite + React</h1>
       <div className="card">
         <button
           data-testid="count-button"
@@ -50,13 +58,7 @@ function App(): JSX.Element {
         <Button color="primary" type="button">
           Just a visual MUI button
         </Button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   );
 }
