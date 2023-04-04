@@ -28,7 +28,6 @@ function App(): JSX.Element {
   const fileHandlerModule = useWasm(FileHandlerModule);
 
   useEffect(() => {
-    console.log("run");
     if (fileHandlerModule) {
       setFileHandler(new fileHandlerModule.FileHandler());
     }
@@ -44,6 +43,11 @@ function App(): JSX.Element {
   filereader.onload = () => {
     // TODO: Handle names (multiple files)
     fileHandler.add_file(filereader.result as string, files[0].name);
+    /*
+    files.forEach(element => {
+      fileHandler.add_file(filereader.result as string, fileHandler.name);
+    });
+    */
     //console.log(`file contents read: ${filereader.result}`);
   };
   filereader.onabort = () => console.log('file reading was aborted');
