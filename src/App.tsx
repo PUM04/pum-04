@@ -2,6 +2,8 @@
  * @file Contains the App top level component.
  */
 import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
+import { positions } from '@mui/systems';
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import DragAndDropzone from './components/DragAndDropzone';
@@ -35,7 +37,15 @@ function App(): JSX.Element {
   return (
     <div className="App">
       <div className="grid-container">
-        meny? kan ta bort
+        <Container
+          sx={{
+            position: 'fixed',
+            backgroundColor: 'red',
+          }}
+        >
+          Legends
+        </Container>
+        {/* meny? kan ta bort */}
         <Box
           sx={{
             flexDirection: 'column',
@@ -46,11 +56,6 @@ function App(): JSX.Element {
           <GraphComponent />
           <InfoboxComponent />
         </Box>
-      </div>
-
-      <div>
-        <p>Uploaded files: {JSON.stringify(files)}</p>
-        <DragAndDropzone setter={setFiles} value={files} />
       </div>
       {/* 
       Everything under here test webassembly and will not stay till final product 

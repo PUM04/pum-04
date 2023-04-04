@@ -16,12 +16,36 @@ export function GraphComponent(): JSX.Element {
         flexDirection: 'column',
         display: 'inline-flex',
         backgroundColor: 'primary.lightSoft',
-        '&:hover': {
-          backgroundColor: 'blue',
-          opacity: [0.9, 0.8, 0.7],
-        },
+        // '&:hover': {
+        //   backgroundColor: 'blue',
+        //   opacity: [0.9, 0.8, 0.7],
+        // },
       }}
     >
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
