@@ -144,7 +144,7 @@ The tests run in GitHub Actions on each push to the repo.
 #### Jest
 Tests are written using the framework Jest.  
 Information about the Jest syntax can be found [here](https://jestjs.io/docs/using-matchers).  
-A testfile should be placed inside the `/src/test` folder and have the name `<component-to-test>.test.tsx` or `<component-to-test>.test.ts`  
+A testfile should be placed inside the `/src/test/unit` and `/src/test/integration` folders depending on the test level and have the name `<component-to-test>.test.tsx` or `<component-to-test>.test.ts`  
 Asset files are mocked since the functionality does not depend on them. 
 
 #### testing-library
@@ -159,6 +159,8 @@ Dependencies needs to be installed, install with
 
 Run all tests that contains the name "Component"  
 `npm run test <Component>`  
+or run all integration tests  
+`npm run test integration`
 
 Run all tests with  
 `npm run test`

@@ -7,7 +7,7 @@ import { cleanup, render, screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
 
 // Component to test
-import App from '../App';
+import App from '../../App';
 
 describe('App', () => {
   // Run this before each test
