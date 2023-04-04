@@ -1,7 +1,7 @@
 /**
  * @file Contains the App top level component.
  */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import DragAndDropzone from './components/DragAndDropzone';
 import './App.css';
@@ -18,22 +18,29 @@ import FileHandlerModule from './cpp/FileHandler';
 function App(): JSX.Element {
   const [count, setCount] = useState(0);
   const [files, setFiles] = useState<File[]>([]);
+  const [fileHandler, setFileHandler] = useState();
 
   const calcModule = useWasm(CalculatorModule);
   const fileHandlerModule = useWasm(FileHandlerModule);
-  let fileHandler;
 
-  if (fileHandlerModule != undefined) {
-    fileHandler= new fileHandlerModule.FileHandler()
-  }
+  useEffect(() => {
+    console.log("run");
+    if (fileHandlerModule) {
+      setFileHandler(new fileHandlerModule.FileHandler());
+    }
+  },[fileHandlerModule]);
 
   // -------------------- FileReader example --------------------
   const filereader = new FileReader();
 
-  if (files.length > 0) filereader.readAsText(files[0]);
+  if (files.length > 0) {
+    filereader.readAsText(files[0]);
+  }
 
   filereader.onload = () => {
-    console.log(`file contents read: ${filereader.result}`);
+    // TODO: Handle names (multiple files)
+    fileHandler.add_file(filereader.result as string, files[0].name);
+    //console.log(`file contents read: ${filereader.result}`);
   };
   filereader.onabort = () => console.log('file reading was aborted');
   filereader.onerror = () => console.log('file reading has failed');
@@ -55,7 +62,6 @@ function App(): JSX.Element {
               }
               return calcModule.increment(count);
             });
-            fileHandler.add_file(filereader.result as string);
           }}
         >
           count is {count}

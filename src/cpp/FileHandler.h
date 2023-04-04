@@ -2,36 +2,26 @@
 
 #include <string>
 #include <vector>
-#include <map>
+#include <unordered_map>
 #include <emscripten/bind.h>
+#include "nlohmann/json.h"
 
-struct File {
-    std::string name;
-    std::vector<struct Metric> metrics;
-};
+using json = nlohmann::json;
 
-struct PerformanceName {
-    std::string name;
-    int sum;
-    int count;
-    std::vector<struct Bucket> buckets;
-};
-
-struct Metric : PerformanceName {};
-
-struct Method : PerformanceName {};
-
-struct Bucket {
-    int length;
-    int count;
+struct Site {
+    json hosts;
+    std::vector<json> logs;
 };
 
 class FileHandler {
 public:
-    void add_file(std::string file);
+    void add_file(std::string file, std::string file_name);
 
 private:
-    std::vector<struct File> files;
+    std::unordered_map<std::string, struct Site> sites;
+
+    std::string get_file_ending(std::string &file_name) const;
+    void add_host_file(std::string &file);
 };
 
 using namespace emscripten;
