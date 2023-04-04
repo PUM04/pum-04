@@ -1,10 +1,12 @@
 /**
  * @file Contains the App top level component.
  */
+import Box from '@mui/material/Box';
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import DragAndDropzone from './components/DragAndDropzone';
 import './App.css';
+import { GraphComponent, InfoboxComponent } from './components/basecomponent';
 import { useWasm } from './hooks/wasm';
 import CalculatorModule from './cpp/Calculator';
 
@@ -32,10 +34,27 @@ function App(): JSX.Element {
   // -------------------- FileReader example --------------------
   return (
     <div className="App">
+      <div className="grid-container">
+        meny? kan ta bort
+        <Box
+          sx={{
+            flexDirection: 'column',
+            display: 'inline-flex',
+            backgroundColor: 'grey',
+          }}
+        >
+          <GraphComponent />
+          <InfoboxComponent />
+        </Box>
+      </div>
+
       <div>
         <p>Uploaded files: {JSON.stringify(files)}</p>
         <DragAndDropzone setter={setFiles} value={files} />
       </div>
+      {/* 
+      Everything under here test webassembly and will not stay till final product 
+      */}
       <div className="card">
         <button
           type="button"
@@ -56,9 +75,6 @@ function App(): JSX.Element {
           onClick={() => setCount((currentCount) => currentCount + 1)}
         >
           count is {count}
-        </Button>
-        <Button color="primary" type="button">
-          Just a visual MUI button
         </Button>
       </div>
     </div>
