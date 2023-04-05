@@ -102,7 +102,7 @@ export default function Menu() {
   };
 
   return (
-     <div className="App">
+    
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar position="fixed" open={open}>
@@ -121,7 +121,7 @@ export default function Menu() {
         </AppBar>
         <Drawer
           sx={{
-            width: '5%',
+            width: '0%',
             flexShrink: 0,
             '& .MuiDrawer-paper': {
               width: drawerWidth,
@@ -158,8 +158,8 @@ export default function Menu() {
         </Drawer>
         <Main open={open}>
           <DrawerHeader />
-              
-         <Box
+
+          <Box
             sx={{
               flexDirection: 'column',
               display: 'inline-flex',
@@ -168,11 +168,11 @@ export default function Menu() {
           >
             <GraphComponent />
             <InfoboxComponent />
-          </Box>              
-          <Example />          
-          <p>Hejsan</p>        
-          </Main>
-        </Box>
-    </div>
+          </Box>
+          <Example />
+          <p>Hejsan</p>
+        </Main>
+      </Box>
+    
   );
 }

@@ -104,12 +104,13 @@ export default function Dropdown(props: dropdownProps): JSX.Element {
       <Collapse in={open} timeout={10} unmountOnExit>
         <List component="div" disablePadding>
           {content.map(({ item, selected }) => (
-            <ListItemButton>
-              <ListItemIcon>
+              <ListItemButton key={item}>
+                  <ListItemIcon key={item}>
                 <Checkbox
-                  checked={selected}
-                  onChange={contentClick}
-                  name={item}
+                          checked={selected}
+                          onChange={contentClick}
+                          name={item}
+                          key={item}
                 />
               </ListItemIcon>
               <ListItemText primary={item} />
