@@ -137,18 +137,17 @@ export function BoxPlotChart(): JSX.Element {
     </div>
   );
 }
-function drawVictoryBar(data:any){
+function drawVictoryBar(data:any,index:any){
   console.log("drawVictoryBar")
   console.log(data);
   return(
     
-    <VictoryBar
+    <VictoryBar key ={index}
+            barWidth={5}
             style={{
               data: {
                 fill:({ datum }) => datum.fill ,
-                stroke: 'gray',
-                strokeWidth: 1,
-                strokeOpacity: 0.7,
+                
               },
             }}
             data={data}
@@ -159,7 +158,7 @@ function drawVictoryBar(data:any){
   
 }
 
-function drawHistogram(sites:any){
+function drawHistogram(sites:any, metric:any){
 
 //sites är en lista med
   console.log("drawHist: ");
@@ -172,9 +171,9 @@ function drawHistogram(sites:any){
     victoryBars.push(drawVictoryBar([data]));
   }*/
   console.log("SITE LEN" + sites.length);
-  for(let i = 0; i <= sites.length; i++){
+  for(let i = 0; i < sites.length; i++){
     console.log(sites[i]);
-    victoryBars.push(drawVictoryBar(sites[i]));
+    victoryBars.push(drawVictoryBar(sites[i],i));
   }
   //victoryBars.push(drawVictoryBar(sites[0]));
 
@@ -184,10 +183,25 @@ function drawHistogram(sites:any){
 
   return (
     
-    <VictoryChart domainPadding={{ x: [20, 20], y: [20, 20] }}>
+    <VictoryChart key={metric}
+    domainPadding={{ x: [20, 20], y: [20, 20] }}>
+     <VictoryAxis
+        dependentAxis
+        style={{
+          
+          tickLabels: { fontSize: 10 },
+        }}
+      />
+      <VictoryAxis
+        style={{
+          
+          tickLabels: { fontSize: 10,transform: 'translate(-20, 10)'
+          , angle:45},
+        }}
+      />
 
       <VictoryGroup
-    offset={25}
+    offset={5}
     colorScale={["tomato", "orange", "gold"]}
   >
     {victoryBars}
@@ -214,26 +228,82 @@ export function BarChart(props:any): JSX.Element {
 
   const test = [];
 
+  //Exempelvis GetPatient för site1
   const d1 = [
-    { x: 1, y: 7 ,fill:"green"},
-    { x: 2, y: 9, fill: "blue" },
-    { x: 3, y: 4,fill:"brown" },
-    { x: 13, y: 3,fill:"red" },
+    { x: '500', y: 20 ,fill:"blue"},
+    { x: '600', y: 150, fill: "blue" },
+    { x: '700', y: 200,fill:"blue" },
+    { x: '2800', y: 900,fill:"blue" },
+    { x: '3200', y: 200 ,fill:"blue"},
+    { x: '3300', y: 150, fill: "blue" },
+    { x: '4200', y: 200,fill:"blue" },
+    { x: '5800', y: 805,fill:"blue" },
+    { x: '6200', y: 600,fill:"blue" },
+   
+  ]
+  //Exempelvis GetPatient för site2
+  const d2 = [
+    { x: '500', y: 20 ,fill:"blue"},
+    { x: '600', y: 150, fill: "blue" },
+    { x: '700', y: 200,fill:"blue" },
+    { x: '2800', y: 900,fill:"blue" },
+    { x: '3200', y: 200 ,fill:"blue"},
+    { x: '3300', y: 150, fill: "blue" },
+    { x: '4200', y: 200,fill:"blue" },
+    { x: '5800', y: 85,fill:"blue" },
+    { x: '6200', y: 200,fill:"blue" },
+    { x: '15800', y: 85,fill:"blue" }
+  ]
+  const d3 = [
+    { x: '500', y: 20 ,fill:"blue"},
+    { x: '600', y: 150, fill: "blue" },
+    { x: '700', y: 200,fill:"blue" },
+    { x: '2800', y: 900,fill:"blue" },
+    { x: '3200', y: 200 ,fill:"blue"},
+    { x: '3300', y: 150, fill: "blue" },
+    { x: '4200', y: 200,fill:"blue" },
+    { x: '5800', y: 85,fill:"blue" },
+    { x: '6200', y: 200,fill:"blue" },
+    { x: '15800', y: 85,fill:"blue" }
+  ]
+  const d4 = [
+    { x: '500', y: 20 ,fill:"blue"},
+    { x: '600', y: 150, fill: "blue" },
+    { x: '700', y: 200,fill:"blue" },
+    { x: '2800', y: 900,fill:"blue" },
+    { x: '3200', y: 200 ,fill:"blue"},
+    { x: '3300', y: 150, fill: "blue" },
+    { x: '4200', y: 200,fill:"blue" },
+    { x: '5800', y: 85,fill:"blue" },
+    { x: '6200', y: 200,fill:"blue" },
+    { x: '15800', y: 85,fill:"blue" }
+  ]
+  const d5 = [
+    { x: '500', y: 20 ,fill:"blue"},
+    { x: '600', y: 150, fill: "blue" },
+    { x: '700', y: 200,fill:"blue" },
+    { x: '800', y: 900,fill:"blue" },
+    
   ]
   const dataInput =[]
   dataInput.push(d1);
+  dataInput.push(d2);
+  dataInput.push(d3);
+  dataInput.push(d4);
+  dataInput.push(d5);
 
-  test.push(drawHistogram(dataInput));
+  
+
+  test.push(drawHistogram(dataInput,2));
   /*for(const m in props.metrics){
     //Anropa funktion för att rita en graf
     //Indata data lista med [ data={[{x: "a", y: 2}, {x: "b", y: 3}, {x: "c", y: 5}]},
     //data={[{x: "a", y: 2}, {x: "b", y: 3}, {x: "c", y: 5}]}]
     //alert("hej");
     test.push((drawHistogram([[{x: "a", y: 2}, {x: "b", y: 3}, {x: "c", y: 5}],
-    [{x: "a", y: 2}, {x: "b", y: 3}, {x: "c", y: 5}]
-  ])));*/
+    [{x: "a", y: 2}, {x: "b", y: 3}, {x: "c", y: 5}]],m)));
 
-  //}
+  }*/
 
   return (
     <div>
@@ -259,7 +329,7 @@ export function HistChart(): JSX.Element {
         dependentAxis
         style={{
           axis: { strokeWidth: 2, stroke: 'gray' },
-          tickLabels: { fontSize: 10, padding: 5, stroke: 'orange' },
+          tickLabels: { fontSize: 100, padding: 5, stroke: 'orange' },
         }}
       />
       <VictoryAxis

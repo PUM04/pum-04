@@ -26,6 +26,13 @@ function App(): JSX.Element {
     { x: 13, y: 3,fill:"red" },
     
   ]
+  const test2 = [
+    { x: 1, y: 7 ,fill:"green"},
+    { x: 2, y: 9, fill: "blue" },
+    { x: 3, y: 4,fill:"brown" },
+    { x: 13, y: 3,fill:"red" },
+    
+  ]
   console.log("afsefsef");
   return (
     <div className="App">
@@ -41,6 +48,7 @@ function App(): JSX.Element {
       }
      
      <BarChart metrics = {["m1","m2"]} />
+     <GroupTest data ={test}/>
      
       
       
