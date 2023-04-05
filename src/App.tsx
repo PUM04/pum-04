@@ -4,6 +4,11 @@
 
 import React from 'react';
 import Menu from './components/Menu';
+import Box from '@mui/material/Box';
+import { GraphComponent, InfoboxComponent } from './components/BaseComponent';
+import Example from './components/example';
+import Drawer from '@mui/material/Drawer';
+import { styled, useTheme } from '@mui/material/styles';
 import './App.css';
 
 /**
@@ -12,13 +17,17 @@ import './App.css';
  * @returns top level component
  */
 function App(): JSX.Element {
+
+
+
+
   return (
   <div className="App">
       <Box sx={{ display: 'flex' }}>
-        <CssBaseline />
           <Menu />
-          <Box
-            sx={{
+                    
+        <Box
+          sx={{
               flexDirection: 'column',
               display: 'inline-flex',
               backgroundColor: 'grey',
@@ -26,11 +35,11 @@ function App(): JSX.Element {
           >
             <GraphComponent />
             <InfoboxComponent />
-          </Box>
-          <Example />
-          <p>Hejsan</p>        
         </Box>
-    </div>
+      </Box>
+      <Example />
+      <p>Hejsan</p>                     
+      </div> 
   );
 }
 

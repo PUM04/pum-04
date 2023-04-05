@@ -11,9 +11,7 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import Example from './example';
 import DragAndDropzone from './DragAndDropzone';
-import { GraphComponent, InfoboxComponent } from './BaseComponent';
 import Dropdown from './Dropdown';
 import '../App.css';
 
@@ -102,7 +100,8 @@ export default function Menu() {
   };
 
   return (
-    
+      <div>
+        <CssBaseline />
         <AppBar position="fixed" open={open}>
           <DrawerHeader>
             <p>S.and.A.H.L</p>
@@ -154,7 +153,9 @@ export default function Menu() {
             <DragAndDropzone setter={setFiles} value={files} />
           </div>
         </Drawer>
-        <Main open={open}>
-          <DrawerHeader />          
+              <Main open={open}>
+          <DrawerHeader />
+          </Main>              
+        </div>
   );
 }
