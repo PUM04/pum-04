@@ -11,9 +11,7 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import Example from './example';
 import DragAndDropzone from './DragAndDropzone';
-import { GraphComponent, InfoboxComponent } from './BaseComponent';
 import Dropdown from './Dropdown';
 import '../App.css';
 
@@ -102,8 +100,7 @@ export default function Menu() {
   };
 
   return (
-     <div className="App">
-      <Box sx={{ display: 'flex' }}>
+      <div>
         <CssBaseline />
         <AppBar position="fixed" open={open}>
           <DrawerHeader>
@@ -156,23 +153,9 @@ export default function Menu() {
             <DragAndDropzone setter={setFiles} value={files} />
           </div>
         </Drawer>
-        <Main open={open}>
+              <Main open={open}>
           <DrawerHeader />
-              
-         <Box
-            sx={{
-              flexDirection: 'column',
-              display: 'inline-flex',
-              backgroundColor: 'grey',
-            }}
-          >
-            <GraphComponent />
-            <InfoboxComponent />
-          </Box>              
-          <Example />          
-          <p>Hejsan</p>        
-          </Main>
-        </Box>
-    </div>
+          </Main>              
+        </div>
   );
 }
