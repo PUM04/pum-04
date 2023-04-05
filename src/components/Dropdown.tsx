@@ -85,7 +85,7 @@ export default function Dropdown(props: dropdownProps): JSX.Element {
         justifyContent: 'center',
         '& > :not(style)': {
           m: 1,
-          width: 128,
+          width: 1,
           height: 1,
         },
       }}
@@ -101,7 +101,7 @@ export default function Dropdown(props: dropdownProps): JSX.Element {
         <ListItemText primary={dropdownName} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
-      <Collapse in={open} timeout="auto" unmountOnExit>
+      <Collapse in={open} timeout={10} unmountOnExit>
         <List component="div" disablePadding>
           {content.map(({ item, selected }) => (
             <ListItemButton>
