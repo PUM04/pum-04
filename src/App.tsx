@@ -12,7 +12,26 @@ import './App.css';
  * @returns top level component
  */
 function App(): JSX.Element {
-  return <Menu />;
+  return (
+  <div className="App">
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+          <Menu />
+          <Box
+            sx={{
+              flexDirection: 'column',
+              display: 'inline-flex',
+              backgroundColor: 'grey',
+            }}
+          >
+            <GraphComponent />
+            <InfoboxComponent />
+          </Box>
+          <Example />
+          <p>Hejsan</p>        
+        </Box>
+    </div>
+  );
 }
 
 export default App;
