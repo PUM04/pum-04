@@ -118,7 +118,7 @@ export default function Menu() {
         </AppBar>
         <Drawer
           sx={{
-            width: '5%',
+            width: '0%',
             flexShrink: 0,
             '& .MuiDrawer-paper': {
               width: drawerWidth,
