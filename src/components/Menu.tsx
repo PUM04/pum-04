@@ -102,7 +102,9 @@ export default function Menu() {
   };
 
   return (
-    
+     <div className="App">
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
         <AppBar position="fixed" open={open}>
           <DrawerHeader>
             <p>S.and.A.H.L</p>
@@ -155,6 +157,22 @@ export default function Menu() {
           </div>
         </Drawer>
         <Main open={open}>
-          <DrawerHeader />          
+          <DrawerHeader />
+              
+         <Box
+            sx={{
+              flexDirection: 'column',
+              display: 'inline-flex',
+              backgroundColor: 'grey',
+            }}
+          >
+            <GraphComponent />
+            <InfoboxComponent />
+          </Box>              
+          <Example />          
+          <p>Hejsan</p>        
+          </Main>
+        </Box>
+    </div>
   );
 }
