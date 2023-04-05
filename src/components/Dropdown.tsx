@@ -20,18 +20,18 @@ import Checkbox from '@mui/material/Checkbox';
  * @param props dropdownProps - name of dropdown and name of items in dropdown
  * @returns a dropdop component designed for menu
  */
-export default function Dropdown(props:dropdownProps) {
-  const{ dropdownName, value: givenItems } = props;
+export default function Dropdown(props: dropdownProps): JSX.Element {
+  const { dropdownName, value: givenItems } = props;
   // Items to display, should not be here in final code, but should be given as a parameter.
-  //const dropdownName = "Metrics"
-  //const givenItems = ['metric_1', 'metric_2', 'metric_3'];
-  
+  // const dropdownName = "Metrics"
+  // const givenItems = ['metric_1', 'metric_2', 'metric_3'];
+
   // extract items from given items and mark as selected.
-  const extractedItems = []
-  givenItems.forEach((Item) => {
-    extractedItems.push({ item: Item, selected: true })
-  })
-  
+  const extractedItems: any[] | (() => any[]) = [];
+  givenItems.forEach((Item: any) => {
+    extractedItems.push({ item: Item, selected: true });
+  });
+
   // should probably have some params for setting the content
   const [open, setOpen] = React.useState(true);
   const [content, setContent] = React.useState(extractedItems);
@@ -42,16 +42,23 @@ export default function Dropdown(props:dropdownProps) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
     setOpen(open);
-    const newContent = [...content];
+    const newContent: React.SetStateAction<any[]> = [];
     // controlls the sub-checkboxes with the main checkbox
-      // ERROR: Assignment to property of function parameter 'contentItem', needs to be fixed
+    // ERROR: Assignment to property of function parameter 'contentItem', needs to be fixed
+
     if (checked) {
-      newContent.forEach((contentItem) => {
-        contentItem.selected = false;
+      content.forEach((contentItem) => {
+        const item = { ...contentItem };
+        item.selected = false;
+        // contentItem.selected = false;
+        newContent.push(item);
       });
     } else {
-      newContent.forEach((contentItem) => {
-        contentItem.selected = true;
+      content.forEach((contentItem) => {
+        const item = { ...contentItem };
+        item.selected = true;
+        // contentItem.selected = false;
+        newContent.push(item);
       });
     }
     setContent(newContent);
@@ -63,9 +70,9 @@ export default function Dropdown(props:dropdownProps) {
     if (item != null) item.selected = !item.selected;
     setContent(newContent);
     // controlls the main checkbox with the sub-checkboxes
-    let anyChecked = false;
+    let anyChecked = true;
     content.forEach((contentItem) => {
-      if (contentItem.selected) anyChecked = true;
+      if (!contentItem.selected) anyChecked = false;
     });
     setChecked(anyChecked);
   };

@@ -140,10 +140,16 @@ export default function Menu() {
           </DrawerHeader>
           <Divider />
           <Divider />
-          <div>  
-            /*value should not be hardcoded here in final version*/
-            <Dropdown dropdownName={"Sites"} value={['site_1', 'site_2', 'site_3']} />
-            <Dropdown dropdownName={"Metrics"} value={['metric_1', 'metric_2', 'metric_3']} />
+          <div>
+            [/*value should not be hardcoded here in final version*/]
+            <Dropdown
+              dropdownName="Sites"
+              value={['site_1', 'site_2', 'site_3']}
+            />
+            <Dropdown
+              dropdownName="Metrics"
+              value={['metric_1', 'metric_2', 'metric_3']}
+            />
           </div>
           <div>
             <p>Uploaded files: {JSON.stringify(files)}</p>
