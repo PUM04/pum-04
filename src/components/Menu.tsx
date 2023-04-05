@@ -11,7 +11,7 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import Example from './example';
+import Example from './Example';
 import DragAndDropzone from './DragAndDropzone';
 import { GraphComponent, InfoboxComponent } from './BaseComponent';
 import '../App.css';
