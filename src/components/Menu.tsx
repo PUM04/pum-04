@@ -11,10 +11,10 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+
 import Paper from '@mui/material/Paper';
-import Example from './Example';
+
 import DragAndDropzone from './DragAndDropzone';
-import { GraphComponent, InfoboxComponent } from './BaseComponent';
 import Dropdown from './Dropdown';
 import '../App.css';
 
@@ -148,9 +148,9 @@ export default function Menu() {
           elevation={1}
           style={{
             overflow: 'auto',
-              maxHeight: '70vh',
-              position: 'fixed',
-              top: size + 5,
+            maxHeight: '70vh',
+            position: 'fixed',
+            top: size + 5,
             left: 5,
             width: drawerWidth - 10,
           }}
@@ -172,19 +172,6 @@ export default function Menu() {
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
-
-        <Box
-          sx={{
-            flexDirection: 'column',
-            display: 'inline-flex',
-            backgroundColor: 'grey',
-          }}
-        >
-          <GraphComponent />
-          <InfoboxComponent />
-        </Box>
-        <Example />
-        <p>Hejsan</p>
       </Main>
     </Box>
   );
