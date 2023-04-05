@@ -4,13 +4,12 @@
 import Box from '@mui/material/Box';
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import DragAndDropzone from './components/DragAndDropzone';
 import './App.css';
 import { GraphComponent, InfoboxComponent } from './components/basecomponent';
 import { useWasm } from './hooks/wasm';
 import CalculatorModule from './cpp/Calculator';
-import createSectraTheme from './components/SectraTheme';
+import CreateSectraTheme from './components/SectraTheme';
 
 /**
  * Top level component.
@@ -34,14 +33,13 @@ function App(): JSX.Element {
 
   // -------------------- FileReader example --------------------
   return (
-    <div className="App">
-      <createSectraTheme />
-      <ThemeProvider theme={createTheme()}>
+    <div className="App mui-theme">
+      <CreateSectraTheme>
         <Box
           sx={{
             flexDirection: 'column',
             display: 'inline-flex',
-            backgroundColor: 'grey',
+            backgroundColor: 'primary.light1',
           }}
         >
           <GraphComponent />
@@ -76,7 +74,7 @@ function App(): JSX.Element {
             count is {count}
           </Button>
         </div>
-      </ThemeProvider>
+      </CreateSectraTheme>
     </div>
   );
 }

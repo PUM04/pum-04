@@ -15,9 +15,9 @@ export function GraphComponent(): JSX.Element {
       sx={{
         flexDirection: 'column',
         display: 'inline-flex',
-        backgroundColor: 'primary.light',
+        backgroundColor: 'primary.light2',
         '&:hover': {
-          backgroundColor: 'primary.dark',
+          backgroundColor: 'primary.light1',
         },
       }}
     >
@@ -43,11 +43,13 @@ export function InfoboxComponent(): JSX.Element {
       sx={{
         flexDirection: 'row',
         display: 'inline-flex',
-        backgroundColor: 'primary.light',
+        backgroundColor: 'primary.main',
         flexWrap: 'wrap',
+        color: 'secondary.main',
         justifyContent: 'space-evenly',
         '&:hover': {
-          backgroundColor: 'primary.main',
+          backgroundColor: 'primary.light1',
+          color: 'primary.dark',
         },
       }}
     >

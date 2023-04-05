@@ -11,6 +11,7 @@
   --light:"FFFFFF";
   --darkSoft:"FF7B30";*/		
   /* --lightSoft:"7AAADA";
+  --accent1:"004688";	
   --accent2:"7AAADA";	
   --accent3:"AECDEB";	
   --accent4:"D2E0FA";	
@@ -20,12 +21,15 @@
   --fohlink:"0D549E";	
   --test: "#F00";	 */
 
+
+
+
+
+
+
   /* --light: '#DEE8FA';
   --main: '#AECDEB';
   --dark: '#004688'; */
-  color: var(--light);
-  color: var(--main);
-  color: var(--dark);
 
 
   font-synthesis: none;

@@ -36,7 +36,13 @@ export default function DragAndDropzone(props: DropzoneProps) {
             <input {...getInputProps()} />
             <Box
               component="span"
-              sx={{ p: 2, border: '1px dashed grey' }}
+              sx={{
+                p: 2,
+                border: '1px dashed',
+                borderColor: 'primary.main',
+                color: 'primary.main',
+                backgroundColor: 'primary.light3',
+              }}
               style={{
                 display: 'flex',
                 justifyContent: 'center',
