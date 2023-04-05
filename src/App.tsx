@@ -4,13 +4,13 @@
 import Box from '@mui/material/Box';
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import DragAndDropzone from './components/DragAndDropzone';
 import './App.css';
 import { GraphComponent, InfoboxComponent } from './components/basecomponent';
 import { useWasm } from './hooks/wasm';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CalculatorModule from './cpp/Calculator';
-import createSectraTheme  from './components/SectraTheme';
+import createSectraTheme from './components/SectraTheme';
 
 /**
  * Top level component.
@@ -21,7 +21,6 @@ function App(): JSX.Element {
   const [count, setCount] = useState(0);
   const [files, setFiles] = useState<File[]>([]);
 
-  const theme = createSectraTheme();
   const calcModule = useWasm(CalculatorModule);
   // -------------------- FileReader example --------------------
   const filereader = new FileReader();
@@ -36,17 +35,18 @@ function App(): JSX.Element {
   // -------------------- FileReader example --------------------
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
-          <Box
-            sx={{
-              flexDirection: 'column',
-              display: 'inline-flex',
-              backgroundColor: 'grey',
-            }}
-          >
-              <GraphComponent />
-              <InfoboxComponent />
-          </Box>
+      <createSectraTheme />
+      <ThemeProvider theme={createTheme()}>
+        <Box
+          sx={{
+            flexDirection: 'column',
+            display: 'inline-flex',
+            backgroundColor: 'grey',
+          }}
+        >
+          <GraphComponent />
+          <InfoboxComponent />
+        </Box>
         <div>
           <p>Uploaded files: {JSON.stringify(files)}</p>
           <DragAndDropzone setter={setFiles} value={files} />
@@ -76,7 +76,7 @@ function App(): JSX.Element {
             count is {count}
           </Button>
         </div>
-      </ThemeProvider >
+      </ThemeProvider>
     </div>
   );
 }

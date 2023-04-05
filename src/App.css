@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+/* Definition for sectra theme used by themeprovider*/
+.mui-theme{
+  --light: '#DEE8FA';
+  --main: '#AECDEB',
+  --dark: '#004688',
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
