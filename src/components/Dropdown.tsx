@@ -17,16 +17,24 @@ import Checkbox from '@mui/material/Checkbox';
 /**
  * Dropdown-menu with checkboxes for dynamic content
  *
+ * @param props dropdownProps - name of dropdown and name of items in dropdown
  * @returns a dropdop component designed for menu
  */
-export default function Dropdown() {
+export default function Dropdown(props:dropdownProps) {
+  const{ dropdownName, value: givenItems } = props;
+  // Items to display, should not be here in final code, but should be given as a parameter.
+  //const dropdownName = "Metrics"
+  //const givenItems = ['metric_1', 'metric_2', 'metric_3'];
+  
+  // extract items from given items and mark as selected.
+  const extractedItems = []
+  givenItems.forEach((Item) => {
+    extractedItems.push({ item: Item, selected: true })
+  })
+  
   // should probably have some params for setting the content
   const [open, setOpen] = React.useState(true);
-  const [content, setContent] = React.useState([
-    { metric: 'metric_1', selected: true },
-    { metric: 'metric_2', selected: true },
-    { metric: 'metric_3', selected: true },
-  ]); // Just an examplesStructure of how metric might be stored. should not be in final code
+  const [content, setContent] = React.useState(extractedItems);
   const [checked, setChecked] = React.useState(true);
   const handleClick = () => {
     setOpen(!open);
@@ -51,7 +59,7 @@ export default function Dropdown() {
   const contentClick = (event: React.ChangeEvent<HTMLInputElement>) => {
     // Sets the corresponding checkbox to it opposite value
     const newContent = [...content];
-    const item = newContent.find((a) => a.metric === event.target.name);
+    const item = newContent.find((a) => a.item === event.target.name);
     if (item != null) item.selected = !item.selected;
     setContent(newContent);
     // controlls the main checkbox with the sub-checkboxes
@@ -83,21 +91,21 @@ export default function Dropdown() {
             inputProps={{ 'aria-label': 'controlled' }}
           />
         </ListItemIcon>
-        <ListItemText primary="Metrics" />
+        <ListItemText primary={dropdownName} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
-          {content.map(({ metric, selected }) => (
+          {content.map(({ item, selected }) => (
             <ListItemButton>
               <ListItemIcon>
                 <Checkbox
                   checked={selected}
                   onChange={contentClick}
-                  name={metric}
+                  name={item}
                 />
               </ListItemIcon>
-              <ListItemText primary={metric} />
+              <ListItemText primary={item} />
             </ListItemButton>
           ))}
         </List>

@@ -140,9 +140,10 @@ export default function Menu() {
           </DrawerHeader>
           <Divider />
           <Divider />
-          <div>
-            <p>dropdown, snälla...</p>
-            <Dropdown />
+          <div>  
+            /*value should not be hardcoded here in final version*/
+            <Dropdown dropdownName={"Sites"} value={['site_1', 'site_2', 'site_3']} />
+            <Dropdown dropdownName={"Metrics"} value={['metric_1', 'metric_2', 'metric_3']} />
           </div>
           <div>
             <p>Uploaded files: {JSON.stringify(files)}</p>
@@ -164,7 +165,7 @@ export default function Menu() {
           </Box>
 
           <Example />
-          <p>Hej</p>
+          <p>Hejsan</p>
         </Main>
       </Box>
     </div>
