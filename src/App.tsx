@@ -2,8 +2,9 @@
  * @file Contains the App top level component.
  */
 import Box from '@mui/material/Box';
+import AppBar from '@mui/material/AppBar';
 import Container from '@mui/material/Container';
-import { positions } from '@mui/systems';
+import { positions, sizing } from '@mui/systems';
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import DragAndDropzone from './components/DragAndDropzone';
@@ -36,27 +37,28 @@ function App(): JSX.Element {
   // -------------------- FileReader example --------------------
   return (
     <div className="App">
-      <div className="grid-container">
-        <Container
+      <Box
+        sx={{
+          flexDirection: 'column',
+          display: 'inline-flex',
+          backgroundColor: 'grey',
+        }}
+      >
+        <AppBar
           sx={{
-            position: 'fixed',
-            backgroundColor: 'red',
+            flexDirection: 'row',
+            justifyContent: 'space-evenly',
+            padding: '1rem',
           }}
         >
-          Legends
-        </Container>
-        {/* meny? kan ta bort */}
-        <Box
-          sx={{
-            flexDirection: 'column',
-            display: 'inline-flex',
-            backgroundColor: 'grey',
-          }}
-        >
-          <GraphComponent />
-          <InfoboxComponent />
-        </Box>
-      </div>
+          <div>Legends</div>
+          <div>Legends</div>
+          <div>Legends</div>
+          <div>Legends</div>
+        </AppBar>
+        <GraphComponent />
+        <InfoboxComponent />
+      </Box>
       {/* 
       Everything under here test webassembly and will not stay till final product 
       */}
