@@ -30,6 +30,54 @@ export function GraphComponent(): JSX.Element {
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
     </Box>
   );
 }
