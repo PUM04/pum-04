@@ -37,7 +37,7 @@ declare module '@mui/material/styles' {
 export default function CreateSectraTheme(props: any): JSX.Element {
   const { children } = props;
   const muiTheme = document.querySelector('.mui-theme');
-
+  console.log('tja');
   if (!muiTheme) {
     const theme = createTheme({
       palette: {

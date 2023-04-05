@@ -42,6 +42,7 @@ export default function DragAndDropzone(props: DropzoneProps) {
                 borderColor: 'primary.main',
                 color: 'primary.main',
                 backgroundColor: 'primary.light3',
+                borderRadius: '10px',
               }}
               style={{
                 display: 'flex',
