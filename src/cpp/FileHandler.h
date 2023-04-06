@@ -74,6 +74,8 @@ private:
     void parse_content(std::string &fileContent, std::regex &regex, std::vector<std::string> &result) const;
 
     json get_performance_json(std::string &content) const;
+
+    void splitString(std::string &s, std::string &delim, std::vector<std::string>) const;
 };
 
 using namespace emscripten;

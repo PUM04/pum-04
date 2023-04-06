@@ -3,6 +3,8 @@
 #include <vector>
 #include <regex>
 #include "nlohmann/json.h"
+#include <ctime>
+#include <sstream>
 
 #define DEBUG
 
@@ -48,16 +50,6 @@ void FileHandler::compute_files() {
     #endif
 }
 
-void FileHandler::parse_content(std::string &fileContent, std::regex &regex, std::vector<std::string> &result) const {
-    //std::regex methodName("[A-z]+(?=\",le=)");
-    //std::regex bucket("([0-9]+|+Inf)(?=\"})"); //both seem to work
-    for(std::sregex_iterator it = std::sregex_iterator(fileContent.begin(), fileContent.end(), regex);
-                            it != std::sregex_iterator();
-                            ++it) {
-        result.push_back(it->str());
-    }
-}
-
 std::string FileHandler::get_file_ending(std::string &file_name) const {
     return file_name.substr(file_name.find(".") + 1);
 }
@@ -84,14 +76,35 @@ json FileHandler::get_performance_json(std::string &content) const {
     std::vector<std::string> methods;
     std::vector<std::string> buckets;
 
-    std::regex method_name("[A-z]+(?=\",le=)");
-    //std::regex bucket("([0-9]+|+Inf)(?=\"})"); 
+    std::istringstream content_stream(content);
+    std::string line;
 
-    parse_content(content, method_name, methods);
-    //parse_content(content, bucket, buckets);
+    json performance;
 
-    return {{"a", 1}};
+    // TODO: Clean this up
+    while(std::getline(content_stream, line)) {
+        if (line.find(",le=") != std::string::npos) {
+            size_t start = line.find("\"");
+            size_t end = line.find("\"", start + 1);
+            std::string method = line.substr(start + 1, end - start - 1);
+
+            start = line.find("\"", end + 1);
+            end = line.find("\"", start + 1);
+            std::string length = line.substr(start + 1, end - start - 1);
+
+            start = line.find(" ");
+            std::string count = line.substr(start);
+            std::cout << method << " " << length << " " << count << std::endl;
+
+            performance["method"] = method; 
+            performance[method]["length"] += length;
+            performance[method]["count"] += count;
+        }
+    }
+
+    return performance;
 }
+
 
 void FileHandler::add_performance_file(std::string &file, std::string &file_name) {
     std::string site_id = get_id_from_performance(file_name);
