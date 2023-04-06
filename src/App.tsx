@@ -111,53 +111,6 @@ function App(): JSX.Element {
         >
           Extract metrics
         </Button>
-        <Button
-          color="primary"
-          type="button"
-          onClick={() => {
-            const start = new Date().getTime();
-
-
-            let newRegex = /(?<={method=")\w*/g; //fuck I hate RegEx I hope this works
-            let metrics: Map<String,Map<number,number>> = new Map<String,Map<number,number>>();
-
-            // this will then display a text file
-            let text = filereader.result as string;
-            let lines = text.split('\n');
-            lines.forEach(element => {
-              if(element.includes("{method=\"")){
-                //console.log(element);
-                //let metricName = element.substring(element.search(regexStart),element.search(regexEnd))
-                let match = element.match(newRegex);
-                if (match !== null) {
-                  let metricName = match[0];
-                  let metricStats = new Map<number,number>();
-                  if(metricName!=""){
-                    //console.log(metricName);
-                    //console.log(metricStats);
-                    metrics.set(metricName,metricStats);
-                  }
-                  //add entries to metricStats
-                }
-              }
-            });
-            let elapsed = new Date().getTime() - start;
-            console.log("Time taken: "+elapsed + "ms");
-            if(metrics.size != 0){
-              console.log("Info in file!");
-              console.log(metrics);
-              metrics.forEach(element => {
-                console.log(metrics.keys);
-              });
-            }
-            else{
-              console.log("No info in file! :(")
-            }
-            
-          }}
-        >
-          REGEX TEST
-        </Button>
         <Button color="primary" type="button">
           Just a visual MUI button
         </Button>

@@ -94,11 +94,10 @@ json FileHandler::get_performance_json(std::string &content) const {
 
             start = line.find(" ");
             std::string count = line.substr(start);
-            std::cout << method << " " << length << " " << count << std::endl;
 
             performance["method"] = method; 
             performance[method]["length"] += length;
-            performance[method]["count"] += count;
+            performance[method]["count"] += count; //TODO: take last element minus this
         }
     }
 
@@ -113,13 +112,9 @@ void FileHandler::add_performance_file(std::string &file, std::string &file_name
     // TODO: Parse and add the real data
 
     if (sites.find(site_id) != sites.end()) {
-        json test = {
-            {"a", 1},
-            {"b", 2}
-        };
-        get_performance_json(file);
+        json performance = get_performance_json(file);
 
-        sites[site_id].logs.insert(test);
+        sites[site_id].logs.insert(performance);
 
         #ifdef DEBUG
         std::cout << "Linked log " << file_name << " to " << site_id << "." << std::endl;
