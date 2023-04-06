@@ -41,19 +41,16 @@ void FileHandler::compute_files() {
     }
 }
 
-//add to header? TODO: try to run
 
 
-bool FileHandler::regExFromString(std::string &fileContent,std::regex &regex){
+void FileHandler::parse_content(std::string &fileContent, std::regex &regex, std::vector<std::string> &result) const {
     //std::regex methodName("[A-z]+(?=\",le=)");
     //std::regex bucket("([0-9]+|+Inf)(?=\"})"); //both seem to work
-    for(std::sregex_iterator i = std::sregex_iterator(fileContent.begin(), fileContent.end(), regex);
-                            i != std::sregex_iterator();
-                            ++i)
-    {
-        std::cout << i->str(1)  << std::endl;
+    for(std::sregex_iterator it = std::sregex_iterator(fileContent.begin(), fileContent.end(), regex);
+                            it != std::sregex_iterator();
+                            ++it) {
+        result.push_back(it->str());
     }
-    return 1;
 }
 
 std::string FileHandler::get_file_ending(std::string &file_name) const {

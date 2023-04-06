@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <emscripten/bind.h>
 #include "nlohmann/json.h"
+#include <regex>
 
 using json = nlohmann::json;
 
@@ -69,8 +70,7 @@ private:
      * @return std::string 
      */
     std::string get_id_from_performance(std::string &file_name) const;
-    bool getMetricMethodNames(std::string &fileContent);
-    
+    void parse_content(std::string &fileContent, std::regex &regex, std::vector<std::string> &result) const;
 };
 
 using namespace emscripten;

@@ -23,9 +23,11 @@ function App(): JSX.Element {
   const [count, setCount] = useState(0);
   const [files, setFiles] = useState<File[]>([]);
   const [fileHandler, setFileHandler] = useState();
+  const [filereader, setFileReader] = useState(new FileReader());
 
   const calcModule = useWasm(CalculatorModule);
   const fileHandlerModule = useWasm(FileHandlerModule);
+
 
   useEffect(() => {
     if (fileHandlerModule) {
@@ -33,22 +35,21 @@ function App(): JSX.Element {
     }
   },[fileHandlerModule]);
 
-  // -------------------- FileReader example --------------------
-  const filereader = new FileReader();
-
-  if (files.length > 0) {
-    filereader.readAsText(files[0]);
+  // Start reading the first file
+  if (files.length > 0 && filereader.readyState != FileReader.LOADING) {
+    filereader.readAsText(files[files.length - 1]);
   }
 
   filereader.onload = () => {
-    // TODO: Handle names (multiple files)
-    fileHandler.add_file(filereader.result as string, files[0].name);
-    /*
-    files.forEach(element => {
-      fileHandler.add_file(filereader.result as string, fileHandler.name);
-    });
-    */
-    //console.log(`file contents read: ${filereader.result}`);
+    // Send the file to the backend
+    fileHandler.add_file(filereader.result as string, files[files.length - 1].name);
+    files.pop();
+
+    // Continue reading the rest of the files
+    if (files.length > 0) {
+      filereader.readAsText(files[files.length - 1]);
+    }
+
   };
   filereader.onabort = () => console.log('file reading was aborted');
   filereader.onerror = () => console.log('file reading has failed');
@@ -104,41 +105,7 @@ function App(): JSX.Element {
           color="primary"
           type="button"
           onClick={() => {
-            let regexStart = /{method="/g;
-            let regexEnd = /{method="\w*/g;
-            let newRegex = /(?<={method=")\w*/g; //fuck I hate RegEx I hope this works
-            let metrics: Map<String,Map<number,number>> = new Map<String,Map<number,number>>();
             
-            // this will then display a text file
-            let text = filereader.result as string;
-            let lines = text.split('\n');
-            lines.forEach(element => {
-              if(element.includes("{method=\"")){
-                console.log(element);
-                //let metricName = element.substring(element.search(regexStart),element.search(regexEnd))
-                let match = element.match(newRegex);
-                if (match !== null) {
-                  let metricName = match[0];
-                  let metricStats = new Map<number,number>();
-                  if(metricName!=""){
-                    console.log(metricName);
-                    console.log(metricStats);
-                    metrics.set(metricName,metricStats);
-                  }
-                  //add entries to metricStats
-                }
-              }
-            });
-            if(metrics.size != 0){
-              console.log("Info in file!");
-              console.log(metrics);
-              metrics.forEach(element => {
-                console.log(metrics.keys);
-              });
-            }
-            else{
-              console.log("No info in file! :(")
-            }
             
           }}
         >
