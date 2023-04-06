@@ -47,8 +47,10 @@ function App(): JSX.Element {
      
       }
      
-     <BarChart metrics = {["m1","m2"]} />
-     <GroupTest data ={test}/>
+     <BarChart metrics = {["getPatient","getBucket"]} 
+     sites ={["stockholm","linköping","manchester","tokyo"]} />
+     <BoxPlotChart  metrics = {["getPatient","getBucket"]} 
+     sites ={["stockholm","linköping"]}/>
      
       
       
