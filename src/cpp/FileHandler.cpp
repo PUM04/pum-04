@@ -24,6 +24,9 @@ void FileHandler::add_file(std::string file, std::string file_name) {
     Get count for both metrics and methods: (?<={(metric|method)="\w*",le="(\d*|\+Inf)"} )\d*\n
     
     NEW IMPROVED: "(?<={(metric|method)=\")[_[:alnum:]]*(?=\",le=\"([[:digit:]]*|+Inf)\"} [[:digit:]]*\n)"
+
+     name: [A-z]+(?=\",le=)
+      ([0-9]+|+Inf)(?=\"})
     
     */
 }
@@ -41,11 +44,10 @@ void FileHandler::compute_files() {
 //add to header? TODO: try to run
 
 
-bool FileHandler::getMetricMethodNames(std::string &fileContent){
-    std::regex r("(?<={(metric|method)=\")[_[:alnum:]]*(?=\",le=\"([[:digit:]]*|+Inf)\"} [[:digit:]]*\n)");
-    std::string s = "NONE";
-    s = fileContent;
-    for(std::sregex_iterator i = std::sregex_iterator(s.begin(), s.end(), r);
+bool FileHandler::regExFromString(std::string &fileContent,std::regex &regex){
+    //std::regex methodName("[A-z]+(?=\",le=)");
+    //std::regex bucket("([0-9]+|+Inf)(?=\"})"); //both seem to work
+    for(std::sregex_iterator i = std::sregex_iterator(fileContent.begin(), fileContent.end(), regex);
                             i != std::sregex_iterator();
                             ++i)
     {
