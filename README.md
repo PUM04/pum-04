@@ -111,3 +111,66 @@ try using the network for the docker container instead
 docker inspect "CONTAINER ID"
 ```
 find the IPAddress for the container and enter "ip:port" in the webbrowser 
+
+## Testing the backend with Doctest
+### Writing tests
+Simply include ```#include "test_framework/doctest.h"``` in every file tests will be written in.
+A simple tutorial for writing tests can be found [here.](https://github.com/doctest/doctest/blob/master/doc/markdown/tutorial.md)
+
+### Build and run
+Emcc and node needs to be installed on the system to be able to build and run the tests.
+
+#### Run using the script (Linux)
+Simply navigate to the backend_test folder and run
+```bash
+./test_run.sh
+```
+Note that the script might need to be set as a runnable with
+```bash
+chmod +x test_run.sh
+```
+
+#### Run manually
+1. Navigate to the backend_test folder
+2. ```emcmake cmake .```
+3. ```emmake cmake --build .```
+4. Rename test_runner.js to test_runner.cjs (I'm looking for ways to circumvent this)
+5. ```node test_runner.cjs```
+   
+## Testing the frontend
+The tests run in GitHub Actions on each push to the repo.
+### Writing tests
+
+#### Jest
+Tests are written using the framework Jest.  
+Information about the Jest syntax can be found [here](https://jestjs.io/docs/using-matchers).  
+A testfile should be placed inside the `/src/test/unit` and `/src/test/integration` folders depending on the test level and have the name `<component-to-test>.test.tsx` or `<component-to-test>.test.ts`  
+Asset files are mocked since the functionality does not depend on them. 
+
+#### testing-library
+Testing-library can help when writing tests for React components, but it is not needed for testing functions that can run outside a component. 
+The library provides methods for getting elements from the DOM and perform simulated user events.  
+Information about querying the dom can be found [here](https://testing-library.com/docs/queries/about).  
+Information about user events can be found [here](https://testing-library.com/docs/user-event/intro#writing-tests-with-userevent).  
+
+### Running
+Dependencies needs to be installed, install with  
+`npm i`  
+
+Run all tests that contains the name "Component"  
+`npm run test <Component>`  
+or run all integration tests  
+`npm run test integration`
+
+Run all tests with  
+`npm run test`
+
+Watch files for changes and rerun tests related to changed files
+`npm run test:watch`
+
+Watch files for changes and rerun all tests when something changes
+`npm run test:watchAll`
+
+### Coverage
+Code coverage is collected for all tests. After each testrun a short report will be printed in the terminal.  
+To see a more detailed coverage report open the locally generated file `<project-root>/coverage/lcov-report/index.html` in a browser.
