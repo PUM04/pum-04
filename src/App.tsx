@@ -3,10 +3,10 @@
  */
 
 import React from 'react';
-import Box from '@mui/material/Box';
 import Menu from './components/Menu';
 import { GraphComponent, InfoboxComponent } from './components/BaseComponent';
 import Example from './components/Example';
+import Box from '@mui/material/Box';
 import './App.css';
 
 /**
