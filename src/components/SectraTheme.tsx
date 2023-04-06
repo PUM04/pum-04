@@ -56,32 +56,30 @@ export default function CreateSectraTheme(props: any): JSX.Element {
 
   useEffect(() => {
     const muiTheme = document.querySelector('.mui-theme');
-    console.log('tja');
     if (!muiTheme) {
-      setTheme(defaultTheme);
-    } else {
-      // Get styles from .mui-theme and create a theme from them to pass to the ThemeProvider
-      const style = getComputedStyle(muiTheme);
-      setTheme(
-        createTheme({
-          palette: {
-            primary: {
-              light: style.getPropertyValue('--primary-light'),
-              main: style.getPropertyValue('--primary-main'),
-              dark: style.getPropertyValue('--primary-dark'),
-              light1: style.getPropertyValue('--primary-light1'),
-              light2: style.getPropertyValue('--primary-light2'),
-              light3: style.getPropertyValue('--primary-light3'),
-              light4: style.getPropertyValue('--primary-light4'),
-            },
-            secondary: {
-              main: style.getPropertyValue('--secondary-main'),
-            },
-            gray: { main: style.getPropertyValue('--gray-main') },
-          },
-        })
-      );
+      return;
     }
+    // Get styles from .mui-theme and create a theme from them to pass to the ThemeProvider
+    const style = getComputedStyle(muiTheme);
+    setTheme(
+      createTheme({
+        palette: {
+          primary: {
+            light: style.getPropertyValue('--primary-light'),
+            main: style.getPropertyValue('--primary-main'),
+            dark: style.getPropertyValue('--primary-dark'),
+            light1: style.getPropertyValue('--primary-light1'),
+            light2: style.getPropertyValue('--primary-light2'),
+            light3: style.getPropertyValue('--primary-light3'),
+            light4: style.getPropertyValue('--primary-light4'),
+          },
+          secondary: {
+            main: style.getPropertyValue('--secondary-main'),
+          },
+          gray: { main: style.getPropertyValue('--gray-main') },
+        },
+      })
+    );
   }, [children]);
 
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
