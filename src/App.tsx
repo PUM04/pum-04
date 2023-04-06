@@ -1,8 +1,9 @@
 /**
  * @file Contains the App top level component.
  */
-import React from 'react';
 
+import React from 'react';
+import Menu from './components/Menu';
 import './App.css';
 
 import { BoxPlotChart, BarChart, HistChart,GroupTest } from './components/Charts';
