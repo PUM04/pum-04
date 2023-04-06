@@ -10,9 +10,9 @@ void FileHandler::add_file(std::string file, std::string file_name) {
     std::string file_ending = get_file_ending(file_name);
 
     if (file_ending == "txt") {
-        performance_files.push_back({file, file_name});
+        performance_files.push_back({file_name, file});
     } else if (file_ending == "json") {
-        host_files.push_back({file, file_name});
+        host_files.push_back({file_name, file});
     }
 
     #ifdef DEBUG
@@ -39,9 +39,14 @@ void FileHandler::compute_files() {
     for (auto file : performance_files) {
         add_performance_file(file.file, file.name);
     }
+
+    host_files = {};
+    performance_files = {};
+
+    #ifdef DEBUG
+    std::cout << "Linked the host and performance files." << std::endl;
+    #endif
 }
-
-
 
 void FileHandler::parse_content(std::string &fileContent, std::regex &regex, std::vector<std::string> &result) const {
     //std::regex methodName("[A-z]+(?=\",le=)");
@@ -58,12 +63,12 @@ std::string FileHandler::get_file_ending(std::string &file_name) const {
 }
 
 void FileHandler::add_host_file(std::string &file) {
-    json hosts= json::parse(file);
+    json hosts = json::parse(file);
     std::string site_id = hosts["site_id"];
 
     // Add the site if it does not already exist
     if (sites.find(site_id) == sites.end()) {
-        sites["site_id"] = {site_id, {}};
+        sites[site_id] = {hosts, {}};
 
         #ifdef DEBUG
         std::cout << "Added site with id " << site_id << "." << std::endl;
@@ -75,17 +80,38 @@ void FileHandler::add_host_file(std::string &file) {
     }
 }
 
+json FileHandler::get_performance_json(std::string &content) const {
+    std::vector<std::string> methods;
+    std::vector<std::string> buckets;
+
+    std::regex method_name("[A-z]+(?=\",le=)");
+    //std::regex bucket("([0-9]+|+Inf)(?=\"})"); 
+
+    parse_content(content, method_name, methods);
+    //parse_content(content, bucket, buckets);
+
+    return {{"a", 1}};
+}
+
 void FileHandler::add_performance_file(std::string &file, std::string &file_name) {
     std::string site_id = get_id_from_performance(file_name);
 
     // Add the host to the corresponding site if it exists
     // TODO: Parse and add the real data
+
     if (sites.find(site_id) != sites.end()) {
         json test = {
             {"a", 1},
             {"b", 2}
         };
-        sites[site_id].hosts.push_back(test);
+        get_performance_json(file);
+
+        sites[site_id].logs.insert(test);
+
+        #ifdef DEBUG
+        std::cout << "Linked log " << file_name << " to " << site_id << "." << std::endl;
+        #endif
+
     } else {
         #ifdef DEBUG
         std::cout << "The site with id " << site_id << " does not exist." << std::endl;

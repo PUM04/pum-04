@@ -6,12 +6,13 @@
 #include <emscripten/bind.h>
 #include "nlohmann/json.h"
 #include <regex>
+#include <set>
 
 using json = nlohmann::json;
 
 struct Site {
     json hosts;
-    std::vector<json> logs;
+    std::set<json> logs;
 };
 
 struct LoadedFile {
@@ -71,11 +72,14 @@ private:
      */
     std::string get_id_from_performance(std::string &file_name) const;
     void parse_content(std::string &fileContent, std::regex &regex, std::vector<std::string> &result) const;
+
+    json get_performance_json(std::string &content) const;
 };
 
 using namespace emscripten;
 EMSCRIPTEN_BINDINGS(file_handler) {
     class_<FileHandler>("FileHandler")
         .constructor()
-        .function("add_file", &FileHandler::add_file);
+        .function("add_file", &FileHandler::add_file)
+        .function("compute_files", &FileHandler::compute_files);
 }
