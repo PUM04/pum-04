@@ -4,7 +4,9 @@
 import React, { useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import Drawer from '@mui/material/Drawer';
+import Typography from '@mui/material/Typography';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Divider from '@mui/material/Divider';
@@ -15,8 +17,8 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Example from './example';
 import DragAndDropzone from './DragAndDropzone';
 import { GraphComponent, InfoboxComponent } from './BaseComponent';
+import { renderLegends } from './Legends';
 import '../App.css';
-import { Toolbar } from '@mui/material';
 
 const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
@@ -114,56 +116,7 @@ export default function Menu() {
             >
               <MenuIcon />
             </IconButton>
-            <Box
-              sx={{
-                justifyContent: 'space-evenly',
-                display: 'inline-flex',
-                flexDirection: 'row',
-                width: '100vW',
-                flexWrap: 'wrap',
-              }}
-            >
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-              <div>Legends</div>
-            </Box>
+            renderLegends( <Legend color="red" name="Legend 1" />)
           </DrawerHeader>
         </AppBar>
         <Drawer

@@ -26,7 +26,7 @@ export function GraphComponent(): JSX.Element {
       <Box>
         {' '}
         Put graphs
-        hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee!
+        hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee!
       </Box>
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
