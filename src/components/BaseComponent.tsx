@@ -23,6 +23,34 @@ export function GraphComponent(): JSX.Element {
         },
       }}
     >
+      <Box>
+        {' '}
+        Put graphs
+        hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee!
+      </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
+      <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
