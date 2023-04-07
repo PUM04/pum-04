@@ -106,7 +106,7 @@ function App(): JSX.Element {
           type="button"
           onClick={() => {
             fileHandler.compute_files();
-            
+            fileHandler.get_box_diagram("b4eb0");            
           }}
         >
           Extract metrics

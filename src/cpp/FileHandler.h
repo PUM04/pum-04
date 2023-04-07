@@ -36,10 +36,26 @@ public:
      */
     void compute_files();
 
+    /**
+     * @brief Get the box diagram for a given site
+     *
+     * @param site_id The site id 
+     */
+    void get_box_diagram(std::string site_id) const;
+
 private:
     std::unordered_map<std::string, struct Site> sites;
     std::vector<struct LoadedFile> host_files; 
     std::vector<struct LoadedFile> performance_files; 
+
+    /**
+     * @brief Merge all of the log files with each other on category
+     *
+     * @param site The current site
+     * @param key The category
+     * @param box_diagram The json file for saving the result
+     */
+    void merge_category(struct Site &site, std::string key, json &box_diagram) const;
 
     /**
      * @brief Get the file type, e.g. the part after the last dot
@@ -83,5 +99,6 @@ EMSCRIPTEN_BINDINGS(file_handler) {
     class_<FileHandler>("FileHandler")
         .constructor()
         .function("add_file", &FileHandler::add_file)
-        .function("compute_files", &FileHandler::compute_files);
+        .function("compute_files", &FileHandler::compute_files)
+        .function("get_box_diagram", &FileHandler::get_box_diagram);
 }
