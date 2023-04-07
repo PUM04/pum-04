@@ -55,7 +55,10 @@ private:
      * @param key The category
      * @param box_diagram The json file for saving the result
      */
-    void merge_category(struct Site &site, std::string key, json &box_diagram) const;
+    void merge_category(struct Site &site, std::string key, json &result) const;
+
+    int get_average_from_json(json &category) const;
+    int get_median_from_json(json &category) const;
 
     /**
      * @brief Get the file type, e.g. the part after the last dot

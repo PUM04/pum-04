@@ -61,42 +61,89 @@ void FileHandler::get_box_diagram(std::string site_id) const {
     }
 
     struct Site site = sites.at(site_id);
-    json box_diagram = {};
+    json categories;
+    json box_diagram;
 
     // Populate with the different categories
     for (json log: site.logs) {
         for (auto &el : log.items()) {
-            box_diagram[el.key()] = {};
+            categories[el.key()] = {};
         }
     }
 
-    for (auto &el : box_diagram.items()) {
-        merge_category(site, el.key(), box_diagram);
+    for (auto &el : categories.items()) {
+        merge_category(site, el.key(), categories);
     }
+
+    for (auto &el : categories.items()) {
+        box_diagram[el.key()]["average"] = get_average_from_category(el.value());
+        box_diagram[el.key()]["median"] = get_median_from_category(el.value());
+    }
+    std::cout << box_diagram << std::endl;
 }
 
-void FileHandler::merge_category(struct Site &site, std::string key, json &box_diagram) const {
+int FileHandler::get_average_from_json(json &category) const {
+    int sum = 0;
+
+    for (auto pair : category["data"]) {
+        // Do not count the infinte length because it will skew the results
+        if ((int) pair["length"] == std::numeric_limits<int>::max()) {
+            continue;
+        }
+
+        sum += (int) pair["length"] * (int) pair["count"];
+    }
+    return sum / ((int) category["total"]);
+}
+
+int FileHandler::get_median_from_json(json &category) const {
+    const int total = (int) category["total"];
+    int sum = 0;
+
+    for (auto pair : category["data"]) {
+        sum += (int) pair["count"];
+
+        if (sum >= total / 2) {
+            return (int) pair["length"];
+        }
+    }
+    return 0;
+}
+
+void FileHandler::merge_category(struct Site &site, std::string key, json &result) const {
     for (json log : site.logs) {
         json category = log[key];
 
-        box_diagram[key] = {};
+        result[key] = {};
 
         auto count_it = category["count"].begin();
-        auto count_end = category["count"].end();
+        const auto count_end = category["count"].end();
 
         auto length_it = category["length"].begin();
-        auto length_end = category["length"].end();
+        const auto length_end = category["length"].end();
 
         int last_count = 0;
+        // Maybe parse the sum instead of recalculating it here?
+        int sum = 0;
 
         // Hopefully unnecessary since they should be of the same length
+        // Calculate the real count from the aggregation
+        // Align the length to the count in pairs
         while(count_it != count_end && length_it != length_end) {
-            box_diagram[key] += {*length_it, (int) *count_it - last_count};
+            int new_count = (int) *count_it - last_count;
+
+            result[key]["data"] += {
+                {"length", *length_it}, 
+                {"count", new_count}
+            };
 
             last_count = (int) *count_it;
+            sum += new_count;
+            
             count_it++;
             length_it++;
         }
+        result[key]["total"] = sum;
     }
 }
 
