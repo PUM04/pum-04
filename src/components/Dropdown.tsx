@@ -22,11 +22,8 @@ import Checkbox from '@mui/material/Checkbox';
  */
 export default function Dropdown(props: dropdownProps): JSX.Element {
   const { dropdownName, value: givenItems } = props;
-  // Items to display, should not be here in final code, but should be given as a parameter.
-  // const dropdownName = "Metrics"
-  // const givenItems = ['metric_1', 'metric_2', 'metric_3'];
 
-  // extract items from given items and mark as selected.
+  // Extract items from given items and mark their checkboxes as checked.
   const extractedItems: any[] | (() => any[]) = [];
   givenItems.forEach((Item: any) => {
     extractedItems.push({ item: Item, selected: true });
@@ -36,6 +33,7 @@ export default function Dropdown(props: dropdownProps): JSX.Element {
   const [open, setOpen] = React.useState(true);
   const [content, setContent] = React.useState(extractedItems);
   const [checked, setChecked] = React.useState(true);
+  // If clicked on: open if closed and close if open.
   const handleClick = () => {
     setOpen(!open);
   };
@@ -47,29 +45,32 @@ export default function Dropdown(props: dropdownProps): JSX.Element {
     // ERROR: Assignment to property of function parameter 'contentItem', needs to be fixed
 
     if (checked) {
+      // If checkbox currently checked and gets clicked on, uncheck it.
       content.forEach((contentItem) => {
         const item = { ...contentItem };
         item.selected = false;
-        // contentItem.selected = false;
         newContent.push(item);
       });
     } else {
+      // If checkbox currently unchecked and gets clicked on, check it.
       content.forEach((contentItem) => {
         const item = { ...contentItem };
         item.selected = true;
-        // contentItem.selected = false;
         newContent.push(item);
       });
     }
     setContent(newContent);
   };
+  // When a sub-checkbox get clicked on.
   const contentClick = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // Sets the corresponding checkbox to it opposite value
+    // Finds the relevant checkbox.
     const newContent = [...content];
     const item = newContent.find((a) => a.item === event.target.name);
+    // Sets the corresponding checkbox to it opposite value.
     if (item != null) item.selected = !item.selected;
     setContent(newContent);
-    // controlls the main checkbox with the sub-checkboxes
+
+    // If all sub-checkboxes are checked, check the main checkbox too.
     let anyChecked = true;
     content.forEach((contentItem) => {
       if (!contentItem.selected) anyChecked = false;
