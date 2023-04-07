@@ -2,6 +2,7 @@
 # pum-04
  - [Docker setup](#docker-setup)
  - [Linting with ESLint](#linting-and-formatting-with-eslint-and-prettier)
+ - [Naming conventions](#naming-conventions)
  - [Testing TypeScript code](#testing-the-frontend)
  - [Testing C++ code](#testing-the-backend-with-doctest)
 ## Docker setup
@@ -116,6 +117,22 @@ The linting rules are configured in the `.eslintrc.json` file. Most of the rules
 ### Integrating with an IDE or text editor
 ESLint and Prettier are both available as plugins for the majority of the most common IDEs and text editors. The plugins help with highlighting linting errors and warnings, as well as formatting during development.
 
+## Naming conventions
+### Typescript
+The project should folow the naming conventions defined in [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript#naming-conventions) and [Airbnb React Style Guide](https://github.com/airbnb/javascript/tree/master/react#naming)
+
+- PascalCase should be used for Classes, Interfaces and React function components
+- camelCase should be used for functions, variables and fields
+- Acronyms and initialisms should always be all uppercased, or all lowercased.
+- You may optionally UPPERCASE_A_CONSTANT only if it (1) is exported, (2) is a const (it can not be reassigned), and (3) the programmer can trust it (and its nested properties) to never change.
+
+- File names should use PascalCase or camelCase, but must mirror the name of the default export exactly if one exists.
+### C++
+The project should follow the naming conventions defined in [Google C++ Style Guide](https://google.github.io/styleguide/cppguide.html#Naming).
+- Filenames should be all lowercase and can include underscores (_) or dashes (-).
+- PascalCase should be used for Types and functions, accessors and mutators may be named with snake_case.
+- snake_case should be used for variables, class data mebers should have a trailing underscore.
+- Constant variables should be named with a leading "k".
 ## Testing the backend with Doctest
 ### Writing tests
 Simply include ```#include "test_framework/doctest.h"``` in every file tests will be written in.
