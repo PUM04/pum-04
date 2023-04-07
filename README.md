@@ -1,21 +1,10 @@
 
 # pum-04
-## Linting and formatting with ESLint and Prettier
-The ESLint rules are automatically checked in GitHub Actions on each push to the repo. The formatting is done with Prettier.
-### Setting up and running
-Install dependencies
-`npm i`
-
-Run ESLint to check for errors and warnings `npm run lint`
-
-Some warnings and errors, for example, those related to formatting can be automatically fixed by running
-`npm run lint:fix`
-### Config
-The linting rules are configured in the `.eslintrc.json` file. Most of the rules are from the Airbnb, Prettier, and JSdoc plugins.
-### Integrating with an IDE or text editor
-ESLint and Prettier are both available as plugins for the majority of the most common IDEs and text editors. The plugins help with highlighting linting errors and warnings, as well as formatting during development.
-
-## docker-setup
+ - [Docker setup](#docker-setup)
+ - [Linting with ESLint](#linting-and-formatting-with-eslint-and-prettier)
+ - [Testing TypeScript code](#testing-the-frontend)
+ - [Testing C++ code](#testing-the-backend-with-doctest)
+## Docker setup
 ### Running
 Install docker and clone the repo then start the container
 ```sh
@@ -110,7 +99,22 @@ try using the network for the docker container instead
 ```sh
 docker inspect "CONTAINER ID"
 ```
-find the IPAddress for the container and enter "ip:port" in the webbrowser 
+find the IPAddress for the container and enter "ip:port" in the webbrowser
+
+## Linting and formatting with ESLint and Prettier
+The ESLint rules are automatically checked in GitHub Actions on each push to the repo. The formatting is done with Prettier.
+### Setting up and running
+Install dependencies
+`npm i`
+
+Run ESLint to check for errors and warnings `npm run lint`
+
+Some warnings and errors, for example, those related to formatting can be automatically fixed by running
+`npm run lint:fix`
+### Config
+The linting rules are configured in the `.eslintrc.json` file. Most of the rules are from the Airbnb, Prettier, and JSdoc plugins.
+### Integrating with an IDE or text editor
+ESLint and Prettier are both available as plugins for the majority of the most common IDEs and text editors. The plugins help with highlighting linting errors and warnings, as well as formatting during development.
 
 ## Testing the backend with Doctest
 ### Writing tests
