@@ -47,6 +47,7 @@ function getBarChartData(site: any, metric: any) {
       { x: '4200', y: 200, fill: 'yellow' },
       { x: '5800', y: 805, fill: 'yellow' },
       { x: '6200', y: 600, fill: 'yellow' },
+      { x: '15800', y: 85, fill: 'yellow' },
     ];
   } else if (site === 'stockholm' && metric === 'getBucket') {
     data = [
@@ -90,31 +91,55 @@ function getBarChartData(site: any, metric: any) {
     ];
   } else if (site === 'manchester' && metric === 'getPatient') {
     data = [
-      { x: '500', y: 20, fill: 'green' },
-      { x: '600', y: 150, fill: 'green' },
-      { x: '700', y: 200, fill: 'green' },
-      { x: '800', y: 900, fill: 'green' },
+      { x: '500', y: 60, fill: 'green' },
+      { x: '600', y: 210, fill: 'green' },
+      { x: '700', y: 185, fill: 'green' },
+      { x: '2800', y: 700, fill: 'green' },
+      { x: '3200', y: 100, fill: 'green' },
+      { x: '3300', y: 50, fill: 'green' },
+      { x: '4200', y: 600, fill: 'green' },
+      { x: '5800', y: 285, fill: 'green' },
+      { x: '6200', y: 400, fill: 'green' },
+      { x: '15800', y: 325, fill: 'green' },
     ];
   } else if (site === 'manchester' && metric === 'getBucket') {
     data = [
-      { x: '500', y: 20, fill: 'green' },
-      { x: '600', y: 150, fill: 'green' },
-      { x: '700', y: 200, fill: 'green' },
-      { x: '800', y: 900, fill: 'green' },
+      { x: '500', y: 60, fill: 'green' },
+      { x: '600', y: 210, fill: 'green' },
+      { x: '700', y: 185, fill: 'green' },
+      { x: '2800', y: 700, fill: 'green' },
+      { x: '3200', y: 100, fill: 'green' },
+      { x: '3300', y: 50, fill: 'green' },
+      { x: '4200', y: 600, fill: 'green' },
+      { x: '5800', y: 285, fill: 'green' },
+      { x: '6200', y: 400, fill: 'green' },
+      { x: '15800', y: 325, fill: 'green' },
     ];
   } else if (site === 'tokyo' && metric === 'getPatient') {
     data = [
-      { x: '500', y: 20, fill: 'red' },
-      { x: '600', y: 150, fill: 'red' },
-      { x: '700', y: 200, fill: 'red' },
-      { x: '800', y: 900, fill: 'red' },
+      { x: '500', y: 10, fill: 'red' },
+      { x: '600', y: 70, fill: 'red' },
+      { x: '700', y: 385, fill: 'red' },
+      { x: '2800', y: 900, fill: 'red' },
+      { x: '3200', y: 60, fill: 'red' },
+      { x: '3300', y: 120, fill: 'red' },
+      { x: '4200', y: 380, fill: 'red' },
+      { x: '5800', y: 130, fill: 'red' },
+      { x: '6200', y: 700, fill: 'red' },
+      { x: '15800', y: 225, fill: 'red' },
     ];
   } else if (site === 'tokyo' && metric === 'getBucket') {
     data = [
-      { x: '500', y: 20, fill: 'red' },
-      { x: '600', y: 150, fill: 'red' },
-      { x: '700', y: 200, fill: 'red' },
-      { x: '800', y: 900, fill: 'red' },
+      { x: '500', y: 10, fill: 'red' },
+      { x: '600', y: 70, fill: 'red' },
+      { x: '700', y: 385, fill: 'red' },
+      { x: '2800', y: 900, fill: 'red' },
+      { x: '3200', y: 60, fill: 'red' },
+      { x: '3300', y: 120, fill: 'red' },
+      { x: '4200', y: 380, fill: 'red' },
+      { x: '5800', y: 130, fill: 'red' },
+      { x: '6200', y: 700, fill: 'red' },
+      { x: '15800', y: 225, fill: 'red' },
     ];
   }
   // Exempelvis GetPatient för site1
@@ -217,27 +242,28 @@ export function BoxPlotChart(props: any): JSX.Element {
     victoryCandles.push(drawVictoryCandle(data, width));
   }
   return (
-    <VictoryChart
-    >
-       <VictoryAxis
-       
-          dependentAxis
-          
-          style={{
-            tickLabels: { fontSize: 10,
-               },
-            
-          }}
-        />
-        <VictoryAxis
-          style={{
-            tickLabels: {
-              fontSize: 10,
-              transform: 'translate(0, 10)',
-              angle: 45,
-            },
-          }}
-        />
+    <VictoryChart>
+      <VictoryAxis
+        dependentAxis
+        style={{
+          tickLabels: {
+            fontSize: 10,
+            stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
+          },
+          axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
+        }}
+      />
+      <VictoryAxis
+        style={{
+          tickLabels: {
+            fontSize: 10,
+            transform: 'translate(0, 10)',
+            angle: 45,
+            stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
+          },
+          axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
+        }}
+      />
       <VictoryGroup offset={width + 5} domainPadding={{ x: width }}>
         {victoryCandles}
       </VictoryGroup>
@@ -255,12 +281,13 @@ export function BoxPlotChart(props: any): JSX.Element {
       { x: '700', y: 200, fill: 'red' },
     ];
  * @param index ///NOT NEEDED?///
+ * @param width xxx
  * @returns a single victory bar.
  */
-function drawVictoryBar(data: any, index: any,width:any) {
+function drawVictoryBar(data: any, index: any, width: any) {
   return (
     <VictoryBar
-      //key={index}
+      // key={index}
       labelComponent={
         <VictoryTooltip cornerRadius={0} pointerLength={0} dy={-10} />
       }
@@ -276,25 +303,27 @@ function drawVictoryBar(data: any, index: any,width:any) {
   );
 }
 
-function numberOfXvalues(dataset:any){
-    let xValues:any = []
+/**
+ *xxx
 
-    for(let i = 0; i < dataset.length; i++){
-      console.log("first")
-      console.log(dataset[i])
-      for(let k = 0; k < dataset[i].length; k++){
-        console.log("SECOND")
-        console.log(dataset[i][k])
-        if (!xValues.includes(dataset[i][k]['x']))xValues.push(dataset[i][k]['x']);
-      
-      }
-      console.log("fsefHEJ")
-      console.log(xValues)
+ * @param dataset xxx
+ * @returns xxx
+ */
+function numberOfXvalues(dataset: any) {
+  const xValues: any = [];
+
+  for (let i = 0; i < dataset.length; i++) {
+    console.log('first');
+    console.log(dataset[i]);
+    for (let k = 0; k < dataset[i].length; k++) {
+      console.log('SECOND');
+      console.log(dataset[i][k]);
+      if (!xValues.includes(dataset[i][k].x)) xValues.push(dataset[i][k].x);
     }
-    return xValues.length
-
-  
-
+    console.log('fsefHEJ');
+    console.log(xValues);
+  }
+  return xValues.length;
 }
 
 /**
@@ -304,16 +333,17 @@ function numberOfXvalues(dataset:any){
  * Example ['s1','s2','s3']
  * @param metric a single metric. Used to print metricname in graph.
  * Example 'stockholm'
+ * @param width xxx
  * @returns a single victoryChart, <VictoryChart>...</VictoryChart>
  */
-function drawHistogram(sites: any, metric: any, width:any) {
+function drawHistogram(sites: any, metric: any, width: any) {
   const victoryBars = [];
-  console.log("WIDTH")
-  console.log(width)
+  console.log('WIDTH');
+  console.log(width);
 
   for (let i = 0; i < sites.length; i++) {
     console.log(sites[i]);
-    victoryBars.push(drawVictoryBar(sites[i], i,width));
+    victoryBars.push(drawVictoryBar(sites[i], i, width));
   }
 
   return (
@@ -321,28 +351,30 @@ function drawHistogram(sites: any, metric: any, width:any) {
       <p style={{ textAlign: 'center', fontSize: 22, marginBottom: 0 }}>
         {metric}
       </p>
-      <VictoryChart 
-      
-      key={metric}>
+      <VictoryChart key={metric}>
         <VictoryAxis
           dependentAxis
           style={{
-            tickLabels: { fontSize: 10 },
+            tickLabels: {
+              fontSize: 10,
+              stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
+            },
+            axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
           }}
         />
-         <VictoryAxis
+        <VictoryAxis
           style={{
             tickLabels: {
               fontSize: 10,
               transform: 'translate(0, 10)',
               angle: 45,
+              stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
             },
+            axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
           }}
         />
-        
-        <VictoryGroup offset={width}>
-          {victoryBars}
-        </VictoryGroup>
+
+        <VictoryGroup offset={width}>{victoryBars}</VictoryGroup>
       </VictoryChart>
     </div>
   );
@@ -363,8 +395,8 @@ export function BarChart(props: any): JSX.Element {
   const { sites } = props; // Lista med sites
   const barGraphList = [];
   const widthList = [];
-  console.log("Langd sites")
-  console.log(sites.length)
+  console.log('Langd sites');
+  console.log(sites.length);
 
   for (let i = 0; i < metrics.length; i++) {
     const barGraph = [];
@@ -372,13 +404,10 @@ export function BarChart(props: any): JSX.Element {
       const data = getBarChartData(sites[t], metrics[i]);
       barGraph.push(data);
     }
-    const width = 300/((numberOfXvalues(barGraph)*(sites.length)));
-    barGraphList.push(drawHistogram(barGraph, metrics[i],width));
-   
+    const width = 300 / (numberOfXvalues(barGraph) * sites.length);
+    barGraphList.push(drawHistogram(barGraph, metrics[i], width));
   }
-  var width = numberOfXvalues(barGraphList)
+  const width = numberOfXvalues(barGraphList);
 
- 
-  
   return <div>{barGraphList}</div>;
 }
