@@ -33,6 +33,7 @@ function getBarChartData(site: any, metric: any) {
   /**
    * Todo- At the moment this function only contains dummy data.
    * Implement code to get data from backend
+   * Make sure corret color is retrived from Legends component
    */
   let data: any = [];
   if (site === 'stockholm' && metric === 'getPatient') {
@@ -85,6 +86,7 @@ function getBarChartData(site: any, metric: any) {
       { x: '5800', y: 85, fill: 'blue' },
       { x: '6200', y: 200, fill: 'blue' },
       { x: '15800', y: 85, fill: 'blue' },
+      { x: '95800', y: 85, fill: 'blue' },
     ];
   } else if (site === 'manchester' && metric === 'getPatient') {
     data = [
@@ -135,6 +137,7 @@ function getCandleChartData(metric: any, sites: any) {
   /**
    * Todo- At the moment this function only contains dummy data.
    * Implement code to get data from backend
+   * Make sure correct color is retrived from Legends component
    */
   if (
     metric === 'getPatient' &&
@@ -197,7 +200,7 @@ function drawVictoryCandle(data: any, width: any) {
  * Draws a single boxPlotChart
  *
  * @param props Contains list of metrics and sites that should be drawn
- * Example metrics = ['getPatient', 'getBucket']}
+ * Example metrics = ['getPatient', 'getBucket']
    sites=['stockholm', 'linköping', 'manchester', 'tokyo']
  * @returns BoxplotChart for given /?dataset?/
  */
@@ -214,87 +217,16 @@ export function BoxPlotChart(props: any): JSX.Element {
     victoryCandles.push(drawVictoryCandle(data, width));
   }
   return (
-    <VictoryChart>
-      <VictoryAxis
-        dependentAxis
-        style={{
-          tickLabels: { fontSize: 10 },
-        }}
-      />
-      <VictoryAxis
-        style={{
-          tickLabels: {
-            fontSize: 10,
-            transform: 'translate(0, 10)',
-            angle: 45,
-          },
-        }}
-      />
-      <VictoryGroup offset={width + 5} domainPadding={{ x: width }}>
-        {victoryCandles}
-      </VictoryGroup>
-    </VictoryChart>
-  );
-}
-
-/**
- * draws a victory bar based on specified metric and site.
- *
- * @param data data needed to create a bar chart. Must be in the following format
- *  siteNmetricN = [
-      { x: '500', y: 20, fill: 'red' },
-      { x: '600', y: 150, fill: 'red' },
-      { x: '700', y: 200, fill: 'red' },
-    ];
- * @param index ///NOT NEEDED?///
- * @returns a single victory bar.
- */
-function drawVictoryBar(data: any, index: any) {
-  return (
-    <VictoryBar
-      key={index}
-      labelComponent={
-        <VictoryTooltip cornerRadius={0} pointerLength={0} dy={-10} />
-      }
-      barRatio={0.7}
-      labels={({ datum }) => datum.y}
-      style={{
-        data: {
-          fill: ({ datum }) => datum.fill,
-        },
-      }}
-      data={data}
-    />
-  );
-}
-
-/**
- *  drawHistogram draws a single bar charts.
- *
- * @param sites contains list of sites.
- * Example ['s1','s2','s3']
- * @param metric a single metric. Used to print metricname in graph. Not implemented yet
- * Example 'stockholm'
- * @returns a single victoryChart in the following format <VictoryChart></VictoryChart>
- */
-function drawHistogram(sites: any, metric: any) {
-  const victoryBars = [];
-
-  for (let i = 0; i < sites.length; i++) {
-    console.log(sites[i]);
-    victoryBars.push(drawVictoryBar(sites[i], i));
-  }
-
-  return (
-    <div>
-      <p style={{ textAlign: 'center', fontSize: 22, marginBottom: 0 }}>
-        {metric}
-      </p>
-      <VictoryChart key={metric} domainPadding={{ x: [20, 20], y: [20, 20] }}>
-        <VictoryAxis
+    <VictoryChart
+    >
+       <VictoryAxis
+       
           dependentAxis
+          
           style={{
-            tickLabels: { fontSize: 10 },
+            tickLabels: { fontSize: 10,
+               },
+            
           }}
         />
         <VictoryAxis
@@ -306,7 +238,109 @@ function drawHistogram(sites: any, metric: any) {
             },
           }}
         />
-        <VictoryGroup offset={5} colorScale={['tomato', 'orange', 'gold']}>
+      <VictoryGroup offset={width + 5} domainPadding={{ x: width }}>
+        {victoryCandles}
+      </VictoryGroup>
+    </VictoryChart>
+  );
+}
+
+/**
+ * draws a victory bar based on specified metric and site.
+ *
+ * @param data data needed to create a barChart. Must be in the following format
+ *  siteNmetricN = [
+      { x: '500', y: 20, fill: 'red' },
+      { x: '600', y: 150, fill: 'red' },
+      { x: '700', y: 200, fill: 'red' },
+    ];
+ * @param index ///NOT NEEDED?///
+ * @returns a single victory bar.
+ */
+function drawVictoryBar(data: any, index: any,width:any) {
+  return (
+    <VictoryBar
+      //key={index}
+      labelComponent={
+        <VictoryTooltip cornerRadius={0} pointerLength={0} dy={-10} />
+      }
+      barWidth={width}
+      labels={({ datum }) => datum.y}
+      style={{
+        data: {
+          fill: ({ datum }) => datum.fill,
+        },
+      }}
+      data={data}
+    />
+  );
+}
+
+function numberOfXvalues(dataset:any){
+    let xValues:any = []
+
+    for(let i = 0; i < dataset.length; i++){
+      console.log("first")
+      console.log(dataset[i])
+      for(let k = 0; k < dataset[i].length; k++){
+        console.log("SECOND")
+        console.log(dataset[i][k])
+        if (!xValues.includes(dataset[i][k]['x']))xValues.push(dataset[i][k]['x']);
+      
+      }
+      console.log("fsefHEJ")
+      console.log(xValues)
+    }
+    return xValues.length
+
+  
+
+}
+
+/**
+ *  drawHistogram draws a victoryChart containing 1..n bar charts.
+ *
+ * @param sites contains list of sites.
+ * Example ['s1','s2','s3']
+ * @param metric a single metric. Used to print metricname in graph.
+ * Example 'stockholm'
+ * @returns a single victoryChart, <VictoryChart>...</VictoryChart>
+ */
+function drawHistogram(sites: any, metric: any, width:any) {
+  const victoryBars = [];
+  console.log("WIDTH")
+  console.log(width)
+
+  for (let i = 0; i < sites.length; i++) {
+    console.log(sites[i]);
+    victoryBars.push(drawVictoryBar(sites[i], i,width));
+  }
+
+  return (
+    <div>
+      <p style={{ textAlign: 'center', fontSize: 22, marginBottom: 0 }}>
+        {metric}
+      </p>
+      <VictoryChart 
+      
+      key={metric}>
+        <VictoryAxis
+          dependentAxis
+          style={{
+            tickLabels: { fontSize: 10 },
+          }}
+        />
+         <VictoryAxis
+          style={{
+            tickLabels: {
+              fontSize: 10,
+              transform: 'translate(0, 10)',
+              angle: 45,
+            },
+          }}
+        />
+        
+        <VictoryGroup offset={width}>
           {victoryBars}
         </VictoryGroup>
       </VictoryChart>
@@ -328,6 +362,9 @@ export function BarChart(props: any): JSX.Element {
   const { metrics } = props; // Lista med metrics
   const { sites } = props; // Lista med sites
   const barGraphList = [];
+  const widthList = [];
+  console.log("Langd sites")
+  console.log(sites.length)
 
   for (let i = 0; i < metrics.length; i++) {
     const barGraph = [];
@@ -335,7 +372,13 @@ export function BarChart(props: any): JSX.Element {
       const data = getBarChartData(sites[t], metrics[i]);
       barGraph.push(data);
     }
-    barGraphList.push(drawHistogram(barGraph, metrics[i]));
+    const width = 300/((numberOfXvalues(barGraph)*(sites.length)));
+    barGraphList.push(drawHistogram(barGraph, metrics[i],width));
+   
   }
+  var width = numberOfXvalues(barGraphList)
+
+ 
+  
   return <div>{barGraphList}</div>;
 }
