@@ -24,10 +24,16 @@ import {
  * getBarChartData get the data from backend to paint BarChartData.
  *
  * @param site what site to get data from.
+ * Example 'stockholm'
  * @param metric what metric to get data from.
+ * Example 'getPatient'
  * @returns a data list on correct format to paint BarChart.
  */
 function getBarChartData(site: any, metric: any) {
+  /**
+   * Todo- At the moment this function only contains dummy data.
+   * Implement code to get data from backend
+   */
   let data: any = [];
   if (site === 'stockholm' && metric === 'getPatient') {
     data = [
@@ -116,15 +122,20 @@ function getBarChartData(site: any, metric: any) {
 }
 
 /**
- * getCandelChartData get the data from backend to paint candelChart.
+ * getCandelChartData retrives data from backend needed to paint a single VictoryCandlestick.
  *
- * @param metric what metric to get data from.
- * @param sites a list of sites.
- * @returns a data list on correct format to paint candelChart.
+ * @param metric a string with the name of the metric to show in the candlechart.
+ * example 'getPatient'
+ * @param sites a string list containing 1-n sites that will be shown in the candlechart.
+ * example ['s1','s2','s3','s4']
+ * @returns a data structure in correct format to paint a candelChart.
  */
 function getCandleChartData(metric: any, sites: any) {
   let data: any = [];
-
+  /**
+   * Todo- At the moment this function only contains dummy data.
+   * Implement code to get data from backend
+   */
   if (
     metric === 'getPatient' &&
     sites[0] === 'stockholm' &&
@@ -149,11 +160,16 @@ function getCandleChartData(metric: any, sites: any) {
 }
 
 /**
- * Creats the Victory Candle.
+ * Draws a single victoryCandle.
  *
- * @param data is the data to create this bar.
- * @param width is the width of candel. CandelRation does not work in this case. Note that width might need to changed depending on number of sites/metrics.
- * @returns a victorybarchart to be append to list.
+ * @param data the data needed to create a victorycandle. Must be in the following format
+ * metric = [
+      { x: 1, open: 5, close: 10, high: 22, low: 0 }, // site1
+      { x: 2, open: 10, close: 15, high: 20, low: 5 }, // site2
+    ];
+ * @param width Is the fixed width of the candels in the chart. CandelRation does not work in this case.
+    Note that width might need to be changed depending on number of sites.
+ * @returns a victory candle chart.
  */
 function drawVictoryCandle(data: any, width: any) {
   return (
@@ -178,18 +194,20 @@ function drawVictoryCandle(data: any, width: any) {
 }
 
 /**
- * Component for BoxPlotChart
+ * Draws a single boxPlotChart
  *
- * @param props contains list of metrics and sites. These are the one to painted.
+ * @param props Contains list of metrics and sites that should be drawn
+ * Example metrics = ['getPatient', 'getBucket']}
+   sites=['stockholm', 'linköping', 'manchester', 'tokyo']
  * @returns BoxplotChart for given /?dataset?/
  */
 export function BoxPlotChart(props: any): JSX.Element {
-  const { metrics } = props; // Lista med metrics
-  const { sites } = props; // Lista med sites
+  const { metrics } = props;
+  const { sites } = props;
   const width = 10;
   const victoryCandles = [];
 
-  // For metrics in props.metric skapa victorychart som innehåller alla props.sites
+  // For metrics in props.metrics skapa victorycandles som innehåller alla props.sites
 
   for (let i = 0; i < metrics.length; i++) {
     const data = getCandleChartData(metrics[i], sites);
@@ -220,11 +238,16 @@ export function BoxPlotChart(props: any): JSX.Element {
 }
 
 /**
- * Creats the victory bar.
+ * draws a victory bar based on specified metric and site.
  *
- * @param data is the data to create this bar.
+ * @param data data needed to create a bar chart. Must be in the following format
+ *  siteNmetricN = [
+      { x: '500', y: 20, fill: 'red' },
+      { x: '600', y: 150, fill: 'red' },
+      { x: '700', y: 200, fill: 'red' },
+    ];
  * @param index ///NOT NEEDED?///
- * @returns a victorybarchart to be append to list.
+ * @returns a single victory bar.
  */
 function drawVictoryBar(data: any, index: any) {
   return (
@@ -246,11 +269,13 @@ function drawVictoryBar(data: any, index: any) {
 }
 
 /**
- *  drawHistogram draws the chart.
+ *  drawHistogram draws a single bar charts.
  *
- * @param sites contains list of metrics and list of sites.
- * @param metric contains list of metrics and list of sites.
- * @returns BarChart for given /?dataset?/
+ * @param sites contains list of sites.
+ * Example ['s1','s2','s3']
+ * @param metric a single metric. Used to print metricname in graph. Not implemented yet
+ * Example 'stockholm'
+ * @returns a single victoryChart in the following format <VictoryChart></VictoryChart>
  */
 function drawHistogram(sites: any, metric: any) {
   const victoryBars = [];
@@ -285,10 +310,15 @@ function drawHistogram(sites: any, metric: any) {
 }
 
 /**
- *  Component for BarChart
- *
+ *  Draws graphs for 1-n barcharts.
+ *  metrics.length = number of graphs returned by this function
+ * 
  * @param props contains list of metrics and list of sites.
- * @returns BarChart for given /?dataset?/
+ * Example metrics = ['getPatient', 'getBucket']
+   sites=['stockholm', 'linköping', 'manchester', 'tokyo']
+   
+ * @returns A list of victorycharts
+ * [<VictoryChart>Chart1</VictoryChart>,<VictoryChart>Chart2</VictoryChart>]
  */
 export function BarChart(props: any): JSX.Element {
   const { metrics } = props; // Lista med metrics
@@ -301,7 +331,7 @@ export function BarChart(props: any): JSX.Element {
       const data = getBarChartData(sites[t], metrics[i]);
       barGraph.push(data);
     }
-    barGraphList.push(drawHistogram(barGraph, 2));
+    barGraphList.push(drawHistogram(barGraph, metrics[i]));
   }
   return <div>{barGraphList}</div>;
 }
