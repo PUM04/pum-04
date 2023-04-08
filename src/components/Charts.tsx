@@ -286,26 +286,31 @@ function drawHistogram(sites: any, metric: any) {
   }
 
   return (
-    <VictoryChart key={metric} domainPadding={{ x: [20, 20], y: [20, 20] }}>
-      <VictoryAxis
-        dependentAxis
-        style={{
-          tickLabels: { fontSize: 10 },
-        }}
-      />
-      <VictoryAxis
-        style={{
-          tickLabels: {
-            fontSize: 10,
-            transform: 'translate(0, 10)',
-            angle: 45,
-          },
-        }}
-      />
-      <VictoryGroup offset={5} colorScale={['tomato', 'orange', 'gold']}>
-        {victoryBars}
-      </VictoryGroup>
-    </VictoryChart>
+    <div>
+      <p style={{ textAlign: 'center', fontSize: 22, marginBottom: 0 }}>
+        {metric}
+      </p>
+      <VictoryChart key={metric} domainPadding={{ x: [20, 20], y: [20, 20] }}>
+        <VictoryAxis
+          dependentAxis
+          style={{
+            tickLabels: { fontSize: 10 },
+          }}
+        />
+        <VictoryAxis
+          style={{
+            tickLabels: {
+              fontSize: 10,
+              transform: 'translate(0, 10)',
+              angle: 45,
+            },
+          }}
+        />
+        <VictoryGroup offset={5} colorScale={['tomato', 'orange', 'gold']}>
+          {victoryBars}
+        </VictoryGroup>
+      </VictoryChart>
+    </div>
   );
 }
 
@@ -316,7 +321,6 @@ function drawHistogram(sites: any, metric: any) {
  * @param props contains list of metrics and list of sites.
  * Example metrics = ['getPatient', 'getBucket']
    sites=['stockholm', 'linköping', 'manchester', 'tokyo']
-   
  * @returns A list of victorycharts
  * [<VictoryChart>Chart1</VictoryChart>,<VictoryChart>Chart2</VictoryChart>]
  */
