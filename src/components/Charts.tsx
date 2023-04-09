@@ -172,6 +172,7 @@ function getCandleChartData(metric: any, sites: any) {
     data = [
       { x: 1, open: 5, close: 10, high: 22, low: 0 }, // s1
       { x: 2, open: 10, close: 15, high: 20, low: 5 }, // s2
+      { x: 3, open: 8, close: 11, high: 13, low: 2 }, // s2
     ];
   }
   if (
@@ -182,6 +183,7 @@ function getCandleChartData(metric: any, sites: any) {
     data = [
       { x: 1, open: 5, close: 10, high: 25, low: 1 },
       { x: 2, open: 6, close: 8, high: 15, low: 3 },
+      { x: 3, open: 4, close: 9, high: 12, low: 0 }, // s2
     ];
   }
   return data;
@@ -365,6 +367,8 @@ function drawHistogram(sites: any, metric: any, width: any) {
         <VictoryAxis
           style={{
             tickLabels: {
+              // Later we want to add tickFormat and tickValues. This makes it possible to write "6-10ms" on the axis instead of the corresponding x values.
+              // For this to be possible the data that is used to paint this set of victorybars needs to be accessed and a new function that determines the tickFormat is needed.
               fontSize: 10,
               transform: 'translate(0, 10)',
               angle: 45,
@@ -373,8 +377,9 @@ function drawHistogram(sites: any, metric: any, width: any) {
             axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
           }}
         />
-
-        <VictoryGroup offset={width}>{victoryBars}</VictoryGroup>
+        <VictoryGroup domainPadding={{ x: [5, 0] }} offset={width}>
+          {victoryBars}
+        </VictoryGroup>
       </VictoryChart>
     </div>
   );
