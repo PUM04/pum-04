@@ -1,34 +1,38 @@
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
+// import Stack from '@mui/material/Stack';
+import React from 'react';
+import Paper from '@mui/material/Paper';
+/**
+ *
+ * @param p
+ */
 
-export default function renderLegends(props) {
+/* export default function renderLegends(props) {
   return (
     <Stack spacing={2} justifyContent="space-evenly" direction="row">
       createLegends(props)
     </Stack>
   );
-}
+} */
 
-function createLegends(props) {
-  return (
-    <Box
+const Legend = ({ name, test }) => (
+  <Box
+    sx={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: '5px',
+    }}
+  >
+    <Paper
       sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        width: '15px',
+        height: '15px',
+        bgcolor: test,
       }}
-    >
-      <Box
-        sx={{
-          width: '10px',
-          height: '10px',
-          bgcolor: props.color,
-          marginRight: '7px',
-          marginTop: '5%',
-        }}
-      ></Box>
-      <Typography variant="h8">props.name</Typography>
-    </Box>
-  );
-}
+    />
+    <Typography variant="h8">{name}</Typography>
+  </Box>
+);
+
+export default Legend;

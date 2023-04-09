@@ -14,10 +14,10 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import Example from './example';
+import Example from './Example';
 import DragAndDropzone from './DragAndDropzone';
 import { GraphComponent, InfoboxComponent } from './BaseComponent';
-import { renderLegends } from './Legends';
+import Legend from './Legends';
 import '../App.css';
 
 const drawerWidth = 240;
@@ -63,10 +63,11 @@ const AppBar = styled(MuiAppBar, {
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
-  alignItems: 'center',
-  padding: theme.spacing(0, 1),
+  alignItems: 'flex-start',
+  // marginTop: '105px',
+  padding: theme.spacing(1, 1),
   // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
+  // ...theme.mixins.toolbar,
   justifyContent: 'left',
 }));
 
@@ -111,12 +112,26 @@ export default function Menu() {
               sx={{
                 ...(open && {
                   display: 'none',
+                  pt: '0',
                 }),
               }}
             >
               <MenuIcon />
             </IconButton>
-            renderLegends( <Legend color="red" name="Legend 1" />)
+            <Box
+              sx={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '10px',
+                padding: '8px',
+              }}
+            >
+              <Legend name="legendFromMenu" test="blue" />
+              <Legend name="legendFromMenu" test="red" />
+              <Legend name="legendFromMenu" test="orange" />
+              <Legend name="legendFromMenu" test="green" />
+              <Legend name="legendFromMenu" test="green" />
+            </Box>
           </DrawerHeader>
         </AppBar>
         <Drawer
@@ -133,14 +148,18 @@ export default function Menu() {
           open={open}
         >
           <DrawerHeader>
-            <IconButton onClick={handleDrawerClose}>
+            <IconButton onClick={handleDrawerClose}
+              // sx={{
+              //     pt: '0',
+              // }}
+            >
               {theme.direction === 'ltr' ? (
                 <ChevronLeftIcon />
               ) : (
                 <ChevronRightIcon />
               )}
             </IconButton>
-            <p>S.and.A.H.L </p>
+            <Typography padding="8px">S.and.A.H.L </Typography>
           </DrawerHeader>
           <div>
             <p>Uploaded files: {JSON.stringify(files)}</p>
