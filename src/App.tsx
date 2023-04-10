@@ -9,6 +9,7 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import DragAndDropzone from './components/DragAndDropzone';
 import Menu from './components/Menu';
+import Layout from './components/Layout.tsx'
 import './App.css';
 
 /**
@@ -17,7 +18,7 @@ import './App.css';
  * @returns top level component
  */
 function App(): JSX.Element {
-  return <Menu />;
+  return <Layout />;
 }
 
 export default App;

@@ -14,9 +14,9 @@ export function GraphComponent(): JSX.Element {
     <Box
       sx={{
         flexDirection: 'column',
-        display: 'inline-flex',
+        display: 'flex',
         padding: '1rem',
-        backgroundColor: 'primary.lightSoft',
+        backgroundColor: 'red',
         '&:hover': {
           backgroundColor: 'blue',
           opacity: [0.9, 0.8, 0.7],
@@ -98,7 +98,7 @@ export function InfoboxComponent(): JSX.Element {
       sx={{
         flexDirection: 'row',
         display: 'inline-flex',
-        backgroundColor: 'primary.accent2',
+        backgroundColor: 'blue',
         flexWrap: 'wrap',
         padding: '1rem',
         justifyContent: 'space-evenly',

@@ -16,8 +16,9 @@ import Paper from '@mui/material/Paper';
   );
 } */
 
-const Legend = ({ name, test }) => (
+const Legend = ({ name, color, enabled }) => (
   <Box
+    // style={enabled ? {height: '0', width: '0'} : {}}
     sx={{
       display: 'flex',
       alignItems: 'center',
@@ -28,7 +29,8 @@ const Legend = ({ name, test }) => (
       sx={{
         width: '15px',
         height: '15px',
-        bgcolor: test,
+        bgcolor: color,
+        marginTop: '3px',
       }}
     />
     <Typography variant="h8">{name}</Typography>

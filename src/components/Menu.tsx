@@ -16,8 +16,8 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Example from './Example';
 import DragAndDropzone from './DragAndDropzone';
-import { GraphComponent, InfoboxComponent } from './BaseComponent';
-import Legend from './Legends';
+// import { GraphComponent, InfoboxComponent } from './BaseComponent';
+import Legend from './Legend';
 import '../App.css';
 
 const drawerWidth = 240;
@@ -65,7 +65,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'flex-start',
   // marginTop: '105px',
-  padding: theme.spacing(1, 1),
+  padding: theme.spacing(1, 0),
   // necessary for content to be below app bar
   // ...theme.mixins.toolbar,
   justifyContent: 'left',
@@ -76,7 +76,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
  *
  * @returns a menucomponent on top of the application component
  */
-export default function Menu() {
+export default function Menu({ sites }) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   // -------------------- FileReader example --------------------
@@ -126,11 +126,9 @@ export default function Menu() {
                 padding: '8px',
               }}
             >
-              <Legend name="legendFromMenu" test="blue" />
-              <Legend name="legendFromMenu" test="red" />
-              <Legend name="legendFromMenu" test="orange" />
-              <Legend name="legendFromMenu" test="green" />
-              <Legend name="legendFromMenu" test="green" />
+              {sites.map((site) => {
+                if (site.enabled) return <Legend key={site.id} name={site.name} color={site.color} />;
+              })}
             </Box>
           </DrawerHeader>
         </AppBar>
@@ -148,7 +146,8 @@ export default function Menu() {
           open={open}
         >
           <DrawerHeader>
-            <IconButton onClick={handleDrawerClose}
+            <IconButton
+              onClick={handleDrawerClose}
               // sx={{
               //     pt: '0',
               // }}
@@ -166,22 +165,7 @@ export default function Menu() {
             <DragAndDropzone setter={setFiles} value={files} />
           </div>
         </Drawer>
-        <Main open={open}>
-          <Box
-            sx={{
-              flexDirection: 'column',
-              display: 'inline-flex',
-              backgroundColor: 'grey',
-              paddingTop: '2%',
-            }}
-          >
-            <GraphComponent />
-            <InfoboxComponent />
-          </Box>
-
-          <Example />
-          <p>Hej</p>
-        </Main>
+        <Main open={open}></Main>
       </Box>
     </div>
   );
