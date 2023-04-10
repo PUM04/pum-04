@@ -22,7 +22,7 @@
       }
     }
   ],
-  "plugins": ["@typescript-eslint", "prettier", "jsdoc"],
+  "plugins": ["@typescript-eslint", "prettier", "jsdoc", "filenames"],
   "rules": {
     "linebreak-style": ["error", "unix"],
     "prettier/prettier": "error",
@@ -35,7 +35,14 @@
     "jsdoc/require-param-type": 0,
     "import/no-extraneous-dependencies": [
       "warn",
-      { "devDependencies": ["**/*.test.js", "**/*.spec.js"] }
+      {
+        "devDependencies": [
+          "**/*.test.ts",
+          "**/*.spec.ts",
+          "**/*.test.tsx",
+          "**/*.spec.tsx"
+        ]
+      }
     ],
     "jsdoc/require-property-type": 0,
     "jsdoc/require-jsdoc": [
@@ -64,7 +71,9 @@
     ],
     "no-console": "off",
     "import/extensions": ["off"],
-    "react/jsx-props-no-spreading": ["off"]
+    "no-plusplus": "off",
+    "react/jsx-props-no-spreading": ["off"],
+    "filenames/match-exported": 1
   },
   "root": true,
 

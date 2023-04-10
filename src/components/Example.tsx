@@ -5,9 +5,6 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 
 import '../App.css';
-import { useWasm } from '../hooks/wasm';
-import CalculatorModule from '../cpp/Calculator';
-
 /**
  * Top level component.
  *
@@ -16,19 +13,19 @@ import CalculatorModule from '../cpp/Calculator';
 function Example(): JSX.Element {
   const [count, setCount] = useState(0);
 
-  const calcModule = useWasm(CalculatorModule);
-
+  // -------------------- FileReader example --------------------
   return (
     <div className="App">
       <div className="card">
         <button
           type="button"
+          data-testid="count-button"
           onClick={() => {
             setCount(() => {
               if (count >= 10) {
-                return new calcModule.Calculator().subtract(count, count);
+                return 0;
               }
-              return calcModule.increment(count);
+              return count + 1;
             });
           }}
         >
