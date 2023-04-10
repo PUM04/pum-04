@@ -37,7 +37,7 @@ declare module '@mui/material/styles' {
  * @param props - props to pass to the ThemeProvider component that is returned from this function call (children)
  * @returns ThemeProvider component with a theme created from the .mui-theme element in the DOM
  */
-export default function CreateSectraTheme(props: any): JSX.Element {
+export default function SectraTheme(props: any): JSX.Element {
   const defaultTheme = createTheme({
     palette: {
       primary: {

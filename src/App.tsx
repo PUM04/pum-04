@@ -5,7 +5,7 @@
 import React from 'react';
 import Menu from './components/Menu';
 import './App.css';
-import CreateSectraTheme from './components/SectraTheme';
+import SectraTheme from './components/SectraTheme';
 
 /**
  * Top level component.
@@ -15,9 +15,9 @@ import CreateSectraTheme from './components/SectraTheme';
 function App(): JSX.Element {
   return (
     <div className="App mui-theme">
-      <CreateSectraTheme>
+      <SectraTheme>
         <Menu />
-      </CreateSectraTheme>
+      </SectraTheme>
     </div>
   );
 }
