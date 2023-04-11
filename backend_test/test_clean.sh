@@ -7,5 +7,6 @@ rm CMakeCache.txt
 rm -r CMakeFiles/
 rm compile_commands.json
 rm Makefile
-rm test_runner.cjs
+#rm test_runner.cjs
+rm test_runner
 rm test_runner.wasm

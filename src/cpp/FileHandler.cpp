@@ -6,6 +6,7 @@
 #include <ctime>
 #include <sstream>
 #include <limits>
+#include <map>
 
 #define DEBUG
 
@@ -75,7 +76,7 @@ std::string FileHandler::get_box_diagram(std::string site_id) const {
     return box_diagram.dump();
 }
 
-int FileHandler::get_box_average(json &category) const {
+double FileHandler::get_box_average(json &category) const {
     int sum = 0;
 
     for (auto pair : category["data"]) {
@@ -86,7 +87,7 @@ int FileHandler::get_box_average(json &category) const {
 
         sum += (int) pair["length"] * (int) pair["count"];
     }
-    return sum / ((int) category["total"]);
+    return sum / ((double) category["total"]);
 }
 
 int FileHandler::get_box_limit(json &category, double limit) const {
@@ -137,10 +138,14 @@ int FileHandler::get_box_max(json &category) const {
 }
 
 void FileHandler::merge_category(struct Site &site, std::string key, json &result) const {
+    result[key] = {};
+    result[key]["total"] = 0;
+
+    std::map<int, int> length_count;
+
     for (json log : site.logs) {
         json category = log[key];
 
-        result[key] = {};
 
         auto count_it = category["count"].begin();
         const auto count_end = category["count"].end();
@@ -158,10 +163,12 @@ void FileHandler::merge_category(struct Site &site, std::string key, json &resul
         while(count_it != count_end && length_it != length_end) {
             int new_count = (int) *count_it - last_count;
 
-            result[key]["data"] += {
-                {"length", *length_it}, 
-                {"count", new_count}
-            };
+            // Illegal nesting
+            if (length_count.find(*length_it) == length_count.end()) {
+                length_count[*length_it] = new_count;
+            } else {
+                length_count[*length_it] += new_count;
+            }
 
             last_count = (int) *count_it;
             sum += new_count;
@@ -169,7 +176,15 @@ void FileHandler::merge_category(struct Site &site, std::string key, json &resul
             count_it++;
             length_it++;
         }
-        result[key]["total"] = sum;
+        result[key]["total"] = (int) result[key]["total"] + sum;
+    }
+
+    // Add the data to the json object
+    for (auto const & entry : length_count) {
+        result[key]["data"] += {
+            {"length", entry.first},
+            {"count", entry.second}
+        };
     }
 }
 
@@ -204,7 +219,6 @@ json FileHandler::get_performance_json(std::string &content) const {
 
     json performance;
 
-    // TODO: Clean this up
     while(std::getline(content_stream, line)) {
         if (line.find(",le=") == std::string::npos) {
             continue;
@@ -227,7 +241,7 @@ json FileHandler::get_performance_json(std::string &content) const {
             performance[method]["length"] += std::stoi(length);
         }       
 
-        performance[method]["count"] += std::stoi(count); //TODO: take last element minus this
+        performance[method]["count"] += std::stoi(count);
     }
 
     return performance;
@@ -237,11 +251,8 @@ void FileHandler::add_performance_file(std::string &file, std::string &file_name
     std::string site_id = get_id_from_performance(file_name);
 
     // Add the host to the corresponding site if it exists
-    // TODO: Parse and add the real data
-
     if (sites.find(site_id) != sites.end()) {
         json performance = get_performance_json(file);
-
         sites[site_id].logs.insert(performance);
 
         #ifdef DEBUG

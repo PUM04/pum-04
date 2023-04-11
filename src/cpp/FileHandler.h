@@ -3,10 +3,13 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
-#include <emscripten/bind.h>
 #include "nlohmann/json.h"
 #include <regex>
 #include <set>
+
+#ifndef _TESTING_
+#include <emscripten/bind.h>
+#endif
 
 using json = nlohmann::json;
 
@@ -61,9 +64,9 @@ private:
      * @brief Get the average value from a category
      * 
      * @param category The category data
-     * @return int The average
+     * @return double The average
      */
-    int get_box_average(json &category) const;
+    double get_box_average(json &category) const;
 
     /**
      * @brief Get the median value from a category
@@ -152,6 +155,7 @@ private:
     void splitString(std::string &s, std::string &delim, std::vector<std::string>) const;
 };
 
+#ifndef _TESTING_
 using namespace emscripten;
 EMSCRIPTEN_BINDINGS(file_handler) {
     class_<FileHandler>("FileHandler")
@@ -160,3 +164,4 @@ EMSCRIPTEN_BINDINGS(file_handler) {
         .function("compute_files", &FileHandler::compute_files)
         .function("get_box_diagram", &FileHandler::get_box_diagram);
 }
+#endif
