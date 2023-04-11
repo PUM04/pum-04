@@ -1,13 +1,13 @@
 /**
- * @file
+ * @file Creates a theme from the .mui-theme element in the DOM
  */
 
 import React, { useEffect, useState } from 'react';
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { Theme } from '@mui/material/styles/createTheme';
-// Extend the theme type to include our custom color
 
+// Extend the theme type so we can use custom properties
 declare module '@mui/material/styles' {
   interface PaletteOptions {
     gray?: SimplePaletteColorOptions;
@@ -38,6 +38,7 @@ declare module '@mui/material/styles' {
  * @returns ThemeProvider component with a theme created from the .mui-theme element in the DOM
  */
 export default function SectraTheme(props: any): JSX.Element {
+  // Create a default theme to be used if the .mui-theme element is not found
   const defaultTheme = createTheme({
     palette: {
       primary: {
