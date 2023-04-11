@@ -21,17 +21,6 @@ void FileHandler::add_file(std::string file, std::string file_name) {
     #ifdef DEBUG
     std::cout << "Added file " << file_name << "." << std::endl;
     #endif
-    /*
-    Get metric/method name (?<={(metric|method)=")\w*(?=",le="(\d*|\+Inf)"} \d*\n)
-    Get length (?<={(metric|method)="\w*",le=")(\d*|\+Inf)(?=")
-    Get count for both metrics and methods: (?<={(metric|method)="\w*",le="(\d*|\+Inf)"} )\d*\n
-    
-    NEW IMPROVED: "(?<={(metric|method)=\")[_[:alnum:]]*(?=\",le=\"([[:digit:]]*|+Inf)\"} [[:digit:]]*\n)"
-
-     name: [A-z]+(?=\",le=)
-      ([0-9]+|+Inf)(?=\"})
-    
-    */
 }
 
 void FileHandler::compute_files() {
@@ -76,17 +65,17 @@ std::string FileHandler::get_box_diagram(std::string site_id) const {
     }
 
     for (auto &el : categories.items()) {
-        box_diagram[el.key()]["average"] = get_average_from_json(el.value());
-        box_diagram[el.key()]["median"] = get_median_from_json(el.value());
-        box_diagram[el.key()]["first_quartile"] = get_first_quartile(el.value());
-        box_diagram[el.key()]["third_quartile"] = get_third_quartile(el.value());
-        box_diagram[el.key()]["min"] = get_min_from_json(el.value());
-        box_diagram[el.key()]["max"] = get_max_from_json(el.value());
+        box_diagram[el.key()]["average"] = get_box_average(el.value());
+        box_diagram[el.key()]["median"] = get_box_median(el.value());
+        box_diagram[el.key()]["first_quartile"] = get_box_first_quartile(el.value());
+        box_diagram[el.key()]["third_quartile"] = get_box_third_quartile(el.value());
+        box_diagram[el.key()]["min"] = get_box_min(el.value());
+        box_diagram[el.key()]["max"] = get_box_max(el.value());
     }
     return box_diagram.dump();
 }
 
-int FileHandler::get_average_from_json(json &category) const {
+int FileHandler::get_box_average(json &category) const {
     int sum = 0;
 
     for (auto pair : category["data"]) {
@@ -100,7 +89,7 @@ int FileHandler::get_average_from_json(json &category) const {
     return sum / ((int) category["total"]);
 }
 
-int FileHandler::get_limit_from_json(json &category, double limit) const {
+int FileHandler::get_box_limit(json &category, double limit) const {
     const int total = (int) category["total"];
     int sum = 0;
 
@@ -114,19 +103,19 @@ int FileHandler::get_limit_from_json(json &category, double limit) const {
     return 0;
 }
 
-int FileHandler::get_median_from_json(json &category) const {
-    return get_limit_from_json(category, 0.5);
+int FileHandler::get_box_median(json &category) const {
+    return get_box_limit(category, 0.5);
 }
 
-int FileHandler::get_first_quartile(json &category) const {
-    return get_limit_from_json(category, 0.25);
+int FileHandler::get_box_first_quartile(json &category) const {
+    return get_box_limit(category, 0.25);
 }
 
-int FileHandler::get_third_quartile(json &category) const {
-    return get_limit_from_json(category, 0.75);
+int FileHandler::get_box_third_quartile(json &category) const {
+    return get_box_limit(category, 0.75);
 }
 
-int FileHandler::get_min_from_json(json &category) const {
+int FileHandler::get_box_min(json &category) const {
     for (auto pair : category["data"]) {
         if (pair["count"] != 0) {
             return (int) pair["length"];
@@ -135,7 +124,7 @@ int FileHandler::get_min_from_json(json &category) const {
     return 0;
 }
 
-int FileHandler::get_max_from_json(json &category) const {
+int FileHandler::get_box_max(json &category) const {
     auto data = category["data"];
     
     // Loop through the data backwards

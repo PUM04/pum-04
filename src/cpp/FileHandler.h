@@ -57,13 +57,63 @@ private:
      */
     void merge_category(struct Site &site, std::string key, json &result) const;
 
-    int get_average_from_json(json &category) const;
-    int get_median_from_json(json &category) const;
-    int get_first_quartile(json &category) const;
-    int get_third_quartile(json &category) const;
-    int get_limit_from_json(json &json, double limit) const;
-    int get_min_from_json(json &category) const;
-    int get_max_from_json(json &category) const;
+    /**
+     * @brief Get the average value from a category
+     * 
+     * @param category The category data
+     * @return int The average
+     */
+    int get_box_average(json &category) const;
+
+    /**
+     * @brief Get the median value from a category
+     * 
+     * @param category The category data
+     * @return int The median
+     */
+    int get_box_median(json &category) const;
+
+    /**
+     * @brief Get the first quartile from a category
+     * 
+     * @param category The category data
+     * @return int The first quartile
+     */
+    int get_box_first_quartile(json &category) const;
+
+    /**
+     * @brief Get the third quartile from a category
+     * 
+     * @param category The category data
+     * @return int The third quartile
+     */
+    int get_box_third_quartile(json &category) const;
+
+    /**
+     * @brief Get the divider of limit% of the data. For example: Limit 0.5 will yield the median, 
+     * 0.25 the first quartile
+     * 
+     * @param json The category data
+     * @param limit The limit
+     * @return int The divider value
+     */
+    int get_box_limit(json &json, double limit) const;
+
+    /**
+     * @brief Get the min value from a category
+     * 
+     * @param category The category data
+     * @return int The min value
+     */
+    int get_box_min(json &category) const;
+
+    /**
+     * @brief Get the max value from a category
+     * 
+     * @param category The category data
+     * @return int The max value
+     */
+    int get_box_max(json &category) const;
 
     /**
      * @brief Get the file type, e.g. the part after the last dot
