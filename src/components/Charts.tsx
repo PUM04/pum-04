@@ -239,7 +239,7 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
  */
 function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
   return (
-    <VictoryCandlestick
+    <VictoryCandlestick 
       labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
       labels={({ datum }) =>
         `min:${datum.low}\nmax:${datum.high}\nclose:${datum.close}\nopen:${
@@ -281,7 +281,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   });
 
   return (
-    <VictoryChart>
+    <VictoryChart data-testid = "victory-chart">
       <VictoryAxis
         dependentAxis
         style={{
@@ -303,7 +303,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
           axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
         }}
       />
-      <VictoryGroup offset={width + 5} domainPadding={{ x: width }}>
+      <VictoryGroup  offset={width + 5} domainPadding={{ x: width }}>
         {victoryCandles}
       </VictoryGroup>
     </VictoryChart>
@@ -386,7 +386,7 @@ function drawHistogram(
 
   return (
     <div>
-      <p style={{ textAlign: 'center', fontSize: 22, marginBottom: 0 }}>
+      <p data-testid = "graph-header" style={{ textAlign: 'center', fontSize: 22, marginBottom: 0 }}>
         {metric}
       </p>
       <VictoryChart key={metric}>
@@ -448,5 +448,5 @@ export function BarChart(props: ChartProps): JSX.Element {
     barGraphList.push(drawHistogram(barGraph, metric, width));
   });
 
-  return <div>{barGraphList}</div>;
+  return <div data-testid = "test">{barGraphList}</div>;
 }
