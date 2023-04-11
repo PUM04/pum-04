@@ -39,7 +39,7 @@ describe('Menu', () => {
     const setFilesMock = jest.fn();
     const startFile = new File([], 'testFile.txt');
     const files: File[] = [startFile];
-    render(<DragAndDropzone setter={setFilesMock} value={files} />);
+    await render(<DragAndDropzone setter={setFilesMock} value={files} />);
     const dropInput = await screen.findAllByTestId('drop-input');
     expect(setFilesMock).toHaveBeenCalledTimes(0);
 
