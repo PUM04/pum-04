@@ -151,7 +151,7 @@ export default function Menu() {
             sx={{
               flexDirection: 'column',
               display: 'inline-flex',
-              backgroundColor: 'grey',
+              backgroundColor: 'primary.light1',
             }}
           >
             <GraphComponent />
