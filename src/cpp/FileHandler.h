@@ -41,7 +41,7 @@ public:
      *
      * @param site_id The site id 
      */
-    void get_box_diagram(std::string site_id) const;
+    std::string get_box_diagram(std::string site_id) const;
 
 private:
     std::unordered_map<std::string, struct Site> sites;
@@ -59,6 +59,11 @@ private:
 
     int get_average_from_json(json &category) const;
     int get_median_from_json(json &category) const;
+    int get_first_quartile(json &category) const;
+    int get_third_quartile(json &category) const;
+    int get_limit_from_json(json &json, double limit) const;
+    int get_min_from_json(json &category) const;
+    int get_max_from_json(json &category) const;
 
     /**
      * @brief Get the file type, e.g. the part after the last dot

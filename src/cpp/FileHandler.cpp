@@ -51,13 +51,13 @@ void FileHandler::compute_files() {
     #endif
 }
 
-void FileHandler::get_box_diagram(std::string site_id) const {
+std::string FileHandler::get_box_diagram(std::string site_id) const {
     // Make sure the site exists
     if (sites.find(site_id) == sites.end()) {
         #ifdef DEBUG
         std::cout << "Could not find site with id " << site_id << std::endl;
         #endif
-        return;
+        return "";
     }
 
     struct Site site = sites.at(site_id);
@@ -76,10 +76,14 @@ void FileHandler::get_box_diagram(std::string site_id) const {
     }
 
     for (auto &el : categories.items()) {
-        box_diagram[el.key()]["average"] = get_average_from_category(el.value());
-        box_diagram[el.key()]["median"] = get_median_from_category(el.value());
+        box_diagram[el.key()]["average"] = get_average_from_json(el.value());
+        box_diagram[el.key()]["median"] = get_median_from_json(el.value());
+        box_diagram[el.key()]["first_quartile"] = get_first_quartile(el.value());
+        box_diagram[el.key()]["third_quartile"] = get_third_quartile(el.value());
+        box_diagram[el.key()]["min"] = get_min_from_json(el.value());
+        box_diagram[el.key()]["max"] = get_max_from_json(el.value());
     }
-    std::cout << box_diagram << std::endl;
+    return box_diagram.dump();
 }
 
 int FileHandler::get_average_from_json(json &category) const {
@@ -96,15 +100,48 @@ int FileHandler::get_average_from_json(json &category) const {
     return sum / ((int) category["total"]);
 }
 
-int FileHandler::get_median_from_json(json &category) const {
+int FileHandler::get_limit_from_json(json &category, double limit) const {
     const int total = (int) category["total"];
     int sum = 0;
 
     for (auto pair : category["data"]) {
         sum += (int) pair["count"];
 
-        if (sum >= total / 2) {
+        if (sum >= total * limit) {
             return (int) pair["length"];
+        }
+    }
+    return 0;
+}
+
+int FileHandler::get_median_from_json(json &category) const {
+    return get_limit_from_json(category, 0.5);
+}
+
+int FileHandler::get_first_quartile(json &category) const {
+    return get_limit_from_json(category, 0.25);
+}
+
+int FileHandler::get_third_quartile(json &category) const {
+    return get_limit_from_json(category, 0.75);
+}
+
+int FileHandler::get_min_from_json(json &category) const {
+    for (auto pair : category["data"]) {
+        if (pair["count"] != 0) {
+            return (int) pair["length"];
+        }
+    }
+    return 0;
+}
+
+int FileHandler::get_max_from_json(json &category) const {
+    auto data = category["data"];
+    
+    // Loop through the data backwards
+    for (auto it = data.rbegin(); it != data.rend(); it++) {
+        if ((*it)["count"] != 0) {
+            return (int) (*it)["length"];
         }
     }
     return 0;
