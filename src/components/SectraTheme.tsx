@@ -31,13 +31,20 @@ declare module '@mui/material/styles' {
 }
 
 /**
+ * @property children - children elements to pass to the ThemeProvider component
+ */
+export interface SectraThemeProps {
+  children: React.ReactNode;
+}
+
+/**
  * Create a theme from the .mui-theme element in the DOM
  * Re-renders the component when children changes
  *
  * @param props - props to pass to the ThemeProvider component that is returned from this function call (children)
  * @returns ThemeProvider component with a theme created from the .mui-theme element in the DOM
  */
-export default function SectraTheme(props: any): JSX.Element {
+export default function SectraTheme(props: SectraThemeProps): JSX.Element {
   // Create a default theme to be used if the .mui-theme element is not found
   const defaultTheme = createTheme({
     palette: {
