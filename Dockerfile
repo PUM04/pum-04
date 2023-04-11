@@ -3,6 +3,7 @@ WORKDIR /app
 
 #config and files required to start the webstie, these files and not in the volume 
 COPY ./package.json /app/
+COPY ./jest.config.json /app/
 COPY ./index.html /app/
 COPY ./vite.config.ts /app/
 COPY ./tsconfig.json /app/
