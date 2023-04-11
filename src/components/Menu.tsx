@@ -21,8 +21,9 @@ const size = 75;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
 }>(({ theme, open }) => ({
-  flexGrow: 1,
-  padding: theme.spacing(3),
+  flexGrow: 0,
+  padding: 0,
+  width: 0,
   transition: theme.transitions.create('margin', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -96,11 +97,11 @@ export default function Menu() {
   filereader.onerror = () => console.log('file reading has failed');
 
   const handleDrawerOpen = () => {
-      setOpen(true);
+    setOpen(true);
   };
 
   const handleDrawerClose = () => {
-      setOpen(false);
+    setOpen(false);
   };
 
   return (
@@ -113,8 +114,8 @@ export default function Menu() {
           <IconButton
             color="inherit"
             aria-label="open drawer"
-                      onClick={handleDrawerOpen}
-                      data-testid="menu-open-button"
+            onClick={handleDrawerOpen}
+            data-testid="menu-open-button"
             sx={{ ...(open && { display: 'none' }) }}
           >
             <MenuIcon />
@@ -136,7 +137,11 @@ export default function Menu() {
       >
         <DrawerHeader>
           <p>S.and.A.H.L</p>
-                  <IconButton onClick={handleDrawerClose} data-testid="menu-close-button" sx={{ ...(!open && { display: 'none' }) }}>
+          <IconButton
+            onClick={handleDrawerClose}
+            data-testid="menu-close-button"
+            sx={{ ...(!open && { display: 'none' }) }}
+          >
             {theme.direction === 'ltr' ? <MenuIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
@@ -165,8 +170,14 @@ export default function Menu() {
         </Paper>
 
         <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>
-          <p data-testid="uploaded-files">Uploaded files: {JSON.stringify(files)}</p>
-                  <DragAndDropzone setter={setFiles} value={files} data-testid="drop-zone" />
+          <p data-testid="uploaded-files">
+            Uploaded files: {JSON.stringify(files)}
+          </p>
+          <DragAndDropzone
+            setter={setFiles}
+            value={files}
+            data-testid="drop-zone"
+          />
         </div>
       </Drawer>
       <Main open={open}>

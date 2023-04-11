@@ -92,29 +92,27 @@ export default function Dropdown(props: any): JSX.Element {
     >
       <ListItemButton onClick={handleClick} data-testid="dropdown-button">
         <ListItemIcon>
-                  <Checkbox
+          <Checkbox
             checked={checked}
             onChange={handleChange}
-                      inputProps={{ 'aria-label': 'controlled' }}
-                      data-testid="dropdown-checkbox"
+            inputProps={{ 'aria-label': 'controlled' }}
+            data-testid="dropdown-checkbox"
           />
         </ListItemIcon>
         <ListItemText primary={dropdownName} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout={10} unmountOnExit>
-        <List component="div" disablePadding >
+        <List component="div" disablePadding>
           {content.map(({ item, selected }) => (
             <ListItemButton key={item} data-testid="list-button">
               <ListItemIcon key={item}>
-                      <Checkbox
-                          
-                          checked={selected}
-                          onChange={contentClick}
-                          name={item}
-                          key={item}
-                          data-testid="list-checkbox"
-
+                <Checkbox
+                  checked={selected}
+                  onChange={contentClick}
+                  name={item}
+                  key={item}
+                  data-testid="list-checkbox"
                 />
               </ListItemIcon>
               <ListItemText primary={item} />
