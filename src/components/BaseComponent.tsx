@@ -11,7 +11,8 @@ import React from 'react';
  */
 export function GraphComponent(): JSX.Element {
   return (
-    <Box
+    <Box 
+      data-testid='graph-component'
       sx={{
         flexDirection: 'column',
         display: 'flex',
@@ -22,6 +23,8 @@ export function GraphComponent(): JSX.Element {
           opacity: [0.9, 0.8, 0.7],
         },
       }}
+
+       
     >
       <Box>
         {' '}
@@ -95,6 +98,7 @@ export function GraphComponent(): JSX.Element {
 export function InfoboxComponent(): JSX.Element {
   return (
     <Box
+      data-testid='infobox-component'
       sx={{
         flexDirection: 'row',
         display: 'inline-flex',

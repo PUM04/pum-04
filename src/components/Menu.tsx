@@ -17,7 +17,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Example from './Example';
 import DragAndDropzone from './DragAndDropzone';
 // import { GraphComponent, InfoboxComponent } from './BaseComponent';
-import Legend from './Legend';
+import CreateLegends from './Legends';
 import '../App.css';
 
 const drawerWidth = 240;
@@ -76,7 +76,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
  *
  * @returns a menucomponent on top of the application component
  */
-export default function Menu({ sites }) {
+export default function Menu(prop: { sites: { enabled: any; name: any; color: any; }[]; }): JSX.Element {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   // -------------------- FileReader example --------------------
@@ -118,18 +118,7 @@ export default function Menu({ sites }) {
             >
               <MenuIcon />
             </IconButton>
-            <Box
-              sx={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                gap: '10px',
-                padding: '8px',
-              }}
-            >
-              {sites.map((site) => {
-                if (site.enabled) return <Legend key={site.id} name={site.name} color={site.color} />;
-              })}
-            </Box>
+            <CreateLegends sites={prop.sites}/>
           </DrawerHeader>
         </AppBar>
         <Drawer
