@@ -32,22 +32,6 @@ describe('Menu', () => {
     expect(menuOpenButton).toBeVisible();
     expect(menuCloseButton).not.toBeVisible();
   });
-  /*
-  it('should be able to upload', async () => {
-    const menuOpenButton = await screen.findByTestId('menu-open-button');
-    await user.click(menuOpenButton);
-    const setFilesMock = jest.fn();
-    const startFile = new File([], 'testFile.txt');
-    const files: File[] = [startFile];
-    render(<DragAndDropzone setter={setFilesMock} value={files} />);
-    const dropInput = await screen.findAllByTestId('drop-input');
-    expect(setFilesMock).toHaveBeenCalledTimes(0);
-
-    const testFile1 = new File([], '');
-    await user.upload(dropInput[0], testFile1);
-    expect(setFilesMock).toHaveBeenCalledTimes(0);
-  });
-  */
   // Run this after each test
   afterEach(() => {
     cleanup();
