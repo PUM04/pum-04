@@ -17,8 +17,29 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Example from './example';
 import DragAndDropzone from './DragAndDropzone';
 import { GraphComponent, InfoboxComponent } from './BaseComponent';
-import { renderLegends } from './Legends';
+import Legends from './Legends';
 import '../App.css';
+
+const legendList = [
+  { color: 'red', name: 'legend1' },
+  { color: 'green', name: 'legend2' },
+  { color: 'yellow', name: 'legend3' },
+  { color: 'red', name: 'legend1' },
+  { color: 'green', name: 'legend2' },
+  { color: 'yellow', name: 'legend3' },
+  { color: 'red', name: 'legend1' },
+  { color: 'green', name: 'legend2' },
+  { color: 'yellow', name: 'legend3' },
+  { color: 'red', name: 'legend1' },
+  { color: 'green', name: 'legend2' },
+  { color: 'yellow', name: 'legend3' },
+  { color: 'red', name: 'legend1' },
+  { color: 'green', name: 'legend2' },
+  { color: 'yellow', name: 'legend3' },
+  { color: 'red', name: 'legend1' },
+  { color: 'green', name: 'legend2' },
+  { color: 'yellow', name: 'legend3' },
+];
 
 const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
@@ -116,7 +137,7 @@ export default function Menu() {
             >
               <MenuIcon />
             </IconButton>
-            renderLegends( <Legend color="red" name="Legend 1" />)
+            <Legends legendList={legendList} />
           </DrawerHeader>
         </AppBar>
         <Drawer
