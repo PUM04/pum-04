@@ -19,7 +19,8 @@ import {
  *
  * @returns top level component
  */
-/**List of metrics and sites example
+/**
+ * List of metrics and sites example
  * metrics = ['getPatient', 'getBucket']
    sites=['stockholm', 'linköping', 'manchester', 'tokyo']
  */
@@ -27,7 +28,7 @@ interface ChartProps {
   metrics: Array<string>;
   sites: Array<string>;
 }
-/*Datastructure for drawing a histogram
+/* Datastructure for drawing a histogram
   Example
 * {data.bars = [
       { x: '500', y: 20, fill: 'yellow' },
@@ -199,6 +200,19 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
    * Todo- At the moment this function only contains dummy data.
    * Implement code to get data from backend
    * Make sure correct color is retrived from Legends component
+   *
+   *  This is the idea:
+   *  - json = get_box_diagram( string site_id) to get data from backend. Returns a json string.
+   *  - json = jsonify(json)
+   *  - json["getpatient"]["avrage"]
+   *    or json["getPatient"]
+   *  - iterate over to create correct data structure.
+   *
+   *  Candelstick to boxplot translation.
+   *  OPEN is first_quartile
+   *  close is third_quartile
+   *  max is high
+   *  min is low
    */
   if (
     metric === 'getPatient' &&
@@ -239,7 +253,7 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
  */
 function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
   return (
-    <VictoryCandlestick 
+    <VictoryCandlestick
       labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
       labels={({ datum }) =>
         `min:${datum.low}\nmax:${datum.high}\nclose:${datum.close}\nopen:${
@@ -251,7 +265,6 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
       style={{
         data: {
           fill: 'orange',
-          fillOpacity: 0.8,
           stroke: 'gray',
         },
       }}
@@ -265,12 +278,13 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
  * @param props Contains list of metrics and sites that should be drawn
  * Example metrics = ['getPatient', 'getBucket']
    sites=['stockholm', 'linköping', 'manchester', 'tokyo']
- * @returns BoxplotChart for given /?dataset?/
+ * @returns BoxplotChart for given dataset.
  */
 export function BoxPlotChart(props: ChartProps): JSX.Element {
   const { metrics } = props;
   const { sites } = props;
   const width = 10;
+  const offsetPadding = 5;
   const victoryCandles: Array<JSX.Element> = [];
 
   // For metrics in props.metrics skapa victorycandles som innehåller alla props.sites
@@ -281,7 +295,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   });
 
   return (
-    <VictoryChart data-testid = "victory-chart">
+    <VictoryChart>
       <VictoryAxis
         dependentAxis
         style={{
@@ -303,7 +317,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
           axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
         }}
       />
-      <VictoryGroup  offset={width + 5} domainPadding={{ x: width }}>
+      <VictoryGroup offset={width + offsetPadding} domainPadding={{ x: width }}>
         {victoryCandles}
       </VictoryGroup>
     </VictoryChart>
@@ -320,7 +334,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
       { x: '700', y: 200, fill: 'red' },
     ];
  * @param index ///NOT NEEDED?///
- * @param width xxx
+ * @param width width of a bar.
  * @returns a single victory bar.
  */
 function drawVictoryBar(
@@ -347,7 +361,7 @@ function drawVictoryBar(
 }
 /**
  *Calculates number of unique x values in a single Chart
- 
+ *
  * @param histograms array of histogram data structures
  * @returns number of uniqe x values
  */
@@ -386,7 +400,7 @@ function drawHistogram(
 
   return (
     <div>
-      <p data-testid = "graph-header" style={{ textAlign: 'center', fontSize: 22, marginBottom: 0 }}>
+      <p style={{ textAlign: 'center', fontSize: 22, marginBottom: 0 }}>
         {metric}
       </p>
       <VictoryChart key={metric}>
@@ -403,11 +417,11 @@ function drawHistogram(
         <VictoryAxis
           style={{
             tickLabels: {
-              // Later we want to add tickFormat and tickValues. This makes it possible to write "6-10ms" on the axis instead of the corresponding x values.
+              // Later we want to add tickFormat and tickValues. This makes it possible to write "6-10ms" on the axis instead of the corresponding x value.
               // For this to be possible the data that is used to paint this set of victorybars needs to be accessed and a new function that determines the tickFormat is needed.
               fontSize: 10,
               transform: 'translate(0, 10)', // offset x-labels
-              angle: 45, // titlt x labels
+              angle: 45, // tilt x labels
               stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
             },
             axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
@@ -424,14 +438,15 @@ function drawHistogram(
 /**
  *  Draws 1-n barcharts.
  *  metrics.length = number of graphs returned by this function
- * 
- * @param props:ChartProps contains list of metrics and list of sites.
+ *
+ * @param props :ChartProps contains list of metrics and list of sites.
  * @returns A list of victorycharts
  * [<VictoryChart>Chart1</VictoryChart>,<VictoryChart>Chart2</VictoryChart>]
  */
 export function BarChart(props: ChartProps): JSX.Element {
-  const { metrics } = props; 
-  const { sites } = props; 
+  const { metrics } = props;
+  const { sites } = props;
+
   const barGraphList: any = [];
 
   // This does not effect the actual graph width,
@@ -448,5 +463,5 @@ export function BarChart(props: ChartProps): JSX.Element {
     barGraphList.push(drawHistogram(barGraph, metric, width));
   });
 
-  return <div data-testid = "test">{barGraphList}</div>;
+  return <div>{barGraphList}</div>;
 }
