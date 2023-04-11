@@ -11,9 +11,7 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-
 import Paper from '@mui/material/Paper';
-
 import DragAndDropzone from './DragAndDropzone';
 import Dropdown from './Dropdown';
 import '../App.css';
@@ -84,7 +82,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
  */
 export default function Menu() {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   // -------------------- FileReader example --------------------
   const [files, setFiles] = useState<File[]>([]);
   const filereader = new FileReader();
@@ -98,11 +96,11 @@ export default function Menu() {
   filereader.onerror = () => console.log('file reading has failed');
 
   const handleDrawerOpen = () => {
-    setOpen(true);
+      setOpen(true);
   };
 
   const handleDrawerClose = () => {
-    setOpen(false);
+      setOpen(false);
   };
 
   return (
@@ -115,7 +113,8 @@ export default function Menu() {
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            onClick={handleDrawerOpen}
+                      onClick={handleDrawerOpen}
+                      data-testid="menu-open-button"
             sx={{ ...(open && { display: 'none' }) }}
           >
             <MenuIcon />
@@ -137,7 +136,7 @@ export default function Menu() {
       >
         <DrawerHeader>
           <p>S.and.A.H.L</p>
-          <IconButton onClick={handleDrawerClose}>
+                  <IconButton onClick={handleDrawerClose} data-testid="menu-close-button" sx={{ ...(!open && { display: 'none' }) }}>
             {theme.direction === 'ltr' ? <MenuIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
@@ -166,8 +165,8 @@ export default function Menu() {
         </Paper>
 
         <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>
-          <p>Uploaded files: {JSON.stringify(files)}</p>
-          <DragAndDropzone setter={setFiles} value={files} />
+          <p data-testid="uploaded-files">Uploaded files: {JSON.stringify(files)}</p>
+                  <DragAndDropzone setter={setFiles} value={files} data-testid="drop-zone" />
         </div>
       </Drawer>
       <Main open={open}>

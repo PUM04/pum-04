@@ -2,7 +2,7 @@
  * @file contains a dropdown-menu with checkboxes
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 // import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
@@ -20,7 +20,7 @@ import Checkbox from '@mui/material/Checkbox';
  * @param props dropdownProps - name of dropdown and name of items in dropdown
  * @returns a dropdop component designed for menu
  */
-export default function Dropdown(props: dropdownProps): JSX.Element {
+export default function Dropdown(props: any): JSX.Element {
   const { dropdownName, value: givenItems } = props;
 
   // Extract items from given items and mark their checkboxes as checked.
@@ -30,9 +30,9 @@ export default function Dropdown(props: dropdownProps): JSX.Element {
   });
 
   // should probably have some params for setting the content
-  const [open, setOpen] = React.useState(true);
-  const [content, setContent] = React.useState(extractedItems);
-  const [checked, setChecked] = React.useState(true);
+  const [open, setOpen] = useState(false);
+  const [content, setContent] = useState(extractedItems);
+  const [checked, setChecked] = useState(true);
   // If clicked on: open if closed and close if open.
   const handleClick = () => {
     setOpen(!open);
@@ -42,7 +42,6 @@ export default function Dropdown(props: dropdownProps): JSX.Element {
     setOpen(open);
     const newContent: React.SetStateAction<any[]> = [];
     // controlls the sub-checkboxes with the main checkbox
-    // ERROR: Assignment to property of function parameter 'contentItem', needs to be fixed
 
     if (checked) {
       // If checkbox currently checked and gets clicked on, uncheck it.
@@ -91,27 +90,31 @@ export default function Dropdown(props: dropdownProps): JSX.Element {
         },
       }}
     >
-      <ListItemButton onClick={handleClick}>
+      <ListItemButton onClick={handleClick} data-testid="dropdown-button">
         <ListItemIcon>
-          <Checkbox
+                  <Checkbox
             checked={checked}
             onChange={handleChange}
-            inputProps={{ 'aria-label': 'controlled' }}
+                      inputProps={{ 'aria-label': 'controlled' }}
+                      data-testid="dropdown-checkbox"
           />
         </ListItemIcon>
         <ListItemText primary={dropdownName} />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={open} timeout={10} unmountOnExit>
-        <List component="div" disablePadding>
+        <List component="div" disablePadding >
           {content.map(({ item, selected }) => (
-            <ListItemButton key={item}>
+            <ListItemButton key={item} data-testid="list-button">
               <ListItemIcon key={item}>
-                <Checkbox
-                  checked={selected}
-                  onChange={contentClick}
-                  name={item}
-                  key={item}
+                      <Checkbox
+                          
+                          checked={selected}
+                          onChange={contentClick}
+                          name={item}
+                          key={item}
+                          data-testid="list-checkbox"
+
                 />
               </ListItemIcon>
               <ListItemText primary={item} />
