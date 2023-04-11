@@ -19,22 +19,35 @@ import {
  *
  * @returns top level component
  */
-
+/**List of metrics and sites example
+ * metrics = ['getPatient', 'getBucket']
+   sites=['stockholm', 'linköping', 'manchester', 'tokyo']
+ */
 interface ChartProps {
   metrics: Array<string>;
   sites: Array<string>;
 }
-
+/*Datastructure for drawing a histogram
+  Example
+* {data.bars = [
+      { x: '500', y: 20, fill: 'yellow' },
+      { x: '600', y: 150, fill: 'yellow' },
+      { x: '700', y: 200, fill: 'yellow' },
+    ];}
+*/
 interface Histogram {
   bars: Array<Bar>;
 }
+/**
+ * Data for drawing a single bar in a histogram
+ */
 interface Bar {
   x: string;
   y: number;
   fill: string;
 }
 /**
- * Structure for one CandleChart based on one metric
+ * Data structure for drawing one CandleChart based on one metric
  */
 interface CandleChart {
   candels: Array<Candle>;
@@ -48,12 +61,10 @@ interface Candle {
 }
 
 /**
- * getBarChartData get the data from backend to paint BarChartData.
+ * getBarChartData get the data from backend to paint a BarChartData.
  *
  * @param site what site to get data from.
- * Example 'stockholm'
  * @param metric what metric to get data from.
- * Example 'getPatient'
  * @returns a data list on correct format to paint BarChart.
  */
 function getBarChartData(site: string, metric: string): Histogram {
@@ -169,8 +180,6 @@ function getBarChartData(site: string, metric: string): Histogram {
       { x: '15800', y: 225, fill: 'red' },
     ];
   }
-  // Exempelvis GetPatient för site1
-  // Exempelvis GetPatient för site2
 
   return data;
 }
@@ -416,15 +425,13 @@ function drawHistogram(
  *  Draws 1-n barcharts.
  *  metrics.length = number of graphs returned by this function
  * 
- * @param props contains list of metrics and list of sites.
- * Example metrics = ['getPatient', 'getBucket']
-   sites=['stockholm', 'linköping', 'manchester', 'tokyo']
+ * @param props:ChartProps contains list of metrics and list of sites.
  * @returns A list of victorycharts
  * [<VictoryChart>Chart1</VictoryChart>,<VictoryChart>Chart2</VictoryChart>]
  */
 export function BarChart(props: ChartProps): JSX.Element {
-  const { metrics } = props; // Lista med metrics
-  const { sites } = props; // Lista med sites
+  const { metrics } = props; 
+  const { sites } = props; 
   const barGraphList: any = [];
 
   // This does not effect the actual graph width,
