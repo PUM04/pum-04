@@ -30,7 +30,7 @@ interface ChartProps {
 }
 /* Datastructure for drawing a histogram
   Example
-* {data.bars = [
+* {bars = [
       { x: '500', y: 20, fill: 'yellow' },
       { x: '600', y: 150, fill: 'yellow' },
       { x: '700', y: 200, fill: 'yellow' },
@@ -41,6 +41,7 @@ interface Histogram {
 }
 /**
  * Data for drawing a single bar in a histogram
+ * { x: '700', y: 200, fill: 'yellow' }
  */
 interface Bar {
   x: string;
@@ -49,10 +50,20 @@ interface Bar {
 }
 /**
  * Data structure for drawing one CandleChart based on one metric
+ * {candels = [
+      { x: 1, open: 5, close: 10, high: 25, low: 1 },
+      { x: 2, open: 6, close: 8, high: 15, low: 3 },
+      { x: 3, open: 4, close: 9, high: 12, low: 0 }, 
+    ];}
  */
 interface CandleChart {
   candels: Array<Candle>;
 }
+
+/**
+ * Single candle used in a CandleChart
+ * { x: 3, open: 4, close: 9, high: 12, low: 0 }
+ */
 interface Candle {
   x: number;
   open: number;
@@ -66,7 +77,7 @@ interface Candle {
  *
  * @param site what site to get data from.
  * @param metric what metric to get data from.
- * @returns a data list on correct format to paint BarChart.
+ * @returns a Histogram object containing all data for drawing a BarChart.
  */
 function getBarChartData(site: string, metric: string): Histogram {
   /**
@@ -243,13 +254,13 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
  * Draws a single victoryCandle.
  *
  * @param data the data needed to create a victorycandle. Must be in the following format
- * metric = [
-      { x: 1, open: 5, close: 10, high: 22, low: 0 }, // site1
-      { x: 2, open: 10, close: 15, high: 20, low: 5 }, // site2
+ * data = [
+      { x: 1, open: 5, close: 10, high: 22, low: 0 }, 
+      { x: 2, open: 10, close: 15, high: 20, low: 5 }, 
     ];
  * @param width Is the fixed width of the candels in the chart. CandelRatio does not work in this case.
     Note that width might need to be changed depending on number of sites.
- * @returns a victory candle chart .
+ * @returns a VictoryCandlestick .
  */
 function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
   return (
@@ -279,7 +290,7 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
  * @param props Contains list of metrics and sites that should be drawn
  * Example metrics = ['getPatient', 'getBucket']
    sites=['stockholm', 'linköping', 'manchester', 'tokyo']
- * @returns BoxplotChart for given dataset.
+ * @returns A VictoryChart with an array of VictoryCandles.
  */
 export function BoxPlotChart(props: ChartProps): JSX.Element {
   const { metrics } = props;
@@ -326,7 +337,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
 }
 
 /**
- * draws a victory bar based on specified metric and site.
+ * Draws a VictoryBar based on data.
  *
  * @param data data needed to create a barChart. Must be in the following format
  *  siteNmetricN = [
@@ -334,15 +345,10 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
       { x: '600', y: 150, fill: 'red' },
       { x: '700', y: 200, fill: 'red' },
     ];
- * @param index ///NOT NEEDED?///
  * @param width width of a bar.
- * @returns a single victory bar.
+ * @returns a single VictoryBar.
  */
-function drawVictoryBar(
-  data: Array<Bar>,
-  index: any,
-  width: number
-): JSX.Element {
+function drawVictoryBar(data: Array<Bar>, width: number): JSX.Element {
   return (
     <VictoryBar
       key={JSON.stringify(data)}
@@ -363,7 +369,7 @@ function drawVictoryBar(
 /**
  *Calculates number of unique x values in a single Chart
  *
- * @param histograms array of histogram data structures
+ * @param histograms array of histogram objects
  * @returns number of uniqe x values
  */
 function numberOfXvalues(histograms: Array<Histogram>): number {
@@ -396,7 +402,7 @@ function drawHistogram(
 ) {
   const victoryBars: Array<any> = [];
   histograms.forEach((histogram) => {
-    victoryBars.push(drawVictoryBar(histogram.bars, 3, width));
+    victoryBars.push(drawVictoryBar(histogram.bars, width));
   });
 
   return (
@@ -440,12 +446,13 @@ function drawHistogram(
 }
 
 /**
- *  Draws 1-n barcharts.
- *  metrics.length = number of graphs returned by this function
+ *  Draws 1-n VictoryCharts containing 1-n VictoryBars.
+ *  metrics.length = number of VictoryCharts
+ *  sites.length = number of BarCharts in each VictoryChart
  *
  * @param props :ChartProps contains list of metrics and list of sites.
  * @returns A list of victorycharts
- * [<VictoryChart>Chart1</VictoryChart>,<VictoryChart>Chart2</VictoryChart>]
+ * [<VictoryChart>BarchartsArray</VictoryChart>,<VictoryChart>BarChartsArray</VictoryChart>]
  */
 export function BarChart(props: ChartProps): JSX.Element {
   const { metrics } = props;

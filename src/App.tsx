@@ -18,10 +18,8 @@ import { BoxPlotChart, BarChart } from './components/Charts';
  * @returns The app :)
  */
 function App(): JSX.Element {
-  console.log('afsefsef');
   return (
     <div className="App mui-theme">
-      (
       <div className="App">
         <p className="read-the-docs">
           Viktor & Nils is currently testing, shit will break.
@@ -35,7 +33,6 @@ function App(): JSX.Element {
           sites={['stockholm', 'linköping']}
         />
       </div>
-      )
     </div>
   );
 }
