@@ -11,9 +11,9 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import Example from './Example';
+import Paper from '@mui/material/Paper';
 import DragAndDropzone from './DragAndDropzone';
-import { GraphComponent, InfoboxComponent } from './BaseComponent';
+import Dropdown from './Dropdown';
 import '../App.css';
 
 const drawerWidth = 200;
@@ -21,8 +21,9 @@ const size = 75;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
 }>(({ theme, open }) => ({
-  flexGrow: 1,
-  padding: theme.spacing(3),
+  flexGrow: 0,
+  padding: 0,
+  width: 0,
   transition: theme.transitions.create('margin', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
@@ -52,6 +53,9 @@ const AppBar = styled(MuiAppBar, {
   }),
   ...(open && {
     width: drawerWidth,
+    overflow: 'hidden',
+    maxHeight: '100vh',
+    display: 'flex',
     marginRight: `${drawerWidth}px`,
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
@@ -79,7 +83,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
  */
 export default function Menu() {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   // -------------------- FileReader example --------------------
   const [files, setFiles] = useState<File[]>([]);
   const filereader = new FileReader();
@@ -101,67 +105,91 @@ export default function Menu() {
   };
 
   return (
-    <div className="App">
-      <Box sx={{ display: 'flex' }}>
-        <CssBaseline />
-        <AppBar position="fixed" open={open}>
-          <DrawerHeader>
-            <p>S.and.A.H.L</p>
-
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              sx={{ ...(open && { display: 'none' }) }}
-            >
-              <MenuIcon />
-            </IconButton>
-          </DrawerHeader>
-        </AppBar>
-        <Drawer
-          sx={{
-            width: '5%',
-            flexShrink: 0,
-            '& .MuiDrawer-paper': {
-              width: drawerWidth,
-              boxSizing: 'border-box',
-            },
-          }}
-          variant="persistent"
-          anchor="left"
-          open={open}
+    <Box sx={{ display: 'flex' }}>
+      <CssBaseline />
+      <AppBar position="fixed" open={open}>
+        <DrawerHeader
+          sx={{ backgroundColor: 'primary.main', color: 'secondary.main' }}
         >
-          <DrawerHeader>
-            <p>S.and.A.H.L</p>
-            <IconButton onClick={handleDrawerClose}>
-              {theme.direction === 'ltr' ? <MenuIcon /> : <ChevronRightIcon />}
-            </IconButton>
-          </DrawerHeader>
-          <Divider />
-          <Divider />
-          <div>
-            <p>Uploaded files: {JSON.stringify(files)}</p>
-            <DragAndDropzone setter={setFiles} value={files} />
-          </div>
-        </Drawer>
-        <Main open={open}>
-          <DrawerHeader />
+          <p>S.and.A.H.L</p>
 
-          <Box
-            sx={{
-              flexDirection: 'column',
-              display: 'inline-flex',
-              backgroundColor: 'primary.light1',
-            }}
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            data-testid="menu-open-button"
+            sx={{ ...(open && { display: 'none' }) }}
           >
-            <GraphComponent />
-            <InfoboxComponent />
-          </Box>
+            <MenuIcon sx={{ color: 'secondary.main' }} />
+          </IconButton>
+        </DrawerHeader>
+      </AppBar>
+      <Drawer
+        sx={{
+          width: '0%',
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+          },
+        }}
+        variant="persistent"
+        anchor="left"
+        open={open}
+      >
+        <DrawerHeader
+          sx={{ backgroundColor: 'primary.main', color: 'secondary.main' }}
+        >
+          <p>S.and.A.H.L</p>
+          <IconButton
+            onClick={handleDrawerClose}
+            data-testid="menu-close-button"
+            sx={{ ...(!open && { display: 'none' }) }}
+          >
+            {theme.direction === 'ltr' ? (
+              <MenuIcon sx={{ color: 'secondary.main' }} />
+            ) : (
+              <ChevronRightIcon />
+            )}
+          </IconButton>
+        </DrawerHeader>
+        <Divider />
+        <Divider />
+        <Paper
+          elevation={1}
+          style={{
+            overflow: 'auto',
+            maxHeight: '70vh',
+            position: 'fixed',
+            top: size + 5,
+            left: 5,
+            width: drawerWidth - 10,
+          }}
+        >
+          <Dropdown
+            dropdownName="Sites"
+            value={['site_1', 'site_2', 'site_3']}
+          />
+          <Dropdown
+            dropdownName="Metrics"
+            value={['metric_1', 'metric_2', 'metric_3']}
+          />
+        </Paper>
 
-          <Example />
-          <p>Hej</p>
-        </Main>
-      </Box>
-    </div>
+        <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>
+          <p data-testid="uploaded-files">
+            Uploaded files: {JSON.stringify(files)}
+          </p>
+          <DragAndDropzone
+            setter={setFiles}
+            value={files}
+            data-testid="drop-zone"
+          />
+        </div>
+      </Drawer>
+      <Main open={open}>
+        <DrawerHeader />
+      </Main>
+    </Box>
   );
 }

@@ -3,9 +3,12 @@
  */
 
 import React from 'react';
-import Menu from './components/Menu';
-import './App.css';
+
 import SectraTheme from './components/SectraTheme';
+import Menu from './components/Menu';
+import { GraphComponent, InfoboxComponent } from './components/BaseComponent';
+
+import './App.css';
 
 /**
  * Top level component.
@@ -16,7 +19,21 @@ function App(): JSX.Element {
   return (
     <div className="App mui-theme">
       <SectraTheme>
-        <Menu />
+        <div style={{ display: 'flex' }}>
+          <Menu />
+
+          <div
+            style={{
+              alignContent: 'center',
+              flexDirection: 'column',
+              display: 'flex',
+              backgroundColor: 'grey',
+            }}
+          >
+            <GraphComponent />
+            <InfoboxComponent />
+          </div>
+        </div>
       </SectraTheme>
     </div>
   );
