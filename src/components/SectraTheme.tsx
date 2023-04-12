@@ -74,7 +74,7 @@ export default function SectraTheme(props: SectraThemeProps): JSX.Element {
         palette: {
           primary: {
             light: style.getPropertyValue('--primary-light'),
-            main: '#004688',
+            main: style.getPropertyValue('--primary-main'),
             dark: style.getPropertyValue('--primary-dark'),
             light1: style.getPropertyValue('--primary-light1'),
             light2: style.getPropertyValue('--primary-light2'),
@@ -82,7 +82,7 @@ export default function SectraTheme(props: SectraThemeProps): JSX.Element {
             light4: style.getPropertyValue('--primary-light4'),
           },
           secondary: {
-            main: '#FF7B30',
+            main: style.getPropertyValue('--secondary-main'),
           },
           gray: { main: style.getPropertyValue('--gray-main') },
         },
