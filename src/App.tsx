@@ -1,7 +1,7 @@
 /**
  * @file Contains the App top level component.
  */
- 
+
 import Box from '@mui/material/Box';
 import { GraphComponent, InfoboxComponent } from './components/basecomponent';
 
@@ -11,7 +11,6 @@ import DragAndDropzone from './components/DragAndDropzone';
 import './App.css';
 import { useWasm } from './hooks/wasm';
 import FileHandlerModule from './cpp/FileHandler';
-
 
 /**
  * Top level component.
@@ -30,7 +29,7 @@ function App(): JSX.Element {
     if (fileHandlerModule) {
       setFileHandler(new fileHandlerModule.FileHandler());
     }
-  },[fileHandlerModule]);
+  }, [fileHandlerModule]);
 
   // Start reading the first file
   if (files.length > 0 && filereader.readyState !== FileReader.LOADING) {
@@ -39,17 +38,19 @@ function App(): JSX.Element {
 
   filereader.onload = () => {
     // Send the file to the backend
-    fileHandler.add_file(filereader.result as string, files[files.length - 1].name);
+    fileHandler.add_file(
+      filereader.result as string,
+      files[files.length - 1].name
+    );
     files.pop();
 
     // Continue reading the rest of the files
     if (files.length > 0) {
       filereader.readAsText(files[files.length - 1]);
     } else {
-        // Link the files in the backend
-        fileHandler.compute_files();
+      // Link the files in the backend
+      fileHandler.compute_files();
     }
-
   };
   filereader.onabort = () => console.log('file reading was aborted');
   filereader.onerror = () => console.log('file reading has failed');
