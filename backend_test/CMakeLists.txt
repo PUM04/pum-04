@@ -20,4 +20,3 @@ file(GLOB_RECURSE test_src CONFIGURE_DEPENDS
 
 # Build for automatic testing
 add_executable(test_runner ${test_src})
-#target_link_libraries(test_runner PRIVATE -lembind)
