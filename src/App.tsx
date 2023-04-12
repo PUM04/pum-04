@@ -10,7 +10,6 @@ import Button from '@mui/material/Button';
 import DragAndDropzone from './components/DragAndDropzone';
 import './App.css';
 import { useWasm } from './hooks/wasm';
-import CalculatorModule from './cpp/Calculator';
 import FileHandlerModule from './cpp/FileHandler';
 
 
@@ -25,9 +24,7 @@ function App(): JSX.Element {
   const [fileHandler, setFileHandler] = useState();
   const [filereader, setFileReader] = useState(new FileReader());
 
-  const calcModule = useWasm(CalculatorModule);
   const fileHandlerModule = useWasm(FileHandlerModule);
-
 
   useEffect(() => {
     if (fileHandlerModule) {
@@ -36,7 +33,7 @@ function App(): JSX.Element {
   },[fileHandlerModule]);
 
   // Start reading the first file
-  if (files.length > 0 && filereader.readyState != FileReader.LOADING) {
+  if (files.length > 0 && filereader.readyState !== FileReader.LOADING) {
     filereader.readAsText(files[files.length - 1]);
   }
 
@@ -48,6 +45,9 @@ function App(): JSX.Element {
     // Continue reading the rest of the files
     if (files.length > 0) {
       filereader.readAsText(files[files.length - 1]);
+    } else {
+        // Link the files in the backend
+        fileHandler.compute_files();
     }
 
   };
@@ -101,15 +101,6 @@ function App(): JSX.Element {
           count is {count}
         </Button>
 
-        <Button
-          color="primary"
-          type="button"
-          onClick={() => {
-            fileHandler.compute_files();
-          }}
-        >
-          Extract metrics
-        </Button>
         <Button color="primary" type="button">
           Just a visual MUI button
         </Button>
