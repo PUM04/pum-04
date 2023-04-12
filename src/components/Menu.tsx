@@ -20,6 +20,27 @@ import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './Legends';
 import '../App.css';
 
+const legendList = [
+  { color: 'red', name: 'legend1' },
+  { color: 'green', name: 'legend2' },
+  { color: 'yellow', name: 'legend3' },
+  { color: 'red', name: 'legend1' },
+  { color: 'green', name: 'legend2' },
+  { color: 'yellow', name: 'legend3' },
+  { color: 'red', name: 'legend1' },
+  { color: 'green', name: 'legend2' },
+  { color: 'yellow', name: 'legend3' },
+  { color: 'red', name: 'legend1' },
+  { color: 'green', name: 'legend2' },
+  { color: 'yellow', name: 'legend3' },
+  { color: 'red', name: 'legend1' },
+  { color: 'green', name: 'legend2' },
+  { color: 'yellow', name: 'legend3' },
+  { color: 'red', name: 'legend1' },
+  { color: 'green', name: 'legend2' },
+  { color: 'yellow', name: 'legend3' },
+];
+
 const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;

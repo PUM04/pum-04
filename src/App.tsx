@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import DragAndDropzone from './components/DragAndDropzone';
 import Menu from './components/Menu';
-import Layout from './components/Layout.tsx'
+import Layout from './components/Layout'
 import './App.css';
 
 /**
