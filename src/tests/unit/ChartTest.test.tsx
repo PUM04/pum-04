@@ -25,8 +25,8 @@ describe('Test charts', () => {
         sites={['stockholm', 'linköping']}
       />
     );
-    const test = screen.getByTestId('victory-chart');
-    expect(test.nodeName === 'VictoryChart');
+    const candelChart = screen.getByTestId('victory-chart');
+    expect(candelChart.nodeName === 'VictoryChart');
   });
 
   it('Check if histograms are rendered', async () => {

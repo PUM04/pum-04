@@ -254,6 +254,7 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
 function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
   return (
     <VictoryCandlestick
+      key={JSON.stringify(data)}
       labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
       labels={({ datum }) =>
         `min:${datum.low}\nmax:${datum.high}\nclose:${datum.close}\nopen:${
@@ -295,7 +296,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   });
 
   return (
-    <VictoryChart>
+    <VictoryChart data-testid="victory-chart">
       <VictoryAxis
         dependentAxis
         style={{
@@ -344,7 +345,7 @@ function drawVictoryBar(
 ): JSX.Element {
   return (
     <VictoryBar
-      // key={index}
+      key={JSON.stringify(data)}
       labelComponent={
         <VictoryTooltip cornerRadius={0} pointerLength={0} dy={-10} />
       }
@@ -399,11 +400,14 @@ function drawHistogram(
   });
 
   return (
-    <div>
-      <p style={{ textAlign: 'center', fontSize: 22, marginBottom: 0 }}>
+    <div key={metric}>
+      <p
+        data-testid="graph-header"
+        style={{ textAlign: 'center', fontSize: 22, marginBottom: 0 }}
+      >
         {metric}
       </p>
-      <VictoryChart key={metric}>
+      <VictoryChart>
         <VictoryAxis
           dependentAxis
           style={{
@@ -446,7 +450,6 @@ function drawHistogram(
 export function BarChart(props: ChartProps): JSX.Element {
   const { metrics } = props;
   const { sites } = props;
-
   const barGraphList: any = [];
 
   // This does not effect the actual graph width,
