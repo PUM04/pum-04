@@ -46,10 +46,19 @@ public:
      */
     std::string get_box_diagram(std::string site_id) const;
 
+    /**
+     * @brief Get the histogram for a given site
+     *
+     * @param site_id The site id
+     */
+    std::string get_histogram(std::string site_id) const;
+
 private:
     std::unordered_map<std::string, struct Site> sites;
     std::vector<struct LoadedFile> host_files; 
     std::vector<struct LoadedFile> performance_files; 
+    
+    void calculate_categories(struct Site &site, json &categories) const;
 
     /**
      * @brief Merge all of the log files with each other on category

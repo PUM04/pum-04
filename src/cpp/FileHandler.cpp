@@ -41,6 +41,23 @@ void FileHandler::compute_files() {
     #endif
 }
 
+std::string FileHandler::get_histogram(std::string site_id) const {
+    // Make sure the site exists
+    if (sites.find(site_id) == sites.end()) {
+        #ifdef DEBUG
+        std::cout << "Could not find site with id " << site_id << std::endl;
+        #endif
+        return "";
+    }
+    
+    struct Site site = sites.at(site_id);
+    json categories;
+
+    calculate_categories(site, categories);
+
+    return categories.dump();
+}
+
 std::string FileHandler::get_box_diagram(std::string site_id) const {
     // Make sure the site exists
     if (sites.find(site_id) == sites.end()) {
@@ -54,16 +71,7 @@ std::string FileHandler::get_box_diagram(std::string site_id) const {
     json categories;
     json box_diagram;
 
-    // Populate with the different categories
-    for (json log: site.logs) {
-        for (auto &el : log.items()) {
-            categories[el.key()] = {};
-        }
-    }
-
-    for (auto &el : categories.items()) {
-        merge_category(site, el.key(), categories);
-    }
+    calculate_categories(site, categories);
 
     for (auto &el : categories.items()) {
         box_diagram[el.key()]["average"] = get_box_average(el.value());
@@ -74,6 +82,19 @@ std::string FileHandler::get_box_diagram(std::string site_id) const {
         box_diagram[el.key()]["max"] = get_box_max(el.value());
     }
     return box_diagram.dump();
+}
+
+void FileHandler::calculate_categories(struct Site &site, json &categories) const {
+    // Populate with the different categories
+    for (json log: site.logs) {
+        for (auto &el : log.items()) {
+            categories[el.key()] = {};
+        }
+    }
+
+    for (auto &el : categories.items()) {
+        merge_category(site, el.key(), categories);
+    }
 }
 
 double FileHandler::get_box_average(json &category) const {
