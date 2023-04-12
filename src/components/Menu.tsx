@@ -17,7 +17,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Example from './Example';
 import DragAndDropzone from './DragAndDropzone';
 // import { GraphComponent, InfoboxComponent } from './BaseComponent';
-import CreateLegends from './Legends';
+import LegendBar from './Legends';
 import '../App.css';
 
 const drawerWidth = 240;
@@ -118,7 +118,7 @@ export default function Menu(prop: { sites: { enabled: any; name: any; color: an
             >
               <MenuIcon />
             </IconButton>
-            <CreateLegends sites={prop.sites}/>
+            <LegendBar sites={prop.sites}/>
           </DrawerHeader>
         </AppBar>
         <Drawer

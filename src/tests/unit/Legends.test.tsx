@@ -2,7 +2,7 @@ import React from 'react';
 import { cleanup, render, screen} from '@testing-library/react';
 import user from '@testing-library/user-event';
 
-import Legends from '../../components/Legends';
+import LegendBar from '../../components/Legends';
 
 describe('App', () => {
     // Run this before each test
@@ -12,12 +12,12 @@ describe('App', () => {
             {name: 'second', color: 'blue', enabled: true},
             {name: 'third', color: 'orange', enabled: true},
           ];
-        render(<Legends sites={sites}/>);
+        render(<LegendBar sites={sites}/>);
 
     });
   
     // Tshould render 
-    it('should render legends', async () => {
+    it('should render legendBar', async () => {
       const legends = await screen.findByTestId('legends-component');
         
     });
@@ -27,12 +27,6 @@ describe('App', () => {
     });
 
   
-    // // Tshould render 
-    // it('should render graphComponent', async () => {
-    //     const infoBox = await screen.findByTestId('infobox-component');
-    // });
-
-    // Run this after each test
     afterEach(() => {
       cleanup();
     });

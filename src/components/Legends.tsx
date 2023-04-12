@@ -7,8 +7,7 @@ import Paper from '@mui/material/Paper';
  *
  * @param p
  */
-
-function CreateLegends(props: { sites: { enabled: any; name: any; color: any; }[]; }) {
+function LegendBar(props: { sites: { enabled: any; name: any; color: any; }[]; }) {
   return (
     <Box
       data-testid='legends-component'
@@ -50,4 +49,4 @@ const Legend = (prop: { name: any; color: any; }) => (
   </Box>
 );
 
-export default CreateLegends;
+export default LegendBar;
