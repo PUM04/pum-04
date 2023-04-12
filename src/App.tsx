@@ -3,11 +3,10 @@
  */
 
 import React from 'react';
+import Box from '@mui/material/Box';
 import Menu from './components/Menu';
 import { GraphComponent, InfoboxComponent } from './components/BaseComponent';
-import Example from './components/Example';
-// Linting kommer klaga på att Box ligger här, men ligger den högre upp funkar inte webbsidan
-import Box from '@mui/material/Box';
+
 import './App.css';
 
 /**
@@ -33,8 +32,6 @@ function App(): JSX.Element {
           <InfoboxComponent />
         </Box>
       </Box>
-      <Example />
-      <p>Hejsan</p>
     </div>
   );
 }
