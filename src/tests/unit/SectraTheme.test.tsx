@@ -45,7 +45,7 @@ describe('SectraTheme', () => {
     expect(global.getComputedStyle).toHaveBeenCalledTimes(1);
     expect(
       global.CSSStyleDeclaration.prototype.getPropertyValue
-    ).toHaveBeenCalledTimes(9);
+    ).toHaveBeenCalledTimes(7);
     // verify that the children are rendered
     const testDiv = screen.getByTestId('test-div');
     expect(testDiv.textContent).toBe('test');
