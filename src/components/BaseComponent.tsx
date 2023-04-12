@@ -15,12 +15,10 @@ export function GraphComponent(): JSX.Element {
       data-testid='graph-component'
       sx={{
         flexDirection: 'column',
-        display: 'flex',
-        padding: '1rem',
-        backgroundColor: 'red',
+        display: 'inline-flex',
+        backgroundColor: 'primary.light2',
         '&:hover': {
-          backgroundColor: 'blue',
-          opacity: [0.9, 0.8, 0.7],
+          backgroundColor: 'primary.light1',
         },
       }}
 
@@ -102,13 +100,13 @@ export function InfoboxComponent(): JSX.Element {
       sx={{
         flexDirection: 'row',
         display: 'inline-flex',
-        backgroundColor: 'blue',
+        backgroundColor: 'primary.main',
         flexWrap: 'wrap',
-        padding: '1rem',
+        color: 'secondary.main',
         justifyContent: 'space-evenly',
         '&:hover': {
-          backgroundColor: 'red',
-          opacity: [0.9, 0.8, 0.7],
+          backgroundColor: 'primary.light1',
+          color: 'primary.dark',
         },
       }}
     >

@@ -33,10 +33,18 @@ export default function DragAndDropzone(props: DropzoneProps) {
       {({ getRootProps, getInputProps }) => (
         <section>
           <div {...getRootProps()}>
-            <input {...getInputProps()} />
+            <input {...getInputProps()} data-testid="drop-input" />
             <Box
+              data-testid="drop-box"
               component="span"
-              sx={{ p: 2, border: '2px dashed grey', borderRadius: '10px' }}
+              sx={{
+                p: 2,
+                border: '1px dashed',
+                borderColor: 'primary.main',
+                color: 'primary.main',
+                backgroundColor: 'primary.light3',
+                borderRadius: '10px',
+              }}
               style={{
                 display: 'flex',
                 justifyContent: 'center',

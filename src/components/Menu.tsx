@@ -20,26 +20,6 @@ import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './Legends';
 import '../App.css';
 
-const legendList = [
-  { color: 'red', name: 'legend1' },
-  { color: 'green', name: 'legend2' },
-  { color: 'yellow', name: 'legend3' },
-  { color: 'red', name: 'legend1' },
-  { color: 'green', name: 'legend2' },
-  { color: 'yellow', name: 'legend3' },
-  { color: 'red', name: 'legend1' },
-  { color: 'green', name: 'legend2' },
-  { color: 'yellow', name: 'legend3' },
-  { color: 'red', name: 'legend1' },
-  { color: 'green', name: 'legend2' },
-  { color: 'yellow', name: 'legend3' },
-  { color: 'red', name: 'legend1' },
-  { color: 'green', name: 'legend2' },
-  { color: 'yellow', name: 'legend3' },
-  { color: 'red', name: 'legend1' },
-  { color: 'green', name: 'legend2' },
-  { color: 'yellow', name: 'legend3' },
-];
 
 const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
@@ -121,7 +101,7 @@ export default function Menu(prop: { sites: { enabled: any; name: any; color: an
   };
 
   return (
-    <div className="App">
+    <div>
       <Box sx={{ display: 'flex' }}>
         {/* <CssBaseline /> */}
         <AppBar position="fixed" open={open}>
@@ -158,9 +138,6 @@ export default function Menu(prop: { sites: { enabled: any; name: any; color: an
           <DrawerHeader>
             <IconButton
               onClick={handleDrawerClose}
-              // sx={{
-              //     pt: '0',
-              // }}
             >
               {theme.direction === 'ltr' ? (
                 <ChevronLeftIcon />

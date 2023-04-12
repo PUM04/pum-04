@@ -11,6 +11,7 @@ import DragAndDropzone from './components/DragAndDropzone';
 import Menu from './components/Menu';
 import Layout from './components/Layout'
 import './App.css';
+import SectraTheme from './components/SectraTheme';
 
 /**
  * Top level component.
@@ -18,7 +19,14 @@ import './App.css';
  * @returns top level component
  */
 function App(): JSX.Element {
-  return <Layout />;
+  return (
+    <div className="App mui-theme">
+      <SectraTheme>
+        < Layout />
+      
+      </SectraTheme>
+    </div>
+  );
 }
 
 export default App;
