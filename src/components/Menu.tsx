@@ -4,19 +4,14 @@
 import React, { useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import Drawer from '@mui/material/Drawer';
 import Typography from '@mui/material/Typography';
-import CssBaseline from '@mui/material/CssBaseline';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import Example from './Example';
 import DragAndDropzone from './DragAndDropzone';
-// import { GraphComponent, InfoboxComponent } from './BaseComponent';
 import LegendBar from './LegendBar';
 import '../App.css';
 
@@ -64,7 +59,6 @@ const AppBar = styled(MuiAppBar, {
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'flex-start',
-  // marginTop: '105px',
   padding: theme.spacing(1, 0),
   // necessary for content to be below app bar
   // ...theme.mixins.toolbar,
@@ -73,7 +67,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 /**
  * A drawermenu for showing available metrics, sites and to upload files
- *
+ * @param props contains list of sites
+ * @param props.sites list of sites
  * @returns a menucomponent on top of the application component
  */
 export default function Menu(props: {
@@ -101,10 +96,10 @@ export default function Menu(props: {
     setOpen(false);
   };
 
+  const { sites } = props;
   return (
     <div className="App">
       <Box sx={{ display: 'flex' }}>
-        {/* <CssBaseline /> */}
         <AppBar position="fixed" open={open}>
           <DrawerHeader>
             <IconButton
@@ -120,7 +115,7 @@ export default function Menu(props: {
             >
               <MenuIcon />
             </IconButton>
-            <LegendBar sites={props.sites} />
+            <LegendBar sites={sites} />
           </DrawerHeader>
         </AppBar>
         <Drawer
@@ -156,7 +151,7 @@ export default function Menu(props: {
             <DragAndDropzone setter={setFiles} value={files} />
           </div>
         </Drawer>
-        <Main open={open}></Main>
+        <Main open={open} />
       </Box>
     </div>
   );

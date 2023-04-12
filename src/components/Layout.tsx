@@ -1,11 +1,9 @@
-/* eslint-disable prettier/prettier */
-import React, { useState } from 'react';
-import Toolbar from '@mui/material/Toolbar';
-import { Box, BoxProps } from '@mui/material';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+/**
+ * @file Contains the layout component.
+ */
+import React from 'react';
+import { Box } from '@mui/material';
 import Menu from './Menu';
-import Legend from './LegendBar';
 import { GraphComponent, InfoboxComponent } from './BaseComponent';
 
 //        ____Layout_____

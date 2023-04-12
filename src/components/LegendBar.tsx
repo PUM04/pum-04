@@ -8,6 +8,7 @@ import Paper from '@mui/material/Paper';
 
 /**
  * Creates a legend
+ *
  * @param prop legend
  * @param prop.name site name
  * @param prop.color color of legend
@@ -39,10 +40,10 @@ function Legend(prop: { name: any; color: any }) {
 
 /**
  * Creates a box for the appbar containg all legends
+ *
  * @param props contains list of sites
  * @param props.sites list of sites
  * @returns a box containing all legends
- *
  */
 function LegendBar(props: {
   sites: { enabled: any; name: any; color: any }[];
