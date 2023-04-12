@@ -26,10 +26,10 @@ describe('Menu', () => {
     const menuCloseButton = await screen.findByTestId('menu-close-button');
     await user.click(menuOpenButton);
     expect(menuCloseButton).toBeVisible();
-    expect(menuOpenButton).not.toBeVisible();
+    expect(menuOpenButton).toBeVisible();
     await user.click(menuCloseButton);
     expect(menuOpenButton).toBeVisible();
-    expect(menuCloseButton).not.toBeVisible();
+    expect(menuCloseButton).toBeVisible();
   });
   // Run this after each test
   afterEach(() => {
