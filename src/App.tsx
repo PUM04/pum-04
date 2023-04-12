@@ -5,6 +5,7 @@
 import React from 'react';
 import './App.css';
 import { BoxPlotChart, BarChart } from './components/Charts';
+import SectraTheme from './components/SectraTheme';
 
 /**
  * Top level component.
@@ -20,6 +21,9 @@ import { BoxPlotChart, BarChart } from './components/Charts';
 function App(): JSX.Element {
   console.log('afsefsef');
   return (
+    <div className="App mui-theme">
+      <SectraTheme>
+        (
     <div className="App">
       <p className="read-the-docs">
         Viktor & Nils is currently testing, shit will break.
@@ -32,6 +36,9 @@ function App(): JSX.Element {
         metrics={['getPatient', 'getBucket']}
         sites={['stockholm', 'linköping']}
       />
+    </div>
+  )
+      </SectraTheme>
     </div>
   );
 }
