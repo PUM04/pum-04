@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: cd backend_test && cmake . && cmake --build . && ./test_runner
+      - run: cd backend_test && ./test_run.sh
 
   frontend-test:
     runs-on: ubuntu-latest
