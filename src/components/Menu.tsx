@@ -67,6 +67,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 /**
  * A drawermenu for showing available metrics, sites and to upload files
+ *
  * @param props contains list of sites
  * @param props.sites list of sites
  * @returns a menucomponent on top of the application component

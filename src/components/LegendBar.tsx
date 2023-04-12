@@ -61,10 +61,10 @@ function LegendBar(props: {
         flexGrow: 1,
       }}
     >
-      {sites.map((site: { enabled: any; name: any; color: any }) => {
-        if (site.enabled)
-          return <Legend key={site.name} name={site.name} color={site.color} />;
-      })}
+      {sites.map((site: { enabled: any; name: any; color: any }) => (
+        // if (site.enabled)
+        <Legend key={site.name} name={site.name} color={site.color} />
+      ))}
     </Box>
   );
 }

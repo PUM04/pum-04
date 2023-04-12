@@ -16,6 +16,7 @@ import { GraphComponent, InfoboxComponent } from './BaseComponent';
 //
 /**
  * Basestructure for the website
+ *
  * @returns the layout of the website
  */
 function Layout() {
