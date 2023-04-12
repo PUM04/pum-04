@@ -11,25 +11,20 @@ import React from 'react';
  */
 export function GraphComponent(): JSX.Element {
   return (
-    <Box 
-      data-testid='graph-component'
+    <Box
+      data-testid="graph-component"
       sx={{
         flexDirection: 'column',
-        display: 'inline-flex',
+        display: 'flex',
+        paddingTop: '7vh',
+        paddingBottom: '3vh',
         backgroundColor: 'primary.light2',
         '&:hover': {
           backgroundColor: 'primary.light1',
         },
       }}
-
-       
     >
-      <Box>
-        {' '}
-        Put graphs
-        hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee!
-      </Box>
-      <Box> Put graphs here! </Box>
+      <Box> Put graphs here first! </Box>
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
@@ -96,10 +91,10 @@ export function GraphComponent(): JSX.Element {
 export function InfoboxComponent(): JSX.Element {
   return (
     <Box
-      data-testid='infobox-component'
+      data-testid="infobox-component"
       sx={{
         flexDirection: 'row',
-        display: 'inline-flex',
+        display: 'flex',
         backgroundColor: 'primary.main',
         flexWrap: 'wrap',
         color: 'secondary.main',

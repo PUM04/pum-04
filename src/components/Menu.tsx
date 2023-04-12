@@ -20,7 +20,6 @@ import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './Legends';
 import '../App.css';
 
-
 const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
@@ -77,7 +76,9 @@ const DrawerHeader = styled('div')(({ theme }) => ({
  *
  * @returns a menucomponent on top of the application component
  */
-export default function Menu(prop: { sites: { enabled: any; name: any; color: any; }[]; }): JSX.Element {
+export default function Menu(props: {
+  sites: { enabled: any; name: any; color: any }[];
+}): JSX.Element {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   // -------------------- FileReader example --------------------
@@ -101,7 +102,7 @@ export default function Menu(prop: { sites: { enabled: any; name: any; color: an
   };
 
   return (
-    <div>
+    <div className="App">
       <Box sx={{ display: 'flex' }}>
         {/* <CssBaseline /> */}
         <AppBar position="fixed" open={open}>
@@ -119,7 +120,7 @@ export default function Menu(prop: { sites: { enabled: any; name: any; color: an
             >
               <MenuIcon />
             </IconButton>
-            <LegendBar sites={prop.sites}/>
+            <LegendBar sites={props.sites} />
           </DrawerHeader>
         </AppBar>
         <Drawer
@@ -138,6 +139,9 @@ export default function Menu(prop: { sites: { enabled: any; name: any; color: an
           <DrawerHeader>
             <IconButton
               onClick={handleDrawerClose}
+              // sx={{
+              //     pt: '0',
+              // }}
             >
               {theme.direction === 'ltr' ? (
                 <ChevronLeftIcon />

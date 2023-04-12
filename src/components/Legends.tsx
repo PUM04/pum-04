@@ -4,32 +4,40 @@ import Box from '@mui/material/Box';
 import React from 'react';
 import Paper from '@mui/material/Paper';
 /**
+ * Creates a box for the appbar containg all legends
+ * @param props list of sites
+ * @returns a box containing all legends
  *
- * @param p
  */
-function LegendBar(props: { sites: { enabled: any; name: any; color: any; }[]; }) {
+function LegendBar(props: {
+  sites: { enabled: any; name: any; color: any }[];
+}) {
   return (
     <Box
-      data-testid='legends-component'
+      data-testid="legends-component"
       sx={{
         display: 'flex',
         flexWrap: 'wrap',
         gap: '10px',
         padding: '8px',
         justifyContent: 'center',
-        flexGrow: 1
+        flexGrow: 1,
       }}
     >
-      {props.sites.map((site: { enabled: any; name: any; color: any;}) => {
-        if (site.enabled) return <Legend key={site.name} name={site.name} color={site.color}/>;
+      {props.sites.map((site: { enabled: any; name: any; color: any }) => {
+        if (site.enabled)
+          return <Legend key={site.name} name={site.name} color={site.color} />;
       })}
     </Box>
   );
-} 
-
-const Legend = (prop: { name: any; color: any; }) => (
+}
+/**
+ * Creates a legend
+ * @param prop name and color for legend
+ * @returns a legend, colored square with text
+ */
+const Legend = (prop: { name: any; color: any }) => (
   <Box
-    // style={enabled ? {height: '0', width: '0'} : {}}
     sx={{
       display: 'flex',
       alignItems: 'center',
@@ -37,7 +45,7 @@ const Legend = (prop: { name: any; color: any; }) => (
     }}
   >
     <Paper
-      data-testid='legend-component'
+      data-testid="legend-component"
       sx={{
         width: '15px',
         height: '15px',
@@ -45,7 +53,7 @@ const Legend = (prop: { name: any; color: any; }) => (
         marginTop: '3px',
       }}
     />
-    <Typography >{prop.name}</Typography>
+    <Typography>{prop.name}</Typography>
   </Box>
 );
 
