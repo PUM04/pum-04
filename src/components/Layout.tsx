@@ -5,7 +5,7 @@ import { Box, BoxProps } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Menu from './Menu';
-import Legend from './Legends';
+import Legend from './LegendBar';
 import { GraphComponent, InfoboxComponent } from './BaseComponent';
 
 //        ____Layout_____

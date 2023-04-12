@@ -17,7 +17,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Example from './Example';
 import DragAndDropzone from './DragAndDropzone';
 // import { GraphComponent, InfoboxComponent } from './BaseComponent';
-import LegendBar from './Legends';
+import LegendBar from './LegendBar';
 import '../App.css';
 
 const drawerWidth = 240;
