@@ -1,3 +1,6 @@
+/**
+ * @file Contains tests for the LegendBar component
+ */
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
 import LegendBar from '../../components/LegendBar';
@@ -13,13 +16,12 @@ describe('App', () => {
     render(<LegendBar sites={sites} />);
   });
 
-  // Tshould render
   it('should render legendBar', async () => {
-    const legends = await screen.findByTestId('legends-component');
+    await screen.findByTestId('legendBar-component');
   });
 
   it('should render legend', async () => {
-    const legend = await screen.findAllByTestId('legend-component');
+    await screen.findAllByTestId('legend-component');
   });
 
   afterEach(() => {

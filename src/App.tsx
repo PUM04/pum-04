@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import DragAndDropzone from './components/DragAndDropzone';
 import Menu from './components/Menu';
-import Layout from './components/Layout'
+import Layout from './components/Layout';
 import './App.css';
 import SectraTheme from './components/SectraTheme';
 
@@ -22,8 +22,7 @@ function App(): JSX.Element {
   return (
     <div className="App mui-theme">
       <SectraTheme>
-        < Layout />
-      
+        <Layout />
       </SectraTheme>
     </div>
   );

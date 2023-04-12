@@ -8,9 +8,9 @@ import Paper from '@mui/material/Paper';
 
 /**
  * Creates a legend
- * @param prop name and color for legend
- * @param prop.name
- * @param prop.color
+ * @param prop legend
+ * @param prop.name site name
+ * @param prop.color color of legend
  * @returns a legend, colored square with text
  */
 function Legend(prop: { name: any; color: any }) {
