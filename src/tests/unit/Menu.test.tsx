@@ -6,7 +6,7 @@ import { cleanup, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import user from '@testing-library/user-event';
 import Menu from '../../components/Menu';
-// import DragAndDropzone from '../../components/DragAndDropzone';
+
 
 describe('Menu', () => {
   // Run this before each test
