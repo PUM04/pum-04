@@ -7,7 +7,6 @@ import '@testing-library/jest-dom';
 import user from '@testing-library/user-event';
 import Menu from '../../components/Menu';
 
-
 describe('Menu', () => {
   // Run this before each test
   beforeEach(() => {

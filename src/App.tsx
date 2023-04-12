@@ -4,7 +4,6 @@
 
 import React from 'react';
 
-import Box from '@mui/material/Box';
 import SectraTheme from './components/SectraTheme';
 import Menu from './components/Menu';
 import { GraphComponent, InfoboxComponent } from './components/BaseComponent';
@@ -20,11 +19,11 @@ function App(): JSX.Element {
   return (
     <div className="App mui-theme">
       <SectraTheme>
-        <Box sx={{ display: 'flex' }}>
+        <div style={{ display: 'flex' }}>
           <Menu />
 
-          <Box
-            sx={{
+          <div
+            style={{
               alignContent: 'center',
               flexDirection: 'column',
               display: 'flex',
@@ -33,8 +32,8 @@ function App(): JSX.Element {
           >
             <GraphComponent />
             <InfoboxComponent />
-          </Box>
-        </Box>
+          </div>
+        </div>
       </SectraTheme>
     </div>
   );
