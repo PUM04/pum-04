@@ -4,9 +4,9 @@
 
 import React from 'react';
 import Box from '@mui/material/Box';
+import SectraTheme from './components/SectraTheme';
 import Menu from './components/Menu';
 import { GraphComponent, InfoboxComponent } from './components/BaseComponent';
-import Example from './components/Example';
 import './App.css';
 
 /**
@@ -16,24 +16,24 @@ import './App.css';
  */
 function App(): JSX.Element {
   return (
-    <div className="App">
-      <Box sx={{ display: 'flex' }}>
-        <Menu />
+    <div className="App mui-theme">
+      <SectraTheme>
+        <Box sx={{ display: 'flex' }}>
+          <Menu />
 
-        <Box
-          sx={{
-            alignContent: 'center',
-            flexDirection: 'column',
-            display: 'flex',
-            backgroundColor: 'grey',
-          }}
-        >
-          <GraphComponent />
-          <InfoboxComponent />
+          <Box
+            sx={{
+              alignContent: 'center',
+              flexDirection: 'column',
+              display: 'flex',
+              backgroundColor: 'grey',
+            }}
+          >
+            <GraphComponent />
+            <InfoboxComponent />
+          </Box>
         </Box>
-      </Box>
-      <Example />
-      <p>Hejsan</p>
+      </SectraTheme>
     </div>
   );
 }

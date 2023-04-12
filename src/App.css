@@ -5,6 +5,22 @@
   text-align: center;
 }
 
+/* Definition for sectra theme used by SectraTheme
+  used by mui components
+*/
+.mui-theme{
+  --primary-dark: #000000;
+  --primary-light:#FFFFFF;
+  --primary-main: #004688;	
+  --primary-light1: #7AAADA;	
+  --primary-light2: #AECDEB;	
+  --primary-light3: #D2E0FA;	
+  --primary-light4: #DEE8FA;	
+  --primary-link: #0D549E;	
+  --gray-main: #808080;
+  --secondary-main: #FF7B30;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

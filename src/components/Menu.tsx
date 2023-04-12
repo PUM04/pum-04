@@ -108,7 +108,9 @@ export default function Menu() {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
-        <DrawerHeader>
+        <DrawerHeader
+          sx={{ backgroundColor: 'primary.main', color: 'secondary.main' }}
+        >
           <p>S.and.A.H.L</p>
 
           <IconButton
@@ -118,7 +120,7 @@ export default function Menu() {
             data-testid="menu-open-button"
             sx={{ ...(open && { display: 'none' }) }}
           >
-            <MenuIcon />
+            <MenuIcon sx={{ color: 'secondary.main' }} />
           </IconButton>
         </DrawerHeader>
       </AppBar>
@@ -135,19 +137,24 @@ export default function Menu() {
         anchor="left"
         open={open}
       >
-        <DrawerHeader>
+        <DrawerHeader
+          sx={{ backgroundColor: 'primary.main', color: 'secondary.main' }}
+        >
           <p>S.and.A.H.L</p>
           <IconButton
             onClick={handleDrawerClose}
             data-testid="menu-close-button"
             sx={{ ...(!open && { display: 'none' }) }}
           >
-            {theme.direction === 'ltr' ? <MenuIcon /> : <ChevronRightIcon />}
+            {theme.direction === 'ltr' ? (
+              <MenuIcon sx={{ color: 'secondary.main' }} />
+            ) : (
+              <ChevronRightIcon />
+            )}
           </IconButton>
         </DrawerHeader>
         <Divider />
         <Divider />
-
         <Paper
           elevation={1}
           style={{
