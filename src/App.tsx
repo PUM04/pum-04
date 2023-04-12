@@ -3,10 +3,12 @@
  */
 
 import React from 'react';
+
 import Box from '@mui/material/Box';
 import SectraTheme from './components/SectraTheme';
 import Menu from './components/Menu';
 import { GraphComponent, InfoboxComponent } from './components/BaseComponent';
+
 import './App.css';
 
 /**
