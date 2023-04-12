@@ -31,8 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: mymindstorm/setup-emsdk@v11
-      - run: cd backend_test
-      - run: ./test_run.sh
+      - run: cd backend_test && ./test_run.sh
 
   frontend-test:
     runs-on: ubuntu-latest
