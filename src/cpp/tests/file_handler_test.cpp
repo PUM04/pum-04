@@ -22,10 +22,10 @@ TEST_CASE("FileHandler") {
         std::string host = "{\"site_name\": \"test\", \"site_id\": \"test123\"}";
         std::string host_name = "test.json";
 
-        fh->add_file(performance, performance_name);
-        fh->add_file(host, host_name);
-        fh->compute_files();
-        json box = json::parse(fh->get_box_diagram("test123"));
+        fh->AddFile(performance, performance_name);
+        fh->AddFile(host, host_name);
+        fh->ComputeFiles();
+        json box = json::parse(fh->GetBoxDiagram("test123"));
 
         CHECK(box["Test"]["min"] == 1);
         CHECK(box["Test"]["max"] == 6);
@@ -59,11 +59,11 @@ TEST_CASE("FileHandler") {
         std::string host = "{\"site_name\": \"test\", \"site_id\": \"test123\"}";
         std::string host_name = "test.json";
 
-        fh->add_file(performance1, performance_name1);
-        fh->add_file(performance2, performance_name2);
-        fh->add_file(host, host_name);
-        fh->compute_files();
-        json box = json::parse(fh->get_box_diagram("test123"));
+        fh->AddFile(performance1, performance_name1);
+        fh->AddFile(performance2, performance_name2);
+        fh->AddFile(host, host_name);
+        fh->ComputeFiles();
+        json box = json::parse(fh->GetBoxDiagram("test123"));
 
         CHECK(box["Test"]["min"] == 1);
         CHECK(box["Test"]["max"] == 6);
