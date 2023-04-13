@@ -1,4 +1,4 @@
-#include "FileHandler.h"
+#include "file_handler.h"
 #include <iostream>
 #include <vector>
 #include <regex>
@@ -10,8 +10,8 @@
 
 #define DEBUG
 
-void FileHandler::add_file(std::string file, std::string file_name) {
-    std::string file_ending = get_file_ending(file_name);
+void FileHandler::AddFile(std::string file, std::string file_name) {
+    std::string file_ending = GetFileEnding(file_name);
 
     if (file_ending == "txt") {
         performance_files.push_back({file_name, file});
@@ -24,13 +24,13 @@ void FileHandler::add_file(std::string file, std::string file_name) {
     #endif
 }
 
-void FileHandler::compute_files() {
+void FileHandler::ComputeFiles() {
     for (auto file : host_files) {
-        add_host_file(file.file);
+        AddHostFile(file.file);
     }
 
     for (auto file : performance_files) {
-        add_performance_file(file.file, file.name);
+        AddPerformanceFile(file.file, file.name);
     }
 
     host_files = {};
@@ -41,7 +41,7 @@ void FileHandler::compute_files() {
     #endif
 }
 
-std::string FileHandler::get_histogram(std::string site_id) const {
+std::string FileHandler::GetHistogram(std::string site_id) const {
     // Make sure the site exists
     if (sites.find(site_id) == sites.end()) {
         #ifdef DEBUG
@@ -53,12 +53,12 @@ std::string FileHandler::get_histogram(std::string site_id) const {
     struct Site site = sites.at(site_id);
     json categories;
 
-    calculate_categories(site, categories);
+    CalculateCategories(site, categories);
 
     return categories.dump();
 }
 
-std::string FileHandler::get_box_diagram(std::string site_id) const {
+std::string FileHandler::GetBoxDiagram(std::string site_id) const {
     // Make sure the site exists
     if (sites.find(site_id) == sites.end()) {
         #ifdef DEBUG
@@ -71,20 +71,20 @@ std::string FileHandler::get_box_diagram(std::string site_id) const {
     json categories;
     json box_diagram;
 
-    calculate_categories(site, categories);
+    CalculateCategories(site, categories);
 
     for (auto &el : categories.items()) {
-        box_diagram[el.key()]["average"] = get_box_average(el.value());
-        box_diagram[el.key()]["median"] = get_box_median(el.value());
-        box_diagram[el.key()]["first_quartile"] = get_box_first_quartile(el.value());
-        box_diagram[el.key()]["third_quartile"] = get_box_third_quartile(el.value());
-        box_diagram[el.key()]["min"] = get_box_min(el.value());
-        box_diagram[el.key()]["max"] = get_box_max(el.value());
+        box_diagram[el.key()]["average"] = GetBoxAverage(el.value());
+        box_diagram[el.key()]["median"] = GetBoxMedian(el.value());
+        box_diagram[el.key()]["first_quartile"] = GetBoxFirstQuartile(el.value());
+        box_diagram[el.key()]["third_quartile"] = GetBoxThirdQuartile(el.value());
+        box_diagram[el.key()]["min"] = GetBoxMin(el.value());
+        box_diagram[el.key()]["max"] = GetBoxMax(el.value());
     }
     return box_diagram.dump();
 }
 
-void FileHandler::calculate_categories(struct Site &site, json &categories) const {
+void FileHandler::CalculateCategories(struct Site &site, json &categories) const {
     // Populate with the different categories
     for (json log: site.logs) {
         for (auto &el : log.items()) {
@@ -93,11 +93,11 @@ void FileHandler::calculate_categories(struct Site &site, json &categories) cons
     }
 
     for (auto &el : categories.items()) {
-        merge_category(site, el.key(), categories);
+        MergeCategory(site, el.key(), categories);
     }
 }
 
-double FileHandler::get_box_average(json &category) const {
+double FileHandler::GetBoxAverage(json &category) const {
     int sum = 0;
 
     for (auto pair : category["data"]) {
@@ -111,33 +111,33 @@ double FileHandler::get_box_average(json &category) const {
     return sum / ((double) category["total"]);
 }
 
-int FileHandler::get_box_limit(json &category, double limit) const {
-    const int total = (int) category["total"];
+int FileHandler::GetBoxLimit(json &category, double limit) const {
+    const int ktotal = (int) category["total"];
     int sum = 0;
 
     for (auto pair : category["data"]) {
         sum += (int) pair["count"];
 
-        if (sum >= total * limit) {
+        if (sum >= ktotal * limit) {
             return (int) pair["length"];
         }
     }
     return 0;
 }
 
-int FileHandler::get_box_median(json &category) const {
-    return get_box_limit(category, 0.5);
+int FileHandler::GetBoxMedian(json &category) const {
+    return GetBoxLimit(category, 0.5);
 }
 
-int FileHandler::get_box_first_quartile(json &category) const {
-    return get_box_limit(category, 0.25);
+int FileHandler::GetBoxFirstQuartile(json &category) const {
+    return GetBoxLimit(category, 0.25);
 }
 
-int FileHandler::get_box_third_quartile(json &category) const {
-    return get_box_limit(category, 0.75);
+int FileHandler::GetBoxThirdQuartile(json &category) const {
+    return GetBoxLimit(category, 0.75);
 }
 
-int FileHandler::get_box_min(json &category) const {
+int FileHandler::GetBoxMin(json &category) const {
     for (auto pair : category["data"]) {
         if (pair["count"] != 0) {
             return (int) pair["length"];
@@ -146,7 +146,7 @@ int FileHandler::get_box_min(json &category) const {
     return 0;
 }
 
-int FileHandler::get_box_max(json &category) const {
+int FileHandler::GetBoxMax(json &category) const {
     auto data = category["data"];
     
     // Loop through the data backwards
@@ -158,7 +158,7 @@ int FileHandler::get_box_max(json &category) const {
     return 0;
 }
 
-void FileHandler::merge_category(struct Site &site, std::string key, json &result) const {
+void FileHandler::MergeCategory(struct Site &site, std::string key, json &result) const {
     result[key] = {};
     result[key]["total"] = 0;
 
@@ -169,10 +169,10 @@ void FileHandler::merge_category(struct Site &site, std::string key, json &resul
 
 
         auto count_it = category["count"].begin();
-        const auto count_end = category["count"].end();
+        const auto kcount_end = category["count"].end();
 
         auto length_it = category["length"].begin();
-        const auto length_end = category["length"].end();
+        const auto klength_end = category["length"].end();
 
         int last_count = 0;
         // Maybe parse the sum instead of recalculating it here?
@@ -181,7 +181,7 @@ void FileHandler::merge_category(struct Site &site, std::string key, json &resul
         // Hopefully unnecessary since they should be of the same length
         // Calculate the real count from the aggregation
         // Align the length to the count in pairs
-        while(count_it != count_end && length_it != length_end) {
+        while(count_it != kcount_end && length_it != klength_end) {
             int new_count = (int) *count_it - last_count;
 
             // Illegal nesting
@@ -201,19 +201,19 @@ void FileHandler::merge_category(struct Site &site, std::string key, json &resul
     }
 
     // Add the data to the json object
-    for (auto const & entry : length_count) {
+    for (auto const & kentry : length_count) {
         result[key]["data"] += {
-            {"length", entry.first},
-            {"count", entry.second}
+            {"length", kentry.first},
+            {"count", kentry.second}
         };
     }
 }
 
-std::string FileHandler::get_file_ending(std::string &file_name) const {
+std::string FileHandler::GetFileEnding(std::string &file_name) const {
     return file_name.substr(file_name.find(".") + 1);
 }
 
-void FileHandler::add_host_file(std::string &file) {
+void FileHandler::AddHostFile(std::string &file) {
     json hosts = json::parse(file);
     std::string site_id = hosts["site_id"];
 
@@ -231,7 +231,7 @@ void FileHandler::add_host_file(std::string &file) {
     }
 }
 
-json FileHandler::get_performance_json(std::string &content) const {
+json FileHandler::GetPerformanceJson(std::string &content) const {
     std::vector<std::string> methods;
     std::vector<std::string> buckets;
 
@@ -268,12 +268,12 @@ json FileHandler::get_performance_json(std::string &content) const {
     return performance;
 }
 
-void FileHandler::add_performance_file(std::string &file, std::string &file_name) {
-    std::string site_id = get_id_from_performance(file_name);
+void FileHandler::AddPerformanceFile(std::string &file, std::string &file_name) {
+    std::string site_id = GetIdFromPerformance(file_name);
 
     // Add the host to the corresponding site if it exists
     if (sites.find(site_id) != sites.end()) {
-        json performance = get_performance_json(file);
+        json performance = GetPerformanceJson(file);
         sites[site_id].logs.insert(performance);
 
         #ifdef DEBUG
@@ -287,6 +287,6 @@ void FileHandler::add_performance_file(std::string &file, std::string &file_name
     }
 }
 
-std::string FileHandler::get_id_from_performance(std::string &file_name) const {
+std::string FileHandler::GetIdFromPerformance(std::string &file_name) const {
     return  file_name.substr(0, file_name.find("_"));
 }

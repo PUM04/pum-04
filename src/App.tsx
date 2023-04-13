@@ -3,14 +3,13 @@
  */
 
 import Box from '@mui/material/Box';
-import { GraphComponent, InfoboxComponent } from './components/basecomponent';
-
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
+import { GraphComponent, InfoboxComponent } from './components/basecomponent';
 import DragAndDropzone from './components/DragAndDropzone';
 import './App.css';
 import { useWasm } from './hooks/wasm';
-import FileHandlerModule from './cpp/FileHandler';
+import FileHandlerModule from './cpp/file_handler';
 
 /**
  * Top level component.
@@ -21,7 +20,7 @@ function App(): JSX.Element {
   const [count, setCount] = useState(0);
   const [files, setFiles] = useState<File[]>([]);
   const [fileHandler, setFileHandler] = useState();
-  const [filereader, setFileReader] = useState(new FileReader());
+  const [filereader] = useState(new FileReader());
 
   const fileHandlerModule = useWasm(FileHandlerModule);
 
@@ -38,7 +37,7 @@ function App(): JSX.Element {
 
   filereader.onload = () => {
     // Send the file to the backend
-    fileHandler.add_file(
+    fileHandler.AddFile(
       filereader.result as string,
       files[files.length - 1].name
     );
@@ -49,7 +48,7 @@ function App(): JSX.Element {
       filereader.readAsText(files[files.length - 1]);
     } else {
       // Link the files in the backend
-      fileHandler.compute_files();
+      fileHandler.ComputeFiles();
     }
   };
   filereader.onabort = () => console.log('file reading was aborted');

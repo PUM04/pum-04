@@ -31,34 +31,34 @@ public:
      * @param file The content of the file
      * @param file_name  The name of the file
      */
-    void add_file(std::string file, std::string file_name);
+    void AddFile(std::string file, std::string file_name);
 
     /**
      * @brief Go through the uploaded files and link the hosts to the corresponding performance files
      * 
      */
-    void compute_files();
+    void ComputeFiles();
 
     /**
      * @brief Get the box diagram for a given site
      *
      * @param site_id The site id 
      */
-    std::string get_box_diagram(std::string site_id) const;
+    std::string GetBoxDiagram(std::string site_id) const;
 
     /**
      * @brief Get the histogram for a given site
      *
      * @param site_id The site id
      */
-    std::string get_histogram(std::string site_id) const;
+    std::string GetHistogram(std::string site_id) const;
 
 private:
     std::unordered_map<std::string, struct Site> sites;
     std::vector<struct LoadedFile> host_files; 
     std::vector<struct LoadedFile> performance_files; 
     
-    void calculate_categories(struct Site &site, json &categories) const;
+    void CalculateCategories(struct Site &site, json &categories) const;
 
     /**
      * @brief Merge all of the log files with each other on category
@@ -67,7 +67,7 @@ private:
      * @param key The category
      * @param box_diagram The json file for saving the result
      */
-    void merge_category(struct Site &site, std::string key, json &result) const;
+    void MergeCategory(struct Site &site, std::string key, json &result) const;
 
     /**
      * @brief Get the average value from a category
@@ -75,7 +75,7 @@ private:
      * @param category The category data
      * @return double The average
      */
-    double get_box_average(json &category) const;
+    double GetBoxAverage(json &category) const;
 
     /**
      * @brief Get the median value from a category
@@ -83,7 +83,7 @@ private:
      * @param category The category data
      * @return int The median
      */
-    int get_box_median(json &category) const;
+    int GetBoxMedian(json &category) const;
 
     /**
      * @brief Get the first quartile from a category
@@ -91,7 +91,7 @@ private:
      * @param category The category data
      * @return int The first quartile
      */
-    int get_box_first_quartile(json &category) const;
+    int GetBoxFirstQuartile(json &category) const;
 
     /**
      * @brief Get the third quartile from a category
@@ -99,7 +99,7 @@ private:
      * @param category The category data
      * @return int The third quartile
      */
-    int get_box_third_quartile(json &category) const;
+    int GetBoxThirdQuartile(json &category) const;
 
     /**
      * @brief Get the divider of limit% of the data. For example: Limit 0.5 will yield the median, 
@@ -109,7 +109,7 @@ private:
      * @param limit The limit
      * @return int The divider value
      */
-    int get_box_limit(json &json, double limit) const;
+    int GetBoxLimit(json &json, double limit) const;
 
     /**
      * @brief Get the min value from a category
@@ -117,7 +117,7 @@ private:
      * @param category The category data
      * @return int The min value
      */
-    int get_box_min(json &category) const;
+    int GetBoxMin(json &category) const;
 
     /**
      * @brief Get the max value from a category
@@ -125,7 +125,7 @@ private:
      * @param category The category data
      * @return int The max value
      */
-    int get_box_max(json &category) const;
+    int GetBoxMax(json &category) const;
 
     /**
      * @brief Get the file type, e.g. the part after the last dot
@@ -133,14 +133,14 @@ private:
      * @param file_name The name of the file
      * @return std::string The file ending
      */
-    std::string get_file_ending(std::string &file_name) const;
+    std::string GetFileEnding(std::string &file_name) const;
 
     /**
      * @brief Add a host file to the FileHandler
      * 
      * @param file The content of the host file
      */
-    void add_host_file(std::string &file);
+    void AddHostFile(std::string &file);
 
     /**
      * @brief Add a performance file to the FileHandler
@@ -148,7 +148,7 @@ private:
      * @param file The content of the performance file
      * @param file_name  The file name
      */
-    void add_performance_file(std::string &file, std::string &file_name);
+    void AddPerformanceFile(std::string &file, std::string &file_name);
 
     /**
      * @brief Get the id from the performance file
@@ -156,12 +156,12 @@ private:
      * @param file_name The file name
      * @return std::string 
      */
-    std::string get_id_from_performance(std::string &file_name) const;
-    void parse_content(std::string &fileContent, std::regex &regex, std::vector<std::string> &result) const;
+    std::string GetIdFromPerformance(std::string &file_name) const;
+    void ParseContent(std::string &fileContent, std::regex &regex, std::vector<std::string> &result) const;
 
-    json get_performance_json(std::string &content) const;
+    json GetPerformanceJson(std::string &content) const;
 
-    void splitString(std::string &s, std::string &delim, std::vector<std::string>) const;
+    void SplitString(std::string &s, std::string &delim, std::vector<std::string>) const;
 };
 
 #ifndef _TESTING_
@@ -169,8 +169,8 @@ using namespace emscripten;
 EMSCRIPTEN_BINDINGS(file_handler) {
     class_<FileHandler>("FileHandler")
         .constructor()
-        .function("add_file", &FileHandler::add_file)
-        .function("compute_files", &FileHandler::compute_files)
-        .function("get_box_diagram", &FileHandler::get_box_diagram);
+        .function("AddFile", &FileHandler::AddFile)
+        .function("ComputeFiles", &FileHandler::ComputeFiles)
+        .function("GetBoxDiagram", &FileHandler::GetBoxDiagram);
 }
 #endif

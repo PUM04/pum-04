@@ -2,7 +2,7 @@
 
 #include <string>
 #include "../test_framework/doctest.h"
-#include "../FileHandler.cpp"
+#include "../file_handler.cpp"
 
 
 TEST_CASE("FileHandler") {
