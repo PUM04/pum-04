@@ -3,6 +3,10 @@
  */
 
 import React from 'react';
+
+import SectraTheme from './components/SectraTheme';
+import { GraphComponent, InfoboxComponent } from './components/BaseComponent';
+
 import './App.css';
 import { BoxPlotChart, BarChart } from './components/Charts';
 
@@ -28,10 +32,24 @@ function App(): JSX.Element {
           metrics={['getPatient', 'getBucket']}
           sites={['stockholm', 'linköping', 'manchester', 'tokyo']}
         />
-        <BoxPlotChart
+        <div style={{ display: 'flex' }}>
+          <BoxPlotChart
           metrics={['getPatient', 'getBucket']}
           sites={['stockholm', 'linköping']}
         />
+
+          <div
+            style={{
+              alignContent: 'center',
+              flexDirection: 'column',
+              display: 'flex',
+              backgroundColor: 'grey',
+            }}
+          >
+            <GraphComponent />
+            <InfoboxComponent />
+          </div>
+        </div>
       </div>
     </div>
   );
