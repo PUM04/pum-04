@@ -73,15 +73,26 @@ TEST_CASE("FileHandler") {
         CHECK(box["Test"]["third_quartile"] == 4);        
     }
 
-    SUBCASE("Simple box diagram with two log files") {        
-        std::string host = "{\"site_name\": \"test\", \"site_id\": \"test123\"}";
-        std::string host_name = "test.json";
-        
-        fh->AddFile(host, host_name);  
-        std::vector<std::string> site_names = fh->GetSiteNames();      
+    SUBCASE("Get site names") {
+        std::string host1 =
+            "{\"site_name\": \"test1\", \"site_id\": \"test123\"}";
+        std::string host_name1 = "test1.json";
 
-        CHECK(site_names.length == 1);        
-        CHECK(site_names[0] == "test.json");
+        fh->AddFile(host1, host_name1);
+        std::vector<std::string> site_names1 = fh->GetSiteNames();
+
+        CHECK(site_names1.size() == 1);
+        CHECK(site_names1[0] == "test1.json");
+
+        std::string host2 =
+            "{\"site_name\": \"test2\", \"site_id\": \"test123\"}";
+        std::string host_name2 = "test2.json";
+        fh->AddFile(host2, host_name2);
+        std::vector<std::string> site_names2 = fh->GetSiteNames();
+
+        CHECK(site_names2.size() == 2);
+        CHECK(site_names2[0] == "test1.json");
+        CHECK(site_names2[1] == "test2.json");
     }
     delete fh;
 }
