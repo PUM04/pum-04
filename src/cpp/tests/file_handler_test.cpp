@@ -70,8 +70,18 @@ TEST_CASE("FileHandler") {
         CHECK(box["Test"]["median"] == 4);
         CHECK(box["Test"]["average"] == 3.875);
         CHECK(box["Test"]["first_quartile"] == 3);
-        CHECK(box["Test"]["third_quartile"] == 4);
+        CHECK(box["Test"]["third_quartile"] == 4);        
     }
 
+    SUBCASE("Simple box diagram with two log files") {        
+        std::string host = "{\"site_name\": \"test\", \"site_id\": \"test123\"}";
+        std::string host_name = "test.json";
+        
+        fh->AddFile(host, host_name);  
+        std::vector<std::string> site_names = fh->GetSiteNames();      
+
+        CHECK(site_names.length == 1);        
+        CHECK(site_names[0] == "test.json");
+    }
     delete fh;
 }

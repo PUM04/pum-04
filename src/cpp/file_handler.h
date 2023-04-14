@@ -162,6 +162,8 @@ private:
     json GetPerformanceJson(std::string &content) const;
 
     void SplitString(std::string &s, std::string &delim, std::vector<std::string>) const;
+
+    std::vector<std::string> GetSiteNames() const;
 };
 
 #ifndef _TESTING_

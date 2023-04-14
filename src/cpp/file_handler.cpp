@@ -290,3 +290,11 @@ void FileHandler::AddPerformanceFile(std::string &file, std::string &file_name) 
 std::string FileHandler::GetIdFromPerformance(std::string &file_name) const {
     return  file_name.substr(0, file_name.find("_"));
 }
+
+std::vector<std::string> FileHandler::GetSiteNames() const {
+    vector<std::string> site_names;
+    for (int i = 0; i < host_files.length; i++) {
+            site_names.push_back(host_files[i].name);
+    }
+    return site_names;
+}
