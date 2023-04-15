@@ -27,7 +27,7 @@
     "linebreak-style": ["error", "unix"],
     "prettier/prettier": "error",
     "max-depth": ["warn", 2],
-    "max-nested-callbacks": ["warn", 2],
+    "max-nested-callbacks": ["warn", 3],
     "jsdoc/require-file-overview": 1,
     "jsdoc/no-undefined-types": 0,
     "jsdoc/no-types": 0,
