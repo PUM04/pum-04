@@ -42,4 +42,5 @@ jobs:
         with:
           node-version: 18
       - run: npm i
+      - run: ./scripts/build_wasm_for_tests.sh
       - run: npm run test
