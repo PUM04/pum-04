@@ -16,9 +16,7 @@ describe('Menu', () => {
   // Testcase
   it('should render open menu button', async () => {
     const menuOpenButton = await screen.findByTestId('menu-open-button');
-    const menuCloseButton = await screen.findByTestId('menu-close-button');
     expect(menuOpenButton).toBeVisible();
-    //expect(menuCloseButton).toBeVisible();
   });
 
   it('should render close menu button', async () => {
@@ -26,10 +24,8 @@ describe('Menu', () => {
     const menuCloseButton = await screen.findByTestId('menu-close-button');
     await user.click(menuOpenButton);
     expect(menuCloseButton).toBeVisible();
-    //expect(menuOpenButton).toBeVisible();
     await user.click(menuCloseButton);
     expect(menuOpenButton).toBeVisible();
-    //expect(menuCloseButton).toBeVisible();
   });
   // Run this after each test
   afterEach(() => {
