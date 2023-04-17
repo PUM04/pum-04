@@ -21,8 +21,9 @@ describe('Menu', () => {
 
   it('should render close menu button', async () => {
     const menuOpenButton = await screen.findByTestId('menu-open-button');
-    const menuCloseButton = await screen.findByTestId('menu-close-button');
+    // const menuCloseButton = await screen.findByTestId('menu-close-button');
     await user.click(menuOpenButton);
+    const menuCloseButton = await screen.findByTestId('menu-close-button');
     expect(menuCloseButton).toBeVisible();
     await user.click(menuCloseButton);
     expect(menuOpenButton).toBeVisible();

@@ -1,7 +1,7 @@
 #root {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -34,13 +34,6 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.grid-container {
-  display: inline-flex;
-  flex-direction: row;
-  background-color: aqua;
-  height: 100%;
-  min-width : 100vh;
-}
 
 @keyframes logo-spin {
   from {

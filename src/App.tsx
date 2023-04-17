@@ -2,15 +2,11 @@
  * @file Contains the App top level component.
  */
 import React, { useState, useEffect } from 'react';
-
+import Layout from './components/Layout';
 import { useWasm } from './hooks/wasm';
 import FileHandlerModule from './cpp/file_handler';
-
-import SectraTheme from './components/SectraTheme';
-import Menu from './components/Menu';
-import { GraphComponent, InfoboxComponent } from './components/BaseComponent';
-
 import './App.css';
+import SectraTheme from './components/SectraTheme';
 
 /**
  * Top level component.
@@ -32,18 +28,7 @@ function App(): JSX.Element {
     <div className="App mui-theme">
       <SectraTheme>
         <div style={{ display: 'flex' }}>
-          <Menu fileHandler={fileHandler} />
-          <div
-            style={{
-              alignContent: 'center',
-              flexDirection: 'column',
-              display: 'flex',
-              backgroundColor: 'grey',
-            }}
-          >
-            <GraphComponent />
-            <InfoboxComponent />
-          </div>
+          <Layout fileHandler={fileHandler} />
         </div>
       </SectraTheme>
     </div>
