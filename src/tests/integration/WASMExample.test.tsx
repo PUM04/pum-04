@@ -9,6 +9,9 @@ import user from '@testing-library/user-event';
 // Component to test
 import WASMExample from '../../components/WASMExample';
 
+// Calculator has been removed
+
+/*
 describe('WASMExample', () => {
   // Run this before each test
   beforeEach(() => {
@@ -54,4 +57,4 @@ describe('WASMExample', () => {
   afterEach(() => {
     cleanup();
   });
-});
+});//
