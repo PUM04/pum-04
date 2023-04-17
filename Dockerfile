@@ -3,6 +3,7 @@ WORKDIR /app
 
 #config and files required to start the webstie, these files and not in the volume 
 COPY ./package.json /app/
+COPY ./jest.config.json /app/
 COPY ./index.html /app/
 COPY ./vite.config.ts /app/
 COPY ./tsconfig.json /app/
@@ -17,7 +18,7 @@ RUN npm install
 #install some nice to haves should be removed in production image
 RUN apt update
 RUN apt install python3 -y
-RUN apt install vim -y
+#RUN apt install vim -y
 RUN apt install sudo -y 
 RUN apt install git -y
 RUN apt install cmake -y

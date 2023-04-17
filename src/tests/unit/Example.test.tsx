@@ -7,12 +7,12 @@ import { cleanup, render, screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
 
 // Component to test
-import App from '../../App';
+import Example from '../../components/Example';
 
 describe('App', () => {
   // Run this before each test
   beforeEach(() => {
-    render(<App />);
+    render(<Example />);
   });
 
   // Testcase
