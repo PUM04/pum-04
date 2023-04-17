@@ -77,13 +77,14 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 }));
 
 interface MenuProps {
-// TODO: Get the actual type
+  // TODO: Get the actual type
   fileHandler: Any;
-};
+}
 
 /**
  * A drawermenu for showing available metrics, sites and to upload files
  *
+ * @param props contains filehandler
  * @returns a menucomponent on top of the application component
  */
 export default function Menu(props: MenuProps) {

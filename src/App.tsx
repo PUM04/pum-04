@@ -18,9 +18,7 @@ import './App.css';
  * @returns top level component
  */
 function App(): JSX.Element {
-  const [files, setFiles] = useState<File[]>([]);
   const [fileHandler, setFileHandler] = useState();
-  const [filereader] = useState(new FileReader());
 
   const fileHandlerModule = useWasm(FileHandlerModule);
 
@@ -34,7 +32,7 @@ function App(): JSX.Element {
     <div className="App mui-theme">
       <SectraTheme>
         <div style={{ display: 'flex' }}>
-          <Menu fileHandler={fileHandler}/>
+          <Menu fileHandler={fileHandler} />
           <div
             style={{
               alignContent: 'center',
