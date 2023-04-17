@@ -179,6 +179,9 @@ EMSCRIPTEN_BINDINGS(file_handler) {
         .constructor()
         .function("AddFile", &FileHandler::AddFile)
         .function("ComputeFiles", &FileHandler::ComputeFiles)
-        .function("GetBoxDiagram", &FileHandler::GetBoxDiagram);
+        .function("GetBoxDiagram", &FileHandler::GetBoxDiagram)
+        .function("GetSiteNames", &FileHandler::GetSiteNames);
+
+    register_vector<std::string>("VectorString");
 }
 #endif

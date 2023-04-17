@@ -1,6 +1,4 @@
 #include <emscripten/bind.h>
-#include "test_framework/doctest.h"
-
 
 // compile this with
 // emcc -lembind -o Calculator.js Calculator.cpp -s EXPORT_ES6=1 -s MODULARIZE=1

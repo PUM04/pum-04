@@ -165,7 +165,7 @@ The tests run in GitHub Actions on each push to the repo.
 #### Jest
 Tests are written using the framework Jest.  
 Information about the Jest syntax can be found [here](https://jestjs.io/docs/using-matchers).  
-A testfile should be placed inside the `/src/test/unit` and `/src/test/integration` folders depending on the test level and have the name `<component-to-test>.test.tsx` or `<component-to-test>.test.ts`  
+A testfile should be placed inside the [/src/tests/unit](/src/tests/unit) and [/src/tests/integration](/src/tests/integration) folders depending on the test level and have the name `<component-to-test>.test.tsx` or `<component-to-test>.test.ts`  
 Asset files are mocked since the functionality does not depend on them. 
 
 #### testing-library
@@ -177,6 +177,14 @@ Information about user events can be found [here](https://testing-library.com/do
 ### Running
 Dependencies needs to be installed, install with  
 `npm i`  
+
+To run tests which uses WebAssembly modules, these need to be built first with some flags only used when testing.  
+If we want to test a component using `Calculator.cpp` we can build it with
+```sh 
+emcc -lembind -o Calculator.js Calculator.cpp -s EXPORT_ES6=1 -s MODULARIZE=1 -s ENVIRONMENT="web" -s USE_ES6_IMPORT_META=0 -s SINGLE_FILE
+```  
+
+A script to build the modules needed for testing for Unix/Linux users is available in [/scripts/build_wasm_for_tests.sh](/scripts/build_wasm_for_tests.sh)
 
 Run all tests that contains the name "Component"  
 `npm run test <Component>`  
@@ -194,4 +202,4 @@ Watch files for changes and rerun all tests when something changes
 
 ### Coverage
 Code coverage is collected for all tests. After each testrun a short report will be printed in the terminal.  
-To see a more detailed coverage report open the locally generated file `<project-root>/coverage/lcov-report/index.html` in a browser.
+To see a more detailed coverage report open the locally generated file [<project-root>/coverage/lcov-report/index.html](/coverage/lcov-report/index.html) in a browser.
