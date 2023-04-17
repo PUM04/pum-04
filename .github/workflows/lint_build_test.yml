@@ -30,9 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: mymindstorm/setup-emsdk@v11
-      - run: cd backend_test && emcmake cmake . && emmake cmake --build . && mv test_runner.js test_runner.cjs
-      - run: node backend_test/test_runner.cjs
+      - run: cd backend_test && ./test_run.sh
 
   frontend-test:
     runs-on: ubuntu-latest

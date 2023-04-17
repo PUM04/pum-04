@@ -1,8 +1,10 @@
 /**
  * @file Contains the App top level component.
  */
+import React, { useState, useEffect } from 'react';
 
-import React from 'react';
+import { useWasm } from './hooks/wasm';
+import FileHandlerModule from './cpp/file_handler';
 
 import SectraTheme from './components/SectraTheme';
 import Menu from './components/Menu';
@@ -16,12 +18,21 @@ import './App.css';
  * @returns top level component
  */
 function App(): JSX.Element {
+  const [fileHandler, setFileHandler] = useState();
+
+  const fileHandlerModule = useWasm(FileHandlerModule);
+
+  useEffect(() => {
+    if (fileHandlerModule) {
+      setFileHandler(new fileHandlerModule.FileHandler());
+    }
+  }, [fileHandlerModule]);
+
   return (
     <div className="App mui-theme">
       <SectraTheme>
         <div style={{ display: 'flex' }}>
-          <Menu />
-
+          <Menu fileHandler={fileHandler} />
           <div
             style={{
               alignContent: 'center',

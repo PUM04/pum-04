@@ -9,6 +9,7 @@ COPY ./vite.config.ts /app/
 COPY ./tsconfig.json /app/
 COPY ./tsconfig.node.json /app/
 COPY ./public /app/
+COPY ./backend_test /app/backend_test/
 
 #install npm used to run the project
 RUN npm install
@@ -20,6 +21,7 @@ RUN apt install python3 -y
 #RUN apt install vim -y
 RUN apt install sudo -y 
 RUN apt install git -y
+RUN apt install cmake -y
 
 
 # required for docker desktop port mapping
