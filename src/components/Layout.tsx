@@ -5,6 +5,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import Menu from './Menu';
 import { GraphComponent, InfoboxComponent } from './BaseComponent';
+import ViewTabs from './ViewTab';
 
 //        ____Layout_____
 //       /       |       \
@@ -40,9 +41,10 @@ function Layout(props: MenuProps) {
         sx={{
           flexDirection: 'column',
           display: 'inline-flex',
-          backgroundColor: 'primary.light1',
+          backgroundColor: 'primary.light2',
         }}
       >
+        <ViewTabs />
         <GraphComponent />
         <InfoboxComponent />
       </Box>
