@@ -78,7 +78,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 interface MenuProps {
   // TODO: Get the actual type
-  fileHandler: Any;
+  fileHandler: any;
 }
 
 /**
