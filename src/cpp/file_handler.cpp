@@ -210,7 +210,7 @@ void FileHandler::MergeCategory(struct Site &site, std::string key, json &result
 }
 
 std::string FileHandler::GetFileEnding(std::string &file_name) const {
-    return file_name.substr(file_name.find(".") + 1);
+    return file_name.substr(file_name.rfind(".") + 1);
 }
 
 void FileHandler::AddHostFile(std::string &file) {
