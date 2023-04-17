@@ -1,8 +1,10 @@
 /**
  * @file Contains the App top level component.
  */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from './components/Layout';
+import { useWasm } from './hooks/wasm';
+import FileHandlerModule from './cpp/file_handler';
 import './App.css';
 import SectraTheme from './components/SectraTheme';
 
@@ -12,25 +14,22 @@ import SectraTheme from './components/SectraTheme';
  * @returns top level component
  */
 function App(): JSX.Element {
+  const [fileHandler, setFileHandler] = useState();
+
+  const fileHandlerModule = useWasm(FileHandlerModule);
+
+  useEffect(() => {
+    if (fileHandlerModule) {
+      setFileHandler(new fileHandlerModule.FileHandler());
+    }
+  }, [fileHandlerModule]);
+
   return (
     <div className="App mui-theme">
       <SectraTheme>
-        <Layout />
-        {/* <div style={{ display: 'flex' }}>
-          <Menu />
-
-          <div
-            style={{
-              alignContent: 'center',
-              flexDirection: 'column',
-              display: 'flex',
-              backgroundColor: 'grey',
-            }}
-          >
-            <GraphComponent />
-            <InfoboxComponent />
-          </div>
-        </div> */}
+        <div style={{ display: 'flex' }}>
+          <Layout fileHandler={fileHandler} />
+        </div>
       </SectraTheme>
     </div>
   );

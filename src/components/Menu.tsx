@@ -73,26 +73,44 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'left',
 }));
 
+interface MenuProps {
+  // TODO: Get the actual type
+  fileHandler: any;
+}
+
 /**
  * A drawermenu for showing available metrics, sites and to upload files
  *
- * @param props contains list of sites
- * @param props.sites list of sites
+ * @param props contains filehandler
  * @returns a menucomponent on top of the application component
  */
-export default function Menu(props: {
-  sites: { enabled: any; name: any; color: any }[];
-}): JSX.Element {
+export default function Menu(props: MenuProps) {
+  const { fileHandler } = props;
   const theme = useTheme();
   const [open, setOpen] = useState(false);
-  // -------------------- FileReader example --------------------
   const [files, setFiles] = useState<File[]>([]);
-  const filereader = new FileReader();
+  const [filereader] = useState(new FileReader());
 
-  if (files.length > 0) filereader.readAsText(files[0]);
+  // Start reading the first file
+  if (files.length > 0 && filereader.readyState !== FileReader.LOADING) {
+    filereader.readAsText(files[files.length - 1]);
+  }
 
   filereader.onload = () => {
-    console.log(`file contents read: ${filereader.result}`);
+    // Send the file to the backend
+    fileHandler.AddFile(
+      filereader.result as string,
+      files[files.length - 1].name
+    );
+    files.pop();
+
+    // Continue reading the rest of the files
+    if (files.length > 0) {
+      filereader.readAsText(files[files.length - 1]);
+    } else {
+      // Link the files in the backend
+      fileHandler.ComputeFiles();
+    }
   };
   filereader.onabort = () => console.log('file reading was aborted');
   filereader.onerror = () => console.log('file reading has failed');
@@ -105,7 +123,12 @@ export default function Menu(props: {
     setOpen(false);
   };
 
-  const { sites } = props;
+  const sites = [
+    { name: 'first', color: 'red', enabled: true },
+    { name: 'second', color: 'blue', enabled: true },
+    { name: 'third', color: 'orange', enabled: true },
+  ];
+
   return (
     <div className="App">
       <Box sx={{ display: 'flex' }}>

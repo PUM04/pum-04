@@ -14,17 +14,20 @@ import { GraphComponent, InfoboxComponent } from './BaseComponent';
 //           |      |          |
 //        graphs  inforutor  LegendBar
 //
+
+interface MenuProps {
+  // TODO: Get the actual type
+  fileHandler: any;
+}
+
 /**
  * Basestructure for the website
  *
+ * @param props contains filehandler
  * @returns the layout of the website
  */
-function Layout() {
-  const sites = [
-    { name: 'first', color: 'red', enabled: true },
-    { name: 'second', color: 'blue', enabled: true },
-    { name: 'third', color: 'orange', enabled: true },
-  ];
+function Layout(props: MenuProps) {
+  const { fileHandler } = props;
 
   return (
     <Box
@@ -32,7 +35,7 @@ function Layout() {
         display: 'flex',
       }}
     >
-      <Menu sites={sites} />
+      <Menu fileHandler={fileHandler} />
       <Box
         sx={{
           flexDirection: 'column',
