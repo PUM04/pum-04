@@ -4,8 +4,9 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import Menu from './Menu';
-import { GraphComponent, InfoboxComponent } from './BaseComponent';
 import ViewTabs from './ViewTab';
+
+import { InfoboxComponent } from './BaseComponent';
 
 //        ____Layout_____
 //       /       |       \
@@ -45,7 +46,6 @@ function Layout(props: MenuProps) {
         }}
       >
         <ViewTabs />
-        <GraphComponent />
         <InfoboxComponent />
       </Box>
     </Box>

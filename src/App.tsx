@@ -2,7 +2,7 @@
  * @file Contains the App top level component.
  */
 import React, { useState, useEffect } from 'react';
-import Layout from './components/Layout';
+import { Layout } from './components/Layout';
 import { useWasm } from './hooks/wasm';
 import FileHandlerModule from './cpp/file_handler';
 import './App.css';
