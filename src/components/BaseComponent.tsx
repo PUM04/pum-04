@@ -3,6 +3,7 @@
  */
 import Box from '@mui/material/Box';
 import React from 'react';
+import { BoxPlotChart, BarChart } from './Charts';
 
 /**
  * Component that contains all graphs
@@ -24,7 +25,20 @@ export function GraphComponent(): JSX.Element {
         },
       }}
     >
-      <Box> Put graphs here first! </Box>
+      <Box>
+        {' '}
+        <BarChart
+          metrics={['getPatient', 'getBucket']}
+          sites={['stockholm', 'linköping', 'manchester', 'tokyo']}
+        />{' '}
+      </Box>
+      <Box>
+        {' '}
+        <BoxPlotChart
+          metrics={['getPatient', 'getBucket']}
+          sites={['stockholm', 'linköping']}
+        />{' '}
+      </Box>
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>

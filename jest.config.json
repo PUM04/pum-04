@@ -1,13 +1,13 @@
 {
   "testEnvironment": "jsdom",
   "transform": {
-    "^.+\\.tsx?$": "ts-jest"
+    "^.+\\.[tj]sx?$": "ts-jest"
   },
   "moduleNameMapper": {
     "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/src/tests/mocks/fileMock.js",
     "\\.(css|less|sass|scss)$": "identity-obj-proxy"
   },
   "collectCoverage": true,
-  "coveragePathIgnorePatterns": ["node_modules", "tests"],
+  "coveragePathIgnorePatterns": ["node_modules", "tests", "cpp"],
   "coverageDirectory": "<rootDir>/coverage/"
 }

@@ -9,12 +9,16 @@ import Typography from '@mui/material/Typography';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import Divider from '@mui/material/Divider';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './LegendBar';
+import Paper from '@mui/material/Paper';
+import Dropdown from './Dropdown';
 import '../App.css';
 
+const size = 75;
 const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
@@ -49,6 +53,10 @@ const AppBar = styled(MuiAppBar, {
   ...(open && {
     width: `calc(100% - ${drawerWidth}px)`,
     marginLeft: `${drawerWidth}px`,
+    overflow: 'hidden',
+    maxHeight: '100vh',
+    display: 'flex',
+    marginRight: 0,
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -76,7 +84,7 @@ export default function Menu(props: {
   sites: { enabled: any; name: any; color: any }[];
 }): JSX.Element {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   // -------------------- FileReader example --------------------
   const [files, setFiles] = useState<File[]>([]);
   const filereader = new FileReader();
@@ -107,6 +115,7 @@ export default function Menu(props: {
               color="inherit"
               aria-label="open drawer"
               onClick={handleDrawerOpen}
+              data-testid="menu-open-button"
               sx={{
                 ...(open && {
                   display: 'none',
@@ -135,9 +144,7 @@ export default function Menu(props: {
           <DrawerHeader>
             <IconButton
               onClick={handleDrawerClose}
-              // sx={{
-              //     pt: '0',
-              // }}
+              data-testid="menu-close-button"
             >
               {theme.direction === 'ltr' ? (
                 <ChevronLeftIcon />
@@ -147,13 +154,127 @@ export default function Menu(props: {
             </IconButton>
             <Typography padding="8px">S.and.A.H.L </Typography>
           </DrawerHeader>
-          <div>
-            <p>Uploaded files: {JSON.stringify(files)}</p>
-            <DragAndDropzone setter={setFiles} value={files} />
+          <Divider />
+          <Divider />
+          <Paper
+            elevation={1}
+            style={{
+              overflow: 'auto',
+              maxHeight: '70vh',
+              position: 'fixed',
+              top: size + 5,
+              left: 5,
+              width: drawerWidth - 10,
+            }}
+          >
+            <Dropdown
+              dropdownName="Sites"
+              value={['site_1', 'site_2', 'site_3']}
+            />
+            <Dropdown
+              dropdownName="Metrics"
+              value={['metric_1', 'metric_2', 'metric_3']}
+            />
+          </Paper>
+          <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>
+            <p data-testid="uploaded-files">
+              Uploaded files: {JSON.stringify(files)}
+            </p>
+            <DragAndDropzone
+              setter={setFiles}
+              value={files}
+              data-testid="drop-zone"
+            />
           </div>
         </Drawer>
         <Main open={open} />
       </Box>
     </div>
+    // <Box sx={{ display: 'flex' }}>
+    //   <CssBaseline />
+    //   <AppBar position="fixed" open={open}>
+    //     <DrawerHeader
+    //       sx={{ backgroundColor: 'primary.main', color: 'secondary.main' }}
+    //     >
+    //       <p>S.and.A.H.L</p>
+
+    //       <IconButton
+    //         color="inherit"
+    //         aria-label="open drawer"
+    //         onClick={handleDrawerOpen}
+    //         data-testid="menu-open-button"
+    //         sx={{ ...(open && { display: 'none' }) }}
+    //       >
+    //         <MenuIcon sx={{ color: 'secondary.main' }} />
+    //       </IconButton>
+    //     </DrawerHeader>
+    //   </AppBar>
+    //   <Drawer
+    //     sx={{
+    //       width: '0%',
+    //       flexShrink: 0,
+    //       '& .MuiDrawer-paper': {
+    //         width: drawerWidth,
+    //         boxSizing: 'border-box',
+    //       },
+    //     }}
+    //     variant="persistent"
+    //     anchor="left"
+    //     open={open}
+    //   >
+    //     <DrawerHeader
+    //       sx={{ backgroundColor: 'primary.main', color: 'secondary.main' }}
+    //     >
+    //       <p>S.and.A.H.L</p>
+    //       <IconButton
+    //         onClick={handleDrawerClose}
+    //         data-testid="menu-close-button"
+    //         sx={{ ...(!open && { display: 'none' }) }}
+    //       >
+    //         {theme.direction === 'ltr' ? (
+    //           <MenuIcon sx={{ color: 'secondary.main' }} />
+    //         ) : (
+    //           <ChevronRightIcon />
+    //         )}
+    //       </IconButton>
+    //     </DrawerHeader>
+    //     <Divider />
+    //     <Divider />
+    //     <Paper
+    //       elevation={1}
+    //       style={{
+    //         overflow: 'auto',
+    //         maxHeight: '70vh',
+    //         position: 'fixed',
+    //         top: size + 5,
+    //         left: 5,
+    //         width: drawerWidth - 10,
+    //       }}
+    //     >
+    //       <Dropdown
+    //         dropdownName="Sites"
+    //         value={['site_1', 'site_2', 'site_3']}
+    //       />
+    //       <Dropdown
+    //         dropdownName="Metrics"
+    //         value={['metric_1', 'metric_2', 'metric_3']}
+    //       />
+    //     </Paper>
+
+    //     <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>
+    //       <p data-testid="uploaded-files">
+    //         Uploaded files: {JSON.stringify(files)}
+    //       </p>
+    //       <DragAndDropzone
+    //         setter={setFiles}
+    //         value={files}
+    //         data-testid="drop-zone"
+    //       />
+    //     </div>
+    //   </Drawer>
+    //   <Main open={open}>
+    //     <DrawerHeader />
+    //   </Main>
+    // </Box>
   );
 }
