@@ -1,7 +1,7 @@
 /**
  * @file Contains an interactive drawermenu
  */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -79,6 +79,33 @@ interface MenuProps {
 }
 
 /**
+ * Adds files to the backend.
+ *
+ * @param files files which are added to the backend
+ * @param fileHandler is used to add the files to the backend
+ */
+const addFilesToBackend = (files: File[], fileHandler: any) => {
+  if (fileHandler === undefined) {
+    throw new Error('Filehandler is undefined');
+  }
+
+  if (files.length > 0) {
+    files.forEach((file) => {
+      const filereader = new FileReader();
+      filereader.readAsText(file);
+      filereader.onload = () => {
+        // Send the file to the backend
+        fileHandler.AddFile(filereader.result, file.name);
+      };
+      filereader.onabort = () =>
+        console.error(`Reading file ${file.name} was aborted`);
+      filereader.onerror = () =>
+        console.error(`Reading file ${file.name} failed.`);
+    });
+  }
+};
+
+/**
  * A drawermenu for showing available metrics, sites and to upload files
  *
  * @param props contains filehandler
@@ -88,32 +115,20 @@ export default function Menu(props: MenuProps) {
   const { fileHandler } = props;
   const theme = useTheme();
   const [open, setOpen] = useState(false);
+
   const [files, setFiles] = useState<File[]>([]);
-  const [filereader] = useState(new FileReader());
+  const [oldFiles, setOldFiles] = useState<File[]>([]);
 
-  // Start reading the first file
-  if (files.length > 0 && filereader.readyState !== FileReader.LOADING) {
-    filereader.readAsText(files[files.length - 1]);
-  }
-
-  filereader.onload = () => {
-    // Send the file to the backend
-    fileHandler.AddFile(
-      filereader.result as string,
-      files[files.length - 1].name
+  // add files to backend when they are added to the state
+  useEffect(() => {
+    const newFiles = files.filter(
+      (file) => !oldFiles.map((v) => v.name).includes(file.name)
     );
-    files.pop();
 
-    // Continue reading the rest of the files
-    if (files.length > 0) {
-      filereader.readAsText(files[files.length - 1]);
-    } else {
-      // Link the files in the backend
-      fileHandler.ComputeFiles();
-    }
-  };
-  filereader.onabort = () => console.log('file reading was aborted');
-  filereader.onerror = () => console.log('file reading has failed');
+    setOldFiles(oldFiles.concat(newFiles));
+
+    addFilesToBackend(newFiles, fileHandler);
+  }, [files]);
 
   const handleDrawerOpen = () => {
     setOpen(true);
