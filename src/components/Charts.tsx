@@ -13,7 +13,6 @@ import {
   VictoryTooltip,
   VictoryCandlestick,
 } from 'victory';
-
 /**
  * Top level component.
  *
@@ -70,6 +69,7 @@ interface Candle {
   close: number;
   high: number;
   low: number;
+  mean: number;
 }
 
 /**
@@ -231,9 +231,9 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
     sites[1] === 'linköping'
   ) {
     data.candels = [
-      { x: 1, open: 5, close: 10, high: 22, low: 0 }, // s1
-      { x: 2, open: 10, close: 15, high: 20, low: 5 }, // s2
-      { x: 3, open: 8, close: 11, high: 13, low: 2 }, // s2
+      { x: 1, open: 5, close: 10, high: 22, low: 0, mean: 7 }, // s1
+      { x: 2, open: 10, close: 15, high: 20, low: 5, mean: 13 }, // s2
+      { x: 3, open: 8, close: 11, high: 13, low: 2, mean: 9 }, // s2
     ];
   }
   if (
@@ -242,11 +242,40 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
     sites[1] === 'linköping'
   ) {
     data.candels = [
-      { x: 1, open: 5, close: 10, high: 25, low: 1 },
-      { x: 2, open: 6, close: 8, high: 15, low: 3 },
-      { x: 3, open: 4, close: 9, high: 12, low: 0 }, // s2
+      { x: 1, open: 5, close: 10, high: 25, low: 1, mean: 7 },
+      { x: 2, open: 6, close: 8, high: 15, low: 3, mean: 7 },
+      { x: 3, open: 4, close: 9, high: 12, low: 0, mean: 6 }, // s2
     ];
   }
+  const offset = 0.01;
+  data.candels.forEach((candle) =>
+    data.candels.push(
+      {
+        x: candle.x,
+        open: candle.mean + offset,
+        close: candle.mean - offset,
+        high: candle.mean + offset,
+        low: candle.mean - offset,
+        mean: 0,
+      },
+      {
+        x: candle.x,
+        open: candle.high + offset,
+        close: candle.high - offset,
+        high: candle.high + offset,
+        low: candle.high - offset,
+        mean: 0,
+      },
+      {
+        x: candle.x,
+        open: candle.low + offset,
+        close: candle.low - offset,
+        high: candle.low + offset,
+        low: candle.low - offset,
+        mean: 0,
+      }
+    )
+  );
   return data;
 }
 
@@ -266,11 +295,17 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
   return (
     <VictoryCandlestick
       key={JSON.stringify(data)}
-      labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
+      labelComponent={
+        <VictoryTooltip
+          cornerRadius={0}
+          pointerLength={0}
+          dx={({ datum }) => (datum.mean > 0 ? width : -Infinity)}
+        />
+      }
       labels={({ datum }) =>
-        `min:${datum.low}\nmax:${datum.high}\nclose:${datum.close}\nopen:${
-          datum.open
-        }\nmean:${'30'}`
+        datum.mean > 0
+          ? `min:${datum.low}\nmax:${datum.high}\nclose:${datum.close}\nopen:${datum.open}\nmean:${datum.mean}`
+          : ``
       }
       candleWidth={width}
       data={data}
