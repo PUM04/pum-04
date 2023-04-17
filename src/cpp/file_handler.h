@@ -58,7 +58,7 @@ public:
      *
      * @return std::vector<std::string> The names of the sites
      */
-    std::vector<std::string> GetSiteNames() const;
+    std::string GetSiteNames() const;
 
   private:
     std::unordered_map<std::string, struct Site> sites;
@@ -181,7 +181,5 @@ EMSCRIPTEN_BINDINGS(file_handler) {
         .function("ComputeFiles", &FileHandler::ComputeFiles)
         .function("GetBoxDiagram", &FileHandler::GetBoxDiagram)
         .function("GetSiteNames", &FileHandler::GetSiteNames);
-
-    register_vector<std::string>("VectorString");
 }
 #endif

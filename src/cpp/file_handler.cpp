@@ -291,10 +291,13 @@ std::string FileHandler::GetIdFromPerformance(std::string &file_name) const {
     return  file_name.substr(0, file_name.find("_"));
 }
 
-std::vector<std::string> FileHandler::GetSiteNames() const {
-    std::vector<std::string> site_names;
+std::string FileHandler::GetSiteNames() const {
+    json sites;
+    std::vector<std::string> names;
+    sites["names"] = names;
+
     for (int i = 0; i < host_files.size(); i++) {
-        site_names.push_back(host_files[i].name);
+        sites["names"].push_back(host_files[i].name);
     }
-    return site_names;
+    return sites.dump();
 }

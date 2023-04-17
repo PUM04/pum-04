@@ -85,10 +85,6 @@ interface MenuProps {
  * @param fileHandler is used to add the files to the backend
  */
 const addFilesToBackend = (files: File[], fileHandler: any) => {
-  if (fileHandler === undefined) {
-    throw new Error('Filehandler is undefined');
-  }
-
   if (files.length > 0) {
     files.forEach((file) => {
       const filereader = new FileReader();
@@ -106,6 +102,18 @@ const addFilesToBackend = (files: File[], fileHandler: any) => {
 };
 
 /**
+ * Gets the site names from the backend.
+ *
+ * @param fileHandler used to get the site names
+ * @returns an array of site names
+ */
+const getSiteNames = (fileHandler: any) => {
+  const names = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).names : [];
+  // Remove the extension from the name
+  return names.map((name: string) => name.split('.').slice(0, -1).join('.'));
+};
+
+/**
  * A drawermenu for showing available metrics, sites and to upload files
  *
  * @param props contains filehandler
@@ -119,6 +127,8 @@ export default function Menu(props: MenuProps) {
   const [files, setFiles] = useState<File[]>([]);
   const [oldFiles, setOldFiles] = useState<File[]>([]);
 
+  const [siteNames, setSiteNames] = useState<string[]>([]);
+
   // add files to backend when they are added to the state
   useEffect(() => {
     const newFiles = files.filter(
@@ -129,6 +139,10 @@ export default function Menu(props: MenuProps) {
 
     addFilesToBackend(newFiles, fileHandler);
   }, [files]);
+
+  useEffect(() => {
+    setSiteNames(getSiteNames(fileHandler));
+  }, [oldFiles]);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -205,10 +219,7 @@ export default function Menu(props: MenuProps) {
               width: drawerWidth - 10,
             }}
           >
-            <Dropdown
-              dropdownName="Sites"
-              value={['site_1', 'site_2', 'site_3']}
-            />
+            <Dropdown dropdownName="Sites" value={siteNames} />
             <Dropdown
               dropdownName="Metrics"
               value={['metric_1', 'metric_2', 'metric_3']}
