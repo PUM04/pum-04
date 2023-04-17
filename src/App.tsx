@@ -5,8 +5,6 @@ import React from 'react';
 import Layout from './components/Layout';
 import './App.css';
 import SectraTheme from './components/SectraTheme';
-import Menu from './components/Menu';
-import { GraphComponent, InfoboxComponent } from './components/BaseComponent';
 
 /**
  * Top level component.

@@ -12,9 +12,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Divider from '@mui/material/Divider';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import Paper from '@mui/material/Paper';
 import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './LegendBar';
-import Paper from '@mui/material/Paper';
 import Dropdown from './Dropdown';
 import '../App.css';
 
