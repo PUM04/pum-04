@@ -138,9 +138,8 @@ export default function Menu(props: MenuProps) {
 
   // add files to backend when they are added to the state
   useEffect(() => {
-    const newFiles = files.filter(
-      (file) => !oldFiles.map((v) => v.name).includes(file.name)
-    );
+    const oldFileNames = oldFiles.map((v) => v.name);
+    const newFiles = files.filter((file) => !oldFileNames.includes(file.name));
 
     setOldFiles(oldFiles.concat(newFiles));
 
