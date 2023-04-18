@@ -147,6 +147,7 @@ export default function Menu(props: MenuProps) {
     addFilesToBackend(newFiles, fileHandler);
   }, [files]);
 
+  // get site names and metrics from backend when files are added to the backend
   useEffect(() => {
     fileHandler?.ComputeFiles();
 
