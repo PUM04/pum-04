@@ -1,9 +1,10 @@
 /**
  * @file Contains an interactive drawermenu
  */
-import React, { useState } from 'react';
+import React, { useState , Dispatch} from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Drawer from '@mui/material/Drawer';
 import Typography from '@mui/material/Typography';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
@@ -16,6 +17,7 @@ import Paper from '@mui/material/Paper';
 import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './LegendBar';
 import Dropdown from './Dropdown';
+import { SiteProperties } from './SitePropetiesInterface';
 import '../App.css';
 
 const size = 75;
@@ -76,6 +78,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 interface MenuProps {
   // TODO: Get the actual type
   fileHandler: any;
+  siteProps: Map<string, SiteProperties>;
+  setSiteProps: Dispatch<React.SetStateAction<Map<string, SiteProperties>>>;
 }
 
 /**
@@ -90,7 +94,8 @@ export default function Menu(props: MenuProps) {
   const [open, setOpen] = useState(false);
   const [files, setFiles] = useState<File[]>([]);
   const [filereader] = useState(new FileReader());
-
+  const { siteProps } = props;
+  const { setSiteProps } = props;
   // Start reading the first file
   if (files.length > 0 && filereader.readyState !== FileReader.LOADING) {
     filereader.readAsText(files[files.length - 1]);
@@ -123,11 +128,11 @@ export default function Menu(props: MenuProps) {
     setOpen(false);
   };
 
-  const sites = [
-    { name: 'first', color: 'red', enabled: true },
-    { name: 'second', color: 'blue', enabled: true },
-    { name: 'third', color: 'orange', enabled: true },
-  ];
+  // const sites = [
+  //   { name: 'first', color: 'red', enabled: true },
+  //   { name: 'second', color: 'blue', enabled: true },
+  //   { name: 'third', color: 'orange', enabled: true },
+  // ];
 
   return (
     <div className="App">
@@ -148,7 +153,15 @@ export default function Menu(props: MenuProps) {
             >
               <MenuIcon />
             </IconButton>
-            <LegendBar sites={sites} />
+            <Button
+              color="primary"
+              type="button"
+              onClick={() => {
+                siteProps.set('linköping', { color: 'grey', enabled: true });
+                console.log(siteProps);
+              }}
+            />
+            <LegendBar siteProps={siteProps} />
           </DrawerHeader>
         </AppBar>
         <Drawer
@@ -193,10 +206,12 @@ export default function Menu(props: MenuProps) {
             <Dropdown
               dropdownName="Sites"
               value={['site_1', 'site_2', 'site_3']}
+              setSiteProps={setSiteProps}
             />
             <Dropdown
               dropdownName="Metrics"
               value={['metric_1', 'metric_2', 'metric_3']}
+              setSiteProps={setSiteProps}
             />
           </Paper>
           <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>

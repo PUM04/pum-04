@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import React from 'react';
 import Paper from '@mui/material/Paper';
+import { SiteProperties } from './SitePropetiesInterface';
 
 /**
  * Creates a legend
@@ -38,6 +39,9 @@ function Legend(prop: { name: any; color: any }) {
   );
 }
 
+interface LegendBarProps {
+  siteProps: Map<string, SiteProperties>;
+}
 /**
  * Creates a box for the appbar containg all legends
  *
@@ -45,10 +49,20 @@ function Legend(prop: { name: any; color: any }) {
  * @param props.sites list of sites
  * @returns a box containing all legends
  */
-function LegendBar(props: {
-  sites: { enabled: any; name: any; color: any }[];
-}) {
-  const { sites } = props;
+function LegendBar(props: LegendBarProps) {
+  const { siteProps } = props;
+
+  const legends: Array<JSX.Element> = [];
+
+  siteProps.forEach((siteprop, sitename) => {
+    const legendKey = sitename;
+    if (siteprop.enabled) {
+      legends.push(
+        <Legend key={legendKey} name={sitename} color={siteprop.color} />
+      );
+    }
+  });
+
   return (
     <Box
       data-testid="legendBar-component"
@@ -61,10 +75,7 @@ function LegendBar(props: {
         flexGrow: 1,
       }}
     >
-      {sites.map((site: { enabled: any; name: any; color: any }) => (
-        // if (site.enabled)
-        <Legend key={site.name} name={site.name} color={site.color} />
-      ))}
+      {legends}
     </Box>
   );
 }

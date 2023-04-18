@@ -5,12 +5,21 @@ import Box from '@mui/material/Box';
 import React from 'react';
 import { BoxPlotChart, BarChart } from './Charts';
 
+interface SiteProperties {
+  color: string;
+  enabled: boolean;
+}
+interface GraphComponentProps {
+  siteProps: Map<string, SiteProperties>;
+}
 /**
  * Component that contains all graphs
  *
+ * @param props
  * @returns MUI box component
  */
-export function GraphComponent(): JSX.Element {
+export function GraphComponent(props: GraphComponentProps): JSX.Element {
+  const { siteProps } = props;
   return (
     <Box
       data-testid="graph-component"
@@ -29,7 +38,8 @@ export function GraphComponent(): JSX.Element {
         {' '}
         <BarChart
           metrics={['getPatient', 'getBucket']}
-          sites={['stockholm', 'linköping', 'manchester', 'tokyo']}
+          sites={['stockholm', 'linköping', 'tokyo', 'manchester']}
+          siteProps={siteProps}
         />{' '}
       </Box>
       <Box>
@@ -37,61 +47,9 @@ export function GraphComponent(): JSX.Element {
         <BoxPlotChart
           metrics={['getPatient', 'getBucket']}
           sites={['stockholm', 'linköping']}
+          siteProps={siteProps}
         />{' '}
       </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
       <Box> Put graphs here! </Box>
     </Box>
   );

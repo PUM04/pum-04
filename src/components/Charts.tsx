@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+
 import {} from '@mui/material';
 import {
   VictoryAxis,
@@ -13,7 +14,7 @@ import {
   VictoryTooltip,
   VictoryCandlestick,
 } from 'victory';
-
+import { SiteProperties } from './SitePropetiesInterface';
 /**
  * Top level component.
  *
@@ -27,6 +28,7 @@ import {
 interface ChartProps {
   metrics: Array<string>;
   sites: Array<string>;
+  siteProps: Map<string, SiteProperties>;
 }
 /* Datastructure for drawing a histogram
   Example
@@ -77,119 +79,127 @@ interface Candle {
  *
  * @param site what site to get data from.
  * @param metric what metric to get data from.
+ * @param color
  * @returns a Histogram object containing all data for drawing a BarChart.
  */
-function getBarChartData(site: string, metric: string): Histogram {
+function getBarChartData(
+  site: string,
+  metric: string,
+  color: string
+): Histogram {
   /**
    * Todo- At the moment this function only contains dummy data.
    * Implement code to get data from backend
    * Make sure corret color is retrived from Legends component
    */
-  const data: Histogram = { bars: [] };
+  const data: Histogram = { bars: [{ x: '600', y: 150, fill: 'purple' }] };
+  if (!color) {
+    return data;
+  }
   if (site === 'stockholm' && metric === 'getPatient') {
     data.bars = [
-      { x: '500', y: 20, fill: 'yellow' },
-      { x: '600', y: 150, fill: 'yellow' },
-      { x: '700', y: 200, fill: 'yellow' },
-      { x: '2800', y: 900, fill: 'yellow' },
-      { x: '3200', y: 200, fill: 'yellow' },
-      { x: '3300', y: 150, fill: 'yellow' },
-      { x: '4200', y: 200, fill: 'yellow' },
-      { x: '5800', y: 805, fill: 'yellow' },
-      { x: '6200', y: 600, fill: 'yellow' },
-      { x: '15800', y: 85, fill: 'yellow' },
+      { x: '500', y: 20, fill: color },
+      { x: '600', y: 150, fill: color },
+      { x: '700', y: 200, fill: color },
+      { x: '2800', y: 900, fill: color },
+      { x: '3200', y: 200, fill: color },
+      { x: '3300', y: 150, fill: color },
+      { x: '4200', y: 200, fill: color },
+      { x: '5800', y: 805, fill: color },
+      { x: '6200', y: 600, fill: color },
+      { x: '15800', y: 85, fill: color },
     ];
   } else if (site === 'stockholm' && metric === 'getBucket') {
     data.bars = [
-      { x: '500', y: 20, fill: 'yellow' },
-      { x: '600', y: 150, fill: 'yellow' },
-      { x: '700', y: 200, fill: 'yellow' },
-      { x: '2800', y: 900, fill: 'yellow' },
-      { x: '3200', y: 200, fill: 'yellow' },
-      { x: '3300', y: 150, fill: 'yellow' },
-      { x: '4200', y: 200, fill: 'yellow' },
-      { x: '5800', y: 85, fill: 'yellow' },
-      { x: '6200', y: 200, fill: 'yellow' },
-      { x: '15800', y: 85, fill: 'yellow' },
+      { x: '500', y: 20, fill: color },
+      { x: '600', y: 150, fill: color },
+      { x: '700', y: 200, fill: color },
+      { x: '2800', y: 900, fill: color },
+      { x: '3200', y: 200, fill: color },
+      { x: '3300', y: 150, fill: color },
+      { x: '4200', y: 200, fill: color },
+      { x: '5800', y: 85, fill: color },
+      { x: '6200', y: 200, fill: color },
+      { x: '15800', y: 85, fill: color },
     ];
   } else if (site === 'linköping' && metric === 'getPatient') {
     data.bars = [
-      { x: '500', y: 20, fill: 'blue' },
-      { x: '600', y: 150, fill: 'blue' },
-      { x: '700', y: 200, fill: 'blue' },
-      { x: '2800', y: 900, fill: 'blue' },
-      { x: '3200', y: 200, fill: 'blue' },
-      { x: '3300', y: 150, fill: 'blue' },
-      { x: '4200', y: 200, fill: 'blue' },
-      { x: '5800', y: 85, fill: 'blue' },
-      { x: '6200', y: 200, fill: 'blue' },
-      { x: '15800', y: 85, fill: 'blue' },
+      { x: '500', y: 20, fill: color },
+      { x: '600', y: 150, fill: color },
+      { x: '700', y: 200, fill: color },
+      { x: '2800', y: 900, fill: color },
+      { x: '3200', y: 200, fill: color },
+      { x: '3300', y: 150, fill: color },
+      { x: '4200', y: 200, fill: color },
+      { x: '5800', y: 85, fill: color },
+      { x: '6200', y: 200, fill: color },
+      { x: '15800', y: 85, fill: color },
     ];
   } else if (site === 'linköping' && metric === 'getBucket') {
     data.bars = [
-      { x: '500', y: 20, fill: 'blue' },
-      { x: '600', y: 150, fill: 'blue' },
-      { x: '700', y: 200, fill: 'blue' },
-      { x: '2800', y: 900, fill: 'blue' },
-      { x: '3200', y: 200, fill: 'blue' },
-      { x: '3300', y: 150, fill: 'blue' },
-      { x: '4200', y: 200, fill: 'blue' },
-      { x: '5800', y: 85, fill: 'blue' },
-      { x: '6200', y: 200, fill: 'blue' },
-      { x: '15800', y: 85, fill: 'blue' },
-      { x: '95800', y: 85, fill: 'blue' },
+      { x: '500', y: 20, fill: color },
+      { x: '600', y: 150, fill: color },
+      { x: '700', y: 200, fill: color },
+      { x: '2800', y: 900, fill: color },
+      { x: '3200', y: 200, fill: color },
+      { x: '3300', y: 150, fill: color },
+      { x: '4200', y: 200, fill: color },
+      { x: '5800', y: 85, fill: color },
+      { x: '6200', y: 200, fill: color },
+      { x: '15800', y: 85, fill: color },
+      { x: '95800', y: 85, fill: color },
     ];
   } else if (site === 'manchester' && metric === 'getPatient') {
     data.bars = [
-      { x: '500', y: 60, fill: 'green' },
-      { x: '600', y: 210, fill: 'green' },
-      { x: '700', y: 185, fill: 'green' },
-      { x: '2800', y: 700, fill: 'green' },
-      { x: '3200', y: 100, fill: 'green' },
-      { x: '3300', y: 50, fill: 'green' },
-      { x: '4200', y: 600, fill: 'green' },
-      { x: '5800', y: 285, fill: 'green' },
-      { x: '6200', y: 400, fill: 'green' },
-      { x: '15800', y: 325, fill: 'green' },
+      { x: '500', y: 60, fill: color },
+      { x: '600', y: 210, fill: color },
+      { x: '700', y: 185, fill: color },
+      { x: '2800', y: 700, fill: color },
+      { x: '3200', y: 100, fill: color },
+      { x: '3300', y: 50, fill: color },
+      { x: '4200', y: 600, fill: color },
+      { x: '5800', y: 285, fill: color },
+      { x: '6200', y: 400, fill: color },
+      { x: '15800', y: 325, fill: color },
     ];
   } else if (site === 'manchester' && metric === 'getBucket') {
     data.bars = [
-      { x: '500', y: 60, fill: 'green' },
-      { x: '600', y: 210, fill: 'green' },
-      { x: '700', y: 185, fill: 'green' },
-      { x: '2800', y: 700, fill: 'green' },
-      { x: '3200', y: 100, fill: 'green' },
-      { x: '3300', y: 50, fill: 'green' },
-      { x: '4200', y: 600, fill: 'green' },
-      { x: '5800', y: 285, fill: 'green' },
-      { x: '6200', y: 400, fill: 'green' },
-      { x: '15800', y: 325, fill: 'green' },
+      { x: '500', y: 60, fill: color },
+      { x: '600', y: 210, fill: color },
+      { x: '700', y: 185, fill: color },
+      { x: '2800', y: 700, fill: color },
+      { x: '3200', y: 100, fill: color },
+      { x: '3300', y: 50, fill: color },
+      { x: '4200', y: 600, fill: color },
+      { x: '5800', y: 285, fill: color },
+      { x: '6200', y: 400, fill: color },
+      { x: '15800', y: 325, fill: color },
     ];
   } else if (site === 'tokyo' && metric === 'getPatient') {
     data.bars = [
-      { x: '500', y: 10, fill: 'red' },
-      { x: '600', y: 70, fill: 'red' },
-      { x: '700', y: 385, fill: 'red' },
-      { x: '2800', y: 900, fill: 'red' },
-      { x: '3200', y: 60, fill: 'red' },
-      { x: '3300', y: 120, fill: 'red' },
-      { x: '4200', y: 380, fill: 'red' },
-      { x: '5800', y: 130, fill: 'red' },
-      { x: '6200', y: 700, fill: 'red' },
-      { x: '15800', y: 225, fill: 'red' },
+      { x: '500', y: 10, fill: color },
+      { x: '600', y: 70, fill: color },
+      { x: '700', y: 385, fill: color },
+      { x: '2800', y: 900, fill: color },
+      { x: '3200', y: 60, fill: color },
+      { x: '3300', y: 120, fill: color },
+      { x: '4200', y: 380, fill: color },
+      { x: '5800', y: 130, fill: color },
+      { x: '6200', y: 700, fill: color },
+      { x: '15800', y: 225, fill: color },
     ];
   } else if (site === 'tokyo' && metric === 'getBucket') {
     data.bars = [
-      { x: '500', y: 10, fill: 'red' },
-      { x: '600', y: 70, fill: 'red' },
-      { x: '700', y: 385, fill: 'red' },
-      { x: '2800', y: 900, fill: 'red' },
-      { x: '3200', y: 60, fill: 'red' },
-      { x: '3300', y: 120, fill: 'red' },
-      { x: '4200', y: 380, fill: 'red' },
-      { x: '5800', y: 130, fill: 'red' },
-      { x: '6200', y: 700, fill: 'red' },
-      { x: '15800', y: 225, fill: 'red' },
+      { x: '500', y: 10, fill: color },
+      { x: '600', y: 70, fill: color },
+      { x: '700', y: 385, fill: color },
+      { x: '2800', y: 900, fill: color },
+      { x: '3200', y: 60, fill: color },
+      { x: '3300', y: 120, fill: color },
+      { x: '4200', y: 380, fill: color },
+      { x: '5800', y: 130, fill: color },
+      { x: '6200', y: 700, fill: color },
+      { x: '15800', y: 225, fill: color },
     ];
   }
 
@@ -203,9 +213,14 @@ function getBarChartData(site: string, metric: string): Histogram {
  * example 'getPatient'
  * @param sites a string list containing 1-n sites that will be shown in the candlechart.
  * example ['s1','s2','s3','s4']
+ * @param siteProps
  * @returns a data structure in correct format to paint a candelChart.
  */
-function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
+function getCandleChartData(
+  metric: string,
+  sites: Array<string>,
+  siteProps: Map<string, SiteProperties>
+): CandleChart {
   const data: CandleChart = { candels: [] };
   /**
    * Todo- At the moment this function only contains dummy data.
@@ -218,12 +233,7 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
    *  - json["getpatient"]["avrage"]
    *    or json["getPatient"]
    *  - iterate over to create correct data structure.
-   *
-   *  Candelstick to boxplot translation.
-   *  OPEN is first_quartile
-   *  close is third_quartile
-   *  max is high
-   *  min is low
+   *  map.set('stockholm', { color: 'red', enabled: true });
    */
   if (
     metric === 'getPatient' &&
@@ -233,7 +243,7 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
     data.candels = [
       { x: 1, open: 5, close: 10, high: 22, low: 0 }, // s1
       { x: 2, open: 10, close: 15, high: 20, low: 5 }, // s2
-      { x: 3, open: 8, close: 11, high: 13, low: 2 }, // s2
+      { x: 3, open: 8, close: 11, high: 13, low: 2 }, // s3
     ];
   }
   if (
@@ -295,6 +305,7 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
 export function BoxPlotChart(props: ChartProps): JSX.Element {
   const { metrics } = props;
   const { sites } = props;
+  const { siteProps } = props;
   const width = 10;
   const offsetPadding = 5;
   const victoryCandles: Array<JSX.Element> = [];
@@ -302,7 +313,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   // For metrics in props.metrics skapa victorycandles som innehåller alla props.sites
 
   metrics.forEach((metric) => {
-    const data: CandleChart = getCandleChartData(metric, sites);
+    const data: CandleChart = getCandleChartData(metric, sites, siteProps);
     victoryCandles.push(drawVictoryCandle(data.candels, width));
   });
 
@@ -341,10 +352,10 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
  *
  * @param data data needed to create a barChart. Must be in the following format
  *  siteNmetricN = [
-      { x: '500', y: 20, fill: 'red' },
-      { x: '600', y: 150, fill: 'red' },
-      { x: '700', y: 200, fill: 'red' },
-    ];
+      { x: '500', y: 20, fill: color },
+      { x: '600', y: 150, fill:colorr },
+      { x: '700', y: 200, fill: color },
+    ];'red'color
  * @param width width of a bar.
  * @returns a single VictoryBar.
  */
@@ -457,21 +468,27 @@ function drawHistogram(
 export function BarChart(props: ChartProps): JSX.Element {
   const { metrics } = props;
   const { sites } = props;
+  const { siteProps } = props;
+
   const barGraphList: any = [];
 
   // This does not effect the actual graph width,
   // width of BarChart is based on parent container
   const graphWidth = 300;
-
   metrics.forEach((metric) => {
     const barGraph: Array<Histogram> = [];
     sites.forEach((site) => {
-      const data: Histogram = getBarChartData(site, metric);
+      const siteProp = siteProps.get(site);
+      let color = siteProp?.color;
+      if (!color) {
+        color = 'cyan';
+        // throw new Error('Color not found');
+      }
+      const data: Histogram = getBarChartData(site, metric, color);
       barGraph.push(data);
     });
     const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
     barGraphList.push(drawHistogram(barGraph, metric, width));
   });
-
   return <div>{barGraphList}</div>;
 }
