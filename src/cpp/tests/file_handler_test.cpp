@@ -75,24 +75,29 @@ TEST_CASE("FileHandler") {
 
     SUBCASE("Get site names") {
         std::string host1 =
-            "{\"site_name\": \"test1\", \"site_id\": \"test123\"}";
+            "{\"site_name\": \"test1\", \"site_id\": \"test_id_1\"}";
         std::string host_name1 = "test1.json";
 
         fh->AddFile(host1, host_name1);
-        std::vector<std::string> site_names1 = fh->GetSiteNames();
+        fh->ComputeFiles();
 
-        CHECK(site_names1.size() == 1);
-        CHECK(site_names1[0] == "test1.json");
+        json site_names = json::parse(fh->GetSiteNames());
+
+        CHECK(site_names["names"].size() == 1);
+        CHECK(site_names["names"][0] == "test1");
 
         std::string host2 =
-            "{\"site_name\": \"test2\", \"site_id\": \"test123\"}";
+            "{\"site_name\": \"test2\", \"site_id\": \"test_id_2\"}";
         std::string host_name2 = "test2.json";
         fh->AddFile(host2, host_name2);
-        std::vector<std::string> site_names2 = fh->GetSiteNames();
+        fh->ComputeFiles();
+        json site_names2 = json::parse(fh->GetSiteNames());
 
-        CHECK(site_names2.size() == 2);
-        CHECK(site_names2[0] == "test1.json");
-        CHECK(site_names2[1] == "test2.json");
+        CHECK(site_names2["names"].size() == 2);
+        CHECK(site_names2["names"][1] == "test1");
+        CHECK(site_names2["names"][0] == "test2");
     }
+
+    SUBCASE("Get metrics") {}
     delete fh;
 }
