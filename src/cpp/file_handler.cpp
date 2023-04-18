@@ -214,7 +214,13 @@ std::string FileHandler::GetFileEnding(std::string &file_name) const {
 }
 
 void FileHandler::AddHostFile(std::string &file) {
-    json hosts = json::parse(file);
+    json hosts;
+    try {
+        hosts = json::parse(file);
+    } catch (json::parse_error &e) {
+        std::cerr << "Could not parse hosts file: " << e.what() << std::endl;
+        return;
+    }
     std::string site_id = hosts["site_id"];
 
     // Add the site if it does not already exist
@@ -270,8 +276,8 @@ json FileHandler::GetPerformanceJson(std::string &content) const {
 
 void FileHandler::AddPerformanceFile(std::string &file, std::string &file_name) {
     std::string site_id = GetIdFromPerformance(file_name);
-
     // Add the host to the corresponding site if it exists
+
     if (sites.find(site_id) != sites.end()) {
         json performance = GetPerformanceJson(file);
         sites[site_id].logs.insert(performance);
