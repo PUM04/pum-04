@@ -445,10 +445,9 @@ function drawHistogram(
 ) {
 
   const formatTickDifference = (tick:any, index:number, ticksArray:any) => {
-    console.log("index",index);
-    if (index < ticksArray.length - 1) {
-      const difference = `${tick} - ${ticksArray[index + 1] - 1}`;
-      return difference;
+      if (index < ticksArray.length - 1) {
+        const difference = `${tick} - ${ticksArray[index + 1] - 1} ms`;
+        return difference;
     }
     return `${tick} - `;
   };
@@ -535,47 +534,58 @@ export function BarChart(props: ChartProps): JSX.Element {
   return <div>{barGraphList}</div>;
 }
 
+/**
+ * TODO
+ * @param barGraph 
+ * @param graphWidth 
+ * @param sites 
+ * @returns 
+ */
 function mergeXvalues(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<Histogram>{
+  
   let newBarGraph: Array<Histogram> = []; 
-  const tooSmallWidth = 10;
   let width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
-  const maxLoopCount = 20;
+  
+  const tooSmallWidth = 3;//target width
+  const maxLoopCount = 50;// a fail safe in case something goes wrong
+  let mergeAmount = 1;//start merge amount
   let loopCount = 0;
-  let mergeAmount = 1;
+
+  if(width>=tooSmallWidth){
+    console.log("no changes when running mergeXvalues()");
+    return barGraph;
+  }
   while(width<tooSmallWidth){
+    newBarGraph = [];
     barGraph.forEach(histo => {
       let newHisto:Histogram = new Histogram([]);
       for (let i = 0; i < histo.bars.length; i++) {
         
-        //console.log(newHisto);
-        //console.log(histo);
-        //console.log("oldBars",histo.bars[0].y);
-        console.log(i,"and",Math.floor(i/mergeAmount));
+        //if 
         if (newHisto.bars.at(Math.floor(i/mergeAmount)) == undefined) {
           newHisto.bars.push(new Bar(histo.bars[i].x,histo.bars[i].y,histo.bars[i].fill));
         }
         else{
           newHisto.bars[Math.floor(i/mergeAmount)].y+=histo.bars[i].y;
-          //newHisto.bars[Math.floor(i/mergeAmount)].x=histo.bars[i].x;
         }
         
       }
       newBarGraph.push(newHisto);
       }
       );
-    
+
       if(loopCount>maxLoopCount){
-        //console.log("newBars",newHisto)
+        console.warn("----------------------WARNING REACHED LOOP MAX!----------------------");
         break;
       }
       loopCount +=1;
       mergeAmount += 1;
       width = graphWidth / (numberOfXvalues(newBarGraph) * sites.length);
-      console.log("Too small width, trying again new width:",width);
+      console.log("Too small width, trying again new width:",width, "\n new mergeAmount:",mergeAmount);
     }
   
   
-  console.log("new",newBarGraph);
+  console.log("new barGraph:",newBarGraph);
   return newBarGraph;
 }
 
