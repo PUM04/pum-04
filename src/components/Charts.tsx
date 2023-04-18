@@ -94,7 +94,7 @@ function getBarChartData(
 
   const { data } = JSON.parse(fileHandler.GetHistogram(site))[metric];
 
-  data.map((bar) => {
+  data.forEach((bar) => {
     if (bar.length <= 3000) {
       histogram.bars.push({ x: bar.length, y: bar.count, fill: 'red' });
     }
