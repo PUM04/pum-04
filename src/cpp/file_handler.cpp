@@ -302,13 +302,13 @@ std::string FileHandler::GetSiteNames() const {
     std::vector<std::string> names;
     sitesNames["names"] = names;
 
-    for (auto i : sites) {
-        json hosts = i.second.hosts;
+    for (auto const site : sites) {
+        json hosts = site.second.hosts;
         if (hosts.contains("site_name")) {
-            sitesNames["names"].push_back(i.second.hosts["site_name"]);
+            sitesNames["names"].push_back(hosts["site_name"]);
         } else {
             #ifdef DEBUG
-            std::cerr << "The site with id " << i.first
+            std::cerr << "The site with id " << site.first
                       << " is missing the key 'site_name'." << std::endl;
             #endif
         }
