@@ -330,8 +330,10 @@ std::string FileHandler::GetMetrics() const {
     }
 
     // Remove duplicates
-    auto last = std::unique(metrics.begin(), metrics.end());
-    metrics.erase(last, metrics.end());
+    std::sort(metric_json["metrics"].begin(), metric_json["metrics"].end());
+    auto last = std::unique(metric_json["metrics"].begin(),
+                            metric_json["metrics"].end());
+    metric_json["metrics"].erase(last, metric_json["metrics"].end());
 
     return metric_json.dump();
 }
