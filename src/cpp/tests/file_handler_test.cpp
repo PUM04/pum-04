@@ -189,7 +189,6 @@ TEST_CASE("FileHandler") {
 
         fh->ComputeFiles();
         json metrics = json::parse(fh->GetMetrics());
-        std::cout << metrics.dump() << std::endl;
 
         CHECK(metrics["metrics"].size() == 4);
         CHECK(metrics["metrics"][0] == "Test");
