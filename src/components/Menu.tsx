@@ -107,12 +107,18 @@ const addFilesToBackend = (files: File[], fileHandler: any) => {
  * @param fileHandler used to get the site names
  * @returns an array of site names
  */
-const getSiteNames = (fileHandler: any) => {
+const getSiteNames = (fileHandler: any): string[] => {
   const names = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).names : [];
   return names;
 };
 
-const getMetrics = (fileHandler: any) => {
+/**
+ * Gets the metrics from the backend.
+ *
+ * @param fileHandler used to get the metrics
+ * @returns an array of metrics
+ */
+const getMetrics = (fileHandler: any): string[] => {
   const metrics = fileHandler
     ? JSON.parse(fileHandler.GetMetrics()).metrics
     : [];
