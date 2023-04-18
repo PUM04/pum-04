@@ -109,8 +109,8 @@ const addFilesToBackend = (files: File[], fileHandler: any) => {
  */
 const getSiteNames = (fileHandler: any) => {
   const names = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).names : [];
-  // Remove the extension from the name
-  return names.map((name: string) => name.split('.').slice(0, -1).join('.'));
+  return names;
+};
 };
 
 /**
