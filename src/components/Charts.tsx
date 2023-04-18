@@ -2,7 +2,6 @@
  *
  * @file Contains the component that paints Charts. Gets data for chart.
  */
-
 import React from 'react';
 import {} from '@mui/material';
 import {
@@ -28,6 +27,28 @@ interface ChartProps {
   metrics: Array<string>;
   sites: Array<string>;
 }
+
+class Bar{
+  public x: string;
+  public y: number;
+  public fill: string;
+
+  constructor(x:string = "0",y:number = 0,fill = "red"){
+    this.x = x;
+    this.y = y;
+    this.fill = fill;
+  }
+}
+
+class Histogram{
+  public bars: Array<Bar>;
+
+  constructor(bars: Array<Bar> = [new Bar()]){
+    this.bars = bars;
+  }
+
+}
+
 /* Datastructure for drawing a histogram
   Example
 * {bars = [
@@ -36,14 +57,14 @@ interface ChartProps {
       { x: '700', y: 200, fill: 'yellow' },
     ];}
 */
-interface Histogram {
+interface HistogramInterface {
   bars: Array<Bar>;
 }
 /**
  * Data for drawing a single bar in a histogram
  * { x: '700', y: 200, fill: 'yellow' }
  */
-interface Bar {
+interface BarInterface {
   x: string;
   y: number;
   fill: string;
@@ -422,13 +443,20 @@ function drawHistogram(
   metric: string,
   width: number
 ) {
+
+  const formatTickDifference = (tick:any, index:number, ticksArray:any) => {
+    console.log("index",index);
+    if (index < ticksArray.length - 1) {
+      const difference = `${tick} - ${ticksArray[index + 1] - 1}`;
+      return difference;
+    }
+    return `${tick} - `;
+  };
+
   const victoryBars: Array<any> = [];
-  histograms.forEach((histogram) => {
-    if(width < 10)
-    
+  histograms.forEach((histogram) => {    
     victoryBars.push(drawVictoryBar(histogram.bars, width));
   });
-
   return (
     <div key={metric}>
       <p
@@ -461,7 +489,10 @@ function drawHistogram(
               stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
             },
             axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
-          }}
+            //tickFormat: (t) => '${Math.round(t)}k',
+          }
+        }
+        tickFormat={(tick:any, index:number, ticks:any) => formatTickDifference(tick, index, ticks)}
         />
         <VictoryGroup domainPadding={{ x: [5, 0] }} offset={width}>
           {victoryBars}
@@ -491,43 +522,132 @@ export function BarChart(props: ChartProps): JSX.Element {
 
   metrics.forEach((metric) => {
     const barGraph: Array<Histogram> = [];
+    let newBargraph: Array<Histogram> = [];
     sites.forEach((site) => {
       const data: Histogram = getBarChartData(site, metric);
       barGraph.push(data);
     });
     const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
-    
-    mergeXvalues()
-    barGraphList.push(drawHistogram(barGraph, metric, width));
+    newBargraph = mergeXvalues(barGraph, graphWidth, sites);
+    barGraphList.push(drawHistogram(newBargraph, metric, width));
   });
 
   return <div>{barGraphList}</div>;
 }
 
-function mergeXvalues(barGraph:Array<Histogram>,graphWidth:any,sites:any):Histogram{
-  let newBarGraph:Array<Histogram> = [{ bars: [] }];
+function mergeXvalues(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<Histogram>{
+  let newBarGraph: Array<Histogram> = []; 
   const tooSmallWidth = 10;
   let width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
+  const maxLoopCount = 20;
+  let loopCount = 0;
+  let mergeAmount = 1;
   while(width<tooSmallWidth){
-
     barGraph.forEach(histo => {
-      let newHisto:Histogram;
-      newHisto = { bars: [] };
+      let newHisto:Histogram = new Histogram([]);
       for (let i = 0; i < histo.bars.length; i++) {
-        newHisto.bars[i/2].y+=histo.bars[i].y;
-        newHisto.bars[i/2].x=histo.bars[i].x;
+        
+        //console.log(newHisto);
+        //console.log(histo);
+        //console.log("oldBars",histo.bars[0].y);
+        console.log(i,"and",Math.floor(i/mergeAmount));
+        if (newHisto.bars.at(Math.floor(i/mergeAmount)) == undefined) {
+          newHisto.bars.push(new Bar(histo.bars[i].x,histo.bars[i].y,histo.bars[i].fill));
+        }
+        else{
+          newHisto.bars[Math.floor(i/mergeAmount)].y+=histo.bars[i].y;
+          //newHisto.bars[Math.floor(i/mergeAmount)].x=histo.bars[i].x;
+        }
+        
       }
-      newBarGraph.push(newHisto)
+      newBarGraph.push(newHisto);
       }
       );
     
+      if(loopCount>maxLoopCount){
+        //console.log("newBars",newHisto)
+        break;
+      }
+      loopCount +=1;
+      mergeAmount += 1;
+      width = graphWidth / (numberOfXvalues(newBarGraph) * sites.length);
+      console.log("Too small width, trying again new width:",width);
+    }
+  
+  
+  console.log("new",newBarGraph);
+  return newBarGraph;
+}
 
 
 
-    width = graphWidth / (numberOfXvalues(barGraph) * sites.length)
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function mergeXvaluesIdea2(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<Histogram>{
+  let newBarGraph: Array<Histogram> = []; 
+  const tooSmallWidth = 10;
+  let width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
+  const maxLoopCount = 20;
+  let loopCount = 0;
+  const mergeAmount = 1;
+  //while(width<tooSmallWidth){
+    barGraph.forEach(histo => {
+      let newHisto:Histogram = new Histogram([]);
+      for (let i = 0; i < histo.bars.length; i++) {
+        //console.log(newHisto);
+        //console.log(histo);
+        //console.log("oldBars",histo.bars[0].y);
+        if (newHisto.bars.at(Math.floor(i/mergeAmount)) == undefined) {
+          newHisto.bars.push(new Bar(histo.bars[i].x,histo.bars[i].y,histo.bars[i].fill));
+        }
+        else{
+          newHisto.bars[Math.floor(i/mergeAmount)].y+=histo.bars[i].y;
+          newHisto.bars[Math.floor(i/mergeAmount)].x=histo.bars[i].x;
+        }
+        
+      }
+      newBarGraph.push(newHisto);
+      
+      }
+      );
+    
+      if(loopCount>maxLoopCount){
+        //console.log("newBars",newHisto)
+        // break;
+      }
+      loopCount +=1;
+      width = graphWidth / (numberOfXvalues(barGraph) * sites.length)
+  // }
   
   
-  
-  return null;
+  console.log("new",newBarGraph);
+  return newBarGraph;
 }
