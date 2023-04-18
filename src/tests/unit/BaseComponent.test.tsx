@@ -6,23 +6,30 @@ import { cleanup, render, screen } from '@testing-library/react';
 
 import {
   InfoboxComponent,
-  GraphComponent,
+  BarGraphComponent,
+  BoxGraphComponent,
 } from '../../components/BaseComponent';
 
 describe('App', () => {
   // Run this before each test
   beforeEach(() => {
-    render(<GraphComponent />);
+    render(<BarGraphComponent />);
+    render(<BoxGraphComponent />);
     render(<InfoboxComponent />);
   });
 
-  // Tshould render
-  it('should render graphComponent', async () => {
-    await screen.findByTestId('graph-component');
+  // Should render
+  it('should render BarGraphComponent', async () => {
+    await screen.findByTestId('bargraph-component');
   });
 
-  // Tshould render
-  it('should render graphComponent', async () => {
+  // Should render
+  it('should render BoxGraphComponent', async () => {
+    await screen.findByTestId('boxgraph-component');
+  });
+
+  // Should render
+  it('should render infoBoxComponent', async () => {
     await screen.findByTestId('infobox-component');
   });
 

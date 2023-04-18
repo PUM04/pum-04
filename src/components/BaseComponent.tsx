@@ -13,7 +13,7 @@ import { BoxPlotChart, BarChart } from './Charts';
 export function BoxGraphComponent(): JSX.Element {
   return (
     <Box
-      data-testid="graph-component"
+      data-testid="boxgraph-component"
       sx={{
         flexDirection: 'column',
         display: 'flex',
@@ -45,7 +45,7 @@ export function BoxGraphComponent(): JSX.Element {
 export function BarGraphComponent(): JSX.Element {
   return (
     <Box
-      data-testid="graph-component"
+      data-testid="bargraph-component"
       sx={{
         flexDirection: 'column',
         display: 'flex',
