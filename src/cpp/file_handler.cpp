@@ -307,10 +307,10 @@ std::string FileHandler::GetSiteNames() const {
         if (hosts.contains("site_name")) {
             sitesNames["names"].push_back(i.second.hosts["site_name"]);
         } else {
-    #ifdef DEBUG
+            #ifdef DEBUG
             std::cerr << "The site with id " << i.first
                       << " is missing the key 'site_name'." << std::endl;
-    #endif
+            #endif
         }
     }
     return sitesNames.dump();
@@ -324,6 +324,7 @@ std::string FileHandler::GetMetrics() const {
     for (auto i : sites) {
         json categories;
         CalculateCategories(i.second, categories);
+        // add all metric names
         for (auto &el : categories.items()) {
             metric_json["metrics"].push_back(el.key());
         }
