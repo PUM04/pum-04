@@ -16,7 +16,7 @@ import SectraTheme from './components/SectraTheme';
 function App(): JSX.Element {
   const [fileHandler, setFileHandler] = useState();
 
-  const fileHandlerModule = useWasm(FileHandlerModule)
+  const fileHandlerModule = useWasm(FileHandlerModule);
 
   useEffect(() => {
     if (fileHandlerModule) {
@@ -25,7 +25,7 @@ function App(): JSX.Element {
   }, [fileHandlerModule]);
 
   return (
-    <div className="App mui-theme">      
+    <div className="App mui-theme">
       <SectraTheme>
         <div style={{ display: 'flex' }}>
           <Layout fileHandler={fileHandler} />

@@ -53,5 +53,5 @@ describe('Test charts', () => {
   // Run this after each test
   afterEach(() => {
     cleanup();
-  });*/
+  });
 });

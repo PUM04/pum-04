@@ -1,7 +1,7 @@
 /**
  * @file Contains the layout component.
  */
-import React, { useState } from 'react';
+import React from 'react';
 import { Box } from '@mui/material';
 import Menu from './Menu';
 import { GraphComponent, InfoboxComponent } from './BaseComponent';
@@ -19,7 +19,6 @@ interface MenuProps {
   // TODO: Get the actual type
   fileHandler: any;
 }
-
 
 /**
  * Basestructure for the website
@@ -44,12 +43,11 @@ function Layout(props: MenuProps) {
           backgroundColor: 'primary.light1',
         }}
       >
-        <GraphComponent fileHandler={fileHandler}/>
+        <GraphComponent fileHandler={fileHandler} />
         <InfoboxComponent />
       </Box>
     </Box>
   );
 }
-
 
 export default Layout;

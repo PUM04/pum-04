@@ -11,6 +11,7 @@ interface GraphComponentProps {
 /**
  * Component that contains all graphs
  *
+ * @param props contains fileHandler
  * @returns MUI box component
  */
 export function GraphComponent(props: GraphComponentProps): JSX.Element {

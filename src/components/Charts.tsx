@@ -78,24 +78,25 @@ interface Candle {
  *
  * @param site what site to get data from.
  * @param metric what metric to get data from.
+ * @param fileHandler is the filehandler :)
  * @returns a Histogram object containing all data for drawing a BarChart.
  */
-function getBarChartData(site: string, metric: string, fileHandler: any): Histogram {
+function getBarChartData(
+  site: string,
+  metric: string,
+  fileHandler: any
+): Histogram {
   /**
-   * Todo- At the moment this function only contains dummy data.
-   * Implement code to get data from backend
    * Make sure corret color is retrived from Legends component
    */
 
-  const histogram: Histogram = {bars: []};
+  const histogram: Histogram = { bars: [] };
 
-  var data = JSON.parse(fileHandler.GetHistogram(site))[metric]["data"];
+  const { data } = JSON.parse(fileHandler.GetHistogram(site))[metric];
 
-  {data.map((bar, i) => {
-    if (bar["length"] <= 3000) {
-      histogram.bars.push({ x: bar["length"], y : bar["count"], fill: 'red' });
-    }
-  })}
+  data.map((bar) => {
+    histogram.bars.push({ x: bar.length, y: bar.count, fill: 'red' });
+  });
 
   return histogram;
 }
@@ -107,33 +108,33 @@ function getBarChartData(site: string, metric: string, fileHandler: any): Histog
  * example 'getPatient'
  * @param sites a string list containing 1-n sites that will be shown in the candlechart.
  * example ['s1','s2','s3','s4']
+ * @param fileHandler is fuleHandler :)
  * @returns a data structure in correct format to paint a candleChart.
  */
-function getCandleChartData(metric: string, sites: Array<string>, fileHandler: any): CandleChart {
+function getCandleChartData(
+  metric: string,
+  sites: Array<string>,
+  fileHandler: any
+): CandleChart {
   const candle: CandleChart = { candles: [] };
   /**
    * Todo- At the moment this function only contains dummy data.
    * Implement code to get data from backend
    * Make sure correct color is retrived from Legends component
    *
-   *  candlestick to boxplot translation.
-   *  OPEN is first_quartile
-   *  close is third_quartile
-   *  max is high
-   *  min is low
    */
 
   sites.forEach((site, index) => {
-    var data = JSON.parse(fileHandler.GetBoxDiagram(site))[metric]
+    const data = JSON.parse(fileHandler.GetBoxDiagram(site))[metric];
     candle.candles.push({
       x: index + 1,
-      open: data["first_quartile"],
-      close: data["third_quartile"],
-      high: data["max"],
-      low: data["min"]
-    })
+      open: data.first_quartile,
+      close: data.third_quartile,
+      high: data.max,
+      low: data.min,
+    });
     // TODO: Implement mean
-  })
+  });
 
   return candle;
 }
@@ -188,10 +189,10 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   const offsetPadding = 5;
   const victoryCandles: Array<JSX.Element> = [];
 
-  if (fileHandler == undefined) {
-    return;
+  if (fileHandler === undefined) {
+    return <div />;
   }
-  
+
   // For metrics in props.metrics skapa victorycandles som innehåller alla props.sites
   metrics.forEach((metric) => {
     const data: CandleChart = getCandleChartData(metric, sites, fileHandler);
@@ -352,8 +353,8 @@ export function BarChart(props: ChartProps): JSX.Element {
   const { fileHandler } = props;
   const barGraphList: any = [];
 
-  if (fileHandler == undefined) {
-    return;
+  if (fileHandler === undefined) {
+    return <div />;
   }
 
   // This does not effect the actual graph width,
