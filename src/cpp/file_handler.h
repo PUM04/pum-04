@@ -53,7 +53,21 @@ public:
      */
     std::string GetHistogram(std::string site_id) const;
 
-private:
+    /**
+     * @brief Get the names of all the sites
+     *
+     * @return std::vector<std::string> The names of the sites
+     */
+    std::string GetSiteNames() const;
+
+    /**
+     * @brief Get the metrics for all sites.
+     *
+     * @return std::string The metrics
+     */
+    std::string GetMetrics() const;
+
+  private:
     std::unordered_map<std::string, struct Site> sites;
     std::vector<struct LoadedFile> host_files; 
     std::vector<struct LoadedFile> performance_files; 
@@ -161,7 +175,8 @@ private:
 
     json GetPerformanceJson(std::string &content) const;
 
-    void SplitString(std::string &s, std::string &delim, std::vector<std::string>) const;
+    void SplitString(std::string &s, std::string &delim,
+                     std::vector<std::string>) const;
 };
 
 #ifndef _TESTING_
@@ -171,6 +186,8 @@ EMSCRIPTEN_BINDINGS(file_handler) {
         .constructor()
         .function("AddFile", &FileHandler::AddFile)
         .function("ComputeFiles", &FileHandler::ComputeFiles)
-        .function("GetBoxDiagram", &FileHandler::GetBoxDiagram);
+        .function("GetBoxDiagram", &FileHandler::GetBoxDiagram)
+        .function("GetSiteNames", &FileHandler::GetSiteNames)
+        .function("GetMetrics", &FileHandler::GetMetrics);
 }
 #endif

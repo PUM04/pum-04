@@ -30,8 +30,8 @@ EXPOSE 3000
 # Docker startup
 RUN apt install bash -y 
 # docker startup needs to be there before the volume is started
-COPY ./src/docker_startup.sh /app/src/
+COPY ./scripts/ /app/scripts/
 
-RUN chmod u+x /app/src/docker_startup.sh
+RUN chmod u+x /app/scripts/docker_startup.sh
 
-CMD ["bash", "/app/src/docker_startup.sh"]
+CMD ["bash", "/app/scripts/docker_startup.sh"]
