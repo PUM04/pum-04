@@ -116,7 +116,6 @@ const getMetrics = (fileHandler: any) => {
   const metrics = fileHandler
     ? JSON.parse(fileHandler.GetMetrics()).metrics
     : [];
-  console.log(JSON.stringify(metrics));
   return metrics;
 };
 
@@ -150,8 +149,8 @@ export default function Menu(props: MenuProps) {
 
   useEffect(() => {
     fileHandler?.ComputeFiles();
-    setSiteNames(getSiteNames(fileHandler));
 
+    setSiteNames(getSiteNames(fileHandler));
     setMetrics(getMetrics(fileHandler));
   }, [oldFiles]);
 
