@@ -17,11 +17,11 @@ export function GraphComponent(): JSX.Element {
       sx={{
         flexDirection: 'column',
         display: 'flex',
-        paddingTop: '7vh',
+        paddingTop: '0vh',
         paddingBottom: '3vh',
         backgroundColor: 'primary.light2',
         '&:hover': {
-          backgroundColor: 'primary.light1',
+          backgroundColor: 'primary.light2',
         },
       }}
     >
