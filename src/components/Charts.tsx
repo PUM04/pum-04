@@ -88,16 +88,16 @@ function getBarChartData(site: string, metric: string): Histogram {
   const data: Histogram = { bars: [] };
   if (site === 'stockholm' && metric === 'getPatient') {
     data.bars = [
-      { x: '500', y: 20, fill: 'yellow' },
-      { x: '600', y: 150, fill: 'yellow' },
-      { x: '700', y: 200, fill: 'yellow' },
-      { x: '2800', y: 900, fill: 'yellow' },
-      { x: '3200', y: 200, fill: 'yellow' },
-      { x: '3300', y: 150, fill: 'yellow' },
-      { x: '4200', y: 200, fill: 'yellow' },
-      { x: '5800', y: 805, fill: 'yellow' },
-      { x: '6200', y: 600, fill: 'yellow' },
-      { x: '15800', y: 85, fill: 'yellow' },
+      { x: '1', y: 20, fill: 'yellow' },
+      { x: '5', y: 150, fill: 'yellow' },
+      { x: '7', y: 200, fill: 'yellow' },
+      { x: '10', y: 900, fill: 'yellow' },
+      { x: '20', y: 200, fill: 'yellow' },
+      { x: '30', y: 150, fill: 'yellow' },
+      { x: '40', y: 200, fill: 'yellow' },
+      { x: '50', y: 805, fill: 'yellow' },
+      { x: '100', y: 600, fill: 'yellow' },
+      { x: '200', y: 85, fill: 'yellow' },
     ];
   } else if (site === 'stockholm' && metric === 'getBucket') {
     data.bars = [
@@ -151,6 +151,26 @@ function getBarChartData(site: string, metric: string): Histogram {
       { x: '5800', y: 285, fill: 'green' },
       { x: '6200', y: 400, fill: 'green' },
       { x: '15800', y: 325, fill: 'green' },
+      { x: '16500', y: 60, fill: 'green' },
+      { x: '16600', y: 210, fill: 'green' },
+      { x: '16700', y: 185, fill: 'green' },
+      { x: '162800', y: 700, fill: 'green' },
+      { x: '163200', y: 100, fill: 'green' },
+      { x: '163300', y: 50, fill: 'green' },
+      { x: '164200', y: 600, fill: 'green' },
+      { x: '165800', y: 285, fill: 'green' },
+      { x: '166200', y: 400, fill: 'green' },
+      { x: '1615800', y: 325, fill: 'green' },
+      { x: '1711500', y: 60, fill: 'green' },
+      { x: '1711600', y: 210, fill: 'green' },
+      { x: '1711700', y: 185, fill: 'green' },
+      { x: '17112800', y: 700, fill: 'green' },
+      { x: '17113200', y: 100, fill: 'green' },
+      { x: '17113300', y: 50, fill: 'green' },
+      { x: '17114200', y: 600, fill: 'green' },
+      { x: '177115800', y: 285, fill: 'green' },
+      { x: '177116200', y: 400, fill: 'green' },
+      { x: '1771115800', y: 325, fill: 'green' },
     ];
   } else if (site === 'manchester' && metric === 'getBucket') {
     data.bars = [
@@ -386,6 +406,8 @@ function numberOfXvalues(histograms: Array<Histogram>): number {
   return uniqueXvalues;
 }
 
+
+
 /**
  *  drawHistogram draws a victoryChart containing 1..n bar charts.
  *
@@ -402,6 +424,8 @@ function drawHistogram(
 ) {
   const victoryBars: Array<any> = [];
   histograms.forEach((histogram) => {
+    if(width < 10)
+    
     victoryBars.push(drawVictoryBar(histogram.bars, width));
   });
 
@@ -429,6 +453,8 @@ function drawHistogram(
             tickLabels: {
               // Later we want to add tickFormat and tickValues. This makes it possible to write "6-10ms" on the axis instead of the corresponding x value.
               // For this to be possible the data that is used to paint this set of victorybars needs to be accessed and a new function that determines the tickFormat is needed.
+              // tickValues: [],
+              // tickFormat: ,
               fontSize: 10,
               transform: 'translate(0, 10)', // offset x-labels
               angle: 45, // tilt x labels
@@ -470,8 +496,38 @@ export function BarChart(props: ChartProps): JSX.Element {
       barGraph.push(data);
     });
     const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
+    
+    mergeXvalues()
     barGraphList.push(drawHistogram(barGraph, metric, width));
   });
 
   return <div>{barGraphList}</div>;
+}
+
+function mergeXvalues(barGraph:Array<Histogram>,graphWidth:any,sites:any):Histogram{
+  let newBarGraph:Array<Histogram> = [{ bars: [] }];
+  const tooSmallWidth = 10;
+  let width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
+  while(width<tooSmallWidth){
+
+    barGraph.forEach(histo => {
+      let newHisto:Histogram;
+      newHisto = { bars: [] };
+      for (let i = 0; i < histo.bars.length; i++) {
+        newHisto.bars[i/2].y+=histo.bars[i].y;
+        newHisto.bars[i/2].x=histo.bars[i].x;
+      }
+      newBarGraph.push(newHisto)
+      }
+      );
+    
+
+
+
+    width = graphWidth / (numberOfXvalues(barGraph) * sites.length)
+  }
+  
+  
+  
+  return null;
 }
