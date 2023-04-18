@@ -171,6 +171,7 @@ EMSCRIPTEN_BINDINGS(file_handler) {
         .constructor()
         .function("AddFile", &FileHandler::AddFile)
         .function("ComputeFiles", &FileHandler::ComputeFiles)
-        .function("GetBoxDiagram", &FileHandler::GetBoxDiagram);
+        .function("GetBoxDiagram", &FileHandler::GetBoxDiagram)
+        .function("GetHistogram", &FileHandler::GetHistogram);
 }
 #endif
