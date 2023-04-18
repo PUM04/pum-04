@@ -310,8 +310,22 @@ std::string FileHandler::GetSiteNames() const {
     return sitesNames.dump();
 }
 
-    for (int i = 0; i < host_files.size(); i++) {
-        sites["names"].push_back(host_files[i].name);
+std::string FileHandler::GetMetrics() const {
+    json metric_json;
+    std::vector<json> metrics;
+    metric_json["metrics"] = metrics;
+
+    for (auto i : sites) {
+        json categories;
+        CalculateCategories(i.second, categories);
+        for (auto &el : categories.items()) {
+            metric_json["metrics"].push_back(el.key());
+        }
     }
-    return sites.dump();
+
+    // Remove duplicates
+    auto last = std::unique(metrics.begin(), metrics.end());
+    metrics.erase(last, metrics.end());
+
+    return metric_json.dump();
 }

@@ -60,6 +60,13 @@ public:
      */
     std::string GetSiteNames() const;
 
+    /**
+     * @brief Get the metrics for all sites.
+     *
+     * @return std::string The metrics
+     */
+    std::string GetMetrics() const;
+
   private:
     std::unordered_map<std::string, struct Site> sites;
     std::vector<struct LoadedFile> host_files; 
@@ -180,6 +187,7 @@ EMSCRIPTEN_BINDINGS(file_handler) {
         .function("AddFile", &FileHandler::AddFile)
         .function("ComputeFiles", &FileHandler::ComputeFiles)
         .function("GetBoxDiagram", &FileHandler::GetBoxDiagram)
-        .function("GetSiteNames", &FileHandler::GetSiteNames);
+        .function("GetSiteNames", &FileHandler::GetSiteNames)
+        .function("GetMetrics", &FileHandler::GetMetrics);
 }
 #endif

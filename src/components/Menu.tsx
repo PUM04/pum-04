@@ -111,6 +111,13 @@ const getSiteNames = (fileHandler: any) => {
   const names = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).names : [];
   return names;
 };
+
+const getMetrics = (fileHandler: any) => {
+  const metrics = fileHandler
+    ? JSON.parse(fileHandler.GetMetrics()).metrics
+    : [];
+  console.log(JSON.stringify(metrics));
+  return metrics;
 };
 
 /**
@@ -128,6 +135,7 @@ export default function Menu(props: MenuProps) {
   const [oldFiles, setOldFiles] = useState<File[]>([]);
 
   const [siteNames, setSiteNames] = useState<string[]>([]);
+  const [metrics, setMetrics] = useState<string[]>([]);
 
   // add files to backend when they are added to the state
   useEffect(() => {
@@ -141,7 +149,10 @@ export default function Menu(props: MenuProps) {
   }, [files]);
 
   useEffect(() => {
+    fileHandler?.ComputeFiles();
     setSiteNames(getSiteNames(fileHandler));
+
+    setMetrics(getMetrics(fileHandler));
   }, [oldFiles]);
 
   const handleDrawerOpen = () => {
@@ -220,10 +231,7 @@ export default function Menu(props: MenuProps) {
             }}
           >
             <Dropdown dropdownName="Sites" value={siteNames} />
-            <Dropdown
-              dropdownName="Metrics"
-              value={['metric_1', 'metric_2', 'metric_3']}
-            />
+            <Dropdown dropdownName="Metrics" value={metrics} />
           </Paper>
           <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>
             <p data-testid="uploaded-files">
