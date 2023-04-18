@@ -42,7 +42,7 @@ function Layout(props: MenuProps) {
         sx={{
           flexDirection: 'column',
           display: 'inline-flex',
-          backgroundColor: 'primary.dark1',
+          backgroundColor: 'primary.light2',
         }}
       >
         <ViewTabs />

@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 
 import { styled } from '@mui/material/styles';
 
-import { GraphComponent } from './BaseComponent';
+import { BoxGraphComponent, BarGraphComponent } from './BaseComponent';
 
 interface TabPanelProps {
   children: React.ReactNode;
@@ -44,43 +44,6 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
-/**
- * This is a description
- *
- * @param index is number
- * @returns your mum
- */
-function a11yProps(index: number) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
-interface StyledTabsProps {
-  children?: React.ReactNode;
-  value: number;
-  onChange: (event: React.SyntheticEvent, newValue: number) => void;
-}
-
-const StyledTabs = styled((props: StyledTabsProps) => (
-  <Tabs
-    {...props}
-    TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
-  />
-))({
-  '& .MuiTabs-indicator': {
-    display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: 'primary.light2',
-  },
-  '& .MuiTabs-indicatorSpan': {
-    maxWidth: 40,
-    width: '100%',
-    backgroundColor: '#635ee7',
-  },
-});
-
 interface StyledTabProps {
   label: string;
 }
@@ -88,21 +51,13 @@ interface StyledTabProps {
 const StyledTab = styled((props: StyledTabProps) => (
   <Tab disableRipple {...props} />
 ))(({ theme }) => ({
-  textTransform: 'none',
   fontWeight: theme.typography.fontWeightRegular,
-  fontSize: theme.typography.pxToRem(15),
-  marginRight: theme.spacing(1),
-  color: 'rgba(255, 255, 255, 0.7)',
-  '&.Mui-selected': {
-    color: '#fff',
-    backgroundColor: 'primary.light2',
-  }
 }));
 
 /**
  * This is a description
  *
- * @returns tabs
+ * @returns tabs containing graphs
  */
 function ViewTab() {
   const [value, setValue] = React.useState(0);
@@ -112,18 +67,46 @@ function ViewTab() {
   };
 
   return (
-    <Box sx={{ width: '100%', paddingTop: '6vh' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'primary.light1' }}>
-        <StyledTabs value={value} onChange={handleChange}>
-          <StyledTab label="Bar" {...a11yProps(0)} />
-          <StyledTab label="Box" {...a11yProps(1)} />
-        </StyledTabs>
+    <Box sx={{ width: '100%', paddingTop: '5.5vh' }}>
+      <Box sx={{}}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          TabIndicatorProps={{
+            hidden: true,
+          }}
+          sx={{
+            '& button': {
+              borderRadius: 1,
+              color: 'primary.dark3',
+              textTransform: 'none',
+              fontSize: 17,
+              marginRight: 0.05,
+              backgroundColor: 'primary.light4',
+            },
+            '& button.Mui-selected': {
+              boxShadow: 10,
+              backgroundColor: 'primary.light2',
+              color: 'primary.dark1',
+            },
+            '& button:hover': {
+              backgroundColor: 'primary.light1',
+            },
+            '& button:active': {
+              backgroundColor: 'primary.light1',
+              color: 'primary.light2',
+            },
+          }}
+        >
+          <StyledTab label="Bar" />
+          <StyledTab label="Box" />
+        </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <GraphComponent />
+        <BarGraphComponent />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Hello
+        <BoxGraphComponent />
       </TabPanel>
     </Box>
   );

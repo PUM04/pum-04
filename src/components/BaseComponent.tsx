@@ -6,11 +6,43 @@ import React from 'react';
 import { BoxPlotChart, BarChart } from './Charts';
 
 /**
- * Component that contains all graphs
+ * Component that contains all Box graphs
  *
  * @returns MUI box component
  */
-export function GraphComponent(): JSX.Element {
+export function BoxGraphComponent(): JSX.Element {
+  return (
+    <Box
+      data-testid="graph-component"
+      sx={{
+        flexDirection: 'column',
+        display: 'flex',
+        paddingTop: '0vh',
+        paddingBottom: '3vh',
+        backgroundColor: 'primary.light2',
+        '&:hover': {
+          backgroundColor: 'primary.light2',
+        },
+      }}
+    >
+      <Box>
+        {' '}
+        <BoxPlotChart
+          metrics={['getPatient', 'getBucket']}
+          sites={['stockholm', 'linköping']}
+        />{' '}
+      </Box>
+      <Box> Put Box Graphs here! </Box>
+    </Box>
+  );
+}
+
+/**
+ * Component that contains all bar graphs
+ *
+ * @returns MUI box component
+ */
+export function BarGraphComponent(): JSX.Element {
   return (
     <Box
       data-testid="graph-component"
@@ -32,67 +64,7 @@ export function GraphComponent(): JSX.Element {
           sites={['stockholm', 'linköping', 'manchester', 'tokyo']}
         />{' '}
       </Box>
-      <Box>
-        {' '}
-        <BoxPlotChart
-          metrics={['getPatient', 'getBucket']}
-          sites={['stockholm', 'linköping']}
-        />{' '}
-      </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
+      <Box> Put Bar Graphs here! </Box>
     </Box>
   );
 }
