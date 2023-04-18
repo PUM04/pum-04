@@ -317,24 +317,19 @@ std::string FileHandler::GetSiteNames() const {
 }
 
 std::string FileHandler::GetMetrics() const {
-    json metric_json;
-    std::vector<json> metrics;
-    metric_json["metrics"] = metrics;
+    std::set<std::string> metrics;
 
-    for (auto i : sites) {
+    for (auto site : sites) {
         json categories;
-        CalculateCategories(i.second, categories);
+        CalculateCategories(site.second, categories);
         // add all metric names
         for (auto &el : categories.items()) {
-            metric_json["metrics"].push_back(el.key());
+            metrics.insert(el.key());
         }
     }
 
-    // Remove duplicates
-    std::sort(metric_json["metrics"].begin(), metric_json["metrics"].end());
-    auto last = std::unique(metric_json["metrics"].begin(),
-                            metric_json["metrics"].end());
-    metric_json["metrics"].erase(last, metric_json["metrics"].end());
+    json metric_json;
+    metric_json["metrics"] = metrics;
 
     return metric_json.dump();
 }
