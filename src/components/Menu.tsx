@@ -101,15 +101,22 @@ const addFilesToBackend = (files: File[], fileHandler: any) => {
   }
 };
 
+interface Site {
+  name: string;
+  site_id: string;
+  color?: string;
+  enabled?: boolean;
+}
+
 /**
- * Gets the site names from the backend.
+ * Gets the sites from the backend.
  *
  * @param fileHandler used to get the site names
  * @returns an array of site names
  */
-const getSiteNames = (fileHandler: any): string[] => {
-  const names = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).names : [];
-  return names;
+const getSites = (fileHandler: any): Site[] => {
+  const sites = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).sites : [];
+  return sites;
 };
 
 /**
@@ -139,8 +146,15 @@ export default function Menu(props: MenuProps) {
   const [files, setFiles] = useState<File[]>([]);
   const [oldFiles, setOldFiles] = useState<File[]>([]);
 
-  const [siteNames, setSiteNames] = useState<string[]>([]);
+  const [sites, setSites] = useState<Site[]>([]);
   const [metrics, setMetrics] = useState<string[]>([]);
+
+  const [selectedSites, setSelectedSites] = useState<Record<string, boolean>>(
+    {}
+  );
+  const [selectedMetrics, setSelectedMetrics] = useState<
+    Record<string, boolean>
+  >({});
 
   // add files to backend when they are added to the state
   useEffect(() => {
@@ -156,7 +170,7 @@ export default function Menu(props: MenuProps) {
   useEffect(() => {
     fileHandler?.ComputeFiles();
 
-    setSiteNames(getSiteNames(fileHandler));
+    setSites(getSites(fileHandler));
     setMetrics(getMetrics(fileHandler));
   }, [oldFiles]);
 
@@ -168,7 +182,7 @@ export default function Menu(props: MenuProps) {
     setOpen(false);
   };
 
-  const sites = [
+  const legendColors = [
     { name: 'first', color: 'red', enabled: true },
     { name: 'second', color: 'blue', enabled: true },
     { name: 'third', color: 'orange', enabled: true },
@@ -193,7 +207,7 @@ export default function Menu(props: MenuProps) {
             >
               <MenuIcon />
             </IconButton>
-            <LegendBar sites={sites} />
+            <LegendBar sites={legendColors} />
           </DrawerHeader>
         </AppBar>
         <Drawer
@@ -235,8 +249,24 @@ export default function Menu(props: MenuProps) {
               width: drawerWidth - 10,
             }}
           >
-            <Dropdown dropdownName="Sites" value={siteNames} />
-            <Dropdown dropdownName="Metrics" value={metrics} />
+            <Dropdown
+              dropdownName="Sites"
+              value={sites.map((site) => site.name)}
+              onSelected={(key: string, value: boolean) => {
+                selectedSites[key] = value;
+                setSelectedSites(selectedSites);
+                console.log(JSON.stringify(selectedSites));
+              }}
+            />
+            <Dropdown
+              dropdownName="Metrics"
+              value={metrics}
+              onSelected={(key: string, value: boolean) => {
+                selectedMetrics[key] = value;
+                setSelectedMetrics(selectedMetrics);
+                console.log(JSON.stringify(selectedMetrics));
+              }}
+            />
           </Paper>
           <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>
             <p data-testid="uploaded-files">

@@ -21,14 +21,11 @@ import Checkbox from '@mui/material/Checkbox';
  * @returns a dropdop component designed for menu
  */
 export default function Dropdown(props: any): JSX.Element {
-  const { dropdownName, value: givenItems } = props;
+  const { dropdownName, value: givenItems, onSelected } = props;
 
   // Extract items from given items and mark their checkboxes as checked.
   const extractedItems: any[] | (() => any[]) = [];
-  givenItems.forEach((Item: any) => {
-    extractedItems.push({ item: Item, selected: true });
-  });
-
+  console.log('Render');
   // should probably have some params for setting the content
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState(extractedItems);
@@ -36,8 +33,13 @@ export default function Dropdown(props: any): JSX.Element {
 
   // updates the content when the givenItems changes
   useEffect(() => {
+    givenItems.forEach((Item: any) => {
+      extractedItems.push({ item: Item, selected: true });
+      onSelected(Item, true);
+    });
+    console.log('useEffect');
     setContent(extractedItems);
-  }, [givenItems]);
+  }, [JSON.stringify(givenItems)]);
 
   // If clicked on: open if closed and close if open.
   const handleClick = () => {
@@ -55,6 +57,7 @@ export default function Dropdown(props: any): JSX.Element {
         const item = { ...contentItem };
         item.selected = false;
         newContent.push(item);
+        onSelected(item.item, item.selected);
       });
     } else {
       // If checkbox currently unchecked and gets clicked on, check it.
@@ -62,6 +65,7 @@ export default function Dropdown(props: any): JSX.Element {
         const item = { ...contentItem };
         item.selected = true;
         newContent.push(item);
+        onSelected(item.item, item.selected);
       });
     }
     setContent(newContent);
@@ -74,6 +78,7 @@ export default function Dropdown(props: any): JSX.Element {
     // Sets the corresponding checkbox to it opposite value.
     if (item != null) item.selected = !item.selected;
     setContent(newContent);
+    onSelected(item.item, item.selected);
 
     // If all sub-checkboxes are checked, check the main checkbox too.
     let anyChecked = true;

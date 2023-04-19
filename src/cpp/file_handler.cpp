@@ -298,14 +298,16 @@ std::string FileHandler::GetIdFromPerformance(std::string &file_name) const {
 }
 
 std::string FileHandler::GetSiteNames() const {
-    json sitesNames;
-    std::vector<std::string> names;
-    sitesNames["names"] = names;
+    json site_data;
+    std::vector<std::unordered_map<std::string, std::string>> site_vector;
+    site_data["sites"] = site_vector;
 
     for (auto const site : sites) {
         json hosts = site.second.hosts;
         if (hosts.contains("site_name")) {
-            sitesNames["names"].push_back(hosts["site_name"]);
+            std::unordered_map<std::string, std::string> site_map;
+            site_map.insert({{"name", hosts["site_name"]}, {"site_id", hosts["site_id"]}});
+            site_data["sites"].push_back(site_map);
         } else {
             #ifdef DEBUG
             std::cerr << "The site with id " << site.first
@@ -313,7 +315,7 @@ std::string FileHandler::GetSiteNames() const {
             #endif
         }
     }
-    return sitesNames.dump();
+    return site_data.dump();
 }
 
 std::string FileHandler::GetMetrics() const {

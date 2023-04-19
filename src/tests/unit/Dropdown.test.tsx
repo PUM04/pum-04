@@ -12,7 +12,11 @@ describe('Dropdown', () => {
   // Run this before each test
   beforeEach(() => {
     render(
-      <Dropdown dropdownName="test" value={['test1', 'test2', 'test3']} />
+      <Dropdown
+        dropdownName="test"
+        value={['test1', 'test2', 'test3']}
+        onSelected={() => {}}
+      />
     );
   });
 
