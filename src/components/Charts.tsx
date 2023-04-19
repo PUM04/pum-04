@@ -109,16 +109,46 @@ function getBarChartData(site: string, metric: string): Histogram {
   const data: Histogram = { bars: [] };
   if (site === 'stockholm' && metric === 'getPatient') {
     data.bars = [
-      { x: '1', y: 20, fill: 'yellow' },
-      { x: '5', y: 150, fill: 'yellow' },
-      { x: '7', y: 200, fill: 'yellow' },
-      { x: '10', y: 900, fill: 'yellow' },
-      { x: '20', y: 200, fill: 'yellow' },
-      { x: '30', y: 150, fill: 'yellow' },
-      { x: '40', y: 200, fill: 'yellow' },
-      { x: '50', y: 805, fill: 'yellow' },
-      { x: '100', y: 600, fill: 'yellow' },
-      { x: '200', y: 85, fill: 'yellow' },
+      { x: '1', y: 0, fill: 'yellow' },
+      { x: '2', y: 0, fill: 'yellow' },
+      { x: '3', y: 0, fill: 'yellow' },
+      { x: '4', y: 0, fill: 'yellow' },
+      { x: '5', y: 0, fill: 'yellow' },
+      { x: '6', y: 0, fill: 'yellow' },
+      { x: '7', y: 0, fill: 'yellow' },
+      { x: '8', y: 0, fill: 'yellow' },
+      { x: '9', y: 0, fill: 'yellow' },
+     { x: '10', y: 0, fill: 'yellow' },
+     { x: '20', y: 0, fill: 'yellow' },
+     { x: '30', y: 0, fill: 'yellow' },
+     { x: '40', y: 0, fill: 'yellow' },
+     { x: '50', y: 0, fill: 'yellow' },
+     { x: '60', y: 0, fill: 'yellow' },
+     { x: '70', y: 0, fill: 'yellow' },
+     { x: '80', y: 0, fill: 'yellow' },
+     { x: '90', y: 0, fill: 'yellow' },
+    { x: '100', y: 0, fill: 'yellow' },
+    { x: '200', y: 0, fill: 'yellow' },
+    { x: '300', y: 0, fill: 'yellow' },
+    { x: '400', y: 0, fill: 'yellow' },
+    { x: '500', y: 6, fill: 'yellow' },
+  { x: '600', y: 512, fill: 'yellow' },
+  { x: '700', y: 500, fill: 'yellow' },
+ { x: '800', y: 605, fill: 'yellow' },
+  { x: '900', y: 638, fill: 'yellow' },
+  { x: '1000', y: 12, fill: 'yellow' },
+ { x: '1500', y: 120, fill: 'yellow' },
+   { x: '2000', y: 0, fill: 'yellow' },
+   { x: '2500', y: 0, fill: 'yellow' },
+   { x: '3000', y: 0, fill: 'yellow' },
+   { x: '3500', y: 0, fill: 'yellow' },
+  { x: '4000', y: 21, fill: 'yellow' },
+   { x: '4500', y: 2, fill: 'yellow' },
+  { x: '5000', y: 10, fill: 'yellow' },
+  { x: '5500', y: 19, fill: 'yellow' },
+   { x: '6000', y: 0, fill: 'yellow' },
+   { x: '6500', y: 0, fill: 'yellow' },
+   { x: '7000', y: 0, fill: 'yellow' }
     ];
   } else if (site === 'stockholm' && metric === 'getBucket') {
     data.bars = [
@@ -135,63 +165,132 @@ function getBarChartData(site: string, metric: string): Histogram {
     ];
   } else if (site === 'linköping' && metric === 'getPatient') {
     data.bars = [
-      { x: '500', y: 20, fill: 'blue' },
-      { x: '600', y: 150, fill: 'blue' },
-      { x: '700', y: 200, fill: 'blue' },
-      { x: '2800', y: 900, fill: 'blue' },
-      { x: '3200', y: 200, fill: 'blue' },
-      { x: '3300', y: 150, fill: 'blue' },
-      { x: '4200', y: 200, fill: 'blue' },
-      { x: '5800', y: 85, fill: 'blue' },
-      { x: '6200', y: 200, fill: 'blue' },
-      { x: '15800', y: 85, fill: 'blue' },
+      { x: '1', y: 0, fill: 'blue' },
+      { x: '2', y: 0, fill: 'blue' },
+      { x: '3', y: 0, fill: 'blue' },
+      { x: '4', y: 0, fill: 'blue' },
+      { x: '5', y: 0, fill: 'blue' },
+      { x: '6', y: 0, fill: 'blue' },
+      { x: '7', y: 0, fill: 'blue' },
+      { x: '8', y: 0, fill: 'blue' },
+      { x: '9', y: 0, fill: 'blue' },
+     { x: '10', y: 0, fill: 'blue' },
+     { x: '20', y: 0, fill: 'blue' },
+     { x: '30', y: 0, fill: 'blue' },
+     { x: '40', y: 0, fill: 'blue' },
+     { x: '50', y: 0, fill: 'blue' },
+     { x: '60', y: 0, fill: 'blue' },
+     { x: '70', y: 0, fill: 'blue' },
+     { x: '80', y: 0, fill: 'blue' },
+     { x: '90', y: 0, fill: 'blue' },
+    { x: '100', y: 0, fill: 'blue' },
+    { x: '200', y: 0, fill: 'blue' },
+    { x: '300', y: 0, fill: 'blue' },
+    { x: '400', y: 0, fill: 'blue' },
+    { x: '500', y: 0, fill: 'blue' },
+  { x: '600', y: 512, fill: 'blue' },
+  { x: '700', y: 500, fill: 'blue' },
+  { x: '800', y: 405, fill: 'blue' },
+  { x: '900', y: 608, fill: 'blue' },
+  { x: '1000', y: 12, fill: 'blue' },
+ { x: '1500', y: 120, fill: 'blue' },
+   { x: '2000', y: 0, fill: 'blue' },
+   { x: '2500', y: 0, fill: 'blue' },
+   { x: '3000', y: 0, fill: 'blue' },
+   { x: '3500', y: 0, fill: 'blue' },
+  { x: '4000', y: 21, fill: 'blue' },
+   { x: '4500', y: 2, fill: 'blue' },
+  { x: '5000', y: 10, fill: 'blue' },
+  { x: '5500', y: 19, fill: 'blue' },
+   { x: '6000', y: 0, fill: 'blue' },
+   { x: '6500', y: 0, fill: 'blue' },
+   { x: '7000', y: 0, fill: 'blue' }
     ];
   } else if (site === 'linköping' && metric === 'getBucket') {
     data.bars = [
-      { x: '500', y: 20, fill: 'blue' },
-      { x: '600', y: 150, fill: 'blue' },
-      { x: '700', y: 200, fill: 'blue' },
-      { x: '2800', y: 900, fill: 'blue' },
-      { x: '3200', y: 200, fill: 'blue' },
-      { x: '3300', y: 150, fill: 'blue' },
-      { x: '4200', y: 200, fill: 'blue' },
-      { x: '5800', y: 85, fill: 'blue' },
-      { x: '6200', y: 200, fill: 'blue' },
-      { x: '15800', y: 85, fill: 'blue' },
-      { x: '95800', y: 85, fill: 'blue' },
+      { x: '1', y: 0, fill: 'green' },
+      { x: '2', y: 0, fill: 'green' },
+      { x: '3', y: 0, fill: 'green' },
+      { x: '4', y: 0, fill: 'green' },
+      { x: '5', y: 0, fill: 'green' },
+      { x: '6', y: 0, fill: 'green' },
+      { x: '7', y: 0, fill: 'green' },
+      { x: '8', y: 0, fill: 'green' },
+      { x: '9', y: 0, fill: 'green' },
+      { x: '10', y: 0, fill: 'green' },
+      { x: '20', y: 0, fill: 'green' },
+      { x: '30', y: 0, fill: 'green' },
+      { x: '40', y: 0, fill: 'green' },
+      { x: '50', y: 0, fill: 'green' },
+      { x: '60', y: 0, fill: 'green' },
+      { x: '70', y: 0, fill: 'green' },
+      { x: '80', y: 0, fill: 'green' },
+      { x: '90', y: 0, fill: 'green' },
+      { x: '100', y: 0, fill: 'green' },
+      { x: '200', y: 0, fill: 'green' },
+      { x: '300', y: 0, fill: 'green' },
+      { x: '400', y: 0, fill: 'green' },
+      { x: '500', y: 0, fill: 'green' },
+      { x: '600', y: 512, fill: 'green' },
+      { x: '700', y: 500, fill: 'green' },
+      { x: '800', y: 605, fill: 'green' },
+      { x: '900', y: 608, fill: 'green' },
+      { x: '1000', y: 12, fill: 'green' },
+     { x: '1500', y: 120, fill: 'green' },
+      { x: '2000', y: 0, fill: 'green' },
+      { x: '2500', y: 0, fill: 'green' },
+      { x: '3000', y: 0, fill: 'green' },
+      { x: '3500', y: 0, fill: 'green' },
+     { x: '4000', y: 21, fill: 'green' },
+      { x: '4500', y: 2, fill: 'green' },
+     { x: '5000', y: 10, fill: 'green' },
+     { x: '5500', y: 19, fill: 'green' },
+      { x: '6000', y: 0, fill: 'green' },
+      { x: '6500', y: 0, fill: 'green' },
+      { x: '7000', y: 0, fill: 'green' }
     ];
   } else if (site === 'manchester' && metric === 'getPatient') {
     data.bars = [
-      { x: '500', y: 60, fill: 'green' },
-      { x: '600', y: 210, fill: 'green' },
-      { x: '700', y: 185, fill: 'green' },
-      { x: '2800', y: 700, fill: 'green' },
-      { x: '3200', y: 100, fill: 'green' },
-      { x: '3300', y: 50, fill: 'green' },
-      { x: '4200', y: 600, fill: 'green' },
-      { x: '5800', y: 285, fill: 'green' },
-      { x: '6200', y: 400, fill: 'green' },
-      { x: '15800', y: 325, fill: 'green' },
-      { x: '16500', y: 60, fill: 'green' },
-      { x: '16600', y: 210, fill: 'green' },
-      { x: '16700', y: 185, fill: 'green' },
-      { x: '162800', y: 700, fill: 'green' },
-      { x: '163200', y: 100, fill: 'green' },
-      { x: '163300', y: 50, fill: 'green' },
-      { x: '164200', y: 600, fill: 'green' },
-      { x: '165800', y: 285, fill: 'green' },
-      { x: '166200', y: 400, fill: 'green' },
-      { x: '1615800', y: 325, fill: 'green' },
-      { x: '1711500', y: 60, fill: 'green' },
-      { x: '1711600', y: 210, fill: 'green' },
-      { x: '1711700', y: 185, fill: 'green' },
-      { x: '17112800', y: 700, fill: 'green' },
-      { x: '17113200', y: 100, fill: 'green' },
-      { x: '17113300', y: 50, fill: 'green' },
-      { x: '17114200', y: 600, fill: 'green' },
-      { x: '177115800', y: 285, fill: 'green' },
-      { x: '177116200', y: 400, fill: 'green' },
-      { x: '1771115800', y: 325, fill: 'green' },
+      { x: '1', y: 0, fill: 'green' },
+  { x: '2', y: 0, fill: 'green' },
+  { x: '3', y: 0, fill: 'green' },
+  { x: '4', y: 0, fill: 'green' },
+  { x: '5', y: 0, fill: 'green' },
+  { x: '6', y: 0, fill: 'green' },
+  { x: '7', y: 0, fill: 'green' },
+  { x: '8', y: 0, fill: 'green' },
+  { x: '9', y: 0, fill: 'green' },
+  { x: '10', y: 0, fill: 'green' },
+  { x: '20', y: 0, fill: 'green' },
+  { x: '30', y: 0, fill: 'green' },
+  { x: '40', y: 0, fill: 'green' },
+  { x: '50', y: 0, fill: 'green' },
+  { x: '60', y: 0, fill: 'green' },
+  { x: '70', y: 0, fill: 'green' },
+  { x: '80', y: 0, fill: 'green' },
+  { x: '90', y: 0, fill: 'green' },
+  { x: '100', y: 0, fill: 'green' },
+  { x: '200', y: 0, fill: 'green' },
+  { x: '300', y: 0, fill: 'green' },
+  { x: '400', y: 0, fill: 'green' },
+  { x: '500', y: 0, fill: 'green' },
+  { x: '600', y: 512, fill: 'green' },
+  { x: '700', y: 500, fill: 'green' },
+  { x: '800', y: 605, fill: 'green' },
+  { x: '900', y: 608, fill: 'green' },
+  { x: '1000', y: 12, fill: 'green' },
+  { x: '1500', y: 120, fill: 'green' },
+  { x: '2000', y: 0, fill: 'green' },
+  { x: '2500', y: 0, fill: 'green' },
+  { x: '3000', y: 0, fill: 'green' },
+  { x: '3500', y: 0, fill: 'green' },
+  { x: '4000', y: 21, fill: 'green' },
+  { x: '4500', y: 2, fill: 'green' },
+  { x: '5000', y: 10, fill: 'green' },
+  { x: '5500', y: 19, fill: 'green' },
+  { x: '6000', y: 0, fill: 'green' },
+  { x: '6500', y: 0, fill: 'green' },
+  { x: '7000', y: 0, fill: 'green' }
     ];
   } else if (site === 'manchester' && metric === 'getBucket') {
     data.bars = [
@@ -208,16 +307,46 @@ function getBarChartData(site: string, metric: string): Histogram {
     ];
   } else if (site === 'tokyo' && metric === 'getPatient') {
     data.bars = [
-      { x: '500', y: 10, fill: 'red' },
-      { x: '600', y: 70, fill: 'red' },
-      { x: '700', y: 385, fill: 'red' },
-      { x: '2800', y: 900, fill: 'red' },
-      { x: '3200', y: 60, fill: 'red' },
-      { x: '3300', y: 120, fill: 'red' },
-      { x: '4200', y: 380, fill: 'red' },
-      { x: '5800', y: 130, fill: 'red' },
-      { x: '6200', y: 700, fill: 'red' },
-      { x: '15800', y: 225, fill: 'red' },
+      { x: '1', y: 0, fill: 'red' },
+      { x: '2', y: 0, fill: 'red' },
+      { x: '3', y: 0, fill: 'red' },
+      { x: '4', y: 0, fill: 'red' },
+      { x: '5', y: 0, fill: 'red' },
+      { x: '6', y: 0, fill: 'red' },
+      { x: '7', y: 0, fill: 'red' },
+      { x: '8', y: 0, fill: 'red' },
+      { x: '9', y: 0, fill: 'red' },
+     { x: '10', y: 0, fill: 'red' },
+     { x: '20', y: 0, fill: 'red' },
+     { x: '30', y: 0, fill: 'red' },
+     { x: '40', y: 0, fill: 'red' },
+     { x: '50', y: 0, fill: 'red' },
+     { x: '60', y: 0, fill: 'red' },
+     { x: '70', y: 0, fill: 'red' },
+     { x: '80', y: 0, fill: 'red' },
+     { x: '90', y: 0, fill: 'red' },
+    { x: '100', y: 0, fill: 'red' },
+    { x: '200', y: 0, fill: 'red' },
+    { x: '300', y: 0, fill: 'red' },
+    { x: '400', y: 0, fill: 'red' },
+    { x: '500', y: 0, fill: 'red' },
+  { x: '600', y: 512, fill: 'red' },
+  { x: '700', y: 500, fill: 'red' },
+  { x: '800', y: 605, fill: 'red' },
+  { x: '900', y: 608, fill: 'red' },
+  { x: '1000', y: 12, fill: 'red' },
+ { x: '1500', y: 120, fill: 'red' },
+   { x: '2000', y: 0, fill: 'red' },
+   { x: '2500', y: 0, fill: 'red' },
+   { x: '3000', y: 0, fill: 'red' },
+   { x: '3500', y: 0, fill: 'red' },
+  { x: '4000', y: 21, fill: 'red' },
+   { x: '4500', y: 2, fill: 'red' },
+  { x: '5000', y: 10, fill: 'red' },
+  { x: '5500', y: 19, fill: 'red' },
+   { x: '6000', y: 0, fill: 'red' },
+   { x: '6500', y: 0, fill: 'red' },
+   { x: '7000', y: 0, fill: 'red' }
     ];
   } else if (site === 'tokyo' && metric === 'getBucket') {
     data.bars = [
@@ -446,12 +575,18 @@ function drawHistogram(
 
   const formatTickDifference = (tick:any, index:number, ticksArray:any) => {
       if (index < ticksArray.length - 1) {
-        const difference = `${tick} - ${ticksArray[index + 1] - 1} ms`;
-        return difference;
+        if(tick == ticksArray[index + 1] - 1){
+          return `${tick} ms`
+        }
+        else{
+          const difference = `${tick} - ${ticksArray[index + 1] - 1} ms`;
+          return difference;
+        }
+        
     }
-    return `${tick} - `;
+    return `${tick} ms - `;
   };
-
+  
   const victoryBars: Array<any> = [];
   histograms.forEach((histogram) => {    
     victoryBars.push(drawVictoryBar(histogram.bars, width));
@@ -469,7 +604,7 @@ function drawHistogram(
           dependentAxis
           style={{
             tickLabels: {
-              fontSize: 10,
+              fontSize: 8,
               stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
             },
             axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
@@ -482,7 +617,7 @@ function drawHistogram(
               // For this to be possible the data that is used to paint this set of victorybars needs to be accessed and a new function that determines the tickFormat is needed.
               // tickValues: [],
               // tickFormat: ,
-              fontSize: 10,
+              fontSize: 8,
               transform: 'translate(0, 10)', // offset x-labels
               angle: 45, // tilt x labels
               stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
@@ -525,31 +660,81 @@ export function BarChart(props: ChartProps): JSX.Element {
     sites.forEach((site) => {
       const data: Histogram = getBarChartData(site, metric);
       barGraph.push(data);
+   
     });
-    const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
-    newBargraph = mergeXvalues(barGraph, graphWidth, sites);
+    /*****************************************************************************************/
+    newBargraph = removeEmptyXValues(barGraph);
+    newBargraph = mergeXvalues(newBargraph, graphWidth, sites);
+    /*****************************************************************************************/
+   
+    //newBargraph = mergeXvalues(barGraph, graphWidth, sites);
+
+    const width = graphWidth / (numberOfXvalues(newBargraph) * sites.length);
     barGraphList.push(drawHistogram(newBargraph, metric, width));
   });
 
   return <div>{barGraphList}</div>;
 }
 
+/***************************************************************************************** */
+                      /** ANOTHER SOLUTION; A SEPARET FUNCTIONM WILL LOOP AGAIN*/
+/***************************************************************************************** */
+
+function removeEmptyXValues(barGraph: any[]): Array<Histogram>{
+  
+  const getEmptyXValues = (barGraph: any[]) => {
+    const emptyXValues = new Set();
+    barGraph.forEach(histogram => {
+      const nonEmptyBars = histogram.bars.filter((bar: { y: number; }) => bar.y !== 0);
+      histogram.bars.forEach((bar: { y: number; x: unknown; }) => {
+        if (bar.y === 0 && !nonEmptyBars.some((b: { x: unknown; }) => b.x === bar.x)) {
+          emptyXValues.add(bar.x);
+        }
+      });
+    });
+    return emptyXValues;
+  };
+  
+  const removeEmptyXValues = (barGraph: any[], emptyXValues: Set<unknown>) => {
+    barGraph.forEach((histogram: { bars: any[]; }) => {
+      histogram.bars = histogram.bars.filter(bar => !emptyXValues.has(bar.x));
+    });
+  };
+
+  const emptyXvalues = getEmptyXValues(barGraph);
+  removeEmptyXValues(barGraph, emptyXvalues)
+  return barGraph;
+}
+
+/***************************************************************************************** */
+
 /**
- * TODO
- * @param barGraph 
- * @param graphWidth 
- * @param sites 
- * @returns 
+ * Merges adjacent bars in each histogram of the barGraph array if their width is smaller than a threshold.
+ * @param barGraph An array of Histogram objects to be processed.
+ * @param graphWidth The width of the graph in pixels.
+ * @param sites A list of sites.
+ * @returns A new array of Histogram objects with merged bars.
  */
 function mergeXvalues(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<Histogram>{
   
   let newBarGraph: Array<Histogram> = []; 
   let width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
   
-  const tooSmallWidth = 3;//target width
+  const tooSmallWidth = 1;//target width of single bars
   const maxLoopCount = 50;// a fail safe in case something goes wrong
   let mergeAmount = 1;//start merge amount
   let loopCount = 0;
+  
+  /***************************************************************************************** */
+                      /** ONE POSSIBLE SOLUTION; WILL NOT WORK IF tooSmallWidth IS ONE */
+  /***************************************************************************************** */
+  const removeEmptyXValues = (barGraph: any[], emptyXValues: Set<unknown>) => {
+    barGraph.forEach(histogram => {
+      histogram.bars = histogram.bars.filter((bar: { x: any; }) => !emptyXValues.has(bar.x));
+    });
+  };
+  /****************************************************************************************** */
+
 
   if(width>=tooSmallWidth){
     console.log("no changes when running mergeXvalues()");
@@ -557,22 +742,47 @@ function mergeXvalues(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<
   }
   while(width<tooSmallWidth){
     newBarGraph = [];
+    /*********************************************************/
+    // let redundantBuckets : { [bucket: string]: number } = {};
+    // const emptyXValues = new Set();
+    /*********************************************************/
+
     barGraph.forEach(histo => {
       let newHisto:Histogram = new Histogram([]);
-      for (let i = 0; i < histo.bars.length; i++) {
-        
-        //if 
-        if (newHisto.bars.at(Math.floor(i/mergeAmount)) == undefined) {
-          newHisto.bars.push(new Bar(histo.bars[i].x,histo.bars[i].y,histo.bars[i].fill));
+    
+      histo.bars.forEach((bar, i) => {
+        const newIndex = Math.floor(i / mergeAmount);
+      
+        if (newHisto.bars[newIndex] === undefined) {
+          newHisto.bars.push(new Bar(bar.x, bar.y, bar.fill));
         }
-        else{
-          newHisto.bars[Math.floor(i/mergeAmount)].y+=histo.bars[i].y;
+        {
+          newHisto.bars[newIndex].y += bar.y;
         }
-        
+   /***************************************************************************************** */
+    //  if (bar.y == 0) {
+    //       if(redundantBuckets[bar.x] === undefined){
+    //           redundantBuckets[bar.x] = 0;
+    //         }
+    //       redundantBuckets[bar.x] += 1;
+    //       console.log(redundantBuckets)
+    //       if (redundantBuckets[bar.x] === sites.length){
+    //         emptyXValues.add(bar.x)
+            
+    //       }
+    //   }
+/****************************************************************************************** */
+
       }
-      newBarGraph.push(newHisto);
-      }
+      
       );
+      newBarGraph.push(newHisto);
+
+      });
+      /********************************************' */
+      // removeEmptyXValues(newBarGraph, emptyXValues);
+      /********************************************* */
+
 
       if(loopCount>maxLoopCount){
         console.warn("----------------------WARNING REACHED LOOP MAX!----------------------");
@@ -583,44 +793,15 @@ function mergeXvalues(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<
       width = graphWidth / (numberOfXvalues(newBarGraph) * sites.length);
       console.log("Too small width, trying again new width:",width, "\n new mergeAmount:",mergeAmount);
     }
-  
-  
+ 
   console.log("new barGraph:",newBarGraph);
   return newBarGraph;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/**
+ * TODO:
+ */
 function mergeXvaluesIdea2(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<Histogram>{
   let newBarGraph: Array<Histogram> = []; 
   const tooSmallWidth = 10;
@@ -632,9 +813,6 @@ function mergeXvaluesIdea2(barGraph:Array<Histogram>,graphWidth:any,sites:any):A
     barGraph.forEach(histo => {
       let newHisto:Histogram = new Histogram([]);
       for (let i = 0; i < histo.bars.length; i++) {
-        //console.log(newHisto);
-        //console.log(histo);
-        //console.log("oldBars",histo.bars[0].y);
         if (newHisto.bars.at(Math.floor(i/mergeAmount)) == undefined) {
           newHisto.bars.push(new Bar(histo.bars[i].x,histo.bars[i].y,histo.bars[i].fill));
         }

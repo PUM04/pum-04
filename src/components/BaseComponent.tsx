@@ -39,60 +39,6 @@ export function GraphComponent(): JSX.Element {
           sites={['stockholm', 'linköping']}
         />{' '}
       </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
-      <Box> Put graphs here! </Box>
     </Box>
   );
 }
