@@ -113,8 +113,9 @@ const addFilesToBackend = (files: File[], fileHandler: any) => {
  * @returns an array of site names
  */
 const getSiteNames = (fileHandler: any): string[] => {
-  const names = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).names : [];
-  return names;
+  const sites = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).sites : [];
+  console.log(sites);
+  return sites;
 };
 
 /**
@@ -192,7 +193,7 @@ export default function Menu(props: MenuProps) {
   useEffect(() => {
     fileHandler?.ComputeFiles();
     //
-
+    console.log(getSiteNames(fileHandler));;
     setSiteNames(getSiteNames(fileHandler));
     setMetrics(getMetrics(fileHandler));
   }, [oldFiles]);
