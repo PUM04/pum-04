@@ -210,11 +210,17 @@ void FileHandler::MergeCategory(struct Site &site, std::string key, json &result
 }
 
 std::string FileHandler::GetFileEnding(std::string &file_name) const {
-    return file_name.substr(file_name.find(".") + 1);
+    return file_name.substr(file_name.rfind(".") + 1);
 }
 
 void FileHandler::AddHostFile(std::string &file) {
-    json hosts = json::parse(file);
+    json hosts;
+    try {
+        hosts = json::parse(file);
+    } catch (json::parse_error &e) {
+        std::cerr << "Could not parse hosts file: " << e.what() << std::endl;
+        return;
+    }
     std::string site_id = hosts["site_id"];
 
     // Add the site if it does not already exist
@@ -270,8 +276,8 @@ json FileHandler::GetPerformanceJson(std::string &content) const {
 
 void FileHandler::AddPerformanceFile(std::string &file, std::string &file_name) {
     std::string site_id = GetIdFromPerformance(file_name);
-
     // Add the host to the corresponding site if it exists
+
     if (sites.find(site_id) != sites.end()) {
         json performance = GetPerformanceJson(file);
         sites[site_id].logs.insert(performance);
@@ -289,4 +295,41 @@ void FileHandler::AddPerformanceFile(std::string &file, std::string &file_name) 
 
 std::string FileHandler::GetIdFromPerformance(std::string &file_name) const {
     return  file_name.substr(0, file_name.find("_"));
+}
+
+std::string FileHandler::GetSiteNames() const {
+    json sitesNames;
+    std::vector<std::string> names;
+    sitesNames["names"] = names;
+
+    for (auto const site : sites) {
+        json hosts = site.second.hosts;
+        if (hosts.contains("site_name")) {
+            sitesNames["names"].push_back(hosts["site_name"]);
+        } else {
+            #ifdef DEBUG
+            std::cerr << "The site with id " << site.first
+                      << " is missing the key 'site_name'." << std::endl;
+            #endif
+        }
+    }
+    return sitesNames.dump();
+}
+
+std::string FileHandler::GetMetrics() const {
+    std::set<std::string> metrics;
+
+    for (auto site : sites) {
+        json categories;
+        CalculateCategories(site.second, categories);
+        // add all metric names
+        for (auto &el : categories.items()) {
+            metrics.insert(el.key());
+        }
+    }
+
+    json metric_json;
+    metric_json["metrics"] = metrics;
+
+    return metric_json.dump();
 }
