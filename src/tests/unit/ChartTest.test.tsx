@@ -26,16 +26,14 @@ describe('Test charts', () => {
     const fileHandler = await fileHandlerPromise;
 
     const performance: string = `
-      response_time_sum{method="GetPatient"} 6
-      response_time_count{method="GetPatient"} 6
       response_time_bucket{method="GetPatient",le="1"} 0
-      response_time_bucket{method="GetPatient",le="2"} 2 
+      response_time_bucket{method="GetPatient",le="2"} 2
       response_time_bucket{method="GetPatient",le="3"} 3
       response_time_bucket{method="GetPatient",le="4"} 6
     `
 
     // Add the host file
-    fileHandler.AddFile("{}", "abc123.json");
+    fileHandler.AddFile('{"site_name": "test", "site_id": "abc123"}', "abc123.json");
 
     // Add the performance file
     fileHandler.AddFile(performance, "abc123_231112.txt");
