@@ -11,6 +11,7 @@ COPY ./tsconfig.node.json /app/
 COPY ./public /app/
 COPY ./.eslintrc.json /app/
 COPY ./backend_test /app/backend_test/
+COPY ./scripts /app/scripts/
 
 #install npm used to run the project
 RUN npm install
