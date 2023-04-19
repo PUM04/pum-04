@@ -16,6 +16,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Paper from '@mui/material/Paper';
 import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './LegendBar';
+import chartColors from './chartColors';
 import Dropdown from './Dropdown';
 import { SiteProperties } from './SitePropetiesInterface';
 import '../App.css';
@@ -147,20 +148,50 @@ export default function Menu(props: MenuProps) {
   const { setSiteProps } = props;
   const [siteNames, setSiteNames] = useState<string[]>([]);
   const [metrics, setMetrics] = useState<string[]>([]);
+  const [numberOfColors, setNumberOfColors] = useState<number>(1);
+
+  useEffect(() => {
+    const newMap = new Map<string, SiteProperties>(siteProps);
+    const PHI = (1 + Math.sqrt(5)) / 2;
+    let index = siteNames.length - (siteNames.length - newMap.size);
+
+    siteNames.forEach((siteName) => {
+      if (!siteProps.has(siteName)) {
+        let hexColor = '';
+        if (index < chartColors().length) {
+          hexColor = chartColors()[index];
+        } else {
+          console.log('no more default colors, generating random colors');
+          const n = index * PHI - Math.floor(index * PHI);
+          const hue = Math.floor(n * 180);
+          hexColor = `#0${hue.toString(16)}`;
+        }
+        setNumberOfColors(numberOfColors + 1);
+
+        newMap.set(siteName, {
+          color: hexColor,
+          enabled: true,
+        });
+        setSiteProps(newMap);
+        index++;
+      }
+    });
+    console.log(siteNames);
+  }, [siteNames]);
 
   // add files to backend when they are added to the state
+
   useEffect(() => {
     const oldFileNames = oldFiles.map((v) => v.name);
     const newFiles = files.filter((file) => !oldFileNames.includes(file.name));
-
     setOldFiles(oldFiles.concat(newFiles));
-
     addFilesToBackend(newFiles, fileHandler);
   }, [files]);
 
   // get site names and metrics from backend when files are added to the backend
   useEffect(() => {
     fileHandler?.ComputeFiles();
+    //
 
     setSiteNames(getSiteNames(fileHandler));
     setMetrics(getMetrics(fileHandler));
@@ -203,7 +234,13 @@ export default function Menu(props: MenuProps) {
               color="primary"
               type="button"
               onClick={() => {
-                siteProps.set('linköping', { color: 'grey', enabled: true });
+                const testmap = new Map<string, SiteProperties>();
+                testmap.set('stockholm', { color: 'red', enabled: true });
+                testmap.set('manchester', { color: 'red', enabled: true });
+                testmap.set('tokyo', { color: 'black', enabled: true });
+                testmap.set('linköping', { color: 'grey', enabled: true });
+                testmap.set('a;skld', { color: 'grey', enabled: false });
+                setSiteProps(testmap);
                 console.log(siteProps);
               }}
             />

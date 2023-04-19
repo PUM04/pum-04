@@ -57,8 +57,8 @@ function Layout(props: MenuProps) {
     color: `#0${Math.floor(n3 * 8888).toString(16)}`,
     enabled: true,
   });
-  map.set('linköping', { 
-    color: `#0${Math.floor(n5 * 9996).toString(16)}`,
+  map.set('linköping', {
+    color: 'red',
     enabled: true,
   });
   return (
