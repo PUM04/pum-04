@@ -54,11 +54,11 @@ function LegendBar(props: LegendBarProps) {
 
   const legends: Array<JSX.Element> = [];
 
-  siteProps.forEach((siteprop, sitename) => {
-    const legendKey = sitename;
+  siteProps.forEach((siteprop, siteId) => {
+    const legendKey = siteprop;
     if (siteprop.enabled) {
       legends.push(
-        <Legend key={legendKey} name={sitename} color={siteprop.color} />
+        <Legend key={legendKey} name={siteprop.name} color={siteprop.color} />
       );
     }
   });

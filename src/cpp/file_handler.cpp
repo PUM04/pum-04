@@ -297,7 +297,8 @@ std::string FileHandler::GetIdFromPerformance(std::string &file_name) const {
     return  file_name.substr(0, file_name.find("_"));
 }
 
-std::string FileHandler::GetSiteNames() const {
+
+std::string FileHandler::GetSiteNamesAndIds() const {
     json sitesNames;
     //  std::vector<std::string> names;
     //  std::vector<std::string> ids;
@@ -317,6 +318,25 @@ std::string FileHandler::GetSiteNames() const {
             sitesNames["sites"].push_back(newSite);
             //sitesNames["sites"]= hosts["site_name"];
           
+        } else {
+            #ifdef DEBUG
+            std::cerr << "The site with id " << site.first
+                      << " is missing the key 'site_name'." << std::endl;
+            #endif
+        }
+    }
+    return sitesNames.dump();
+}
+
+std::string FileHandler::GetSiteNames() const {
+    json sitesNames;
+    std::vector<std::string> names;
+    sitesNames["names"] = names;
+
+    for (auto const site : sites) {
+        json hosts = site.second.hosts;
+        if (hosts.contains("site_name")) {
+            sitesNames["names"].push_back(hosts["site_name"]);
         } else {
             #ifdef DEBUG
             std::cerr << "The site with id " << site.first

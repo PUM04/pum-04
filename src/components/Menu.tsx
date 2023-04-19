@@ -113,11 +113,24 @@ const addFilesToBackend = (files: File[], fileHandler: any) => {
  * @returns an array of site names
  */
 const getSiteNames = (fileHandler: any): string[] => {
-  const sites = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).sites : [];
+  // sites[i][0] == siteskey sites[i][1]= sitesName
+
+  const sites = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).names : [];
   console.log(sites);
+
   return sites;
 };
 
+const getSiteNamesAndId = (fileHandler: any): string[][] => {
+  // sites[i][0] == siteskey sites[i][1]= sitesName
+
+  const sites = fileHandler
+    ? JSON.parse(fileHandler.GetSiteNamesAndIds()).sites
+    : [[]];
+  console.log(sites);
+
+  return sites;
+};
 /**
  * Gets the metrics from the backend.
  *
@@ -148,16 +161,21 @@ export default function Menu(props: MenuProps) {
   const { siteProps } = props;
   const { setSiteProps } = props;
   const [siteNames, setSiteNames] = useState<string[]>([]);
+  const [siteNamesAndIds, setSiteNamesAndIds] = useState<string[][]>([[]]);
   const [metrics, setMetrics] = useState<string[]>([]);
   const [numberOfColors, setNumberOfColors] = useState<number>(1);
 
   useEffect(() => {
     const newMap = new Map<string, SiteProperties>(siteProps);
     const PHI = (1 + Math.sqrt(5)) / 2;
-    let index = siteNames.length - (siteNames.length - newMap.size);
+    let index = newMap.size;
 
-    siteNames.forEach((siteName) => {
-      if (!siteProps.has(siteName)) {
+    console.log(siteNamesAndIds);
+
+    siteNamesAndIds.forEach((site) => {
+      const siteId = site[0];
+      const siteName = site[1];
+      if (!siteProps.has(siteId)) {
         let hexColor = '';
         if (index < chartColors().length) {
           hexColor = chartColors()[index];
@@ -169,16 +187,17 @@ export default function Menu(props: MenuProps) {
         }
         setNumberOfColors(numberOfColors + 1);
 
-        newMap.set(siteName, {
+        newMap.set(siteId, {
           color: hexColor,
           enabled: true,
+          name: siteName,
         });
         setSiteProps(newMap);
         index++;
       }
     });
     console.log(siteNames);
-  }, [siteNames]);
+  }, [siteNamesAndIds]);
 
   // add files to backend when they are added to the state
 
@@ -193,8 +212,10 @@ export default function Menu(props: MenuProps) {
   useEffect(() => {
     fileHandler?.ComputeFiles();
     //
-    console.log(getSiteNames(fileHandler));;
+    console.log(getSiteNames(fileHandler));
     setSiteNames(getSiteNames(fileHandler));
+    setSiteNamesAndIds(getSiteNamesAndId(fileHandler));
+
     setMetrics(getMetrics(fileHandler));
   }, [oldFiles]);
 
