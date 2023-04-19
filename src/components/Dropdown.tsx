@@ -2,7 +2,7 @@
  * @file contains a dropdown-menu with checkboxes
  */
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 // import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
@@ -33,6 +33,12 @@ export default function Dropdown(props: any): JSX.Element {
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState(extractedItems);
   const [checked, setChecked] = useState(true);
+
+  // updates the content when the givenItems changes
+  useEffect(() => {
+    setContent(extractedItems);
+  }, [givenItems]);
+
   // If clicked on: open if closed and close if open.
   const handleClick = () => {
     setOpen(!open);

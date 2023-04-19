@@ -1,7 +1,7 @@
 /**
  * @file Contains an interactive drawermenu
  */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -79,6 +79,53 @@ interface MenuProps {
 }
 
 /**
+ * Adds files to the backend.
+ *
+ * @param files files which are added to the backend
+ * @param fileHandler is used to add the files to the backend
+ */
+const addFilesToBackend = (files: File[], fileHandler: any) => {
+  if (files.length > 0) {
+    files.forEach((file) => {
+      const filereader = new FileReader();
+      filereader.readAsText(file);
+      filereader.onload = () => {
+        // Send the file to the backend
+        fileHandler.AddFile(filereader.result, file.name);
+      };
+      filereader.onabort = () =>
+        console.error(`Reading file ${file.name} was aborted`);
+      filereader.onerror = () =>
+        console.error(`Reading file ${file.name} failed.`);
+    });
+  }
+};
+
+/**
+ * Gets the site names from the backend.
+ *
+ * @param fileHandler used to get the site names
+ * @returns an array of site names
+ */
+const getSiteNames = (fileHandler: any): string[] => {
+  const names = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).names : [];
+  return names;
+};
+
+/**
+ * Gets the metrics from the backend.
+ *
+ * @param fileHandler used to get the metrics
+ * @returns an array of metrics
+ */
+const getMetrics = (fileHandler: any): string[] => {
+  const metrics = fileHandler
+    ? JSON.parse(fileHandler.GetMetrics()).metrics
+    : [];
+  return metrics;
+};
+
+/**
  * A drawermenu for showing available metrics, sites and to upload files
  *
  * @param props contains filehandler
@@ -88,32 +135,30 @@ export default function Menu(props: MenuProps) {
   const { fileHandler } = props;
   const theme = useTheme();
   const [open, setOpen] = useState(false);
+
   const [files, setFiles] = useState<File[]>([]);
-  const [filereader] = useState(new FileReader());
+  const [oldFiles, setOldFiles] = useState<File[]>([]);
 
-  // Start reading the first file
-  if (files.length > 0 && filereader.readyState !== FileReader.LOADING) {
-    filereader.readAsText(files[files.length - 1]);
-  }
+  const [siteNames, setSiteNames] = useState<string[]>([]);
+  const [metrics, setMetrics] = useState<string[]>([]);
 
-  filereader.onload = () => {
-    // Send the file to the backend
-    fileHandler.AddFile(
-      filereader.result as string,
-      files[files.length - 1].name
-    );
-    files.pop();
+  // add files to backend when they are added to the state
+  useEffect(() => {
+    const oldFileNames = oldFiles.map((v) => v.name);
+    const newFiles = files.filter((file) => !oldFileNames.includes(file.name));
 
-    // Continue reading the rest of the files
-    if (files.length > 0) {
-      filereader.readAsText(files[files.length - 1]);
-    } else {
-      // Link the files in the backend
-      fileHandler.ComputeFiles();
-    }
-  };
-  filereader.onabort = () => console.log('file reading was aborted');
-  filereader.onerror = () => console.log('file reading has failed');
+    setOldFiles(oldFiles.concat(newFiles));
+
+    addFilesToBackend(newFiles, fileHandler);
+  }, [files]);
+
+  // get site names and metrics from backend when files are added to the backend
+  useEffect(() => {
+    fileHandler?.ComputeFiles();
+
+    setSiteNames(getSiteNames(fileHandler));
+    setMetrics(getMetrics(fileHandler));
+  }, [oldFiles]);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -190,14 +235,8 @@ export default function Menu(props: MenuProps) {
               width: drawerWidth - 10,
             }}
           >
-            <Dropdown
-              dropdownName="Sites"
-              value={['site_1', 'site_2', 'site_3']}
-            />
-            <Dropdown
-              dropdownName="Metrics"
-              value={['metric_1', 'metric_2', 'metric_3']}
-            />
+            <Dropdown dropdownName="Sites" value={siteNames} />
+            <Dropdown dropdownName="Metrics" value={metrics} />
           </Paper>
           <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>
             <p data-testid="uploaded-files">
