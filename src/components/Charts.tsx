@@ -109,8 +109,8 @@ function getBarChartData(site: string, metric: string): Histogram {
   const data: Histogram = { bars: [] };
   if (site === 'stockholm' && metric === 'getPatient') {
     data.bars = [
-      { x: '1', y: 0, fill: 'yellow' },
-      { x: '2', y: 0, fill: 'yellow' },
+      { x: '1', y: 5555, fill: 'yellow' },
+      { x: '2', y: 1, fill: 'yellow' },
       { x: '3', y: 0, fill: 'yellow' },
       { x: '4', y: 0, fill: 'yellow' },
       { x: '5', y: 0, fill: 'yellow' },
@@ -122,17 +122,17 @@ function getBarChartData(site: string, metric: string): Histogram {
      { x: '20', y: 0, fill: 'yellow' },
      { x: '30', y: 0, fill: 'yellow' },
      { x: '40', y: 0, fill: 'yellow' },
-     { x: '50', y: 0, fill: 'yellow' },
-     { x: '60', y: 0, fill: 'yellow' },
-     { x: '70', y: 0, fill: 'yellow' },
-     { x: '80', y: 0, fill: 'yellow' },
-     { x: '90', y: 0, fill: 'yellow' },
-    { x: '100', y: 0, fill: 'yellow' },
-    { x: '200', y: 0, fill: 'yellow' },
-    { x: '300', y: 0, fill: 'yellow' },
-    { x: '400', y: 0, fill: 'yellow' },
+     { x: '50', y: 1, fill: 'yellow' },
+     { x: '60', y: 1, fill: 'yellow' },
+     { x: '70', y: 1, fill: 'yellow' },
+     { x: '80', y: 1, fill: 'yellow' },
+     { x: '90', y: 1, fill: 'yellow' },
+    { x: '100', y: 1, fill: 'yellow' },
+    { x: '200', y: 1, fill: 'yellow' },
+    { x: '300', y: 1, fill: 'yellow' },
+    { x: '400', y: 1, fill: 'yellow' },
     { x: '500', y: 6, fill: 'yellow' },
-  { x: '600', y: 512, fill: 'yellow' },
+  { x: '600', y: 542, fill: 'yellow' },
   { x: '700', y: 500, fill: 'yellow' },
  { x: '800', y: 605, fill: 'yellow' },
   { x: '900', y: 638, fill: 'yellow' },
@@ -165,7 +165,7 @@ function getBarChartData(site: string, metric: string): Histogram {
     ];
   } else if (site === 'linköping' && metric === 'getPatient') {
     data.bars = [
-      { x: '1', y: 0, fill: 'blue' },
+      { x: '1', y: 555, fill: 'blue' },
       { x: '2', y: 0, fill: 'blue' },
       { x: '3', y: 0, fill: 'blue' },
       { x: '4', y: 0, fill: 'blue' },
@@ -174,21 +174,21 @@ function getBarChartData(site: string, metric: string): Histogram {
       { x: '7', y: 0, fill: 'blue' },
       { x: '8', y: 0, fill: 'blue' },
       { x: '9', y: 0, fill: 'blue' },
-     { x: '10', y: 0, fill: 'blue' },
-     { x: '20', y: 0, fill: 'blue' },
-     { x: '30', y: 0, fill: 'blue' },
-     { x: '40', y: 0, fill: 'blue' },
-     { x: '50', y: 0, fill: 'blue' },
-     { x: '60', y: 0, fill: 'blue' },
-     { x: '70', y: 0, fill: 'blue' },
-     { x: '80', y: 0, fill: 'blue' },
-     { x: '90', y: 0, fill: 'blue' },
-    { x: '100', y: 0, fill: 'blue' },
-    { x: '200', y: 0, fill: 'blue' },
-    { x: '300', y: 0, fill: 'blue' },
-    { x: '400', y: 0, fill: 'blue' },
-    { x: '500', y: 0, fill: 'blue' },
-  { x: '600', y: 512, fill: 'blue' },
+     { x: '10', y: 1, fill: 'blue' },
+     { x: '20', y: 1, fill: 'blue' },
+     { x: '30', y: 1, fill: 'blue' },
+     { x: '40', y: 1, fill: 'blue' },
+     { x: '50', y: 1, fill: 'blue' },
+     { x: '60', y: 1, fill: 'blue' },
+     { x: '70', y: 1, fill: 'blue' },
+     { x: '80', y: 1, fill: 'blue' },
+     { x: '90', y: 1, fill: 'blue' },
+    { x: '100', y: 1, fill: 'blue' },
+    { x: '200', y: 1, fill: 'blue' },
+    { x: '300', y: 1, fill: 'blue' },
+    { x: '400', y: 1, fill: 'blue' },
+    { x: '500', y: 1, fill: 'blue' },
+  { x: '600', y: 502, fill: 'blue' },
   { x: '700', y: 500, fill: 'blue' },
   { x: '800', y: 405, fill: 'blue' },
   { x: '900', y: 608, fill: 'blue' },
@@ -210,27 +210,27 @@ function getBarChartData(site: string, metric: string): Histogram {
     data.bars = [
       { x: '1', y: 0, fill: 'green' },
       { x: '2', y: 0, fill: 'green' },
-      { x: '3', y: 0, fill: 'green' },
+      { x: '3', y: 1, fill: 'green' },
       { x: '4', y: 0, fill: 'green' },
       { x: '5', y: 0, fill: 'green' },
-      { x: '6', y: 0, fill: 'green' },
-      { x: '7', y: 0, fill: 'green' },
-      { x: '8', y: 0, fill: 'green' },
-      { x: '9', y: 0, fill: 'green' },
-      { x: '10', y: 0, fill: 'green' },
-      { x: '20', y: 0, fill: 'green' },
-      { x: '30', y: 0, fill: 'green' },
-      { x: '40', y: 0, fill: 'green' },
-      { x: '50', y: 0, fill: 'green' },
-      { x: '60', y: 0, fill: 'green' },
-      { x: '70', y: 0, fill: 'green' },
-      { x: '80', y: 0, fill: 'green' },
-      { x: '90', y: 0, fill: 'green' },
-      { x: '100', y: 0, fill: 'green' },
-      { x: '200', y: 0, fill: 'green' },
-      { x: '300', y: 0, fill: 'green' },
-      { x: '400', y: 0, fill: 'green' },
-      { x: '500', y: 0, fill: 'green' },
+      { x: '6', y: 1, fill: 'green' },
+      { x: '7', y: 1, fill: 'green' },
+      { x: '8', y: 1, fill: 'green' },
+      { x: '9', y: 1, fill: 'green' },
+      { x: '10', y: 1, fill: 'green' },
+      { x: '20', y: 1, fill: 'green' },
+      { x: '30', y: 1, fill: 'green' },
+      { x: '40', y: 1, fill: 'green' },
+      { x: '50', y: 1, fill: 'green' },
+      { x: '60', y: 1, fill: 'green' },
+      { x: '70', y: 1, fill: 'green' },
+      { x: '80', y: 1, fill: 'green' },
+      { x: '90', y: 1, fill: 'green' },
+      { x: '100', y: 1, fill: 'green' },
+      { x: '200', y: 1, fill: 'green' },
+      { x: '300', y: 1, fill: 'green' },
+      { x: '400', y: 1, fill: 'green' },
+      { x: '500', y: 1, fill: 'green' },
       { x: '600', y: 512, fill: 'green' },
       { x: '700', y: 500, fill: 'green' },
       { x: '800', y: 605, fill: 'green' },
@@ -251,21 +251,21 @@ function getBarChartData(site: string, metric: string): Histogram {
     ];
   } else if (site === 'manchester' && metric === 'getPatient') {
     data.bars = [
-      { x: '1', y: 0, fill: 'green' },
-  { x: '2', y: 0, fill: 'green' },
-  { x: '3', y: 0, fill: 'green' },
+  { x: '1', y: 0, fill: 'green' },
+  { x: '2', y: 1, fill: 'green' },
+  { x: '3', y: 2, fill: 'green' },
   { x: '4', y: 0, fill: 'green' },
   { x: '5', y: 0, fill: 'green' },
-  { x: '6', y: 0, fill: 'green' },
+  { x: '6', y: 6, fill: 'green' },
   { x: '7', y: 0, fill: 'green' },
-  { x: '8', y: 0, fill: 'green' },
-  { x: '9', y: 0, fill: 'green' },
-  { x: '10', y: 0, fill: 'green' },
+  { x: '8', y: 4, fill: 'green' },
+  { x: '9', y: 4, fill: 'green' },
+  { x: '10', y: 7, fill: 'green' },
   { x: '20', y: 0, fill: 'green' },
   { x: '30', y: 0, fill: 'green' },
   { x: '40', y: 0, fill: 'green' },
-  { x: '50', y: 0, fill: 'green' },
-  { x: '60', y: 0, fill: 'green' },
+  { x: '50', y: 8, fill: 'green' },
+  { x: '60', y: 9, fill: 'green' },
   { x: '70', y: 0, fill: 'green' },
   { x: '80', y: 0, fill: 'green' },
   { x: '90', y: 0, fill: 'green' },
@@ -309,12 +309,12 @@ function getBarChartData(site: string, metric: string): Histogram {
     data.bars = [
       { x: '1', y: 0, fill: 'red' },
       { x: '2', y: 0, fill: 'red' },
-      { x: '3', y: 0, fill: 'red' },
-      { x: '4', y: 0, fill: 'red' },
-      { x: '5', y: 0, fill: 'red' },
+      { x: '3', y: 400, fill: 'red' },
+      { x: '4', y: 400, fill: 'red' },
+      { x: '5', y: 300, fill: 'red' },
       { x: '6', y: 0, fill: 'red' },
       { x: '7', y: 0, fill: 'red' },
-      { x: '8', y: 0, fill: 'red' },
+      { x: '8', y: 300, fill: 'red' },
       { x: '9', y: 0, fill: 'red' },
      { x: '10', y: 0, fill: 'red' },
      { x: '20', y: 0, fill: 'red' },
@@ -655,22 +655,26 @@ export function BarChart(props: ChartProps): JSX.Element {
   const graphWidth = 300;
 
   metrics.forEach((metric) => {
-    const barGraph: Array<Histogram> = [];
-    let newBargraph: Array<Histogram> = [];
+    let barGraph: Array<Histogram> = [];
+    //let newBarGraph: Array<Histogram> = [];
     sites.forEach((site) => {
       const data: Histogram = getBarChartData(site, metric);
       barGraph.push(data);
    
     });
+    if(true){
     /*****************************************************************************************/
-    newBargraph = removeEmptyXValues(barGraph);
-    newBargraph = mergeXvalues(newBargraph, graphWidth, sites);
-    /*****************************************************************************************/
+    barGraph = mergeXvalues(barGraph, graphWidth, sites);
+    barGraph = removeEmptyXValues(barGraph);
    
-    //newBargraph = mergeXvalues(barGraph, graphWidth, sites);
+   }
+   else{
+    barGraph = mergeXvalues(barGraph, graphWidth, sites);
 
-    const width = graphWidth / (numberOfXvalues(newBargraph) * sites.length);
-    barGraphList.push(drawHistogram(newBargraph, metric, width));
+   }
+
+    const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
+    barGraphList.push(drawHistogram(barGraph, metric, width));
   });
 
   return <div>{barGraphList}</div>;
@@ -680,14 +684,20 @@ export function BarChart(props: ChartProps): JSX.Element {
                       /** ANOTHER SOLUTION; A SEPARET FUNCTIONM WILL LOOP AGAIN*/
 /***************************************************************************************** */
 
-function removeEmptyXValues(barGraph: any[]): Array<Histogram>{
+function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram>{
   
-  const getEmptyXValues = (barGraph: any[]) => {
+  const getEmptyXValues = (barGraph: Histogram[]) => {
     const emptyXValues = new Set();
+   
+    //[0,0,1,3,50,0,5] => [1,3,50,5]
+    //
+    let nonEmptyBars: Bar[] = [];
     barGraph.forEach(histogram => {
-      const nonEmptyBars = histogram.bars.filter((bar: { y: number; }) => bar.y !== 0);
-      histogram.bars.forEach((bar: { y: number; x: unknown; }) => {
-        if (bar.y === 0 && !nonEmptyBars.some((b: { x: unknown; }) => b.x === bar.x)) {
+      nonEmptyBars = histogram.bars.filter((bar: { y: number; }) => bar.y !== 0);//TODO: FAULTY NEEDS FIXING!
+    });
+    barGraph.forEach(histogram => {
+      histogram.bars.forEach((bar: { y: number; x: string; }) => {
+        if (bar.y === 0 && !nonEmptyBars.some((b: { x: string; }) => b.x === bar.x)) {
           emptyXValues.add(bar.x);
         }
       });
@@ -695,14 +705,32 @@ function removeEmptyXValues(barGraph: any[]): Array<Histogram>{
     return emptyXValues;
   };
   
-  const removeEmptyXValues = (barGraph: any[], emptyXValues: Set<unknown>) => {
+  const _removeEmptyXValues = (barGraph: any[], emptyXValues: Set<unknown>) => {
+    let newBarGraph:Histogram[] = []; 
     barGraph.forEach((histogram: { bars: any[]; }) => {
-      histogram.bars = histogram.bars.filter(bar => !emptyXValues.has(bar.x));
+     let newHistogram:Histogram = new Histogram();
+      let keepZero:boolean = false; 
+       histogram.bars.forEach((bar,i) => {
+
+          if (emptyXValues.has(bar.x)){
+            if(keepZero){
+              newHistogram.bars.push(bar);
+            }
+            keepZero = false;
+          }
+          else{
+            newHistogram.bars.push(bar);
+            keepZero = true;
+          }
+       });
+       newBarGraph.push(newHistogram);
     });
+    console.log(newBarGraph);
+    return newBarGraph;
   };
 
   const emptyXvalues = getEmptyXValues(barGraph);
-  removeEmptyXValues(barGraph, emptyXvalues)
+  barGraph = _removeEmptyXValues(barGraph, emptyXvalues)
   return barGraph;
 }
 
@@ -725,16 +753,6 @@ function mergeXvalues(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<
   let mergeAmount = 1;//start merge amount
   let loopCount = 0;
   
-  /***************************************************************************************** */
-                      /** ONE POSSIBLE SOLUTION; WILL NOT WORK IF tooSmallWidth IS ONE */
-  /***************************************************************************************** */
-  const removeEmptyXValues = (barGraph: any[], emptyXValues: Set<unknown>) => {
-    barGraph.forEach(histogram => {
-      histogram.bars = histogram.bars.filter((bar: { x: any; }) => !emptyXValues.has(bar.x));
-    });
-  };
-  /****************************************************************************************** */
-
 
   if(width>=tooSmallWidth){
     console.log("no changes when running mergeXvalues()");
@@ -742,11 +760,6 @@ function mergeXvalues(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<
   }
   while(width<tooSmallWidth){
     newBarGraph = [];
-    /*********************************************************/
-    // let redundantBuckets : { [bucket: string]: number } = {};
-    // const emptyXValues = new Set();
-    /*********************************************************/
-
     barGraph.forEach(histo => {
       let newHisto:Histogram = new Histogram([]);
     
@@ -756,33 +769,16 @@ function mergeXvalues(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<
         if (newHisto.bars[newIndex] === undefined) {
           newHisto.bars.push(new Bar(bar.x, bar.y, bar.fill));
         }
+        else
         {
           newHisto.bars[newIndex].y += bar.y;
         }
-   /***************************************************************************************** */
-    //  if (bar.y == 0) {
-    //       if(redundantBuckets[bar.x] === undefined){
-    //           redundantBuckets[bar.x] = 0;
-    //         }
-    //       redundantBuckets[bar.x] += 1;
-    //       console.log(redundantBuckets)
-    //       if (redundantBuckets[bar.x] === sites.length){
-    //         emptyXValues.add(bar.x)
-            
-    //       }
-    //   }
-/****************************************************************************************** */
-
       }
       
       );
       newBarGraph.push(newHisto);
 
       });
-      /********************************************' */
-      // removeEmptyXValues(newBarGraph, emptyXValues);
-      /********************************************* */
-
 
       if(loopCount>maxLoopCount){
         console.warn("----------------------WARNING REACHED LOOP MAX!----------------------");
@@ -791,10 +787,10 @@ function mergeXvalues(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<
       loopCount +=1;
       mergeAmount += 1;
       width = graphWidth / (numberOfXvalues(newBarGraph) * sites.length);
-      console.log("Too small width, trying again new width:",width, "\n new mergeAmount:",mergeAmount);
+      // console.log("Too small width, trying again new width:",width, "\n new mergeAmount:",mergeAmount);
     }
  
-  console.log("new barGraph:",newBarGraph);
+  // console.log("new barGraph:",newBarGraph);
   return newBarGraph;
 }
 
@@ -804,7 +800,7 @@ function mergeXvalues(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<
  */
 function mergeXvaluesIdea2(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<Histogram>{
   let newBarGraph: Array<Histogram> = []; 
-  const tooSmallWidth = 10;
+  const tooSmallWidth = 5;
   let width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
   const maxLoopCount = 20;
   let loopCount = 0;
