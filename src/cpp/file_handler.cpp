@@ -297,11 +297,25 @@ std::string FileHandler::GetIdFromPerformance(std::string &file_name) const {
     return  file_name.substr(0, file_name.find("_"));
 }
 
+/**
+ * @brief  Returns a json string with the site names and ids
+ * This function will later be replaced with an updated version of GetSiteNames()
+ * json string returned has format:
+ * 
+ * {
+ * "sites": [
+ *      [id, name],
+ *      [id, name],
+ *      ...
+ *      [id, name]
+ * ]
+ * }
+ *  
+ * @return std::string in json format 
+ */
 
 std::string FileHandler::GetSiteNamesAndIds() const {
     json sitesNames;
-    //  std::vector<std::string> names;
-    //  std::vector<std::string> ids;
      std::vector<std::vector<std::string>> jsonSites;
      sitesNames["sites"] = jsonSites;
 
@@ -316,8 +330,6 @@ std::string FileHandler::GetSiteNamesAndIds() const {
             newSite.push_back(id);
             newSite.push_back(name);
             sitesNames["sites"].push_back(newSite);
-            //sitesNames["sites"]= hosts["site_name"];
-          
         } else {
             #ifdef DEBUG
             std::cerr << "The site with id " << site.first

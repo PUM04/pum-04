@@ -66,6 +66,12 @@ public:
      * @return std::string The metrics
      */
     std::string GetMetrics() const;
+    
+    /**
+     * @brief Get json string with the names and ids of all the sites
+     *
+     * @return std::vector<std::string> The names and ids of the sites
+     */    
 
     std::string GetSiteNamesAndIds() const; 
 

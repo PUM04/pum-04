@@ -1,5 +1,5 @@
 /**
- * @file Contains an interactive drawermenu
+ * @file Contains the menu component which is the top Appbar containing the dropdown and the legend bar
  */
 import React, { useEffect, useState, Dispatch } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
@@ -16,7 +16,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Paper from '@mui/material/Paper';
 import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './LegendBar';
-import chartColors from './chartColors';
+import chartColors from './ChartColors';
 import Dropdown from './Dropdown';
 import { SiteProperties } from './SitePropetiesInterface';
 import '../App.css';
@@ -113,16 +113,21 @@ const addFilesToBackend = (files: File[], fileHandler: any) => {
  * @returns an array of site names
  */
 const getSiteNames = (fileHandler: any): string[] => {
-  // sites[i][0] == siteskey sites[i][1]= sitesName
-
   const sites = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).names : [];
   console.log(sites);
 
   return sites;
 };
 
+/**
+ *  Gets the site names and ids from the backend.
+ *
+ * @param fileHandler  used to get the site names and ids.
+ * @returns an array with site names and ids index 0 is site id and index 1 is site name;
+ */
+
 const getSiteNamesAndId = (fileHandler: any): string[][] => {
-  // sites[i][0] == siteskey sites[i][1]= sitesName
+  // sites[i][0] == siteId sites[i][1]= sitesName
 
   const sites = fileHandler
     ? JSON.parse(fileHandler.GetSiteNamesAndIds()).sites
@@ -163,15 +168,14 @@ export default function Menu(props: MenuProps) {
   const [siteNames, setSiteNames] = useState<string[]>([]);
   const [siteNamesAndIds, setSiteNamesAndIds] = useState<string[][]>([[]]);
   const [metrics, setMetrics] = useState<string[]>([]);
-  const [numberOfColors, setNumberOfColors] = useState<number>(1);
 
+  // Everytime siteNamesAndIds changes we want to add set at color for that id
   useEffect(() => {
     const newMap = new Map<string, SiteProperties>(siteProps);
     const PHI = (1 + Math.sqrt(5)) / 2;
     let index = newMap.size;
 
-    console.log(siteNamesAndIds);
-
+    // Map colors to the sites
     siteNamesAndIds.forEach((site) => {
       const siteId = site[0];
       const siteName = site[1];
@@ -185,7 +189,6 @@ export default function Menu(props: MenuProps) {
           const hue = Math.floor(n * 180);
           hexColor = `#0${hue.toString(16)}`;
         }
-        setNumberOfColors(numberOfColors + 1);
 
         newMap.set(siteId, {
           color: hexColor,
@@ -196,7 +199,6 @@ export default function Menu(props: MenuProps) {
         index++;
       }
     });
-    console.log(siteNames);
   }, [siteNamesAndIds]);
 
   // add files to backend when they are added to the state
@@ -211,7 +213,6 @@ export default function Menu(props: MenuProps) {
   // get site names and metrics from backend when files are added to the backend
   useEffect(() => {
     fileHandler?.ComputeFiles();
-    //
     console.log(getSiteNames(fileHandler));
     setSiteNames(getSiteNames(fileHandler));
     setSiteNamesAndIds(getSiteNamesAndId(fileHandler));
@@ -226,12 +227,6 @@ export default function Menu(props: MenuProps) {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
-  // const sites = [
-  //   { name: 'first', color: 'red', enabled: true },
-  //   { name: 'second', color: 'blue', enabled: true },
-  //   { name: 'third', color: 'orange', enabled: true },
-  // ];
 
   return (
     <div className="App">
@@ -257,11 +252,31 @@ export default function Menu(props: MenuProps) {
               type="button"
               onClick={() => {
                 const testmap = new Map<string, SiteProperties>();
-                testmap.set('stockholm', { color: 'red', enabled: true });
-                testmap.set('manchester', { color: 'red', enabled: true });
-                testmap.set('tokyo', { color: 'black', enabled: true });
-                testmap.set('linköping', { color: 'grey', enabled: true });
-                testmap.set('a;skld', { color: 'grey', enabled: false });
+                testmap.set('stockholm', {
+                  color: 'red',
+                  enabled: true,
+                  name: 'stockholm',
+                });
+                testmap.set('manchester', {
+                  color: 'red',
+                  enabled: true,
+                  name: 'manchester',
+                });
+                testmap.set('tokyo', {
+                  color: 'black',
+                  enabled: true,
+                  name: 'tokyo',
+                });
+                testmap.set('linköping', {
+                  color: 'grey',
+                  enabled: true,
+                  name: 'linköping',
+                });
+                testmap.set('a;skld', {
+                  color: 'grey',
+                  enabled: false,
+                  name: 'a;skld',
+                });
                 setSiteProps(testmap);
                 console.log(siteProps);
               }}

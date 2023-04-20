@@ -79,7 +79,7 @@ interface Candle {
  *
  * @param site what site to get data from.
  * @param metric what metric to get data from.
- * @param color
+ * @param color   what color to paint the bars.
  * @returns a Histogram object containing all data for drawing a BarChart.
  */
 function getBarChartData(
@@ -213,15 +213,17 @@ function getBarChartData(
  * example 'getPatient'
  * @param sites a string list containing 1-n sites that will be shown in the candlechart.
  * example ['s1','s2','s3','s4']
- * @param siteProps
+ * @param siteProps map ecah siteKey to a color
  * @returns a data structure in correct format to paint a candelChart.
  */
 function getCandleChartData(
   metric: string,
   sites: Array<string>,
-  siteProps: Map<string, SiteProperties>
+  // eslint-disable-next-line
+  siteProps: Map<string, SiteProperties> // used later when structure for candlechart is known.
 ): CandleChart {
   const data: CandleChart = { candels: [] };
+
   /**
    * Todo- At the moment this function only contains dummy data.
    * Implement code to get data from backend
@@ -233,8 +235,10 @@ function getCandleChartData(
    *  - json["getpatient"]["avrage"]
    *    or json["getPatient"]
    *  - iterate over to create correct data structure.
-   *  map.set('stockholm', { color: 'red', enabled: true });
+   *   - siteProps contains a map of all colors
+   *    const siteProp = siteProps.get("SITEID123").color; gets color for SITEID123
    */
+
   if (
     metric === 'getPatient' &&
     sites[0] === 'stockholm' &&
@@ -362,6 +366,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
 function drawVictoryBar(data: Array<Bar>, width: number): JSX.Element {
   return (
     <VictoryBar
+      data-testid="getdata"
       key={JSON.stringify(data)}
       labelComponent={
         <VictoryTooltip cornerRadius={0} pointerLength={0} dy={-10} />
@@ -461,7 +466,8 @@ function drawHistogram(
  *  metrics.length = number of VictoryCharts
  *  sites.length = number of BarCharts in each VictoryChart
  *
- * @param props :ChartProps contains list of metrics and list of sites.
+ * @param props :ChartProps contains list of metrics,list of sites.
+ * And a map, maping each site to a color
  * @returns A list of victorycharts
  * [<VictoryChart>BarchartsArray</VictoryChart>,<VictoryChart>BarChartsArray</VictoryChart>]
  */
@@ -490,5 +496,5 @@ export function BarChart(props: ChartProps): JSX.Element {
     const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
     barGraphList.push(drawHistogram(barGraph, metric, width));
   });
-  return <div>{barGraphList}</div>;
+  return <div data-testid="barchart">{barGraphList}</div>;
 }

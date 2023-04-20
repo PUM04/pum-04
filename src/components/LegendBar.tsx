@@ -45,17 +45,15 @@ interface LegendBarProps {
 /**
  * Creates a box for the appbar containg all legends
  *
- * @param props contains list of sites
- * @param props.sites list of sites
+ * @param props contains map of siteKeys and SiteProperties
  * @returns a box containing all legends
  */
 function LegendBar(props: LegendBarProps) {
   const { siteProps } = props;
 
   const legends: Array<JSX.Element> = [];
-
   siteProps.forEach((siteprop, siteId) => {
-    const legendKey = siteprop;
+    const legendKey = siteId;
     if (siteprop.enabled) {
       legends.push(
         <Legend key={legendKey} name={siteprop.name} color={siteprop.color} />

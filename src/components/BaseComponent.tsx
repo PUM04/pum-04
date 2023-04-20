@@ -3,19 +3,16 @@
  */
 import Box from '@mui/material/Box';
 import React from 'react';
+import { SiteProperties } from './SitePropetiesInterface';
 import { BoxPlotChart, BarChart } from './Charts';
 
-interface SiteProperties {
-  color: string;
-  enabled: boolean;
-}
 interface GraphComponentProps {
   siteProps: Map<string, SiteProperties>;
 }
 /**
  * Component that contains all graphs
  *
- * @param props
+ * @param props contains map with siteId as key and SiteProperties as value
  * @returns MUI box component
  */
 export function GraphComponent(props: GraphComponentProps): JSX.Element {
@@ -77,15 +74,6 @@ export function InfoboxComponent(): JSX.Element {
         },
       }}
     >
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
       <Box>Put infoboxes here! </Box>
       <Box>Put infoboxes here! </Box>
       <Box>Put infoboxes here! </Box>
