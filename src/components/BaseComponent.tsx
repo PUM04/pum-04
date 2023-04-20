@@ -5,12 +5,22 @@ import Box from '@mui/material/Box';
 import React from 'react';
 import { BoxPlotChart, BarChart } from './Charts';
 
+interface GraphComponentProps {
+  metrics: Array<string>;
+  sites: Array<string>;
+  fileHandler: any;
+}
 /**
  * Component that contains all Box graphs
  *
+ * @param props contains fileHandler
  * @returns MUI box component
  */
-export function BoxGraphComponent(): JSX.Element {
+export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
+  const { metrics } = props;
+  const { sites } = props;
+  const { fileHandler } = props;
+
   return (
     <Box
       data-testid="boxgraph-component"
@@ -28,8 +38,9 @@ export function BoxGraphComponent(): JSX.Element {
       <Box>
         {' '}
         <BoxPlotChart
-          metrics={['getPatient', 'getBucket']}
-          sites={['stockholm', 'linköping']}
+          metrics={metrics}
+          sites={sites}
+          fileHandler={fileHandler}
         />{' '}
       </Box>
       <Box> Put Box Graphs here! </Box>
@@ -40,9 +51,13 @@ export function BoxGraphComponent(): JSX.Element {
 /**
  * Component that contains all bar graphs
  *
+ * @param props contains metrics, sites and filehandler.
  * @returns MUI box component
  */
-export function BarGraphComponent(): JSX.Element {
+export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
+  const { metrics } = props;
+  const { sites } = props;
+  const { fileHandler } = props;
   return (
     <Box
       data-testid="bargraph-component"
@@ -60,11 +75,12 @@ export function BarGraphComponent(): JSX.Element {
       <Box>
         {' '}
         <BarChart
-          metrics={['getPatient', 'getBucket']}
-          sites={['stockholm', 'linköping', 'manchester', 'tokyo']}
+          metrics={metrics}
+          sites={sites}
+          fileHandler={fileHandler}
         />{' '}
       </Box>
-      <Box> Put Bar Graphs here! </Box>
+      <Box> Put graphs here! </Box>
     </Box>
   );
 }

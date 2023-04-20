@@ -13,8 +13,8 @@ import {
 describe('App', () => {
   // Run this before each test
   beforeEach(() => {
-    render(<BarGraphComponent />);
-    render(<BoxGraphComponent />);
+    render(<BarGraphComponent metrics="hej" sites="hej" fileHandler={null} />);
+    render(<BoxGraphComponent metrics="hej" sites="hej" fileHandler={null} />);
     render(<InfoboxComponent />);
   });
 

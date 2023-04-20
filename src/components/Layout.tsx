@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { Box } from '@mui/material';
-import { Menu } from './Menu';
+import Menu from './Menu';
 import ViewTabs from './ViewTab';
 
 import { InfoboxComponent } from './BaseComponent';
@@ -46,7 +46,7 @@ function Layout(props: MenuProps) {
           textAlign: 'left',
         }}
       >
-        <ViewTabs />
+        <ViewTabs fileHandler={fileHandler} />
         <InfoboxComponent />
       </Box>
     </Box>
