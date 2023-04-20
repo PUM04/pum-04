@@ -94,7 +94,7 @@ function getBarChartData(
 
   const fileContent = fileHandler.GetHistogram(site);
 
-  if (fileContent == '{}') {
+  if (fileContent === '{}') {
     return histogram;
   }
 

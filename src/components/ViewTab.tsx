@@ -11,6 +11,10 @@ import { styled } from '@mui/material/styles';
 
 import { BoxGraphComponent, BarGraphComponent } from './BaseComponent';
 
+interface ViewTabProps {
+  fileHandler: any;
+}
+
 interface TabPanelProps {
   children: React.ReactNode;
   index: number;
@@ -52,9 +56,12 @@ const StyledTab = styled((props: StyledTabProps) => (
 /**
  * This is a description
  *
+ * @param props contains props
  * @returns tabs containing graphs
  */
-function ViewTab() {
+function ViewTab(props: ViewTabProps) {
+  const { fileHandler } = props;
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -115,10 +122,18 @@ function ViewTab() {
           },
         }}
       >
-        <BarGraphComponent />
+        <BarGraphComponent
+          sites={['4b14a8']}
+          metrics={['GetPatient']}
+          fileHandler={fileHandler}
+        />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <BoxGraphComponent />
+        <BoxGraphComponent
+          sites={['4b14a8']}
+          metrics={['GetPatient']}
+          fileHandler={fileHandler}
+        />
       </TabPanel>
     </Box>
   );

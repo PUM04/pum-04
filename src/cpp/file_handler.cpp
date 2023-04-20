@@ -47,7 +47,7 @@ std::string FileHandler::GetHistogram(std::string site_id) const {
         #ifdef DEBUG
         std::cout << "Could not find site with id " << site_id << std::endl;
         #endif
-        return "";
+        return "{}";
     }
     
     struct Site site = sites.at(site_id);
@@ -64,7 +64,7 @@ std::string FileHandler::GetBoxDiagram(std::string site_id) const {
         #ifdef DEBUG
         std::cout << "Could not find site with id " << site_id << std::endl;
         #endif
-        return "";
+        return "{}";
     }
 
     struct Site site = sites.at(site_id);

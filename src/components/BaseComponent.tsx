@@ -51,7 +51,7 @@ export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
 /**
  * Component that contains all bar graphs
  *
- * @param props contains metrics, sites and filehandler.
+ * @param props contains metrics, sites and filehandler 
  * @returns MUI box component
  */
 export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
