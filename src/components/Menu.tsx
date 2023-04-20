@@ -126,25 +126,12 @@ const getMetrics = (fileHandler: any): string[] => {
 };
 
 /**
- * Getheight of navbar.
- *
- * @returns height of navbar :)
- */
-export function getHeight() {
-  const navbox = document.getElementById('test123');
-  if (navbox === null) {
-    return null;
-  }
-  return navbox.offsetHeight;
-}
-
-/**
  * A drawermenu for showing available metrics, sites and to upload files
  *
  * @param props contains filehandler
  * @returns a menucomponent on top of the application component
  */
-export function Menu(props: MenuProps) {
+export default function Menu(props: MenuProps) {
   const { fileHandler } = props;
   const theme = useTheme();
   const [open, setOpen] = useState(false);

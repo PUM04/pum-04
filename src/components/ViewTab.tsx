@@ -6,7 +6,6 @@ import '../App.css';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 
 import { styled } from '@mui/material/styles';
 
@@ -24,7 +23,7 @@ interface TabPanelProps {
  * @param props is something
  * @returns something
  */
-function TabPanel(props: TabPanelProps) {
+const TabPanel = styled((props: TabPanelProps) => {
   const { children, value, index, ...other } = props;
 
   return (
@@ -35,14 +34,10 @@ function TabPanel(props: TabPanelProps) {
       aria-labelledby={`simple-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 2 }}>
-          {children}
-        </Box>
-      )}
+      {value === index && <Box sx={{ p: 2, padding: 0 }}>{children}</Box>}
     </div>
   );
-}
+})<TabPanelProps>();
 
 interface StyledTabProps {
   label: string;
@@ -67,8 +62,12 @@ function ViewTab() {
   };
 
   return (
-    <Box sx={{ width: '100%', paddingTop: '5.5vh' }}>
-      <Box sx={{}}>
+    <Box sx={{ width: '100%' }}>
+      <Box
+        sx={{
+          display: 'inline-block',
+        }}
+      >
         <Tabs
           value={value}
           onChange={handleChange}
@@ -77,20 +76,25 @@ function ViewTab() {
           }}
           sx={{
             '& button': {
-              borderRadius: 1,
+              boxShadow: 'inset 0 8px 6px -7px',
+              borderTopRightRadius: 10,
+              borderTopLeftRadius: 2,
               color: 'primary.dark3',
               textTransform: 'none',
               fontSize: 17,
-              marginRight: 0.05,
+              marginRight: 0.1,
               backgroundColor: 'primary.light4',
             },
             '& button.Mui-selected': {
-              boxShadow: 10,
+              boxShadow: '0',
               backgroundColor: 'primary.light2',
               color: 'primary.dark1',
             },
             '& button:hover': {
               backgroundColor: 'primary.light1',
+            },
+            '& button.Mui-selected:hover': {
+              backgroundColor: 'primary.light2',
             },
             '& button:active': {
               backgroundColor: 'primary.light1',
@@ -102,7 +106,15 @@ function ViewTab() {
           <StyledTab label="Box" />
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
+      <TabPanel
+        value={value}
+        index={0}
+        sx={{
+          '& Muibox-root': {
+            padding: 0,
+          },
+        }}
+      >
         <BarGraphComponent />
       </TabPanel>
       <TabPanel value={value} index={1}>

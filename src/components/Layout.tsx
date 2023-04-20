@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { Box } from '@mui/material';
-import { Menu, getHeight } from './Menu';
+import { Menu } from './Menu';
 import ViewTabs from './ViewTab';
 
 import { InfoboxComponent } from './BaseComponent';
@@ -42,8 +42,8 @@ function Layout(props: MenuProps) {
         sx={{
           flexDirection: 'column',
           display: 'inline-flex',
-          backgroundColor: 'primary.light2',
-          marginTop: `${getHeight()}px`,
+          marginTop: `60px`,
+          textAlign: 'left',
         }}
       >
         <ViewTabs />
