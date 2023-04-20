@@ -12,7 +12,7 @@ import {
 describe('App', () => {
   // Run this before each test
   beforeEach(() => {
-    render(<GraphComponent />);
+    render(<GraphComponent fileHandler={null} />);
     render(<InfoboxComponent />);
   });
 

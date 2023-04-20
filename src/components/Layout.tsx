@@ -43,7 +43,7 @@ function Layout(props: MenuProps) {
           backgroundColor: 'primary.light1',
         }}
       >
-        <GraphComponent />
+        <GraphComponent fileHandler={fileHandler} />
         <InfoboxComponent />
       </Box>
     </Box>
