@@ -23,7 +23,7 @@ export function GraphComponent(): JSX.Element {
         '&:hover': {
           backgroundColor: 'primary.light1',
         },
-      }}
+     }}
     >
       <Box>
         <BarChart 
@@ -33,8 +33,8 @@ export function GraphComponent(): JSX.Element {
       </Box>
       <Box>
         <BoxPlotChart
-          metrics={['getPatient', 'getBucket']}
-          sites={['stockholm', 'linköping','tokyo', 'manchester']}
+          metrics={['getBucket', 'mc4', 'getPatient', 'mc3', 'mc2']}
+          sites={['stockholm', 'linköping',]}
         />
       </Box>
     </Box>

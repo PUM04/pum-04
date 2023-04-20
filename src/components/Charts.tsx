@@ -11,7 +11,8 @@ import {
   VictoryGroup,
   VictoryTooltip,
   VictoryCandlestick,
-  VictoryLabel
+  VictoryLabel, 
+  VictoryLine
 } from 'victory';
 
 /**
@@ -404,30 +405,28 @@ function getCandleChartData(metrics: Array<string>, site: string): CandleChart {
     data.candels = [
       { x: 'getBucket', open: 5, close: 10, high: 22, low: 0}, // s1
       { x: 'getPatient', open: 10, close: 15, high: 20, low: 5 }, // s2
-      { x: 'ma2', open: 8, close: 11, high: 13, low: 2 }, // s3
-      { x: 'mb3', open: 12, close: 15, high: 16, low: 6 }, // s3
 
     ];
   }
   if (site === 'stockholm') {
     data.candels = [
       { x: 'getBucket', open: 5, close: 10, high: 25, low: 1 },
-      { x: 'mc4', open: 6, close: 8, high: 15, low: 3 },
-      { x: 'md2', open: 4, close: 9, high: 12, low: 0}, // s2
+      { x: 'getPatient', open: 6, close: 8, high: 15, low: 3 },
+      { x: 'getImageMetaData', open: 15, close: 10, high: 25, low: 1 },
+      { x: 'Hanging', open: 15, close: 10, high: 25, low: 1 },
+
     ];
   }
   if(site === "tokyo"){
     data.candels = [
       { x: 'getBucket', open: 5, close: 10, high: 25, low: 1 },
-      { x: 'me4', open: 6, close: 8, high: 15, low: 3 },
-      { x: 'mf2', open: 4, close: 9, high: 12, low: 0}, // s2
+
     ];
   }
   if(site === "manchester"){
     data.candels = [
       { x: 'getBucket', open: 15, close: 10, high: 25, low: 1 },
-      { x: 'me4', open: 0, close: 2, high: 15, low: 0 },
-      { x: 'mf2', open: 4, close: 9, high: 12, low: 0}, // s2
+
     ];
   }
   return data;
@@ -474,6 +473,26 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
   );
 }
 
+function CustomTickLabel(props) {
+  const { x, y, text } = props;
+  const padding = 1; // adjust the value to increase/decrease padding between labels
+
+  return (
+    <g transform={`translate(${x}, ${y})`}>
+      <VictoryLabel
+        textAnchor="start"
+        verticalAnchor="end"
+        angle="30"
+        style={{ fontSize: Math.min((125/text.length),10),fill:"#404040"}}
+        x={0}
+        y={0}
+        dy={padding / 2}
+        text={text}
+      />
+    </g>
+  );
+};
+
 /**
  * Draws a single boxPlotChart
  *
@@ -483,10 +502,15 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
  * @returns A VictoryChart with an array of VictoryCandles.
  */
 export function BoxPlotChart(props: ChartProps): JSX.Element {
+  const userFriendlyWidth = 100;
+  const userFriendlyPadding = 20;
+  
+
   const { metrics } = props;
   const { sites } = props;
-  const width = 10;
-  const offsetPadding = 5;
+  const width = Math.min(userFriendlyWidth/(metrics.length * sites.length),20);
+  console.log("width: ",width)
+  const offsetPadding = userFriendlyPadding/(metrics.length * sites.length);
   const victoryCandles: Array<JSX.Element> = [];
 
   // For metrics in props.metrics skapa victorycandles som innehåller alla props.sites
@@ -495,6 +519,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
     victoryCandles.push(drawVictoryCandle(data.candels, width));
 
   });
+
 
   /**
    * TODO
@@ -509,7 +534,6 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
 
 
 
-  console.log('candles: ', victoryCandles);
   return (
     <VictoryChart data-testid="victory-chart">
       
@@ -527,16 +551,20 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
         style={{
           tickLabels: {
             padding: 20,
-            fontSize: 10,
+            fontSize: (40/ metrics.length),
             angle: 45,
+            // offset x-labels
             stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
           },
           axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
           
         }}
-        //tickFormat={(tick:any, index:number, ticks:any) => `${tick}`}
+        tickLabelComponent = {<CustomTickLabel/>}
+        tickFormat={(tick:any, index:number, ticks:any) => `${tick}`}
+        
       />
-      <VictoryGroup offset={width + 1} domainPadding={{ x: offsetPadding}} >
+      
+      <VictoryGroup offset={width + offsetPadding} domainPadding={{ x: offsetPadding}} >
         {victoryCandles}
       </VictoryGroup>
     </VictoryChart>
@@ -609,7 +637,14 @@ function drawHistogram(
   metric: string,
   width: number
 ) {
-
+  const CustomTick = ({ x, y, datum, index, ticksArray }) => {
+    const showSeparator = index < ticksArray.length - 1;
+    return showSeparator ? (
+      <line x1={x} x2={x} y1={y + 5} y2={y + 20} stroke="grey" strokeWidth={1} />
+    ) : null;
+  };
+  
+  
   const formatTickDifference = (tick:any, index:number, ticksArray:any) => {
       if (index < ticksArray.length - 1) {
         if(tick == ticksArray[index + 1] - 1){
@@ -636,7 +671,7 @@ function drawHistogram(
       >
         {metric}
       </p>
-      <VictoryChart>
+      <VictoryChart >
         <VictoryAxis
           dependentAxis
           style={{
@@ -658,7 +693,10 @@ function drawHistogram(
             axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
           }
         }
+        
         tickFormat={(tick:any, index:number, ticks:any) => formatTickDifference(tick, index, ticks)}
+        //tickComponent={<CustomTick />}
+        tickLabelComponent = {<CustomTickLabel/>}
         />
         <VictoryGroup domainPadding={{ x: [5, 0] }} offset={width}>
           {victoryBars}
@@ -694,16 +732,10 @@ export function BarChart(props: ChartProps): JSX.Element {
       barGraph.push(data);
    
     });
-    if(true){
-  
-    barGraph = mergeXvalues(barGraph, graphWidth, sites);
-    barGraph = removeEmptyXValues(barGraph);
-   
-   }
-   else{
-    barGraph = mergeXvalues(barGraph, graphWidth, sites);
 
-   }
+  barGraph = mergeXvalues(barGraph, graphWidth, sites);
+  barGraph = removeEmptyXValues(barGraph);
+
 
     const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
     barGraphList.push(drawHistogram(barGraph, metric, width));
@@ -756,7 +788,6 @@ function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram>{
        });
        newBarGraph.push(newHistogram);
     });
-    console.log(newBarGraph);
     return newBarGraph;
   };
 
