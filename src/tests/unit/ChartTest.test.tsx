@@ -1,11 +1,10 @@
 /**
  * @file Contains basic tests for testing the chart component.
  */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
-import { useWasm } from '../../hooks/wasm';
 import FileHandlerModule from '../../cpp/file_handler';
 
 // Component to test
@@ -18,7 +17,9 @@ import { BoxPlotChart, BarChart } from '../../components/Charts';
  */
 
 describe('Test charts', () => {
-  let fileHandlerPromise = FileHandlerModule().then((result: any) => { return new result.FileHandler() });
+  const fileHandlerPromise = FileHandlerModule().then(
+    (result: any) => new result.FileHandler()
+  );
 
   // Run this before each test
   beforeEach(() => {});
@@ -34,13 +35,16 @@ response_time_bucket{method="GetImage",le="1"} 0
 response_time_bucket{method="GetImage",le="2"} 2
 response_time_bucket{method="GetImage",le="3"} 3
 response_time_bucket{method="GetImage",le="4"} 0 
-    `
+    `;
 
     // Add the host file
-    fileHandler.AddFile('{"site_name": "test", "site_id": "abc123"}', "abc123.json");
+    fileHandler.AddFile(
+      '{"site_name": "test", "site_id": "abc123"}',
+      'abc123.json'
+    );
 
     // Add the performance file
-    fileHandler.AddFile(performance, "abc123_231112.txt");
+    fileHandler.AddFile(performance, 'abc123_231112.txt');
 
     fileHandler.ComputeFiles();
 
@@ -48,7 +52,7 @@ response_time_bucket{method="GetImage",le="4"} 0
       <BoxPlotChart
         metrics={['GetPatient']}
         sites={['abc123']}
-        fileHandler={ fileHandler }
+        fileHandler={fileHandler}
       />
     );
     const candelChart = screen.getByTestId('victory-chart');
@@ -62,7 +66,7 @@ response_time_bucket{method="GetImage",le="4"} 0
       <BarChart
         metrics={['GetPatient']}
         sites={['abc123']}
-        fileHandler={ fileHandler }
+        fileHandler={fileHandler}
       />
     );
 
@@ -73,7 +77,7 @@ response_time_bucket{method="GetImage",le="4"} 0
       <BarChart
         metrics={['GetPatient', 'GetImage']}
         sites={['abc123']}
-        fileHandler={ fileHandler }
+        fileHandler={fileHandler}
       />
     );
     const histograms = screen.getAllByTestId('graph-header');
