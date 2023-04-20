@@ -474,9 +474,18 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
 }
 
 function CustomTickLabel(props) {
-  const { x, y, text } = props;
+  const { x, y, text,ticks,index } = props;
   const padding = 1; // adjust the value to increase/decrease padding between labels
 
+  const strokeWidth = 1;
+  const color = 'grey';
+  const lineLength = 20;
+  const someValue = 0;
+  const someOffset = 210;
+
+  //console.log("x,y: " ,x,y);
+  let xValue = someValue*(index/ticks.length)+someOffset;
+  xValue = someOffset/ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific
   return (
     <g transform={`translate(${x}, ${y})`}>
       <VictoryLabel
@@ -489,6 +498,7 @@ function CustomTickLabel(props) {
         dy={padding / 2}
         text={text}
       />
+      <line x1={xValue} x2={xValue} y1={0 - 11} y2={0 - 11 - lineLength} stroke={color} strokeWidth={strokeWidth} />
     </g>
   );
 };
@@ -509,7 +519,6 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   const { metrics } = props;
   const { sites } = props;
   const width = Math.min(userFriendlyWidth/(metrics.length * sites.length),20);
-  console.log("width: ",width)
   const offsetPadding = userFriendlyPadding/(metrics.length * sites.length);
   const victoryCandles: Array<JSX.Element> = [];
 
@@ -564,9 +573,12 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
         
       />
       
-      <VictoryGroup offset={width + offsetPadding} domainPadding={{ x: offsetPadding}} >
+      <VictoryGroup offset={width + offsetPadding} domainPadding={{ x: offsetPadding}} 
+
+      >
+        
         {victoryCandles}
-      </VictoryGroup>
+        </VictoryGroup>
     </VictoryChart>
   );
 }
@@ -637,6 +649,7 @@ function drawHistogram(
   metric: string,
   width: number
 ) {
+
   const CustomTick = ({ x, y, datum, index, ticksArray }) => {
     const showSeparator = index < ticksArray.length - 1;
     return showSeparator ? (
@@ -658,12 +671,33 @@ function drawHistogram(
     }
     return `${tick} ms - `;
   };
+
+  function GroupLine(props){
+    const { x, y, tick, style, events } = props;
+    console.log("x: ",x);
+    const strokeWidth = 1;
+    const color = 'grey';
+    return (
+      <line x1={x} x2={x} y1={y} y2={y + 50} stroke={color} strokeWidth={strokeWidth} />
+    );
+  }
+
+  /* const GroupLine = ({ x, y, tick, style, events }) => {
+    console.log("x: ",x);
+    const strokeWidth = 1;
+    const color = 'grey';
+    return (
+      <line x1={x} x2={x} y1={y} y2={y + 50} stroke={color} strokeWidth={strokeWidth} />
+    );
+  }; */
   
   const victoryBars: Array<any> = [];
   histograms.forEach((histogram) => {    
     victoryBars.push(drawVictoryBar(histogram.bars, width));
   });
+  
   return (
+    
     <div key={metric}>
       <p
         data-testid="graph-header"
@@ -671,7 +705,11 @@ function drawHistogram(
       >
         {metric}
       </p>
-      <VictoryChart >
+      <VictoryChart
+      //comment out this to use log scale
+      //scale={{ x: "linear", y: "log" }}
+      //minDomain={{ y: 1 }}
+      >
         <VictoryAxis
           dependentAxis
           style={{
@@ -683,6 +721,14 @@ function drawHistogram(
           }}
         />
         <VictoryAxis
+        //tickComponent={GroupLine}
+        tickLabelComponent = {<CustomTickLabel/>}
+
+        tickFormat={(tick:any, index:number, ticks:any) => {
+          
+          return formatTickDifference(tick, index, ticks)
+        }}
+        //tickComponent={<CustomTick />}
           style={{
             tickLabels: {
               fontSize: 8,
@@ -694,12 +740,11 @@ function drawHistogram(
           }
         }
         
-        tickFormat={(tick:any, index:number, ticks:any) => formatTickDifference(tick, index, ticks)}
-        //tickComponent={<CustomTick />}
-        tickLabelComponent = {<CustomTickLabel/>}
         />
+        
         <VictoryGroup domainPadding={{ x: [5, 0] }} offset={width}>
           {victoryBars}
+          
         </VictoryGroup>
       </VictoryChart>
     </div>
@@ -741,6 +786,7 @@ export function BarChart(props: ChartProps): JSX.Element {
     barGraphList.push(drawHistogram(barGraph, metric, width));
   });
 
+  
   return <div>{barGraphList}</div>;
 }
 
