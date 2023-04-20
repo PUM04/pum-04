@@ -126,12 +126,25 @@ const getMetrics = (fileHandler: any): string[] => {
 };
 
 /**
+ * Getheight of navbar.
+ *
+ * @returns height of navbar :)
+ */
+export function getHeight() {
+  const navbox = document.getElementById('test123');
+  if (navbox === null) {
+    return null;
+  }
+  return navbox.offsetHeight;
+}
+
+/**
  * A drawermenu for showing available metrics, sites and to upload files
  *
  * @param props contains filehandler
  * @returns a menucomponent on top of the application component
  */
-export default function Menu(props: MenuProps) {
+export function Menu(props: MenuProps) {
   const { fileHandler } = props;
   const theme = useTheme();
   const [open, setOpen] = useState(false);
@@ -175,82 +188,80 @@ export default function Menu(props: MenuProps) {
   ];
 
   return (
-    <div className="App">
-      <Box sx={{ display: 'flex' }}>
-        <AppBar position="fixed" open={open}>
-          <DrawerHeader>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              onClick={handleDrawerOpen}
-              data-testid="menu-open-button"
-              sx={{
-                ...(open && {
-                  display: 'none',
-                  pt: '0',
-                }),
-              }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <LegendBar sites={sites} />
-          </DrawerHeader>
-        </AppBar>
-        <Drawer
-          sx={{
-            width: drawerWidth,
-            flexShrink: 0,
-            '& .MuiDrawer-paper': {
-              width: drawerWidth,
-              boxSizing: 'border-box',
-            },
-          }}
-          variant="persistent"
-          anchor="left"
-          open={open}
-        >
-          <DrawerHeader>
-            <IconButton
-              onClick={handleDrawerClose}
-              data-testid="menu-close-button"
-            >
-              {theme.direction === 'ltr' ? (
-                <ChevronLeftIcon />
-              ) : (
-                <ChevronRightIcon />
-              )}
-            </IconButton>
-            <Typography padding="8px">S.and.A.H.L </Typography>
-          </DrawerHeader>
-          <Divider />
-          <Divider />
-          <Paper
-            elevation={1}
-            style={{
-              overflow: 'auto',
-              maxHeight: '70vh',
-              position: 'fixed',
-              top: size + 5,
-              left: 5,
-              width: drawerWidth - 10,
+    <Box sx={{ display: 'flex' }}>
+      <AppBar position="fixed" open={open}>
+        <DrawerHeader id="test123">
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            data-testid="menu-open-button"
+            sx={{
+              ...(open && {
+                display: 'none',
+                pt: '0',
+              }),
             }}
           >
-            <Dropdown dropdownName="Sites" value={siteNames} />
-            <Dropdown dropdownName="Metrics" value={metrics} />
-          </Paper>
-          <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>
-            <p data-testid="uploaded-files">
-              Uploaded files: {JSON.stringify(files)}
-            </p>
-            <DragAndDropzone
-              setter={setFiles}
-              value={files}
-              data-testid="drop-zone"
-            />
-          </div>
-        </Drawer>
-        <Main open={open} />
-      </Box>
-    </div>
+            <MenuIcon />
+          </IconButton>
+          <LegendBar sites={sites} />
+        </DrawerHeader>
+      </AppBar>
+      <Drawer
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          '& .MuiDrawer-paper': {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+          },
+        }}
+        variant="persistent"
+        anchor="left"
+        open={open}
+      >
+        <DrawerHeader>
+          <IconButton
+            onClick={handleDrawerClose}
+            data-testid="menu-close-button"
+          >
+            {theme.direction === 'ltr' ? (
+              <ChevronLeftIcon />
+            ) : (
+              <ChevronRightIcon />
+            )}
+          </IconButton>
+          <Typography padding="8px">S.and.A.H.L </Typography>
+        </DrawerHeader>
+        <Divider />
+        <Divider />
+        <Paper
+          elevation={1}
+          style={{
+            overflow: 'auto',
+            maxHeight: '70vh',
+            position: 'fixed',
+            top: size + 5,
+            left: 5,
+            width: drawerWidth - 10,
+          }}
+        >
+          <Dropdown dropdownName="Sites" value={siteNames} />
+          <Dropdown dropdownName="Metrics" value={metrics} />
+        </Paper>
+        <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>
+          <p data-testid="uploaded-files">
+            Uploaded files: {JSON.stringify(files)}
+          </p>
+          <DragAndDropzone
+            setter={setFiles}
+            value={files}
+            data-testid="drop-zone"
+          />
+        </div>
+      </Drawer>
+      <Main open={open} />
+    </Box>
   );
 }
