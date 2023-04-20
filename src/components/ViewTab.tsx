@@ -113,15 +113,7 @@ function ViewTab(props: ViewTabProps) {
           <StyledTab label="Box" />
         </Tabs>
       </Box>
-      <TabPanel
-        value={value}
-        index={0}
-        sx={{
-          '& Muibox-root': {
-            padding: 0,
-          },
-        }}
-      >
+      <TabPanel value={value} index={0}>
         <BarGraphComponent
           sites={['4b14a8']}
           metrics={['GetPatient']}
