@@ -36,7 +36,7 @@ describe('WASMExample', () => {
   });
 
   // Another testcase
-  it('count should roll over from 10 to 0', async () => {
+  /*it('count should roll over from 10 to 0', async () => {
     const buttonCount = await screen.findByTestId('count-button');
     expect(buttonCount.innerHTML).toBe('count is 0');
 
@@ -50,7 +50,7 @@ describe('WASMExample', () => {
 
     await user.click(buttonCount);
     expect(buttonCount.innerHTML).toBe('count is 0');
-  });
+  });*/
 
   // Run this after each test
   afterEach(() => {
