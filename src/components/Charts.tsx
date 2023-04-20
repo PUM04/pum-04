@@ -11,6 +11,7 @@ import {
   VictoryGroup,
   VictoryTooltip,
   VictoryCandlestick,
+  VictoryLabel
 } from 'victory';
 
 /**
@@ -86,7 +87,7 @@ interface CandleChart {
  * { x: 3, open: 4, close: 9, high: 12, low: 0 }
  */
 interface Candle {
-  x: number;
+  x: string;
   open: number;
   close: number;
   high: number;
@@ -375,7 +376,7 @@ function getBarChartData(site: string, metric: string): Histogram {
  * example ['s1','s2','s3','s4']
  * @returns a data structure in correct format to paint a candelChart.
  */
-function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
+function getCandleChartData(metrics: Array<string>, site: string): CandleChart {
   const data: CandleChart = { candels: [] };
   /**
    * Todo- At the moment this function only contains dummy data.
@@ -395,26 +396,38 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
    *  max is high
    *  min is low
    */
+
+
   if (
-    metric === 'getPatient' &&
-    sites[0] === 'stockholm' &&
-    sites[1] === 'linköping'
+    site === 'linköping'
   ) {
     data.candels = [
-      { x: 1, open: 5, close: 10, high: 22, low: 0 }, // s1
-      { x: 2, open: 10, close: 15, high: 20, low: 5 }, // s2
-      { x: 3, open: 8, close: 11, high: 13, low: 2 }, // s2
+      { x: 'getBucket', open: 5, close: 10, high: 22, low: 0}, // s1
+      { x: 'getPatient', open: 10, close: 15, high: 20, low: 5 }, // s2
+      { x: 'ma2', open: 8, close: 11, high: 13, low: 2 }, // s3
+      { x: 'mb3', open: 12, close: 15, high: 16, low: 6 }, // s3
+
     ];
   }
-  if (
-    metric === 'getBucket' &&
-    sites[0] === 'stockholm' &&
-    sites[1] === 'linköping'
-  ) {
+  if (site === 'stockholm') {
     data.candels = [
-      { x: 1, open: 5, close: 10, high: 25, low: 1 },
-      { x: 2, open: 6, close: 8, high: 15, low: 3 },
-      { x: 3, open: 4, close: 9, high: 12, low: 0 }, // s2
+      { x: 'getBucket', open: 5, close: 10, high: 25, low: 1 },
+      { x: 'mc4', open: 6, close: 8, high: 15, low: 3 },
+      { x: 'md2', open: 4, close: 9, high: 12, low: 0}, // s2
+    ];
+  }
+  if(site === "tokyo"){
+    data.candels = [
+      { x: 'getBucket', open: 5, close: 10, high: 25, low: 1 },
+      { x: 'me4', open: 6, close: 8, high: 15, low: 3 },
+      { x: 'mf2', open: 4, close: 9, high: 12, low: 0}, // s2
+    ];
+  }
+  if(site === "manchester"){
+    data.candels = [
+      { x: 'getBucket', open: 15, close: 10, high: 25, low: 1 },
+      { x: 'me4', open: 0, close: 2, high: 15, low: 0 },
+      { x: 'mf2', open: 4, close: 9, high: 12, low: 0}, // s2
     ];
   }
   return data;
@@ -433,23 +446,30 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
  * @returns a VictoryCandlestick .
  */
 function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
+  //console.log(JSON.stringify(data));
   return (
     <VictoryCandlestick
       key={JSON.stringify(data)}
       labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
       labels={({ datum }) =>
-        `min:${datum.low}\nmax:${datum.high}\nclose:${datum.close}\nopen:${
-          datum.open
-        }\nmean:${'30'}`
+        `min:${datum.low}
+        \nmax:${datum.high}
+        \nclose:${datum.close}
+        \nopen:${datum.open}
+        \nmean:${'30'}`
       }
       candleWidth={width}
-      data={data}
+      data={
+        data
+      }
       style={{
         data: {
           fill: 'orange',
           stroke: 'gray',
         },
+      
       }}
+      
     />
   );
 }
@@ -470,14 +490,29 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   const victoryCandles: Array<JSX.Element> = [];
 
   // For metrics in props.metrics skapa victorycandles som innehåller alla props.sites
-
-  metrics.forEach((metric) => {
-    const data: CandleChart = getCandleChartData(metric, sites);
+  sites.forEach(site => {
+    const data: CandleChart = getCandleChartData(metrics, site);
     victoryCandles.push(drawVictoryCandle(data.candels, width));
+
   });
 
+  /**
+   * TODO
+   */
+  function alignText(textToAlign:string){
+    let xOffset: number = 0;
+    let yOffset: number = 0;
+    xOffset = textToAlign.length;
+    yOffset = textToAlign.length;
+    return `translate(${xOffset}, ${yOffset})`;
+  }
+
+
+
+  console.log('candles: ', victoryCandles);
   return (
     <VictoryChart data-testid="victory-chart">
+      
       <VictoryAxis
         dependentAxis
         style={{
@@ -491,15 +526,17 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
       <VictoryAxis
         style={{
           tickLabels: {
+            padding: 20,
             fontSize: 10,
-            transform: 'translate(0, 10)',
             angle: 45,
             stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
           },
           axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
+          
         }}
+        //tickFormat={(tick:any, index:number, ticks:any) => `${tick}`}
       />
-      <VictoryGroup offset={width + offsetPadding} domainPadding={{ x: width }}>
+      <VictoryGroup offset={width + 1} domainPadding={{ x: offsetPadding}} >
         {victoryCandles}
       </VictoryGroup>
     </VictoryChart>
@@ -613,17 +650,12 @@ function drawHistogram(
         <VictoryAxis
           style={{
             tickLabels: {
-              // Later we want to add tickFormat and tickValues. This makes it possible to write "6-10ms" on the axis instead of the corresponding x value.
-              // For this to be possible the data that is used to paint this set of victorybars needs to be accessed and a new function that determines the tickFormat is needed.
-              // tickValues: [],
-              // tickFormat: ,
               fontSize: 8,
               transform: 'translate(0, 10)', // offset x-labels
               angle: 45, // tilt x labels
               stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
             },
             axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
-            //tickFormat: (t) => '${Math.round(t)}k',
           }
         }
         tickFormat={(tick:any, index:number, ticks:any) => formatTickDifference(tick, index, ticks)}
@@ -663,7 +695,7 @@ export function BarChart(props: ChartProps): JSX.Element {
    
     });
     if(true){
-    /*****************************************************************************************/
+  
     barGraph = mergeXvalues(barGraph, graphWidth, sites);
     barGraph = removeEmptyXValues(barGraph);
    
@@ -680,20 +712,19 @@ export function BarChart(props: ChartProps): JSX.Element {
   return <div>{barGraphList}</div>;
 }
 
-/***************************************************************************************** */
-                      /** ANOTHER SOLUTION; A SEPARET FUNCTIONM WILL LOOP AGAIN*/
-/***************************************************************************************** */
-
+/**
+ * 
+ * @param barGraph 
+ * @returns 
+ */
 function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram>{
   
   const getEmptyXValues = (barGraph: Histogram[]) => {
     const emptyXValues = new Set();
    
-    //[0,0,1,3,50,0,5] => [1,3,50,5]
-    //
     let nonEmptyBars: Bar[] = [];
     barGraph.forEach(histogram => {
-      nonEmptyBars = histogram.bars.filter((bar: { y: number; }) => bar.y !== 0);//TODO: FAULTY NEEDS FIXING!
+      nonEmptyBars = histogram.bars.filter((bar: { y: number; }) => bar.y !== 0);
     });
     barGraph.forEach(histogram => {
       histogram.bars.forEach((bar: { y: number; x: string; }) => {
@@ -734,7 +765,6 @@ function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram>{
   return barGraph;
 }
 
-/***************************************************************************************** */
 
 /**
  * Merges adjacent bars in each histogram of the barGraph array if their width is smaller than a threshold.
@@ -748,9 +778,9 @@ function mergeXvalues(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<
   let newBarGraph: Array<Histogram> = []; 
   let width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
   
-  const tooSmallWidth = 1;//target width of single bars
-  const maxLoopCount = 50;// a fail safe in case something goes wrong
-  let mergeAmount = 1;//start merge amount
+  const tooSmallWidth = 6; //target width of single bars
+  const maxLoopCount = 50; // a fail safe in case something goes wrong
+  let mergeAmount = 1; //start merge amount
   let loopCount = 0;
   
 
@@ -787,51 +817,7 @@ function mergeXvalues(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<
       loopCount +=1;
       mergeAmount += 1;
       width = graphWidth / (numberOfXvalues(newBarGraph) * sites.length);
-      // console.log("Too small width, trying again new width:",width, "\n new mergeAmount:",mergeAmount);
     }
  
-  // console.log("new barGraph:",newBarGraph);
-  return newBarGraph;
-}
-
-
-/**
- * TODO:
- */
-function mergeXvaluesIdea2(barGraph:Array<Histogram>,graphWidth:any,sites:any):Array<Histogram>{
-  let newBarGraph: Array<Histogram> = []; 
-  const tooSmallWidth = 5;
-  let width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
-  const maxLoopCount = 20;
-  let loopCount = 0;
-  const mergeAmount = 1;
-  //while(width<tooSmallWidth){
-    barGraph.forEach(histo => {
-      let newHisto:Histogram = new Histogram([]);
-      for (let i = 0; i < histo.bars.length; i++) {
-        if (newHisto.bars.at(Math.floor(i/mergeAmount)) == undefined) {
-          newHisto.bars.push(new Bar(histo.bars[i].x,histo.bars[i].y,histo.bars[i].fill));
-        }
-        else{
-          newHisto.bars[Math.floor(i/mergeAmount)].y+=histo.bars[i].y;
-          newHisto.bars[Math.floor(i/mergeAmount)].x=histo.bars[i].x;
-        }
-        
-      }
-      newBarGraph.push(newHisto);
-      
-      }
-      );
-    
-      if(loopCount>maxLoopCount){
-        //console.log("newBars",newHisto)
-        // break;
-      }
-      loopCount +=1;
-      width = graphWidth / (numberOfXvalues(barGraph) * sites.length)
-  // }
-  
-  
-  console.log("new",newBarGraph);
   return newBarGraph;
 }

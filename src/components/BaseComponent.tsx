@@ -26,18 +26,16 @@ export function GraphComponent(): JSX.Element {
       }}
     >
       <Box>
-        {' '}
-        <BarChart
+        <BarChart 
           metrics={['getPatient', 'getBucket']}
           sites={['stockholm', 'linköping', 'manchester', 'tokyo']}
-        />{' '}
+        />
       </Box>
       <Box>
-        {' '}
         <BoxPlotChart
           metrics={['getPatient', 'getBucket']}
-          sites={['stockholm', 'linköping']}
-        />{' '}
+          sites={['stockholm', 'linköping','tokyo', 'manchester']}
+        />
       </Box>
     </Box>
   );
