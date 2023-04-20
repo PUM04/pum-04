@@ -14,7 +14,7 @@ describe('App', () => {
   // Run this before each test
   beforeEach(() => {
     const testmap = new Map<string, SiteProperties>();
-    render(<GraphComponent siteProps={testmap} />);
+    render(<GraphComponent siteProps={testmap} fileHandler={null} />);
     render(<InfoboxComponent />);
   });
 

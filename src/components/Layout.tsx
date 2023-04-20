@@ -58,7 +58,7 @@ function Layout(props: MenuProps) {
           backgroundColor: 'primary.light1',
         }}
       >
-        <GraphComponent siteProps={siteProps} />
+        <GraphComponent siteProps={siteProps} fileHandler={fileHandler} />
         <InfoboxComponent />
       </Box>
     </Box>

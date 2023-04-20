@@ -5,6 +5,7 @@ import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
+import FileHandlerModule from '../../cpp/file_handler';
 
 // Component to test
 import { BoxPlotChart, BarChart } from '../../components/Charts';
@@ -17,37 +18,46 @@ import { SiteProperties } from '../../components/SitePropetiesInterface';
  */
 
 describe('Test charts', () => {
+  const fileHandlerPromise = FileHandlerModule().then(
+    (result: any) => new result.FileHandler()
+  );
+
   // Run this before each test
   beforeEach(() => {});
   // Maps each site key to a site name and a color
 
   it('Check if candleChart is rendered', async () => {
+    const fileHandler = await fileHandlerPromise;
+
+    const performance: string = `
+response_time_bucket{method="GetPatient",le="1"} 0
+response_time_bucket{method="GetPatient",le="2"} 1
+response_time_bucket{method="GetPatient",le="3"} 3 
+response_time_bucket{method="GetPatient",le="4"} 4
+response_time_bucket{method="GetImage",le="1"} 0 
+response_time_bucket{method="GetImage",le="2"} 2
+response_time_bucket{method="GetImage",le="3"} 3
+response_time_bucket{method="GetImage",le="4"} 0 
+    `;
+
+    // Add the host file
+    fileHandler.AddFile(
+      '{"site_name": "test", "site_id": "abc123"}',
+      'abc123.json'
+    );
+
+    // Add the performance file
+    fileHandler.AddFile(performance, 'abc123_231112.txt');
+
+    fileHandler.ComputeFiles();
+
     const fakeSitePropMap = new Map<string, SiteProperties>();
-    fakeSitePropMap.set('stockholm', {
-      color: 'red',
-      enabled: true,
-      name: 'stockholm',
-    });
-    fakeSitePropMap.set('manchester', {
-      color: 'red',
-      enabled: true,
-      name: 'manchester',
-    });
-    fakeSitePropMap.set('tokyo', {
-      color: 'black',
-      enabled: true,
-      name: 'tokyo',
-    });
-    fakeSitePropMap.set('linköping', {
-      color: 'grey',
-      enabled: true,
-      name: 'linköping',
-    });
     render(
       <BoxPlotChart
-        metrics={['getPatient', 'getBucket']}
-        sites={['stockholm', 'linköping']}
         siteProps={fakeSitePropMap}
+        metrics={['GetPatient']}
+        sites={['abc123']}
+        fileHandler={fileHandler}
       />
     );
     const candelChart = screen.getByTestId('victory-chart');
@@ -55,48 +65,32 @@ describe('Test charts', () => {
   });
 
   it('Check if histograms are rendered', async () => {
+    const fileHandler = await fileHandlerPromise;
     const fakeSitePropMap = new Map<string, SiteProperties>();
-    fakeSitePropMap.set('stockholm', {
-      color: 'yellow',
-      enabled: true,
-      name: 'stockholm',
-    });
-    fakeSitePropMap.set('manchester', {
-      color: 'pink',
-      enabled: true,
-      name: 'manchester',
-    });
-    fakeSitePropMap.set('tokyo', {
-      color: 'black',
-      enabled: true,
-      name: 'tokyo',
-    });
-    fakeSitePropMap.set('linköping', {
-      color: 'grey',
-      enabled: true,
-      name: 'linköping',
-    });
+
     render(
       <BarChart
-        metrics={['getPatient']}
-        sites={['stockholm', 'linköping', 'manchester', 'tokyo']}
+        metrics={['GetPatient']}
+        sites={['abc123']}
+        fileHandler={fileHandler}
         siteProps={fakeSitePropMap}
       />
     );
 
     const histogram = screen.getByTestId('graph-header');
-    expect(histogram).toHaveTextContent('getPatient');
+    expect(histogram).toHaveTextContent('GetPatient');
 
     render(
       <BarChart
-        metrics={['getPatient', 'getBucket']}
-        sites={['stockholm', 'linköping', 'manchester', 'tokyo']}
+        metrics={['GetPatient', 'GetImage']}
+        sites={['abc123']}
+        fileHandler={fileHandler}
         siteProps={fakeSitePropMap}
       />
     );
     const histograms = screen.getAllByTestId('graph-header');
-    expect(histograms[2]).toHaveTextContent('getBucket');
-    expect(histograms[1]).toHaveTextContent('getPatient');
+    expect(histograms[1]).toHaveTextContent('GetPatient');
+    expect(histograms[2]).toHaveTextContent('GetImage');
   });
   // Run this after each test
   afterEach(() => {

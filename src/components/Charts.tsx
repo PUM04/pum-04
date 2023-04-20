@@ -29,6 +29,7 @@ interface ChartProps {
   metrics: Array<string>;
   sites: Array<string>;
   siteProps: Map<string, SiteProperties>;
+  fileHandler: any;
 }
 /* Datastructure for drawing a histogram
   Example
@@ -52,14 +53,14 @@ interface Bar {
 }
 /**
  * Data structure for drawing one CandleChart based on one metric
- * {candels = [
+ * {candles = [
       { x: 1, open: 5, close: 10, high: 25, low: 1 },
       { x: 2, open: 6, close: 8, high: 15, low: 3 },
       { x: 3, open: 4, close: 9, high: 12, low: 0 }, 
     ];}
  */
 interface CandleChart {
-  candels: Array<Candle>;
+  candles: Array<Candle>;
 }
 
 /**
@@ -80,188 +81,70 @@ interface Candle {
  * @param site what site to get data from.
  * @param metric what metric to get data from.
  * @param color   what color to paint the bars.
+ * @param fileHandler is the filehandler :)
  * @returns a Histogram object containing all data for drawing a BarChart.
  */
 function getBarChartData(
   site: string,
   metric: string,
-  color: string
+  color: string,
+  fileHandler: any
 ): Histogram {
   /**
-   * Todo- At the moment this function only contains dummy data.
-   * Implement code to get data from backend
    * Make sure corret color is retrived from Legends component
    */
-  const data: Histogram = { bars: [{ x: '600', y: 150, fill: 'purple' }] };
-  if (!color) {
-    return data;
-  }
-  if (site === 'stockholm' && metric === 'getPatient') {
-    data.bars = [
-      { x: '500', y: 20, fill: color },
-      { x: '600', y: 150, fill: color },
-      { x: '700', y: 200, fill: color },
-      { x: '2800', y: 900, fill: color },
-      { x: '3200', y: 200, fill: color },
-      { x: '3300', y: 150, fill: color },
-      { x: '4200', y: 200, fill: color },
-      { x: '5800', y: 805, fill: color },
-      { x: '6200', y: 600, fill: color },
-      { x: '15800', y: 85, fill: color },
-    ];
-  } else if (site === 'stockholm' && metric === 'getBucket') {
-    data.bars = [
-      { x: '500', y: 20, fill: color },
-      { x: '600', y: 150, fill: color },
-      { x: '700', y: 200, fill: color },
-      { x: '2800', y: 900, fill: color },
-      { x: '3200', y: 200, fill: color },
-      { x: '3300', y: 150, fill: color },
-      { x: '4200', y: 200, fill: color },
-      { x: '5800', y: 85, fill: color },
-      { x: '6200', y: 200, fill: color },
-      { x: '15800', y: 85, fill: color },
-    ];
-  } else if (site === 'linköping' && metric === 'getPatient') {
-    data.bars = [
-      { x: '500', y: 20, fill: color },
-      { x: '600', y: 150, fill: color },
-      { x: '700', y: 200, fill: color },
-      { x: '2800', y: 900, fill: color },
-      { x: '3200', y: 200, fill: color },
-      { x: '3300', y: 150, fill: color },
-      { x: '4200', y: 200, fill: color },
-      { x: '5800', y: 85, fill: color },
-      { x: '6200', y: 200, fill: color },
-      { x: '15800', y: 85, fill: color },
-    ];
-  } else if (site === 'linköping' && metric === 'getBucket') {
-    data.bars = [
-      { x: '500', y: 20, fill: color },
-      { x: '600', y: 150, fill: color },
-      { x: '700', y: 200, fill: color },
-      { x: '2800', y: 900, fill: color },
-      { x: '3200', y: 200, fill: color },
-      { x: '3300', y: 150, fill: color },
-      { x: '4200', y: 200, fill: color },
-      { x: '5800', y: 85, fill: color },
-      { x: '6200', y: 200, fill: color },
-      { x: '15800', y: 85, fill: color },
-      { x: '95800', y: 85, fill: color },
-    ];
-  } else if (site === 'manchester' && metric === 'getPatient') {
-    data.bars = [
-      { x: '500', y: 60, fill: color },
-      { x: '600', y: 210, fill: color },
-      { x: '700', y: 185, fill: color },
-      { x: '2800', y: 700, fill: color },
-      { x: '3200', y: 100, fill: color },
-      { x: '3300', y: 50, fill: color },
-      { x: '4200', y: 600, fill: color },
-      { x: '5800', y: 285, fill: color },
-      { x: '6200', y: 400, fill: color },
-      { x: '15800', y: 325, fill: color },
-    ];
-  } else if (site === 'manchester' && metric === 'getBucket') {
-    data.bars = [
-      { x: '500', y: 60, fill: color },
-      { x: '600', y: 210, fill: color },
-      { x: '700', y: 185, fill: color },
-      { x: '2800', y: 700, fill: color },
-      { x: '3200', y: 100, fill: color },
-      { x: '3300', y: 50, fill: color },
-      { x: '4200', y: 600, fill: color },
-      { x: '5800', y: 285, fill: color },
-      { x: '6200', y: 400, fill: color },
-      { x: '15800', y: 325, fill: color },
-    ];
-  } else if (site === 'tokyo' && metric === 'getPatient') {
-    data.bars = [
-      { x: '500', y: 10, fill: color },
-      { x: '600', y: 70, fill: color },
-      { x: '700', y: 385, fill: color },
-      { x: '2800', y: 900, fill: color },
-      { x: '3200', y: 60, fill: color },
-      { x: '3300', y: 120, fill: color },
-      { x: '4200', y: 380, fill: color },
-      { x: '5800', y: 130, fill: color },
-      { x: '6200', y: 700, fill: color },
-      { x: '15800', y: 225, fill: color },
-    ];
-  } else if (site === 'tokyo' && metric === 'getBucket') {
-    data.bars = [
-      { x: '500', y: 10, fill: color },
-      { x: '600', y: 70, fill: color },
-      { x: '700', y: 385, fill: color },
-      { x: '2800', y: 900, fill: color },
-      { x: '3200', y: 60, fill: color },
-      { x: '3300', y: 120, fill: color },
-      { x: '4200', y: 380, fill: color },
-      { x: '5800', y: 130, fill: color },
-      { x: '6200', y: 700, fill: color },
-      { x: '15800', y: 225, fill: color },
-    ];
-  }
 
-  return data;
+  const histogram: Histogram = { bars: [] };
+
+  const { data } = JSON.parse(fileHandler.GetHistogram(site))[metric];
+
+  data.forEach((bar: any) => {
+    if (bar.length <= 3000) {
+      histogram.bars.push({ x: bar.length, y: bar.count, fill: color });
+    }
+  });
+  return histogram;
 }
 
 /**
- * getCandelChartData retrives data from backend needed to paint a single VictoryCandlestick.
+ * getCandleChartData retrives data from backend needed to paint a single VictoryCandlestick.
  *
  * @param metric a string with the name of the metric to show in the candlechart.
  * example 'getPatient'
  * @param sites a string list containing 1-n sites that will be shown in the candlechart.
  * example ['s1','s2','s3','s4']
  * @param siteProps map ecah siteKey to a color
- * @returns a data structure in correct format to paint a candelChart.
+ * @param fileHandler is fuleHandler :)
+ * @returns a data structure in correct format to paint a candleChart.
  */
 function getCandleChartData(
   metric: string,
   sites: Array<string>,
-  // eslint-disable-next-line
+  fileHandler: any,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   siteProps: Map<string, SiteProperties> // used later when structure for candlechart is known.
 ): CandleChart {
-  const data: CandleChart = { candels: [] };
-
+  const candle: CandleChart = { candles: [] };
   /**
    * Todo- At the moment this function only contains dummy data.
    * Implement code to get data from backend
    * Make sure correct color is retrived from Legends component
    *
-   *  This is the idea:
-   *  - json = get_box_diagram( string site_id) to get data from backend. Returns a json string.
-   *  - json = jsonify(json)
-   *  - json["getpatient"]["avrage"]
-   *    or json["getPatient"]
-   *  - iterate over to create correct data structure.
-   *   - siteProps contains a map of all colors
-   *    const siteProp = siteProps.get("SITEID123").color; gets color for SITEID123
    */
 
-  if (
-    metric === 'getPatient' &&
-    sites[0] === 'stockholm' &&
-    sites[1] === 'linköping'
-  ) {
-    data.candels = [
-      { x: 1, open: 5, close: 10, high: 22, low: 0 }, // s1
-      { x: 2, open: 10, close: 15, high: 20, low: 5 }, // s2
-      { x: 3, open: 8, close: 11, high: 13, low: 2 }, // s3
-    ];
-  }
-  if (
-    metric === 'getBucket' &&
-    sites[0] === 'stockholm' &&
-    sites[1] === 'linköping'
-  ) {
-    data.candels = [
-      { x: 1, open: 5, close: 10, high: 25, low: 1 },
-      { x: 2, open: 6, close: 8, high: 15, low: 3 },
-      { x: 3, open: 4, close: 9, high: 12, low: 0 }, // s2
-    ];
-  }
-  return data;
+  sites.forEach((site, index) => {
+    const data = JSON.parse(fileHandler.GetBoxDiagram(site))[metric];
+    candle.candles.push({
+      x: index + 1,
+      open: data.first_quartile,
+      close: data.third_quartile,
+      high: data.max,
+      low: data.min,
+    });
+    // TODO: Implement mean
+  });
+
+  return candle;
 }
 
 /**
@@ -272,7 +155,7 @@ function getCandleChartData(
       { x: 1, open: 5, close: 10, high: 22, low: 0 }, 
       { x: 2, open: 10, close: 15, high: 20, low: 5 }, 
     ];
- * @param width Is the fixed width of the candels in the chart. CandelRatio does not work in this case.
+ * @param width Is the fixed width of the candles in the chart. CandleRatio does not work in this case.
     Note that width might need to be changed depending on number of sites.
  * @returns a VictoryCandlestick .
  */
@@ -310,15 +193,24 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   const { metrics } = props;
   const { sites } = props;
   const { siteProps } = props;
+  const { fileHandler } = props;
   const width = 10;
   const offsetPadding = 5;
   const victoryCandles: Array<JSX.Element> = [];
 
-  // For metrics in props.metrics skapa victorycandles som innehåller alla props.sites
+  if (fileHandler === undefined) {
+    return <div />;
+  }
 
+  // For metrics in props.metrics skapa victorycandles som innehåller alla props.sites
   metrics.forEach((metric) => {
-    const data: CandleChart = getCandleChartData(metric, sites, siteProps);
-    victoryCandles.push(drawVictoryCandle(data.candels, width));
+    const data: CandleChart = getCandleChartData(
+      metric,
+      sites,
+      siteProps,
+      fileHandler
+    );
+    victoryCandles.push(drawVictoryCandle(data.candles, width));
   });
 
   return (
@@ -476,7 +368,12 @@ export function BarChart(props: ChartProps): JSX.Element {
   const { sites } = props;
   const { siteProps } = props;
 
+  const { fileHandler } = props;
   const barGraphList: any = [];
+
+  if (fileHandler === undefined) {
+    return <div />;
+  }
 
   // This does not effect the actual graph width,
   // width of BarChart is based on parent container
@@ -488,9 +385,8 @@ export function BarChart(props: ChartProps): JSX.Element {
       let color = siteProp?.color;
       if (!color) {
         color = 'cyan';
-        // throw new Error('Color not found');
       }
-      const data: Histogram = getBarChartData(site, metric, color);
+      const data: Histogram = getBarChartData(site, metric, color, fileHandler);
       barGraph.push(data);
     });
     const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);

@@ -196,6 +196,7 @@ EMSCRIPTEN_BINDINGS(file_handler) {
         .function("ComputeFiles", &FileHandler::ComputeFiles)
         .function("GetBoxDiagram", &FileHandler::GetBoxDiagram)
         .function("GetSiteNames", &FileHandler::GetSiteNames)
+        .function("GetHistogram", &FileHandler::GetHistogram)
         .function("GetMetrics", &FileHandler::GetMetrics)
         .function("GetSiteNamesAndIds", &FileHandler::GetSiteNamesAndIds);
 }

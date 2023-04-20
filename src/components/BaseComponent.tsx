@@ -3,20 +3,23 @@
  */
 import Box from '@mui/material/Box';
 import React from 'react';
-import { SiteProperties } from './SitePropetiesInterface';
 import { BoxPlotChart, BarChart } from './Charts';
+import { SiteProperties } from './SitePropetiesInterface';
 
 interface GraphComponentProps {
   siteProps: Map<string, SiteProperties>;
+  fileHandler: any;
 }
 /**
  * Component that contains all graphs
  *
- * @param props contains map with siteId as key and SiteProperties as value
+ * @param props contains fileHandler siteprops with siteId as key and SiteProperties as value
  * @returns MUI box component
  */
 export function GraphComponent(props: GraphComponentProps): JSX.Element {
+  const { fileHandler } = props;
   const { siteProps } = props;
+
   return (
     <Box
       data-testid="graph-component"
@@ -34,16 +37,18 @@ export function GraphComponent(props: GraphComponentProps): JSX.Element {
       <Box>
         {' '}
         <BarChart
-          metrics={['getPatient', 'getBucket']}
-          sites={['stockholm', 'linköping', 'tokyo', 'manchester']}
+          metrics={['GetPatient', 'GetImageMetadata']}
+          sites={[]}
+          fileHandler={fileHandler}
           siteProps={siteProps}
         />{' '}
       </Box>
       <Box>
         {' '}
         <BoxPlotChart
-          metrics={['getPatient', 'getBucket']}
-          sites={['stockholm', 'linköping']}
+          metrics={['GetPatient', 'GetImageMetadata']}
+          sites={[]}
+          fileHandler={fileHandler}
           siteProps={siteProps}
         />{' '}
       </Box>
