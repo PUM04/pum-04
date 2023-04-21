@@ -177,7 +177,7 @@ export default function Menu(props: MenuProps) {
   return (
     <Box sx={{ display: 'flex' }}>
       <AppBar position="fixed" open={open}>
-        <DrawerHeader id="test123">
+        <DrawerHeader>
           <IconButton
             color="inherit"
             aria-label="open drawer"

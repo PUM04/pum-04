@@ -14,10 +14,10 @@ describe('App', () => {
   // Run this before each test
   beforeEach(() => {
     render(
-      <BarGraphComponent metrics={['hej']} sites={['hej']} fileHandler={null} />
+      <BarGraphComponent metrics={['hej']} sites={['hej']} fileHandler={undefined} />
     );
     render(
-      <BoxGraphComponent metrics={['hej']} sites={['hej']} fileHandler={null} />
+      <BoxGraphComponent metrics={['hej']} sites={['hej']} fileHandler={undefined} />
     );
     render(<InfoboxComponent />);
   });

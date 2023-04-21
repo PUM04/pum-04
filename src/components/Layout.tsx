@@ -4,7 +4,7 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import Menu from './Menu';
-import ViewTabs from './ViewTab';
+import ViewTabs from './ViewTabs';
 
 import { InfoboxComponent } from './BaseComponent';
 

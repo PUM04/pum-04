@@ -1,7 +1,7 @@
 /**
  * @file Contains the
  */
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -11,16 +11,16 @@ import { styled } from '@mui/material/styles';
 
 import { BoxGraphComponent, BarGraphComponent } from './BaseComponent';
 
-interface ViewTabProps {
+interface ViewTabsProps {
   fileHandler: any;
 }
 
 interface TabPanelProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   index: number;
   value: number;
 }
-
+ 
 /**
  * This is a description
  *
@@ -28,30 +28,20 @@ interface TabPanelProps {
  * @returns something
  */
 const TabPanel = styled((props: TabPanelProps) => {
-  const { children, value, index, ...other } = props;
+  const { children, value, index} = props;
 
   return (
     <div
       role="tabpanel"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
+      data-testid={`tab-panel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
-      {...other}
     >
       {value === index && <Box sx={{ p: 2, padding: 0 }}>{children}</Box>}
     </div>
   );
 })<TabPanelProps>();
-
-interface StyledTabProps {
-  label: string;
-}
-
-const StyledTab = styled((props: StyledTabProps) => (
-  <Tab disableRipple {...props} />
-))(({ theme }) => ({
-  fontWeight: theme.typography.fontWeightRegular,
-}));
 
 /**
  * This is a description
@@ -59,10 +49,10 @@ const StyledTab = styled((props: StyledTabProps) => (
  * @param props contains props
  * @returns tabs containing graphs
  */
-function ViewTab(props: ViewTabProps) {
+function ViewTabs(props: ViewTabsProps) {
   const { fileHandler } = props;
 
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
@@ -109,8 +99,8 @@ function ViewTab(props: ViewTabProps) {
             },
           }}
         >
-          <StyledTab label="Bar" />
-          <StyledTab label="Box" />
+          <Tab label="Bar" data-testid="bar-tab"/>
+          <Tab label="Box" data-testid="box-tab"/>
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -131,4 +121,4 @@ function ViewTab(props: ViewTabProps) {
   );
 }
 
-export default ViewTab;
+export default ViewTabs;
