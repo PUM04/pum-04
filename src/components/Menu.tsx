@@ -1,7 +1,7 @@
 /**
- * @file Contains an interactive drawermenu
+ * @file Contains the menu component which is the top Appbar containing the dropdown and the legend bar
  */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Dispatch } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -15,7 +15,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Paper from '@mui/material/Paper';
 import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './LegendBar';
+import CHART_COLORS from './CHART_COLORS';
 import Dropdown from './Dropdown';
+import { SiteProperties } from './SitePropetiesInterface';
 import '../App.css';
 
 const size = 75;
@@ -76,6 +78,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 interface MenuProps {
   // TODO: Get the actual type
   fileHandler: any;
+  siteProps: Map<string, SiteProperties>;
+  setSiteProps: Dispatch<React.SetStateAction<Map<string, SiteProperties>>>;
 }
 
 /**
@@ -115,7 +119,7 @@ interface Site {
  * @returns an array of site names
  */
 const getSites = (fileHandler: any): Site[] => {
-  const sites = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).sites : [];
+  const sites = fileHandler ? JSON.parse(fileHandler.GetSites()).sites : [];
   return sites;
 };
 
@@ -140,6 +144,9 @@ const getMetrics = (fileHandler: any): string[] => {
  */
 export default function Menu(props: MenuProps) {
   const { fileHandler } = props;
+  const { siteProps } = props;
+  const { setSiteProps } = props;
+
   const theme = useTheme();
   const [open, setOpen] = useState(false);
 
@@ -156,13 +163,41 @@ export default function Menu(props: MenuProps) {
     Record<string, boolean>
   >({});
 
+  // Everytime siteNamesAndIds changes we want to add set at color for that id
+  useEffect(() => {
+    const newMap = new Map<string, SiteProperties>(siteProps);
+    const PHI = (1 + Math.sqrt(5)) / 2;
+    let index = newMap.size;
+
+    // Map colors to the sites
+    sites.forEach((site) => {
+      if (!siteProps.has(site.site_id)) {
+        let hexColor = '';
+        if (index < CHART_COLORS.length) {
+          hexColor = CHART_COLORS[index];
+        } else {
+          console.log('no more default colors, generating random colors');
+          const n = index * PHI - Math.floor(index * PHI);
+          const hue = Math.floor(n * 180);
+          hexColor = `#0${hue.toString(16)}`;
+        }
+        newMap.set(site.site_id, {
+          color: hexColor,
+          enabled: true,
+          name: site.name,
+        });
+        setSiteProps(newMap);
+        index++;
+      }
+    });
+  }, [sites]);
+
   // add files to backend when they are added to the state
+
   useEffect(() => {
     const oldFileNames = oldFiles.map((v) => v.name);
     const newFiles = files.filter((file) => !oldFileNames.includes(file.name));
-
     setOldFiles(oldFiles.concat(newFiles));
-
     addFilesToBackend(newFiles, fileHandler);
   }, [files]);
 
@@ -181,12 +216,6 @@ export default function Menu(props: MenuProps) {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
-  const legendColors = [
-    { name: 'first', color: 'red', enabled: true },
-    { name: 'second', color: 'blue', enabled: true },
-    { name: 'third', color: 'orange', enabled: true },
-  ];
 
   return (
     <div className="App">
@@ -207,7 +236,8 @@ export default function Menu(props: MenuProps) {
             >
               <MenuIcon />
             </IconButton>
-            <LegendBar sites={legendColors} />
+
+            <LegendBar siteProps={siteProps} />
           </DrawerHeader>
         </AppBar>
         <Drawer
@@ -257,6 +287,7 @@ export default function Menu(props: MenuProps) {
                 setSelectedSites(selectedSites);
                 console.log(JSON.stringify(selectedSites));
               }}
+              setSiteProps={setSiteProps}
             />
             <Dropdown
               dropdownName="Metrics"
@@ -266,6 +297,7 @@ export default function Menu(props: MenuProps) {
                 setSelectedMetrics(selectedMetrics);
                 console.log(JSON.stringify(selectedMetrics));
               }}
+              setSiteProps={setSiteProps}
             />
           </Paper>
           <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>

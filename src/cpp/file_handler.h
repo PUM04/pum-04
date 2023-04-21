@@ -54,11 +54,11 @@ public:
     std::string GetHistogram(std::string site_id) const;
 
     /**
-     * @brief Get the names of all the sites
+     * @brief Get the names and ids of all the sites
      *
      * @return std::vector<std::string> The names of the sites
      */
-    std::string GetSiteNames() const;
+    std::string GetSites() const;
 
     /**
      * @brief Get the metrics for all sites.
@@ -187,7 +187,8 @@ EMSCRIPTEN_BINDINGS(file_handler) {
         .function("AddFile", &FileHandler::AddFile)
         .function("ComputeFiles", &FileHandler::ComputeFiles)
         .function("GetBoxDiagram", &FileHandler::GetBoxDiagram)
-        .function("GetSiteNames", &FileHandler::GetSiteNames)
+        .function("GetSites", &FileHandler::GetSites)
+        .function("GetHistogram", &FileHandler::GetHistogram)
         .function("GetMetrics", &FileHandler::GetMetrics);
 }
 #endif
