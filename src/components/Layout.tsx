@@ -4,7 +4,7 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import Menu from './Menu';
-import { GraphComponent, InfoboxComponent } from './BaseComponent';
+import { GraphComponent, InfoboxContainer} from './BaseComponent';
 
 //        ____Layout_____
 //       /       |       \
@@ -44,7 +44,7 @@ function Layout(props: MenuProps) {
         }}
       >
         <GraphComponent fileHandler={fileHandler} />
-        <InfoboxComponent />
+        <InfoboxContainer/>
       </Box>
     </Box>
   );

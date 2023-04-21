@@ -16,6 +16,7 @@ using json = nlohmann::json;
 struct Site {
     json hosts;
     std::set<json> logs;
+    json info_box = NULL;
 };
 
 struct LoadedFile {
@@ -38,6 +39,13 @@ public:
      * 
      */
     void ComputeFiles();
+
+    /**
+     * @brief Get the info box for a site
+     *
+     * @return std::string The info box as a JSON object
+     */
+    std::string GetInfoBox(std::string site_id);
 
     /**
      * @brief Get the box diagram for a given site

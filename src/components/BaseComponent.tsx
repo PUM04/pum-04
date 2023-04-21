@@ -57,7 +57,7 @@ export function GraphComponent(props: GraphComponentProps): JSX.Element {
  *
  * @returns MUI box component
  */
-export function InfoboxComponent(): JSX.Element {
+export function InfoboxContainer(): JSX.Element {
   return (
     <Box
       data-testid="infobox-component"
