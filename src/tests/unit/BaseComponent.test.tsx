@@ -5,7 +5,7 @@ import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
 
 import {
-  InfoboxComponent,
+  InfoboxContainer,
   GraphComponent,
 } from '../../components/BaseComponent';
 
@@ -13,7 +13,7 @@ describe('App', () => {
   // Run this before each test
   beforeEach(() => {
     render(<GraphComponent fileHandler={null} />);
-    render(<InfoboxComponent />);
+    render(<InfoboxContainer fileHandler={undefined} />);
   });
 
   // Tshould render
