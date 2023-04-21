@@ -4,7 +4,6 @@
 import React, { useEffect, useState, Dispatch } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Drawer from '@mui/material/Drawer';
 import Typography from '@mui/material/Typography';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
@@ -16,7 +15,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Paper from '@mui/material/Paper';
 import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './LegendBar';
-import chartColors from './ChartColors';
+import chartColors from './CHART_COLORS';
 import Dropdown from './Dropdown';
 import { SiteProperties } from './SitePropetiesInterface';
 import '../App.css';
@@ -114,7 +113,6 @@ const addFilesToBackend = (files: File[], fileHandler: any) => {
  */
 const getSiteNames = (fileHandler: any): string[] => {
   const sites = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).names : [];
-  console.log(sites);
 
   return sites;
 };
@@ -132,7 +130,6 @@ const getSiteNamesAndId = (fileHandler: any): string[][] => {
   const sites = fileHandler
     ? JSON.parse(fileHandler.GetSiteNamesAndIds()).sites
     : [[]];
-  console.log(sites);
 
   return sites;
 };
@@ -213,7 +210,6 @@ export default function Menu(props: MenuProps) {
   // get site names and metrics from backend when files are added to the backend
   useEffect(() => {
     fileHandler?.ComputeFiles();
-    console.log(getSiteNames(fileHandler));
     setSiteNames(getSiteNames(fileHandler));
     setSiteNamesAndIds(getSiteNamesAndId(fileHandler));
 
@@ -247,40 +243,7 @@ export default function Menu(props: MenuProps) {
             >
               <MenuIcon />
             </IconButton>
-            <Button
-              color="primary"
-              type="button"
-              onClick={() => {
-                const testmap = new Map<string, SiteProperties>();
-                testmap.set('stockholm', {
-                  color: 'red',
-                  enabled: true,
-                  name: 'stockholm',
-                });
-                testmap.set('manchester', {
-                  color: 'red',
-                  enabled: true,
-                  name: 'manchester',
-                });
-                testmap.set('tokyo', {
-                  color: 'black',
-                  enabled: true,
-                  name: 'tokyo',
-                });
-                testmap.set('linköping', {
-                  color: 'grey',
-                  enabled: true,
-                  name: 'linköping',
-                });
-                testmap.set('a;skld', {
-                  color: 'grey',
-                  enabled: false,
-                  name: 'a;skld',
-                });
-                setSiteProps(testmap);
-                console.log(siteProps);
-              }}
-            />
+
             <LegendBar siteProps={siteProps} />
           </DrawerHeader>
         </AppBar>

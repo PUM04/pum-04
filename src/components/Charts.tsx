@@ -190,10 +190,7 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
  * @returns A VictoryChart with an array of VictoryCandles.
  */
 export function BoxPlotChart(props: ChartProps): JSX.Element {
-  const { metrics } = props;
-  const { sites } = props;
-  const { siteProps } = props;
-  const { fileHandler } = props;
+  const { metrics, sites, siteProps, fileHandler } = props;
   const width = 10;
   const offsetPadding = 5;
   const victoryCandles: Array<JSX.Element> = [];
@@ -207,8 +204,8 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
     const data: CandleChart = getCandleChartData(
       metric,
       sites,
-      siteProps,
-      fileHandler
+      fileHandler,
+      siteProps
     );
     victoryCandles.push(drawVictoryCandle(data.candles, width));
   });
@@ -364,10 +361,7 @@ function drawHistogram(
  * [<VictoryChart>BarchartsArray</VictoryChart>,<VictoryChart>BarChartsArray</VictoryChart>]
  */
 export function BarChart(props: ChartProps): JSX.Element {
-  const { metrics } = props;
-  const { sites } = props;
-  const { siteProps } = props;
-
+  const { metrics, sites, siteProps } = props;
   const { fileHandler } = props;
   const barGraphList: any = [];
 
