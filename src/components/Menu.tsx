@@ -15,7 +15,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Paper from '@mui/material/Paper';
 import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './LegendBar';
-import chartColors from './CHART_COLORS';
+import {CHART_COLORS} from './CHART_COLORS';
 import Dropdown from './Dropdown';
 import { SiteProperties } from './SitePropetiesInterface';
 import '../App.css';
@@ -178,8 +178,8 @@ export default function Menu(props: MenuProps) {
       const siteName = site[1];
       if (!siteProps.has(siteId)) {
         let hexColor = '';
-        if (index < chartColors().length) {
-          hexColor = chartColors()[index];
+        if (index < CHART_COLORS.length) {
+          hexColor = CHART_COLORS[index];
         } else {
           console.log('no more default colors, generating random colors');
           const n = index * PHI - Math.floor(index * PHI);

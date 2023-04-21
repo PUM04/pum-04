@@ -17,8 +17,8 @@ interface GraphComponentProps {
  * @returns MUI box component
  */
 export function GraphComponent(props: GraphComponentProps): JSX.Element {
-  const { fileHandler } = props;
-  const { siteProps } = props;
+  const { fileHandler,siteProps } = props;
+  
 
   return (
     <Box

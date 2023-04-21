@@ -2,13 +2,8 @@
  * @file List of colors used in charts and legend bar.
  */
 
-/**
- * Returns a list of colors to be used in charts.
- *
- * @returns {string[]} List of colors.
- */
-export default function ChartColors(): string[] {
-  return [
+
+export const CHART_COLORS: string[] =[
     '#000000',
     '#00FF00',
     '#0000FF',
@@ -74,4 +69,4 @@ export default function ChartColors(): string[] {
     '#009BFF',
     '#E85EBE',
   ];
-}
+
