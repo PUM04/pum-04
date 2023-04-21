@@ -132,7 +132,7 @@ function getCandleChartData(
    */
 
   sites.forEach((site, index) => {
-    const fileContent = fileHandler.GetHistogram(site);
+    const fileContent = fileHandler.GetBoxDiagram(site);
 
     if (fileContent !== '{}') {
       const data = JSON.parse(fileContent)[metric];
