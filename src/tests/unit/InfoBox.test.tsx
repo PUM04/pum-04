@@ -4,7 +4,6 @@
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import user from '@testing-library/user-event';
 import InfoBox from '../../components/InfoBox';
 import FileHandlerModule from '../../cpp/file_handler';
 
@@ -16,7 +15,7 @@ describe('InfoBox', () => {
   // Run this before each test
   beforeEach(() => {});
 
-  // Testcase
+  // Testcase 1
   it('should render the info box', async () => {
     const fileHandler = await fileHandlerPromise;
 
@@ -41,12 +40,30 @@ describe('InfoBox', () => {
       "cpu": 2,
       "memory": 4
     }}}
-    `; 
+    `;
 
-    fileHandler.AddFile(host, "rta.json");
+    fileHandler.AddFile(host, 'rta.json');
     fileHandler.ComputeFiles();
 
-    render(<InfoBox site_id={"4b14a8"} fileHandler={fileHandler} />);
+    render(<InfoBox siteId="4b14a8" fileHandler={fileHandler} />);
+
+    const infoBox = await screen.findByTestId('info-box');
+    expect(infoBox).toBeVisible();
+  });
+
+  // Testcase 2
+  it('should render the info box', async () => {
+    const fileHandler = await fileHandlerPromise;
+
+    render(<InfoBox siteId="4b14a8" fileHandler={fileHandler} />);
+
+    const infoBox = await screen.findByTestId('info-box');
+    expect(infoBox).toBeVisible();
+  });
+
+  // Testcase 3
+  it('should render the info box', async () => {
+    render(<InfoBox siteId="4b14a8" fileHandler={undefined} />);
 
     const infoBox = await screen.findByTestId('info-box');
     expect(infoBox).toBeVisible();
