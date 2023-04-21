@@ -6,11 +6,20 @@ import { cleanup, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import user from '@testing-library/user-event';
 import Menu from '../../components/Menu';
+import { SiteProperties } from '../../components/SitePropetiesInterface';
 
 describe('Menu', () => {
   // Run this before each test
   beforeEach(() => {
-    render(<Menu fileHandler={undefined} />);
+    const testmap = new Map<string, SiteProperties>();
+    const useStateMock = jest.fn();
+    render(
+      <Menu
+        fileHandler={undefined}
+        setSiteProps={useStateMock}
+        siteProps={testmap}
+      />
+    );
   });
 
   // Testcase

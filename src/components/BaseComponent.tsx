@@ -4,18 +4,20 @@
 import Box from '@mui/material/Box';
 import React from 'react';
 import { BoxPlotChart, BarChart } from './Charts';
+import { SiteProperties } from './SitePropetiesInterface';
 
 interface GraphComponentProps {
+  siteProps: Map<string, SiteProperties>;
   fileHandler: any;
 }
 /**
  * Component that contains all graphs
  *
- * @param props contains fileHandler
+ * @param props contains fileHandler siteprops with siteId as key and SiteProperties as value
  * @returns MUI box component
  */
 export function GraphComponent(props: GraphComponentProps): JSX.Element {
-  const { fileHandler } = props;
+  const { fileHandler, siteProps } = props;
 
   return (
     <Box
@@ -37,6 +39,7 @@ export function GraphComponent(props: GraphComponentProps): JSX.Element {
           metrics={['GetPatient', 'GetImageMetadata']}
           sites={[]}
           fileHandler={fileHandler}
+          siteProps={siteProps}
         />{' '}
       </Box>
       <Box>
@@ -45,6 +48,7 @@ export function GraphComponent(props: GraphComponentProps): JSX.Element {
           metrics={['GetPatient', 'GetImageMetadata']}
           sites={[]}
           fileHandler={fileHandler}
+          siteProps={siteProps}
         />{' '}
       </Box>
       <Box> Put graphs here! </Box>
@@ -74,15 +78,6 @@ export function InfoboxComponent(): JSX.Element {
         },
       }}
     >
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
       <Box>Put infoboxes here! </Box>
       <Box>Put infoboxes here! </Box>
       <Box>Put infoboxes here! </Box>
