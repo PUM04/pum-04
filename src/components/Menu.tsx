@@ -15,7 +15,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Paper from '@mui/material/Paper';
 import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './LegendBar';
-import {CHART_COLORS} from './CHART_COLORS';
+import CHART_COLORS from './CHART_COLORS';
 import Dropdown from './Dropdown';
 import { SiteProperties } from './SitePropetiesInterface';
 import '../App.css';
