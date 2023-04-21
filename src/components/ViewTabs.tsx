@@ -20,7 +20,7 @@ interface TabPanelProps {
   index: number;
   value: number;
 }
- 
+
 /**
  * This is a description
  *
@@ -28,7 +28,7 @@ interface TabPanelProps {
  * @returns something
  */
 const TabPanel = styled((props: TabPanelProps) => {
-  const { children, value, index} = props;
+  const { children, value, index } = props;
 
   return (
     <div
@@ -99,8 +99,8 @@ function ViewTabs(props: ViewTabsProps) {
             },
           }}
         >
-          <Tab label="Bar" data-testid="bar-tab"/>
-          <Tab label="Box" data-testid="box-tab"/>
+          <Tab label="Bar" data-testid="bar-tab" />
+          <Tab label="Box" data-testid="box-tab" />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>

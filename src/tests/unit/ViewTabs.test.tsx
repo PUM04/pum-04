@@ -20,7 +20,7 @@ describe('ViewTabs', () => {
     expect(boxTab).toBeVisible();
   });
 
-  it('Should render the tab panel for the selected button', async() => {
+  it('Should render the tab panel for the selected button', async () => {
     const barTab = await screen.findByTestId('bar-tab');
     await user.click(barTab);
     const barTabPanel = await screen.findByTestId('tab-panel-0');
