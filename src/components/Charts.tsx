@@ -414,7 +414,7 @@ function getCandleChartData(metrics: Array<string>, site: string): CandleChart {
       { x: 'getPatient', open: 6, close: 8, high: 15, low: 3 },
       { x: 'getImageMetaData', open: 15, close: 10, high: 25, low: 1 },
       { x: 'Hanging', open: 15, close: 10, high: 25, low: 1 },
-
+      
     ];
   }
   if(site === "tokyo"){
@@ -483,9 +483,8 @@ function CustomTickLabel(props) {
   const someValue = 0;
   const someOffset = 210;
 
-  //console.log("x,y: " ,x,y);
-  let xValue = someValue*(index/ticks.length)+someOffset;
-  xValue = someOffset/ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific
+  //let xValue = someValue*(index/ticks.length)+someOffset;
+  let xValue = someOffset/ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific
   return (
     <g transform={`translate(${x}, ${y})`}>
       <VictoryLabel
@@ -518,7 +517,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
 
   const { metrics } = props;
   const { sites } = props;
-  const width = Math.min(userFriendlyWidth/(metrics.length * sites.length),20);
+  let width = Math.min(userFriendlyWidth/(metrics.length * sites.length),20);
   const offsetPadding = userFriendlyPadding/(metrics.length * sites.length);
   const victoryCandles: Array<JSX.Element> = [];
 
@@ -530,22 +529,14 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   });
 
 
-  /**
-   * TODO
-   */
-  function alignText(textToAlign:string){
-    let xOffset: number = 0;
-    let yOffset: number = 0;
-    xOffset = textToAlign.length;
-    yOffset = textToAlign.length;
-    return `translate(${xOffset}, ${yOffset})`;
-  }
-
-
-
   return (
-    <VictoryChart data-testid="victory-chart">
-      
+    <VictoryChart 
+    data-testid="victory-chart" 
+    //this below is a start for the new 
+    //horizontal
+    //height={500}//set this depending on the total amount of sites in buckets (ticks)
+    >
+
       <VictoryAxis
         dependentAxis
         style={{
@@ -633,6 +624,32 @@ function numberOfXvalues(histograms: Array<Histogram>): number {
   return uniqueXvalues;
 }
 
+enum ScaleTypes {"Log","Linear","Percent"};
+let graphScaleType = ScaleTypes.Linear; // change with a button somewhere else
+
+function getScaleProps() {
+  switch (graphScaleType) {
+    case ScaleTypes.Linear:{
+      return {
+        scale: { x: "linear", y: "linear" } //default is already this but to make the code more readable
+      };
+    }
+    case ScaleTypes.Log:{
+      return {
+        scale: { x: "linear", y: "log" },
+        minDomain: { y: 1 }, //default is y=0 but then the graph is wacky
+      };
+    }
+    case ScaleTypes.Percent:{
+      console.warn("TODO: NO PERCENT FUNCTION MADE!");
+    }
+    default:{
+      console.warn("A type not supported was called!");
+    }
+  }
+  //if something breaks return empty
+  return {};
+}
 
 
 /**
@@ -648,15 +665,7 @@ function drawHistogram(
   histograms: Array<Histogram>,
   metric: string,
   width: number
-) {
-
-  const CustomTick = ({ x, y, datum, index, ticksArray }) => {
-    const showSeparator = index < ticksArray.length - 1;
-    return showSeparator ? (
-      <line x1={x} x2={x} y1={y + 5} y2={y + 20} stroke="grey" strokeWidth={1} />
-    ) : null;
-  };
-  
+) {  
   
   const formatTickDifference = (tick:any, index:number, ticksArray:any) => {
       if (index < ticksArray.length - 1) {
@@ -671,25 +680,6 @@ function drawHistogram(
     }
     return `${tick} ms - `;
   };
-
-  function GroupLine(props){
-    const { x, y, tick, style, events } = props;
-    console.log("x: ",x);
-    const strokeWidth = 1;
-    const color = 'grey';
-    return (
-      <line x1={x} x2={x} y1={y} y2={y + 50} stroke={color} strokeWidth={strokeWidth} />
-    );
-  }
-
-  /* const GroupLine = ({ x, y, tick, style, events }) => {
-    console.log("x: ",x);
-    const strokeWidth = 1;
-    const color = 'grey';
-    return (
-      <line x1={x} x2={x} y1={y} y2={y + 50} stroke={color} strokeWidth={strokeWidth} />
-    );
-  }; */
   
   const victoryBars: Array<any> = [];
   histograms.forEach((histogram) => {    
@@ -706,9 +696,7 @@ function drawHistogram(
         {metric}
       </p>
       <VictoryChart
-      //comment out this to use log scale
-      //scale={{ x: "linear", y: "log" }}
-      //minDomain={{ y: 1 }}
+      {...getScaleProps()}
       >
         <VictoryAxis
           dependentAxis
