@@ -361,7 +361,8 @@ std::string FileHandler::GetSites() const {
         json hosts = site.second.hosts;
         if (hosts.contains("site_name")) {
             std::unordered_map<std::string, std::string> site_map;
-            site_map.insert({{"name", hosts["site_name"]}, {"site_id", hosts["site_id"]}});
+            site_map.insert(
+                {{"name", hosts["site_name"]}, {"id", hosts["site_id"]}});
             site_data["sites"].push_back(site_map);
         } else {
             #ifdef DEBUG

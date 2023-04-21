@@ -107,7 +107,7 @@ const addFilesToBackend = (files: File[], fileHandler: any) => {
 
 interface Site {
   name: string;
-  site_id: string;
+  id: string;
   color?: string;
   enabled?: boolean;
 }
@@ -171,7 +171,7 @@ export default function Menu(props: MenuProps) {
 
     // Map colors to the sites
     sites.forEach((site) => {
-      if (!siteProps.has(site.site_id)) {
+      if (!siteProps.has(site.id)) {
         let hexColor = '';
         if (index < CHART_COLORS.length) {
           hexColor = CHART_COLORS[index];
@@ -181,7 +181,7 @@ export default function Menu(props: MenuProps) {
           const hue = Math.floor(n * 180);
           hexColor = `#0${hue.toString(16)}`;
         }
-        newMap.set(site.site_id, {
+        newMap.set(site.id, {
           color: hexColor,
           enabled: true,
           name: site.name,
