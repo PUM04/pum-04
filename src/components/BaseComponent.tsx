@@ -55,9 +55,7 @@ export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
  * @returns MUI box component
  */
 export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
-  const { metrics } = props;
-  const { sites } = props;
-  const { fileHandler } = props;
+  const { metrics, sites, fileHandler } = props;
   return (
     <Box
       data-testid="bargraph-component"

@@ -16,16 +16,19 @@ interface ViewTabsProps {
 }
 
 interface TabPanelProps {
-  children?: React.ReactNode;
+  children: React.ReactNode;
   index: number;
   value: number;
 }
 
 /**
- * This is a description
+ * This is the TabPanel "component". MUI does not have an off the shelf TabPanel to use.
+ * This is the given source code by MUI for creating a TabPanel.
  *
- * @param props is something
- * @returns something
+ * @param props contains: children components to be rendern within the tabpanel,
+ * a value to make sure which child component that should be rendern.
+ * and an index to tell the two rendern child components apart.
+ * @returns a tabpanel to use in viewtabs.
  */
 const TabPanel = styled((props: TabPanelProps) => {
   const { children, value, index } = props;
@@ -44,10 +47,10 @@ const TabPanel = styled((props: TabPanelProps) => {
 })<TabPanelProps>();
 
 /**
- * This is a description
+ * This contains the ViewTabs component.
  *
- * @param props contains props
- * @returns tabs containing graphs
+ * @param props contains a filehandler.
+ * @returns the ViewTabs component containing graphs.
  */
 function ViewTabs(props: ViewTabsProps) {
   const { fileHandler } = props;
