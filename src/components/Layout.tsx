@@ -44,7 +44,7 @@ function Layout(props: MenuProps) {
         }}
       >
         <GraphComponent fileHandler={fileHandler} />
-        <InfoboxContainer/>
+        <InfoboxContainer fileHandler={fileHandler} />
       </Box>
     </Box>
   );

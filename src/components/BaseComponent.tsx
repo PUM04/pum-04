@@ -4,8 +4,9 @@
 import Box from '@mui/material/Box';
 import React from 'react';
 import { BoxPlotChart, BarChart } from './Charts';
+import InfoBox from './InfoBox.tsx';
 
-interface GraphComponentProps {
+interface BaseComponentProps {
   fileHandler: any;
 }
 /**
@@ -14,7 +15,7 @@ interface GraphComponentProps {
  * @param props contains fileHandler
  * @returns MUI box component
  */
-export function GraphComponent(props: GraphComponentProps): JSX.Element {
+export function GraphComponent(props: BaseComponentProps): JSX.Element {
   const { fileHandler } = props;
 
   return (
@@ -57,7 +58,8 @@ export function GraphComponent(props: GraphComponentProps): JSX.Element {
  *
  * @returns MUI box component
  */
-export function InfoboxContainer(): JSX.Element {
+export function InfoboxContainer(props: BaseComponentProps): JSX.Element {
+  const { fileHandler } = props;
   return (
     <Box
       data-testid="infobox-component"
@@ -74,6 +76,7 @@ export function InfoboxContainer(): JSX.Element {
         },
       }}
     >
+      <InfoBox site_id={"4b14a8"} fileHandler={fileHandler}></InfoBox>
       <Box>Put infoboxes here! </Box>
       <Box>Put infoboxes here! </Box>
       <Box>Put infoboxes here! </Box>

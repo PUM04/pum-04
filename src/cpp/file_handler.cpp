@@ -92,6 +92,10 @@ std::string FileHandler::GetInfoBox(std::string site_id) {
     info_box["average_ram"] = (double) info_box["total_ram"] / (double) info_box["hosts"];
     info_box["average_cpu"] = (double) info_box["total_cpu"] / (double) info_box["hosts"];
 
+    // Round to two decimal places
+    info_box["average_ram"] = round((double) info_box["average_ram"] * 100) / 100; 
+    info_box["average_cpu"] = round((double) info_box["average_cpu"] * 100) / 100; 
+
     // Cache the results
     site.info_box = info_box;
 
