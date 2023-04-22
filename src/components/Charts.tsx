@@ -96,9 +96,13 @@ function getBarChartData(
 
   const histogram: Histogram = { bars: [] };
 
-  const { data } = JSON.parse(fileHandler.GetHistogram(site))[metric];
+  const histogramData = fileHandler.GetHistogram(site);
+  if (!histogramData) return histogram;
 
-  data.forEach((bar: any) => {
+  const jsonData = JSON.parse(histogramData);
+  const metricData = jsonData ? jsonData[metric]?.data : null;
+
+  metricData?.forEach((bar: any) => {
     if (bar.length <= 3000) {
       histogram.bars.push({ x: bar.length, y: bar.count, fill: color });
     }
@@ -133,14 +137,21 @@ function getCandleChartData(
    */
 
   sites.forEach((site, index) => {
-    const data = JSON.parse(fileHandler.GetBoxDiagram(site))[metric];
+    const boxDiagramData = fileHandler.GetBoxDiagram(site);
+    if (!boxDiagramData) return;
+
+    const jsonData = JSON.parse(boxDiagramData);
+    const metricData = jsonData ? jsonData[metric] : null;
+    if (!metricData) return;
+
     candle.candles.push({
       x: index + 1,
-      open: data.first_quartile,
-      close: data.third_quartile,
-      high: data.max,
-      low: data.min,
+      open: metricData.first_quartile,
+      close: metricData.third_quartile,
+      high: metricData.max,
+      low: metricData.min,
     });
+
     // TODO: Implement mean
   });
 
