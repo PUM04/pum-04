@@ -25,7 +25,6 @@ export default function Dropdown(props: any): JSX.Element {
 
   // Extract items from given items and mark their checkboxes as checked.
   const extractedItems: any[] | (() => any[]) = [];
-  console.log('Render');
   // should probably have some params for setting the content
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState(extractedItems);
@@ -37,7 +36,6 @@ export default function Dropdown(props: any): JSX.Element {
       extractedItems.push({ item: Item, selected: true });
       onSelected(Item, true);
     });
-    console.log('useEffect');
     setContent(extractedItems);
   }, [JSON.stringify(givenItems)]);
 

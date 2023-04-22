@@ -51,7 +51,6 @@ export function GraphComponent(props: GraphComponentProps): JSX.Element {
           siteProps={siteProps}
         />{' '}
       </Box>
-      <Box> Put graphs here! </Box>
     </Box>
   );
 }
