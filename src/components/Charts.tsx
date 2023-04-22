@@ -14,7 +14,7 @@ import {
   VictoryTooltip,
   VictoryCandlestick,
 } from 'victory';
-import { SiteProperties } from './SitePropetiesInterface';
+import { Site } from './SiteInterface';
 /**
  * Top level component.
  *
@@ -28,7 +28,7 @@ import { SiteProperties } from './SitePropetiesInterface';
 interface ChartProps {
   metrics: Array<string>;
   sites: Array<string>;
-  siteProps: Map<string, SiteProperties>;
+  siteProps: Map<string, Site>;
   fileHandler: any;
 }
 /* Datastructure for drawing a histogram
@@ -122,7 +122,7 @@ function getCandleChartData(
   sites: Array<string>,
   fileHandler: any,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  siteProps: Map<string, SiteProperties> // used later when structure for candlechart is known.
+  siteProps: Map<string, Site> // used later when structure for candlechart is known.
 ): CandleChart {
   const candle: CandleChart = { candles: [] };
   /**

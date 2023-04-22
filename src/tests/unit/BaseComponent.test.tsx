@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
-import { SiteProperties } from '../../components/SitePropetiesInterface';
+import { Site } from '../../components/SiteInterface';
 
 import {
   InfoboxComponent,
@@ -13,7 +13,7 @@ import {
 describe('App', () => {
   // Run this before each test
   beforeEach(() => {
-    const testmap = new Map<string, SiteProperties>();
+    const testmap = new Map<string, Site>();
     render(<GraphComponent siteProps={testmap} fileHandler={null} />);
     render(<InfoboxComponent />);
   });

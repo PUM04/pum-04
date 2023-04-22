@@ -17,7 +17,7 @@ import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './LegendBar';
 import CHART_COLORS from './CHART_COLORS';
 import Dropdown from './Dropdown';
-import { SiteProperties } from './SitePropetiesInterface';
+import { Site } from './SiteInterface';
 import '../App.css';
 
 const size = 75;
@@ -78,8 +78,8 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 interface MenuProps {
   // TODO: Get the actual type
   fileHandler: any;
-  siteProps: Map<string, SiteProperties>;
-  setSiteProps: Dispatch<React.SetStateAction<Map<string, SiteProperties>>>;
+  siteProps: Map<string, Site>;
+  setSiteProps: Dispatch<React.SetStateAction<Map<string, Site>>>;
 }
 
 /**
@@ -104,13 +104,6 @@ const addFilesToBackend = (files: File[], fileHandler: any) => {
     });
   }
 };
-
-interface Site {
-  name: string;
-  id: string;
-  color?: string;
-  enabled?: boolean;
-}
 
 /**
  * Gets the sites from the backend.
@@ -165,13 +158,13 @@ export default function Menu(props: MenuProps) {
 
   // Everytime siteNamesAndIds changes we want to add set at color for that id
   useEffect(() => {
-    const newMap = new Map<string, SiteProperties>(siteProps);
+    const newMap = new Map<string, Site>(siteProps);
     const PHI = (1 + Math.sqrt(5)) / 2;
     let index = newMap.size;
 
     // Map colors to the sites
     sites.forEach((site) => {
-      if (!siteProps.has(site.id)) {
+      if (site.id && !siteProps.has(site.id)) {
         let hexColor = '';
         if (index < CHART_COLORS.length) {
           hexColor = CHART_COLORS[index];
@@ -182,9 +175,9 @@ export default function Menu(props: MenuProps) {
           hexColor = `#0${hue.toString(16)}`;
         }
         newMap.set(site.id, {
+          ...site,
           color: hexColor,
-          enabled: true,
-          name: site.name,
+          enabled: selectedSites[site.id] ? selectedSites[site.id] : false,
         });
         setSiteProps(newMap);
         index++;

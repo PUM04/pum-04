@@ -4,10 +4,10 @@
 import Box from '@mui/material/Box';
 import React from 'react';
 import { BoxPlotChart, BarChart } from './Charts';
-import { SiteProperties } from './SitePropetiesInterface';
+import { Site } from './SiteInterface';
 
 interface GraphComponentProps {
-  siteProps: Map<string, SiteProperties>;
+  siteProps: Map<string, Site>;
   fileHandler: any;
 }
 /**
