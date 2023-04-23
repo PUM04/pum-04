@@ -66,6 +66,7 @@ const getFloorProps = (props, style) => {
 
 const getMeanProps = (props, style) => {
   const { mean, candleWidth, id, x } = props;
+  // console.log(mean);
   return {
     key: `${id}-mean`,
     style: Helpers.omit(style, ["width"]),

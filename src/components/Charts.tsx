@@ -16,8 +16,8 @@ import {
   VictoryLine,
   Line,
 } from 'victory';
-import CustomCandle from "./CustomCandle";
-
+import CustomCandle from "./CustomCandlestick/CustomCandle";
+import CustomCandlestick from "./CustomCandlestick/CustomCandlestick";
 /**
  * Top level component.
  *
@@ -235,9 +235,9 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
     sites[1] === 'linköping'
   ) {
     data.candels = [
-      { x: 1, open: 5, close: 10, high: 22, low: 0, mean: 15}, // s1
-      { x: 2, open: 10, close: 15, high: 20, low: 5, mean: 15}, // s2
-      { x: 3, open: 8, close: 11, high: 13, low: 2, mean: 15}, // s2
+      { x: 1, open: 5, close: 10, high: 22, low: 0, mean: 14}, // s1
+      { x: 2, open: 10, close: 15, high: 20, low: 5, mean: 14}, // s2
+      { x: 3, open: 8, close: 11, high: 13, low: 2, mean: 14}, // s2
     ];
   }
   if (
@@ -246,9 +246,9 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
     sites[1] === 'linköping'
   ) {
     data.candels = [
-      { x: 1, open: 5, close: 10, high: 25, low: 1, mean: 15},
-      { x: 2, open: 6, close: 8, high: 15, low: 3, mean: 15},
-      { x: 3, open: 4, close: 9, high: 12, low: 0, mean: 15}, // s2
+      { x: 1, open: 5, close: 10, high: 25, low: 1, mean: 14},
+      { x: 2, open: 6, close: 8, high: 15, low: 3, mean: 14},
+      { x: 3, open: 4, close: 9, high: 12, low: 0, mean: 14}, // s2
     ];
   }
   return data;
@@ -270,7 +270,7 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
  */
 function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
   return (
-      <VictoryCandlestick
+      <CustomCandlestick
         dataComponent={<CustomCandle />}
         key={JSON.stringify(data)}
         labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
@@ -307,7 +307,6 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   const victoryCandles: Array<JSX.Element> = [];
 
   // For metrics in props.metrics skapa victorycandles som innehåller alla props.sites
-  console.log(metrics);
   metrics.forEach((metric) => {
     const data: CandleChart = getCandleChartData(metric, sites);
     victoryCandles.push(drawVictoryCandle(data.candels, width));
