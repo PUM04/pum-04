@@ -60,10 +60,7 @@ function Layout(props: MenuProps) {
           textAlign: 'left',
         }}
       >
-        <ViewTabs 
-          siteProps={siteProps}
-          fileHandler={fileHandler} 
-        />
+        <ViewTabs siteProps={siteProps} fileHandler={fileHandler} />
         <InfoboxComponent />
       </Box>
     </Box>
