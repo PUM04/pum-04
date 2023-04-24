@@ -1,3 +1,5 @@
+/* eslint-disable */
+/*tslint:diable*/
 import React from "react";
 import PropTypes from "prop-types";
 import { Helpers, CommonProps, Line, Rect } from "victory-core";
@@ -205,3 +207,4 @@ Candle.defaultProps = {
 };
 
 export default Candle;
+/* eslint-disable */
