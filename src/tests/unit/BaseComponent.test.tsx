@@ -32,7 +32,9 @@ describe('App', () => {
         fileHandler={undefined}
       />
     );
-    render(<InfoboxContainer sites={['test']} fileHandler={undefined} />);
+    render(
+      <InfoboxContainer /** sites={['test']} */ fileHandler={undefined} />
+    );
   });
 
   // Should render
