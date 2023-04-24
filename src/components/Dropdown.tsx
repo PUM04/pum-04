@@ -28,13 +28,13 @@ export default function Dropdown(props: any): JSX.Element {
   // should probably have some params for setting the content
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState(extractedItems);
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
 
   // updates the content when the givenItems changes
   useEffect(() => {
     givenItems.forEach((Item: any) => {
-      extractedItems.push({ item: Item, selected: true });
-      onSelected(Item, true);
+      extractedItems.push({ item: Item, selected: false });
+      onSelected(Item, false);
     });
     setContent(extractedItems);
   }, [JSON.stringify(givenItems)]);

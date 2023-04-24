@@ -43,45 +43,45 @@ describe('Dropdown', () => {
 
   it('checkboxes should be checked to begin with', async () => {
     const dropdownButton = await screen.findByTestId('dropdown-button');
-    const dropdownCheckBox = await (
+    const dropdownCheckBox = (
       await screen.findByTestId('dropdown-checkbox')
     ).querySelector('input[type="checkbox"]');
     await user.click(dropdownButton);
     const listCheckBox = await screen.findAllByTestId('list-checkbox');
-    const test1 = await listCheckBox[0].querySelector('input[type="checkbox"]');
-    const test2 = await listCheckBox[1].querySelector('input[type="checkbox"]');
-    const test3 = await listCheckBox[2].querySelector('input[type="checkbox"]');
-    expect(dropdownCheckBox).toHaveProperty('checked', true);
-    expect(test1).toHaveProperty('checked', true);
-    expect(test2).toHaveProperty('checked', true);
-    expect(test3).toHaveProperty('checked', true);
+    const test1 = listCheckBox[0].querySelector('input[type="checkbox"]');
+    const test2 = listCheckBox[1].querySelector('input[type="checkbox"]');
+    const test3 = listCheckBox[2].querySelector('input[type="checkbox"]');
+    expect(dropdownCheckBox).toHaveProperty('checked', false);
+    expect(test1).toHaveProperty('checked', false);
+    expect(test2).toHaveProperty('checked', false);
+    expect(test3).toHaveProperty('checked', false);
   });
 
   it('checkboxes should have standard logik', async () => {
     const dropdownButton = await screen.findByTestId('dropdown-button');
 
     await user.click(dropdownButton);
-    const listCheckBox = await screen.getAllByRole('checkbox');
+    const listCheckBox = screen.getAllByRole('checkbox');
+    await user.click(listCheckBox[0]);
+    expect(listCheckBox[0]).toHaveProperty('checked', true);
+    expect(listCheckBox[1]).toHaveProperty('checked', true);
+    expect(listCheckBox[2]).toHaveProperty('checked', true);
+    expect(listCheckBox[3]).toHaveProperty('checked', true);
     await user.click(listCheckBox[0]);
     expect(listCheckBox[0]).toHaveProperty('checked', false);
     expect(listCheckBox[1]).toHaveProperty('checked', false);
     expect(listCheckBox[2]).toHaveProperty('checked', false);
     expect(listCheckBox[3]).toHaveProperty('checked', false);
-    await user.click(listCheckBox[0]);
-    expect(listCheckBox[0]).toHaveProperty('checked', true);
+    await user.click(listCheckBox[1]);
+    expect(listCheckBox[0]).toHaveProperty('checked', false);
     expect(listCheckBox[1]).toHaveProperty('checked', true);
-    expect(listCheckBox[2]).toHaveProperty('checked', true);
-    expect(listCheckBox[3]).toHaveProperty('checked', true);
+    expect(listCheckBox[2]).toHaveProperty('checked', false);
+    expect(listCheckBox[3]).toHaveProperty('checked', false);
     await user.click(listCheckBox[1]);
     expect(listCheckBox[0]).toHaveProperty('checked', false);
     expect(listCheckBox[1]).toHaveProperty('checked', false);
-    expect(listCheckBox[2]).toHaveProperty('checked', true);
-    expect(listCheckBox[3]).toHaveProperty('checked', true);
-    await user.click(listCheckBox[1]);
-    expect(listCheckBox[0]).toHaveProperty('checked', true);
-    expect(listCheckBox[1]).toHaveProperty('checked', true);
-    expect(listCheckBox[2]).toHaveProperty('checked', true);
-    expect(listCheckBox[3]).toHaveProperty('checked', true);
+    expect(listCheckBox[2]).toHaveProperty('checked', false);
+    expect(listCheckBox[3]).toHaveProperty('checked', false);
   });
 
   // Run this after each test
