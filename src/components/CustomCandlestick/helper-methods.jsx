@@ -8,8 +8,10 @@ import {
   Collection,
 } from "victory-core";
 
+// mean NEW below
 const TYPES = ["close", "open", "high", "low", "mean"];
 
+// mean NEW below
 export const getData = (props) => {
   const accessorTypes = ["x", "high", "low", "close", "open", "mean"];
   return Data.formatData(props.data, props, accessorTypes);
@@ -405,14 +407,17 @@ export const getBaseProps = (props, fallbackProps) => {
     const eventKey = !isNil(datum.eventKey) ? datum.eventKey : index;
     const x = scale.x(datum._x1 !== undefined ? datum._x1 : datum._x);
     datum = formatDataFromDomain(datum, domain);
+// mean NEW below
     const { _low, _open, _close, _high, _mean} = datum;
     const high = scale.y(_high);
     const close = scale.y(_close);
     const open = scale.y(_open);
     const low = scale.y(_low);
+// NEW
     const mean = scale.y(_mean);
 
     const dataStyle = getDataStyles(datum, style.data, props);
+// mean NEW below
     const dataProps = {
       x,
       high,

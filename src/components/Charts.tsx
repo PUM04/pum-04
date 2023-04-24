@@ -271,7 +271,7 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
 function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
   return (
       <CustomCandlestick
-        dataComponent={<CustomCandle />}
+        horizontal
         key={JSON.stringify(data)}
         labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
         labels={({ datum }) =>
