@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
+import { SiteProperties } from '../../components/SitePropetiesInterface';
 
 import {
   InfoboxComponent,
@@ -13,6 +14,7 @@ import {
 describe('App', () => {
   // Run this before each test
   beforeEach(() => {
+<<<<<<< HEAD
     render(
       <BarGraphComponent
         metrics={['hej']}
@@ -27,6 +29,10 @@ describe('App', () => {
         fileHandler={undefined}
       />
     );
+=======
+    const testmap = new Map<string, SiteProperties>();
+    render(<GraphComponent siteProps={testmap} fileHandler={null} />);
+>>>>>>> main
     render(<InfoboxComponent />);
   });
 

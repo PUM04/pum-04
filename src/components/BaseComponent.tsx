@@ -4,21 +4,24 @@
 import Box from '@mui/material/Box';
 import React from 'react';
 import { BoxPlotChart, BarChart } from './Charts';
+import { SiteProperties } from './SitePropetiesInterface';
 
 interface GraphComponentProps {
   metrics: Array<string>;
   sites: Array<string>;
+  siteProps: Map<string, SiteProperties>;
   fileHandler: any;
 }
 /**
  * Component that contains all Box graphs
  *
- * @param props contains fileHandler
+ * @param props contains fileHandler siteprops with siteId as key and SiteProperties as value
  * @returns MUI box component
  */
 export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
   const { metrics } = props;
   const { sites } = props;
+  const { siteProps } = props;
   const { fileHandler } = props;
 
   return (
@@ -55,7 +58,7 @@ export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
  * @returns MUI box component
  */
 export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
-  const { metrics, sites, fileHandler } = props;
+  const { metrics, sites, siteProps, fileHandler } = props;
   return (
     <Box
       data-testid="bargraph-component"
@@ -73,8 +76,18 @@ export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
       <Box>
         {' '}
         <BarChart
-          metrics={metrics}
-          sites={sites}
+          metrics={['GetPatient', 'GetImageMetadata']}
+          sites={[]}
+          siteProps={siteProps}
+          fileHandler={fileHandler}
+        />{' '}
+      </Box>
+      <Box>
+        {' '}
+        <BoxPlotChart
+          metrics={['GetPatient', 'GetImageMetadata']}
+          sites={[]}
+          siteProps={siteProps}
           fileHandler={fileHandler}
         />{' '}
       </Box>
@@ -105,15 +118,6 @@ export function InfoboxComponent(): JSX.Element {
         },
       }}
     >
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
       <Box>Put infoboxes here! </Box>
       <Box>Put infoboxes here! </Box>
       <Box>Put infoboxes here! </Box>

@@ -4,16 +4,39 @@
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
 import LegendBar from '../../components/LegendBar';
+import { SiteProperties } from '../../components/SitePropetiesInterface';
 
 describe('App', () => {
   // Run this before each test
   beforeEach(() => {
-    const sites = [
-      { name: 'first', color: 'red', enabled: true },
-      { name: 'second', color: 'blue', enabled: true },
-      { name: 'third', color: 'orange', enabled: true },
-    ];
-    render(<LegendBar sites={sites} />);
+    const testmap = new Map<string, SiteProperties>();
+    testmap.set('stockholm', {
+      color: 'red',
+      enabled: true,
+      name: 'stockholm',
+    });
+    testmap.set('manchester', {
+      color: 'red',
+      enabled: true,
+      name: 'manchester',
+    });
+    testmap.set('tokyo', {
+      color: 'black',
+      enabled: true,
+      name: 'tokyo',
+    });
+    testmap.set('linköping', {
+      color: 'grey',
+      enabled: true,
+      name: 'linköping',
+    });
+    testmap.set('a;skld', {
+      color: 'grey',
+      enabled: false,
+      name: 'a;skld',
+    });
+
+    render(<LegendBar siteProps={testmap} />);
   });
 
   it('should render legendBar', async () => {
