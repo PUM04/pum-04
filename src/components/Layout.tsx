@@ -62,7 +62,8 @@ function Layout(props: MenuProps) {
       >
         <ViewTabs 
           siteProps={siteProps}
-          fileHandler={fileHandler} />
+          fileHandler={fileHandler} 
+        />
         <InfoboxComponent />
       </Box>
     </Box>

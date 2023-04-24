@@ -120,6 +120,7 @@ function ViewTabs(props: ViewTabsProps) {
         <BoxGraphComponent
           sites={['4b14a8']}
           metrics={['GetPatient']}
+          siteProps={siteProps}
           fileHandler={fileHandler}
         />
       </TabPanel>

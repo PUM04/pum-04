@@ -118,8 +118,8 @@ function getBarChartData(
  * example 'getPatient'
  * @param sites a string list containing 1-n sites that will be shown in the candlechart.
  * example ['s1','s2','s3','s4']
- * @param siteProps map ecah siteKey to a color
  * @param fileHandler is fuleHandler :)
+ * @param siteProps map ecah siteKey to a color
  * @returns a data structure in correct format to paint a candleChart.
  */
 function getCandleChartData(
