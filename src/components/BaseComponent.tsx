@@ -43,10 +43,10 @@ export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
         <BoxPlotChart
           metrics={metrics}
           sites={sites}
+          siteProps={siteProps}
           fileHandler={fileHandler}
         />{' '}
       </Box>
-      <Box> Put Box Graphs here! </Box>
     </Box>
   );
 }
@@ -76,22 +76,12 @@ export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
       <Box>
         {' '}
         <BarChart
-          metrics={['GetPatient', 'GetImageMetadata']}
-          sites={[]}
+          metrics={metrics}
+          sites={sites}
           siteProps={siteProps}
           fileHandler={fileHandler}
         />{' '}
       </Box>
-      <Box>
-        {' '}
-        <BoxPlotChart
-          metrics={['GetPatient', 'GetImageMetadata']}
-          sites={[]}
-          siteProps={siteProps}
-          fileHandler={fileHandler}
-        />{' '}
-      </Box>
-      <Box> Put graphs here! </Box>
     </Box>
   );
 }

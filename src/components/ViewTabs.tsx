@@ -12,6 +12,9 @@ import { styled } from '@mui/material/styles';
 import { BoxGraphComponent, BarGraphComponent } from './BaseComponent';
 
 interface ViewTabsProps {
+  metrics: Array<string>;
+  sites: Array<string>;
+  siteProps: any;
   fileHandler: any;
 }
 
@@ -53,6 +56,7 @@ const TabPanel = styled((props: TabPanelProps) => {
  * @returns the ViewTabs component containing graphs.
  */
 function ViewTabs(props: ViewTabsProps) {
+  const { siteProps } = props;
   const { fileHandler } = props;
 
   const [value, setValue] = useState(0);
@@ -110,6 +114,7 @@ function ViewTabs(props: ViewTabsProps) {
         <BarGraphComponent
           sites={['4b14a8']}
           metrics={['GetPatient']}
+          siteProps={siteProps}
           fileHandler={fileHandler}
         />
       </TabPanel>
