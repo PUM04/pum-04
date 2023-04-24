@@ -53,21 +53,22 @@ function Layout(props: MenuProps) {
         setSiteProps={setSiteProps}
         setMetricProps={setMetricProps}
       />
-
-      <Box
-        sx={{
-          flexDirection: 'column',
-          display: 'inline-flex',
-          backgroundColor: 'primary.light1',
-        }}
-      >
-        <GraphComponent
-          siteProps={siteProps}
-          fileHandler={fileHandler}
-          metrics={metricProps}
-        />
-        <InfoboxComponent />
-      </Box>
+      {siteProps.size > 0 && metricProps.length > 0 && (
+        <Box
+          sx={{
+            flexDirection: 'column',
+            display: 'inline-flex',
+            backgroundColor: 'primary.light1',
+          }}
+        >
+          <GraphComponent
+            siteProps={siteProps}
+            fileHandler={fileHandler}
+            metrics={metricProps}
+          />
+          <InfoboxComponent />
+        </Box>
+      )}
     </Box>
   );
 }
