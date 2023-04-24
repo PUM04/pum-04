@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import { Box } from '@mui/material';
 import Menu from './Menu';
 import ViewTabs from './ViewTabs';
-import { BarGraphComponent, InfoboxComponent } from './BaseComponent';
+import { InfoboxComponent } from './BaseComponent';
 import { SiteProperties } from './SitePropetiesInterface';
 
 //        ____Layout_____

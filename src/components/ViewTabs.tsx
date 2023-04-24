@@ -12,8 +12,6 @@ import { styled } from '@mui/material/styles';
 import { BoxGraphComponent, BarGraphComponent } from './BaseComponent';
 
 interface ViewTabsProps {
-  metrics: Array<string>;
-  sites: Array<string>;
   siteProps: any;
   fileHandler: any;
 }

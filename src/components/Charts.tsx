@@ -5,7 +5,6 @@
 
 import React from 'react';
 import { Divider } from '@mui/material';
-import {} from '@mui/material';
 import {
   VictoryAxis,
   VictoryChart,

@@ -14,11 +14,13 @@ import {
 describe('App', () => {
   // Run this before each test
   beforeEach(() => {
-<<<<<<< HEAD
+    const testmap = new Map<string, SiteProperties>();
+
     render(
       <BarGraphComponent
         metrics={['hej']}
         sites={['hej']}
+        siteProps={testmap}
         fileHandler={undefined}
       />
     );
@@ -26,13 +28,10 @@ describe('App', () => {
       <BoxGraphComponent
         metrics={['hej']}
         sites={['hej']}
+        siteProps={testmap}
         fileHandler={undefined}
       />
     );
-=======
-    const testmap = new Map<string, SiteProperties>();
-    render(<GraphComponent siteProps={testmap} fileHandler={null} />);
->>>>>>> main
     render(<InfoboxComponent />);
   });
 
