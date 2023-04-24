@@ -61,6 +61,7 @@ interface Bar {
  */
 interface CandleChart {
   candles: Array<Candle>;
+  colors: Array<string>
 }
 
 /**
@@ -124,7 +125,7 @@ function getCandleChartData(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   siteProps: Map<string, SiteProperties> // used later when structure for candlechart is known.
 ): CandleChart {
-  const candle: CandleChart = { candles: [] };
+  const candle: CandleChart = { candles: [], colors:[] };
   /**
    * Todo- At the moment this function only contains dummy data.
    * Implement code to get data from backend
@@ -132,10 +133,23 @@ function getCandleChartData(
    *
    */
 
+  
+
+  const colors:Array<string> = [];
+    sites.forEach((site:string) => {
+      const siteProp = siteProps.get(site);
+      let color = siteProp?.color;
+      if (!color) {
+        color = 'cyan';
+      }
+      colors.push(color)
+    });
+  candle.colors = colors;
+
   sites.forEach((site, index) => {
     const data = JSON.parse(fileHandler.GetBoxDiagram(site))[metric];
     candle.candles.push({
-      x: index + 1,
+      x : index +1,
       open: data.first_quartile,
       close: data.third_quartile,
       high: data.max,
@@ -159,21 +173,26 @@ function getCandleChartData(
     Note that width might need to be changed depending on number of sites.
  * @returns a VictoryCandlestick .
  */
-function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
+function drawVictoryCandle(candels:CandleChart, width: any): JSX.Element {
+  const getColor = (index:number):string => {
+    return candels.colors[index];
+  };
   return (
     <VictoryCandlestick
-      key={JSON.stringify(data)}
+      key={JSON.stringify(candels.candles)}
       labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
       labels={({ datum }) =>
         `min:${datum.low}\nmax:${datum.high}\nclose:${datum.close}\nopen:${
           datum.open
         }\nmean:${'30'}`
       }
+      
+     
       candleWidth={width}
-      data={data}
+      data={candels.candles}
       style={{
         data: {
-          fill: 'orange',
+          fill: ({ datum }) =>getColor(datum.x),
           stroke: 'gray',
         },
       }}
@@ -207,11 +226,14 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
       fileHandler,
       siteProps
     );
-    victoryCandles.push(drawVictoryCandle(data.candles, width));
+    victoryCandles.push(drawVictoryCandle(data, width));
   });
 
   return (
-    <VictoryChart data-testid="victory-chart">
+    <VictoryChart data-testid="victory-chart"
+    height={1000}
+    width={1000}
+    >
       <VictoryAxis
         dependentAxis
         style={{
