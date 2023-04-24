@@ -435,7 +435,7 @@ function drawHistogram(
       >
         {metric}
       </p>
-      <VictoryChart {...getScaleProps()}>
+      <VictoryChart>
         <VictoryAxis
           dependentAxis
           style={{

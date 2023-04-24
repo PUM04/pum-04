@@ -4,6 +4,7 @@
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
 import { SiteProperties } from '../../components/SitePropetiesInterface';
+import '@testing-library/jest-dom';
 
 import {
   InfoboxComponent,
@@ -26,8 +27,8 @@ describe('App', () => {
 
   // Tshould render
   it('should render graphComponent', async () => {
-    const InfoboxComponent = await screen.findByTestId('infobox-component');
-    expect(InfoboxComponent).toBeVisible();
+    const Infoboxtest = await screen.findByTestId('infobox-component');
+    expect(Infoboxtest).toBeVisible();
   });
 
   // Run this after each test
