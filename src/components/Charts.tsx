@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /**
  *
  * @file Contains the component that paints Charts. Gets data for chart.
@@ -11,8 +12,9 @@ import {
   VictoryBar,
   VictoryGroup,
   VictoryTooltip,
-  VictoryCandlestick,
 } from 'victory';
+import CustomCandle from "./CustomCandlestick/CustomCandle";
+import CustomCandlestick from "./CustomCandlestick/CustomCandlestick";
 /**
  * Top level component.
  *
@@ -234,6 +236,7 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
       { x: 1, open: 5, close: 10, high: 22, low: 0, mean: 7 }, // s1
       { x: 2, open: 10, close: 15, high: 20, low: 5, mean: 13 }, // s2
       { x: 3, open: 8, close: 11, high: 13, low: 2, mean: 9 }, // s2
+
     ];
   }
   if (
@@ -245,39 +248,14 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
       { x: 1, open: 5, close: 10, high: 25, low: 1, mean: 7 },
       { x: 2, open: 6, close: 8, high: 15, low: 3, mean: 7 },
       { x: 3, open: 4, close: 9, high: 12, low: 0, mean: 6 }, // s2
+
     ];
   }
-  const offset = 0.01;
-  data.candels.forEach((candle) =>
-    data.candels.push(
-      {
-        x: candle.x,
-        open: candle.mean + offset,
-        close: candle.mean - offset,
-        high: candle.mean + offset,
-        low: candle.mean - offset,
-        mean: 0,
-      },
-      {
-        x: candle.x,
-        open: candle.high + offset,
-        close: candle.high - offset,
-        high: candle.high + offset,
-        low: candle.high - offset,
-        mean: 0,
-      },
-      {
-        x: candle.x,
-        open: candle.low + offset,
-        close: candle.low - offset,
-        high: candle.low + offset,
-        low: candle.low - offset,
-        mean: 0,
-      }
-    )
-  );
+
   return data;
 }
+
+
 
 /**
  * Draws a single victoryCandle.
@@ -293,29 +271,24 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
  */
 function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
   return (
-    <VictoryCandlestick
-      key={JSON.stringify(data)}
-      labelComponent={
-        <VictoryTooltip
-          cornerRadius={0}
-          pointerLength={0}
-          dx={({ datum }) => (datum.mean > 0 ? width : -Infinity)}
-        />
-      }
-      labels={({ datum }) =>
-        datum.mean > 0
-          ? `min:${datum.low}\nmax:${datum.high}\nclose:${datum.close}\nopen:${datum.open}\nmean:${datum.mean}`
-          : ``
-      }
-      candleWidth={width}
-      data={data}
-      style={{
-        data: {
-          fill: 'orange',
-          stroke: 'gray',
-        },
-      }}
-    />
+      <CustomCandlestick
+        dataComponent={<CustomCandle />}
+        key={JSON.stringify(data)}
+        labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
+        labels={({ datum }:any) =>
+          `min:${datum.low}\nmax:${datum.high}\nclose:${datum.close}\nopen:${
+            datum.open
+          }\nmean:${'30'}`
+        }
+        candleWidth={width}
+        data={data}
+        style={{
+          data: {
+            fill: 'orange',
+            stroke: 'gray',
+          },
+        }}
+      />
   );
 }
 
@@ -335,7 +308,6 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   const victoryCandles: Array<JSX.Element> = [];
 
   // For metrics in props.metrics skapa victorycandles som innehåller alla props.sites
-
   metrics.forEach((metric) => {
     const data: CandleChart = getCandleChartData(metric, sites);
     victoryCandles.push(drawVictoryCandle(data.candels, width));
@@ -364,7 +336,8 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
           axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
         }}
       />
-      <VictoryGroup offset={width + offsetPadding} domainPadding={{ x: width }}>
+      <VictoryGroup offset={width + offsetPadding} domainPadding={{ x: width }}
+      >
         {victoryCandles}
       </VictoryGroup>
     </VictoryChart>
