@@ -2,12 +2,21 @@
  * @file Contains the InfoBox component.
  */
 import React from 'react';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
+import Paper from '@mui/material/Paper';
+import List from '@mui/material/List';
 
 interface InfoBoxProps {
   siteId: string;
   fileHandler: any;
 }
+
+const style1 = { display: 'inline', color: 'primary.light3' };
+const style2 = {
+  display: 'inline',
+  color: 'primary.light3',
+  paddingLeft: '47px',
+};
 
 /**
  * Info box for showing site information
@@ -32,32 +41,109 @@ function InfoBox(props: InfoBoxProps) {
   const data = JSON.parse(fileContent);
 
   return (
-    <Box
+    <Paper
       data-testid="info-box"
+      elevation={3}
       sx={{
         display: 'flex',
+        backgroundColor: 'primary.main',
+        color: 'secondary.main',
+        padding: '1vh',
+        margin: '1vh',
+        minWidth: '40vh',
       }}
     >
-      <ul>
-        <li>Site name: {data.site_name} </li>
-        <li>Number of hosts {data.hosts} </li>
-        <li>
-          RAM:
-          <ul>
-            <li>Min: {data.min_ram} </li>
-            <li>Max: {data.max_ram} </li>
-            <li>Average: {data.average_ram}</li>
-            <li>Total: {data.total_ram}</li>
-          </ul>
-          <ul>
-            <li>Min: data.min_cpu </li>
-            <li>Max: {data.max_cpu} </li>
-            <li>Average: {data.average_cpu} </li>
-            <li>Total: {data.total_cpu} </li>
-          </ul>
-        </li>
-      </ul>
-    </Box>
+      <List>
+        <Typography
+          sx={{
+            display: 'inline',
+            textDecoration: 'underline',
+            fontSize: '18px',
+          }}
+        >
+          Site name:
+        </Typography>
+        <Typography
+          sx={{ display: 'inline', color: 'primary.light3', fontSize: '18px' }}
+        >
+          {' '}
+          {data.site_name}
+        </Typography>
+        <br />
+        <Box
+          sx={{
+            display: 'flex',
+          }}
+        >
+          <List sx={{ display: 'inline' }}>
+            <Typography
+              display="inline"
+              style={{ textDecoration: 'underline' }}
+            >
+              RAM:
+            </Typography>
+            <Typography sx={style1}> Min:</Typography>
+            <Typography sx={style1}>
+              <span /> {data.min_ram}
+            </Typography>
+            <br />
+            <Typography sx={style2}>
+              <span /> Max:
+            </Typography>
+            <Typography sx={style1}>{data.max_ram}</Typography>
+            <br />
+            <Typography sx={style2}>
+              <span /> Average:
+            </Typography>
+            <Typography sx={style1}>
+              <span /> {data.average_ram}
+            </Typography>
+            <br />
+            <Typography sx={style2}>
+              <span /> Total:
+            </Typography>
+            <Typography sx={style1}>
+              <span /> {data.total_ram}
+            </Typography>
+          </List>
+          <List sx={{ display: 'inline' }}>
+            <Typography
+              display="inline"
+              style={{ textDecoration: 'underline' }}
+            >
+              CPU:
+            </Typography>
+            <Typography sx={style1}>
+              <span /> Min:
+            </Typography>
+            <Typography sx={style1}>
+              <span /> {data.min_cpu}
+            </Typography>
+            <br />
+            <Typography sx={style2}>
+              <span /> Max:
+            </Typography>
+            <Typography sx={style1}>
+              <span /> {data.max_cpu}
+            </Typography>
+            <br />
+            <Typography sx={style2}>
+              <span /> Average:
+            </Typography>
+            <Typography sx={style1}>
+              <span /> {data.average_cpu}
+            </Typography>
+            <br />
+            <Typography sx={style2}>
+              <span /> Total:
+            </Typography>
+            <Typography sx={style1}>
+              <span /> {data.total_cpu}
+            </Typography>
+          </List>
+        </Box>
+      </List>
+    </Paper>
   );
 }
 

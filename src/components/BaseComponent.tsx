@@ -107,16 +107,29 @@ export function InfoboxContainer(props: InfoContainerProps): JSX.Element {
       sx={{
         flexDirection: 'row',
         display: 'flex',
-        backgroundColor: 'primary.main',
-        flexWrap: 'wrap',
+        backgroundColor: 'primary.light1',
         color: 'secondary.main',
+        flexWrap: 'wrap',
         justifyContent: 'space-evenly',
-        '&:hover': {
-          backgroundColor: 'primary.light1',
-          color: 'primary.dark',
-        },
+        padding: '1vw',
       }}
     >
+      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
+      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
+      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
+      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
+      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
+      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
+      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
+      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
+      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
+      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
+      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
+      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
+      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
+      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
+      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
+      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
       <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
       <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
     </Box>
