@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 /**
  *
  * @file Contains the component that paints Charts. Gets data for chart.
@@ -13,8 +12,7 @@ import {
   VictoryGroup,
   VictoryTooltip,
 } from 'victory';
-import CustomCandle from "./CustomCandlestick/CustomCandle";
-import CustomCandlestick from "./CustomCandlestick/CustomCandlestick";
+import VictoryCandlestick from './CustomCandlestick/CustomCandlestick';
 /**
  * Top level component.
  *
@@ -236,7 +234,6 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
       { x: 1, open: 5, close: 10, high: 22, low: 0, mean: 7 }, // s1
       { x: 2, open: 10, close: 15, high: 20, low: 5, mean: 13 }, // s2
       { x: 3, open: 8, close: 11, high: 13, low: 2, mean: 9 }, // s2
-
     ];
   }
   if (
@@ -255,8 +252,6 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
   return data;
 }
 
-
-
 /**
  * Draws a single victoryCandle.
  *
@@ -271,24 +266,25 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
  */
 function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
   return (
-      <CustomCandlestick
-        dataComponent={<CustomCandle />}
-        key={JSON.stringify(data)}
-        labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
-        labels={({ datum }:any) =>
-          `min:${datum.low}\nmax:${datum.high}\nclose:${datum.close}\nopen:${
-            datum.open
-          }\nmean:${'30'}`
-        }
-        candleWidth={width}
-        data={data}
-        style={{
-          data: {
-            fill: 'orange',
-            stroke: 'gray',
-          },
-        }}
-      />
+
+    <VictoryCandlestick
+      horizontal
+      key={JSON.stringify(data)}
+      labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
+      labels={({ datum } : any) =>
+        `min:${datum.low}\nmax:${datum.high}\nclose:${datum.close}\nopen:${
+          datum.open
+        }\nmean:${'30'}`
+      }
+      candleWidth={width}
+      data={data}
+      style={{
+        data: {
+          fill: 'orange',
+          stroke: 'gray',
+        },
+      }}
+    />
   );
 }
 
@@ -336,8 +332,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
           axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
         }}
       />
-      <VictoryGroup offset={width + offsetPadding} domainPadding={{ x: width }}
-      >
+      <VictoryGroup offset={width + offsetPadding} domainPadding={{ x: width }}>
         {victoryCandles}
       </VictoryGroup>
     </VictoryChart>

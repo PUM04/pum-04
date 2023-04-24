@@ -1,15 +1,12 @@
 /* eslint-disable */
 
-/*
- * @file Victory charts Candle customized with top, bottom and mean lines.
- */
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { Helpers, CommonProps, Line, Rect } from 'victory-core';
-import { assign, defaults, isFunction } from 'lodash';
-import { CandleProps } from 'victory';
+import React from "react";
+import PropTypes from "prop-types";
+import { Helpers, CommonProps, Line, Rect } from "victory-core";
+import { assign, defaults, isFunction } from "lodash";
 
-const getCandleWidth = (candleWidth: number, props: CandleProps) => {
+const getCandleWidth = (candleWidth, props) => {
+
   const { style } = props;
   if (candleWidth) {
     return isFunction(candleWidth)
@@ -22,7 +19,7 @@ const getCandleWidth = (candleWidth: number, props: CandleProps) => {
   return candleWidth;
 };
 
-const getCandleProps = (props: CandleProps, style: CandleProps) => {
+const getCandleProps = (props, style) => {
   const { id, x, close, open, horizontal, candleWidth } = props;
   const candleLength = Math.abs(close - open);
   return {
@@ -35,7 +32,7 @@ const getCandleProps = (props: CandleProps, style: CandleProps) => {
   };
 };
 
-const getHighWickProps = (props: CandleProps, style: CandleProps) => {
+const getHighWickProps = (props, style) => {
   const { horizontal, high, open, close, x, id } = props;
   return {
     key: `${id}-highWick`,
@@ -47,7 +44,7 @@ const getHighWickProps = (props: CandleProps, style: CandleProps) => {
   };
 };
 
-const getLowWickProps = (props: CandleProps, style: CandleProps) => {
+const getLowWickProps = (props, style) => {
   const { horizontal, low, open, close, x, id } = props;
   return {
     key: `${id}-lowWick`,
@@ -59,53 +56,48 @@ const getLowWickProps = (props: CandleProps, style: CandleProps) => {
   };
 };
 
-/*
- * Adds top line for candelstick
- */
-const getFloorProps = (props: CandleProps, style: CandleProps) => {
-  const { low, candleWidth, id, x } = props;
+
+// NEW
+const getFloorProps = (props, style) => {
+  const { low, candleWidth, id, x, horizontal } = props;
   return {
     key: `${id}-floor`,
-    style: Helpers.omit(style, ['width']),
-    x1: x - candleWidth / 2,
-    x2: x + candleWidth / 2,
-    y1: low,
-    y2: low,
+    style: Helpers.omit(style, ["width"]),
+    x1: horizontal ? low : x-candleWidth/2,
+    x2: horizontal ? low : x+candleWidth/2,
+    y1: horizontal ? x-candleWidth/2 : low,
+    y2: horizontal ? x+candleWidth/2 : low,
   };
 };
 
-/*
- * Adds mean line for candelstick
- */
-const getMeanProps = (props: CandleProps, style: CandleProps) => {
-  const { mean, candleWidth, id, x } = props;
+// NEW
+const getMeanProps = (props, style) => {
+  const { mean, candleWidth, id, x, horizontal } = props;
   // console.log(mean);
   return {
     key: `${id}-mean`,
-    style: Helpers.omit(style, ['width']),
-    x1: x - candleWidth / 2,
-    x2: x + candleWidth / 2,
-    y1: mean,
-    y2: mean,
+    style: Helpers.omit(style, ["width"]),
+    x1: horizontal ? mean : x-candleWidth/2,
+    x2: horizontal ? mean : x+candleWidth/2,
+    y1: horizontal ? x-candleWidth/2 : mean,
+    y2: horizontal ? x+candleWidth/2 : mean,
   };
 };
 
-/*
- * Adds bottom line for candelstick
- */
-const getRoofProps = (props: CandleProps, style: CandleProps) => {
-  const { high, candleWidth, id, x } = props;
+// NEW
+const getRoofProps = (props, style) => {
+  const { high, candleWidth, id, x, horizontal} = props;
   return {
     key: `${id}-roof`,
-    style: Helpers.omit(style, ['width']),
-    x1: x - candleWidth / 2,
-    x2: x + candleWidth / 2,
-    y1: high,
-    y2: high,
+    style: Helpers.omit(style, ["width"]),
+    x1: horizontal ? high : x-candleWidth/2,
+    x2: horizontal ? high : x+candleWidth/2,
+    y1: horizontal ? x-candleWidth/2 : high,
+    y2: horizontal ? x+candleWidth/2 : high,
   };
 };
 
-const evaluateProps = (props: CandleProps) => {
+const evaluateProps = (props) => {
   /**
    * Potential evaluated props of following must be evaluated in this order:
    * 1) `style`
@@ -145,7 +137,7 @@ const evaluateProps = (props: CandleProps) => {
  *
  * @param props
  */
-function CustomCandle(props: CandleProps) {
+function CustomCandle(props) {
   props = evaluateProps(props);
   const {
     ariaLabel,
@@ -178,6 +170,7 @@ function CustomCandle(props: CandleProps) {
   const candleProps = assign(getCandleProps(props, style), sharedProps);
   const highWickProps = assign(getHighWickProps(props, wickStyle), sharedProps);
   const lowWickProps = assign(getLowWickProps(props, wickStyle), sharedProps);
+  // NEW
   const roofProps = assign(getRoofProps(props, wickStyle), sharedProps);
   const floorProps = assign(getFloorProps(props, wickStyle), sharedProps);
   const meanProps = assign(getMeanProps(props, wickStyle), sharedProps);
@@ -186,12 +179,15 @@ function CustomCandle(props: CandleProps) {
     React.cloneElement(rectComponent, candleProps),
     React.cloneElement(lineComponent, highWickProps),
     React.cloneElement(lineComponent, lowWickProps),
+    // NEW
     React.cloneElement(lineComponent, roofProps),
     React.cloneElement(lineComponent, floorProps),
     React.cloneElement(lineComponent, meanProps),
   ]);
 }
 
+
+// mean is new below 
 CustomCandle.propTypes = {
   ...CommonProps.primitiveProps,
   candleRatio: PropTypes.number,
@@ -219,3 +215,4 @@ CustomCandle.defaultProps = {
 };
 
 export default CustomCandle;
+/* eslint-disable */

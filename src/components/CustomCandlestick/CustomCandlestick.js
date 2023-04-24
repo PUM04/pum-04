@@ -12,6 +12,7 @@ import {
   UserProps,
 } from "victory-core";
 import { isNil, flatten } from "lodash";
+// NEW
 import Candle from "./CustomCandle";
 import { getDomain, getData, getBaseProps } from "./helper-methods";
 
@@ -69,6 +70,7 @@ class VictoryCandlestick extends React.Component {
   static role = "candlestick";
   static defaultTransitions = DefaultTransitions.discreteTransitions();
 
+// mean NEW below
   static propTypes = {
     ...CommonProps.baseProps,
     ...CommonProps.dataProps,
