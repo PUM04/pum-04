@@ -35,6 +35,7 @@ Makefile
 # CPP Tests
 test_runner.cjs
 test_runner.wasm
+test_runner
 
 #local test results
 coverage

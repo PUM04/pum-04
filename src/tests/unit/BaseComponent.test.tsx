@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
+import { SiteProperties } from '../../components/SitePropetiesInterface';
 
 import {
   InfoboxComponent,
@@ -12,18 +13,21 @@ import {
 describe('App', () => {
   // Run this before each test
   beforeEach(() => {
-    render(<GraphComponent />);
+    const testmap = new Map<string, SiteProperties>();
+    render(<GraphComponent siteProps={testmap} fileHandler={null} />);
     render(<InfoboxComponent />);
   });
 
   // Tshould render
   it('should render graphComponent', async () => {
-    await screen.findByTestId('graph-component');
+    const graphComponent = await screen.findByTestId('graph-component');
+    expect(graphComponent).toBeVisible();
   });
 
   // Tshould render
   it('should render graphComponent', async () => {
-    await screen.findByTestId('infobox-component');
+    const InfoboxComponent = await screen.findByTestId('infobox-component');
+    expect(InfoboxComponent).toBeVisible();
   });
 
   // Run this after each test

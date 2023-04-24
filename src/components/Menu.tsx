@@ -1,7 +1,7 @@
 /**
- * @file Contains an interactive drawermenu
+ * @file Contains the menu component which is the top Appbar containing the dropdown and the legend bar
  */
-import React, { useState } from 'react';
+import React, { useEffect, useState, Dispatch } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -15,7 +15,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Paper from '@mui/material/Paper';
 import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './LegendBar';
+import CHART_COLORS from './CHART_COLORS';
 import Dropdown from './Dropdown';
+import { SiteProperties } from './SitePropetiesInterface';
 import '../App.css';
 
 const size = 75;
@@ -76,7 +78,73 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 interface MenuProps {
   // TODO: Get the actual type
   fileHandler: any;
+  siteProps: Map<string, SiteProperties>;
+  setSiteProps: Dispatch<React.SetStateAction<Map<string, SiteProperties>>>;
 }
+
+/**
+ * Adds files to the backend.
+ *
+ * @param files files which are added to the backend
+ * @param fileHandler is used to add the files to the backend
+ */
+const addFilesToBackend = (files: File[], fileHandler: any) => {
+  if (files.length > 0) {
+    files.forEach((file) => {
+      const filereader = new FileReader();
+      filereader.readAsText(file);
+      filereader.onload = () => {
+        // Send the file to the backend
+        fileHandler.AddFile(filereader.result, file.name);
+      };
+      filereader.onabort = () =>
+        console.error(`Reading file ${file.name} was aborted`);
+      filereader.onerror = () =>
+        console.error(`Reading file ${file.name} failed.`);
+    });
+  }
+};
+
+/**
+ * Gets the site names from the backend.
+ *
+ * @param fileHandler used to get the site names
+ * @returns an array of site names
+ */
+const getSiteNames = (fileHandler: any): string[] => {
+  const sites = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).names : [];
+
+  return sites;
+};
+
+/**
+ *  Gets the site names and ids from the backend.
+ *
+ * @param fileHandler  used to get the site names and ids.
+ * @returns an array with site names and ids index 0 is site id and index 1 is site name;
+ */
+
+const getSiteNamesAndId = (fileHandler: any): string[][] => {
+  // sites[i][0] == siteId sites[i][1]= sitesName
+
+  const sites = fileHandler
+    ? JSON.parse(fileHandler.GetSiteNamesAndIds()).sites
+    : [[]];
+
+  return sites;
+};
+/**
+ * Gets the metrics from the backend.
+ *
+ * @param fileHandler used to get the metrics
+ * @returns an array of metrics
+ */
+const getMetrics = (fileHandler: any): string[] => {
+  const metrics = fileHandler
+    ? JSON.parse(fileHandler.GetMetrics()).metrics
+    : [];
+  return metrics;
+};
 
 /**
  * A drawermenu for showing available metrics, sites and to upload files
@@ -88,32 +156,65 @@ export default function Menu(props: MenuProps) {
   const { fileHandler } = props;
   const theme = useTheme();
   const [open, setOpen] = useState(false);
+
   const [files, setFiles] = useState<File[]>([]);
-  const [filereader] = useState(new FileReader());
+  const [oldFiles, setOldFiles] = useState<File[]>([]);
 
-  // Start reading the first file
-  if (files.length > 0 && filereader.readyState !== FileReader.LOADING) {
-    filereader.readAsText(files[files.length - 1]);
-  }
+  const { siteProps } = props;
+  const { setSiteProps } = props;
+  const [siteNames, setSiteNames] = useState<string[]>([]);
+  const [siteNamesAndIds, setSiteNamesAndIds] = useState<string[][]>([[]]);
+  const [metrics, setMetrics] = useState<string[]>([]);
 
-  filereader.onload = () => {
-    // Send the file to the backend
-    fileHandler.AddFile(
-      filereader.result as string,
-      files[files.length - 1].name
-    );
-    files.pop();
+  // Everytime siteNamesAndIds changes we want to add set at color for that id
+  useEffect(() => {
+    const newMap = new Map<string, SiteProperties>(siteProps);
+    const PHI = (1 + Math.sqrt(5)) / 2;
+    let index = newMap.size;
 
-    // Continue reading the rest of the files
-    if (files.length > 0) {
-      filereader.readAsText(files[files.length - 1]);
-    } else {
-      // Link the files in the backend
-      fileHandler.ComputeFiles();
-    }
-  };
-  filereader.onabort = () => console.log('file reading was aborted');
-  filereader.onerror = () => console.log('file reading has failed');
+    // Map colors to the sites
+    siteNamesAndIds.forEach((site) => {
+      const siteId = site[0];
+      const siteName = site[1];
+      if (!siteProps.has(siteId)) {
+        let hexColor = '';
+        if (index < CHART_COLORS.length) {
+          hexColor = CHART_COLORS[index];
+        } else {
+          console.log('no more default colors, generating random colors');
+          const n = index * PHI - Math.floor(index * PHI);
+          const hue = Math.floor(n * 180);
+          hexColor = `#0${hue.toString(16)}`;
+        }
+
+        newMap.set(siteId, {
+          color: hexColor,
+          enabled: true,
+          name: siteName,
+        });
+        setSiteProps(newMap);
+        index++;
+      }
+    });
+  }, [siteNamesAndIds]);
+
+  // add files to backend when they are added to the state
+
+  useEffect(() => {
+    const oldFileNames = oldFiles.map((v) => v.name);
+    const newFiles = files.filter((file) => !oldFileNames.includes(file.name));
+    setOldFiles(oldFiles.concat(newFiles));
+    addFilesToBackend(newFiles, fileHandler);
+  }, [files]);
+
+  // get site names and metrics from backend when files are added to the backend
+  useEffect(() => {
+    fileHandler?.ComputeFiles();
+    setSiteNames(getSiteNames(fileHandler));
+    setSiteNamesAndIds(getSiteNamesAndId(fileHandler));
+
+    setMetrics(getMetrics(fileHandler));
+  }, [oldFiles]);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -122,12 +223,6 @@ export default function Menu(props: MenuProps) {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
-  const sites = [
-    { name: 'first', color: 'red', enabled: true },
-    { name: 'second', color: 'blue', enabled: true },
-    { name: 'third', color: 'orange', enabled: true },
-  ];
 
   return (
     <div className="App">
@@ -148,7 +243,8 @@ export default function Menu(props: MenuProps) {
             >
               <MenuIcon />
             </IconButton>
-            <LegendBar sites={sites} />
+
+            <LegendBar siteProps={siteProps} />
           </DrawerHeader>
         </AppBar>
         <Drawer
@@ -192,11 +288,13 @@ export default function Menu(props: MenuProps) {
           >
             <Dropdown
               dropdownName="Sites"
-              value={['site_1', 'site_2', 'site_3']}
+              value={siteNames}
+              setSiteProps={setSiteProps}
             />
             <Dropdown
               dropdownName="Metrics"
-              value={['metric_1', 'metric_2', 'metric_3']}
+              value={metrics}
+              setSiteProps={setSiteProps}
             />
           </Paper>
           <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>

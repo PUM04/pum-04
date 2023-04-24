@@ -9,7 +9,9 @@ COPY ./vite.config.ts /app/
 COPY ./tsconfig.json /app/
 COPY ./tsconfig.node.json /app/
 COPY ./public /app/
+COPY ./.eslintrc.json /app/
 COPY ./backend_test /app/backend_test/
+COPY ./scripts /app/scripts/
 
 #install npm used to run the project
 RUN npm install
@@ -30,8 +32,8 @@ EXPOSE 3000
 # Docker startup
 RUN apt install bash -y 
 # docker startup needs to be there before the volume is started
-COPY ./src/docker_startup.sh /app/src/
+COPY ./scripts/ /app/scripts/
 
-RUN chmod u+x /app/src/docker_startup.sh
+RUN chmod u+x /app/scripts/docker_startup.sh
 
-CMD ["bash", "/app/src/docker_startup.sh"]
+CMD ["bash", "/app/scripts/docker_startup.sh"]
