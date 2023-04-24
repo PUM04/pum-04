@@ -16,7 +16,7 @@ interface GraphComponentProps {
 }
 
 interface InfoContainerProps {
-  sites: Array<string>;
+  // sites: Array<string>;
   fileHandler: any;
 }
 /**
@@ -100,7 +100,7 @@ export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
  * @returns MUI box component
  */
 export function InfoboxContainer(props: InfoContainerProps): JSX.Element {
-  const { sites, fileHandler } = props;
+  const { /** sites */ fileHandler } = props;
   return (
     <Box
       data-testid="infobox-component"
@@ -118,9 +118,7 @@ export function InfoboxContainer(props: InfoContainerProps): JSX.Element {
       }}
     >
       <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
-      <Box>Put infoboxes here! </Box>
+      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
     </Box>
   );
 }

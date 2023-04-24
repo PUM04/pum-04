@@ -4,9 +4,9 @@
 import React, { useState } from 'react';
 import { Box } from '@mui/material';
 import Menu from './Menu';
-import { GraphComponent, InfoboxContainer } from './BaseComponent';
+import { InfoboxContainer } from './BaseComponent';
 import ViewTabs from './ViewTabs';
-import { InfoboxComponent } from './BaseComponent';
+
 import { SiteProperties } from './SitePropetiesInterface';
 
 //        ____Layout_____
@@ -56,9 +56,10 @@ function Layout(props: MenuProps) {
       <Box
         sx={{
           flexDirection: 'column',
-          display: 'inline-flex',
+          display: 'flex',
           marginTop: `60px`,
           textAlign: 'left',
+          margin: '0',
         }}
       >
         <ViewTabs siteProps={siteProps} fileHandler={fileHandler} />
