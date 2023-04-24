@@ -89,7 +89,7 @@ interface MenuProps {
  * @param files files which are added to the backend
  * @param fileHandler is used to add the files to the backend
  */
-const addFilesToBackend = (files: File[], fileHandler: any) => {
+export const addFilesToBackend = (files: File[], fileHandler: any) => {
   if (files.length > 0) {
     files.forEach((file) => {
       const filereader = new FileReader();
