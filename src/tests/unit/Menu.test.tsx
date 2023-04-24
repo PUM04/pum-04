@@ -13,11 +13,13 @@ describe('Menu', () => {
   beforeEach(() => {
     const testmap = new Map<string, Site>();
     const useStateMock = jest.fn();
+
     render(
       <Menu
         fileHandler={undefined}
         setSiteProps={useStateMock}
         siteProps={testmap}
+        setMetricProps={useStateMock}
       />
     );
   });

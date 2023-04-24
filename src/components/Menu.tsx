@@ -80,6 +80,7 @@ interface MenuProps {
   fileHandler: any;
   siteProps: Map<string, Site>;
   setSiteProps: Dispatch<React.SetStateAction<Map<string, Site>>>;
+  setMetricProps: Dispatch<React.SetStateAction<string[]>>;
 }
 
 /**
@@ -136,9 +137,7 @@ const getMetrics = (fileHandler: any): string[] => {
  * @returns a menucomponent on top of the application component
  */
 export default function Menu(props: MenuProps) {
-  const { fileHandler } = props;
-  const { siteProps } = props;
-  const { setSiteProps } = props;
+  const { fileHandler, siteProps, setSiteProps, setMetricProps } = props;
 
   const theme = useTheme();
   const [open, setOpen] = useState(false);
@@ -155,37 +154,6 @@ export default function Menu(props: MenuProps) {
   const [selectedMetrics, setSelectedMetrics] = useState<
     Record<string, boolean>
   >({});
-
-  // Everytime siteNamesAndIds changes we want to add set at color for that id
-  useEffect(() => {
-    const newMap = new Map<string, Site>(siteProps);
-    const PHI = (1 + Math.sqrt(5)) / 2;
-    let index = newMap.size;
-
-    // Map colors to the sites
-    sites.forEach((site) => {
-      if (site.id && !siteProps.has(site.id)) {
-        let hexColor = '';
-        if (index < CHART_COLORS.length) {
-          hexColor = CHART_COLORS[index];
-        } else {
-          console.log('no more default colors, generating random colors');
-          const n = index * PHI - Math.floor(index * PHI);
-          const hue = Math.floor(n * 180);
-          hexColor = `#0${hue.toString(16)}`;
-        }
-        newMap.set(site.id, {
-          ...site,
-          color: hexColor,
-          enabled: selectedSites[site.id] ? selectedSites[site.id] : false,
-        });
-        setSiteProps(newMap);
-        index++;
-      }
-    });
-  }, [sites]);
-
-  // add files to backend when they are added to the state
 
   useEffect(() => {
     const oldFileNames = oldFiles.map((v) => v.name);
@@ -208,6 +176,48 @@ export default function Menu(props: MenuProps) {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const handleSelectedMetrics = (key: string, value: boolean) => {
+    selectedMetrics[key] = value;
+    setSelectedMetrics(selectedMetrics);
+
+    const newSelectedMetrics: string[] = [];
+    Object.keys(selectedMetrics).forEach((metric) => {
+      if (selectedMetrics[metric]) newSelectedMetrics.push(metric);
+    });
+    setMetricProps(newSelectedMetrics);
+  };
+
+  const handleSelectedSites = (key: string, value: boolean) => {
+    selectedSites[key] = value;
+    setSelectedSites(selectedSites);
+
+    const newMap = new Map<string, Site>(siteProps);
+    const PHI = (1 + Math.sqrt(5)) / 2;
+    let index = newMap.size;
+
+    // Map colors to the sites
+    sites.forEach((site) => {
+      if (site.id) {
+        let hexColor = '';
+        if (index < CHART_COLORS.length) {
+          hexColor = CHART_COLORS[index];
+        } else {
+          console.info('no more default colors, generating random colors');
+          const n = index * PHI - Math.floor(index * PHI);
+          const hue = Math.floor(n * 180);
+          hexColor = `#0${hue.toString(16)}`;
+        }
+        newMap.set(site.id, {
+          ...site,
+          color: hexColor,
+          enabled: selectedSites[site.name] ? selectedSites[site.name] : false,
+        });
+        index++;
+      }
+    });
+    setSiteProps(newMap);
   };
 
   return (
@@ -275,21 +285,13 @@ export default function Menu(props: MenuProps) {
             <Dropdown
               dropdownName="Sites"
               value={sites.map((site) => site.name)}
-              onSelected={(key: string, value: boolean) => {
-                selectedSites[key] = value;
-                setSelectedSites(selectedSites);
-                console.log(JSON.stringify(selectedSites));
-              }}
+              onSelected={handleSelectedSites}
               setSiteProps={setSiteProps}
             />
             <Dropdown
               dropdownName="Metrics"
               value={metrics}
-              onSelected={(key: string, value: boolean) => {
-                selectedMetrics[key] = value;
-                setSelectedMetrics(selectedMetrics);
-                console.log(JSON.stringify(selectedMetrics));
-              }}
+              onSelected={handleSelectedMetrics}
               setSiteProps={setSiteProps}
             />
           </Paper>

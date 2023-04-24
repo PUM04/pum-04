@@ -39,6 +39,7 @@ function Layout(props: MenuProps) {
   const map = new Map();
   // Maps each site key to a site name and a color
   const [siteProps, setSiteProps] = useState<Map<string, Site>>(map);
+  const [metricProps, setMetricProps] = useState<string[]>([]);
 
   return (
     <Box
@@ -50,6 +51,7 @@ function Layout(props: MenuProps) {
         fileHandler={fileHandler}
         siteProps={siteProps}
         setSiteProps={setSiteProps}
+        setMetricProps={setMetricProps}
       />
 
       <Box
@@ -59,7 +61,11 @@ function Layout(props: MenuProps) {
           backgroundColor: 'primary.light1',
         }}
       >
-        <GraphComponent siteProps={siteProps} fileHandler={fileHandler} />
+        <GraphComponent
+          siteProps={siteProps}
+          fileHandler={fileHandler}
+          metrics={metricProps}
+        />
         <InfoboxComponent />
       </Box>
     </Box>
