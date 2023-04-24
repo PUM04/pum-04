@@ -74,6 +74,14 @@ public:
      * @return std::string The metrics
      */
     std::string GetMetrics() const;
+    
+    /**
+     * @brief Get json string with the names and ids of all the sites
+     *
+     * @return std::vector<std::string> The names and ids of the sites
+     */    
+
+    std::string GetSiteNamesAndIds() const; 
 
   private:
     std::unordered_map<std::string, struct Site> sites;
@@ -198,6 +206,7 @@ EMSCRIPTEN_BINDINGS(file_handler) {
         .function("GetSiteNames", &FileHandler::GetSiteNames)
         .function("GetHistogram", &FileHandler::GetHistogram)
         .function("GetMetrics", &FileHandler::GetMetrics)
-        .function("GetInfoBox", &FileHandler::GetInfoBox);
+        .function("GetInfoBox", &FileHandler::GetInfoBox)
+        .function("GetSiteNamesAndIds", &FileHandler::GetSiteNamesAndIds);
 }
 #endif

@@ -10,35 +10,42 @@
 
 #define DEBUG
 
-void FileHandler::AddFile(std::string file, std::string file_name) {
+void FileHandler::AddFile(std::string file, std::string file_name)
+{
     std::string file_ending = GetFileEnding(file_name);
 
-    if (file_ending == "txt") {
+    if (file_ending == "txt")
+    {
         performance_files.push_back({file_name, file});
-    } else if (file_ending == "json") {
+    }
+    else if (file_ending == "json")
+    {
         host_files.push_back({file_name, file});
     }
 
-    #ifdef DEBUG
+#ifdef DEBUG
     std::cout << "Added file " << file_name << "." << std::endl;
-    #endif
+#endif
 }
 
-void FileHandler::ComputeFiles() {
-    for (auto file : host_files) {
+void FileHandler::ComputeFiles()
+{
+    for (auto file : host_files)
+    {
         AddHostFile(file.file);
     }
 
-    for (auto file : performance_files) {
+    for (auto file : performance_files)
+    {
         AddPerformanceFile(file.file, file.name);
     }
 
     host_files = {};
     performance_files = {};
 
-    #ifdef DEBUG
+#ifdef DEBUG
     std::cout << "Linked the host and performance files." << std::endl;
-    #endif
+#endif
 }
 
 std::string FileHandler::GetInfoBox(std::string site_id) {
@@ -102,15 +109,17 @@ std::string FileHandler::GetInfoBox(std::string site_id) {
     return info_box.dump();
 }
 
-std::string FileHandler::GetHistogram(std::string site_id) const {
+std::string FileHandler::GetHistogram(std::string site_id) const
+{
     // Make sure the site exists
-    if (sites.find(site_id) == sites.end()) {
-        #ifdef DEBUG
+    if (sites.find(site_id) == sites.end())
+    {
+#ifdef DEBUG
         std::cout << "Could not find site with id " << site_id << std::endl;
-        #endif
+#endif
         return "{}";
     }
-    
+
     struct Site site = sites.at(site_id);
     json categories;
 
@@ -119,12 +128,14 @@ std::string FileHandler::GetHistogram(std::string site_id) const {
     return categories.dump();
 }
 
-std::string FileHandler::GetBoxDiagram(std::string site_id) const {
+std::string FileHandler::GetBoxDiagram(std::string site_id) const
+{
     // Make sure the site exists
-    if (sites.find(site_id) == sites.end()) {
-        #ifdef DEBUG
+    if (sites.find(site_id) == sites.end())
+    {
+#ifdef DEBUG
         std::cout << "Could not find site with id " << site_id << std::endl;
-        #endif
+#endif
         return "{}";
     }
 
@@ -134,7 +145,8 @@ std::string FileHandler::GetBoxDiagram(std::string site_id) const {
 
     CalculateCategories(site, categories);
 
-    for (auto &el : categories.items()) {
+    for (auto &el : categories.items())
+    {
         box_diagram[el.key()]["average"] = GetBoxAverage(el.value());
         box_diagram[el.key()]["median"] = GetBoxMedian(el.value());
         box_diagram[el.key()]["first_quartile"] = GetBoxFirstQuartile(el.value());
@@ -145,89 +157,109 @@ std::string FileHandler::GetBoxDiagram(std::string site_id) const {
     return box_diagram.dump();
 }
 
-void FileHandler::CalculateCategories(struct Site &site, json &categories) const {
+void FileHandler::CalculateCategories(struct Site &site, json &categories) const
+{
     // Populate with the different categories
-    for (json log: site.logs) {
-        for (auto &el : log.items()) {
+    for (json log : site.logs)
+    {
+        for (auto &el : log.items())
+        {
             categories[el.key()] = {};
         }
     }
 
-    for (auto &el : categories.items()) {
+    for (auto &el : categories.items())
+    {
         MergeCategory(site, el.key(), categories);
     }
 }
 
-double FileHandler::GetBoxAverage(json &category) const {
+double FileHandler::GetBoxAverage(json &category) const
+{
     int sum = 0;
 
-    for (auto pair : category["data"]) {
+    for (auto pair : category["data"])
+    {
         // Do not count the infinte length because it will skew the results
-        if ((int) pair["length"] == std::numeric_limits<int>::max()) {
+        if ((int)pair["length"] == std::numeric_limits<int>::max())
+        {
             continue;
         }
 
-        sum += (int) pair["length"] * (int) pair["count"];
+        sum += (int)pair["length"] * (int)pair["count"];
     }
-    return sum / ((double) category["total"]);
+    return sum / ((double)category["total"]);
 }
 
-int FileHandler::GetBoxLimit(json &category, double limit) const {
-    const int ktotal = (int) category["total"];
+int FileHandler::GetBoxLimit(json &category, double limit) const
+{
+    const int ktotal = (int)category["total"];
     int sum = 0;
 
-    for (auto pair : category["data"]) {
-        sum += (int) pair["count"];
+    for (auto pair : category["data"])
+    {
+        sum += (int)pair["count"];
 
-        if (sum >= ktotal * limit) {
-            return (int) pair["length"];
+        if (sum >= ktotal * limit)
+        {
+            return (int)pair["length"];
         }
     }
     return 0;
 }
 
-int FileHandler::GetBoxMedian(json &category) const {
+int FileHandler::GetBoxMedian(json &category) const
+{
     return GetBoxLimit(category, 0.5);
 }
 
-int FileHandler::GetBoxFirstQuartile(json &category) const {
+int FileHandler::GetBoxFirstQuartile(json &category) const
+{
     return GetBoxLimit(category, 0.25);
 }
 
-int FileHandler::GetBoxThirdQuartile(json &category) const {
+int FileHandler::GetBoxThirdQuartile(json &category) const
+{
     return GetBoxLimit(category, 0.75);
 }
 
-int FileHandler::GetBoxMin(json &category) const {
-    for (auto pair : category["data"]) {
-        if (pair["count"] != 0) {
-            return (int) pair["length"];
+int FileHandler::GetBoxMin(json &category) const
+{
+    for (auto pair : category["data"])
+    {
+        if (pair["count"] != 0)
+        {
+            return (int)pair["length"];
         }
     }
     return 0;
 }
 
-int FileHandler::GetBoxMax(json &category) const {
+int FileHandler::GetBoxMax(json &category) const
+{
     auto data = category["data"];
-    
+
     // Loop through the data backwards
-    for (auto it = data.rbegin(); it != data.rend(); it++) {
-        if ((*it)["count"] != 0) {
-            return (int) (*it)["length"];
+    for (auto it = data.rbegin(); it != data.rend(); it++)
+    {
+        if ((*it)["count"] != 0)
+        {
+            return (int)(*it)["length"];
         }
     }
     return 0;
 }
 
-void FileHandler::MergeCategory(struct Site &site, std::string key, json &result) const {
+void FileHandler::MergeCategory(struct Site &site, std::string key, json &result) const
+{
     result[key] = {};
     result[key]["total"] = 0;
 
     std::map<int, int> length_count;
 
-    for (json log : site.logs) {
+    for (json log : site.logs)
+    {
         json category = log[key];
-
 
         auto count_it = category["count"].begin();
         const auto kcount_end = category["count"].end();
@@ -242,63 +274,76 @@ void FileHandler::MergeCategory(struct Site &site, std::string key, json &result
         // Hopefully unnecessary since they should be of the same length
         // Calculate the real count from the aggregation
         // Align the length to the count in pairs
-        while(count_it != kcount_end && length_it != klength_end) {
-            int new_count = (int) *count_it - last_count;
+        while (count_it != kcount_end && length_it != klength_end)
+        {
+            int new_count = (int)*count_it - last_count;
 
             // Illegal nesting
-            if (length_count.find(*length_it) == length_count.end()) {
+            if (length_count.find(*length_it) == length_count.end())
+            {
                 length_count[*length_it] = new_count;
-            } else {
+            }
+            else
+            {
                 length_count[*length_it] += new_count;
             }
 
-            last_count = (int) *count_it;
+            last_count = (int)*count_it;
             sum += new_count;
-            
+
             count_it++;
             length_it++;
         }
-        result[key]["total"] = (int) result[key]["total"] + sum;
+        result[key]["total"] = (int)result[key]["total"] + sum;
     }
 
     // Add the data to the json object
-    for (auto const & kentry : length_count) {
+    for (auto const &kentry : length_count)
+    {
         result[key]["data"] += {
             {"length", kentry.first},
-            {"count", kentry.second}
-        };
+            {"count", kentry.second}};
     }
 }
 
-std::string FileHandler::GetFileEnding(std::string &file_name) const {
+std::string FileHandler::GetFileEnding(std::string &file_name) const
+{
     return file_name.substr(file_name.rfind(".") + 1);
 }
 
-void FileHandler::AddHostFile(std::string &file) {
+void FileHandler::AddHostFile(std::string &file)
+{
     json hosts;
-    try {
+    try
+    {
         hosts = json::parse(file);
-    } catch (json::parse_error &e) {
+    }
+    catch (json::parse_error &e)
+    {
         std::cerr << "Could not parse hosts file: " << e.what() << std::endl;
         return;
     }
     std::string site_id = hosts["site_id"];
 
     // Add the site if it does not already exist
-    if (sites.find(site_id) == sites.end()) {
+    if (sites.find(site_id) == sites.end())
+    {
         sites[site_id] = {hosts, {}};
 
-        #ifdef DEBUG
+#ifdef DEBUG
         std::cout << "Added site with id " << site_id << "." << std::endl;
-        #endif
-    } else {
-        #ifdef DEBUG
+#endif
+    }
+    else
+    {
+#ifdef DEBUG
         std::cout << "Site with id " << site_id << " already exist." << std::endl;
-        #endif
+#endif
     }
 }
 
-json FileHandler::GetPerformanceJson(std::string &content) const {
+json FileHandler::GetPerformanceJson(std::string &content) const
+{
     std::vector<std::string> methods;
     std::vector<std::string> buckets;
 
@@ -307,8 +352,10 @@ json FileHandler::GetPerformanceJson(std::string &content) const {
 
     json performance;
 
-    while(std::getline(content_stream, line)) {
-        if (line.find(",le=") == std::string::npos) {
+    while (std::getline(content_stream, line))
+    {
+        if (line.find(",le=") == std::string::npos)
+        {
             continue;
         }
 
@@ -323,11 +370,14 @@ json FileHandler::GetPerformanceJson(std::string &content) const {
         start = line.find(" ");
         std::string count = line.substr(start);
 
-        if (length == "+Inf") {
+        if (length == "+Inf")
+        {
             performance[method]["length"] += std::numeric_limits<int>::max();
-        } else {
+        }
+        else
+        {
             performance[method]["length"] += std::stoi(length);
-        }       
+        }
 
         performance[method]["count"] += std::stoi(count);
     }
@@ -335,56 +385,106 @@ json FileHandler::GetPerformanceJson(std::string &content) const {
     return performance;
 }
 
-void FileHandler::AddPerformanceFile(std::string &file, std::string &file_name) {
+void FileHandler::AddPerformanceFile(std::string &file, std::string &file_name)
+{
     std::string site_id = GetIdFromPerformance(file_name);
     // Add the host to the corresponding site if it exists
 
-    if (sites.find(site_id) != sites.end()) {
+    if (sites.find(site_id) != sites.end())
+    {
         json performance = GetPerformanceJson(file);
         sites[site_id].logs.insert(performance);
 
-        #ifdef DEBUG
+#ifdef DEBUG
         std::cout << "Linked log " << file_name << " to " << site_id << "." << std::endl;
-        #endif
-
-    } else {
-        #ifdef DEBUG
+#endif
+    }
+    else
+    {
+#ifdef DEBUG
         std::cout << "The site with id " << site_id << " does not exist." << std::endl;
-        #endif
+#endif
     }
 }
 
-std::string FileHandler::GetIdFromPerformance(std::string &file_name) const {
-    return  file_name.substr(0, file_name.find("_"));
+std::string FileHandler::GetIdFromPerformance(std::string &file_name) const
+{
+    return file_name.substr(0, file_name.find("_"));
 }
 
-std::string FileHandler::GetSiteNames() const {
-    json sitesNames;
-    std::vector<std::string> names;
-    sitesNames["names"] = names;
+/**
+ * @brief  Returns a json string with the site names and ids
+ * This function will later be replaced with an updated version of GetSiteNames()
+ * json string returned has format:
+ *
+ * @return std::string in json format
+ */
 
-    for (auto const site : sites) {
+std::string FileHandler::GetSiteNamesAndIds() const
+{
+    json sitesNames;
+    std::vector<std::vector<std::string>> jsonSites;
+    sitesNames["sites"] = jsonSites;
+
+    for (auto const site : sites)
+    {
         json hosts = site.second.hosts;
-        if (hosts.contains("site_name")) {
-            sitesNames["names"].push_back(hosts["site_name"]);
-        } else {
-            #ifdef DEBUG
+        if (hosts.contains("site_name"))
+        {
+            std::vector<std::string> newSite;
+            std::string id = site.first;
+            std::string name = hosts["site_name"];
+
+            newSite.push_back(id);
+            newSite.push_back(name);
+            sitesNames["sites"].push_back(newSite);
+        }
+        else
+        {
+#ifdef DEBUG
             std::cerr << "The site with id " << site.first
                       << " is missing the key 'site_name'." << std::endl;
-            #endif
+#endif
         }
     }
     return sitesNames.dump();
 }
 
-std::string FileHandler::GetMetrics() const {
+std::string FileHandler::GetSiteNames() const
+{
+    json sitesNames;
+    std::vector<std::string> names;
+    sitesNames["names"] = names;
+
+    for (auto const site : sites)
+    {
+        json hosts = site.second.hosts;
+        if (hosts.contains("site_name"))
+        {
+            sitesNames["names"].push_back(hosts["site_name"]);
+        }
+        else
+        {
+#ifdef DEBUG
+            std::cerr << "The site with id " << site.first
+                      << " is missing the key 'site_name'." << std::endl;
+#endif
+        }
+    }
+    return sitesNames.dump();
+}
+
+std::string FileHandler::GetMetrics() const
+{
     std::set<std::string> metrics;
 
-    for (auto site : sites) {
+    for (auto site : sites)
+    {
         json categories;
         CalculateCategories(site.second, categories);
         // add all metric names
-        for (auto &el : categories.items()) {
+        for (auto &el : categories.items())
+        {
             metrics.insert(el.key());
         }
     }

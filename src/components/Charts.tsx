@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import {} from '@mui/material';
+import { Divider } from '@mui/material';
 import {
   VictoryAxis,
   VictoryChart,
@@ -13,7 +13,7 @@ import {
   VictoryTooltip,
   VictoryCandlestick,
 } from 'victory';
-
+import { SiteProperties } from './SitePropetiesInterface';
 /**
  * Top level component.
  *
@@ -27,6 +27,7 @@ import {
 interface ChartProps {
   metrics: Array<string>;
   sites: Array<string>;
+  siteProps: Map<string, SiteProperties>;
   fileHandler: any;
 }
 /* Datastructure for drawing a histogram
@@ -78,12 +79,14 @@ interface Candle {
  *
  * @param site what site to get data from.
  * @param metric what metric to get data from.
+ * @param color   what color to paint the bars.
  * @param fileHandler is the filehandler :)
  * @returns a Histogram object containing all data for drawing a BarChart.
  */
 function getBarChartData(
   site: string,
   metric: string,
+  color: string,
   fileHandler: any
 ): Histogram {
   /**
@@ -92,11 +95,17 @@ function getBarChartData(
 
   const histogram: Histogram = { bars: [] };
 
-  const { data } = JSON.parse(fileHandler.GetHistogram(site))[metric];
+  const fileContent = fileHandler.GetHistogram(site);
+
+  if (fileContent === '{}') {
+    return histogram;
+  }
+
+  const { data } = JSON.parse(fileContent)[metric];
 
   data.forEach((bar: any) => {
     if (bar.length <= 3000) {
-      histogram.bars.push({ x: bar.length, y: bar.count, fill: 'red' });
+      histogram.bars.push({ x: bar.length, y: bar.count, fill: color });
     }
   });
   return histogram;
@@ -110,12 +119,15 @@ function getBarChartData(
  * @param sites a string list containing 1-n sites that will be shown in the candlechart.
  * example ['s1','s2','s3','s4']
  * @param fileHandler is fuleHandler :)
+ * @param siteProps map ecah siteKey to a color
  * @returns a data structure in correct format to paint a candleChart.
  */
 function getCandleChartData(
   metric: string,
   sites: Array<string>,
-  fileHandler: any
+  fileHandler: any,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  siteProps: Map<string, SiteProperties> // used later when structure for candlechart is known.
 ): CandleChart {
   const candle: CandleChart = { candles: [] };
   /**
@@ -126,15 +138,19 @@ function getCandleChartData(
    */
 
   sites.forEach((site, index) => {
-    const data = JSON.parse(fileHandler.GetBoxDiagram(site))[metric];
-    candle.candles.push({
-      x: index + 1,
-      open: data.first_quartile,
-      close: data.third_quartile,
-      high: data.max,
-      low: data.min,
-    });
-    // TODO: Implement mean
+    const fileContent = fileHandler.GetBoxDiagram(site);
+
+    if (fileContent !== '{}') {
+      const data = JSON.parse(fileContent)[metric];
+      candle.candles.push({
+        x: index + 1,
+        open: data.first_quartile,
+        close: data.third_quartile,
+        high: data.max,
+        low: data.min,
+      });
+      // TODO: Implement mean
+    }
   });
 
   return candle;
@@ -183,9 +199,7 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
  * @returns A VictoryChart with an array of VictoryCandles.
  */
 export function BoxPlotChart(props: ChartProps): JSX.Element {
-  const { metrics } = props;
-  const { sites } = props;
-  const { fileHandler } = props;
+  const { metrics, sites, siteProps, fileHandler } = props;
   const width = 10;
   const offsetPadding = 5;
   const victoryCandles: Array<JSX.Element> = [];
@@ -196,7 +210,12 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
 
   // For metrics in props.metrics skapa victorycandles som innehåller alla props.sites
   metrics.forEach((metric) => {
-    const data: CandleChart = getCandleChartData(metric, sites, fileHandler);
+    const data: CandleChart = getCandleChartData(
+      metric,
+      sites,
+      fileHandler,
+      siteProps
+    );
     victoryCandles.push(drawVictoryCandle(data.candles, width));
   });
 
@@ -235,16 +254,17 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
  *
  * @param data data needed to create a barChart. Must be in the following format
  *  siteNmetricN = [
-      { x: '500', y: 20, fill: 'red' },
-      { x: '600', y: 150, fill: 'red' },
-      { x: '700', y: 200, fill: 'red' },
-    ];
+      { x: '500', y: 20, fill: color },
+      { x: '600', y: 150, fill:colorr },
+      { x: '700', y: 200, fill: color },
+    ];'red'color
  * @param width width of a bar.
  * @returns a single VictoryBar.
  */
 function drawVictoryBar(data: Array<Bar>, width: number): JSX.Element {
   return (
     <VictoryBar
+      data-testid="getdata"
       key={JSON.stringify(data)}
       labelComponent={
         <VictoryTooltip cornerRadius={0} pointerLength={0} dy={-10} />
@@ -303,10 +323,22 @@ function drawHistogram(
     <div key={metric}>
       <p
         data-testid="graph-header"
-        style={{ textAlign: 'center', fontSize: 22, marginBottom: 0 }}
+        style={{
+          textAlign: 'center',
+          fontSize: 22,
+          marginBottom: 0,
+          color: '#004688',
+        }}
       >
         {metric}
       </p>
+      <Divider
+        sx={{
+          borderBottomWidth: 2,
+          marginLeft: '30%',
+          marginRight: '30%',
+        }}
+      />
       <VictoryChart>
         <VictoryAxis
           dependentAxis
@@ -344,13 +376,13 @@ function drawHistogram(
  *  metrics.length = number of VictoryCharts
  *  sites.length = number of BarCharts in each VictoryChart
  *
- * @param props :ChartProps contains list of metrics and list of sites.
+ * @param props :ChartProps contains list of metrics,list of sites.
+ * And a map, maping each site to a color
  * @returns A list of victorycharts
  * [<VictoryChart>BarchartsArray</VictoryChart>,<VictoryChart>BarChartsArray</VictoryChart>]
  */
 export function BarChart(props: ChartProps): JSX.Element {
-  const { metrics } = props;
-  const { sites } = props;
+  const { metrics, sites, siteProps } = props;
   const { fileHandler } = props;
   const barGraphList: any = [];
 
@@ -361,16 +393,19 @@ export function BarChart(props: ChartProps): JSX.Element {
   // This does not effect the actual graph width,
   // width of BarChart is based on parent container
   const graphWidth = 300;
-
   metrics.forEach((metric) => {
     const barGraph: Array<Histogram> = [];
     sites.forEach((site) => {
-      const data: Histogram = getBarChartData(site, metric, fileHandler);
+      const siteProp = siteProps.get(site);
+      let color = siteProp?.color;
+      if (!color) {
+        color = 'cyan';
+      }
+      const data: Histogram = getBarChartData(site, metric, color, fileHandler);
       barGraph.push(data);
     });
     const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
     barGraphList.push(drawHistogram(barGraph, metric, width));
   });
-
-  return <div>{barGraphList}</div>;
+  return <div data-testid="barchart">{barGraphList}</div>;
 }

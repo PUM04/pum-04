@@ -9,6 +9,7 @@ import FileHandlerModule from '../../cpp/file_handler';
 
 // Component to test
 import { BoxPlotChart, BarChart } from '../../components/Charts';
+import { SiteProperties } from '../../components/SitePropetiesInterface';
 
 /**
  * Note that the tests below are very simple and an expansion of these test are needed in the future.
@@ -23,6 +24,8 @@ describe('Test charts', () => {
 
   // Run this before each test
   beforeEach(() => {});
+  // Maps each site key to a site name and a color
+
   it('Check if candleChart is rendered', async () => {
     const fileHandler = await fileHandlerPromise;
 
@@ -48,8 +51,10 @@ response_time_bucket{method="GetImage",le="4"} 0
 
     fileHandler.ComputeFiles();
 
+    const fakeSitePropMap = new Map<string, SiteProperties>();
     render(
       <BoxPlotChart
+        siteProps={fakeSitePropMap}
         metrics={['GetPatient']}
         sites={['abc123']}
         fileHandler={fileHandler}
@@ -61,12 +66,14 @@ response_time_bucket{method="GetImage",le="4"} 0
 
   it('Check if histograms are rendered', async () => {
     const fileHandler = await fileHandlerPromise;
+    const fakeSitePropMap = new Map<string, SiteProperties>();
 
     render(
       <BarChart
         metrics={['GetPatient']}
         sites={['abc123']}
         fileHandler={fileHandler}
+        siteProps={fakeSitePropMap}
       />
     );
 
@@ -78,6 +85,7 @@ response_time_bucket{method="GetImage",le="4"} 0
         metrics={['GetPatient', 'GetImage']}
         sites={['abc123']}
         fileHandler={fileHandler}
+        siteProps={fakeSitePropMap}
       />
     );
     const histograms = screen.getAllByTestId('graph-header');

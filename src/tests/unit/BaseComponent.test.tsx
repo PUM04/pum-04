@@ -3,26 +3,50 @@
  */
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
+import { SiteProperties } from '../../components/SitePropetiesInterface';
 
 import {
   InfoboxContainer,
-  GraphComponent,
+  BarGraphComponent,
+  BoxGraphComponent,
 } from '../../components/BaseComponent';
 
 describe('App', () => {
   // Run this before each test
   beforeEach(() => {
-    render(<GraphComponent fileHandler={null} />);
-    render(<InfoboxContainer fileHandler={undefined} />);
+    const testmap = new Map<string, SiteProperties>();
+
+    render(
+      <BarGraphComponent
+        metrics={['hej']}
+        sites={['hej']}
+        siteProps={testmap}
+        fileHandler={undefined}
+      />
+    );
+    render(
+      <BoxGraphComponent
+        metrics={['hej']}
+        sites={['hej']}
+        siteProps={testmap}
+        fileHandler={undefined}
+      />
+    );
+    render(<InfoboxContainer sites={["test"]} fileHandler={undefined}/>);
   });
 
-  // Tshould render
-  it('should render graphComponent', async () => {
-    await screen.findByTestId('graph-component');
+  // Should render
+  it('should render BarGraphComponent', async () => {
+    await screen.findByTestId('bargraph-component');
   });
 
-  // Tshould render
-  it('should render graphComponent', async () => {
+  // Should render
+  it('should render BoxGraphComponent', async () => {
+    await screen.findByTestId('boxgraph-component');
+  });
+
+  // Should render
+  it('should render infoBoxComponent', async () => {
     await screen.findByTestId('infobox-component');
   });
 
