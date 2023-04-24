@@ -296,9 +296,6 @@ export default function Menu(props: MenuProps) {
             />
           </Paper>
           <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>
-            <p data-testid="uploaded-files">
-              Uploaded files: {JSON.stringify(files)}
-            </p>
             <DragAndDropzone
               setter={setFiles}
               value={files}
