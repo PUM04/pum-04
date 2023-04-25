@@ -9,7 +9,7 @@ import FileHandlerModule from '../../cpp/file_handler';
 
 // Component to test
 import { BoxPlotChart, BarChart } from '../../components/Charts';
-import { SiteProperties } from '../../components/SitePropetiesInterface';
+import { Site } from '../../components/SiteInterface';
 
 /**
  * Note that the tests below are very simple and an expansion of these test are needed in the future.
@@ -51,7 +51,7 @@ response_time_bucket{method="GetImage",le="4"} 0
 
     fileHandler.ComputeFiles();
 
-    const fakeSitePropMap = new Map<string, SiteProperties>();
+    const fakeSitePropMap = new Map<string, Site>();
     render(
       <BoxPlotChart
         siteProps={fakeSitePropMap}
@@ -66,7 +66,7 @@ response_time_bucket{method="GetImage",le="4"} 0
 
   it('Check if histograms are rendered', async () => {
     const fileHandler = await fileHandlerPromise;
-    const fakeSitePropMap = new Map<string, SiteProperties>();
+    const fakeSitePropMap = new Map<string, Site>();
 
     render(
       <BarChart

@@ -17,7 +17,7 @@ import DragAndDropzone from './DragAndDropzone';
 import LegendBar from './LegendBar';
 import CHART_COLORS from './CHART_COLORS';
 import Dropdown from './Dropdown';
-import { SiteProperties } from './SitePropetiesInterface';
+import { Site } from './SiteInterface';
 import '../App.css';
 
 const size = 75;
@@ -78,8 +78,9 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 interface MenuProps {
   // TODO: Get the actual type
   fileHandler: any;
-  siteProps: Map<string, SiteProperties>;
-  setSiteProps: Dispatch<React.SetStateAction<Map<string, SiteProperties>>>;
+  siteProps: Map<string, Site>;
+  setSiteProps: Dispatch<React.SetStateAction<Map<string, Site>>>;
+  setMetricProps: Dispatch<React.SetStateAction<string[]>>;
 }
 
 /**
@@ -88,7 +89,7 @@ interface MenuProps {
  * @param files files which are added to the backend
  * @param fileHandler is used to add the files to the backend
  */
-const addFilesToBackend = (files: File[], fileHandler: any) => {
+export const addFilesToBackend = (files: File[], fileHandler: any) => {
   if (files.length > 0) {
     files.forEach((file) => {
       const filereader = new FileReader();
@@ -106,33 +107,16 @@ const addFilesToBackend = (files: File[], fileHandler: any) => {
 };
 
 /**
- * Gets the site names from the backend.
+ * Gets the sites from the backend.
  *
  * @param fileHandler used to get the site names
  * @returns an array of site names
  */
-const getSiteNames = (fileHandler: any): string[] => {
-  const sites = fileHandler ? JSON.parse(fileHandler.GetSiteNames()).names : [];
-
+const getSites = (fileHandler: any): Site[] => {
+  const sites = fileHandler ? JSON.parse(fileHandler.GetSites()).sites : [];
   return sites;
 };
 
-/**
- *  Gets the site names and ids from the backend.
- *
- * @param fileHandler  used to get the site names and ids.
- * @returns an array with site names and ids index 0 is site id and index 1 is site name;
- */
-
-const getSiteNamesAndId = (fileHandler: any): string[][] => {
-  // sites[i][0] == siteId sites[i][1]= sitesName
-
-  const sites = fileHandler
-    ? JSON.parse(fileHandler.GetSiteNamesAndIds()).sites
-    : [[]];
-
-  return sites;
-};
 /**
  * Gets the metrics from the backend.
  *
@@ -153,52 +137,23 @@ const getMetrics = (fileHandler: any): string[] => {
  * @returns a menucomponent on top of the application component
  */
 export default function Menu(props: MenuProps) {
-  const { fileHandler } = props;
+  const { fileHandler, siteProps, setSiteProps, setMetricProps } = props;
+
   const theme = useTheme();
   const [open, setOpen] = useState(false);
 
   const [files, setFiles] = useState<File[]>([]);
   const [oldFiles, setOldFiles] = useState<File[]>([]);
 
-  const { siteProps } = props;
-  const { setSiteProps } = props;
-  const [siteNames, setSiteNames] = useState<string[]>([]);
-  const [siteNamesAndIds, setSiteNamesAndIds] = useState<string[][]>([[]]);
+  const [sites, setSites] = useState<Site[]>([]);
   const [metrics, setMetrics] = useState<string[]>([]);
 
-  // Everytime siteNamesAndIds changes we want to add set at color for that id
-  useEffect(() => {
-    const newMap = new Map<string, SiteProperties>(siteProps);
-    const PHI = (1 + Math.sqrt(5)) / 2;
-    let index = newMap.size;
-
-    // Map colors to the sites
-    siteNamesAndIds.forEach((site) => {
-      const siteId = site[0];
-      const siteName = site[1];
-      if (!siteProps.has(siteId)) {
-        let hexColor = '';
-        if (index < CHART_COLORS.length) {
-          hexColor = CHART_COLORS[index];
-        } else {
-          console.log('no more default colors, generating random colors');
-          const n = index * PHI - Math.floor(index * PHI);
-          const hue = Math.floor(n * 180);
-          hexColor = `#0${hue.toString(16)}`;
-        }
-
-        newMap.set(siteId, {
-          color: hexColor,
-          enabled: true,
-          name: siteName,
-        });
-        setSiteProps(newMap);
-        index++;
-      }
-    });
-  }, [siteNamesAndIds]);
-
-  // add files to backend when they are added to the state
+  const [selectedSites, setSelectedSites] = useState<Record<string, boolean>>(
+    {}
+  );
+  const [selectedMetrics, setSelectedMetrics] = useState<
+    Record<string, boolean>
+  >({});
 
   useEffect(() => {
     const oldFileNames = oldFiles.map((v) => v.name);
@@ -210,9 +165,8 @@ export default function Menu(props: MenuProps) {
   // get site names and metrics from backend when files are added to the backend
   useEffect(() => {
     fileHandler?.ComputeFiles();
-    setSiteNames(getSiteNames(fileHandler));
-    setSiteNamesAndIds(getSiteNamesAndId(fileHandler));
 
+    setSites(getSites(fileHandler));
     setMetrics(getMetrics(fileHandler));
   }, [oldFiles]);
 
@@ -222,6 +176,48 @@ export default function Menu(props: MenuProps) {
 
   const handleDrawerClose = () => {
     setOpen(false);
+  };
+
+  const handleSelectedMetrics = (key: string, value: boolean) => {
+    selectedMetrics[key] = value;
+    setSelectedMetrics(selectedMetrics);
+
+    const newSelectedMetrics: string[] = [];
+    Object.keys(selectedMetrics).forEach((metric) => {
+      if (selectedMetrics[metric]) newSelectedMetrics.push(metric);
+    });
+    setMetricProps(newSelectedMetrics);
+  };
+
+  const handleSelectedSites = (key: string, value: boolean) => {
+    selectedSites[key] = value;
+    setSelectedSites(selectedSites);
+
+    const newMap = new Map<string, Site>(siteProps);
+    const PHI = (1 + Math.sqrt(5)) / 2;
+    let index = newMap.size;
+
+    // Map colors to the sites
+    sites.forEach((site) => {
+      if (site.id) {
+        let hexColor = '';
+        if (index < CHART_COLORS.length) {
+          hexColor = CHART_COLORS[index];
+        } else {
+          console.info('no more default colors, generating random colors');
+          const n = index * PHI - Math.floor(index * PHI);
+          const hue = Math.floor(n * 180);
+          hexColor = `#0${hue.toString(16)}`;
+        }
+        newMap.set(site.id, {
+          ...site,
+          color: hexColor,
+          enabled: selectedSites[site.name] ? selectedSites[site.name] : false,
+        });
+        index++;
+      }
+    });
+    setSiteProps(newMap);
   };
 
   return (
@@ -288,19 +284,18 @@ export default function Menu(props: MenuProps) {
           >
             <Dropdown
               dropdownName="Sites"
-              value={siteNames}
+              value={sites.map((site) => site.name)}
+              onSelected={handleSelectedSites}
               setSiteProps={setSiteProps}
             />
             <Dropdown
               dropdownName="Metrics"
               value={metrics}
+              onSelected={handleSelectedMetrics}
               setSiteProps={setSiteProps}
             />
           </Paper>
           <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>
-            <p data-testid="uploaded-files">
-              Uploaded files: {JSON.stringify(files)}
-            </p>
             <DragAndDropzone
               setter={setFiles}
               value={files}

@@ -5,7 +5,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import React from 'react';
 import Paper from '@mui/material/Paper';
-import { SiteProperties } from './SitePropetiesInterface';
+import { Site } from './SiteInterface';
 
 /**
  * Creates a legend
@@ -40,7 +40,7 @@ function Legend(prop: { name: any; color: any }) {
 }
 
 interface LegendBarProps {
-  siteProps: Map<string, SiteProperties>;
+  siteProps: Map<string, Site>;
 }
 /**
  * Creates a box for the appbar containg all legends

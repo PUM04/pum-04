@@ -4,12 +4,12 @@
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
 import LegendBar from '../../components/LegendBar';
-import { SiteProperties } from '../../components/SitePropetiesInterface';
+import { Site } from '../../components/SiteInterface';
 
 describe('App', () => {
   // Run this before each test
   beforeEach(() => {
-    const testmap = new Map<string, SiteProperties>();
+    const testmap = new Map<string, Site>();
     testmap.set('stockholm', {
       color: 'red',
       enabled: true,
