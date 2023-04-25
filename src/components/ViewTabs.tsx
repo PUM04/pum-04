@@ -1,5 +1,5 @@
 /**
- * @file Contains the
+ * @file Contains the ViewTabs component.
  */
 import React, { useState } from 'react';
 import '../App.css';
