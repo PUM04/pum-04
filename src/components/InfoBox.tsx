@@ -50,7 +50,7 @@ function InfoBox(props: InfoBoxProps) {
         color: 'secondary.main',
         padding: '1vh',
         margin: '1vh',
-        minWidth: '40vh',
+        minWidth: '20vw',
       }}
     >
       <List>
