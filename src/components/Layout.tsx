@@ -4,7 +4,8 @@
 import React, { useState } from 'react';
 import { Box } from '@mui/material';
 import Menu from './Menu';
-import { GraphComponent, InfoboxComponent } from './BaseComponent';
+import { InfoboxContainer } from './BaseComponent';
+import ViewTabs from './ViewTabs';
 import { Site } from './SiteInterface';
 
 //        ____Layout_____
@@ -53,22 +54,23 @@ function Layout(props: MenuProps) {
         setSiteProps={setSiteProps}
         setMetricProps={setMetricProps}
       />
-      {siteProps.size > 0 && metricProps.length > 0 && (
-        <Box
-          sx={{
-            flexDirection: 'column',
-            display: 'inline-flex',
-            backgroundColor: 'primary.light1',
-          }}
-        >
-          <GraphComponent
-            siteProps={siteProps}
-            fileHandler={fileHandler}
-            metrics={metricProps}
-          />
-          <InfoboxComponent />
-        </Box>
-      )}
+
+      <Box
+        sx={{
+          flexDirection: 'column',
+          display: 'flex',
+          marginTop: `60px`,
+          textAlign: 'left',
+          margin: '0',
+        }}
+      >
+        <ViewTabs
+          siteProps={siteProps}
+          metricProps={metricProps}
+          fileHandler={fileHandler}
+        />
+        <InfoboxContainer fileHandler={fileHandler} />
+      </Box>
     </Box>
   );
 }

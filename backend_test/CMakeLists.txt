@@ -10,6 +10,9 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_definitions(${CMAKE_FLAGS})
 
+add_compile_options(-fprofile-arcs -ftest-coverage)
+add_link_options(-lgcov --coverage)
+
 file(GLOB_RECURSE test_src CONFIGURE_DEPENDS 
     "../src/cpp/*.h" 
     "../src/cpp/tests/*.h" 

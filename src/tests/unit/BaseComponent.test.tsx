@@ -6,27 +6,47 @@ import { cleanup, render, screen } from '@testing-library/react';
 import { Site } from '../../components/SiteInterface';
 
 import {
-  InfoboxComponent,
-  GraphComponent,
+  InfoboxContainer,
+  BarGraphComponent,
+  BoxGraphComponent,
 } from '../../components/BaseComponent';
 
 describe('App', () => {
   // Run this before each test
   beforeEach(() => {
     const testmap = new Map<string, Site>();
+
     render(
-      <GraphComponent siteProps={testmap} fileHandler={null} metrics={[]} />
+      <BarGraphComponent
+        metrics={['hej']}
+        siteProps={testmap}
+        fileHandler={undefined}
+      />
     );
-    render(<InfoboxComponent />);
+    render(
+      <BoxGraphComponent
+        metrics={['hej']}
+        siteProps={testmap}
+        fileHandler={undefined}
+      />
+    );
+    render(
+      <InfoboxContainer /** sites={['test']} */ fileHandler={undefined} />
+    );
   });
 
-  // Tshould render
-  it('should render graphComponent', async () => {
-    await screen.findByTestId('graph-component');
+  // Should render
+  it('should render BarGraphComponent', async () => {
+    await screen.findByTestId('bargraph-component');
   });
 
-  // Tshould render
-  it('should render graphComponent', async () => {
+  // Should render
+  it('should render BoxGraphComponent', async () => {
+    await screen.findByTestId('boxgraph-component');
+  });
+
+  // Should render
+  it('should render infoBoxComponent', async () => {
     await screen.findByTestId('infobox-component');
   });
 

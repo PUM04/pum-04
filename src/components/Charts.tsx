@@ -4,8 +4,7 @@
  */
 
 import React, { useEffect, useMemo, useState } from 'react';
-
-import {} from '@mui/material';
+import { Divider } from '@mui/material';
 import {
   VictoryAxis,
   VictoryChart,
@@ -149,8 +148,6 @@ function getCandleChartData(
       high: metricData.max,
       low: metricData.min,
     });
-
-    // TODO: Implement mean
   });
 
   return candle;
@@ -339,10 +336,22 @@ function drawHistogram(
     <div key={metric}>
       <p
         data-testid="graph-header"
-        style={{ textAlign: 'center', fontSize: 22, marginBottom: 0 }}
+        style={{
+          textAlign: 'center',
+          fontSize: 22,
+          marginBottom: 0,
+          color: '#004688',
+        }}
       >
         {metric}
       </p>
+      <Divider
+        sx={{
+          borderBottomWidth: 2,
+          marginLeft: '30%',
+          marginRight: '30%',
+        }}
+      />
       <VictoryChart>
         <VictoryAxis
           dependentAxis

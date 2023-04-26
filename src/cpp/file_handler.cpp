@@ -48,6 +48,67 @@ void FileHandler::ComputeFiles()
 #endif
 }
 
+std::string FileHandler::GetInfoBox(std::string site_id) {
+    // Make sure the site exists
+    if (sites.find(site_id) == sites.end()) {
+        #ifdef DEBUG
+        std::cout << "Could not find site with id " << site_id << std::endl;
+        #endif
+        return "{}";
+    }
+
+    struct Site site = sites.at(site_id);
+
+    // Return the cached version if it exists
+    if (site.info_box != NULL) {
+        return site.info_box.dump();
+    }
+
+    json info_box;
+    info_box["site_name"] = site.hosts["site_name"];
+
+    info_box["min_ram"] = std::numeric_limits<int>::max();
+    info_box["max_ram"] = 0.0;
+    info_box["total_ram"] = 0.0;
+
+    info_box["min_cpu"] = std::numeric_limits<int>::max();
+    info_box["max_cpu"] = 0;
+    info_box["total_cpu"] = 0;
+
+    info_box["hosts"] = 0;
+
+    for (auto host : site.hosts["nodes"]) {
+        if (host["memory"] < info_box["min_ram"] ) {
+            info_box["min_ram"] = host["memory"];
+        } else if (host["memory"] > info_box["max_ram"]) {
+            info_box["max_ram"] = host["memory"];
+        }
+
+        info_box["total_ram"] = (double) info_box["total_ram"] + (double) host["memory"];
+
+        if (host["cpu"] < info_box["min_cpu"] ) {
+            info_box["min_cpu"] = host["cpu"];
+        } else if (host["cpu"] > info_box["max_cpu"]) {
+            info_box["max_cpu"] = host["cpu"];
+        }
+
+        info_box["total_cpu"] = (int) info_box["total_cpu"] + (int) host["cpu"];
+        info_box["hosts"] = (int) info_box["hosts"] + 1;
+    }
+
+    info_box["average_ram"] = (double) info_box["total_ram"] / (double) info_box["hosts"];
+    info_box["average_cpu"] = (double) info_box["total_cpu"] / (double) info_box["hosts"];
+
+    // Round to two decimal places
+    info_box["average_ram"] = round((double) info_box["average_ram"] * 100) / 100; 
+    info_box["average_cpu"] = round((double) info_box["average_cpu"] * 100) / 100; 
+
+    // Cache the results
+    site.info_box = info_box;
+
+    return info_box.dump();
+}
+
 std::string FileHandler::GetHistogram(std::string site_id) const
 {
     // Make sure the site exists
@@ -56,7 +117,7 @@ std::string FileHandler::GetHistogram(std::string site_id) const
 #ifdef DEBUG
         std::cout << "Could not find site with id " << site_id << std::endl;
 #endif
-        return "";
+        return "{}";
     }
 
     struct Site site = sites.at(site_id);
@@ -75,7 +136,7 @@ std::string FileHandler::GetBoxDiagram(std::string site_id) const
 #ifdef DEBUG
         std::cout << "Could not find site with id " << site_id << std::endl;
 #endif
-        return "";
+        return "{}";
     }
 
     struct Site site = sites.at(site_id);
