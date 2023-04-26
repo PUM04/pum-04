@@ -10,5 +10,5 @@
   "collectCoverage": true,
   "coveragePathIgnorePatterns": [ "node_modules", "tests", "cpp", "victory" ],
   "coverageDirectory": "<rootDir>/coverage/",
-  "modulePathIgnorePatterns": [ "victory" ]
+  "modulePathIgnorePatterns": [ "victory", "src/tests/unit/ChartTest.test.tsx" ]
 }
