@@ -37,7 +37,7 @@ class Bar {
   public y: number;
   public fill: string;
 
-  constructor(x: string = '0', y: number = 0, fill = 'red') {
+  constructor(x: string = '0', y: number = 0, fill = 'black') {
     this.x = x;
     this.y = y;
     this.fill = fill;
@@ -47,7 +47,7 @@ class Bar {
 class Histogram {
   public bars: Array<Bar>;
 
-  constructor(bars: Array<Bar> = [new Bar()]) {
+  constructor(bars: Array<Bar> = []) {
     this.bars = bars;
   }
 }
@@ -116,16 +116,15 @@ function getBarChartData(
    */
 
   const histogram: Histogram = { bars: [] };
-
+  console.log("")
   const jsonData = JSON.parse(histogramData.get(site));
 
   const metricData = jsonData ? jsonData[metric]?.data : null;
 
   metricData?.forEach((bar: any) => {
-    if (bar.length <= 3000) {
-      console.log()
+    //if (bar.length <= 3000) {
       histogram.bars.push({ x: String(bar.length), y: bar.count, fill: color });
-    }
+    //}
   });
   return histogram;
 }
@@ -141,8 +140,8 @@ function getBarChartData(
  * @param siteProps map ecah siteKey to a color
  * @returns a data structure in correct format to paint a candleChart.
  */
-function getCandleChartData(
-  metric: string,
+function getCandleChartData( //rewrite this function
+  metric: string, //should be a metric array
   sites: Array<string>,
   boxDiagramData: Map<string, string>,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -166,7 +165,7 @@ function getCandleChartData(
 
     candle.candles.push({
 
-      x: String(index + 1),
+      x: metric,
       open: metricData.first_quartile,
       close: metricData.third_quartile,
       high: metricData.max,
@@ -564,8 +563,8 @@ export function BarChart(props: ChartProps): JSX.Element {
         );
         barGraph.push(data);
       });
-      //barGraph = mergeXvalues(barGraph, graphWidth, sites);
-      //barGraph = removeEmptyXValues(barGraph);
+      barGraph = removeEmptyXValues(barGraph);
+      barGraph = mergeXvalues(barGraph, graphWidth, sites);
       const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
       newBarGraphList.push(drawHistogram(barGraph, metric, width));
     });
@@ -585,8 +584,9 @@ function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram> {
     const emptyXValues = new Set();
 
     let nonEmptyBars: Bar[] = [];
+    //
     barGraph.forEach((histogram) => {
-      nonEmptyBars = histogram.bars.filter((bar: { y: number }) => bar.y !== 0);
+      nonEmptyBars = nonEmptyBars.concat(histogram.bars.filter((bar: { y: number }) => bar.y !== 0));
     });
     barGraph.forEach((histogram) => {
       histogram.bars.forEach((bar: { y: number; x: string }) => {
@@ -623,6 +623,7 @@ function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram> {
   };
 
   const emptyXvalues = getEmptyXValues(barGraph);
+  console.log("EmptyX: ",emptyXvalues);
   barGraph = _removeEmptyXValues(barGraph, emptyXvalues);
   return barGraph;
 }
@@ -655,12 +656,13 @@ function mergeXvalues(
     newBarGraph = [];
     barGraph.forEach((histo) => {
       let newHisto: Histogram = new Histogram([]);
-
+      console.log("newHisto: ",newHisto);
       histo.bars.forEach((bar, i) => {
         const newIndex = Math.floor(i / mergeAmount);
 
         if (newHisto.bars[newIndex] === undefined) {
-          newHisto.bars.push(new Bar(bar.x, bar.y, bar.fill));
+          console.log("x: ",bar.x,"color: ",bar.fill);
+          newHisto.bars.push(new Bar(bar.x, bar.y, bar.fill));//bar.fill causes unexpected colors at weird times
         } else {
           newHisto.bars[newIndex].y += bar.y;
         }
