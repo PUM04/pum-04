@@ -1,0 +1,3 @@
+[submodule "victory"]
+	path = victory
+	url = https://github.com/FormidableLabs/victory

@@ -12,7 +12,9 @@ import {
   VictoryGroup,
   VictoryTooltip,
 } from 'victory';
-import VictoryCandlestick from './CustomCandlestick/CustomCandlestick';
+/* eslint-disable */
+import { VictoryCandlestick } from '../../victory/packages/victory-candlestick/src';
+/* eslint-disable */
 /**
  * Top level component.
  *
@@ -245,7 +247,6 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
       { x: 1, open: 5, close: 10, high: 25, low: 1, mean: 7 },
       { x: 2, open: 6, close: 8, high: 15, low: 3, mean: 7 },
       { x: 3, open: 4, close: 9, high: 12, low: 0, mean: 6 }, // s2
-
     ];
   }
 
@@ -266,12 +267,11 @@ function getCandleChartData(metric: string, sites: Array<string>): CandleChart {
  */
 function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
   return (
-
     <VictoryCandlestick
       horizontal
       key={JSON.stringify(data)}
       labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
-      labels={({ datum } : any) =>
+      labels={({ datum }: any) =>
         `min:${datum.low}\nmax:${datum.high}\nclose:${datum.close}\nopen:${
           datum.open
         }\nmean:${'30'}`
