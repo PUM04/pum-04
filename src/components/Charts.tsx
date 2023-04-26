@@ -116,7 +116,6 @@ function getBarChartData(
    */
 
   const histogram: Histogram = { bars: [] };
-  console.log("")
   const jsonData = JSON.parse(histogramData.get(site));
 
   const metricData = jsonData ? jsonData[metric]?.data : null;
@@ -189,7 +188,6 @@ function getCandleChartData( //rewrite this function
  * @returns a VictoryCandlestick .
  */
 function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
-  //console.log(JSON.stringify(data));
   return (
     <VictoryCandlestick
       key={JSON.stringify(data)}
@@ -214,7 +212,6 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
 }
 
 function CustomTickLabel(props: any): any {
-  //console.log('hejsan', props);
   const { x, y, text, ticks, index } = props;
   const padding = 1; // adjust the value to increase/decrease padding between labels
 
@@ -350,7 +347,6 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
  * @returns a single VictoryBar.
  */
 function drawVictoryBar(data: Array<Bar>, width: number): JSX.Element {
-  console.log("data: ",JSON.stringify(data));
   return (
     <VictoryBar
       data-testid="getdata"
@@ -623,7 +619,6 @@ function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram> {
   };
 
   const emptyXvalues = getEmptyXValues(barGraph);
-  console.log("EmptyX: ",emptyXvalues);
   barGraph = _removeEmptyXValues(barGraph, emptyXvalues);
   return barGraph;
 }
@@ -647,7 +642,6 @@ function mergeXvalues(
   const maxLoopCount = 50; // a fail safe in case something goes wrong
   let mergeAmount = 1; //start merge amount
   let loopCount = 0;
-
   if (width >= tooSmallWidth) {
     console.log('no changes when running mergeXvalues()');
     return barGraph;
@@ -656,12 +650,10 @@ function mergeXvalues(
     newBarGraph = [];
     barGraph.forEach((histo) => {
       let newHisto: Histogram = new Histogram([]);
-      console.log("newHisto: ",newHisto);
       histo.bars.forEach((bar, i) => {
         const newIndex = Math.floor(i / mergeAmount);
 
         if (newHisto.bars[newIndex] === undefined) {
-          console.log("x: ",bar.x,"color: ",bar.fill);
           newHisto.bars.push(new Bar(bar.x, bar.y, bar.fill));//bar.fill causes unexpected colors at weird times
         } else {
           newHisto.bars[newIndex].y += bar.y;

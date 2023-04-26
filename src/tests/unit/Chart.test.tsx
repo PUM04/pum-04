@@ -92,6 +92,88 @@ response_time_bucket{method="GetImage",le="4"} 0
     expect(histograms[1]).toHaveTextContent('GetPatient');
     expect(histograms[2]).toHaveTextContent('GetImage');
   });
+
+  it('Check if mergeXvalues() works', async () => {
+    const fileHandler = await fileHandlerPromise;
+
+    const performance: string = `
+response_time_bucket{method="GetPatient",le="1"} 0
+response_time_bucket{method="GetPatient",le="2"} 1
+response_time_bucket{method="GetPatient",le="3"} 3 
+response_time_bucket{method="GetPatient",le="4"} 4
+response_time_bucket{method="GetPatient",le="5"} 0 
+response_time_bucket{method="GetPatient",le="6"} 0
+response_time_bucket{method="GetPatient",le="7"} 0
+response_time_bucket{method="GetPatient",le="8"} 5 
+response_time_bucket{method="GetPatient",le="9"} 4
+response_time_bucket{method="GetPatient",le="10"} 4 
+response_time_bucket{method="GetImage",le="1"} 1 
+response_time_bucket{method="GetImage",le="2"} 2
+response_time_bucket{method="GetImage",le="3"} 3
+response_time_bucket{method="GetImage",le="4"} 1 
+response_time_bucket{method="GetImage",le="5"} 2 
+response_time_bucket{method="GetImage",le="6"} 1 
+response_time_bucket{method="GetImage",le="7"} 2
+response_time_bucket{method="GetImage",le="8"} 3
+response_time_bucket{method="GetImage",le="9"} 1 
+response_time_bucket{method="GetImage",le="10"} 0 
+    `;
+
+    // Add the host file
+    fileHandler.AddFile(
+      '{"site_name": "test1", "site_id": "abc1"}',
+      'abc1.json'
+    );
+    fileHandler.AddFile(
+      '{"site_name": "test2", "site_id": "abc12"}',
+      'abc12.json'
+    );
+    fileHandler.AddFile(
+      '{"site_name": "test3", "site_id": "abc123"}',
+      'abc123.json'
+    );
+    fileHandler.AddFile(
+      '{"site_name": "test4", "site_id": "abc1234"}',
+      'abc1234.json'
+    );
+    fileHandler.AddFile(
+      '{"site_name": "test5", "site_id": "abc12345"}',
+      'abc12345.json'
+    );
+    fileHandler.AddFile(
+      '{"site_name": "test6", "site_id": "abc123456"}',
+      'abc123456.json'
+    );
+
+    // Add the performance file
+    fileHandler.AddFile(performance, 'abc1_231112.txt');
+    fileHandler.AddFile(performance, 'abc12_231112.txt');
+    fileHandler.AddFile(performance, 'abc123_231112.txt');
+    fileHandler.AddFile(performance, 'abc1234_231112.txt');
+    fileHandler.AddFile(performance, 'abc12345_231112.txt');
+    fileHandler.AddFile(performance, 'abc123456_231112.txt');
+
+    fileHandler.ComputeFiles();
+
+    const fakeSitePropMap = new Map<string, Site>();
+    render(
+      <BarChart
+        siteProps={fakeSitePropMap}
+        metrics={['GetPatient','GetImage']}
+        sites={['abc1','abc12','abc123','abc1234','abc12345','abc123456']}
+        fileHandler={fileHandler}
+      />
+    );
+  
+    const victoryBars = screen.queryAllByTestId('getdata');
+  
+    victoryBars.forEach((bar, index) => {
+      const elementWidth = parseFloat(getComputedStyle(bar).width);
+      if(!Number.isNaN(elementWidth)){
+        expect(elementWidth).toBeGreaterThan(6); // change this if we update mergeXvalues's target width
+      }
+    });
+  });
   // Run this after each test
   afterEach(() => {
     cleanup();
