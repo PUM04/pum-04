@@ -30,7 +30,7 @@ export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
 
   const getSiteIds = (): string[] =>
     Array.from(siteProps.keys()).filter((key) => siteProps.get(key)?.enabled);
-
+    
   return (
     <Box
       data-testid="boxgraph-component"
@@ -69,7 +69,8 @@ export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
 
   const getSiteIds = (): string[] =>
     Array.from(siteProps.keys()).filter((key) => siteProps.get(key)?.enabled);
-
+    //console.log("metrics: ",metrics);
+    //console.log("getSiteIds: ",getSiteIds());
   return (
     <Box
       data-testid="bargraph-component"

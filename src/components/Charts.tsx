@@ -123,7 +123,8 @@ function getBarChartData(
 
   metricData?.forEach((bar: any) => {
     if (bar.length <= 3000) {
-      histogram.bars.push({ x: bar.length, y: bar.count, fill: color });
+      console.log()
+      histogram.bars.push({ x: String(bar.length), y: bar.count, fill: color });
     }
   });
   return histogram;
@@ -214,7 +215,7 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
 }
 
 function CustomTickLabel(props: any): any {
-  console.log('hejsan', props);
+  //console.log('hejsan', props);
   const { x, y, text, ticks, index } = props;
   const padding = 1; // adjust the value to increase/decrease padding between labels
 
@@ -260,7 +261,7 @@ function CustomTickLabel(props: any): any {
 function useBoxDiagrams(siteIds: string[], fileHandler: any) {
   return useMemo(() => {
     const histograms: Map<string, string> = new Map();
-    siteIds.forEach((id) => histograms.set(id, fileHandler.GetBoxDiagram(id)));
+    siteIds.forEach((id) => histograms.set(id, String(fileHandler.GetBoxDiagram(id))));
     return histograms;
   }, [JSON.stringify(siteIds)]);
 }
@@ -350,6 +351,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
  * @returns a single VictoryBar.
  */
 function drawVictoryBar(data: Array<Bar>, width: number): JSX.Element {
+  console.log("data: ",JSON.stringify(data));
   return (
     <VictoryBar
       data-testid="getdata"
@@ -514,7 +516,7 @@ function drawHistogram(
  * @param fileHandler filehandler to get histograms from
  * @returns a map of histograms
  */
-function useHistograms(siteIds: string[], fileHandler: any) {
+function useHistograms(siteIds: string[], fileHandler: any):Map<string,string> {
   return useMemo(() => {
     const histograms: Map<string, string> = new Map();
     siteIds.forEach((id) => histograms.set(id, fileHandler.GetHistogram(id)));
@@ -547,7 +549,7 @@ export function BarChart(props: ChartProps): JSX.Element {
     const graphWidth = 300;
     const newBarGraphList: Array<any> = [];
     metrics.forEach((metric) => {
-      const barGraph: Array<Histogram> = [];
+      let barGraph: Array<Histogram> = [];
       sites.forEach((site) => {
         const siteProp = siteProps.get(site);
         let color = siteProp?.color;
@@ -562,8 +564,8 @@ export function BarChart(props: ChartProps): JSX.Element {
         );
         barGraph.push(data);
       });
-      barGraph = mergeXvalues(barGraph, graphWidth, sites);
-      barGraph = removeEmptyXValues(barGraph);
+      //barGraph = mergeXvalues(barGraph, graphWidth, sites);
+      //barGraph = removeEmptyXValues(barGraph);
       const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
       newBarGraphList.push(drawHistogram(barGraph, metric, width));
     });
