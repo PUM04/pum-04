@@ -13,8 +13,8 @@ import {
   VictoryTooltip,
 } from 'victory';
 /* eslint-disable */
-import { VictoryCandlestick } from '../../victory/packages/victory-candlestick/src';
-/* eslint-disable */
+import { VictoryCandlestick } from 'victory/packages/victory-candlestick/src';
+
 /**
  * Top level component.
  *
