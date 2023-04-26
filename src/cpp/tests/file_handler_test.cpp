@@ -81,21 +81,21 @@ TEST_CASE("FileHandler") {
         fh->AddFile(host1, host_name1);
         fh->ComputeFiles();
 
-        json site_names = json::parse(fh->GetSiteNames());
+        json site_data = json::parse(fh->GetSites());
 
-        CHECK(site_names["names"].size() == 1);
-        CHECK(site_names["names"][0] == "test1");
+        CHECK(site_data["sites"].size() == 1);
+        CHECK(site_data["sites"][0]["name"] == "test1");
 
         std::string host2 =
             "{\"site_name\": \"test2\", \"site_id\": \"test_id_2\"}";
         std::string host_name2 = "test2.json";
         fh->AddFile(host2, host_name2);
         fh->ComputeFiles();
-        json site_names2 = json::parse(fh->GetSiteNames());
+        json site_data2 = json::parse(fh->GetSites());
 
-        CHECK(site_names2["names"].size() == 2);
-        CHECK(site_names2["names"][1] == "test1");
-        CHECK(site_names2["names"][0] == "test2");
+        CHECK(site_data2["sites"].size() == 2);
+        CHECK(site_data2["sites"][1]["name"] == "test1");
+        CHECK(site_data2["sites"][0]["name"] == "test2");
     }
 
     SUBCASE("Get metrics with one file") {

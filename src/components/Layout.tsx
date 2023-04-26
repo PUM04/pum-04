@@ -6,8 +6,7 @@ import { Box } from '@mui/material';
 import Menu from './Menu';
 import { InfoboxContainer } from './BaseComponent';
 import ViewTabs from './ViewTabs';
-
-import { SiteProperties } from './SitePropetiesInterface';
+import { Site } from './SiteInterface';
 
 //        ____Layout_____
 //       /       |       \
@@ -40,7 +39,9 @@ function Layout(props: MenuProps) {
   const { fileHandler } = props;
   const map = new Map();
   // Maps each site key to a site name and a color
-  const [siteProps, setSiteProps] = useState<Map<string, SiteProperties>>(map);
+  const [siteProps, setSiteProps] = useState<Map<string, Site>>(map);
+  const [metricProps, setMetricProps] = useState<string[]>([]);
+
   return (
     <Box
       sx={{
@@ -51,6 +52,7 @@ function Layout(props: MenuProps) {
         fileHandler={fileHandler}
         siteProps={siteProps}
         setSiteProps={setSiteProps}
+        setMetricProps={setMetricProps}
       />
 
       <Box
@@ -62,7 +64,11 @@ function Layout(props: MenuProps) {
           margin: '0',
         }}
       >
-        <ViewTabs siteProps={siteProps} fileHandler={fileHandler} />
+        <ViewTabs
+          siteProps={siteProps}
+          metricProps={metricProps}
+          fileHandler={fileHandler}
+        />
         <InfoboxContainer fileHandler={fileHandler} />
       </Box>
     </Box>

@@ -5,13 +5,11 @@ import Box from '@mui/material/Box';
 import React from 'react';
 import { BoxPlotChart, BarChart } from './Charts';
 import InfoBox from './InfoBox';
-
-import { SiteProperties } from './SitePropetiesInterface';
+import { Site } from './SiteInterface';
 
 interface GraphComponentProps {
   metrics: Array<string>;
-  sites: Array<string>;
-  siteProps: Map<string, SiteProperties>;
+  siteProps: Map<string, Site>;
   fileHandler: any;
 }
 
@@ -27,9 +25,11 @@ interface InfoContainerProps {
  */
 export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
   const { metrics } = props;
-  const { sites } = props;
   const { siteProps } = props;
   const { fileHandler } = props;
+
+  const getSiteIds = (): string[] =>
+    Array.from(siteProps.keys()).filter((key) => siteProps.get(key)?.enabled);
 
   return (
     <Box
@@ -49,7 +49,7 @@ export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
         {' '}
         <BoxPlotChart
           metrics={metrics}
-          sites={sites}
+          sites={getSiteIds()}
           siteProps={siteProps}
           fileHandler={fileHandler}
         />{' '}
@@ -65,7 +65,11 @@ export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
  * @returns MUI box component
  */
 export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
-  const { metrics, sites, siteProps, fileHandler } = props;
+  const { metrics, siteProps, fileHandler } = props;
+
+  const getSiteIds = (): string[] =>
+    Array.from(siteProps.keys()).filter((key) => siteProps.get(key)?.enabled);
+
   return (
     <Box
       data-testid="bargraph-component"
@@ -84,9 +88,18 @@ export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
         {' '}
         <BarChart
           metrics={metrics}
-          sites={sites}
+          sites={getSiteIds()}
           siteProps={siteProps}
           fileHandler={fileHandler}
+        />{' '}
+      </Box>
+      <Box>
+        {' '}
+        <BoxPlotChart
+          metrics={metrics}
+          sites={getSiteIds()}
+          fileHandler={fileHandler}
+          siteProps={siteProps}
         />{' '}
       </Box>
     </Box>
@@ -115,23 +128,6 @@ export function InfoboxContainer(props: InfoContainerProps): JSX.Element {
       }}
     >
       <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
-      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
-      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
-      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
-      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
-      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
-      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
-      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
-      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
-      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
-      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
-      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
-      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
-      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
-      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
-      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
-      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
-      <InfoBox siteId="b4eb0" fileHandler={fileHandler} />
     </Box>
   );
 }

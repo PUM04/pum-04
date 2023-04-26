@@ -3,7 +3,7 @@
  * @file Contains the component that paints Charts. Gets data for chart.
  */
 
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Divider } from '@mui/material';
 import {
   VictoryAxis,
@@ -13,7 +13,7 @@ import {
   VictoryTooltip,
   VictoryCandlestick,
 } from 'victory';
-import { SiteProperties } from './SitePropetiesInterface';
+import { Site } from './SiteInterface';
 /**
  * Top level component.
  *
@@ -27,7 +27,7 @@ import { SiteProperties } from './SitePropetiesInterface';
 interface ChartProps {
   metrics: Array<string>;
   sites: Array<string>;
-  siteProps: Map<string, SiteProperties>;
+  siteProps: Map<string, Site>;
   fileHandler: any;
 }
 /* Datastructure for drawing a histogram
@@ -75,19 +75,19 @@ interface Candle {
 }
 
 /**
- * getBarChartData get the data from backend to paint a BarChartData.
+ * getBarChartData parse and get the data for the correct site and metric.
  *
  * @param site what site to get data from.
  * @param metric what metric to get data from.
- * @param color   what color to paint the bars.
- * @param fileHandler is the filehandler :)
+ * @param color what color to paint the bars.
+ * @param histogramData data from backend.
  * @returns a Histogram object containing all data for drawing a BarChart.
  */
 function getBarChartData(
   site: string,
   metric: string,
   color: string,
-  fileHandler: any
+  histogramData: any
 ): Histogram {
   /**
    * Make sure corret color is retrived from Legends component
@@ -95,15 +95,11 @@ function getBarChartData(
 
   const histogram: Histogram = { bars: [] };
 
-  const fileContent = fileHandler.GetHistogram(site);
+  const jsonData = JSON.parse(histogramData.get(site));
 
-  if (fileContent === '{}') {
-    return histogram;
-  }
+  const metricData = jsonData ? jsonData[metric]?.data : null;
 
-  const { data } = JSON.parse(fileContent)[metric];
-
-  data.forEach((bar: any) => {
+  metricData?.forEach((bar: any) => {
     if (bar.length <= 3000) {
       histogram.bars.push({ x: bar.length, y: bar.count, fill: color });
     }
@@ -112,22 +108,22 @@ function getBarChartData(
 }
 
 /**
- * getCandleChartData retrives data from backend needed to paint a single VictoryCandlestick.
+ * getCandleChartData parse and get the data for the correct metric and sites.
  *
  * @param metric a string with the name of the metric to show in the candlechart.
  * example 'getPatient'
  * @param sites a string list containing 1-n sites that will be shown in the candlechart.
  * example ['s1','s2','s3','s4']
- * @param fileHandler is fuleHandler :)
+ * @param boxDiagramData data from backend.
  * @param siteProps map ecah siteKey to a color
  * @returns a data structure in correct format to paint a candleChart.
  */
 function getCandleChartData(
   metric: string,
   sites: Array<string>,
-  fileHandler: any,
+  boxDiagramData: Map<string, string>,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  siteProps: Map<string, SiteProperties> // used later when structure for candlechart is known.
+  siteProps: Map<string, Site> // used later when structure for candlechart is known.
 ): CandleChart {
   const candle: CandleChart = { candles: [] };
   /**
@@ -138,19 +134,20 @@ function getCandleChartData(
    */
 
   sites.forEach((site, index) => {
-    const fileContent = fileHandler.GetBoxDiagram(site);
+    const siteData = boxDiagramData.get(site);
+    if (!siteData) return;
 
-    if (fileContent !== '{}') {
-      const data = JSON.parse(fileContent)[metric];
-      candle.candles.push({
-        x: index + 1,
-        open: data.first_quartile,
-        close: data.third_quartile,
-        high: data.max,
-        low: data.min,
-      });
-      // TODO: Implement mean
-    }
+    const jsonData = JSON.parse(siteData);
+    const metricData = jsonData ? jsonData[metric] : null;
+    if (!metricData) return;
+
+    candle.candles.push({
+      x: index + 1,
+      open: metricData.first_quartile,
+      close: metricData.third_quartile,
+      high: metricData.max,
+      low: metricData.min,
+    });
   });
 
   return candle;
@@ -191,6 +188,21 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
 }
 
 /**
+ * Get boxdiagrams for all sites with memoization.
+ *
+ * @param siteIds ids of all sites
+ * @param fileHandler filehandler to get data from backend
+ * @returns a map with siteId as key and the data as value
+ */
+function useBoxDiagrams(siteIds: string[], fileHandler: any) {
+  return useMemo(() => {
+    const histograms: Map<string, string> = new Map();
+    siteIds.forEach((id) => histograms.set(id, fileHandler.GetBoxDiagram(id)));
+    return histograms;
+  }, [JSON.stringify(siteIds)]);
+}
+
+/**
  * Draws a single boxPlotChart
  *
  * @param props Contains list of metrics and sites that should be drawn
@@ -203,6 +215,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   const width = 10;
   const offsetPadding = 5;
   const victoryCandles: Array<JSX.Element> = [];
+  const boxDiagramData = useBoxDiagrams(sites, fileHandler);
 
   if (fileHandler === undefined) {
     return <div />;
@@ -213,7 +226,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
     const data: CandleChart = getCandleChartData(
       metric,
       sites,
-      fileHandler,
+      boxDiagramData,
       siteProps
     );
     victoryCandles.push(drawVictoryCandle(data.candles, width));
@@ -372,6 +385,21 @@ function drawHistogram(
 }
 
 /**
+ * Get histograms for all given site ids with memoization.
+ *
+ * @param siteIds ids of the sites
+ * @param fileHandler filehandler to get histograms from
+ * @returns a map of histograms
+ */
+function useHistograms(siteIds: string[], fileHandler: any) {
+  return useMemo(() => {
+    const histograms: Map<string, string> = new Map();
+    siteIds.forEach((id) => histograms.set(id, fileHandler.GetHistogram(id)));
+    return histograms;
+  }, [JSON.stringify(siteIds)]);
+}
+
+/**
  *  Draws 1-n VictoryCharts containing 1-n VictoryBars.
  *  metrics.length = number of VictoryCharts
  *  sites.length = number of BarCharts in each VictoryChart
@@ -384,28 +412,37 @@ function drawHistogram(
 export function BarChart(props: ChartProps): JSX.Element {
   const { metrics, sites, siteProps } = props;
   const { fileHandler } = props;
-  const barGraphList: any = [];
 
-  if (fileHandler === undefined) {
-    return <div />;
-  }
+  const [barGraphList, setBarGraphList] = useState<any[]>([]);
+
+  const histogramData = useHistograms(sites, fileHandler);
 
   // This does not effect the actual graph width,
   // width of BarChart is based on parent container
-  const graphWidth = 300;
-  metrics.forEach((metric) => {
-    const barGraph: Array<Histogram> = [];
-    sites.forEach((site) => {
-      const siteProp = siteProps.get(site);
-      let color = siteProp?.color;
-      if (!color) {
-        color = 'cyan';
-      }
-      const data: Histogram = getBarChartData(site, metric, color, fileHandler);
-      barGraph.push(data);
+  useEffect(() => {
+    const graphWidth = 300;
+    const newBarGraphList: Array<any> = [];
+    metrics.forEach((metric) => {
+      const barGraph: Array<Histogram> = [];
+      sites.forEach((site) => {
+        const siteProp = siteProps.get(site);
+        let color = siteProp?.color;
+        if (!color) {
+          color = 'cyan';
+        }
+        const data: Histogram = getBarChartData(
+          site,
+          metric,
+          color,
+          histogramData
+        );
+        barGraph.push(data);
+      });
+      const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
+      newBarGraphList.push(drawHistogram(barGraph, metric, width));
     });
-    const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
-    barGraphList.push(drawHistogram(barGraph, metric, width));
-  });
+    setBarGraphList(newBarGraphList);
+  }, [fileHandler, metrics, siteProps, sites]);
+
   return <div data-testid="barchart">{barGraphList}</div>;
 }

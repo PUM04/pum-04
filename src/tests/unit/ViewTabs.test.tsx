@@ -6,13 +6,19 @@ import { cleanup, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import user from '@testing-library/user-event';
 import ViewTabs from '../../components/ViewTabs';
-import { SiteProperties } from '../../components/SitePropetiesInterface';
+import { Site } from '../../components/SiteInterface';
 
 describe('ViewTabs', () => {
   // Run this before each test
   beforeEach(() => {
-    const sitePropsTest = new Map<string, SiteProperties>();
-    render(<ViewTabs siteProps={sitePropsTest} fileHandler={undefined} />);
+    const sitePropsTest = new Map<string, Site>();
+    render(
+      <ViewTabs
+        siteProps={sitePropsTest}
+        metricProps={['test']}
+        fileHandler={undefined}
+      />
+    );
   });
 
   it('Should render both buttons', async () => {

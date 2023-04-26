@@ -13,6 +13,7 @@ import { BoxGraphComponent, BarGraphComponent } from './BaseComponent';
 
 interface ViewTabsProps {
   siteProps: any;
+  metricProps: any;
   fileHandler: any;
 }
 
@@ -55,6 +56,7 @@ const TabPanel = styled((props: TabPanelProps) => {
  */
 function ViewTabs(props: ViewTabsProps) {
   const { siteProps } = props;
+  const { metricProps } = props;
   const { fileHandler } = props;
 
   const [value, setValue] = useState(0);
@@ -110,16 +112,14 @@ function ViewTabs(props: ViewTabsProps) {
       </Box>
       <TabPanel value={value} index={0}>
         <BarGraphComponent
-          sites={['4b14a8']}
-          metrics={['GetPatient']}
+          metrics={metricProps}
           siteProps={siteProps}
           fileHandler={fileHandler}
         />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <BoxGraphComponent
-          sites={['4b14a8']}
-          metrics={['GetPatient']}
+          metrics={metricProps}
           siteProps={siteProps}
           fileHandler={fileHandler}
         />
