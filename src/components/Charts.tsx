@@ -13,8 +13,9 @@ import {
   VictoryTooltip,
 } from 'victory';
 /* eslint-disable */
-import { VictoryCandlestick } from 'victory/packages/victory-candlestick/src';
-
+/* istanbul ignore next */
+import { VictoryCandlestick } from '../../victory/packages/victory-candlestick/src';
+/* eslint-disable */
 /**
  * Top level component.
  *
