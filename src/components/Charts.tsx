@@ -14,7 +14,7 @@ import {
 } from 'victory';
 
 /* eslint-disable */
-import { VictoryCandlestick } from '../../victory/packages/victory-candlestick/src';
+import { VictoryCandlestick } from 'sandahl';
 /* eslint-disable */
 /**
  * Top level component.
