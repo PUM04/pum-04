@@ -16,6 +16,7 @@ using json = nlohmann::json;
 struct Site {
     json hosts;
     std::set<json> logs;
+    json info_box = NULL;
 };
 
 struct LoadedFile {
@@ -40,6 +41,13 @@ public:
     void ComputeFiles();
 
     /**
+     * @brief Get the info box for a site
+     *
+     * @return std::string The info box as a JSON object
+     */
+    std::string GetInfoBox(std::string site_id);
+
+    /**
      * @brief Get the box diagram for a given site
      *
      * @param site_id The site id 
@@ -54,11 +62,11 @@ public:
     std::string GetHistogram(std::string site_id) const;
 
     /**
-     * @brief Get the names of all the sites
+     * @brief Get the names and ids of all the sites
      *
      * @return std::vector<std::string> The names of the sites
      */
-    std::string GetSiteNames() const;
+    std::string GetSites() const;
 
     /**
      * @brief Get the metrics for all sites.
@@ -66,14 +74,6 @@ public:
      * @return std::string The metrics
      */
     std::string GetMetrics() const;
-    
-    /**
-     * @brief Get json string with the names and ids of all the sites
-     *
-     * @return std::vector<std::string> The names and ids of the sites
-     */    
-
-    std::string GetSiteNamesAndIds() const; 
 
   private:
     std::unordered_map<std::string, struct Site> sites;
@@ -195,9 +195,9 @@ EMSCRIPTEN_BINDINGS(file_handler) {
         .function("AddFile", &FileHandler::AddFile)
         .function("ComputeFiles", &FileHandler::ComputeFiles)
         .function("GetBoxDiagram", &FileHandler::GetBoxDiagram)
-        .function("GetSiteNames", &FileHandler::GetSiteNames)
+        .function("GetSites", &FileHandler::GetSites)
         .function("GetHistogram", &FileHandler::GetHistogram)
         .function("GetMetrics", &FileHandler::GetMetrics)
-        .function("GetSiteNamesAndIds", &FileHandler::GetSiteNamesAndIds);
+        .function("GetInfoBox", &FileHandler::GetInfoBox);
 }
 #endif

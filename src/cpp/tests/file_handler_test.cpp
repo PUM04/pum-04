@@ -81,21 +81,21 @@ TEST_CASE("FileHandler") {
         fh->AddFile(host1, host_name1);
         fh->ComputeFiles();
 
-        json site_names = json::parse(fh->GetSiteNames());
+        json site_data = json::parse(fh->GetSites());
 
-        CHECK(site_names["names"].size() == 1);
-        CHECK(site_names["names"][0] == "test1");
+        CHECK(site_data["sites"].size() == 1);
+        CHECK(site_data["sites"][0]["name"] == "test1");
 
         std::string host2 =
             "{\"site_name\": \"test2\", \"site_id\": \"test_id_2\"}";
         std::string host_name2 = "test2.json";
         fh->AddFile(host2, host_name2);
         fh->ComputeFiles();
-        json site_names2 = json::parse(fh->GetSiteNames());
+        json site_data2 = json::parse(fh->GetSites());
 
-        CHECK(site_names2["names"].size() == 2);
-        CHECK(site_names2["names"][1] == "test1");
-        CHECK(site_names2["names"][0] == "test2");
+        CHECK(site_data2["sites"].size() == 2);
+        CHECK(site_data2["sites"][1]["name"] == "test1");
+        CHECK(site_data2["sites"][0]["name"] == "test2");
     }
 
     SUBCASE("Get metrics with one file") {
@@ -195,6 +195,49 @@ TEST_CASE("FileHandler") {
         CHECK(metrics["metrics"][1] == "Test1");
         CHECK(metrics["metrics"][2] == "Test2");
         CHECK(metrics["metrics"][3] == "Test3");
+    }
+
+    SUBCASE("Get info box for a site") {
+        std::string host = 
+            "{\n"
+              "\"site_id\": \"4b14a8\",\n"
+              "\"site_name\": \"rta\",\n"
+              "\"baseline_version\": \"25.1\",\n"
+              "\"type\": \"openstack\",\n"
+              "\"nodes\": {\n"
+                "\"pacscore\": {\n"
+                  "\"os\": \"win2019\",\n"
+                  "\"cpu\": 4,\n"
+                  "\"memory\": 7.5,\n"
+                  "\"services\": [\n"
+                    "\"sql2019\",\n"
+                    "\"wise\"\n"
+                  "]\n"
+                "},\n"
+                "\"ad\": {\n"
+                  "\"os\": \"win2019\",\n"
+                  "\"cpu\": 2,\n"
+                  "\"memory\": 4\n"
+                "}\n"
+              "}\n"
+            "}\n";
+
+        fh->AddFile(host, "rta.json");
+        fh->ComputeFiles();
+        json info_box = json::parse(fh->GetInfoBox("4b14a8"));
+
+        CHECK(info_box["site_name"] == "rta");
+        CHECK(info_box["min_ram"] == 4);
+        CHECK(info_box["max_ram"] == 7.5);
+        CHECK(info_box["total_ram"] == 11.5);
+        CHECK(info_box["average_ram"] == 5.75);
+
+        CHECK(info_box["min_cpu"] == 2);
+        CHECK(info_box["max_cpu"] == 4);
+        CHECK(info_box["total_cpu"] == 6);
+        CHECK(info_box["average_cpu"] == 3);
+
+        CHECK(info_box["hosts"] == 2);
     }
 
     delete fh;

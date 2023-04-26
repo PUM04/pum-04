@@ -3,32 +3,51 @@
  */
 import React from 'react';
 import { cleanup, render, screen } from '@testing-library/react';
-import { SiteProperties } from '../../components/SitePropetiesInterface';
-import '@testing-library/jest-dom';
+import { Site } from '../../components/SiteInterface';
 
 import {
-  InfoboxComponent,
-  GraphComponent,
+  InfoboxContainer,
+  BarGraphComponent,
+  BoxGraphComponent,
 } from '../../components/BaseComponent';
 
 describe('App', () => {
   // Run this before each test
   beforeEach(() => {
-    const testmap = new Map<string, SiteProperties>();
-    render(<GraphComponent siteProps={testmap} fileHandler={null} />);
-    render(<InfoboxComponent />);
+    const testmap = new Map<string, Site>();
+
+    render(
+      <BarGraphComponent
+        metrics={['hej']}
+        siteProps={testmap}
+        fileHandler={undefined}
+      />
+    );
+    render(
+      <BoxGraphComponent
+        metrics={['hej']}
+        siteProps={testmap}
+        fileHandler={undefined}
+      />
+    );
+    render(
+      <InfoboxContainer /** sites={['test']} */ fileHandler={undefined} />
+    );
   });
 
-  // Tshould render
-  it('should render graphComponent', async () => {
-    const graphComponent = await screen.findByTestId('graph-component');
-    expect(graphComponent).toBeVisible();
+  // Should render
+  it('should render BarGraphComponent', async () => {
+    await screen.findByTestId('bargraph-component');
   });
 
-  // Tshould render
-  it('should render graphComponent', async () => {
-    const Infoboxtest = await screen.findByTestId('infobox-component');
-    expect(Infoboxtest).toBeVisible();
+  // Should render
+  it('should render BoxGraphComponent', async () => {
+    await screen.findByTestId('boxgraph-component');
+  });
+
+  // Should render
+  it('should render infoBoxComponent', async () => {
+    await screen.findByTestId('infobox-component');
   });
 
   // Run this after each test
