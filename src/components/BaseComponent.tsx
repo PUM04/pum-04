@@ -93,15 +93,6 @@ export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
           fileHandler={fileHandler}
         />{' '}
       </Box>
-      <Box>
-        {' '}
-        <BoxPlotChart
-          metrics={metrics}
-          sites={getSiteIds()}
-          fileHandler={fileHandler}
-          siteProps={siteProps}
-        />{' '}
-      </Box>
     </Box>
   );
 }
