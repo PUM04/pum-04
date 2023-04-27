@@ -8,7 +8,7 @@
     "\\.(css|less|sass|scss)$": "identity-obj-proxy"
   },
   "collectCoverage": true,
-  "coveragePathIgnorePatterns": [ "node_modules", "tests", "cpp", "victory" ],
+  "coveragePathIgnorePatterns": ["node_modules", "tests", "cpp", "victory"],
   "coverageDirectory": "<rootDir>/coverage/",
-  "modulePathIgnorePatterns": [ "victory", "sandahl" ]
+  "modulePathIgnorePatterns": [ "victory" ]
 }

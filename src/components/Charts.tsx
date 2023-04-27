@@ -14,7 +14,7 @@ import {
 } from 'victory';
 
 /* eslint-disable */
-import { VictoryCandlestick } from 'sandahl';
+import { VictoryCandlestick } from 'victory-candlestick';
 /* eslint-disable */
 /**
  * Top level component.

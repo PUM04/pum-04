@@ -42,4 +42,6 @@ jobs:
           node-version: 18
       - run: npm i
       - run: ./scripts/build_wasm_for_tests.sh
+      - run: npm run build:victory
+      - run: npm i
       - run: npm run test
