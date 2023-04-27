@@ -14,6 +14,7 @@ import {
   VictoryLabel,
   VictoryLine,
 } from 'victory';
+import { TextProps } from 'victory-core';
 import { Site } from './SiteInterface';
 /**
  * Top level component.
@@ -140,8 +141,8 @@ function getBarChartData(
  * @returns a data structure in correct format to paint a candleChart.
  */
 function getCandleChartData( //rewrite this function
-  metric: string, //should be a metric array
-  sites: Array<string>,
+  metrics: Array<string>, //should be a metric array
+  site: string,
   boxDiagramData: Map<string, string>,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   siteProps: Map<string, Site> // used later when structure for candlechart is known.
@@ -154,14 +155,32 @@ function getCandleChartData( //rewrite this function
    *
    */
 
-  sites.forEach((site, index) => {
+  metrics.forEach((metric, index) => {
     const siteData = boxDiagramData.get(site);
     if (!siteData) return;
 
     const jsonData = JSON.parse(siteData);
     const metricData = jsonData ? jsonData[metric] : null;
     if (!metricData) return;
-
+    const maxHeight = 30000;
+    /**Todo: This should not be calculated in frontend.
+     * Add new calculations in backend that does not include infinite when
+     * calculating median,min,max(should probably still be inf),q1,q3. This fix is only to make boxplotsChart
+     * readable when adding a victoryCandle with inf values
+     */
+    if(metricData.max > maxHeight){
+      metricData.max = maxHeight;
+      //Remove closeLine
+    }
+    if( metricData.first_quartile>  maxHeight){
+      metricData.first_quartile =  maxHeight;
+    }
+    if(metricData.third_quartile >  maxHeight){
+      metricData.third_quartile =  maxHeight;
+    }
+    if(metricData.min >  maxHeight){
+      metricData.min =  maxHeight;
+    }
     candle.candles.push({
 
       x: metric,
@@ -211,8 +230,8 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
   );
 }
 
-function CustomTickLabel(props: any): any {
-  const { x, y, text, ticks, index } = props;
+function CustomTickLabel(props: CustomTickLabelProps): JSX.Element {
+  let { x, y, text, ticks = Array<string>(), index } = props;
   const padding = 1; // adjust the value to increase/decrease padding between labels
 
   const strokeWidth = 1;
@@ -223,6 +242,7 @@ function CustomTickLabel(props: any): any {
 
   //let xValue = someValue*(index/ticks.length)+someOffset;
   let xValue = someOffset / ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific
+
   return (
     <g transform={`translate(${x}, ${y})`}>
       <VictoryLabel
@@ -230,6 +250,60 @@ function CustomTickLabel(props: any): any {
         verticalAnchor="end"
         angle="30"
         style={{ fontSize: Math.min(125 / text.length, 10), fill: '#404040' }}
+        //style={{ fontSize: 10, fill: '#404040' }}
+        x={0}
+        y={0}
+        dy={padding / 2}
+        text={text}
+      />
+      <line
+        x1={xValue}
+        x2={xValue}
+        y1={0 - 11}
+        y2={0 - 11 - lineLength}
+        stroke={color}
+        strokeWidth={strokeWidth}
+      />
+    </g>
+  );
+}
+interface CustomTickLabelProps extends TextProps {
+  x?: number;
+  y?: number;
+  verticalAnchor?: string;
+  textAnchor?: string;
+  ticks?: Array<string>;
+  angle?: number;
+  scale?: any; // Use the appropriate type based on your use case
+  tick?: any; // Use the appropriate type based on your use case
+  text?: any; // Use the appropriate type based on your use case
+  index?: number;
+  datum?: any; // Use the appropriate type based on your use case
+  style?: React.CSSProperties;
+  events?: any; // Use the appropriate type based on your use case
+}
+
+function CustomTickLabelBoxPlot(props:CustomTickLabelProps): JSX.Element {
+
+  let { x, y, text, index, ticks= Array<string>()} = props;
+  
+  const padding = 1; // adjust the value to increase/decrease padding between labels
+
+  const strokeWidth = 1;
+  const color = 'grey';
+  const lineLength = 20;
+  const someOffset = 210;
+
+  //let xValue = someValue*(index/ticks.length)+someOffset;
+  let xValue = someOffset / ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific
+
+  return (
+    <g transform={`translate(${x}, ${y})`}>
+      <VictoryLabel
+
+        angle="0"
+        style={{ fontSize: 10, fill: '#404040' }}
+        //x={-text.length}
         x={0}
         y={0}
         dy={padding / 2}
@@ -271,6 +345,7 @@ function useBoxDiagrams(siteIds: string[], fileHandler: any) {
  * @returns A VictoryChart with an array of VictoryCandles.
  */
 export function BoxPlotChart(props: ChartProps): JSX.Element {
+  
   const { metrics, sites, siteProps, fileHandler } = props;
   const width = 10;
   const offsetPadding = 5;
@@ -281,11 +356,12 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
     return <div />;
   }
 
-  // For metrics in props.metrics skapa victorycandles som innehåller alla props.sites
-  metrics.forEach((metric) => {
+  // For sites in props.site skapa victorycandles som innehåller alla props.sites
+  //Loopa igenom sites och bygg data för alla i klickade metrics
+  sites.forEach((site) => {
     const data: CandleChart = getCandleChartData(
-      metric,
-      sites,
+      metrics,
+      site,
       boxDiagramData,
       siteProps
     );
@@ -320,7 +396,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
           },
           axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
         }}
-        tickLabelComponent={<CustomTickLabel />}
+        tickLabelComponent={<CustomTickLabelBoxPlot  />}
         tickFormat={(tick: any, index: number, ticks: any) => `${tick}`}
       />
 
@@ -431,15 +507,16 @@ function drawHistogram(
   width: number
 ) {
   const formatTickDifference = (tick: any, index: number, ticksArray: any) => {
+    //console.log(ticksArray);
     if (index < ticksArray.length - 1) {
       if (tick == ticksArray[index + 1] - 1) {
         return `${tick} ms`;
       } else {
-        const difference = `${tick} - ${ticksArray[index + 1] - 1} ms`;
+        const difference = `${tick} - ${Number(ticksArray[index + 1]) - 1} ms`;
         return difference;
       }
     }
-    return `${tick} ms - `;
+    return `${ticksArray[index]} ms - `;
   };
 
   const victoryBars: Array<any> = [];
@@ -571,20 +648,25 @@ export function BarChart(props: ChartProps): JSX.Element {
 }
 
 /**
+ * 
  *
- * @param barGraph
- * @returns
+ * @param barGraph Takes in a list of Histograms
+ * @returns Returns a new list of Histograms where all bars that have x value 0
+ * is removed
  */
 function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram> {
-  const getEmptyXValues = (barGraph: Histogram[]) => {
-    const emptyXValues = new Set();
+
+  /**
+   * @returns a array contain
+   */
+  const getEmptyXValues = (_barGraph: Histogram[]):Set<String> => {
+    const emptyXValues = new Set<String>();
 
     let nonEmptyBars: Bar[] = [];
-    //
-    barGraph.forEach((histogram) => {
+    _barGraph.forEach((histogram) => {
       nonEmptyBars = nonEmptyBars.concat(histogram.bars.filter((bar: { y: number }) => bar.y !== 0));
     });
-    barGraph.forEach((histogram) => {
+    _barGraph.forEach((histogram) => {
       histogram.bars.forEach((bar: { y: number; x: string }) => {
         if (
           bar.y === 0 &&
@@ -597,11 +679,11 @@ function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram> {
     return emptyXValues;
   };
 
-  const _removeEmptyXValues = (barGraph: any[], emptyXValues: Set<unknown>) => {
+  const removeEmptyXValuesFromHistograms = (barGraph: Histogram[], emptyXValues: Set<String>):Histogram[] => {
     let newBarGraph: Histogram[] = [];
-    barGraph.forEach((histogram: { bars: any[] }) => {
+    barGraph.forEach((histogram: { bars: Bar[] }) => {
       let newHistogram: Histogram = new Histogram();
-      let keepZero: boolean = false;
+      let keepZero: boolean = true;
       histogram.bars.forEach((bar, i) => {
         if (emptyXValues.has(bar.x)) {
           if (keepZero) {
@@ -617,9 +699,9 @@ function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram> {
     });
     return newBarGraph;
   };
-
+  
   const emptyXvalues = getEmptyXValues(barGraph);
-  barGraph = _removeEmptyXValues(barGraph, emptyXvalues);
+  barGraph = removeEmptyXValuesFromHistograms(barGraph, emptyXvalues);
   return barGraph;
 }
 
@@ -632,8 +714,8 @@ function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram> {
  */
 function mergeXvalues(
   barGraph: Array<Histogram>,
-  graphWidth: any,
-  sites: any
+  graphWidth: number,
+  sites: Array<String>
 ): Array<Histogram> {
   let newBarGraph: Array<Histogram> = [];
   let width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
