@@ -14,7 +14,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Paper from '@mui/material/Paper';
 import DragAndDropzone from './DragAndDropzone';
-import LegendBar from './LegendBar';
+
 import CHART_COLORS from './CHART_COLORS';
 import Dropdown from './Dropdown';
 import { Site } from './SiteInterface';
@@ -240,7 +240,7 @@ export default function Menu(props: MenuProps) {
               <MenuIcon />
             </IconButton>
 
-            <LegendBar siteProps={siteProps} />
+            
           </DrawerHeader>
         </AppBar>
         <Drawer

@@ -7,6 +7,7 @@ import Menu from './Menu';
 import { InfoboxContainer } from './BaseComponent';
 import ViewTabs from './ViewTabs';
 import { Site } from './SiteInterface';
+import LegendBar from './LegendBar';
 
 //        ____Layout_____
 //       /       |       \
@@ -42,36 +43,54 @@ function Layout(props: MenuProps) {
   const [siteProps, setSiteProps] = useState<Map<string, Site>>(map);
   const [metricProps, setMetricProps] = useState<string[]>([]);
 
-  return (
+    return (
+      <Box>
     <Box
       sx={{
-        display: 'flex',
+              display: 'fixed'
+
       }}
-    >
+      >
+         
       <Menu
         fileHandler={fileHandler}
         siteProps={siteProps}
         setSiteProps={setSiteProps}
         setMetricProps={setMetricProps}
-      />
-
+          />
+            </Box >
+            <Box
+                sx={{
+                    flexDirection: 'column',
+                    display: 'flex',
+                    marginTop: `60px`,
+                    textAlign: 'left',
+                    margin: '0',
+                    paddingTop: '60px'
+                }}
+            >
+                <LegendBar siteProps={siteProps} />
+            </Box >
       <Box
         sx={{
           flexDirection: 'column',
-          display: 'flex',
+          display: 'inline-flex',
           marginTop: `60px`,
           textAlign: 'left',
           margin: '0',
+          paddingTop: '60px'
         }}
-      >
+          >
+              
         <ViewTabs
           siteProps={siteProps}
           metricProps={metricProps}
           fileHandler={fileHandler}
-        />
+              />
+              
         <InfoboxContainer fileHandler={fileHandler} />
-      </Box>
-    </Box>
+                </Box>
+                </Box>
   );
 }
 
