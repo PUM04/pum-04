@@ -15,7 +15,10 @@ import {
   VictoryLabel,
 } from 'victory';
 import { ScaleName, TextProps } from 'victory-core';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 import { Site } from './SiteInterface';
+
 /**
  * Top level component.
  *
@@ -238,6 +241,59 @@ function drawVictoryCandle(data: Array<Candle>, width: number): JSX.Element {
   );
 }
 
+enum ScaleTypes {
+  'Log',
+  'Linear',
+  'Percent',
+}
+let graphScaleType = ScaleTypes.Log; // change with a button somewhere else
+
+/**
+ * TODO
+ * @returns
+ */
+function getScaleProps() {
+  switch (graphScaleType) {
+    case ScaleTypes.Linear: {
+      return {
+        scale: { x: 'linear' as ScaleName, y: 'linear' as ScaleName }, // default is already this but to make the code more readable
+        minDomain: { y: 0 },
+      };
+    }
+    case ScaleTypes.Log: {
+      return {
+        scale: { x: 'linear' as ScaleName, y: 'log' as ScaleName },
+        minDomain: { y: 0.5 }, // default is y=0 but then the graph is wacky
+      };
+    }
+    case ScaleTypes.Percent: {
+      console.warn('TODO: NO PERCENT FUNCTION MADE!');
+      break;
+    }
+    default: {
+      console.warn('A type not supported was called!');
+      break;
+    }
+  }
+  // if something breaks return empty
+  return {};
+}
+
+/**
+ * TODO:
+ *
+ * @returns A HTML element with three MUI buttons
+ */
+function ScaleTypeButton(): JSX.Element {
+  return (
+    <ButtonGroup variant="contained" aria-label="outlined primary button group">
+      <Button onClick={graphScaleType=ScaleTypes.Linear}>Linear</Button>
+      <Button onClick={graphScaleType=ScaleTypes.Log}>Log</Button>
+      <Button>%</Button>
+    </ButtonGroup>
+  );
+}
+
 /**
  *
  * Tick for x axis used in barChart
@@ -381,7 +437,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
 
   return (
     <>
-      <p>HELLO</p>
+      {ScaleTypeButton()}
       <VictoryChart
         data-testid="victory-chart"
         // this below is a start for the new
@@ -476,39 +532,7 @@ function numberOfXvalues(histograms: Array<Histogram>): number {
   return uniqueXvalues;
 }
 
-enum ScaleTypes {
-  'Log',
-  'Linear',
-  'Percent',
-}
-let graphScaleType = ScaleTypes.Log; // change with a button somewhere else
 
-function getScaleProps() {
-  switch (graphScaleType) {
-    case ScaleTypes.Linear: {
-      return {
-        scale: { x: 'linear' as ScaleName, y: 'linear' as ScaleName }, // default is already this but to make the code more readable
-        minDomain: { y: 0 },
-      };
-    }
-    case ScaleTypes.Log: {
-      return {
-        scale: { x: 'linear' as ScaleName, y: 'log' as ScaleName },
-        minDomain: { y: 0.5 }, // default is y=0 but then the graph is wacky
-      };
-    }
-    case ScaleTypes.Percent: {
-      console.warn('TODO: NO PERCENT FUNCTION MADE!');
-      break;
-    }
-    default: {
-      console.warn('A type not supported was called!');
-      break;
-    }
-  }
-  // if something breaks return empty
-  return {};
-}
 
 /**
  *  drawHistogram draws a victoryChart containing 1..n bar charts.
@@ -742,6 +766,7 @@ function mergeXvalues(
 
   return newBarGraph;
 }
+
 /**
  *  Draws 1-n VictoryCharts containing 1-n VictoryBars.
  *  metrics.length = number of VictoryCharts
@@ -791,17 +816,9 @@ export function BarChart(props: ChartProps): JSX.Element {
   }, [fileHandler, metrics, siteProps, sites]);
 
   return (
-  <>
-  <p>Hello</p>
-     <div data-testid="barchart">{barGraphList}</div>
-  </>);
-}
-
-function ScaleTypeButton(){
-  return (
-    <ButtonGroup variant="contained" aria-label="outlined primary button group">
-      <Button>One</Button>
-      <Button>Two</Button>
-      <Button>Three</Button>
-    </ButtonGroup>);
+    <>
+      {ScaleTypeButton()}
+      <div data-testid="barchart">{barGraphList}</div>
+    </>
+  );
 }
