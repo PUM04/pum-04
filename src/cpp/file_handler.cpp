@@ -48,6 +48,67 @@ void FileHandler::ComputeFiles()
 #endif
 }
 
+std::string FileHandler::GetInfoBox(std::string site_id) {
+    // Make sure the site exists
+    if (sites.find(site_id) == sites.end()) {
+        #ifdef DEBUG
+        std::cout << "Could not find site with id " << site_id << std::endl;
+        #endif
+        return "{}";
+    }
+
+    struct Site site = sites.at(site_id);
+
+    // Return the cached version if it exists
+    if (site.info_box != NULL) {
+        return site.info_box.dump();
+    }
+
+    json info_box;
+    info_box["site_name"] = site.hosts["site_name"];
+
+    info_box["min_ram"] = std::numeric_limits<int>::max();
+    info_box["max_ram"] = 0.0;
+    info_box["total_ram"] = 0.0;
+
+    info_box["min_cpu"] = std::numeric_limits<int>::max();
+    info_box["max_cpu"] = 0;
+    info_box["total_cpu"] = 0;
+
+    info_box["hosts"] = 0;
+
+    for (auto host : site.hosts["nodes"]) {
+        if (host["memory"] < info_box["min_ram"] ) {
+            info_box["min_ram"] = host["memory"];
+        } else if (host["memory"] > info_box["max_ram"]) {
+            info_box["max_ram"] = host["memory"];
+        }
+
+        info_box["total_ram"] = (double) info_box["total_ram"] + (double) host["memory"];
+
+        if (host["cpu"] < info_box["min_cpu"] ) {
+            info_box["min_cpu"] = host["cpu"];
+        } else if (host["cpu"] > info_box["max_cpu"]) {
+            info_box["max_cpu"] = host["cpu"];
+        }
+
+        info_box["total_cpu"] = (int) info_box["total_cpu"] + (int) host["cpu"];
+        info_box["hosts"] = (int) info_box["hosts"] + 1;
+    }
+
+    info_box["average_ram"] = (double) info_box["total_ram"] / (double) info_box["hosts"];
+    info_box["average_cpu"] = (double) info_box["total_cpu"] / (double) info_box["hosts"];
+
+    // Round to two decimal places
+    info_box["average_ram"] = round((double) info_box["average_ram"] * 100) / 100; 
+    info_box["average_cpu"] = round((double) info_box["average_cpu"] * 100) / 100; 
+
+    // Cache the results
+    site.info_box = info_box;
+
+    return info_box.dump();
+}
+
 std::string FileHandler::GetHistogram(std::string site_id) const
 {
     // Make sure the site exists
@@ -56,7 +117,7 @@ std::string FileHandler::GetHistogram(std::string site_id) const
 #ifdef DEBUG
         std::cout << "Could not find site with id " << site_id << std::endl;
 #endif
-        return "";
+        return "{}";
     }
 
     struct Site site = sites.at(site_id);
@@ -75,7 +136,7 @@ std::string FileHandler::GetBoxDiagram(std::string site_id) const
 #ifdef DEBUG
         std::cout << "Could not find site with id " << site_id << std::endl;
 #endif
-        return "";
+        return "{}";
     }
 
     struct Site site = sites.at(site_id);
@@ -351,66 +412,27 @@ std::string FileHandler::GetIdFromPerformance(std::string &file_name) const
     return file_name.substr(0, file_name.find("_"));
 }
 
-/**
- * @brief  Returns a json string with the site names and ids
- * This function will later be replaced with an updated version of GetSiteNames()
- * json string returned has format:
- *
- * @return std::string in json format
- */
-
-std::string FileHandler::GetSiteNamesAndIds() const
-{
-    json sitesNames;
-    std::vector<std::vector<std::string>> jsonSites;
-    sitesNames["sites"] = jsonSites;
+std::string FileHandler::GetSites() const {
+    json site_data;
+    std::vector<std::unordered_map<std::string, std::string>> site_vector;
+    site_data["sites"] = site_vector;
 
     for (auto const site : sites)
     {
         json hosts = site.second.hosts;
-        if (hosts.contains("site_name"))
-        {
-            std::vector<std::string> newSite;
-            std::string id = site.first;
-            std::string name = hosts["site_name"];
-
-            newSite.push_back(id);
-            newSite.push_back(name);
-            sitesNames["sites"].push_back(newSite);
-        }
-        else
-        {
-#ifdef DEBUG
+        if (hosts.contains("site_name")) {
+            std::unordered_map<std::string, std::string> site_map;
+            site_map.insert(
+                {{"name", hosts["site_name"]}, {"id", hosts["site_id"]}});
+            site_data["sites"].push_back(site_map);
+        } else {
+            #ifdef DEBUG
             std::cerr << "The site with id " << site.first
                       << " is missing the key 'site_name'." << std::endl;
-#endif
+        #endif
         }
     }
-    return sitesNames.dump();
-}
-
-std::string FileHandler::GetSiteNames() const
-{
-    json sitesNames;
-    std::vector<std::string> names;
-    sitesNames["names"] = names;
-
-    for (auto const site : sites)
-    {
-        json hosts = site.second.hosts;
-        if (hosts.contains("site_name"))
-        {
-            sitesNames["names"].push_back(hosts["site_name"]);
-        }
-        else
-        {
-#ifdef DEBUG
-            std::cerr << "The site with id " << site.first
-                      << " is missing the key 'site_name'." << std::endl;
-#endif
-        }
-    }
-    return sitesNames.dump();
+    return site_data.dump();
 }
 
 std::string FileHandler::GetMetrics() const

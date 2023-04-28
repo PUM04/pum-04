@@ -4,8 +4,9 @@
 import React, { useState } from 'react';
 import { Box } from '@mui/material';
 import Menu from './Menu';
-import { GraphComponent, InfoboxComponent } from './BaseComponent';
-import { SiteProperties } from './SitePropetiesInterface';
+import { InfoboxContainer } from './BaseComponent';
+import ViewTabs from './ViewTabs';
+import { Site } from './SiteInterface';
 
 //        ____Layout_____
 //       /       |       \
@@ -35,10 +36,13 @@ interface MenuProps {
  * @returns MUI box component with the layout of the website.
  */
 function Layout(props: MenuProps) {
+  console.log(props);
   const { fileHandler } = props;
   const map = new Map();
   // Maps each site key to a site name and a color
-  const [siteProps, setSiteProps] = useState<Map<string, SiteProperties>>(map);
+  const [siteProps, setSiteProps] = useState<Map<string, Site>>(map);
+  const [metricProps, setMetricProps] = useState<string[]>([]);
+
   return (
     <Box
       sx={{
@@ -49,17 +53,24 @@ function Layout(props: MenuProps) {
         fileHandler={fileHandler}
         siteProps={siteProps}
         setSiteProps={setSiteProps}
+        setMetricProps={setMetricProps}
       />
 
       <Box
         sx={{
           flexDirection: 'column',
-          display: 'inline-flex',
-          backgroundColor: 'primary.light1',
+          display: 'flex',
+          marginTop: `60px`,
+          textAlign: 'left',
+          margin: '0',
         }}
       >
-        <GraphComponent siteProps={siteProps} fileHandler={fileHandler} />
-        <InfoboxComponent />
+        <ViewTabs
+          siteProps={siteProps}
+          metricProps={metricProps}
+          fileHandler={fileHandler}
+        />
+        <InfoboxContainer fileHandler={fileHandler} />
       </Box>
     </Box>
   );
