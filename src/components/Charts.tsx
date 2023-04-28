@@ -91,7 +91,7 @@ class Histogram {
  */
 interface CandleChart {
   candles: Array<Candle>;
-  colors: Array<string>
+  color: string;
 }
 
 /**
@@ -155,7 +155,12 @@ function getCandleChartData( // rewrite this function
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   siteProps: Map<string, Site> // used later when structure for candlechart is known.
 ): CandleChart {
-  const candle: CandleChart = { candles: [], colors:[] };
+
+  let siteColor = siteProps.get(site)?.color;
+  if(!siteColor) siteColor = 'black';
+
+
+  const candle: CandleChart = { candles: [], color: siteColor};
   /**
    * Todo- At the moment this function only contains dummy data.
    * Implement code to get data from backend
@@ -214,11 +219,11 @@ function getCandleChartData( // rewrite this function
     Note that width might need to be changed depending on number of sites.
  * @returns a VictoryCandlestick .
  */
-function drawVictoryCandle(data: Array<Candle>, width: number): JSX.Element {
+function drawVictoryCandle(data: CandleChart, width: number): JSX.Element {
   const color: string = 'blue';
   return (
     <VictoryCandlestick
-      key={JSON.stringify(candels.candles)}
+      key={JSON.stringify(data.candles)}
       labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
       labels={({ datum }) =>
         `min:${datum.low}
@@ -230,10 +235,10 @@ function drawVictoryCandle(data: Array<Candle>, width: number): JSX.Element {
       
      
       candleWidth={width}
-      data={candels.candles}
+      data={data.candles}
       style={{
         data: {
-          fill: color,
+          fill: data.color,
           stroke: 'gray',
         },
       }}
@@ -669,14 +674,14 @@ function mergeXvalues(
     return barGraph;
   }
 
-  // const maxXvalues = tooSmallWidth/graphWidth;
-  // const current XValues = (numberOfXvalues(barGraph);
-  // const mergeCount =
+  const maxXvalues:number = tooSmallWidth/graphWidth; // Max antal tillåtna xvärden
+  const currentXValues:number = numberOfXvalues(barGraph)// Hur många har vi
+  const mergeCount = currentXValues/maxXvalues;
+  
   const smallerHistogram = (mergeCount: number, oldHistogram: Histogram) => {
     const newHistogram: Histogram = new Histogram([]);
     oldHistogram.bars.forEach((bar, i) => {
-      const newIndex = Math.floor(i / mergeAmount);
-
+      const newIndex = Math.floor(i / mergeAmount); // mergeAmount = 2 halvera antal x värden margeAMount = 3
       if (newHistogram.bars[newIndex] === undefined) {
         newHistogram.bars.push(new Bar(bar.x, bar.y, bar.fill)); // bar.fill causes unexpected colors at weird times
       } else {
@@ -702,7 +707,7 @@ function mergeXvalues(
     }
     loopCount += 1;
     mergeAmount += 1;
-    width = graphWidth / (numberOfXvalues(newBarGraph) * sites.length);
+    width = graphWidth / (numberOfXvalues(newBarGraph) * sites.length+c);
   }
 
   return newBarGraph;
