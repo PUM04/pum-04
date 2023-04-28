@@ -15,6 +15,8 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Paper from '@mui/material/Paper';
 import DragAndDropzone from './DragAndDropzone';
 
+import LegendBar from './LegendBar';
+
 import CHART_COLORS from './CHART_COLORS';
 import Dropdown from './Dropdown';
 import { Site } from './SiteInterface';
@@ -219,11 +221,24 @@ export default function Menu(props: MenuProps) {
     });
     setSiteProps(newMap);
   };
-
+    const minNavWidth = (window.outerWidth - drawerWidth)/window.outerWidth;
   return (
     <div className="App">
-      <Box sx={{ display: 'flex' }}>
-        <AppBar position="fixed" open={open}>
+      <Box sx={{ display: 'fixed' }}>
+              <AppBar id="appbar"
+                  position="sticky"
+                  
+              sx={{
+                  ...(open ? {
+                      minWidth: minNavWidth,
+                  } :
+                      {
+                          minWidth: '100%',
+                      }    ),
+              }}
+              
+                  
+                  open={open}>
           <DrawerHeader>
             <IconButton
               color="inherit"
@@ -239,7 +254,7 @@ export default function Menu(props: MenuProps) {
             >
               <MenuIcon />
             </IconButton>
-
+           <LegendBar siteProps={siteProps} />
             
           </DrawerHeader>
         </AppBar>

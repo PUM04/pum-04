@@ -46,7 +46,8 @@ function Layout(props: MenuProps) {
     return (
       <Box>
     <Box
-      sx={{
+                sx={{
+
               display: 'fixed'
 
       }}
@@ -59,26 +60,14 @@ function Layout(props: MenuProps) {
         setMetricProps={setMetricProps}
           />
             </Box >
-            <Box
-                sx={{
-                    flexDirection: 'column',
-                    display: 'flex',
-                    marginTop: `60px`,
-                    textAlign: 'left',
-                    margin: '0',
-                    paddingTop: '60px'
-                }}
-            >
-                <LegendBar siteProps={siteProps} />
-            </Box >
+
       <Box
         sx={{
           flexDirection: 'column',
           display: 'inline-flex',
-          marginTop: `60px`,
           textAlign: 'left',
           margin: '0',
-          paddingTop: '60px'
+          paddingTop: '10px'
         }}
           >
               
