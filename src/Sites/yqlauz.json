@@ -1,0 +1,54 @@
+{
+ "site_id": "59c966_230413",
+ "site_name": "yqlauz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Longhorn",
+   "cpu": 11,
+   "memory": 62,
+   "services": [
+    "uvcore",
+    "iss",
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Windows_8",
+   "cpu": 22,
+   "memory": 45,
+   "services": [
+    "uvclient",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Symphony",
+   "cpu": 16,
+   "memory": 27,
+   "services": [
+    "es",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 19,
+   "memory": 22,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Whistler",
+   "cpu": 8,
+   "memory": 55,
+   "services": [
+    "shs",
+    "ids7"
+   ]
+  }
+ }
+}

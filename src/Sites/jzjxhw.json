@@ -1,0 +1,49 @@
+{
+ "site_id": "8y5z87_230413",
+ "site_name": "jzjxhw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Threshold",
+   "cpu": 9,
+   "memory": 49,
+   "services": [
+    "risapp",
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Harmony",
+   "cpu": 12,
+   "memory": 61,
+   "services": [
+    "ids7",
+    "es",
+    "risapp",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 3,
+   "memory": 61,
+   "services": [
+    "ids7",
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 29,
+   "memory": 10,
+   "services": [
+    "uvcore",
+    "wise",
+    "dpat"
+   ]
+  }
+ }
+}

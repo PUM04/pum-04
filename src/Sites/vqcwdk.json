@@ -1,0 +1,37 @@
+{
+ "site_id": "58x3w6_230413",
+ "site_name": "vqcwdk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Daytona",
+   "cpu": 30,
+   "memory": 23,
+   "services": [
+    "ad",
+    "ids7",
+    "shs",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_5",
+   "cpu": 2,
+   "memory": 57,
+   "services": [
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Blue",
+   "cpu": 22,
+   "memory": 46,
+   "services": [
+    "shs"
+   ]
+  }
+ }
+}

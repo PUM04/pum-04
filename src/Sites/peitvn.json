@@ -1,0 +1,79 @@
+{
+ "site_id": "u1wvid_230413",
+ "site_name": "peitvn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Redstone_2",
+   "cpu": 29,
+   "memory": 3,
+   "services": [
+    "riscore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_3",
+   "cpu": 16,
+   "memory": 11,
+   "services": [
+    "es",
+    "uvcore",
+    "riscore",
+    "haproxy",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 22,
+   "memory": 40,
+   "services": [
+    "iss",
+    "uvclient",
+    "ad",
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Emerald",
+   "cpu": 22,
+   "memory": 59,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Freestyle",
+   "cpu": 15,
+   "memory": 47,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Sparta",
+   "cpu": 16,
+   "memory": 48,
+   "services": [
+    "sql2019",
+    "iss",
+    "riscore",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_Valley",
+   "cpu": 11,
+   "memory": 18,
+   "services": [
+    "sql2019",
+    "risapp",
+    "wise",
+    "riscore"
+   ]
+  }
+ }
+}

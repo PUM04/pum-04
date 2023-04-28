@@ -1,0 +1,44 @@
+{
+ "site_id": "558758_230413",
+ "site_name": "hnaqye",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Emerald",
+   "cpu": 2,
+   "memory": 47,
+   "services": [
+    "shs",
+    "riscore",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Emerald",
+   "cpu": 30,
+   "memory": 44,
+   "services": [
+    "riscore",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Snowball",
+   "cpu": 30,
+   "memory": 25,
+   "services": [
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_3",
+   "cpu": 30,
+   "memory": 51,
+   "services": [
+    "shs",
+    "risapp"
+   ]
+  }
+ }
+}

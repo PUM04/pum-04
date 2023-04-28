@@ -1,0 +1,57 @@
+{
+ "site_id": "826960_230413",
+ "site_name": "zqdnzh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Redstone_2",
+   "cpu": 4,
+   "memory": 8,
+   "services": [
+    "ad",
+    "sql2019",
+    "wise",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Chicago",
+   "cpu": 15,
+   "memory": 18,
+   "services": [
+    "shs",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 14,
+   "memory": 57,
+   "services": [
+    "ad",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Memphis",
+   "cpu": 15,
+   "memory": 35,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_4",
+   "cpu": 13,
+   "memory": 33,
+   "services": [
+    "uvclient",
+    "iss",
+    "es",
+    "wise"
+   ]
+  }
+ }
+}

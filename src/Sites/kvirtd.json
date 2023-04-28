@@ -1,0 +1,38 @@
+{
+ "site_id": "m7wnod_230413",
+ "site_name": "kvirtd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Redstone_3",
+   "cpu": 3,
+   "memory": 26,
+   "services": [
+    "es",
+    "shs",
+    "wise"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_3",
+   "cpu": 29,
+   "memory": 20,
+   "services": [
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Windows_7",
+   "cpu": 15,
+   "memory": 46,
+   "services": [
+    "riscore",
+    "uvclient",
+    "ad",
+    "risapp"
+   ]
+  }
+ }
+}

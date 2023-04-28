@@ -1,0 +1,27 @@
+{
+ "site_id": "6uv746_230413",
+ "site_name": "nsjksm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Anvil",
+   "cpu": 30,
+   "memory": 13,
+   "services": [
+    "ad",
+    "uvcore",
+    "sql2019",
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sparta",
+   "cpu": 16,
+   "memory": 62,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "site_id": "ic7i66_230413",
+ "site_name": "tehedi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Sparta",
+   "cpu": 3,
+   "memory": 30,
+   "services": [
+    "uvclient",
+    "iss"
+   ]
+  },
+  "es": {
+   "os": "Daytona",
+   "cpu": 31,
+   "memory": 56,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_7",
+   "cpu": 10,
+   "memory": 9,
+   "services": [
+    "dpat",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Threshold",
+   "cpu": 13,
+   "memory": 47,
+   "services": [
+    "wise",
+    "sql2019",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Threshold_2",
+   "cpu": 9,
+   "memory": 50,
+   "services": [
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 24,
+   "memory": 16,
+   "services": [
+    "uvclient",
+    "ids7"
+   ]
+  }
+ }
+}

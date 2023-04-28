@@ -1,0 +1,45 @@
+{
+ "site_id": "m5j1k4_230413",
+ "site_name": "zxbnre",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Redstone_5",
+   "cpu": 25,
+   "memory": 62,
+   "services": [
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_4",
+   "cpu": 6,
+   "memory": 48,
+   "services": [
+    "uvcore",
+    "ids7",
+    "risapp",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Blue",
+   "cpu": 30,
+   "memory": 31,
+   "services": [
+    "wise",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_3",
+   "cpu": 1,
+   "memory": 32,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

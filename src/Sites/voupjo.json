@@ -1,0 +1,16 @@
+{
+ "site_id": "yuir7n_230413",
+ "site_name": "voupjo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 17,
+   "memory": 26,
+   "services": [
+    "es"
+   ]
+  }
+ }
+}

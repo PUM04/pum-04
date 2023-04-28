@@ -1,0 +1,46 @@
+{
+ "site_id": "537yr7_230413",
+ "site_name": "iskevb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Symphony",
+   "cpu": 6,
+   "memory": 1,
+   "services": [
+    "haproxy",
+    "risapp",
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Snowball",
+   "cpu": 19,
+   "memory": 2,
+   "services": [
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_3",
+   "cpu": 7,
+   "memory": 11,
+   "services": [
+    "sql2019",
+    "ids7",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Windows_NT_5.0",
+   "cpu": 30,
+   "memory": 61,
+   "services": [
+    "ids7",
+    "es",
+    "sql2019"
+   ]
+  }
+ }
+}

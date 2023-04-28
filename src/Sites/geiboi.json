@@ -1,0 +1,76 @@
+{
+ "site_id": "2o35be_230413",
+ "site_name": "geiboi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Threshold",
+   "cpu": 22,
+   "memory": 14,
+   "services": [
+    "wise"
+   ]
+  },
+  "sqlla": {
+   "os": "Sparta",
+   "cpu": 4,
+   "memory": 46,
+   "services": [
+    "uvclient",
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Threshold_2",
+   "cpu": 23,
+   "memory": 11,
+   "services": [
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Windows_8",
+   "cpu": 29,
+   "memory": 49,
+   "services": [
+    "es",
+    "dpat",
+    "risapp",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Symphony",
+   "cpu": 12,
+   "memory": 54,
+   "services": [
+    "dpat",
+    "uvclient",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold",
+   "cpu": 5,
+   "memory": 49,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_valley_2",
+   "cpu": 12,
+   "memory": 57,
+   "services": [
+    "uvcore",
+    "haproxy",
+    "ids7",
+    "wise"
+   ]
+  }
+ }
+}

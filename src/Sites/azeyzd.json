@@ -1,0 +1,64 @@
+{
+ "site_id": "79vc63_230413",
+ "site_name": "azeyzd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Vibranium",
+   "cpu": 2,
+   "memory": 42,
+   "services": [
+    "sql2019",
+    "uvcore",
+    "riscore",
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Memphis",
+   "cpu": 24,
+   "memory": 4,
+   "services": [
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Harmony",
+   "cpu": 22,
+   "memory": 10,
+   "services": [
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_2",
+   "cpu": 12,
+   "memory": 13,
+   "services": [
+    "iss",
+    "dpat",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Vanadium",
+   "cpu": 26,
+   "memory": 23,
+   "services": [
+    "haproxy",
+    "risapp",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_NT_5.0",
+   "cpu": 22,
+   "memory": 61,
+   "services": [
+    "shs"
+   ]
+  }
+ }
+}

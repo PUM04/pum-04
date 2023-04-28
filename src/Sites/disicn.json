@@ -1,0 +1,57 @@
+{
+ "site_id": "40e474_230413",
+ "site_name": "disicn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 9,
+   "memory": 48,
+   "services": [
+    "dpat",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Daytona",
+   "cpu": 32,
+   "memory": 2,
+   "services": [
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Emerald",
+   "cpu": 25,
+   "memory": 18,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 1,
+   "memory": 54,
+   "services": [
+    "sql2019",
+    "ad",
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 20,
+   "memory": 47,
+   "services": [
+    "riscore",
+    "haproxy",
+    "sql2019",
+    "ad",
+    "wise"
+   ]
+  }
+ }
+}

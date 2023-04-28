@@ -1,0 +1,65 @@
+{
+ "site_id": "4110wm_230413",
+ "site_name": "cqhzoq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Whistler",
+   "cpu": 2,
+   "memory": 38,
+   "services": [
+    "riscore",
+    "iss",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Chicago",
+   "cpu": 27,
+   "memory": 14,
+   "services": [
+    "ad",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Longhorn",
+   "cpu": 5,
+   "memory": 21,
+   "services": [
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vibranium",
+   "cpu": 7,
+   "memory": 31,
+   "services": [
+    "risapp",
+    "es",
+    "dpat",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Windows_NT_5.0",
+   "cpu": 11,
+   "memory": 57,
+   "services": [
+    "wise",
+    "haproxy",
+    "shs"
+   ]
+  },
+  "pacsapp": {
+   "os": "Vanadium",
+   "cpu": 15,
+   "memory": 56,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

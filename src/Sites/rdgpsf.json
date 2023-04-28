@@ -1,0 +1,76 @@
+{
+ "site_id": "2jv3ic_230413",
+ "site_name": "rdgpsf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Millennium",
+   "cpu": 3,
+   "memory": 12,
+   "services": [
+    "iss",
+    "wise",
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_Valley",
+   "cpu": 6,
+   "memory": 48,
+   "services": [
+    "ad",
+    "riscore",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Emerald",
+   "cpu": 14,
+   "memory": 15,
+   "services": [
+    "wise",
+    "sql2019",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 18,
+   "memory": 48,
+   "services": [
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Freestyle",
+   "cpu": 28,
+   "memory": 2,
+   "services": [
+    "haproxy",
+    "ids7",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Vanadium",
+   "cpu": 20,
+   "memory": 10,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Razzle",
+   "cpu": 17,
+   "memory": 38,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

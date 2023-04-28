@@ -1,0 +1,64 @@
+{
+ "site_id": "urnecc_230413",
+ "site_name": "revwfk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Vanadium",
+   "cpu": 4,
+   "memory": 14,
+   "services": [
+    "ids7",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 3,
+   "memory": 39,
+   "services": [
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_3",
+   "cpu": 3,
+   "memory": 1,
+   "services": [
+    "risapp",
+    "wise",
+    "uvcore",
+    "shs"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 3,
+   "memory": 13,
+   "services": [
+    "ad",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_5",
+   "cpu": 20,
+   "memory": 3,
+   "services": [
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold_2",
+   "cpu": 3,
+   "memory": 41,
+   "services": [
+    "haproxy",
+    "es"
+   ]
+  }
+ }
+}

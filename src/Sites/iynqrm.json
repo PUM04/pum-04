@@ -1,0 +1,73 @@
+{
+ "site_id": "58jp3m_230413",
+ "site_name": "iynqrm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Sun_valley_2",
+   "cpu": 21,
+   "memory": 49,
+   "services": [
+    "ids7",
+    "es",
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_NT_5.0",
+   "cpu": 14,
+   "memory": 53,
+   "services": [
+    "dpat",
+    "sql2019",
+    "uvcore",
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Symphony",
+   "cpu": 7,
+   "memory": 37,
+   "services": [
+    "riscore",
+    "ids7",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Freestyle",
+   "cpu": 28,
+   "memory": 3,
+   "services": [
+    "wise",
+    "ids7",
+    "riscore",
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 2,
+   "memory": 50,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "uvcore",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Blue",
+   "cpu": 29,
+   "memory": 29,
+   "services": [
+    "uvcore",
+    "dpat",
+    "ad",
+    "haproxy"
+   ]
+  }
+ }
+}

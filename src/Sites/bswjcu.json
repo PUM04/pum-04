@@ -1,0 +1,28 @@
+{
+ "site_id": "n35w57_230413",
+ "site_name": "bswjcu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Daytona",
+   "cpu": 13,
+   "memory": 17,
+   "services": [
+    "haproxy",
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Longhorn",
+   "cpu": 8,
+   "memory": 34,
+   "services": [
+    "ids7",
+    "haproxy",
+    "risapp",
+    "riscore"
+   ]
+  }
+ }
+}

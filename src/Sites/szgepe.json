@@ -1,0 +1,17 @@
+{
+ "site_id": "29kteb_230413",
+ "site_name": "szgepe",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Snowball",
+   "cpu": 1,
+   "memory": 60,
+   "services": [
+    "uvclient",
+    "uvcore"
+   ]
+  }
+ }
+}

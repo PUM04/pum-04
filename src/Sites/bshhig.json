@@ -1,0 +1,75 @@
+{
+ "site_id": "z6g57r_230413",
+ "site_name": "bshhig",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Blue",
+   "cpu": 14,
+   "memory": 14,
+   "services": [
+    "iss",
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 27,
+   "memory": 15,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "riscore",
+    "risapp"
+   ]
+  },
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 27,
+   "memory": 58,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Vanadium",
+   "cpu": 24,
+   "memory": 61,
+   "services": [
+    "dpat"
+   ]
+  },
+  "ad": {
+   "os": "Symphony",
+   "cpu": 29,
+   "memory": 1,
+   "services": [
+    "haproxy",
+    "uvclient",
+    "riscore",
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Freestyle",
+   "cpu": 19,
+   "memory": 52,
+   "services": [
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 16,
+   "memory": 44,
+   "services": [
+    "uvclient",
+    "riscore",
+    "es"
+   ]
+  }
+ }
+}

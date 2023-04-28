@@ -1,0 +1,82 @@
+{
+ "site_id": "jp2034_230413",
+ "site_name": "rfszls",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 12,
+   "memory": 29,
+   "services": [
+    "uvcore",
+    "iss",
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Symphony",
+   "cpu": 19,
+   "memory": 11,
+   "services": [
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Chicago",
+   "cpu": 3,
+   "memory": 47,
+   "services": [
+    "iss",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Threshold_2",
+   "cpu": 26,
+   "memory": 32,
+   "services": [
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_8",
+   "cpu": 23,
+   "memory": 40,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Vibranium",
+   "cpu": 12,
+   "memory": 7,
+   "services": [
+    "wise",
+    "es",
+    "sql2019",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_5",
+   "cpu": 3,
+   "memory": 16,
+   "services": [
+    "dpat",
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_7",
+   "cpu": 31,
+   "memory": 55,
+   "services": [
+    "wise",
+    "dpat"
+   ]
+  }
+ }
+}

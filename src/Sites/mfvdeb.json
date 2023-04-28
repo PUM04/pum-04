@@ -1,0 +1,28 @@
+{
+ "site_id": "x8jew6_230413",
+ "site_name": "mfvdeb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Chicago",
+   "cpu": 29,
+   "memory": 15,
+   "services": [
+    "iss",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Anvil",
+   "cpu": 3,
+   "memory": 53,
+   "services": [
+    "wise",
+    "haproxy",
+    "uvcore"
+   ]
+  }
+ }
+}

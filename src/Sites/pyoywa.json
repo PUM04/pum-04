@@ -1,0 +1,45 @@
+{
+ "site_id": "559rob_230413",
+ "site_name": "pyoywa",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Windows_8",
+   "cpu": 1,
+   "memory": 49,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Chicago",
+   "cpu": 18,
+   "memory": 48,
+   "services": [
+    "haproxy",
+    "shs",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Longhorn",
+   "cpu": 16,
+   "memory": 5,
+   "services": [
+    "uvclient",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold_2",
+   "cpu": 25,
+   "memory": 30,
+   "services": [
+    "ad",
+    "shs"
+   ]
+  }
+ }
+}

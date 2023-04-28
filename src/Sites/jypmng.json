@@ -1,0 +1,80 @@
+{
+ "site_id": "527hkb_230413",
+ "site_name": "jypmng",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 15,
+   "memory": 41,
+   "services": [
+    "risapp",
+    "uvcore",
+    "ad",
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Blue",
+   "cpu": 24,
+   "memory": 60,
+   "services": [
+    "risapp",
+    "ids7",
+    "es",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Vibranium",
+   "cpu": 17,
+   "memory": 10,
+   "services": [
+    "ids7",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Longhorn",
+   "cpu": 9,
+   "memory": 27,
+   "services": [
+    "es",
+    "wise",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Harmony",
+   "cpu": 27,
+   "memory": 41,
+   "services": [
+    "dpat",
+    "uvclient",
+    "es",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 26,
+   "memory": 25,
+   "services": [
+    "dpat",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 15,
+   "memory": 59,
+   "services": [
+    "riscore",
+    "uvcore",
+    "iss",
+    "dpat"
+   ]
+  }
+ }
+}

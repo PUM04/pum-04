@@ -1,0 +1,43 @@
+{
+ "site_id": "r90i82_230413",
+ "site_name": "pimvle",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Freestyle",
+   "cpu": 29,
+   "memory": 63,
+   "services": [
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Longhorn",
+   "cpu": 5,
+   "memory": 31,
+   "services": [
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Sun_Valley",
+   "cpu": 19,
+   "memory": 12,
+   "services": [
+    "sql2019",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 13,
+   "memory": 53,
+   "services": [
+    "iss",
+    "uvcore"
+   ]
+  }
+ }
+}

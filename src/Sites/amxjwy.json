@@ -1,0 +1,58 @@
+{
+ "site_id": "d45bcb_230413",
+ "site_name": "amxjwy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 12,
+   "memory": 11,
+   "services": [
+    "haproxy",
+    "ids7",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Sun_valley_2",
+   "cpu": 29,
+   "memory": 53,
+   "services": [
+    "uvclient",
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Millennium",
+   "cpu": 2,
+   "memory": 1,
+   "services": [
+    "sql2019",
+    "wise",
+    "shs"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 28,
+   "memory": 60,
+   "services": [
+    "riscore",
+    "shs",
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_7",
+   "cpu": 10,
+   "memory": 51,
+   "services": [
+    "shs",
+    "haproxy",
+    "wise"
+   ]
+  }
+ }
+}

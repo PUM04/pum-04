@@ -1,0 +1,17 @@
+{
+ "site_id": "6f680u_230413",
+ "site_name": "ygbqza",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Vibranium",
+   "cpu": 23,
+   "memory": 20,
+   "services": [
+    "shs",
+    "iss"
+   ]
+  }
+ }
+}

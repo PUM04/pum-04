@@ -1,0 +1,29 @@
+{
+ "site_id": "3r10eg_230413",
+ "site_name": "daoujg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Millennium",
+   "cpu": 25,
+   "memory": 24,
+   "services": [
+    "ids7",
+    "haproxy",
+    "wise",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 7,
+   "memory": 29,
+   "services": [
+    "ids7",
+    "haproxy"
+   ]
+  }
+ }
+}

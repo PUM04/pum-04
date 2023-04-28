@@ -1,0 +1,34 @@
+{
+ "site_id": "shjdry_230413",
+ "site_name": "dkoqep",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Emerald",
+   "cpu": 14,
+   "memory": 9,
+   "services": [
+    "riscore",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 3,
+   "memory": 61,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Threshold",
+   "cpu": 9,
+   "memory": 12,
+   "services": [
+    "risapp",
+    "ad"
+   ]
+  }
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "site_id": "duusu3_230413",
+ "site_name": "hjnqvv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Blue",
+   "cpu": 13,
+   "memory": 38,
+   "services": [
+    "sql2019",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold_2",
+   "cpu": 21,
+   "memory": 19,
+   "services": [
+    "wise",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 29,
+   "memory": 16,
+   "services": [
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Freestyle",
+   "cpu": 17,
+   "memory": 24,
+   "services": [
+    "haproxy",
+    "dpat",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Blue",
+   "cpu": 15,
+   "memory": 48,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

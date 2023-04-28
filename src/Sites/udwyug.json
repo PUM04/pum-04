@@ -1,0 +1,18 @@
+{
+ "site_id": "4a79gm_230413",
+ "site_name": "udwyug",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Freestyle",
+   "cpu": 29,
+   "memory": 53,
+   "services": [
+    "shs",
+    "iss",
+    "es"
+   ]
+  }
+ }
+}

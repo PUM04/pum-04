@@ -1,0 +1,79 @@
+{
+ "site_id": "udo1w3_230413",
+ "site_name": "ucdvoh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 5,
+   "memory": 42,
+   "services": [
+    "uvclient",
+    "iss",
+    "riscore",
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "wisecllb": {
+   "os": "Razzle",
+   "cpu": 3,
+   "memory": 7,
+   "services": [
+    "shs",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Windows_8",
+   "cpu": 3,
+   "memory": 25,
+   "services": [
+    "ids7",
+    "dpat",
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 16,
+   "memory": 18,
+   "services": [
+    "shs",
+    "ad"
+   ]
+  },
+  "sss": {
+   "os": "Sparta",
+   "cpu": 13,
+   "memory": 10,
+   "services": [
+    "riscore",
+    "uvclient",
+    "ad",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Daytona",
+   "cpu": 25,
+   "memory": 31,
+   "services": [
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Anvil",
+   "cpu": 14,
+   "memory": 49,
+   "services": [
+    "ids7",
+    "sql2019",
+    "riscore",
+    "iss"
+   ]
+  }
+ }
+}

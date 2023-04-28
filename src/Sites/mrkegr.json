@@ -1,0 +1,28 @@
+{
+ "site_id": "73qkv7_230413",
+ "site_name": "mrkegr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Symphony",
+   "cpu": 10,
+   "memory": 30,
+   "services": [
+    "es",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_7",
+   "cpu": 16,
+   "memory": 37,
+   "services": [
+    "ad",
+    "risapp",
+    "iss",
+    "wise"
+   ]
+  }
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "site_id": "06000m_230413",
+ "site_name": "jkvmep",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Threshold_2",
+   "cpu": 10,
+   "memory": 5,
+   "services": [
+    "es",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_1",
+   "cpu": 15,
+   "memory": 52,
+   "services": [
+    "ad",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Blue",
+   "cpu": 30,
+   "memory": 43,
+   "services": [
+    "es",
+    "risapp",
+    "iss"
+   ]
+  }
+ }
+}

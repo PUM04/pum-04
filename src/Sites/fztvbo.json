@@ -1,0 +1,89 @@
+{
+ "site_id": "41n8qr_230413",
+ "site_name": "fztvbo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Freestyle",
+   "cpu": 31,
+   "memory": 12,
+   "services": [
+    "ad",
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Windows_8",
+   "cpu": 25,
+   "memory": 61,
+   "services": [
+    "ids7",
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 31,
+   "memory": 25,
+   "services": [
+    "sql2019",
+    "ids7",
+    "wise",
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Emerald",
+   "cpu": 3,
+   "memory": 20,
+   "services": [
+    "ad",
+    "riscore",
+    "uvcore",
+    "wise",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Chicago",
+   "cpu": 31,
+   "memory": 6,
+   "services": [
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Memphis",
+   "cpu": 31,
+   "memory": 18,
+   "services": [
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Windows_8",
+   "cpu": 1,
+   "memory": 3,
+   "services": [
+    "ad",
+    "es",
+    "sql2019",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Blue",
+   "cpu": 21,
+   "memory": 45,
+   "services": [
+    "uvclient",
+    "iss",
+    "wise",
+    "shs",
+    "riscore"
+   ]
+  }
+ }
+}

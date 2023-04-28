@@ -1,0 +1,47 @@
+{
+ "site_id": "5650nl_230413",
+ "site_name": "ygkntx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Harmony",
+   "cpu": 17,
+   "memory": 50,
+   "services": [
+    "ad",
+    "risapp",
+    "ids7",
+    "riscore",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Vanadium",
+   "cpu": 30,
+   "memory": 7,
+   "services": [
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Vanadium",
+   "cpu": 20,
+   "memory": 4,
+   "services": [
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Daytona",
+   "cpu": 10,
+   "memory": 34,
+   "services": [
+    "es",
+    "sql2019",
+    "ids7",
+    "haproxy"
+   ]
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "site_id": "927p79_230413",
+ "site_name": "fyqgcj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Sparta",
+   "cpu": 12,
+   "memory": 44,
+   "services": [
+    "uvcore",
+    "iss"
+   ]
+  }
+ }
+}

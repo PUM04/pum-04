@@ -1,0 +1,57 @@
+{
+ "site_id": "hpp1ey_230413",
+ "site_name": "omamql",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Windows_7",
+   "cpu": 32,
+   "memory": 37,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "uvclient",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Redstone_3",
+   "cpu": 21,
+   "memory": 52,
+   "services": [
+    "ids7",
+    "uvcore",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold",
+   "cpu": 25,
+   "memory": 34,
+   "services": [
+    "dpat",
+    "risapp",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 22,
+   "memory": 50,
+   "services": [
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Snowball",
+   "cpu": 14,
+   "memory": 17,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

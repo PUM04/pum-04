@@ -1,0 +1,46 @@
+{
+ "site_id": "17jcps_230413",
+ "site_name": "kfygxb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Sparta",
+   "cpu": 17,
+   "memory": 25,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Symphony",
+   "cpu": 19,
+   "memory": 22,
+   "services": [
+    "risapp"
+   ]
+  },
+  "wisecllb": {
+   "os": "Razzle",
+   "cpu": 22,
+   "memory": 41,
+   "services": [
+    "shs",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold_2",
+   "cpu": 27,
+   "memory": 22,
+   "services": [
+    "ids7",
+    "haproxy",
+    "es",
+    "uvclient"
+   ]
+  }
+ }
+}

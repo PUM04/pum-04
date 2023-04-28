@@ -1,0 +1,124 @@
+{
+ "site_id": "5519kj_230413",
+ "site_name": "fvizau",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 7,
+   "memory": 2,
+   "services": [
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Sun_Valley",
+   "cpu": 5,
+   "memory": 50,
+   "services": [
+    "dpat",
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Sparta",
+   "cpu": 18,
+   "memory": 22,
+   "services": [
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_Valley",
+   "cpu": 16,
+   "memory": 7,
+   "services": [
+    "ad",
+    "haproxy",
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 4,
+   "memory": 4,
+   "services": [
+    "uvcore",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Longhorn",
+   "cpu": 19,
+   "memory": 10,
+   "services": [
+    "shs",
+    "ad",
+    "riscore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 8,
+   "memory": 34,
+   "services": [
+    "risapp",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Chicago",
+   "cpu": 2,
+   "memory": 63,
+   "services": [
+    "uvcore",
+    "risapp",
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Sun_valley_2",
+   "cpu": 22,
+   "memory": 34,
+   "services": [
+    "haproxy",
+    "sql2019",
+    "ad",
+    "dpat",
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Sparta",
+   "cpu": 14,
+   "memory": 59,
+   "services": [
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Razzle",
+   "cpu": 6,
+   "memory": 20,
+   "services": [
+    "wise",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 28,
+   "memory": 61,
+   "services": [
+    "shs",
+    "sql2019"
+   ]
+  }
+ }
+}

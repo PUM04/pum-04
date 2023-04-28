@@ -1,0 +1,77 @@
+{
+ "site_id": "009n6w_230413",
+ "site_name": "jnvhic",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Vanadium",
+   "cpu": 26,
+   "memory": 25,
+   "services": [
+    "iss",
+    "haproxy",
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_NT_5.0",
+   "cpu": 19,
+   "memory": 40,
+   "services": [
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 6,
+   "memory": 24,
+   "services": [
+    "iss",
+    "ids7",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Whistler",
+   "cpu": 5,
+   "memory": 51,
+   "services": [
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Windows_7",
+   "cpu": 16,
+   "memory": 30,
+   "services": [
+    "es",
+    "sql2019",
+    "ad",
+    "risapp",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_Valley",
+   "cpu": 26,
+   "memory": 25,
+   "services": [
+    "iss",
+    "riscore",
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_8",
+   "cpu": 26,
+   "memory": 4,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

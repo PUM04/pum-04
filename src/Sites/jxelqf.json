@@ -1,0 +1,26 @@
+{
+ "site_id": "z31vj0_230413",
+ "site_name": "jxelqf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Redstone_2",
+   "cpu": 22,
+   "memory": 37,
+   "services": [
+    "shs",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Chicago",
+   "cpu": 16,
+   "memory": 27,
+   "services": [
+    "shs",
+    "ad"
+   ]
+  }
+ }
+}

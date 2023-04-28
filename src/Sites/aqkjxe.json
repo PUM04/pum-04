@@ -1,0 +1,26 @@
+{
+ "site_id": "a9jrgd_230413",
+ "site_name": "aqkjxe",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Millennium",
+   "cpu": 14,
+   "memory": 2,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sparta",
+   "cpu": 20,
+   "memory": 2,
+   "services": [
+    "dpat",
+    "risapp",
+    "iss"
+   ]
+  }
+ }
+}

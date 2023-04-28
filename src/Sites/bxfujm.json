@@ -1,0 +1,38 @@
+{
+ "site_id": "7k5843_230413",
+ "site_name": "bxfujm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Vibranium",
+   "cpu": 29,
+   "memory": 15,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 22,
+   "memory": 13,
+   "services": [
+    "dpat",
+    "sql2019",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_4",
+   "cpu": 13,
+   "memory": 52,
+   "services": [
+    "haproxy",
+    "uvclient",
+    "uvcore",
+    "dpat"
+   ]
+  }
+ }
+}

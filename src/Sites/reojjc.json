@@ -1,0 +1,16 @@
+{
+ "site_id": "g75il2_230413",
+ "site_name": "reojjc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Chicago",
+   "cpu": 11,
+   "memory": 31,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "site_id": "cnm9ny_230413",
+ "site_name": "swxybn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Windows_7",
+   "cpu": 8,
+   "memory": 10,
+   "services": [
+    "iss",
+    "haproxy",
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Millennium",
+   "cpu": 25,
+   "memory": 7,
+   "services": [
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Razzle",
+   "cpu": 5,
+   "memory": 50,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Millennium",
+   "cpu": 25,
+   "memory": 35,
+   "services": [
+    "dpat",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_4",
+   "cpu": 11,
+   "memory": 48,
+   "services": [
+    "iss",
+    "uvcore",
+    "es",
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Whistler",
+   "cpu": 27,
+   "memory": 17,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

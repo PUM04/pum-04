@@ -1,0 +1,46 @@
+{
+ "site_id": "5egiq6_230413",
+ "site_name": "atxcvj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Millennium",
+   "cpu": 16,
+   "memory": 34,
+   "services": [
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Anvil",
+   "cpu": 4,
+   "memory": 52,
+   "services": [
+    "riscore",
+    "uvclient",
+    "uvcore",
+    "dpat",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Memphis",
+   "cpu": 21,
+   "memory": 8,
+   "services": [
+    "iss",
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Razzle",
+   "cpu": 30,
+   "memory": 49,
+   "services": [
+    "sql2019",
+    "uvcore"
+   ]
+  }
+ }
+}

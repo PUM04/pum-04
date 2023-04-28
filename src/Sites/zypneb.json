@@ -1,0 +1,63 @@
+{
+ "site_id": "795f7n_230413",
+ "site_name": "zypneb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Memphis",
+   "cpu": 7,
+   "memory": 9,
+   "services": [
+    "shs",
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_NT_5.0",
+   "cpu": 13,
+   "memory": 60,
+   "services": [
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Memphis",
+   "cpu": 23,
+   "memory": 1,
+   "services": [
+    "es",
+    "ad",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold",
+   "cpu": 5,
+   "memory": 32,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_Valley",
+   "cpu": 11,
+   "memory": 32,
+   "services": [
+    "es",
+    "iss",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_1",
+   "cpu": 5,
+   "memory": 43,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

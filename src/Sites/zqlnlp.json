@@ -1,0 +1,83 @@
+{
+ "site_id": "4fl86g_230413",
+ "site_name": "zqlnlp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Millennium",
+   "cpu": 25,
+   "memory": 8,
+   "services": [
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 16,
+   "memory": 39,
+   "services": [
+    "ad",
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold_2",
+   "cpu": 17,
+   "memory": 49,
+   "services": [
+    "ad",
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 30,
+   "memory": 31,
+   "services": [
+    "risapp",
+    "iss",
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold_2",
+   "cpu": 3,
+   "memory": 58,
+   "services": [
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Emerald",
+   "cpu": 12,
+   "memory": 31,
+   "services": [
+    "iss",
+    "shs",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Millennium",
+   "cpu": 30,
+   "memory": 51,
+   "services": [
+    "ids7",
+    "es",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Millennium",
+   "cpu": 3,
+   "memory": 45,
+   "services": [
+    "dpat",
+    "sql2019",
+    "iss"
+   ]
+  }
+ }
+}

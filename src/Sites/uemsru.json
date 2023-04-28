@@ -1,0 +1,68 @@
+{
+ "site_id": "1uojnz_230413",
+ "site_name": "uemsru",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Snowball",
+   "cpu": 3,
+   "memory": 63,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Freestyle",
+   "cpu": 1,
+   "memory": 55,
+   "services": [
+    "shs",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Vanadium",
+   "cpu": 23,
+   "memory": 30,
+   "services": [
+    "sql2019",
+    "uvcore",
+    "iss",
+    "dpat",
+    "wise"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_5",
+   "cpu": 24,
+   "memory": 38,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Anvil",
+   "cpu": 9,
+   "memory": 9,
+   "services": [
+    "risapp",
+    "wise"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 22,
+   "memory": 25,
+   "services": [
+    "uvcore",
+    "riscore",
+    "uvclient",
+    "haproxy"
+   ]
+  }
+ }
+}

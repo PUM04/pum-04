@@ -1,0 +1,37 @@
+{
+ "site_id": "82gpg8_230413",
+ "site_name": "zlwlez",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Redstone_4",
+   "cpu": 26,
+   "memory": 23,
+   "services": [
+    "ids7",
+    "risapp",
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Harmony",
+   "cpu": 19,
+   "memory": 29,
+   "services": [
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Blue",
+   "cpu": 28,
+   "memory": 35,
+   "services": [
+    "sql2019",
+    "ids7",
+    "riscore"
+   ]
+  }
+ }
+}

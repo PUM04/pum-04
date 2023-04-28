@@ -1,0 +1,16 @@
+{
+ "site_id": "5qll92_230413",
+ "site_name": "bwcvlu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Vanadium",
+   "cpu": 23,
+   "memory": 15,
+   "services": [
+    "risapp"
+   ]
+  }
+ }
+}

@@ -1,0 +1,84 @@
+{
+ "site_id": "3b8sr6_230413",
+ "site_name": "yszmrz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 32,
+   "memory": 57,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_1",
+   "cpu": 32,
+   "memory": 18,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Memphis",
+   "cpu": 26,
+   "memory": 42,
+   "services": [
+    "ad",
+    "uvclient",
+    "ids7",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_5",
+   "cpu": 18,
+   "memory": 59,
+   "services": [
+    "riscore",
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 4,
+   "memory": 15,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_8",
+   "cpu": 15,
+   "memory": 49,
+   "services": [
+    "uvclient",
+    "dpat",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Anvil",
+   "cpu": 8,
+   "memory": 60,
+   "services": [
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Vibranium",
+   "cpu": 22,
+   "memory": 9,
+   "services": [
+    "wise",
+    "uvcore",
+    "haproxy",
+    "iss"
+   ]
+  }
+ }
+}

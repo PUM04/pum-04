@@ -1,0 +1,59 @@
+{
+ "site_id": "i7ui18_230413",
+ "site_name": "gpcytr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Redstone_2",
+   "cpu": 14,
+   "memory": 8,
+   "services": [
+    "shs",
+    "wise",
+    "uvcore",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 5,
+   "memory": 45,
+   "services": [
+    "dpat",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 18,
+   "memory": 16,
+   "services": [
+    "haproxy",
+    "wise",
+    "iss",
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vanadium",
+   "cpu": 23,
+   "memory": 24,
+   "services": [
+    "ad",
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 19,
+   "memory": 24,
+   "services": [
+    "uvclient",
+    "ad",
+    "riscore"
+   ]
+  }
+ }
+}

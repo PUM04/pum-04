@@ -1,0 +1,68 @@
+{
+ "site_id": "p71862_230413",
+ "site_name": "bltfgp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Redstone_4",
+   "cpu": 8,
+   "memory": 57,
+   "services": [
+    "iss",
+    "uvclient",
+    "shs",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_3",
+   "cpu": 31,
+   "memory": 42,
+   "services": [
+    "iss",
+    "haproxy",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Vibranium",
+   "cpu": 11,
+   "memory": 24,
+   "services": [
+    "shs",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 1,
+   "memory": 9,
+   "services": [
+    "haproxy",
+    "wise",
+    "iss",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Whistler",
+   "cpu": 23,
+   "memory": 42,
+   "services": [
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Millennium",
+   "cpu": 25,
+   "memory": 28,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "haproxy"
+   ]
+  }
+ }
+}

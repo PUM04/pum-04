@@ -1,0 +1,27 @@
+{
+ "site_id": "655607_230413",
+ "site_name": "ubnyoo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Vanadium",
+   "cpu": 9,
+   "memory": 11,
+   "services": [
+    "iss",
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 24,
+   "memory": 63,
+   "services": [
+    "riscore",
+    "shs",
+    "risapp"
+   ]
+  }
+ }
+}

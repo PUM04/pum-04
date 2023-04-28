@@ -1,0 +1,41 @@
+{
+ "site_id": "17tx4l_230413",
+ "site_name": "isipqx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Sun_valley_2",
+   "cpu": 11,
+   "memory": 49,
+   "services": [
+    "shs",
+    "dpat",
+    "riscore",
+    "risapp",
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Chicago",
+   "cpu": 22,
+   "memory": 41,
+   "services": [
+    "riscore",
+    "risapp",
+    "shs",
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_4",
+   "cpu": 13,
+   "memory": 39,
+   "services": [
+    "uvclient",
+    "wise",
+    "uvcore"
+   ]
+  }
+ }
+}

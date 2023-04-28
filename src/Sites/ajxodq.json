@@ -1,0 +1,78 @@
+{
+ "site_id": "0w9rsa_230413",
+ "site_name": "ajxodq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Emerald",
+   "cpu": 29,
+   "memory": 49,
+   "services": [
+    "haproxy",
+    "dpat",
+    "riscore"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 22,
+   "memory": 23,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold",
+   "cpu": 19,
+   "memory": 14,
+   "services": [
+    "risapp",
+    "ad",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Longhorn",
+   "cpu": 12,
+   "memory": 46,
+   "services": [
+    "iss",
+    "risapp",
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 4,
+   "memory": 33,
+   "services": [
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Freestyle",
+   "cpu": 21,
+   "memory": 35,
+   "services": [
+    "riscore",
+    "dpat",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Memphis",
+   "cpu": 16,
+   "memory": 45,
+   "services": [
+    "ad",
+    "riscore"
+   ]
+  }
+ }
+}

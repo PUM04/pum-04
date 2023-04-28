@@ -1,0 +1,55 @@
+{
+ "site_id": "6w8kz1_230413",
+ "site_name": "iflnna",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Memphis",
+   "cpu": 4,
+   "memory": 34,
+   "services": [
+    "wise",
+    "dpat",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_2",
+   "cpu": 9,
+   "memory": 7,
+   "services": [
+    "ad",
+    "sql2019",
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_4",
+   "cpu": 20,
+   "memory": 40,
+   "services": [
+    "risapp",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Harmony",
+   "cpu": 13,
+   "memory": 50,
+   "services": [
+    "shs"
+   ]
+  },
+  "pacscore": {
+   "os": "Vibranium",
+   "cpu": 4,
+   "memory": 1,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

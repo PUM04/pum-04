@@ -1,0 +1,66 @@
+{
+ "site_id": "oyl7f5_230413",
+ "site_name": "hhdulq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Freestyle",
+   "cpu": 30,
+   "memory": 39,
+   "services": [
+    "haproxy",
+    "ad",
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Whistler",
+   "cpu": 19,
+   "memory": 47,
+   "services": [
+    "shs",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Symphony",
+   "cpu": 32,
+   "memory": 40,
+   "services": [
+    "shs",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_valley_2",
+   "cpu": 4,
+   "memory": 30,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Windows_7",
+   "cpu": 14,
+   "memory": 25,
+   "services": [
+    "sql2019",
+    "shs",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Emerald",
+   "cpu": 1,
+   "memory": 53,
+   "services": [
+    "iss",
+    "shs",
+    "haproxy",
+    "dpat",
+    "ids7"
+   ]
+  }
+ }
+}

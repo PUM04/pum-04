@@ -1,0 +1,82 @@
+{
+ "site_id": "812l07_230413",
+ "site_name": "fcdlba",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Sun_Valley",
+   "cpu": 14,
+   "memory": 10,
+   "services": [
+    "iss",
+    "dpat",
+    "riscore",
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold",
+   "cpu": 24,
+   "memory": 10,
+   "services": [
+    "wise",
+    "iss",
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Anvil",
+   "cpu": 25,
+   "memory": 64,
+   "services": [
+    "iss",
+    "wise",
+    "riscore",
+    "shs"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold_2",
+   "cpu": 22,
+   "memory": 44,
+   "services": [
+    "dpat",
+    "haproxy",
+    "risapp",
+    "wise",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Daytona",
+   "cpu": 20,
+   "memory": 17,
+   "services": [
+    "sql2019",
+    "riscore",
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Vibranium",
+   "cpu": 27,
+   "memory": 6,
+   "services": [
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Harmony",
+   "cpu": 5,
+   "memory": 40,
+   "services": [
+    "iss",
+    "es",
+    "wise",
+    "ids7"
+   ]
+  }
+ }
+}

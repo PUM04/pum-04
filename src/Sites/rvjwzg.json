@@ -1,0 +1,87 @@
+{
+ "site_id": "d61z78_230413",
+ "site_name": "rvjwzg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Threshold",
+   "cpu": 4,
+   "memory": 22,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 3,
+   "memory": 22,
+   "services": [
+    "es",
+    "uvcore",
+    "dpat",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_2",
+   "cpu": 27,
+   "memory": 8,
+   "services": [
+    "ad",
+    "ids7",
+    "uvclient",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_2",
+   "cpu": 24,
+   "memory": 33,
+   "services": [
+    "risapp",
+    "wise",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 11,
+   "memory": 48,
+   "services": [
+    "risapp",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_3",
+   "cpu": 7,
+   "memory": 49,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Freestyle",
+   "cpu": 26,
+   "memory": 40,
+   "services": [
+    "sql2019",
+    "uvcore",
+    "ad",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 16,
+   "memory": 27,
+   "services": [
+    "wise",
+    "haproxy",
+    "shs",
+    "dpat"
+   ]
+  }
+ }
+}

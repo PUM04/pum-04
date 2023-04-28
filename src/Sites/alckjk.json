@@ -1,0 +1,31 @@
+{
+ "site_id": "4u7cj4_230413",
+ "site_name": "alckjk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Redstone_4",
+   "cpu": 16,
+   "memory": 55,
+   "services": [
+    "sql2019",
+    "ids7",
+    "risapp",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_1",
+   "cpu": 24,
+   "memory": 48,
+   "services": [
+    "riscore",
+    "uvcore",
+    "iss",
+    "shs",
+    "dpat"
+   ]
+  }
+ }
+}

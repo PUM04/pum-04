@@ -1,0 +1,73 @@
+{
+ "site_id": "6mw6up_230413",
+ "site_name": "sxbbuf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Harmony",
+   "cpu": 10,
+   "memory": 37,
+   "services": [
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Symphony",
+   "cpu": 24,
+   "memory": 29,
+   "services": [
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_1",
+   "cpu": 6,
+   "memory": 52,
+   "services": [
+    "wise",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 2,
+   "memory": 57,
+   "services": [
+    "wise",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Snowball",
+   "cpu": 8,
+   "memory": 56,
+   "services": [
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Vibranium",
+   "cpu": 5,
+   "memory": 7,
+   "services": [
+    "wise",
+    "sql2019",
+    "es",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Blue",
+   "cpu": 25,
+   "memory": 10,
+   "services": [
+    "uvcore",
+    "es"
+   ]
+  }
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "site_id": "590j6o_230413",
+ "site_name": "uparrr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Windows_7",
+   "cpu": 23,
+   "memory": 11,
+   "services": [
+    "dpat"
+   ]
+  }
+ }
+}

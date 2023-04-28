@@ -1,0 +1,27 @@
+{
+ "site_id": "386dub_230413",
+ "site_name": "qvgtrj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Sun_Valley",
+   "cpu": 16,
+   "memory": 23,
+   "services": [
+    "ad",
+    "riscore",
+    "wise",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vibranium",
+   "cpu": 14,
+   "memory": 16,
+   "services": [
+    "shs"
+   ]
+  }
+ }
+}

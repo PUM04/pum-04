@@ -1,0 +1,18 @@
+{
+ "site_id": "lxaj85_230413",
+ "site_name": "tynozt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Sparta",
+   "cpu": 2,
+   "memory": 39,
+   "services": [
+    "dpat",
+    "ids7",
+    "uvcore"
+   ]
+  }
+ }
+}

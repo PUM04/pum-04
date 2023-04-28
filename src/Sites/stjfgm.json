@@ -1,0 +1,56 @@
+{
+ "site_id": "7248bx_230413",
+ "site_name": "stjfgm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Redstone_1",
+   "cpu": 20,
+   "memory": 38,
+   "services": [
+    "wise",
+    "ids7",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Freestyle",
+   "cpu": 26,
+   "memory": 49,
+   "services": [
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold_2",
+   "cpu": 10,
+   "memory": 9,
+   "services": [
+    "iss",
+    "risapp",
+    "riscore",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 3,
+   "memory": 7,
+   "services": [
+    "wise",
+    "haproxy",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Redstone_5",
+   "cpu": 9,
+   "memory": 47,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

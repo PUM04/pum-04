@@ -1,0 +1,78 @@
+{
+ "site_id": "30v9b9_230413",
+ "site_name": "iwddfm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Redstone_1",
+   "cpu": 6,
+   "memory": 6,
+   "services": [
+    "shs",
+    "uvclient",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 13,
+   "memory": 59,
+   "services": [
+    "risapp",
+    "shs",
+    "dpat",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 26,
+   "memory": 25,
+   "services": [
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold",
+   "cpu": 7,
+   "memory": 30,
+   "services": [
+    "dpat",
+    "wise",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Whistler",
+   "cpu": 28,
+   "memory": 38,
+   "services": [
+    "uvcore",
+    "es",
+    "riscore",
+    "iss",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Freestyle",
+   "cpu": 24,
+   "memory": 13,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacsapp": {
+   "os": "Freestyle",
+   "cpu": 28,
+   "memory": 49,
+   "services": [
+    "uvcore",
+    "ad",
+    "haproxy"
+   ]
+  }
+ }
+}

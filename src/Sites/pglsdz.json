@@ -1,0 +1,39 @@
+{
+ "site_id": "2lf6c6_230413",
+ "site_name": "pglsdz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Harmony",
+   "cpu": 24,
+   "memory": 62,
+   "services": [
+    "ids7",
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Millennium",
+   "cpu": 5,
+   "memory": 41,
+   "services": [
+    "es",
+    "haproxy",
+    "wise",
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Memphis",
+   "cpu": 6,
+   "memory": 26,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "dpat"
+   ]
+  }
+ }
+}

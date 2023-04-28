@@ -1,0 +1,67 @@
+{
+ "site_id": "n54vkn_230413",
+ "site_name": "iuzgqu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Threshold_2",
+   "cpu": 28,
+   "memory": 61,
+   "services": [
+    "iss",
+    "haproxy",
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Redstone_5",
+   "cpu": 18,
+   "memory": 29,
+   "services": [
+    "uvclient",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vanadium",
+   "cpu": 16,
+   "memory": 54,
+   "services": [
+    "risapp",
+    "ids7",
+    "es",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Emerald",
+   "cpu": 26,
+   "memory": 36,
+   "services": [
+    "iss",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Vibranium",
+   "cpu": 9,
+   "memory": 47,
+   "services": [
+    "iss",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 2,
+   "memory": 12,
+   "services": [
+    "risapp"
+   ]
+  }
+ }
+}

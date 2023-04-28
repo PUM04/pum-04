@@ -1,0 +1,66 @@
+{
+ "site_id": "zlly88_230413",
+ "site_name": "rnxwvk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Windows_7",
+   "cpu": 29,
+   "memory": 36,
+   "services": [
+    "es",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Vibranium",
+   "cpu": 2,
+   "memory": 1,
+   "services": [
+    "risapp",
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Anvil",
+   "cpu": 4,
+   "memory": 37,
+   "services": [
+    "ad",
+    "sql2019",
+    "uvclient",
+    "shs",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Razzle",
+   "cpu": 20,
+   "memory": 10,
+   "services": [
+    "risapp",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_3",
+   "cpu": 21,
+   "memory": 50,
+   "services": [
+    "ids7",
+    "shs",
+    "es",
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_2",
+   "cpu": 31,
+   "memory": 52,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

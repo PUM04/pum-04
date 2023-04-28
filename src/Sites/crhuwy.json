@@ -1,0 +1,47 @@
+{
+ "site_id": "03gr90_230413",
+ "site_name": "crhuwy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Sparta",
+   "cpu": 24,
+   "memory": 14,
+   "services": [
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_3",
+   "cpu": 6,
+   "memory": 48,
+   "services": [
+    "ids7",
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "pacscore": {
+   "os": "Memphis",
+   "cpu": 3,
+   "memory": 5,
+   "services": [
+    "iss",
+    "shs",
+    "ad"
+   ]
+  },
+  "sss": {
+   "os": "Windows_8",
+   "cpu": 19,
+   "memory": 53,
+   "services": [
+    "ids7",
+    "wise",
+    "risapp",
+    "uvcore"
+   ]
+  }
+ }
+}

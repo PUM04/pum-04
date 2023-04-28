@@ -1,0 +1,57 @@
+{
+ "site_id": "y18603_230413",
+ "site_name": "ftpazh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Daytona",
+   "cpu": 29,
+   "memory": 48,
+   "services": [
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 1,
+   "memory": 10,
+   "services": [
+    "iss",
+    "dpat",
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_1",
+   "cpu": 11,
+   "memory": 29,
+   "services": [
+    "uvclient",
+    "ad",
+    "risapp",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Daytona",
+   "cpu": 7,
+   "memory": 2,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "riscore",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Harmony",
+   "cpu": 4,
+   "memory": 58,
+   "services": [
+    "es",
+    "ad"
+   ]
+  }
+ }
+}

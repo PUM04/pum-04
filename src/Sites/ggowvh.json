@@ -1,0 +1,63 @@
+{
+ "site_id": "417mp3_230413",
+ "site_name": "ggowvh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Memphis",
+   "cpu": 30,
+   "memory": 2,
+   "services": [
+    "iss",
+    "risapp",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 3,
+   "memory": 41,
+   "services": [
+    "ids7",
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Snowball",
+   "cpu": 26,
+   "memory": 43,
+   "services": [
+    "iss",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Longhorn",
+   "cpu": 10,
+   "memory": 16,
+   "services": [
+    "uvclient",
+    "riscore",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_Valley",
+   "cpu": 11,
+   "memory": 31,
+   "services": [
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Whistler",
+   "cpu": 27,
+   "memory": 6,
+   "services": [
+    "shs"
+   ]
+  }
+ }
+}

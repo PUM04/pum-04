@@ -1,0 +1,28 @@
+{
+ "site_id": "9j536x_230413",
+ "site_name": "qyovon",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Redstone_3",
+   "cpu": 20,
+   "memory": 25,
+   "services": [
+    "wise",
+    "uvclient",
+    "dpat",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Snowball",
+   "cpu": 22,
+   "memory": 13,
+   "services": [
+    "es",
+    "haproxy"
+   ]
+  }
+ }
+}

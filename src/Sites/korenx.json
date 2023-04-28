@@ -1,0 +1,18 @@
+{
+ "site_id": "pt0kua_230413",
+ "site_name": "korenx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Redstone_3",
+   "cpu": 4,
+   "memory": 57,
+   "services": [
+    "risapp",
+    "ad",
+    "uvclient"
+   ]
+  }
+ }
+}

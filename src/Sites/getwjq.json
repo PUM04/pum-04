@@ -1,0 +1,80 @@
+{
+ "site_id": "u49j8h_230413",
+ "site_name": "getwjq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Windows_8",
+   "cpu": 1,
+   "memory": 25,
+   "services": [
+    "wise",
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold",
+   "cpu": 17,
+   "memory": 59,
+   "services": [
+    "iss",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sparta",
+   "cpu": 2,
+   "memory": 60,
+   "services": [
+    "ad",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Emerald",
+   "cpu": 20,
+   "memory": 54,
+   "services": [
+    "ad",
+    "ids7",
+    "uvclient",
+    "dpat",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_2",
+   "cpu": 31,
+   "memory": 38,
+   "services": [
+    "uvcore",
+    "iss",
+    "risapp",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Whistler",
+   "cpu": 19,
+   "memory": 51,
+   "services": [
+    "dpat",
+    "risapp",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_4",
+   "cpu": 11,
+   "memory": 7,
+   "services": [
+    "haproxy",
+    "riscore",
+    "risapp",
+    "ad"
+   ]
+  }
+ }
+}

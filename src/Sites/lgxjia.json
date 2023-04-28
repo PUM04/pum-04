@@ -1,0 +1,19 @@
+{
+ "site_id": "alk093_230413",
+ "site_name": "lgxjia",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Anvil",
+   "cpu": 1,
+   "memory": 25,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "risapp",
+    "riscore"
+   ]
+  }
+ }
+}

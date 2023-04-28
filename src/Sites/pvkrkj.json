@@ -1,0 +1,25 @@
+{
+ "site_id": "020pk4_230413",
+ "site_name": "pvkrkj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Vanadium",
+   "cpu": 2,
+   "memory": 12,
+   "services": [
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Millennium",
+   "cpu": 10,
+   "memory": 25,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

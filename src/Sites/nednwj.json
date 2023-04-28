@@ -1,0 +1,38 @@
+{
+ "site_id": "5ww93a_230413",
+ "site_name": "nednwj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Redstone_4",
+   "cpu": 2,
+   "memory": 36,
+   "services": [
+    "sql2019",
+    "es",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_3",
+   "cpu": 1,
+   "memory": 51,
+   "services": [
+    "dpat",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Longhorn",
+   "cpu": 2,
+   "memory": 30,
+   "services": [
+    "dpat",
+    "riscore",
+    "ids7",
+    "uvclient"
+   ]
+  }
+ }
+}

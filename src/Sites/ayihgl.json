@@ -1,0 +1,85 @@
+{
+ "site_id": "pe1449_230413",
+ "site_name": "ayihgl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Millennium",
+   "cpu": 19,
+   "memory": 1,
+   "services": [
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_valley_2",
+   "cpu": 19,
+   "memory": 8,
+   "services": [
+    "riscore",
+    "dpat",
+    "shs",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Vanadium",
+   "cpu": 3,
+   "memory": 12,
+   "services": [
+    "uvcore",
+    "es",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_8",
+   "cpu": 31,
+   "memory": 34,
+   "services": [
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Windows_8",
+   "cpu": 30,
+   "memory": 19,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 15,
+   "memory": 22,
+   "services": [
+    "haproxy",
+    "iss",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Whistler",
+   "cpu": 5,
+   "memory": 42,
+   "services": [
+    "shs",
+    "ad",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_2",
+   "cpu": 5,
+   "memory": 57,
+   "services": [
+    "wise",
+    "haproxy",
+    "riscore",
+    "uvclient"
+   ]
+  }
+ }
+}

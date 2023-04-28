@@ -1,0 +1,31 @@
+{
+ "site_id": "3b53o6_230413",
+ "site_name": "cotstz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Windows_7",
+   "cpu": 5,
+   "memory": 30,
+   "services": [
+    "dpat",
+    "ids7",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Harmony",
+   "cpu": 2,
+   "memory": 40,
+   "services": [
+    "riscore",
+    "uvclient",
+    "dpat",
+    "sql2019",
+    "uvcore"
+   ]
+  }
+ }
+}

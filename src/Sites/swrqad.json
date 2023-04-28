@@ -1,0 +1,56 @@
+{
+ "site_id": "9y002d_230413",
+ "site_name": "swrqad",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Sun_Valley",
+   "cpu": 2,
+   "memory": 22,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vibranium",
+   "cpu": 10,
+   "memory": 59,
+   "services": [
+    "es",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Razzle",
+   "cpu": 4,
+   "memory": 33,
+   "services": [
+    "ad",
+    "sql2019",
+    "uvclient",
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_1",
+   "cpu": 18,
+   "memory": 61,
+   "services": [
+    "riscore",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 32,
+   "memory": 2,
+   "services": [
+    "haproxy",
+    "wise",
+    "shs",
+    "dpat"
+   ]
+  }
+ }
+}

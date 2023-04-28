@@ -1,0 +1,70 @@
+{
+ "site_id": "oz7pn8_230413",
+ "site_name": "mkrgoe",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 2,
+   "memory": 23,
+   "services": [
+    "ad",
+    "shs",
+    "riscore",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 31,
+   "memory": 32,
+   "services": [
+    "wise",
+    "haproxy",
+    "es",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Anvil",
+   "cpu": 32,
+   "memory": 4,
+   "services": [
+    "uvclient",
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_4",
+   "cpu": 7,
+   "memory": 23,
+   "services": [
+    "wise",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 31,
+   "memory": 6,
+   "services": [
+    "ids7",
+    "shs",
+    "wise",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Daytona",
+   "cpu": 9,
+   "memory": 2,
+   "services": [
+    "wise",
+    "dpat",
+    "iss"
+   ]
+  }
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "site_id": "7x55io_230413",
+ "site_name": "tjxyxe",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Blue",
+   "cpu": 13,
+   "memory": 8,
+   "services": [
+    "risapp",
+    "sql2019",
+    "uvclient",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Threshold",
+   "cpu": 21,
+   "memory": 32,
+   "services": [
+    "riscore",
+    "ad",
+    "iss",
+    "sql2019"
+   ]
+  },
+  "sqlla": {
+   "os": "Blue",
+   "cpu": 26,
+   "memory": 50,
+   "services": [
+    "ids7",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Millennium",
+   "cpu": 7,
+   "memory": 9,
+   "services": [
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Memphis",
+   "cpu": 11,
+   "memory": 51,
+   "services": [
+    "haproxy",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 30,
+   "memory": 59,
+   "services": [
+    "es",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 16,
+   "memory": 56,
+   "services": [
+    "uvclient",
+    "iss",
+    "riscore",
+    "uvcore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "site_id": "nq475x_230413",
+ "site_name": "uymdhl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 9,
+   "memory": 55,
+   "services": [
+    "riscore",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_2",
+   "cpu": 10,
+   "memory": 14,
+   "services": [
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_valley_2",
+   "cpu": 20,
+   "memory": 38,
+   "services": [
+    "sql2019",
+    "shs",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_3",
+   "cpu": 30,
+   "memory": 3,
+   "services": [
+    "es",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Sun_Valley",
+   "cpu": 7,
+   "memory": 20,
+   "services": [
+    "risapp",
+    "sql2019",
+    "ids7"
+   ]
+  }
+ }
+}

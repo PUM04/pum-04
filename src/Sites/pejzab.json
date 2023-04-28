@@ -1,0 +1,76 @@
+{
+ "site_id": "3g8m7f_230413",
+ "site_name": "pejzab",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Redstone_5",
+   "cpu": 1,
+   "memory": 28,
+   "services": [
+    "riscore",
+    "uvcore",
+    "iss",
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Vanadium",
+   "cpu": 2,
+   "memory": 15,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "riscore",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Anvil",
+   "cpu": 10,
+   "memory": 29,
+   "services": [
+    "iss",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Vibranium",
+   "cpu": 17,
+   "memory": 62,
+   "services": [
+    "es",
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Freestyle",
+   "cpu": 15,
+   "memory": 17,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Anvil",
+   "cpu": 22,
+   "memory": 56,
+   "services": [
+    "es",
+    "haproxy",
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Memphis",
+   "cpu": 20,
+   "memory": 52,
+   "services": [
+    "iss",
+    "risapp"
+   ]
+  }
+ }
+}

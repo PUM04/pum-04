@@ -1,0 +1,45 @@
+{
+ "site_id": "8zou9j_230413",
+ "site_name": "tdljwz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Chicago",
+   "cpu": 27,
+   "memory": 33,
+   "services": [
+    "uvclient",
+    "shs"
+   ]
+  },
+  "pacsapp": {
+   "os": "Emerald",
+   "cpu": 27,
+   "memory": 14,
+   "services": [
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Vibranium",
+   "cpu": 26,
+   "memory": 27,
+   "services": [
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 17,
+   "memory": 53,
+   "services": [
+    "wise",
+    "shs",
+    "ids7",
+    "sql2019"
+   ]
+  }
+ }
+}

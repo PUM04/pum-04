@@ -1,0 +1,95 @@
+{
+ "site_id": "xx5z39_230413",
+ "site_name": "xgrbvc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Vanadium",
+   "cpu": 13,
+   "memory": 46,
+   "services": [
+    "es",
+    "riscore",
+    "shs"
+   ]
+  },
+  "ad": {
+   "os": "Blue",
+   "cpu": 22,
+   "memory": 47,
+   "services": [
+    "haproxy",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 7,
+   "memory": 9,
+   "services": [
+    "iss",
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 22,
+   "memory": 48,
+   "services": [
+    "ids7",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 31,
+   "memory": 49,
+   "services": [
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_5",
+   "cpu": 29,
+   "memory": 23,
+   "services": [
+    "es",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sparta",
+   "cpu": 5,
+   "memory": 53,
+   "services": [
+    "wise",
+    "dpat",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Daytona",
+   "cpu": 25,
+   "memory": 26,
+   "services": [
+    "es",
+    "risapp",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Whistler",
+   "cpu": 30,
+   "memory": 64,
+   "services": [
+    "uvclient",
+    "shs"
+   ]
+  }
+ }
+}

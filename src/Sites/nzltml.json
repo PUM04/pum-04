@@ -1,0 +1,84 @@
+{
+ "site_id": "a4qq1o_230413",
+ "site_name": "nzltml",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Sun_Valley",
+   "cpu": 5,
+   "memory": 9,
+   "services": [
+    "risapp",
+    "sql2019",
+    "es",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Freestyle",
+   "cpu": 26,
+   "memory": 57,
+   "services": [
+    "es",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 25,
+   "memory": 64,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Razzle",
+   "cpu": 22,
+   "memory": 40,
+   "services": [
+    "ids7",
+    "riscore",
+    "dpat",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Vibranium",
+   "cpu": 30,
+   "memory": 44,
+   "services": [
+    "haproxy",
+    "ids7",
+    "ad",
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_2",
+   "cpu": 10,
+   "memory": 21,
+   "services": [
+    "shs",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_Valley",
+   "cpu": 30,
+   "memory": 53,
+   "services": [
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold_2",
+   "cpu": 22,
+   "memory": 42,
+   "services": [
+    "risapp",
+    "uvcore"
+   ]
+  }
+ }
+}

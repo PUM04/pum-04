@@ -1,0 +1,61 @@
+{
+ "site_id": "ek50h0_230413",
+ "site_name": "fhwzpu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Vanadium",
+   "cpu": 2,
+   "memory": 32,
+   "services": [
+    "wise",
+    "ad",
+    "risapp",
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Threshold",
+   "cpu": 2,
+   "memory": 17,
+   "services": [
+    "uvclient",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_2",
+   "cpu": 15,
+   "memory": 59,
+   "services": [
+    "riscore",
+    "risapp",
+    "wise",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_1",
+   "cpu": 22,
+   "memory": 7,
+   "services": [
+    "riscore",
+    "wise",
+    "uvcore",
+    "ad",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_4",
+   "cpu": 32,
+   "memory": 18,
+   "services": [
+    "risapp",
+    "wise"
+   ]
+  }
+ }
+}

@@ -1,0 +1,101 @@
+{
+ "site_id": "884t60_230413",
+ "site_name": "fdpgkq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Windows_8",
+   "cpu": 14,
+   "memory": 26,
+   "services": [
+    "uvcore",
+    "risapp",
+    "dpat",
+    "wise",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Symphony",
+   "cpu": 28,
+   "memory": 15,
+   "services": [
+    "ad",
+    "wise",
+    "riscore",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Millennium",
+   "cpu": 18,
+   "memory": 56,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Blue",
+   "cpu": 23,
+   "memory": 2,
+   "services": [
+    "es",
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Vanadium",
+   "cpu": 10,
+   "memory": 63,
+   "services": [
+    "es",
+    "sql2019",
+    "haproxy",
+    "ad",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sparta",
+   "cpu": 32,
+   "memory": 33,
+   "services": [
+    "sql2019",
+    "shs",
+    "dpat",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Whistler",
+   "cpu": 23,
+   "memory": 20,
+   "services": [
+    "wise",
+    "uvclient",
+    "iss",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vanadium",
+   "cpu": 22,
+   "memory": 52,
+   "services": [
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Blue",
+   "cpu": 29,
+   "memory": 49,
+   "services": [
+    "iss",
+    "uvclient",
+    "es"
+   ]
+  }
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "site_id": "48jh62_230413",
+ "site_name": "buxjgm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Chicago",
+   "cpu": 20,
+   "memory": 13,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Chicago",
+   "cpu": 28,
+   "memory": 49,
+   "services": [
+    "ids7",
+    "uvclient",
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_NT_5.0",
+   "cpu": 3,
+   "memory": 19,
+   "services": [
+    "shs",
+    "ad",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_5",
+   "cpu": 16,
+   "memory": 11,
+   "services": [
+    "shs",
+    "uvclient"
+   ]
+  }
+ }
+}

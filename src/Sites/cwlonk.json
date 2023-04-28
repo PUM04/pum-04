@@ -1,0 +1,28 @@
+{
+ "site_id": "3bt49m_230413",
+ "site_name": "cwlonk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 25,
+   "memory": 45,
+   "services": [
+    "iss",
+    "ad",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Symphony",
+   "cpu": 24,
+   "memory": 53,
+   "services": [
+    "dpat",
+    "ids7"
+   ]
+  }
+ }
+}

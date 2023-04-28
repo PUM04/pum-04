@@ -1,0 +1,87 @@
+{
+ "site_id": "9j9748_230413",
+ "site_name": "jqpkgr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Sparta",
+   "cpu": 2,
+   "memory": 16,
+   "services": [
+    "dpat",
+    "risapp",
+    "haproxy",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Millennium",
+   "cpu": 10,
+   "memory": 37,
+   "services": [
+    "wise",
+    "ids7",
+    "uvclient",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Memphis",
+   "cpu": 1,
+   "memory": 33,
+   "services": [
+    "haproxy",
+    "iss",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Longhorn",
+   "cpu": 29,
+   "memory": 32,
+   "services": [
+    "es",
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_3",
+   "cpu": 18,
+   "memory": 37,
+   "services": [
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Razzle",
+   "cpu": 16,
+   "memory": 37,
+   "services": [
+    "riscore",
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Chicago",
+   "cpu": 25,
+   "memory": 51,
+   "services": [
+    "uvclient",
+    "ids7",
+    "shs",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Anvil",
+   "cpu": 31,
+   "memory": 56,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

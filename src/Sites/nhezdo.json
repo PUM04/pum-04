@@ -1,0 +1,16 @@
+{
+ "site_id": "b8m1l2_230413",
+ "site_name": "nhezdo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 29,
+   "memory": 58,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

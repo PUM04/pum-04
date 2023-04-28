@@ -1,0 +1,41 @@
+{
+ "site_id": "374t5h_230413",
+ "site_name": "kddtbe",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Windows_NT_5.0",
+   "cpu": 1,
+   "memory": 43,
+   "services": [
+    "wise",
+    "haproxy",
+    "shs",
+    "dpat",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 25,
+   "memory": 57,
+   "services": [
+    "ad",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 4,
+   "memory": 9,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "shs",
+    "ad",
+    "iss"
+   ]
+  }
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "site_id": "8r1dh7_230413",
+ "site_name": "tpjcka",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Anvil",
+   "cpu": 15,
+   "memory": 22,
+   "services": [
+    "uvcore",
+    "es",
+    "haproxy",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Razzle",
+   "cpu": 21,
+   "memory": 26,
+   "services": [
+    "ad",
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Snowball",
+   "cpu": 29,
+   "memory": 10,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 31,
+   "memory": 52,
+   "services": [
+    "risapp",
+    "dpat",
+    "haproxy",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 30,
+   "memory": 25,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

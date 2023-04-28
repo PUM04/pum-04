@@ -1,0 +1,37 @@
+{
+ "site_id": "9w9m48_230413",
+ "site_name": "xyzash",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Windows_NT_5.0",
+   "cpu": 28,
+   "memory": 20,
+   "services": [
+    "dpat",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_5",
+   "cpu": 32,
+   "memory": 24,
+   "services": [
+    "iss",
+    "ad",
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sun_Valley",
+   "cpu": 5,
+   "memory": 24,
+   "services": [
+    "uvclient",
+    "riscore",
+    "ids7"
+   ]
+  }
+ }
+}

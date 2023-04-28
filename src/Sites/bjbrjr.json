@@ -1,0 +1,16 @@
+{
+ "site_id": "a5t5k0_230413",
+ "site_name": "bjbrjr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Freestyle",
+   "cpu": 10,
+   "memory": 46,
+   "services": [
+    "es"
+   ]
+  }
+ }
+}

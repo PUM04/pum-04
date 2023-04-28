@@ -1,0 +1,39 @@
+{
+ "site_id": "8983un_230413",
+ "site_name": "veksiw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 24,
+   "memory": 51,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 6,
+   "memory": 23,
+   "services": [
+    "iss",
+    "riscore",
+    "ad",
+    "sql2019"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 9,
+   "memory": 48,
+   "services": [
+    "uvclient",
+    "dpat",
+    "uvcore",
+    "ids7",
+    "ad"
+   ]
+  }
+ }
+}

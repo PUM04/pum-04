@@ -1,0 +1,81 @@
+{
+ "site_id": "k7twvt_230413",
+ "site_name": "omfemd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 28,
+   "memory": 61,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Threshold",
+   "cpu": 11,
+   "memory": 31,
+   "services": [
+    "riscore",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_4",
+   "cpu": 15,
+   "memory": 49,
+   "services": [
+    "es",
+    "shs",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Symphony",
+   "cpu": 22,
+   "memory": 34,
+   "services": [
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold",
+   "cpu": 13,
+   "memory": 3,
+   "services": [
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 13,
+   "memory": 2,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 4,
+   "memory": 8,
+   "services": [
+    "uvclient",
+    "riscore",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_1",
+   "cpu": 6,
+   "memory": 62,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "iss"
+   ]
+  }
+ }
+}

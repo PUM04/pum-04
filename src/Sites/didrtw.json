@@ -1,0 +1,36 @@
+{
+ "site_id": "05341z_230413",
+ "site_name": "didrtw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Redstone_3",
+   "cpu": 29,
+   "memory": 52,
+   "services": [
+    "wise",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Memphis",
+   "cpu": 16,
+   "memory": 59,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_1",
+   "cpu": 6,
+   "memory": 62,
+   "services": [
+    "iss",
+    "haproxy"
+   ]
+  }
+ }
+}

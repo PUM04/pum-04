@@ -1,0 +1,80 @@
+{
+ "site_id": "4eqqp9_230413",
+ "site_name": "bcilbq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Freestyle",
+   "cpu": 19,
+   "memory": 1,
+   "services": [
+    "dpat",
+    "shs",
+    "iss",
+    "es",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 29,
+   "memory": 60,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Blue",
+   "cpu": 5,
+   "memory": 31,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Harmony",
+   "cpu": 15,
+   "memory": 30,
+   "services": [
+    "dpat",
+    "haproxy",
+    "wise",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Sparta",
+   "cpu": 31,
+   "memory": 9,
+   "services": [
+    "shs",
+    "wise",
+    "iss",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold",
+   "cpu": 23,
+   "memory": 23,
+   "services": [
+    "ids7",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Harmony",
+   "cpu": 20,
+   "memory": 5,
+   "services": [
+    "risapp",
+    "iss",
+    "uvcore",
+    "es"
+   ]
+  }
+ }
+}

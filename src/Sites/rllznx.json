@@ -1,0 +1,67 @@
+{
+ "site_id": "47ero0_230413",
+ "site_name": "rllznx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Millennium",
+   "cpu": 19,
+   "memory": 40,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Blue",
+   "cpu": 11,
+   "memory": 34,
+   "services": [
+    "shs",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Anvil",
+   "cpu": 13,
+   "memory": 19,
+   "services": [
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Longhorn",
+   "cpu": 23,
+   "memory": 17,
+   "services": [
+    "shs",
+    "iss",
+    "wise",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 26,
+   "memory": 39,
+   "services": [
+    "es",
+    "uvclient",
+    "risapp",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_1",
+   "cpu": 6,
+   "memory": 50,
+   "services": [
+    "es",
+    "dpat"
+   ]
+  }
+ }
+}

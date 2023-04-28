@@ -1,0 +1,19 @@
+{
+ "site_id": "irkm7m_230413",
+ "site_name": "yrdgqh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Razzle",
+   "cpu": 8,
+   "memory": 21,
+   "services": [
+    "ad",
+    "dpat",
+    "es",
+    "sql2019"
+   ]
+  }
+ }
+}

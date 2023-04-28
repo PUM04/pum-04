@@ -1,0 +1,61 @@
+{
+ "site_id": "j14538_230413",
+ "site_name": "urwjvy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Anvil",
+   "cpu": 15,
+   "memory": 37,
+   "services": [
+    "iss",
+    "risapp",
+    "es",
+    "shs",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Snowball",
+   "cpu": 4,
+   "memory": 13,
+   "services": [
+    "ad",
+    "shs",
+    "sql2019",
+    "iss",
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sun_Valley",
+   "cpu": 32,
+   "memory": 17,
+   "services": [
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Harmony",
+   "cpu": 25,
+   "memory": 62,
+   "services": [
+    "dpat",
+    "sql2019",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 8,
+   "memory": 27,
+   "services": [
+    "wise",
+    "ids7",
+    "haproxy",
+    "dpat"
+   ]
+  }
+ }
+}

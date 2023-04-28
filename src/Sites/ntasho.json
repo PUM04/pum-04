@@ -1,0 +1,97 @@
+{
+ "site_id": "2ui8q8_230413",
+ "site_name": "ntasho",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Freestyle",
+   "cpu": 22,
+   "memory": 21,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 19,
+   "memory": 49,
+   "services": [
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Memphis",
+   "cpu": 1,
+   "memory": 49,
+   "services": [
+    "es",
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Sparta",
+   "cpu": 7,
+   "memory": 48,
+   "services": [
+    "shs",
+    "uvclient",
+    "sql2019",
+    "ids7",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_7",
+   "cpu": 2,
+   "memory": 57,
+   "services": [
+    "riscore",
+    "wise",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Emerald",
+   "cpu": 22,
+   "memory": 26,
+   "services": [
+    "uvcore",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_1",
+   "cpu": 3,
+   "memory": 2,
+   "services": [
+    "iss",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 28,
+   "memory": 20,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_NT_5.0",
+   "cpu": 26,
+   "memory": 25,
+   "services": [
+    "uvclient",
+    "ids7",
+    "dpat",
+    "shs",
+    "haproxy"
+   ]
+  }
+ }
+}

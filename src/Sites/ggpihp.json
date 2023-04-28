@@ -1,0 +1,58 @@
+{
+ "site_id": "bt9kiv_230413",
+ "site_name": "ggpihp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Daytona",
+   "cpu": 30,
+   "memory": 14,
+   "services": [
+    "sql2019",
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Vibranium",
+   "cpu": 8,
+   "memory": 14,
+   "services": [
+    "shs",
+    "ad",
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 20,
+   "memory": 29,
+   "services": [
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Harmony",
+   "cpu": 1,
+   "memory": 41,
+   "services": [
+    "haproxy",
+    "es",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Harmony",
+   "cpu": 21,
+   "memory": 6,
+   "services": [
+    "ad",
+    "uvclient",
+    "es"
+   ]
+  }
+ }
+}

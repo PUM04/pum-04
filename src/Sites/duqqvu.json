@@ -1,0 +1,38 @@
+{
+ "site_id": "24uoeb_230413",
+ "site_name": "duqqvu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Symphony",
+   "cpu": 5,
+   "memory": 4,
+   "services": [
+    "haproxy",
+    "riscore",
+    "risapp",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_1",
+   "cpu": 24,
+   "memory": 28,
+   "services": [
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "lb": {
+   "os": "Blue",
+   "cpu": 12,
+   "memory": 54,
+   "services": [
+    "ad",
+    "es",
+    "sql2019"
+   ]
+  }
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "site_id": "zc43n8_230413",
+ "site_name": "wrzplo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Emerald",
+   "cpu": 8,
+   "memory": 37,
+   "services": [
+    "dpat",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold",
+   "cpu": 21,
+   "memory": 10,
+   "services": [
+    "es",
+    "riscore",
+    "wise",
+    "ad",
+    "risapp"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_8",
+   "cpu": 32,
+   "memory": 47,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "ad",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_2",
+   "cpu": 14,
+   "memory": 12,
+   "services": [
+    "uvcore",
+    "wise",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Windows_8",
+   "cpu": 15,
+   "memory": 8,
+   "services": [
+    "risapp",
+    "iss",
+    "riscore"
+   ]
+  }
+ }
+}

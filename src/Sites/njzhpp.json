@@ -1,0 +1,59 @@
+{
+ "site_id": "33e45q_230413",
+ "site_name": "njzhpp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Snowball",
+   "cpu": 10,
+   "memory": 52,
+   "services": [
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Blue",
+   "cpu": 16,
+   "memory": 44,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Millennium",
+   "cpu": 16,
+   "memory": 48,
+   "services": [
+    "iss",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Memphis",
+   "cpu": 29,
+   "memory": 15,
+   "services": [
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Whistler",
+   "cpu": 15,
+   "memory": 2,
+   "services": [
+    "risapp",
+    "dpat",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Emerald",
+   "cpu": 8,
+   "memory": 22,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

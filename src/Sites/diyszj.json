@@ -1,0 +1,17 @@
+{
+ "site_id": "0y6nq9_230413",
+ "site_name": "diyszj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Longhorn",
+   "cpu": 22,
+   "memory": 42,
+   "services": [
+    "shs",
+    "uvcore"
+   ]
+  }
+ }
+}

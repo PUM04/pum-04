@@ -1,0 +1,63 @@
+{
+ "site_id": "3m2048_230413",
+ "site_name": "szktvq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Redstone_5",
+   "cpu": 2,
+   "memory": 35,
+   "services": [
+    "riscore",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_1",
+   "cpu": 4,
+   "memory": 42,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 12,
+   "memory": 52,
+   "services": [
+    "iss",
+    "ids7",
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Symphony",
+   "cpu": 7,
+   "memory": 33,
+   "services": [
+    "ids7",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Sun_valley_2",
+   "cpu": 24,
+   "memory": 2,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Memphis",
+   "cpu": 13,
+   "memory": 46,
+   "services": [
+    "ids7",
+    "sql2019",
+    "uvclient"
+   ]
+  }
+ }
+}

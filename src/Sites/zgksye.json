@@ -1,0 +1,35 @@
+{
+ "site_id": "ex92g3_230413",
+ "site_name": "zgksye",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Harmony",
+   "cpu": 21,
+   "memory": 28,
+   "services": [
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_valley_2",
+   "cpu": 24,
+   "memory": 51,
+   "services": [
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Emerald",
+   "cpu": 27,
+   "memory": 52,
+   "services": [
+    "haproxy",
+    "sql2019",
+    "dpat",
+    "uvcore"
+   ]
+  }
+ }
+}

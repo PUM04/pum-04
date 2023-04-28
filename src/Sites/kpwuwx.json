@@ -1,0 +1,63 @@
+{
+ "site_id": "2z63xb_230413",
+ "site_name": "kpwuwx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 12,
+   "memory": 42,
+   "services": [
+    "ad",
+    "shs",
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Freestyle",
+   "cpu": 20,
+   "memory": 53,
+   "services": [
+    "shs",
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Whistler",
+   "cpu": 25,
+   "memory": 36,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Daytona",
+   "cpu": 6,
+   "memory": 6,
+   "services": [
+    "haproxy",
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Freestyle",
+   "cpu": 24,
+   "memory": 59,
+   "services": [
+    "riscore",
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Freestyle",
+   "cpu": 22,
+   "memory": 36,
+   "services": [
+    "ids7",
+    "uvcore"
+   ]
+  }
+ }
+}

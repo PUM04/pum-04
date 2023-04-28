@@ -1,0 +1,58 @@
+{
+ "site_id": "ek4e11_230413",
+ "site_name": "lgyjcm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 23,
+   "memory": 62,
+   "services": [
+    "shs",
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 27,
+   "memory": 21,
+   "services": [
+    "ids7",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 27,
+   "memory": 5,
+   "services": [
+    "es",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 23,
+   "memory": 15,
+   "services": [
+    "uvcore",
+    "wise",
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Blue",
+   "cpu": 32,
+   "memory": 22,
+   "services": [
+    "wise",
+    "uvclient",
+    "uvcore"
+   ]
+  }
+ }
+}

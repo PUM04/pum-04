@@ -1,0 +1,68 @@
+{
+ "site_id": "f5zlw1_230413",
+ "site_name": "jurqdz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 28,
+   "memory": 44,
+   "services": [
+    "riscore",
+    "uvclient",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_5",
+   "cpu": 27,
+   "memory": 51,
+   "services": [
+    "riscore",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Chicago",
+   "cpu": 29,
+   "memory": 8,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 15,
+   "memory": 36,
+   "services": [
+    "sql2019",
+    "shs",
+    "ad",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_3",
+   "cpu": 9,
+   "memory": 57,
+   "services": [
+    "riscore",
+    "wise",
+    "risapp",
+    "ad",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 17,
+   "memory": 10,
+   "services": [
+    "iss",
+    "sql2019"
+   ]
+  }
+ }
+}

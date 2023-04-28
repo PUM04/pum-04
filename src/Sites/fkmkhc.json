@@ -1,0 +1,99 @@
+{
+ "site_id": "tc17tc_230413",
+ "site_name": "fkmkhc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Whistler",
+   "cpu": 12,
+   "memory": 33,
+   "services": [
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Millennium",
+   "cpu": 30,
+   "memory": 42,
+   "services": [
+    "shs",
+    "ids7",
+    "dpat",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Daytona",
+   "cpu": 9,
+   "memory": 48,
+   "services": [
+    "riscore",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Longhorn",
+   "cpu": 18,
+   "memory": 19,
+   "services": [
+    "shs",
+    "wise",
+    "uvclient",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_8",
+   "cpu": 21,
+   "memory": 62,
+   "services": [
+    "shs",
+    "iss",
+    "riscore",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Blue",
+   "cpu": 23,
+   "memory": 13,
+   "services": [
+    "ad",
+    "risapp",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Vanadium",
+   "cpu": 20,
+   "memory": 1,
+   "services": [
+    "sql2019",
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sparta",
+   "cpu": 23,
+   "memory": 10,
+   "services": [
+    "riscore",
+    "dpat"
+   ]
+  },
+  "riscore": {
+   "os": "Longhorn",
+   "cpu": 21,
+   "memory": 57,
+   "services": [
+    "uvclient",
+    "iss",
+    "ad",
+    "ids7"
+   ]
+  }
+ }
+}

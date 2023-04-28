@@ -1,0 +1,58 @@
+{
+ "site_id": "jbv9e7_230413",
+ "site_name": "ryxvkb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Freestyle",
+   "cpu": 14,
+   "memory": 9,
+   "services": [
+    "haproxy",
+    "ad",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold",
+   "cpu": 2,
+   "memory": 20,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_1",
+   "cpu": 24,
+   "memory": 51,
+   "services": [
+    "uvcore",
+    "dpat",
+    "wise",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Redstone_2",
+   "cpu": 12,
+   "memory": 36,
+   "services": [
+    "shs",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 28,
+   "memory": 32,
+   "services": [
+    "iss",
+    "haproxy",
+    "sql2019",
+    "ids7",
+    "shs"
+   ]
+  }
+ }
+}

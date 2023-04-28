@@ -1,0 +1,61 @@
+{
+ "site_id": "7y5f78_230413",
+ "site_name": "mnyzdt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Snowball",
+   "cpu": 16,
+   "memory": 1,
+   "services": [
+    "dpat",
+    "wise",
+    "ad",
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Blue",
+   "cpu": 26,
+   "memory": 62,
+   "services": [
+    "iss",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 17,
+   "memory": 24,
+   "services": [
+    "iss",
+    "riscore",
+    "shs",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 21,
+   "memory": 27,
+   "services": [
+    "haproxy",
+    "shs",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Whistler",
+   "cpu": 6,
+   "memory": 4,
+   "services": [
+    "risapp",
+    "uvcore",
+    "riscore",
+    "sql2019",
+    "dpat"
+   ]
+  }
+ }
+}

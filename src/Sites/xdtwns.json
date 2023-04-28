@@ -1,0 +1,81 @@
+{
+ "site_id": "2b972x_230413",
+ "site_name": "xdtwns",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Harmony",
+   "cpu": 2,
+   "memory": 47,
+   "services": [
+    "ad",
+    "riscore"
+   ]
+  },
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 10,
+   "memory": 18,
+   "services": [
+    "shs",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Anvil",
+   "cpu": 9,
+   "memory": 62,
+   "services": [
+    "es",
+    "risapp",
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Vibranium",
+   "cpu": 13,
+   "memory": 11,
+   "services": [
+    "iss",
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_valley_2",
+   "cpu": 15,
+   "memory": 16,
+   "services": [
+    "es",
+    "iss",
+    "shs",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_2",
+   "cpu": 11,
+   "memory": 14,
+   "services": [
+    "ad",
+    "uvclient",
+    "riscore",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Daytona",
+   "cpu": 29,
+   "memory": 35,
+   "services": [
+    "riscore",
+    "uvclient",
+    "shs",
+    "es"
+   ]
+  }
+ }
+}

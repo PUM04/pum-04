@@ -1,0 +1,54 @@
+{
+ "site_id": "v4mr4v_230413",
+ "site_name": "pfyicg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Sparta",
+   "cpu": 25,
+   "memory": 62,
+   "services": [
+    "risapp"
+   ]
+  },
+  "pacscore": {
+   "os": "Symphony",
+   "cpu": 31,
+   "memory": 51,
+   "services": [
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Freestyle",
+   "cpu": 4,
+   "memory": 1,
+   "services": [
+    "uvcore",
+    "dpat",
+    "es",
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Vanadium",
+   "cpu": 18,
+   "memory": 43,
+   "services": [
+    "ad",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Harmony",
+   "cpu": 13,
+   "memory": 2,
+   "services": [
+    "shs"
+   ]
+  }
+ }
+}

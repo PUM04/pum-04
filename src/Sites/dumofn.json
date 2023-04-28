@@ -1,0 +1,57 @@
+{
+ "site_id": "c774dt_230413",
+ "site_name": "dumofn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Windows_8",
+   "cpu": 27,
+   "memory": 33,
+   "services": [
+    "dpat",
+    "iss",
+    "wise"
+   ]
+  },
+  "sss": {
+   "os": "Vibranium",
+   "cpu": 21,
+   "memory": 30,
+   "services": [
+    "dpat",
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold",
+   "cpu": 27,
+   "memory": 27,
+   "services": [
+    "ad",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 23,
+   "memory": 10,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Sparta",
+   "cpu": 6,
+   "memory": 27,
+   "services": [
+    "ad",
+    "shs",
+    "uvclient",
+    "dpat"
+   ]
+  }
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "site_id": "mt32ag_230413",
+ "site_name": "wemwkt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 16,
+   "memory": 32,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Windows_7",
+   "cpu": 22,
+   "memory": 50,
+   "services": [
+    "ad",
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 8,
+   "memory": 18,
+   "services": [
+    "ad",
+    "dpat",
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_1",
+   "cpu": 25,
+   "memory": 12,
+   "services": [
+    "uvclient",
+    "ad",
+    "haproxy"
+   ]
+  }
+ }
+}

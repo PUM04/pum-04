@@ -1,0 +1,44 @@
+{
+ "site_id": "qq66rn_230413",
+ "site_name": "izfjsv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 3,
+   "memory": 20,
+   "services": [
+    "riscore",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Chicago",
+   "cpu": 8,
+   "memory": 21,
+   "services": [
+    "shs",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Vanadium",
+   "cpu": 7,
+   "memory": 31,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 8,
+   "memory": 5,
+   "services": [
+    "uvcore",
+    "riscore"
+   ]
+  }
+ }
+}

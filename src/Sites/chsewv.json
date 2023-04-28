@@ -1,0 +1,17 @@
+{
+ "site_id": "o9ej8g_230413",
+ "site_name": "chsewv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Windows_8",
+   "cpu": 6,
+   "memory": 44,
+   "services": [
+    "wise",
+    "ad"
+   ]
+  }
+ }
+}

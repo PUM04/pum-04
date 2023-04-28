@@ -1,0 +1,48 @@
+{
+ "site_id": "680zd5_230413",
+ "site_name": "qqsgob",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Sun_valley_2",
+   "cpu": 30,
+   "memory": 22,
+   "services": [
+    "riscore",
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Vanadium",
+   "cpu": 28,
+   "memory": 32,
+   "services": [
+    "es",
+    "iss",
+    "dpat",
+    "wise",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Daytona",
+   "cpu": 7,
+   "memory": 52,
+   "services": [
+    "es",
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Whistler",
+   "cpu": 14,
+   "memory": 40,
+   "services": [
+    "risapp",
+    "uvclient",
+    "ad"
+   ]
+  }
+ }
+}

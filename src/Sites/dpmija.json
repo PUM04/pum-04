@@ -1,0 +1,28 @@
+{
+ "site_id": "0yfl37_230413",
+ "site_name": "dpmija",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Razzle",
+   "cpu": 6,
+   "memory": 15,
+   "services": [
+    "riscore",
+    "wise",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Sparta",
+   "cpu": 27,
+   "memory": 8,
+   "services": [
+    "iss",
+    "uvclient",
+    "es"
+   ]
+  }
+ }
+}

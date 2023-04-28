@@ -1,0 +1,28 @@
+{
+ "site_id": "6983x5_230413",
+ "site_name": "kzqahs",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Daytona",
+   "cpu": 24,
+   "memory": 56,
+   "services": [
+    "es",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Razzle",
+   "cpu": 23,
+   "memory": 6,
+   "services": [
+    "sql2019",
+    "dpat",
+    "iss"
+   ]
+  }
+ }
+}

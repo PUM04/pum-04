@@ -1,0 +1,26 @@
+{
+ "site_id": "yjcjk2_230413",
+ "site_name": "ojbear",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Snowball",
+   "cpu": 6,
+   "memory": 26,
+   "services": [
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Millennium",
+   "cpu": 2,
+   "memory": 2,
+   "services": [
+    "wise",
+    "iss",
+    "shs"
+   ]
+  }
+ }
+}

@@ -1,0 +1,24 @@
+{
+ "site_id": "5j144e_230413",
+ "site_name": "cyesan",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Redstone_4",
+   "cpu": 8,
+   "memory": 53,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Emerald",
+   "cpu": 12,
+   "memory": 32,
+   "services": [
+    "es"
+   ]
+  }
+ }
+}

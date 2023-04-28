@@ -1,0 +1,45 @@
+{
+ "site_id": "idyrh4_230413",
+ "site_name": "spmkdk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Chicago",
+   "cpu": 21,
+   "memory": 20,
+   "services": [
+    "dpat"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_valley_2",
+   "cpu": 21,
+   "memory": 60,
+   "services": [
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Vanadium",
+   "cpu": 10,
+   "memory": 12,
+   "services": [
+    "haproxy",
+    "ids7",
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Snowball",
+   "cpu": 25,
+   "memory": 17,
+   "services": [
+    "shs",
+    "risapp",
+    "ad",
+    "iss"
+   ]
+  }
+ }
+}

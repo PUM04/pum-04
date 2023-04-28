@@ -1,0 +1,26 @@
+{
+ "site_id": "wh4z35_230413",
+ "site_name": "qgdnfn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 5,
+   "memory": 36,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Longhorn",
+   "cpu": 12,
+   "memory": 14,
+   "services": [
+    "riscore",
+    "iss",
+    "ids7"
+   ]
+  }
+ }
+}

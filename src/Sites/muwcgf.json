@@ -1,0 +1,86 @@
+{
+ "site_id": "8rkicu_230413",
+ "site_name": "muwcgf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Redstone_5",
+   "cpu": 22,
+   "memory": 22,
+   "services": [
+    "sql2019",
+    "ad",
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 32,
+   "memory": 31,
+   "services": [
+    "uvclient",
+    "risapp",
+    "shs",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Snowball",
+   "cpu": 20,
+   "memory": 53,
+   "services": [
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 32,
+   "memory": 46,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 8,
+   "memory": 58,
+   "services": [
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "pacscore": {
+   "os": "Symphony",
+   "cpu": 17,
+   "memory": 17,
+   "services": [
+    "dpat",
+    "haproxy",
+    "uvcore",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_7",
+   "cpu": 3,
+   "memory": 28,
+   "services": [
+    "ad"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 12,
+   "memory": 62,
+   "services": [
+    "uvclient",
+    "es",
+    "haproxy"
+   ]
+  }
+ }
+}

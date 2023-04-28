@@ -1,0 +1,20 @@
+{
+ "site_id": "uu3vw9_230413",
+ "site_name": "xtpllo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Emerald",
+   "cpu": 15,
+   "memory": 52,
+   "services": [
+    "ids7",
+    "shs",
+    "uvclient",
+    "iss",
+    "riscore"
+   ]
+  }
+ }
+}

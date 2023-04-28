@@ -1,0 +1,72 @@
+{
+ "site_id": "r612sa_230413",
+ "site_name": "tcmlaq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Whistler",
+   "cpu": 26,
+   "memory": 43,
+   "services": [
+    "haproxy",
+    "ids7",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Anvil",
+   "cpu": 15,
+   "memory": 64,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Snowball",
+   "cpu": 16,
+   "memory": 29,
+   "services": [
+    "es",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Windows_7",
+   "cpu": 17,
+   "memory": 63,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Threshold",
+   "cpu": 31,
+   "memory": 46,
+   "services": [
+    "shs",
+    "uvclient",
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Snowball",
+   "cpu": 22,
+   "memory": 36,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Windows_8",
+   "cpu": 18,
+   "memory": 64,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

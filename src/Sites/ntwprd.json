@@ -1,0 +1,78 @@
+{
+ "site_id": "0v39za_230413",
+ "site_name": "ntwprd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 19,
+   "memory": 13,
+   "services": [
+    "haproxy",
+    "dpat",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Emerald",
+   "cpu": 13,
+   "memory": 39,
+   "services": [
+    "risapp",
+    "sql2019",
+    "es",
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 13,
+   "memory": 1,
+   "services": [
+    "wise",
+    "sql2019"
+   ]
+  },
+  "sss": {
+   "os": "Vibranium",
+   "cpu": 24,
+   "memory": 32,
+   "services": [
+    "es",
+    "uvclient",
+    "shs",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Redstone_1",
+   "cpu": 7,
+   "memory": 37,
+   "services": [
+    "sql2019",
+    "shs",
+    "haproxy",
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_3",
+   "cpu": 2,
+   "memory": 59,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 7,
+   "memory": 19,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "uvcore"
+   ]
+  }
+ }
+}

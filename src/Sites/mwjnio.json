@@ -1,0 +1,90 @@
+{
+ "site_id": "o403lh_230413",
+ "site_name": "mwjnio",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Windows_8",
+   "cpu": 24,
+   "memory": 17,
+   "services": [
+    "shs",
+    "dpat",
+    "iss",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Snowball",
+   "cpu": 15,
+   "memory": 60,
+   "services": [
+    "dpat",
+    "wise",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_4",
+   "cpu": 32,
+   "memory": 33,
+   "services": [
+    "dpat",
+    "ids7",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_5",
+   "cpu": 27,
+   "memory": 60,
+   "services": [
+    "ad",
+    "riscore",
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Daytona",
+   "cpu": 2,
+   "memory": 28,
+   "services": [
+    "sql2019",
+    "es",
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Vibranium",
+   "cpu": 29,
+   "memory": 35,
+   "services": [
+    "haproxy",
+    "shs",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Whistler",
+   "cpu": 19,
+   "memory": 59,
+   "services": [
+    "ad",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Millennium",
+   "cpu": 16,
+   "memory": 27,
+   "services": [
+    "wise",
+    "uvcore",
+    "haproxy"
+   ]
+  }
+ }
+}

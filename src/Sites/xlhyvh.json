@@ -1,0 +1,18 @@
+{
+ "site_id": "4c0kdt_230413",
+ "site_name": "xlhyvh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Longhorn",
+   "cpu": 1,
+   "memory": 39,
+   "services": [
+    "dpat",
+    "uvcore",
+    "shs"
+   ]
+  }
+ }
+}

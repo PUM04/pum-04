@@ -1,0 +1,37 @@
+{
+ "site_id": "3iw9va_230413",
+ "site_name": "fvhfes",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Freestyle",
+   "cpu": 10,
+   "memory": 15,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 28,
+   "memory": 4,
+   "services": [
+    "sql2019",
+    "ids7",
+    "haproxy",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Memphis",
+   "cpu": 14,
+   "memory": 59,
+   "services": [
+    "ids7",
+    "shs",
+    "dpat"
+   ]
+  }
+ }
+}

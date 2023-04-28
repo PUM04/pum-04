@@ -1,0 +1,50 @@
+{
+ "site_id": "47vf5a_230413",
+ "site_name": "iagfbx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Anvil",
+   "cpu": 12,
+   "memory": 14,
+   "services": [
+    "iss",
+    "riscore",
+    "es",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 17,
+   "memory": 38,
+   "services": [
+    "ids7",
+    "uvcore",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Anvil",
+   "cpu": 25,
+   "memory": 16,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vanadium",
+   "cpu": 8,
+   "memory": 5,
+   "services": [
+    "dpat",
+    "uvcore",
+    "ids7",
+    "sql2019",
+    "iss"
+   ]
+  }
+ }
+}

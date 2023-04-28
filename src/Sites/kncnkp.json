@@ -1,0 +1,99 @@
+{
+ "site_id": "n71kh0_230413",
+ "site_name": "kncnkp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 28,
+   "memory": 20,
+   "services": [
+    "wise",
+    "ad",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 16,
+   "memory": 54,
+   "services": [
+    "es",
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "ad": {
+   "os": "Memphis",
+   "cpu": 2,
+   "memory": 29,
+   "services": [
+    "ad",
+    "uvcore",
+    "iss",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sun_valley_2",
+   "cpu": 23,
+   "memory": 29,
+   "services": [
+    "wise",
+    "es",
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Blue",
+   "cpu": 10,
+   "memory": 21,
+   "services": [
+    "wise",
+    "es",
+    "shs"
+   ]
+  },
+  "pacscore": {
+   "os": "Millennium",
+   "cpu": 12,
+   "memory": 15,
+   "services": [
+    "risapp",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Redstone_2",
+   "cpu": 13,
+   "memory": 27,
+   "services": [
+    "sql2019",
+    "riscore",
+    "shs",
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_valley_2",
+   "cpu": 13,
+   "memory": 18,
+   "services": [
+    "es",
+    "ids7",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 18,
+   "memory": 51,
+   "services": [
+    "ad",
+    "uvcore",
+    "risapp"
+   ]
+  }
+ }
+}

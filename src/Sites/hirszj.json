@@ -1,0 +1,29 @@
+{
+ "site_id": "2d0x88_230413",
+ "site_name": "hirszj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Chicago",
+   "cpu": 25,
+   "memory": 23,
+   "services": [
+    "ids7",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 16,
+   "memory": 58,
+   "services": [
+    "haproxy",
+    "ad",
+    "dpat",
+    "ids7"
+   ]
+  }
+ }
+}

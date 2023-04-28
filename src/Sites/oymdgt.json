@@ -1,0 +1,76 @@
+{
+ "site_id": "1t7koc_230413",
+ "site_name": "oymdgt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Whistler",
+   "cpu": 4,
+   "memory": 5,
+   "services": [
+    "risapp",
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Snowball",
+   "cpu": 7,
+   "memory": 36,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Vanadium",
+   "cpu": 2,
+   "memory": 2,
+   "services": [
+    "ids7",
+    "dpat",
+    "ad",
+    "uvcore",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Whistler",
+   "cpu": 2,
+   "memory": 36,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Whistler",
+   "cpu": 2,
+   "memory": 37,
+   "services": [
+    "ad",
+    "wise",
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_valley_2",
+   "cpu": 1,
+   "memory": 6,
+   "services": [
+    "ids7",
+    "uvclient",
+    "uvcore",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_4",
+   "cpu": 5,
+   "memory": 57,
+   "services": [
+    "ids7",
+    "haproxy"
+   ]
+  }
+ }
+}

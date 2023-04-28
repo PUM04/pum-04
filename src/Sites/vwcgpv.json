@@ -1,0 +1,103 @@
+{
+ "site_id": "95q2sm_230413",
+ "site_name": "vwcgpv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Vanadium",
+   "cpu": 24,
+   "memory": 12,
+   "services": [
+    "ids7",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_5",
+   "cpu": 2,
+   "memory": 27,
+   "services": [
+    "uvclient",
+    "shs",
+    "sql2019",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_3",
+   "cpu": 19,
+   "memory": 32,
+   "services": [
+    "wise",
+    "haproxy",
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 11,
+   "memory": 20,
+   "services": [
+    "riscore",
+    "haproxy",
+    "shs"
+   ]
+  },
+  "pacsapp": {
+   "os": "Harmony",
+   "cpu": 29,
+   "memory": 58,
+   "services": [
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Symphony",
+   "cpu": 32,
+   "memory": 27,
+   "services": [
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Daytona",
+   "cpu": 16,
+   "memory": 4,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Chicago",
+   "cpu": 15,
+   "memory": 64,
+   "services": [
+    "dpat",
+    "iss",
+    "shs",
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Threshold",
+   "cpu": 9,
+   "memory": 24,
+   "services": [
+    "shs"
+   ]
+  },
+  "pacscore": {
+   "os": "Freestyle",
+   "cpu": 12,
+   "memory": 15,
+   "services": [
+    "shs",
+    "risapp",
+    "uvclient"
+   ]
+  }
+ }
+}

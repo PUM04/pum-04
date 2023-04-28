@@ -1,0 +1,66 @@
+{
+ "site_id": "4zb693_230413",
+ "site_name": "ltamus",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Redstone_3",
+   "cpu": 28,
+   "memory": 32,
+   "services": [
+    "risapp",
+    "ids7",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Snowball",
+   "cpu": 23,
+   "memory": 47,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "haproxy",
+    "dpat",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Blue",
+   "cpu": 13,
+   "memory": 57,
+   "services": [
+    "risapp",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Razzle",
+   "cpu": 11,
+   "memory": 61,
+   "services": [
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Symphony",
+   "cpu": 15,
+   "memory": 1,
+   "services": [
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 16,
+   "memory": 32,
+   "services": [
+    "es",
+    "shs",
+    "dpat"
+   ]
+  }
+ }
+}

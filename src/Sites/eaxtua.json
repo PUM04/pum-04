@@ -1,0 +1,56 @@
+{
+ "site_id": "5646vt_230413",
+ "site_name": "eaxtua",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Millennium",
+   "cpu": 6,
+   "memory": 12,
+   "services": [
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Symphony",
+   "cpu": 28,
+   "memory": 51,
+   "services": [
+    "risapp",
+    "uvcore",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_8",
+   "cpu": 8,
+   "memory": 41,
+   "services": [
+    "wise",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_Valley",
+   "cpu": 9,
+   "memory": 48,
+   "services": [
+    "ids7",
+    "uvcore",
+    "sql2019",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 5,
+   "memory": 50,
+   "services": [
+    "uvclient",
+    "dpat"
+   ]
+  }
+ }
+}

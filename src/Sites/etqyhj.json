@@ -1,0 +1,56 @@
+{
+ "site_id": "u9ut00_230413",
+ "site_name": "etqyhj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Harmony",
+   "cpu": 2,
+   "memory": 17,
+   "services": [
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Whistler",
+   "cpu": 30,
+   "memory": 27,
+   "services": [
+    "uvclient",
+    "es",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 31,
+   "memory": 29,
+   "services": [
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Razzle",
+   "cpu": 11,
+   "memory": 26,
+   "services": [
+    "riscore",
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_valley_2",
+   "cpu": 7,
+   "memory": 37,
+   "services": [
+    "haproxy",
+    "ids7",
+    "sql2019"
+   ]
+  }
+ }
+}

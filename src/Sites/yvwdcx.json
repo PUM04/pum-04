@@ -1,0 +1,72 @@
+{
+ "site_id": "lx3m3r_230413",
+ "site_name": "yvwdcx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Windows_8",
+   "cpu": 27,
+   "memory": 44,
+   "services": [
+    "iss",
+    "uvcore",
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Chicago",
+   "cpu": 18,
+   "memory": 11,
+   "services": [
+    "shs"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 22,
+   "memory": 14,
+   "services": [
+    "uvcore",
+    "es",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Whistler",
+   "cpu": 30,
+   "memory": 37,
+   "services": [
+    "uvclient",
+    "ad",
+    "uvcore",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 24,
+   "memory": 21,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Vanadium",
+   "cpu": 26,
+   "memory": 56,
+   "services": [
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Emerald",
+   "cpu": 21,
+   "memory": 52,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

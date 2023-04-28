@@ -1,0 +1,79 @@
+{
+ "site_id": "o19vx4_230413",
+ "site_name": "aihrhd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Longhorn",
+   "cpu": 28,
+   "memory": 37,
+   "services": [
+    "ids7",
+    "dpat",
+    "sql2019",
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Razzle",
+   "cpu": 1,
+   "memory": 31,
+   "services": [
+    "ad",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_Valley",
+   "cpu": 28,
+   "memory": 27,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_8",
+   "cpu": 13,
+   "memory": 48,
+   "services": [
+    "shs",
+    "uvcore",
+    "risapp",
+    "haproxy",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 21,
+   "memory": 34,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 29,
+   "memory": 62,
+   "services": [
+    "shs",
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Memphis",
+   "cpu": 17,
+   "memory": 26,
+   "services": [
+    "uvclient",
+    "shs",
+    "risapp",
+    "iss"
+   ]
+  }
+ }
+}

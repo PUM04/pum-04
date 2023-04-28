@@ -1,0 +1,82 @@
+{
+ "site_id": "ty73cu_230413",
+ "site_name": "pbihwb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Snowball",
+   "cpu": 29,
+   "memory": 33,
+   "services": [
+    "risapp",
+    "es",
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_2",
+   "cpu": 31,
+   "memory": 40,
+   "services": [
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Memphis",
+   "cpu": 24,
+   "memory": 30,
+   "services": [
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Anvil",
+   "cpu": 24,
+   "memory": 20,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Millennium",
+   "cpu": 27,
+   "memory": 44,
+   "services": [
+    "ids7",
+    "haproxy",
+    "risapp",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Freestyle",
+   "cpu": 5,
+   "memory": 48,
+   "services": [
+    "sql2019",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_8",
+   "cpu": 7,
+   "memory": 22,
+   "services": [
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sparta",
+   "cpu": 4,
+   "memory": 14,
+   "services": [
+    "sql2019",
+    "shs",
+    "risapp",
+    "es"
+   ]
+  }
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "site_id": "0k1de1_230413",
+ "site_name": "bwmcvl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 5,
+   "memory": 4,
+   "services": [
+    "ad",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Threshold_2",
+   "cpu": 19,
+   "memory": 15,
+   "services": [
+    "shs",
+    "dpat",
+    "iss",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_5",
+   "cpu": 29,
+   "memory": 20,
+   "services": [
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Anvil",
+   "cpu": 18,
+   "memory": 62,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_3",
+   "cpu": 15,
+   "memory": 44,
+   "services": [
+    "es",
+    "ad",
+    "dpat",
+    "risapp"
+   ]
+  }
+ }
+}

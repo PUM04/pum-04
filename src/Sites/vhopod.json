@@ -1,0 +1,78 @@
+{
+ "site_id": "o66o6m_230413",
+ "site_name": "vhopod",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Windows_8",
+   "cpu": 17,
+   "memory": 19,
+   "services": [
+    "sql2019",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_3",
+   "cpu": 11,
+   "memory": 22,
+   "services": [
+    "iss",
+    "wise",
+    "dpat",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Chicago",
+   "cpu": 25,
+   "memory": 64,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Whistler",
+   "cpu": 29,
+   "memory": 23,
+   "services": [
+    "ad",
+    "sql2019",
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_3",
+   "cpu": 20,
+   "memory": 59,
+   "services": [
+    "ids7",
+    "riscore",
+    "iss"
+   ]
+  },
+  "es": {
+   "os": "Vanadium",
+   "cpu": 12,
+   "memory": 46,
+   "services": [
+    "ad",
+    "es",
+    "risapp",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Symphony",
+   "cpu": 13,
+   "memory": 30,
+   "services": [
+    "haproxy",
+    "wise"
+   ]
+  }
+ }
+}

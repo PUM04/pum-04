@@ -1,0 +1,75 @@
+{
+ "site_id": "10p0au_230413",
+ "site_name": "ysnpyi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Millennium",
+   "cpu": 30,
+   "memory": 50,
+   "services": [
+    "uvcore",
+    "es",
+    "ids7",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Longhorn",
+   "cpu": 13,
+   "memory": 14,
+   "services": [
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_valley_2",
+   "cpu": 21,
+   "memory": 33,
+   "services": [
+    "ad",
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Sun_valley_2",
+   "cpu": 26,
+   "memory": 3,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacsapp": {
+   "os": "Razzle",
+   "cpu": 3,
+   "memory": 36,
+   "services": [
+    "haproxy",
+    "shs",
+    "ids7",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Whistler",
+   "cpu": 15,
+   "memory": 27,
+   "services": [
+    "shs",
+    "riscore",
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Snowball",
+   "cpu": 21,
+   "memory": 42,
+   "services": [
+    "risapp",
+    "uvclient"
+   ]
+  }
+ }
+}

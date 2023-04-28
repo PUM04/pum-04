@@ -1,0 +1,52 @@
+{
+ "site_id": "1p8l13_230413",
+ "site_name": "ksihlx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 25,
+   "memory": 48,
+   "services": [
+    "ad",
+    "dpat",
+    "riscore",
+    "iss",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sparta",
+   "cpu": 26,
+   "memory": 38,
+   "services": [
+    "ids7",
+    "shs",
+    "sql2019",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_4",
+   "cpu": 12,
+   "memory": 64,
+   "services": [
+    "risapp",
+    "uvclient",
+    "dpat",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Emerald",
+   "cpu": 13,
+   "memory": 39,
+   "services": [
+    "shs",
+    "ids7"
+   ]
+  }
+ }
+}

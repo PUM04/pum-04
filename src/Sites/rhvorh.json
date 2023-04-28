@@ -1,0 +1,44 @@
+{
+ "site_id": "uzpf2w_230413",
+ "site_name": "rhvorh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Threshold",
+   "cpu": 23,
+   "memory": 6,
+   "services": [
+    "shs"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 10,
+   "memory": 52,
+   "services": [
+    "ad",
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Sun_Valley",
+   "cpu": 29,
+   "memory": 46,
+   "services": [
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Snowball",
+   "cpu": 22,
+   "memory": 54,
+   "services": [
+    "wise",
+    "es",
+    "shs",
+    "ids7"
+   ]
+  }
+ }
+}

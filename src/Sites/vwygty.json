@@ -1,0 +1,17 @@
+{
+ "site_id": "7f78wi_230413",
+ "site_name": "vwygty",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 9,
+   "memory": 12,
+   "services": [
+    "uvclient",
+    "riscore"
+   ]
+  }
+ }
+}

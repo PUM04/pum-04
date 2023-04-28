@@ -1,0 +1,91 @@
+{
+ "site_id": "8208x8_230413",
+ "site_name": "ekrsuw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Windows_NT_5.0",
+   "cpu": 17,
+   "memory": 19,
+   "services": [
+    "uvcore",
+    "ad",
+    "wise",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 9,
+   "memory": 55,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_3",
+   "cpu": 9,
+   "memory": 11,
+   "services": [
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_8",
+   "cpu": 30,
+   "memory": 51,
+   "services": [
+    "riscore",
+    "haproxy",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Redstone_3",
+   "cpu": 18,
+   "memory": 6,
+   "services": [
+    "dpat",
+    "shs",
+    "sql2019",
+    "es",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Symphony",
+   "cpu": 16,
+   "memory": 62,
+   "services": [
+    "risapp",
+    "iss",
+    "uvcore",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_4",
+   "cpu": 28,
+   "memory": 28,
+   "services": [
+    "ad",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Memphis",
+   "cpu": 25,
+   "memory": 20,
+   "services": [
+    "risapp",
+    "shs",
+    "ids7",
+    "uvclient"
+   ]
+  }
+ }
+}

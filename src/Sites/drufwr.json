@@ -1,0 +1,93 @@
+{
+ "site_id": "ypf03g_230413",
+ "site_name": "drufwr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Longhorn",
+   "cpu": 19,
+   "memory": 26,
+   "services": [
+    "iss",
+    "shs",
+    "dpat",
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 25,
+   "memory": 41,
+   "services": [
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Millennium",
+   "cpu": 6,
+   "memory": 29,
+   "services": [
+    "iss",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Snowball",
+   "cpu": 13,
+   "memory": 30,
+   "services": [
+    "wise",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Snowball",
+   "cpu": 14,
+   "memory": 2,
+   "services": [
+    "riscore",
+    "dpat",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 24,
+   "memory": 43,
+   "services": [
+    "riscore",
+    "ad",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 24,
+   "memory": 59,
+   "services": [
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_3",
+   "cpu": 12,
+   "memory": 32,
+   "services": [
+    "ad",
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Memphis",
+   "cpu": 24,
+   "memory": 24,
+   "services": [
+    "dpat"
+   ]
+  }
+ }
+}

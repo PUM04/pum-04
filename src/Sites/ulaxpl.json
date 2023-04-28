@@ -1,0 +1,86 @@
+{
+ "site_id": "51g3qv_230413",
+ "site_name": "ulaxpl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Emerald",
+   "cpu": 14,
+   "memory": 60,
+   "services": [
+    "iss",
+    "dpat",
+    "riscore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_8",
+   "cpu": 15,
+   "memory": 56,
+   "services": [
+    "sql2019",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_1",
+   "cpu": 16,
+   "memory": 43,
+   "services": [
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 21,
+   "memory": 54,
+   "services": [
+    "uvcore",
+    "risapp",
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Chicago",
+   "cpu": 9,
+   "memory": 34,
+   "services": [
+    "sql2019",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Snowball",
+   "cpu": 27,
+   "memory": 50,
+   "services": [
+    "risapp",
+    "sql2019",
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_3",
+   "cpu": 26,
+   "memory": 25,
+   "services": [
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 27,
+   "memory": 13,
+   "services": [
+    "riscore",
+    "dpat",
+    "haproxy",
+    "uvcore"
+   ]
+  }
+ }
+}

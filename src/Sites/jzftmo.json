@@ -1,0 +1,56 @@
+{
+ "site_id": "0u7008_230413",
+ "site_name": "jzftmo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Vanadium",
+   "cpu": 1,
+   "memory": 15,
+   "services": [
+    "wise",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Symphony",
+   "cpu": 14,
+   "memory": 31,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_1",
+   "cpu": 10,
+   "memory": 46,
+   "services": [
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Threshold_2",
+   "cpu": 29,
+   "memory": 53,
+   "services": [
+    "uvcore",
+    "riscore",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_3",
+   "cpu": 22,
+   "memory": 25,
+   "services": [
+    "uvcore",
+    "haproxy",
+    "es",
+    "sql2019",
+    "dpat"
+   ]
+  }
+ }
+}

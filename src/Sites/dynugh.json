@@ -1,0 +1,45 @@
+{
+ "site_id": "3wign6_230413",
+ "site_name": "dynugh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 16,
+   "memory": 55,
+   "services": [
+    "es",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Windows_7",
+   "cpu": 18,
+   "memory": 22,
+   "services": [
+    "sql2019",
+    "iss",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 27,
+   "memory": 46,
+   "services": [
+    "haproxy",
+    "ad",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Razzle",
+   "cpu": 31,
+   "memory": 46,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

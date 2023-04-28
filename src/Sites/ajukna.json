@@ -1,0 +1,86 @@
+{
+ "site_id": "d84971_230413",
+ "site_name": "ajukna",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 23,
+   "memory": 51,
+   "services": [
+    "iss",
+    "sql2019",
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_5",
+   "cpu": 30,
+   "memory": 4,
+   "services": [
+    "riscore",
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Emerald",
+   "cpu": 18,
+   "memory": 28,
+   "services": [
+    "risapp",
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 28,
+   "memory": 59,
+   "services": [
+    "haproxy",
+    "es",
+    "iss",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Harmony",
+   "cpu": 29,
+   "memory": 45,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "ad",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 1,
+   "memory": 36,
+   "services": [
+    "ids7",
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Anvil",
+   "cpu": 3,
+   "memory": 46,
+   "services": [
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Millennium",
+   "cpu": 3,
+   "memory": 56,
+   "services": [
+    "dpat"
+   ]
+  }
+ }
+}

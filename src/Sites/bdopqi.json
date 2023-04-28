@@ -1,0 +1,88 @@
+{
+ "site_id": "l5548d_230413",
+ "site_name": "bdopqi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Sun_Valley",
+   "cpu": 10,
+   "memory": 59,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold",
+   "cpu": 16,
+   "memory": 6,
+   "services": [
+    "riscore",
+    "uvclient",
+    "sql2019",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_5",
+   "cpu": 10,
+   "memory": 50,
+   "services": [
+    "haproxy",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Snowball",
+   "cpu": 16,
+   "memory": 12,
+   "services": [
+    "wise",
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 6,
+   "memory": 21,
+   "services": [
+    "es",
+    "risapp",
+    "sql2019",
+    "shs"
+   ]
+  },
+  "pacscore": {
+   "os": "Anvil",
+   "cpu": 27,
+   "memory": 31,
+   "services": [
+    "shs",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Symphony",
+   "cpu": 21,
+   "memory": 1,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "uvclient",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Emerald",
+   "cpu": 25,
+   "memory": 17,
+   "services": [
+    "risapp",
+    "uvclient"
+   ]
+  }
+ }
+}

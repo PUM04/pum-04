@@ -1,0 +1,92 @@
+{
+ "site_id": "gec8jc_230413",
+ "site_name": "kzqowr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Redstone_3",
+   "cpu": 24,
+   "memory": 30,
+   "services": [
+    "wise",
+    "haproxy",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Razzle",
+   "cpu": 31,
+   "memory": 26,
+   "services": [
+    "risapp",
+    "sql2019",
+    "iss",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_1",
+   "cpu": 5,
+   "memory": 44,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "ad",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 29,
+   "memory": 42,
+   "services": [
+    "dpat",
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Sun_Valley",
+   "cpu": 7,
+   "memory": 29,
+   "services": [
+    "uvcore",
+    "ids7",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 1,
+   "memory": 6,
+   "services": [
+    "risapp",
+    "riscore",
+    "iss",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 27,
+   "memory": 2,
+   "services": [
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Razzle",
+   "cpu": 10,
+   "memory": 10,
+   "services": [
+    "uvcore",
+    "es",
+    "ad",
+    "ids7"
+   ]
+  }
+ }
+}

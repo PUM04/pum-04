@@ -1,0 +1,45 @@
+{
+ "site_id": "3xa2p6_230413",
+ "site_name": "daekfz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Snowball",
+   "cpu": 24,
+   "memory": 3,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_3",
+   "cpu": 16,
+   "memory": 58,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "dpat",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_Valley",
+   "cpu": 26,
+   "memory": 50,
+   "services": [
+    "dpat"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_4",
+   "cpu": 16,
+   "memory": 59,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "es"
+   ]
+  }
+ }
+}

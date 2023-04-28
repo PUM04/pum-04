@@ -1,0 +1,70 @@
+{
+ "site_id": "5gc2x9_230413",
+ "site_name": "igcnar",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Redstone_4",
+   "cpu": 22,
+   "memory": 1,
+   "services": [
+    "ids7",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_5",
+   "cpu": 27,
+   "memory": 58,
+   "services": [
+    "risapp",
+    "iss",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "risapp": {
+   "os": "Freestyle",
+   "cpu": 27,
+   "memory": 22,
+   "services": [
+    "haproxy",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 28,
+   "memory": 51,
+   "services": [
+    "risapp",
+    "ids7",
+    "iss",
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Freestyle",
+   "cpu": 5,
+   "memory": 30,
+   "services": [
+    "es",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Harmony",
+   "cpu": 10,
+   "memory": 24,
+   "services": [
+    "ad",
+    "wise",
+    "sql2019"
+   ]
+  }
+ }
+}

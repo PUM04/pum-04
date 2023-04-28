@@ -1,0 +1,47 @@
+{
+ "site_id": "1q4z99_230413",
+ "site_name": "gnxtjd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Daytona",
+   "cpu": 3,
+   "memory": 27,
+   "services": [
+    "ids7",
+    "es",
+    "risapp",
+    "shs"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold_2",
+   "cpu": 5,
+   "memory": 2,
+   "services": [
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Snowball",
+   "cpu": 23,
+   "memory": 60,
+   "services": [
+    "ad",
+    "shs",
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Windows_7",
+   "cpu": 24,
+   "memory": 23,
+   "services": [
+    "ad",
+    "uvcore"
+   ]
+  }
+ }
+}

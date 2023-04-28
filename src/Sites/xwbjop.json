@@ -1,0 +1,42 @@
+{
+ "site_id": "k83jl2_230413",
+ "site_name": "xwbjop",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Threshold",
+   "cpu": 7,
+   "memory": 24,
+   "services": [
+    "risapp"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_8",
+   "cpu": 17,
+   "memory": 11,
+   "services": [
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Harmony",
+   "cpu": 4,
+   "memory": 63,
+   "services": [
+    "sql2019",
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 14,
+   "memory": 41,
+   "services": [
+    "ids7",
+    "dpat"
+   ]
+  }
+ }
+}

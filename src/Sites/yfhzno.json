@@ -1,0 +1,51 @@
+{
+ "site_id": "p8c64k_230413",
+ "site_name": "yfhzno",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Millennium",
+   "cpu": 1,
+   "memory": 57,
+   "services": [
+    "risapp",
+    "wise",
+    "sql2019",
+    "ad",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Harmony",
+   "cpu": 12,
+   "memory": 32,
+   "services": [
+    "dpat",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Anvil",
+   "cpu": 30,
+   "memory": 8,
+   "services": [
+    "iss",
+    "wise",
+    "ad",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Anvil",
+   "cpu": 9,
+   "memory": 64,
+   "services": [
+    "uvclient",
+    "shs",
+    "ids7",
+    "sql2019"
+   ]
+  }
+ }
+}

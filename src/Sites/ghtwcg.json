@@ -1,0 +1,68 @@
+{
+ "site_id": "8mjvu6_230413",
+ "site_name": "ghtwcg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Symphony",
+   "cpu": 23,
+   "memory": 20,
+   "services": [
+    "riscore",
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Sun_Valley",
+   "cpu": 22,
+   "memory": 58,
+   "services": [
+    "es",
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 1,
+   "memory": 52,
+   "services": [
+    "dpat",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_3",
+   "cpu": 8,
+   "memory": 17,
+   "services": [
+    "ids7",
+    "riscore",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_2",
+   "cpu": 7,
+   "memory": 13,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_4",
+   "cpu": 27,
+   "memory": 15,
+   "services": [
+    "ad",
+    "riscore",
+    "iss",
+    "uvcore"
+   ]
+  }
+ }
+}

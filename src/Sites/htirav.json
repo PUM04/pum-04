@@ -1,0 +1,68 @@
+{
+ "site_id": "899pzq_230413",
+ "site_name": "htirav",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Anvil",
+   "cpu": 10,
+   "memory": 59,
+   "services": [
+    "uvcore",
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 11,
+   "memory": 6,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 12,
+   "memory": 12,
+   "services": [
+    "dpat",
+    "es",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Chicago",
+   "cpu": 30,
+   "memory": 10,
+   "services": [
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_valley_2",
+   "cpu": 21,
+   "memory": 45,
+   "services": [
+    "wise",
+    "iss",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_valley_2",
+   "cpu": 8,
+   "memory": 6,
+   "services": [
+    "wise",
+    "uvclient",
+    "es",
+    "ids7"
+   ]
+  }
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "site_id": "37vye2_230413",
+ "site_name": "xcwrxz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Sun_valley_2",
+   "cpu": 19,
+   "memory": 30,
+   "services": [
+    "riscore",
+    "sql2019",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Whistler",
+   "cpu": 27,
+   "memory": 12,
+   "services": [
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Sparta",
+   "cpu": 1,
+   "memory": 49,
+   "services": [
+    "risapp",
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 24,
+   "memory": 43,
+   "services": [
+    "sql2019",
+    "dpat",
+    "ad",
+    "uvclient",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold",
+   "cpu": 2,
+   "memory": 56,
+   "services": [
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold",
+   "cpu": 12,
+   "memory": 60,
+   "services": [
+    "risapp",
+    "wise"
+   ]
+  }
+ }
+}

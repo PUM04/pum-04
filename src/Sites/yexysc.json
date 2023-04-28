@@ -1,0 +1,91 @@
+{
+ "site_id": "lz53ao_230413",
+ "site_name": "yexysc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Memphis",
+   "cpu": 27,
+   "memory": 2,
+   "services": [
+    "sql2019",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_4",
+   "cpu": 16,
+   "memory": 45,
+   "services": [
+    "ad",
+    "shs",
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Razzle",
+   "cpu": 13,
+   "memory": 28,
+   "services": [
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Vanadium",
+   "cpu": 28,
+   "memory": 56,
+   "services": [
+    "ad",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Freestyle",
+   "cpu": 25,
+   "memory": 39,
+   "services": [
+    "wise",
+    "sql2019",
+    "shs",
+    "es",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Sparta",
+   "cpu": 8,
+   "memory": 38,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Millennium",
+   "cpu": 4,
+   "memory": 28,
+   "services": [
+    "riscore",
+    "uvclient",
+    "ids7",
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Threshold_2",
+   "cpu": 21,
+   "memory": 47,
+   "services": [
+    "risapp",
+    "wise",
+    "es",
+    "riscore"
+   ]
+  }
+ }
+}

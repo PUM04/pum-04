@@ -1,0 +1,26 @@
+{
+ "site_id": "897t9l_230413",
+ "site_name": "dusghb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Snowball",
+   "cpu": 18,
+   "memory": 38,
+   "services": [
+    "haproxy",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 23,
+   "memory": 14,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

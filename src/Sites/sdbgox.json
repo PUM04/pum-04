@@ -1,0 +1,45 @@
+{
+ "site_id": "k49c1c_230413",
+ "site_name": "sdbgox",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Blue",
+   "cpu": 10,
+   "memory": 45,
+   "services": [
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Memphis",
+   "cpu": 18,
+   "memory": 29,
+   "services": [
+    "uvclient",
+    "shs",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Emerald",
+   "cpu": 13,
+   "memory": 32,
+   "services": [
+    "ad",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Emerald",
+   "cpu": 25,
+   "memory": 43,
+   "services": [
+    "es"
+   ]
+  }
+ }
+}

@@ -1,0 +1,46 @@
+{
+ "site_id": "bj4dv9_230413",
+ "site_name": "ugexqm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Threshold",
+   "cpu": 18,
+   "memory": 39,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Millennium",
+   "cpu": 1,
+   "memory": 14,
+   "services": [
+    "sql2019",
+    "dpat",
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 28,
+   "memory": 62,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Sparta",
+   "cpu": 7,
+   "memory": 60,
+   "services": [
+    "dpat",
+    "es",
+    "iss",
+    "uvclient",
+    "risapp"
+   ]
+  }
+ }
+}

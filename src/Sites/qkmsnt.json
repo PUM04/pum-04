@@ -1,0 +1,49 @@
+{
+ "site_id": "5zxgwc_230413",
+ "site_name": "qkmsnt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Harmony",
+   "cpu": 31,
+   "memory": 3,
+   "services": [
+    "wise",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Sparta",
+   "cpu": 25,
+   "memory": 52,
+   "services": [
+    "ids7",
+    "wise",
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "lb": {
+   "os": "Freestyle",
+   "cpu": 2,
+   "memory": 22,
+   "services": [
+    "uvcore",
+    "shs",
+    "dpat",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Memphis",
+   "cpu": 31,
+   "memory": 19,
+   "services": [
+    "risapp",
+    "ad"
+   ]
+  }
+ }
+}

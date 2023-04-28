@@ -1,0 +1,34 @@
+{
+ "site_id": "3p1lly_230413",
+ "site_name": "cxovna",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Sparta",
+   "cpu": 18,
+   "memory": 4,
+   "services": [
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Memphis",
+   "cpu": 5,
+   "memory": 44,
+   "services": [
+    "iss",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 22,
+   "memory": 3,
+   "services": [
+    "sql2019",
+    "uvcore"
+   ]
+  }
+ }
+}

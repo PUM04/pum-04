@@ -1,0 +1,28 @@
+{
+ "site_id": "j548u7_230413",
+ "site_name": "bwfgbm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Windows_NT_5.0",
+   "cpu": 1,
+   "memory": 11,
+   "services": [
+    "dpat",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 16,
+   "memory": 4,
+   "services": [
+    "risapp",
+    "sql2019",
+    "uvcore",
+    "shs"
+   ]
+  }
+ }
+}

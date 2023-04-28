@@ -1,0 +1,36 @@
+{
+ "site_id": "22dazt_230413",
+ "site_name": "zvtcsf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Snowball",
+   "cpu": 14,
+   "memory": 64,
+   "services": [
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 30,
+   "memory": 51,
+   "services": [
+    "ad",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Vibranium",
+   "cpu": 24,
+   "memory": 60,
+   "services": [
+    "sql2019",
+    "iss",
+    "es"
+   ]
+  }
+ }
+}

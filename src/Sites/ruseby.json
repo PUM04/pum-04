@@ -1,0 +1,86 @@
+{
+ "site_id": "kte1yv_230413",
+ "site_name": "ruseby",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Vanadium",
+   "cpu": 19,
+   "memory": 24,
+   "services": [
+    "ad",
+    "shs",
+    "ids7",
+    "wise"
+   ]
+  },
+  "sss": {
+   "os": "Razzle",
+   "cpu": 27,
+   "memory": 14,
+   "services": [
+    "uvcore",
+    "wise",
+    "ad",
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Daytona",
+   "cpu": 25,
+   "memory": 53,
+   "services": [
+    "es",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_4",
+   "cpu": 21,
+   "memory": 13,
+   "services": [
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Freestyle",
+   "cpu": 22,
+   "memory": 12,
+   "services": [
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_Valley",
+   "cpu": 32,
+   "memory": 54,
+   "services": [
+    "haproxy",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Millennium",
+   "cpu": 26,
+   "memory": 29,
+   "services": [
+    "uvcore",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Threshold",
+   "cpu": 6,
+   "memory": 50,
+   "services": [
+    "wise",
+    "es",
+    "uvclient"
+   ]
+  }
+ }
+}

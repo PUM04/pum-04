@@ -1,0 +1,64 @@
+{
+ "site_id": "jce5m5_230413",
+ "site_name": "rcwxbd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Sun_Valley",
+   "cpu": 9,
+   "memory": 57,
+   "services": [
+    "risapp",
+    "ad",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Whistler",
+   "cpu": 11,
+   "memory": 6,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Razzle",
+   "cpu": 14,
+   "memory": 41,
+   "services": [
+    "ids7",
+    "shs",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Vanadium",
+   "cpu": 21,
+   "memory": 12,
+   "services": [
+    "dpat",
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Longhorn",
+   "cpu": 31,
+   "memory": 6,
+   "services": [
+    "ids7",
+    "es",
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Longhorn",
+   "cpu": 26,
+   "memory": 41,
+   "services": [
+    "iss"
+   ]
+  }
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "site_id": "565c4a_230413",
+ "site_name": "gykjvo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Sun_valley_2",
+   "cpu": 8,
+   "memory": 12,
+   "services": [
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Razzle",
+   "cpu": 30,
+   "memory": 39,
+   "services": [
+    "ad",
+    "sql2019",
+    "es",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Emerald",
+   "cpu": 9,
+   "memory": 37,
+   "services": [
+    "ids7",
+    "shs",
+    "uvcore"
+   ]
+  }
+ }
+}

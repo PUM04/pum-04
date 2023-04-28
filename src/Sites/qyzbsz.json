@@ -1,0 +1,64 @@
+{
+ "site_id": "zi7h07_230413",
+ "site_name": "qyzbsz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Chicago",
+   "cpu": 7,
+   "memory": 36,
+   "services": [
+    "wise",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Sun_valley_2",
+   "cpu": 25,
+   "memory": 23,
+   "services": [
+    "ad",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 24,
+   "memory": 50,
+   "services": [
+    "shs",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 13,
+   "memory": 34,
+   "services": [
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Snowball",
+   "cpu": 32,
+   "memory": 48,
+   "services": [
+    "es",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold",
+   "cpu": 15,
+   "memory": 27,
+   "services": [
+    "riscore",
+    "shs",
+    "iss",
+    "es",
+    "risapp"
+   ]
+  }
+ }
+}

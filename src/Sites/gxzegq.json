@@ -1,0 +1,86 @@
+{
+ "site_id": "ax9vv6_230413",
+ "site_name": "gxzegq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Emerald",
+   "cpu": 25,
+   "memory": 57,
+   "services": [
+    "wise",
+    "uvcore",
+    "ad",
+    "ids7",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Vibranium",
+   "cpu": 25,
+   "memory": 11,
+   "services": [
+    "dpat",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Longhorn",
+   "cpu": 13,
+   "memory": 14,
+   "services": [
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Redstone_3",
+   "cpu": 23,
+   "memory": 22,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_2",
+   "cpu": 28,
+   "memory": 11,
+   "services": [
+    "es",
+    "iss",
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 17,
+   "memory": 49,
+   "services": [
+    "risapp",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Threshold_2",
+   "cpu": 28,
+   "memory": 45,
+   "services": [
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Blue",
+   "cpu": 2,
+   "memory": 9,
+   "services": [
+    "iss",
+    "riscore"
+   ]
+  }
+ }
+}

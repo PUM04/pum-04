@@ -1,0 +1,78 @@
+{
+ "site_id": "397dpt_230413",
+ "site_name": "sdeewe",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Memphis",
+   "cpu": 4,
+   "memory": 63,
+   "services": [
+    "sql2019",
+    "ad",
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Symphony",
+   "cpu": 26,
+   "memory": 17,
+   "services": [
+    "es",
+    "riscore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_4",
+   "cpu": 4,
+   "memory": 27,
+   "services": [
+    "shs",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_3",
+   "cpu": 6,
+   "memory": 9,
+   "services": [
+    "dpat",
+    "iss",
+    "sql2019"
+   ]
+  },
+  "sss": {
+   "os": "Windows_8",
+   "cpu": 26,
+   "memory": 16,
+   "services": [
+    "shs",
+    "dpat",
+    "sql2019",
+    "es",
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sparta",
+   "cpu": 26,
+   "memory": 7,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_4",
+   "cpu": 29,
+   "memory": 2,
+   "services": [
+    "iss",
+    "ids7",
+    "shs"
+   ]
+  }
+ }
+}

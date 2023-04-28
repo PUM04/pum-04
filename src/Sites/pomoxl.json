@@ -1,0 +1,36 @@
+{
+ "site_id": "wys0i1_230413",
+ "site_name": "pomoxl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 1,
+   "memory": 12,
+   "services": [
+    "sql2019",
+    "shs",
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 23,
+   "memory": 48,
+   "services": [
+    "es",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Daytona",
+   "cpu": 30,
+   "memory": 55,
+   "services": [
+    "es",
+    "shs"
+   ]
+  }
+ }
+}

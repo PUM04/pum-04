@@ -1,0 +1,62 @@
+{
+ "site_id": "7a2w9u_230413",
+ "site_name": "sfnbjb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Freestyle",
+   "cpu": 3,
+   "memory": 57,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 9,
+   "memory": 21,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Windows_NT_5.0",
+   "cpu": 28,
+   "memory": 19,
+   "services": [
+    "ids7",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Blue",
+   "cpu": 2,
+   "memory": 14,
+   "services": [
+    "sql2019",
+    "shs",
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_valley_2",
+   "cpu": 22,
+   "memory": 18,
+   "services": [
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Daytona",
+   "cpu": 15,
+   "memory": 48,
+   "services": [
+    "riscore",
+    "risapp",
+    "wise"
+   ]
+  }
+ }
+}

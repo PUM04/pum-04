@@ -1,0 +1,35 @@
+{
+ "site_id": "bsad6o_230413",
+ "site_name": "tkrnkc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Snowball",
+   "cpu": 20,
+   "memory": 46,
+   "services": [
+    "iss",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_1",
+   "cpu": 19,
+   "memory": 46,
+   "services": [
+    "es",
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Anvil",
+   "cpu": 32,
+   "memory": 31,
+   "services": [
+    "sql2019",
+    "riscore"
+   ]
+  }
+ }
+}

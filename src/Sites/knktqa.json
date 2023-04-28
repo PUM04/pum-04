@@ -1,0 +1,58 @@
+{
+ "site_id": "g62s78_230413",
+ "site_name": "knktqa",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Redstone_2",
+   "cpu": 3,
+   "memory": 47,
+   "services": [
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_3",
+   "cpu": 22,
+   "memory": 14,
+   "services": [
+    "iss",
+    "sql2019",
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_8",
+   "cpu": 31,
+   "memory": 16,
+   "services": [
+    "iss",
+    "es",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_valley_2",
+   "cpu": 4,
+   "memory": 34,
+   "services": [
+    "ad",
+    "es",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Vanadium",
+   "cpu": 18,
+   "memory": 60,
+   "services": [
+    "iss",
+    "haproxy",
+    "ad",
+    "risapp"
+   ]
+  }
+ }
+}

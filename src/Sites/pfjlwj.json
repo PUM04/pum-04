@@ -1,0 +1,77 @@
+{
+ "site_id": "w1fy8s_230413",
+ "site_name": "pfjlwj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Vanadium",
+   "cpu": 23,
+   "memory": 29,
+   "services": [
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Razzle",
+   "cpu": 4,
+   "memory": 20,
+   "services": [
+    "ids7",
+    "haproxy",
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 23,
+   "memory": 39,
+   "services": [
+    "wise",
+    "sql2019",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_3",
+   "cpu": 4,
+   "memory": 17,
+   "services": [
+    "uvcore",
+    "es",
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sparta",
+   "cpu": 10,
+   "memory": 16,
+   "services": [
+    "uvcore",
+    "iss",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Razzle",
+   "cpu": 8,
+   "memory": 53,
+   "services": [
+    "ids7",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Sparta",
+   "cpu": 15,
+   "memory": 28,
+   "services": [
+    "uvcore",
+    "uvclient"
+   ]
+  }
+ }
+}

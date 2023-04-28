@@ -1,0 +1,76 @@
+{
+ "site_id": "za4a98_230413",
+ "site_name": "vznqtk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Snowball",
+   "cpu": 24,
+   "memory": 50,
+   "services": [
+    "dpat",
+    "haproxy",
+    "shs",
+    "ids7",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_valley_2",
+   "cpu": 5,
+   "memory": 26,
+   "services": [
+    "dpat",
+    "es",
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_4",
+   "cpu": 7,
+   "memory": 10,
+   "services": [
+    "ad",
+    "dpat",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Harmony",
+   "cpu": 17,
+   "memory": 39,
+   "services": [
+    "shs",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Windows_7",
+   "cpu": 4,
+   "memory": 37,
+   "services": [
+    "iss",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Freestyle",
+   "cpu": 1,
+   "memory": 48,
+   "services": [
+    "wise",
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 30,
+   "memory": 64,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

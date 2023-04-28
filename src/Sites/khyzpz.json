@@ -1,0 +1,57 @@
+{
+ "site_id": "r184al_230413",
+ "site_name": "khyzpz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Anvil",
+   "cpu": 32,
+   "memory": 51,
+   "services": [
+    "uvclient",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Anvil",
+   "cpu": 9,
+   "memory": 50,
+   "services": [
+    "haproxy",
+    "dpat",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Whistler",
+   "cpu": 16,
+   "memory": 39,
+   "services": [
+    "iss",
+    "haproxy",
+    "wise"
+   ]
+  },
+  "sss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 5,
+   "memory": 64,
+   "services": [
+    "wise",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold",
+   "cpu": 12,
+   "memory": 25,
+   "services": [
+    "ids7",
+    "dpat",
+    "uvclient",
+    "shs"
+   ]
+  }
+ }
+}

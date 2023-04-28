@@ -1,0 +1,78 @@
+{
+ "site_id": "5141n2_230413",
+ "site_name": "orzbme",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Redstone_5",
+   "cpu": 1,
+   "memory": 50,
+   "services": [
+    "es",
+    "ids7",
+    "uvcore",
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 31,
+   "memory": 24,
+   "services": [
+    "ad",
+    "risapp",
+    "wise",
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 12,
+   "memory": 5,
+   "services": [
+    "iss",
+    "haproxy",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_2",
+   "cpu": 15,
+   "memory": 58,
+   "services": [
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Chicago",
+   "cpu": 1,
+   "memory": 6,
+   "services": [
+    "haproxy",
+    "wise",
+    "risapp",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 17,
+   "memory": 3,
+   "services": [
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Blue",
+   "cpu": 23,
+   "memory": 37,
+   "services": [
+    "uvclient",
+    "shs",
+    "ad"
+   ]
+  }
+ }
+}

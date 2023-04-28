@@ -1,0 +1,97 @@
+{
+ "site_id": "2ppjmz_230413",
+ "site_name": "wiqgrp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Redstone_3",
+   "cpu": 29,
+   "memory": 54,
+   "services": [
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Whistler",
+   "cpu": 26,
+   "memory": 4,
+   "services": [
+    "sql2019",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Millennium",
+   "cpu": 18,
+   "memory": 46,
+   "services": [
+    "sql2019",
+    "dpat",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Freestyle",
+   "cpu": 3,
+   "memory": 26,
+   "services": [
+    "risapp",
+    "ad",
+    "uvcore",
+    "ids7",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Chicago",
+   "cpu": 18,
+   "memory": 2,
+   "services": [
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_Valley",
+   "cpu": 20,
+   "memory": 21,
+   "services": [
+    "es",
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 25,
+   "memory": 4,
+   "services": [
+    "ad",
+    "dpat",
+    "shs",
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 30,
+   "memory": 63,
+   "services": [
+    "uvcore",
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "pacsapp": {
+   "os": "Freestyle",
+   "cpu": 7,
+   "memory": 54,
+   "services": [
+    "es",
+    "ids7"
+   ]
+  }
+ }
+}

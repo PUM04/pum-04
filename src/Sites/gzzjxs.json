@@ -1,0 +1,79 @@
+{
+ "site_id": "f764uv_230413",
+ "site_name": "gzzjxs",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Whistler",
+   "cpu": 2,
+   "memory": 13,
+   "services": [
+    "es",
+    "wise",
+    "ad",
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_7",
+   "cpu": 19,
+   "memory": 49,
+   "services": [
+    "riscore",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold",
+   "cpu": 3,
+   "memory": 58,
+   "services": [
+    "iss",
+    "es",
+    "ad",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 17,
+   "memory": 43,
+   "services": [
+    "wise",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Threshold",
+   "cpu": 9,
+   "memory": 48,
+   "services": [
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Emerald",
+   "cpu": 15,
+   "memory": 24,
+   "services": [
+    "shs",
+    "haproxy",
+    "riscore",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold",
+   "cpu": 21,
+   "memory": 35,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "site_id": "0k4pm6_230413",
+ "site_name": "fxdvsq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Snowball",
+   "cpu": 31,
+   "memory": 48,
+   "services": [
+    "ad",
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Anvil",
+   "cpu": 23,
+   "memory": 27,
+   "services": [
+    "dpat",
+    "ids7",
+    "risapp"
+   ]
+  }
+ }
+}

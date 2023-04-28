@@ -1,0 +1,38 @@
+{
+ "site_id": "5l2260_230413",
+ "site_name": "dzujhj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Redstone_3",
+   "cpu": 20,
+   "memory": 35,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Threshold_2",
+   "cpu": 6,
+   "memory": 17,
+   "services": [
+    "haproxy",
+    "dpat",
+    "uvclient",
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Harmony",
+   "cpu": 16,
+   "memory": 58,
+   "services": [
+    "riscore",
+    "risapp",
+    "haproxy",
+    "shs"
+   ]
+  }
+ }
+}

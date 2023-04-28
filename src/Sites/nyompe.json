@@ -1,0 +1,82 @@
+{
+ "site_id": "b7p2lr_230413",
+ "site_name": "nyompe",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Redstone_4",
+   "cpu": 1,
+   "memory": 24,
+   "services": [
+    "wise",
+    "ad",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 5,
+   "memory": 26,
+   "services": [
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_Valley",
+   "cpu": 8,
+   "memory": 27,
+   "services": [
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 28,
+   "memory": 28,
+   "services": [
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 7,
+   "memory": 44,
+   "services": [
+    "es",
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Sun_valley_2",
+   "cpu": 23,
+   "memory": 14,
+   "services": [
+    "dpat",
+    "shs",
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_4",
+   "cpu": 30,
+   "memory": 28,
+   "services": [
+    "sql2019",
+    "wise",
+    "uvcore",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Daytona",
+   "cpu": 11,
+   "memory": 42,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

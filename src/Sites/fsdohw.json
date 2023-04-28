@@ -1,0 +1,55 @@
+{
+ "site_id": "vt2s20_230413",
+ "site_name": "fsdohw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Sun_Valley",
+   "cpu": 16,
+   "memory": 46,
+   "services": [
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Emerald",
+   "cpu": 5,
+   "memory": 41,
+   "services": [
+    "risapp",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Snowball",
+   "cpu": 18,
+   "memory": 64,
+   "services": [
+    "uvclient",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Vibranium",
+   "cpu": 17,
+   "memory": 36,
+   "services": [
+    "uvcore",
+    "shs",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold_2",
+   "cpu": 9,
+   "memory": 11,
+   "services": [
+    "ad",
+    "riscore",
+    "uvclient",
+    "haproxy"
+   ]
+  }
+ }
+}

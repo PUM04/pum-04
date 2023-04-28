@@ -1,0 +1,17 @@
+{
+ "site_id": "641d1s_230413",
+ "site_name": "jzlgdi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 17,
+   "memory": 9,
+   "services": [
+    "iss",
+    "es"
+   ]
+  }
+ }
+}

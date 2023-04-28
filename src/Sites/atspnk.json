@@ -1,0 +1,57 @@
+{
+ "site_id": "661mpw_230413",
+ "site_name": "atspnk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Symphony",
+   "cpu": 21,
+   "memory": 11,
+   "services": [
+    "sql2019",
+    "riscore",
+    "wise",
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Daytona",
+   "cpu": 29,
+   "memory": 44,
+   "services": [
+    "ids7",
+    "dpat",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_8",
+   "cpu": 32,
+   "memory": 32,
+   "services": [
+    "haproxy",
+    "uvclient",
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Vanadium",
+   "cpu": 20,
+   "memory": 34,
+   "services": [
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Memphis",
+   "cpu": 12,
+   "memory": 58,
+   "services": [
+    "sql2019",
+    "dpat",
+    "shs"
+   ]
+  }
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "site_id": "ng9vt8_230413",
+ "site_name": "bkndkd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Redstone_1",
+   "cpu": 19,
+   "memory": 11,
+   "services": [
+    "haproxy",
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Symphony",
+   "cpu": 24,
+   "memory": 46,
+   "services": [
+    "ad",
+    "uvcore",
+    "risapp",
+    "sql2019"
+   ]
+  }
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "site_id": "5r4ki1_230413",
+ "site_name": "itltrb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Harmony",
+   "cpu": 6,
+   "memory": 9,
+   "services": [
+    "uvcore",
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Chicago",
+   "cpu": 30,
+   "memory": 32,
+   "services": [
+    "iss",
+    "shs"
+   ]
+  }
+ }
+}

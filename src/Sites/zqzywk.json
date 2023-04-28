@@ -1,0 +1,94 @@
+{
+ "site_id": "8pvn59_230413",
+ "site_name": "zqzywk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Vibranium",
+   "cpu": 7,
+   "memory": 32,
+   "services": [
+    "es",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Daytona",
+   "cpu": 17,
+   "memory": 13,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Threshold",
+   "cpu": 6,
+   "memory": 62,
+   "services": [
+    "ad",
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Harmony",
+   "cpu": 17,
+   "memory": 55,
+   "services": [
+    "dpat",
+    "haproxy",
+    "sql2019",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Daytona",
+   "cpu": 8,
+   "memory": 24,
+   "services": [
+    "ids7",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Harmony",
+   "cpu": 17,
+   "memory": 10,
+   "services": [
+    "risapp",
+    "ids7",
+    "sql2019",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Blue",
+   "cpu": 22,
+   "memory": 12,
+   "services": [
+    "uvclient",
+    "es",
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Blue",
+   "cpu": 32,
+   "memory": 60,
+   "services": [
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold_2",
+   "cpu": 31,
+   "memory": 41,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

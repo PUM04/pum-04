@@ -1,0 +1,55 @@
+{
+ "site_id": "h2zk1y_230413",
+ "site_name": "nhcnrj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Razzle",
+   "cpu": 11,
+   "memory": 12,
+   "services": [
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Vibranium",
+   "cpu": 2,
+   "memory": 49,
+   "services": [
+    "wise",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Sparta",
+   "cpu": 23,
+   "memory": 31,
+   "services": [
+    "iss",
+    "ad",
+    "riscore",
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Vibranium",
+   "cpu": 1,
+   "memory": 34,
+   "services": [
+    "risapp",
+    "uvcore",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_3",
+   "cpu": 26,
+   "memory": 5,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

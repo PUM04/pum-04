@@ -1,0 +1,76 @@
+{
+ "site_id": "3d5dn3_230413",
+ "site_name": "rgmnzj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 20,
+   "memory": 49,
+   "services": [
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Emerald",
+   "cpu": 9,
+   "memory": 12,
+   "services": [
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_valley_2",
+   "cpu": 16,
+   "memory": 30,
+   "services": [
+    "wise",
+    "es",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 11,
+   "memory": 18,
+   "services": [
+    "wise",
+    "sql2019",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Vanadium",
+   "cpu": 23,
+   "memory": 29,
+   "services": [
+    "uvcore",
+    "es",
+    "wise",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_valley_2",
+   "cpu": 8,
+   "memory": 9,
+   "services": [
+    "uvclient",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 3,
+   "memory": 25,
+   "services": [
+    "ad",
+    "iss",
+    "uvcore",
+    "riscore"
+   ]
+  }
+ }
+}

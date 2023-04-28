@@ -1,0 +1,38 @@
+{
+ "site_id": "azwi22_230413",
+ "site_name": "iyoptx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Razzle",
+   "cpu": 24,
+   "memory": 40,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_4",
+   "cpu": 2,
+   "memory": 11,
+   "services": [
+    "shs",
+    "uvclient",
+    "es",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Chicago",
+   "cpu": 8,
+   "memory": 62,
+   "services": [
+    "wise",
+    "riscore"
+   ]
+  }
+ }
+}

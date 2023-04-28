@@ -1,0 +1,86 @@
+{
+ "site_id": "l97a9w_230413",
+ "site_name": "aooulb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 6,
+   "memory": 60,
+   "services": [
+    "ids7",
+    "shs",
+    "ad",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 19,
+   "memory": 17,
+   "services": [
+    "sql2019",
+    "ad",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Threshold",
+   "cpu": 32,
+   "memory": 56,
+   "services": [
+    "wise",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Blue",
+   "cpu": 9,
+   "memory": 25,
+   "services": [
+    "es",
+    "iss",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 18,
+   "memory": 29,
+   "services": [
+    "es",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold_2",
+   "cpu": 14,
+   "memory": 59,
+   "services": [
+    "es",
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 2,
+   "memory": 45,
+   "services": [
+    "uvclient",
+    "es",
+    "risapp",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Symphony",
+   "cpu": 13,
+   "memory": 7,
+   "services": [
+    "uvcore",
+    "wise"
+   ]
+  }
+ }
+}

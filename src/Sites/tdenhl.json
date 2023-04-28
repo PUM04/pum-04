@@ -1,0 +1,63 @@
+{
+ "site_id": "4fm5lz_230413",
+ "site_name": "tdenhl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Redstone_5",
+   "cpu": 31,
+   "memory": 2,
+   "services": [
+    "es",
+    "risapp",
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Millennium",
+   "cpu": 24,
+   "memory": 49,
+   "services": [
+    "riscore",
+    "shs",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_3",
+   "cpu": 28,
+   "memory": 2,
+   "services": [
+    "shs",
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Memphis",
+   "cpu": 6,
+   "memory": 19,
+   "services": [
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Symphony",
+   "cpu": 19,
+   "memory": 25,
+   "services": [
+    "iss",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold",
+   "cpu": 25,
+   "memory": 7,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

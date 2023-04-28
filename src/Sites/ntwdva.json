@@ -1,0 +1,74 @@
+{
+ "site_id": "5m7n89_230413",
+ "site_name": "ntwdva",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Windows_8",
+   "cpu": 28,
+   "memory": 35,
+   "services": [
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Chicago",
+   "cpu": 10,
+   "memory": 13,
+   "services": [
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 20,
+   "memory": 59,
+   "services": [
+    "wise",
+    "shs",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Anvil",
+   "cpu": 27,
+   "memory": 56,
+   "services": [
+    "shs",
+    "uvcore",
+    "iss",
+    "sql2019"
+   ]
+  },
+  "sqlla": {
+   "os": "Harmony",
+   "cpu": 18,
+   "memory": 19,
+   "services": [
+    "ids7",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 25,
+   "memory": 22,
+   "services": [
+    "dpat",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_Valley",
+   "cpu": 12,
+   "memory": 44,
+   "services": [
+    "shs",
+    "risapp",
+    "es"
+   ]
+  }
+ }
+}

@@ -1,0 +1,16 @@
+{
+ "site_id": "c95xg3_230413",
+ "site_name": "wjboca",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Blue",
+   "cpu": 22,
+   "memory": 23,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

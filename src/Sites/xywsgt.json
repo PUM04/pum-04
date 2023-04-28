@@ -1,0 +1,47 @@
+{
+ "site_id": "s5jbg1_230413",
+ "site_name": "xywsgt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Vanadium",
+   "cpu": 21,
+   "memory": 61,
+   "services": [
+    "es",
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Memphis",
+   "cpu": 22,
+   "memory": 18,
+   "services": [
+    "ad",
+    "wise",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 19,
+   "memory": 33,
+   "services": [
+    "risapp",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Chicago",
+   "cpu": 3,
+   "memory": 56,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  }
+ }
+}

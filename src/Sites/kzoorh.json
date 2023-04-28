@@ -1,0 +1,57 @@
+{
+ "site_id": "6qv45p_230413",
+ "site_name": "kzoorh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Threshold_2",
+   "cpu": 7,
+   "memory": 17,
+   "services": [
+    "riscore",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 25,
+   "memory": 27,
+   "services": [
+    "ids7",
+    "iss",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Windows_7",
+   "cpu": 14,
+   "memory": 56,
+   "services": [
+    "uvclient",
+    "wise",
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Anvil",
+   "cpu": 16,
+   "memory": 49,
+   "services": [
+    "riscore",
+    "wise",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 6,
+   "memory": 1,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

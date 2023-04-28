@@ -1,0 +1,48 @@
+{
+ "site_id": "694gc0_230413",
+ "site_name": "tldsiv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Symphony",
+   "cpu": 4,
+   "memory": 10,
+   "services": [
+    "dpat",
+    "ad",
+    "es",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_valley_2",
+   "cpu": 11,
+   "memory": 36,
+   "services": [
+    "es",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Razzle",
+   "cpu": 7,
+   "memory": 17,
+   "services": [
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Chicago",
+   "cpu": 10,
+   "memory": 28,
+   "services": [
+    "haproxy",
+    "dpat",
+    "wise",
+    "es",
+    "ad"
+   ]
+  }
+ }
+}

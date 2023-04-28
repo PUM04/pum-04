@@ -1,0 +1,41 @@
+{
+ "site_id": "y5ntr7_230413",
+ "site_name": "ynlszj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Daytona",
+   "cpu": 20,
+   "memory": 10,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 22,
+   "memory": 62,
+   "services": [
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Longhorn",
+   "cpu": 13,
+   "memory": 17,
+   "services": [
+    "shs"
+   ]
+  },
+  "pacscore": {
+   "os": "Sparta",
+   "cpu": 14,
+   "memory": 33,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "site_id": "5apc20_230413",
+ "site_name": "ynuwrn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Harmony",
+   "cpu": 22,
+   "memory": 10,
+   "services": [
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 30,
+   "memory": 5,
+   "services": [
+    "iss",
+    "uvclient",
+    "riscore",
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Harmony",
+   "cpu": 7,
+   "memory": 20,
+   "services": [
+    "uvcore",
+    "ad",
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Anvil",
+   "cpu": 3,
+   "memory": 60,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Razzle",
+   "cpu": 26,
+   "memory": 19,
+   "services": [
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 10,
+   "memory": 19,
+   "services": [
+    "ids7",
+    "wise",
+    "iss"
+   ]
+  }
+ }
+}

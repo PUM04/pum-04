@@ -1,0 +1,58 @@
+{
+ "site_id": "1vpy24_230413",
+ "site_name": "dfhtok",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Vanadium",
+   "cpu": 11,
+   "memory": 49,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 1,
+   "memory": 38,
+   "services": [
+    "shs",
+    "ad",
+    "ids7",
+    "es",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_5",
+   "cpu": 2,
+   "memory": 64,
+   "services": [
+    "wise",
+    "uvclient",
+    "shs",
+    "dpat",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Millennium",
+   "cpu": 16,
+   "memory": 1,
+   "services": [
+    "ids7",
+    "shs"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 22,
+   "memory": 29,
+   "services": [
+    "shs",
+    "wise"
+   ]
+  }
+ }
+}

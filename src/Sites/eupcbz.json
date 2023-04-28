@@ -1,0 +1,35 @@
+{
+ "site_id": "dv0813_230413",
+ "site_name": "eupcbz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Blue",
+   "cpu": 17,
+   "memory": 62,
+   "services": [
+    "ad",
+    "haproxy"
+   ]
+  },
+  "risapp": {
+   "os": "Symphony",
+   "cpu": 31,
+   "memory": 11,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Blue",
+   "cpu": 1,
+   "memory": 23,
+   "services": [
+    "riscore",
+    "sql2019",
+    "uvclient"
+   ]
+  }
+ }
+}

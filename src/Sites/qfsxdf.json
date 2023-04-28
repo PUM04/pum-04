@@ -1,0 +1,27 @@
+{
+ "site_id": "1ycs1n_230413",
+ "site_name": "qfsxdf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Emerald",
+   "cpu": 18,
+   "memory": 41,
+   "services": [
+    "shs",
+    "ids7",
+    "risapp",
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Millennium",
+   "cpu": 20,
+   "memory": 5,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

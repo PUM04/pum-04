@@ -1,0 +1,36 @@
+{
+ "site_id": "entxz2_230413",
+ "site_name": "oirmlo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Anvil",
+   "cpu": 25,
+   "memory": 52,
+   "services": [
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_8",
+   "cpu": 14,
+   "memory": 1,
+   "services": [
+    "es",
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Sun_valley_2",
+   "cpu": 12,
+   "memory": 27,
+   "services": [
+    "dpat",
+    "risapp",
+    "iss",
+    "riscore"
+   ]
+  }
+ }
+}

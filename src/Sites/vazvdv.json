@@ -1,0 +1,78 @@
+{
+ "site_id": "0i7zx4_230413",
+ "site_name": "vazvdv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Millennium",
+   "cpu": 27,
+   "memory": 30,
+   "services": [
+    "sql2019",
+    "risapp",
+    "iss",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Longhorn",
+   "cpu": 17,
+   "memory": 22,
+   "services": [
+    "shs",
+    "uvcore",
+    "es",
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 29,
+   "memory": 14,
+   "services": [
+    "ids7",
+    "ad",
+    "iss",
+    "uvcore",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Freestyle",
+   "cpu": 16,
+   "memory": 56,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Razzle",
+   "cpu": 3,
+   "memory": 63,
+   "services": [
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Windows_8",
+   "cpu": 5,
+   "memory": 28,
+   "services": [
+    "sql2019",
+    "ad",
+    "haproxy",
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Sun_valley_2",
+   "cpu": 32,
+   "memory": 3,
+   "services": [
+    "risapp",
+    "ids7"
+   ]
+  }
+ }
+}

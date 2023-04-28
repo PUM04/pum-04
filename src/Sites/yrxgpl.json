@@ -1,0 +1,82 @@
+{
+ "site_id": "0m9bm2_230413",
+ "site_name": "yrxgpl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Vanadium",
+   "cpu": 31,
+   "memory": 45,
+   "services": [
+    "riscore",
+    "iss",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 32,
+   "memory": 4,
+   "services": [
+    "haproxy",
+    "dpat",
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Emerald",
+   "cpu": 5,
+   "memory": 2,
+   "services": [
+    "wise",
+    "ad",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Symphony",
+   "cpu": 19,
+   "memory": 10,
+   "services": [
+    "shs",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_valley_2",
+   "cpu": 2,
+   "memory": 45,
+   "services": [
+    "sql2019",
+    "riscore",
+    "uvclient",
+    "es",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 13,
+   "memory": 16,
+   "services": [
+    "wise",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Vibranium",
+   "cpu": 32,
+   "memory": 37,
+   "services": [
+    "haproxy",
+    "uvclient",
+    "risapp",
+    "iss",
+    "sql2019"
+   ]
+  }
+ }
+}

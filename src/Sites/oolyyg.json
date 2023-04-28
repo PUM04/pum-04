@@ -1,0 +1,81 @@
+{
+ "site_id": "m8v3ot_230413",
+ "site_name": "oolyyg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Chicago",
+   "cpu": 28,
+   "memory": 45,
+   "services": [
+    "es",
+    "dpat",
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "risapp": {
+   "os": "Freestyle",
+   "cpu": 12,
+   "memory": 3,
+   "services": [
+    "sql2019",
+    "iss",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Razzle",
+   "cpu": 4,
+   "memory": 12,
+   "services": [
+    "riscore",
+    "sql2019",
+    "risapp",
+    "es",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_2",
+   "cpu": 25,
+   "memory": 27,
+   "services": [
+    "dpat",
+    "sql2019",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 23,
+   "memory": 34,
+   "services": [
+    "riscore",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 17,
+   "memory": 17,
+   "services": [
+    "iss",
+    "shs",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Sparta",
+   "cpu": 12,
+   "memory": 21,
+   "services": [
+    "ids7",
+    "iss",
+    "dpat"
+   ]
+  }
+ }
+}

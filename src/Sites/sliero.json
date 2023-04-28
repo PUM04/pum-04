@@ -1,0 +1,87 @@
+{
+ "site_id": "yo599l_230413",
+ "site_name": "sliero",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Redstone_3",
+   "cpu": 27,
+   "memory": 51,
+   "services": [
+    "ad",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Sun_Valley",
+   "cpu": 25,
+   "memory": 41,
+   "services": [
+    "ids7",
+    "dpat",
+    "risapp",
+    "ad",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Memphis",
+   "cpu": 2,
+   "memory": 51,
+   "services": [
+    "sql2019",
+    "dpat",
+    "risapp",
+    "ad",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Millennium",
+   "cpu": 6,
+   "memory": 47,
+   "services": [
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Sun_valley_2",
+   "cpu": 26,
+   "memory": 9,
+   "services": [
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_4",
+   "cpu": 24,
+   "memory": 46,
+   "services": [
+    "iss",
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_8",
+   "cpu": 6,
+   "memory": 30,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Millennium",
+   "cpu": 6,
+   "memory": 15,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "riscore"
+   ]
+  }
+ }
+}

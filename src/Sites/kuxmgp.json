@@ -1,0 +1,78 @@
+{
+ "site_id": "nh853a_230413",
+ "site_name": "kuxmgp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Razzle",
+   "cpu": 30,
+   "memory": 22,
+   "services": [
+    "shs",
+    "ids7",
+    "dpat",
+    "riscore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vanadium",
+   "cpu": 32,
+   "memory": 33,
+   "services": [
+    "shs",
+    "wise",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Threshold_2",
+   "cpu": 22,
+   "memory": 22,
+   "services": [
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_2",
+   "cpu": 12,
+   "memory": 53,
+   "services": [
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 18,
+   "memory": 62,
+   "services": [
+    "haproxy",
+    "shs",
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 5,
+   "memory": 14,
+   "services": [
+    "uvcore",
+    "shs",
+    "ids7",
+    "dpat",
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Blue",
+   "cpu": 31,
+   "memory": 48,
+   "services": [
+    "shs",
+    "risapp"
+   ]
+  }
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "site_id": "6sfq97_230413",
+ "site_name": "yodsds",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Redstone_4",
+   "cpu": 21,
+   "memory": 27,
+   "services": [
+    "es",
+    "uvclient",
+    "wise",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Freestyle",
+   "cpu": 22,
+   "memory": 10,
+   "services": [
+    "iss",
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Memphis",
+   "cpu": 3,
+   "memory": 44,
+   "services": [
+    "iss",
+    "risapp",
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_1",
+   "cpu": 23,
+   "memory": 56,
+   "services": [
+    "dpat",
+    "wise",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_7",
+   "cpu": 20,
+   "memory": 42,
+   "services": [
+    "es",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Longhorn",
+   "cpu": 7,
+   "memory": 20,
+   "services": [
+    "wise",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_2",
+   "cpu": 27,
+   "memory": 54,
+   "services": [
+    "ad",
+    "shs",
+    "uvcore"
+   ]
+  }
+ }
+}

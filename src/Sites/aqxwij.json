@@ -1,0 +1,26 @@
+{
+ "site_id": "786p87_230413",
+ "site_name": "aqxwij",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Blue",
+   "cpu": 18,
+   "memory": 20,
+   "services": [
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Sparta",
+   "cpu": 6,
+   "memory": 55,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "iss"
+   ]
+  }
+ }
+}

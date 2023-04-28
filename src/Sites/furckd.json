@@ -1,0 +1,63 @@
+{
+ "site_id": "e4a6ug_230413",
+ "site_name": "furckd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Whistler",
+   "cpu": 10,
+   "memory": 5,
+   "services": [
+    "dpat",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Sun_Valley",
+   "cpu": 7,
+   "memory": 21,
+   "services": [
+    "risapp",
+    "uvcore",
+    "es",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold_2",
+   "cpu": 3,
+   "memory": 41,
+   "services": [
+    "shs",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 10,
+   "memory": 38,
+   "services": [
+    "shs",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Windows_NT_5.0",
+   "cpu": 31,
+   "memory": 53,
+   "services": [
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Razzle",
+   "cpu": 4,
+   "memory": 22,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

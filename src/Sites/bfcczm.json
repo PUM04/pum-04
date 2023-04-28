@@ -1,0 +1,69 @@
+{
+ "site_id": "8ywqod_230413",
+ "site_name": "bfcczm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Threshold",
+   "cpu": 19,
+   "memory": 60,
+   "services": [
+    "dpat",
+    "uvclient",
+    "ids7",
+    "shs",
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_3",
+   "cpu": 13,
+   "memory": 25,
+   "services": [
+    "shs",
+    "haproxy",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Vibranium",
+   "cpu": 28,
+   "memory": 59,
+   "services": [
+    "shs",
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Chicago",
+   "cpu": 32,
+   "memory": 20,
+   "services": [
+    "haproxy",
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Daytona",
+   "cpu": 18,
+   "memory": 6,
+   "services": [
+    "iss",
+    "haproxy",
+    "sql2019",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_1",
+   "cpu": 11,
+   "memory": 14,
+   "services": [
+    "es",
+    "sql2019"
+   ]
+  }
+ }
+}

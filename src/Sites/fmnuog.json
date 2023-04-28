@@ -1,0 +1,86 @@
+{
+ "site_id": "v0kh1f_230413",
+ "site_name": "fmnuog",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Vanadium",
+   "cpu": 9,
+   "memory": 32,
+   "services": [
+    "es",
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Memphis",
+   "cpu": 19,
+   "memory": 18,
+   "services": [
+    "wise",
+    "shs",
+    "iss",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Windows_NT_5.0",
+   "cpu": 18,
+   "memory": 12,
+   "services": [
+    "es",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Snowball",
+   "cpu": 2,
+   "memory": 52,
+   "services": [
+    "wise",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Whistler",
+   "cpu": 3,
+   "memory": 39,
+   "services": [
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Freestyle",
+   "cpu": 18,
+   "memory": 32,
+   "services": [
+    "ids7",
+    "dpat",
+    "uvclient",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 5,
+   "memory": 56,
+   "services": [
+    "wise",
+    "haproxy"
+   ]
+  },
+  "risapp": {
+   "os": "Vanadium",
+   "cpu": 13,
+   "memory": 32,
+   "services": [
+    "ids7",
+    "risapp",
+    "iss"
+   ]
+  }
+ }
+}

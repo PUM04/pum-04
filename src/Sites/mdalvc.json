@@ -1,0 +1,34 @@
+{
+ "site_id": "nsfyv3_230413",
+ "site_name": "mdalvc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Sparta",
+   "cpu": 3,
+   "memory": 63,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold_2",
+   "cpu": 20,
+   "memory": 9,
+   "services": [
+    "shs",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Windows_8",
+   "cpu": 8,
+   "memory": 39,
+   "services": [
+    "shs",
+    "dpat"
+   ]
+  }
+ }
+}

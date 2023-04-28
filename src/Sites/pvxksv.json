@@ -1,0 +1,78 @@
+{
+ "site_id": "25s1co_230413",
+ "site_name": "pvxksv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Whistler",
+   "cpu": 7,
+   "memory": 58,
+   "services": [
+    "uvclient",
+    "wise",
+    "sql2019",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Millennium",
+   "cpu": 13,
+   "memory": 14,
+   "services": [
+    "shs",
+    "haproxy",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_8",
+   "cpu": 1,
+   "memory": 52,
+   "services": [
+    "shs",
+    "ad",
+    "iss",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold_2",
+   "cpu": 27,
+   "memory": 53,
+   "services": [
+    "dpat",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Vibranium",
+   "cpu": 9,
+   "memory": 24,
+   "services": [
+    "riscore",
+    "haproxy",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_4",
+   "cpu": 27,
+   "memory": 60,
+   "services": [
+    "sql2019",
+    "ad",
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_5",
+   "cpu": 21,
+   "memory": 27,
+   "services": [
+    "es"
+   ]
+  }
+ }
+}

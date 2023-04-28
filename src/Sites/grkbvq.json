@@ -1,0 +1,79 @@
+{
+ "site_id": "eak572_230413",
+ "site_name": "grkbvq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Redstone_5",
+   "cpu": 25,
+   "memory": 28,
+   "services": [
+    "dpat",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 9,
+   "memory": 11,
+   "services": [
+    "wise",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Blue",
+   "cpu": 29,
+   "memory": 50,
+   "services": [
+    "ad",
+    "iss",
+    "risapp",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Blue",
+   "cpu": 30,
+   "memory": 17,
+   "services": [
+    "dpat",
+    "shs",
+    "uvclient",
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_2",
+   "cpu": 9,
+   "memory": 42,
+   "services": [
+    "ids7",
+    "wise"
+   ]
+  },
+  "sqlla": {
+   "os": "Razzle",
+   "cpu": 28,
+   "memory": 8,
+   "services": [
+    "riscore",
+    "risapp",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Sparta",
+   "cpu": 32,
+   "memory": 59,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

@@ -1,0 +1,63 @@
+{
+ "site_id": "w3814k_230413",
+ "site_name": "uadtmb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 17,
+   "memory": 12,
+   "services": [
+    "risapp",
+    "dpat",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Chicago",
+   "cpu": 9,
+   "memory": 51,
+   "services": [
+    "ad",
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 5,
+   "memory": 43,
+   "services": [
+    "iss",
+    "dpat",
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Blue",
+   "cpu": 30,
+   "memory": 1,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Snowball",
+   "cpu": 7,
+   "memory": 5,
+   "services": [
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "sss": {
+   "os": "Longhorn",
+   "cpu": 7,
+   "memory": 15,
+   "services": [
+    "ad",
+    "dpat"
+   ]
+  }
+ }
+}

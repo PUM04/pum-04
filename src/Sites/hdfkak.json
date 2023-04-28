@@ -1,0 +1,64 @@
+{
+ "site_id": "06588q_230413",
+ "site_name": "hdfkak",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Redstone_3",
+   "cpu": 7,
+   "memory": 6,
+   "services": [
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Chicago",
+   "cpu": 21,
+   "memory": 1,
+   "services": [
+    "dpat",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_4",
+   "cpu": 27,
+   "memory": 13,
+   "services": [
+    "uvcore",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Vanadium",
+   "cpu": 29,
+   "memory": 22,
+   "services": [
+    "dpat",
+    "wise",
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "sqlla": {
+   "os": "Vibranium",
+   "cpu": 19,
+   "memory": 9,
+   "services": [
+    "uvcore",
+    "haproxy",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 22,
+   "memory": 54,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

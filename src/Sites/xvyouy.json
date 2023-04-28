@@ -1,0 +1,29 @@
+{
+ "site_id": "91plfy_230413",
+ "site_name": "xvyouy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Freestyle",
+   "cpu": 5,
+   "memory": 35,
+   "services": [
+    "sql2019",
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 19,
+   "memory": 27,
+   "services": [
+    "uvcore",
+    "risapp",
+    "ad",
+    "haproxy"
+   ]
+  }
+ }
+}

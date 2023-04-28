@@ -1,0 +1,20 @@
+{
+ "site_id": "kxb9zp_230413",
+ "site_name": "ooanbg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 19,
+   "memory": 51,
+   "services": [
+    "risapp",
+    "iss",
+    "riscore",
+    "uvcore",
+    "shs"
+   ]
+  }
+ }
+}

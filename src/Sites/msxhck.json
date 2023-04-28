@@ -1,0 +1,18 @@
+{
+ "site_id": "uqv0r5_230413",
+ "site_name": "msxhck",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Vibranium",
+   "cpu": 32,
+   "memory": 62,
+   "services": [
+    "wise",
+    "risapp",
+    "iss"
+   ]
+  }
+ }
+}

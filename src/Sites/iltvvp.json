@@ -1,0 +1,24 @@
+{
+ "site_id": "31l455_230413",
+ "site_name": "iltvvp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 13,
+   "memory": 12,
+   "services": [
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Anvil",
+   "cpu": 32,
+   "memory": 16,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

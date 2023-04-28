@@ -1,0 +1,18 @@
+{
+ "site_id": "fuwqce_230413",
+ "site_name": "mpdgha",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Freestyle",
+   "cpu": 10,
+   "memory": 25,
+   "services": [
+    "sql2019",
+    "risapp",
+    "ad"
+   ]
+  }
+ }
+}

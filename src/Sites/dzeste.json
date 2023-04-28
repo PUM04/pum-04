@@ -1,0 +1,77 @@
+{
+ "site_id": "273ej4_230413",
+ "site_name": "dzeste",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Redstone_2",
+   "cpu": 3,
+   "memory": 61,
+   "services": [
+    "ids7",
+    "risapp",
+    "es",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Symphony",
+   "cpu": 1,
+   "memory": 47,
+   "services": [
+    "risapp",
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 12,
+   "memory": 14,
+   "services": [
+    "shs",
+    "riscore",
+    "haproxy",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Razzle",
+   "cpu": 27,
+   "memory": 47,
+   "services": [
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Memphis",
+   "cpu": 1,
+   "memory": 17,
+   "services": [
+    "ad",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_3",
+   "cpu": 3,
+   "memory": 44,
+   "services": [
+    "uvcore",
+    "shs"
+   ]
+  },
+  "pacscore": {
+   "os": "Vibranium",
+   "cpu": 22,
+   "memory": 11,
+   "services": [
+    "ids7",
+    "shs",
+    "dpat",
+    "sql2019"
+   ]
+  }
+ }
+}

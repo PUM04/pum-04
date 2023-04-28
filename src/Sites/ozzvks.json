@@ -1,0 +1,61 @@
+{
+ "site_id": "bkv1m5_230413",
+ "site_name": "ozzvks",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Redstone_4",
+   "cpu": 15,
+   "memory": 11,
+   "services": [
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 5,
+   "memory": 41,
+   "services": [
+    "shs",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Harmony",
+   "cpu": 15,
+   "memory": 32,
+   "services": [
+    "wise",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 15,
+   "memory": 40,
+   "services": [
+    "ad",
+    "riscore",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Razzle",
+   "cpu": 32,
+   "memory": 41,
+   "services": [
+    "sql2019",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Symphony",
+   "cpu": 1,
+   "memory": 24,
+   "services": [
+    "es"
+   ]
+  }
+ }
+}

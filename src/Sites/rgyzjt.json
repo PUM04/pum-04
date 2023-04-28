@@ -1,0 +1,53 @@
+{
+ "site_id": "431vj0_230413",
+ "site_name": "rgyzjt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Threshold_2",
+   "cpu": 21,
+   "memory": 52,
+   "services": [
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sparta",
+   "cpu": 27,
+   "memory": 41,
+   "services": [
+    "ad",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vanadium",
+   "cpu": 12,
+   "memory": 53,
+   "services": [
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Threshold",
+   "cpu": 1,
+   "memory": 15,
+   "services": [
+    "wise",
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Vibranium",
+   "cpu": 18,
+   "memory": 62,
+   "services": [
+    "ad",
+    "wise"
+   ]
+  }
+ }
+}

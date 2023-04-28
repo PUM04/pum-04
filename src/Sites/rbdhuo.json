@@ -1,0 +1,70 @@
+{
+ "site_id": "6205h6_230413",
+ "site_name": "rbdhuo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Chicago",
+   "cpu": 32,
+   "memory": 29,
+   "services": [
+    "shs",
+    "haproxy",
+    "uvcore",
+    "iss",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Razzle",
+   "cpu": 10,
+   "memory": 38,
+   "services": [
+    "ad",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Whistler",
+   "cpu": 21,
+   "memory": 21,
+   "services": [
+    "wise",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Sparta",
+   "cpu": 2,
+   "memory": 7,
+   "services": [
+    "risapp",
+    "sql2019",
+    "haproxy",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 21,
+   "memory": 56,
+   "services": [
+    "riscore",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Vanadium",
+   "cpu": 20,
+   "memory": 62,
+   "services": [
+    "dpat",
+    "haproxy",
+    "ad",
+    "risapp"
+   ]
+  }
+ }
+}

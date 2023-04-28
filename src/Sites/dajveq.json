@@ -1,0 +1,82 @@
+{
+ "site_id": "13t0ft_230413",
+ "site_name": "dajveq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Razzle",
+   "cpu": 18,
+   "memory": 12,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 17,
+   "memory": 52,
+   "services": [
+    "wise",
+    "uvcore",
+    "riscore",
+    "haproxy",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Emerald",
+   "cpu": 16,
+   "memory": 19,
+   "services": [
+    "haproxy",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_NT_5.0",
+   "cpu": 32,
+   "memory": 26,
+   "services": [
+    "iss",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_3",
+   "cpu": 15,
+   "memory": 48,
+   "services": [
+    "es",
+    "uvcore",
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Redstone_5",
+   "cpu": 18,
+   "memory": 41,
+   "services": [
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sparta",
+   "cpu": 18,
+   "memory": 37,
+   "services": [
+    "dpat",
+    "uvclient",
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_Valley",
+   "cpu": 23,
+   "memory": 3,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

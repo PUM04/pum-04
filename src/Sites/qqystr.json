@@ -1,0 +1,88 @@
+{
+ "site_id": "k308e5_230413",
+ "site_name": "qqystr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Redstone_4",
+   "cpu": 29,
+   "memory": 43,
+   "services": [
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vanadium",
+   "cpu": 16,
+   "memory": 31,
+   "services": [
+    "ad",
+    "wise",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Razzle",
+   "cpu": 23,
+   "memory": 56,
+   "services": [
+    "shs",
+    "uvcore",
+    "ids7",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Symphony",
+   "cpu": 16,
+   "memory": 38,
+   "services": [
+    "shs",
+    "haproxy",
+    "ad",
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 7,
+   "memory": 24,
+   "services": [
+    "riscore",
+    "dpat",
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_7",
+   "cpu": 32,
+   "memory": 27,
+   "services": [
+    "ids7",
+    "wise",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Memphis",
+   "cpu": 4,
+   "memory": 6,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 27,
+   "memory": 20,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "wise",
+    "risapp"
+   ]
+  }
+ }
+}

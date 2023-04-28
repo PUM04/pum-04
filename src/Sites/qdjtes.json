@@ -1,0 +1,95 @@
+{
+ "site_id": "l1c8mh_230413",
+ "site_name": "qdjtes",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Millennium",
+   "cpu": 8,
+   "memory": 64,
+   "services": [
+    "iss",
+    "ids7",
+    "wise",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Blue",
+   "cpu": 29,
+   "memory": 49,
+   "services": [
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Memphis",
+   "cpu": 14,
+   "memory": 34,
+   "services": [
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Sun_Valley",
+   "cpu": 6,
+   "memory": 61,
+   "services": [
+    "wise",
+    "haproxy",
+    "es",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Snowball",
+   "cpu": 10,
+   "memory": 52,
+   "services": [
+    "es",
+    "ad",
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 1,
+   "memory": 21,
+   "services": [
+    "ids7",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Harmony",
+   "cpu": 13,
+   "memory": 56,
+   "services": [
+    "uvcore",
+    "shs",
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Freestyle",
+   "cpu": 1,
+   "memory": 29,
+   "services": [
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Harmony",
+   "cpu": 29,
+   "memory": 31,
+   "services": [
+    "wise",
+    "es",
+    "risapp"
+   ]
+  }
+ }
+}

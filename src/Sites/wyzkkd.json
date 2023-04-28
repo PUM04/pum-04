@@ -1,0 +1,54 @@
+{
+ "site_id": "71536e_230413",
+ "site_name": "wyzkkd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Sun_valley_2",
+   "cpu": 20,
+   "memory": 26,
+   "services": [
+    "uvclient",
+    "riscore",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 24,
+   "memory": 35,
+   "services": [
+    "iss",
+    "risapp",
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 25,
+   "memory": 52,
+   "services": [
+    "wise",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Memphis",
+   "cpu": 16,
+   "memory": 35,
+   "services": [
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Redstone_2",
+   "cpu": 22,
+   "memory": 45,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

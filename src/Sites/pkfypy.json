@@ -1,0 +1,80 @@
+{
+ "site_id": "qh7a9m_230413",
+ "site_name": "pkfypy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Windows_7",
+   "cpu": 5,
+   "memory": 33,
+   "services": [
+    "risapp",
+    "sql2019",
+    "iss",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Threshold_2",
+   "cpu": 30,
+   "memory": 60,
+   "services": [
+    "risapp",
+    "riscore",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Freestyle",
+   "cpu": 10,
+   "memory": 57,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Millennium",
+   "cpu": 6,
+   "memory": 10,
+   "services": [
+    "shs",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Freestyle",
+   "cpu": 30,
+   "memory": 49,
+   "services": [
+    "uvclient",
+    "riscore",
+    "sql2019",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Longhorn",
+   "cpu": 26,
+   "memory": 34,
+   "services": [
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Symphony",
+   "cpu": 31,
+   "memory": 30,
+   "services": [
+    "sql2019",
+    "shs",
+    "risapp",
+    "uvclient"
+   ]
+  }
+ }
+}

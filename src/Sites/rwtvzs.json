@@ -1,0 +1,51 @@
+{
+ "site_id": "9717xo_230413",
+ "site_name": "rwtvzs",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Longhorn",
+   "cpu": 32,
+   "memory": 21,
+   "services": [
+    "haproxy",
+    "es",
+    "shs",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_5",
+   "cpu": 5,
+   "memory": 58,
+   "services": [
+    "haproxy",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Anvil",
+   "cpu": 9,
+   "memory": 36,
+   "services": [
+    "haproxy",
+    "es",
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Sparta",
+   "cpu": 26,
+   "memory": 19,
+   "services": [
+    "riscore",
+    "risapp",
+    "uvclient",
+    "dpat"
+   ]
+  }
+ }
+}

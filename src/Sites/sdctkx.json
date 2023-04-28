@@ -1,0 +1,42 @@
+{
+ "site_id": "x80h9y_230413",
+ "site_name": "sdctkx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Symphony",
+   "cpu": 17,
+   "memory": 41,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 29,
+   "memory": 39,
+   "services": [
+    "shs"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_3",
+   "cpu": 20,
+   "memory": 49,
+   "services": [
+    "sql2019",
+    "es",
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Symphony",
+   "cpu": 8,
+   "memory": 63,
+   "services": [
+    "shs"
+   ]
+  }
+ }
+}

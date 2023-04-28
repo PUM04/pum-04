@@ -1,0 +1,36 @@
+{
+ "site_id": "01k759_230413",
+ "site_name": "gvmucr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Anvil",
+   "cpu": 6,
+   "memory": 22,
+   "services": [
+    "ad",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 14,
+   "memory": 13,
+   "services": [
+    "ids7",
+    "dpat",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 6,
+   "memory": 42,
+   "services": [
+    "iss",
+    "ids7"
+   ]
+  }
+ }
+}

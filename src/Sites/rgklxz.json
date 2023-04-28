@@ -1,0 +1,31 @@
+{
+ "site_id": "7db0v3_230413",
+ "site_name": "rgklxz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Sparta",
+   "cpu": 11,
+   "memory": 2,
+   "services": [
+    "sql2019",
+    "risapp",
+    "iss",
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Razzle",
+   "cpu": 32,
+   "memory": 43,
+   "services": [
+    "riscore",
+    "uvclient",
+    "dpat",
+    "risapp",
+    "es"
+   ]
+  }
+ }
+}

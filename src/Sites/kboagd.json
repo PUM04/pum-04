@@ -1,0 +1,65 @@
+{
+ "site_id": "yqtt61_230413",
+ "site_name": "kboagd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Threshold",
+   "cpu": 13,
+   "memory": 56,
+   "services": [
+    "riscore",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Windows_8",
+   "cpu": 23,
+   "memory": 11,
+   "services": [
+    "iss",
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Sun_Valley",
+   "cpu": 27,
+   "memory": 46,
+   "services": [
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Symphony",
+   "cpu": 12,
+   "memory": 49,
+   "services": [
+    "ad",
+    "es",
+    "shs",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_7",
+   "cpu": 25,
+   "memory": 58,
+   "services": [
+    "uvclient",
+    "shs",
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Emerald",
+   "cpu": 32,
+   "memory": 46,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

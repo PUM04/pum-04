@@ -1,0 +1,60 @@
+{
+ "site_id": "bwgjwz_230413",
+ "site_name": "uegkjt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Threshold",
+   "cpu": 13,
+   "memory": 32,
+   "services": [
+    "sql2019",
+    "ids7",
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 12,
+   "memory": 26,
+   "services": [
+    "ad",
+    "es",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Emerald",
+   "cpu": 3,
+   "memory": 58,
+   "services": [
+    "es",
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Harmony",
+   "cpu": 1,
+   "memory": 24,
+   "services": [
+    "uvcore",
+    "wise",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 4,
+   "memory": 20,
+   "services": [
+    "risapp",
+    "es",
+    "ad",
+    "wise",
+    "sql2019"
+   ]
+  }
+ }
+}

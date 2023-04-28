@@ -1,0 +1,77 @@
+{
+ "site_id": "x8116q_230413",
+ "site_name": "lmhgbp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Windows_8",
+   "cpu": 23,
+   "memory": 52,
+   "services": [
+    "haproxy",
+    "ad",
+    "iss",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_4",
+   "cpu": 28,
+   "memory": 39,
+   "services": [
+    "es",
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Windows_NT_5.0",
+   "cpu": 31,
+   "memory": 22,
+   "services": [
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Razzle",
+   "cpu": 13,
+   "memory": 48,
+   "services": [
+    "ids7",
+    "riscore",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Memphis",
+   "cpu": 14,
+   "memory": 57,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "ad",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 6,
+   "memory": 35,
+   "services": [
+    "es",
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Millennium",
+   "cpu": 27,
+   "memory": 49,
+   "services": [
+    "risapp",
+    "shs"
+   ]
+  }
+ }
+}

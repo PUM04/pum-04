@@ -1,0 +1,53 @@
+{
+ "site_id": "553e28_230413",
+ "site_name": "qzscnt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Memphis",
+   "cpu": 32,
+   "memory": 46,
+   "services": [
+    "haproxy",
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Emerald",
+   "cpu": 10,
+   "memory": 15,
+   "services": [
+    "uvcore",
+    "wise",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 3,
+   "memory": 13,
+   "services": [
+    "sql2019",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Sparta",
+   "cpu": 6,
+   "memory": 58,
+   "services": [
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold",
+   "cpu": 2,
+   "memory": 43,
+   "services": [
+    "shs",
+    "uvcore"
+   ]
+  }
+ }
+}

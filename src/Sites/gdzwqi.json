@@ -1,0 +1,24 @@
+{
+ "site_id": "51gz76_230413",
+ "site_name": "gdzwqi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 4,
+   "memory": 63,
+   "services": [
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Harmony",
+   "cpu": 1,
+   "memory": 23,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

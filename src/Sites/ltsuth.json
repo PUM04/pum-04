@@ -1,0 +1,97 @@
+{
+ "site_id": "n38p5h_230413",
+ "site_name": "ltsuth",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Blue",
+   "cpu": 14,
+   "memory": 32,
+   "services": [
+    "uvclient",
+    "wise",
+    "dpat",
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Longhorn",
+   "cpu": 11,
+   "memory": 14,
+   "services": [
+    "uvcore",
+    "ids7",
+    "riscore",
+    "ad",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_4",
+   "cpu": 21,
+   "memory": 9,
+   "services": [
+    "risapp",
+    "haproxy",
+    "ids7",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold",
+   "cpu": 16,
+   "memory": 32,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Snowball",
+   "cpu": 27,
+   "memory": 20,
+   "services": [
+    "ids7",
+    "riscore",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Chicago",
+   "cpu": 13,
+   "memory": 34,
+   "services": [
+    "ad",
+    "uvcore",
+    "riscore",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Blue",
+   "cpu": 18,
+   "memory": 21,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold",
+   "cpu": 30,
+   "memory": 36,
+   "services": [
+    "risapp",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Threshold_2",
+   "cpu": 11,
+   "memory": 4,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

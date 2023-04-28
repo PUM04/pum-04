@@ -1,0 +1,28 @@
+{
+ "site_id": "a45kj9_230413",
+ "site_name": "iuwpcx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 5,
+   "memory": 60,
+   "services": [
+    "risapp",
+    "ad",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold",
+   "cpu": 8,
+   "memory": 34,
+   "services": [
+    "riscore",
+    "wise"
+   ]
+  }
+ }
+}

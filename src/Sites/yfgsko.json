@@ -1,0 +1,64 @@
+{
+ "site_id": "26q5wq_230413",
+ "site_name": "yfgsko",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Vanadium",
+   "cpu": 11,
+   "memory": 50,
+   "services": [
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Millennium",
+   "cpu": 3,
+   "memory": 18,
+   "services": [
+    "es",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 4,
+   "memory": 11,
+   "services": [
+    "sql2019",
+    "iss",
+    "haproxy",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Longhorn",
+   "cpu": 20,
+   "memory": 17,
+   "services": [
+    "shs",
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 29,
+   "memory": 28,
+   "services": [
+    "ids7",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Razzle",
+   "cpu": 23,
+   "memory": 48,
+   "services": [
+    "shs",
+    "uvclient"
+   ]
+  }
+ }
+}

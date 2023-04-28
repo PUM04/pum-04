@@ -1,0 +1,19 @@
+{
+ "site_id": "8a3fs3_230413",
+ "site_name": "uaofij",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 17,
+   "memory": 47,
+   "services": [
+    "ad",
+    "wise",
+    "dpat",
+    "uvcore"
+   ]
+  }
+ }
+}

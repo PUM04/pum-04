@@ -1,0 +1,56 @@
+{
+ "site_id": "hf9f0h_230413",
+ "site_name": "revxnr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Longhorn",
+   "cpu": 25,
+   "memory": 1,
+   "services": [
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vibranium",
+   "cpu": 3,
+   "memory": 11,
+   "services": [
+    "risapp",
+    "haproxy",
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Blue",
+   "cpu": 23,
+   "memory": 17,
+   "services": [
+    "risapp",
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_7",
+   "cpu": 20,
+   "memory": 20,
+   "services": [
+    "es",
+    "haproxy",
+    "shs"
+   ]
+  },
+  "pacsapp": {
+   "os": "Anvil",
+   "cpu": 24,
+   "memory": 6,
+   "services": [
+    "uvcore",
+    "riscore",
+    "es"
+   ]
+  }
+ }
+}

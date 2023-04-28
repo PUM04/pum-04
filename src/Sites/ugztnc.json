@@ -1,0 +1,16 @@
+{
+ "site_id": "gi82kp_230413",
+ "site_name": "ugztnc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Windows_7",
+   "cpu": 9,
+   "memory": 13,
+   "services": [
+    "iss"
+   ]
+  }
+ }
+}

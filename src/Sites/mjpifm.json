@@ -1,0 +1,44 @@
+{
+ "site_id": "x717lb_230413",
+ "site_name": "mjpifm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Sparta",
+   "cpu": 25,
+   "memory": 38,
+   "services": [
+    "es",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 18,
+   "memory": 55,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Symphony",
+   "cpu": 2,
+   "memory": 7,
+   "services": [
+    "ids7",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Emerald",
+   "cpu": 30,
+   "memory": 54,
+   "services": [
+    "riscore",
+    "ids7"
+   ]
+  }
+ }
+}

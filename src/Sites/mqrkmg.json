@@ -1,0 +1,47 @@
+{
+ "site_id": "ag6al6_230413",
+ "site_name": "mqrkmg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Blue",
+   "cpu": 7,
+   "memory": 7,
+   "services": [
+    "haproxy",
+    "risapp",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Threshold_2",
+   "cpu": 2,
+   "memory": 39,
+   "services": [
+    "sql2019",
+    "dpat",
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 23,
+   "memory": 60,
+   "services": [
+    "ids7",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Sun_valley_2",
+   "cpu": 15,
+   "memory": 11,
+   "services": [
+    "shs",
+    "dpat"
+   ]
+  }
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "site_id": "z86hh3_230413",
+ "site_name": "atiahq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 15,
+   "memory": 22,
+   "services": [
+    "uvclient",
+    "riscore",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 18,
+   "memory": 19,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

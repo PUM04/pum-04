@@ -1,0 +1,82 @@
+{
+ "site_id": "917hs3_230413",
+ "site_name": "tmkwlc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Anvil",
+   "cpu": 7,
+   "memory": 39,
+   "services": [
+    "ids7",
+    "uvclient",
+    "risapp",
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 13,
+   "memory": 35,
+   "services": [
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Emerald",
+   "cpu": 31,
+   "memory": 59,
+   "services": [
+    "shs",
+    "es",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Longhorn",
+   "cpu": 3,
+   "memory": 29,
+   "services": [
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Millennium",
+   "cpu": 29,
+   "memory": 16,
+   "services": [
+    "wise",
+    "ids7",
+    "ad",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_Valley",
+   "cpu": 3,
+   "memory": 43,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Windows_8",
+   "cpu": 27,
+   "memory": 4,
+   "services": [
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Freestyle",
+   "cpu": 32,
+   "memory": 9,
+   "services": [
+    "iss"
+   ]
+  }
+ }
+}

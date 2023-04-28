@@ -1,0 +1,85 @@
+{
+ "site_id": "on1049_230413",
+ "site_name": "bfhzwb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 19,
+   "memory": 58,
+   "services": [
+    "wise",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Longhorn",
+   "cpu": 5,
+   "memory": 64,
+   "services": [
+    "iss",
+    "riscore",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold",
+   "cpu": 17,
+   "memory": 41,
+   "services": [
+    "wise",
+    "shs",
+    "riscore",
+    "haproxy",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Windows_8",
+   "cpu": 28,
+   "memory": 64,
+   "services": [
+    "dpat",
+    "haproxy",
+    "iss",
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_8",
+   "cpu": 19,
+   "memory": 20,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Longhorn",
+   "cpu": 25,
+   "memory": 24,
+   "services": [
+    "uvcore",
+    "shs",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_1",
+   "cpu": 7,
+   "memory": 57,
+   "services": [
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Threshold_2",
+   "cpu": 5,
+   "memory": 29,
+   "services": [
+    "risapp",
+    "iss"
+   ]
+  }
+ }
+}

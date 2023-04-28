@@ -1,0 +1,63 @@
+{
+ "site_id": "q4xj69_230413",
+ "site_name": "mypgxg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 20,
+   "memory": 14,
+   "services": [
+    "sql2019",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Symphony",
+   "cpu": 7,
+   "memory": 31,
+   "services": [
+    "risapp",
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sparta",
+   "cpu": 32,
+   "memory": 17,
+   "services": [
+    "sql2019",
+    "es",
+    "uvcore",
+    "ad",
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_Valley",
+   "cpu": 32,
+   "memory": 54,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Razzle",
+   "cpu": 21,
+   "memory": 59,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 21,
+   "memory": 30,
+   "services": [
+    "shs",
+    "iss"
+   ]
+  }
+ }
+}

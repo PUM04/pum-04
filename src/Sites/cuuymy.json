@@ -1,0 +1,78 @@
+{
+ "site_id": "f2he23_230413",
+ "site_name": "cuuymy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Symphony",
+   "cpu": 9,
+   "memory": 23,
+   "services": [
+    "ad",
+    "uvclient",
+    "iss",
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_Valley",
+   "cpu": 26,
+   "memory": 28,
+   "services": [
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Millennium",
+   "cpu": 2,
+   "memory": 42,
+   "services": [
+    "uvclient",
+    "iss",
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Memphis",
+   "cpu": 2,
+   "memory": 23,
+   "services": [
+    "ad",
+    "uvcore",
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Blue",
+   "cpu": 6,
+   "memory": 35,
+   "services": [
+    "iss"
+   ]
+  },
+  "es": {
+   "os": "Symphony",
+   "cpu": 10,
+   "memory": 36,
+   "services": [
+    "risapp",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_1",
+   "cpu": 2,
+   "memory": 52,
+   "services": [
+    "dpat",
+    "wise"
+   ]
+  }
+ }
+}

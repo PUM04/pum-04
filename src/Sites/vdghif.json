@@ -1,0 +1,77 @@
+{
+ "site_id": "3tjk01_230413",
+ "site_name": "vdghif",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Symphony",
+   "cpu": 4,
+   "memory": 45,
+   "services": [
+    "shs",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Whistler",
+   "cpu": 10,
+   "memory": 31,
+   "services": [
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_3",
+   "cpu": 6,
+   "memory": 48,
+   "services": [
+    "uvclient",
+    "riscore",
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Threshold_2",
+   "cpu": 24,
+   "memory": 38,
+   "services": [
+    "risapp",
+    "es",
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_3",
+   "cpu": 19,
+   "memory": 21,
+   "services": [
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_1",
+   "cpu": 17,
+   "memory": 20,
+   "services": [
+    "iss",
+    "sql2019",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Harmony",
+   "cpu": 4,
+   "memory": 64,
+   "services": [
+    "riscore",
+    "sql2019",
+    "wise",
+    "risapp"
+   ]
+  }
+ }
+}

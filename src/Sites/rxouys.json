@@ -1,0 +1,39 @@
+{
+ "site_id": "k7w1u0_230413",
+ "site_name": "rxouys",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Harmony",
+   "cpu": 8,
+   "memory": 5,
+   "services": [
+    "ids7",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Razzle",
+   "cpu": 30,
+   "memory": 16,
+   "services": [
+    "risapp",
+    "riscore",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vibranium",
+   "cpu": 14,
+   "memory": 42,
+   "services": [
+    "wise",
+    "es",
+    "ad",
+    "dpat"
+   ]
+  }
+ }
+}

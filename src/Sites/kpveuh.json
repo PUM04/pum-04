@@ -1,0 +1,25 @@
+{
+ "site_id": "t5439g_230413",
+ "site_name": "kpveuh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Daytona",
+   "cpu": 15,
+   "memory": 44,
+   "services": [
+    "wise",
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_Valley",
+   "cpu": 31,
+   "memory": 35,
+   "services": [
+    "iss"
+   ]
+  }
+ }
+}

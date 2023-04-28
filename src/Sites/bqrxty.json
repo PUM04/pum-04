@@ -1,0 +1,83 @@
+{
+ "site_id": "yy81ai_230413",
+ "site_name": "bqrxty",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Threshold",
+   "cpu": 30,
+   "memory": 34,
+   "services": [
+    "uvclient",
+    "es",
+    "iss"
+   ]
+  },
+  "es": {
+   "os": "Threshold_2",
+   "cpu": 9,
+   "memory": 14,
+   "services": [
+    "shs",
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_2",
+   "cpu": 28,
+   "memory": 12,
+   "services": [
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 1,
+   "memory": 10,
+   "services": [
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold_2",
+   "cpu": 11,
+   "memory": 49,
+   "services": [
+    "ad",
+    "iss",
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Memphis",
+   "cpu": 6,
+   "memory": 37,
+   "services": [
+    "riscore",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Anvil",
+   "cpu": 5,
+   "memory": 9,
+   "services": [
+    "risapp",
+    "wise",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_7",
+   "cpu": 15,
+   "memory": 22,
+   "services": [
+    "uvcore",
+    "uvclient"
+   ]
+  }
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "site_id": "9i74g9_230413",
+ "site_name": "ueohkh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Blue",
+   "cpu": 25,
+   "memory": 39,
+   "services": [
+    "haproxy",
+    "ad",
+    "shs",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 32,
+   "memory": 28,
+   "services": [
+    "dpat",
+    "iss",
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 20,
+   "memory": 61,
+   "services": [
+    "riscore",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 23,
+   "memory": 50,
+   "services": [
+    "sql2019",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold_2",
+   "cpu": 2,
+   "memory": 35,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Daytona",
+   "cpu": 26,
+   "memory": 3,
+   "services": [
+    "uvclient",
+    "wise",
+    "ids7"
+   ]
+  }
+ }
+}

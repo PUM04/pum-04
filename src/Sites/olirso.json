@@ -1,0 +1,34 @@
+{
+ "site_id": "4uz4bv_230413",
+ "site_name": "olirso",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Redstone_2",
+   "cpu": 13,
+   "memory": 40,
+   "services": [
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 19,
+   "memory": 25,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_2",
+   "cpu": 27,
+   "memory": 47,
+   "services": [
+    "wise",
+    "risapp",
+    "haproxy"
+   ]
+  }
+ }
+}

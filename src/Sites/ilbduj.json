@@ -1,0 +1,57 @@
+{
+ "site_id": "v7ss21_230413",
+ "site_name": "ilbduj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Threshold",
+   "cpu": 12,
+   "memory": 57,
+   "services": [
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Windows_NT_5.0",
+   "cpu": 26,
+   "memory": 4,
+   "services": [
+    "dpat",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Blue",
+   "cpu": 11,
+   "memory": 30,
+   "services": [
+    "shs",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 25,
+   "memory": 7,
+   "services": [
+    "es",
+    "riscore",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Memphis",
+   "cpu": 25,
+   "memory": 8,
+   "services": [
+    "dpat",
+    "iss",
+    "risapp",
+    "es"
+   ]
+  }
+ }
+}

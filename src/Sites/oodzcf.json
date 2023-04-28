@@ -1,0 +1,49 @@
+{
+ "site_id": "xvtx6c_230413",
+ "site_name": "oodzcf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Razzle",
+   "cpu": 11,
+   "memory": 39,
+   "services": [
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_7",
+   "cpu": 12,
+   "memory": 34,
+   "services": [
+    "ids7",
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_Valley",
+   "cpu": 30,
+   "memory": 24,
+   "services": [
+    "ids7",
+    "riscore",
+    "sql2019",
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 14,
+   "memory": 20,
+   "services": [
+    "risapp",
+    "shs",
+    "uvcore",
+    "wise",
+    "riscore"
+   ]
+  }
+ }
+}

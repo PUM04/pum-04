@@ -1,0 +1,86 @@
+{
+ "site_id": "364ggl_230413",
+ "site_name": "mkxsme",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Redstone_3",
+   "cpu": 29,
+   "memory": 60,
+   "services": [
+    "ids7",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Millennium",
+   "cpu": 29,
+   "memory": 6,
+   "services": [
+    "shs",
+    "riscore",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "ad": {
+   "os": "Chicago",
+   "cpu": 25,
+   "memory": 8,
+   "services": [
+    "shs",
+    "dpat",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Emerald",
+   "cpu": 30,
+   "memory": 10,
+   "services": [
+    "dpat",
+    "haproxy",
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Razzle",
+   "cpu": 9,
+   "memory": 53,
+   "services": [
+    "uvcore",
+    "ids7",
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Razzle",
+   "cpu": 5,
+   "memory": 9,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Whistler",
+   "cpu": 10,
+   "memory": 22,
+   "services": [
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Symphony",
+   "cpu": 23,
+   "memory": 49,
+   "services": [
+    "riscore",
+    "risapp",
+    "es"
+   ]
+  }
+ }
+}

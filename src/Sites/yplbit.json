@@ -1,0 +1,83 @@
+{
+ "site_id": "30ww9c_230413",
+ "site_name": "yplbit",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Threshold",
+   "cpu": 24,
+   "memory": 53,
+   "services": [
+    "risapp",
+    "riscore",
+    "dpat",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Freestyle",
+   "cpu": 1,
+   "memory": 13,
+   "services": [
+    "es",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Chicago",
+   "cpu": 13,
+   "memory": 35,
+   "services": [
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Razzle",
+   "cpu": 2,
+   "memory": 13,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_1",
+   "cpu": 15,
+   "memory": 46,
+   "services": [
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Longhorn",
+   "cpu": 21,
+   "memory": 50,
+   "services": [
+    "iss",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 13,
+   "memory": 45,
+   "services": [
+    "sql2019",
+    "risapp",
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Symphony",
+   "cpu": 18,
+   "memory": 43,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

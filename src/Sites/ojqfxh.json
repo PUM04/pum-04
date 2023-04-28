@@ -1,0 +1,27 @@
+{
+ "site_id": "q3uvwk_230413",
+ "site_name": "ojqfxh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Daytona",
+   "cpu": 6,
+   "memory": 28,
+   "services": [
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Harmony",
+   "cpu": 9,
+   "memory": 54,
+   "services": [
+    "risapp",
+    "dpat",
+    "wise",
+    "riscore"
+   ]
+  }
+ }
+}

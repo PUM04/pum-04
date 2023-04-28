@@ -1,0 +1,17 @@
+{
+ "site_id": "e4y6nx_230413",
+ "site_name": "pcnmdf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Symphony",
+   "cpu": 16,
+   "memory": 27,
+   "services": [
+    "sql2019",
+    "haproxy"
+   ]
+  }
+ }
+}

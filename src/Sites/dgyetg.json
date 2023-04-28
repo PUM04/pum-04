@@ -1,0 +1,54 @@
+{
+ "site_id": "5qjwm6_230413",
+ "site_name": "dgyetg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 13,
+   "memory": 23,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Sun_valley_2",
+   "cpu": 2,
+   "memory": 3,
+   "services": [
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 26,
+   "memory": 39,
+   "services": [
+    "haproxy",
+    "iss",
+    "uvclient",
+    "risapp",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Longhorn",
+   "cpu": 5,
+   "memory": 61,
+   "services": [
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Whistler",
+   "cpu": 5,
+   "memory": 64,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "site_id": "o6s7dk_230413",
+ "site_name": "lxpzly",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Whistler",
+   "cpu": 3,
+   "memory": 39,
+   "services": [
+    "haproxy",
+    "iss",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Daytona",
+   "cpu": 23,
+   "memory": 58,
+   "services": [
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Anvil",
+   "cpu": 2,
+   "memory": 56,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_4",
+   "cpu": 18,
+   "memory": 38,
+   "services": [
+    "haproxy",
+    "dpat",
+    "ad",
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Chicago",
+   "cpu": 21,
+   "memory": 52,
+   "services": [
+    "ad",
+    "sql2019",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Whistler",
+   "cpu": 21,
+   "memory": 20,
+   "services": [
+    "risapp",
+    "uvcore",
+    "shs"
+   ]
+  }
+ }
+}

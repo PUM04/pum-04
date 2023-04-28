@@ -1,0 +1,82 @@
+{
+ "site_id": "d70u1t_230413",
+ "site_name": "thkveh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Daytona",
+   "cpu": 20,
+   "memory": 51,
+   "services": [
+    "risapp",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Freestyle",
+   "cpu": 12,
+   "memory": 11,
+   "services": [
+    "uvclient",
+    "iss",
+    "ad",
+    "shs",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 17,
+   "memory": 35,
+   "services": [
+    "es",
+    "ad",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 1,
+   "memory": 31,
+   "services": [
+    "uvcore",
+    "iss",
+    "sql2019",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Vanadium",
+   "cpu": 20,
+   "memory": 17,
+   "services": [
+    "ad",
+    "iss",
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 26,
+   "memory": 36,
+   "services": [
+    "dpat",
+    "ids7",
+    "uvcore",
+    "wise",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Emerald",
+   "cpu": 12,
+   "memory": 35,
+   "services": [
+    "uvclient",
+    "es"
+   ]
+  }
+ }
+}

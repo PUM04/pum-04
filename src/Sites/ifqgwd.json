@@ -1,0 +1,79 @@
+{
+ "site_id": "0z12ab_230413",
+ "site_name": "ifqgwd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Redstone_5",
+   "cpu": 14,
+   "memory": 12,
+   "services": [
+    "risapp",
+    "ids7",
+    "dpat",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 21,
+   "memory": 10,
+   "services": [
+    "es",
+    "ids7",
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_4",
+   "cpu": 11,
+   "memory": 1,
+   "services": [
+    "dpat",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 19,
+   "memory": 63,
+   "services": [
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Anvil",
+   "cpu": 3,
+   "memory": 36,
+   "services": [
+    "uvclient",
+    "ids7",
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Longhorn",
+   "cpu": 7,
+   "memory": 55,
+   "services": [
+    "risapp",
+    "dpat",
+    "iss",
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Windows_7",
+   "cpu": 20,
+   "memory": 7,
+   "services": [
+    "sql2019",
+    "dpat"
+   ]
+  }
+ }
+}

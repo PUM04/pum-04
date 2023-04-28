@@ -1,0 +1,95 @@
+{
+ "site_id": "r89v40_230413",
+ "site_name": "yiyema",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Longhorn",
+   "cpu": 19,
+   "memory": 59,
+   "services": [
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Sun_Valley",
+   "cpu": 2,
+   "memory": 47,
+   "services": [
+    "ad",
+    "ids7",
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Razzle",
+   "cpu": 28,
+   "memory": 2,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 30,
+   "memory": 50,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "wise",
+    "dpat",
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold",
+   "cpu": 20,
+   "memory": 6,
+   "services": [
+    "uvcore",
+    "risapp",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Symphony",
+   "cpu": 5,
+   "memory": 55,
+   "services": [
+    "uvcore",
+    "haproxy",
+    "es",
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Vibranium",
+   "cpu": 11,
+   "memory": 8,
+   "services": [
+    "uvclient",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Longhorn",
+   "cpu": 25,
+   "memory": 1,
+   "services": [
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Freestyle",
+   "cpu": 29,
+   "memory": 7,
+   "services": [
+    "ad",
+    "es"
+   ]
+  }
+ }
+}

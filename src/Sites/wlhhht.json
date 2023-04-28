@@ -1,0 +1,38 @@
+{
+ "site_id": "xp9kj3_230413",
+ "site_name": "wlhhht",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Redstone_1",
+   "cpu": 32,
+   "memory": 55,
+   "services": [
+    "riscore",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "ad": {
+   "os": "Memphis",
+   "cpu": 5,
+   "memory": 14,
+   "services": [
+    "ad",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Freestyle",
+   "cpu": 15,
+   "memory": 40,
+   "services": [
+    "dpat",
+    "riscore",
+    "uvcore",
+    "uvclient"
+   ]
+  }
+ }
+}

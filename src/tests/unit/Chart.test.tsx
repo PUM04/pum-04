@@ -159,17 +159,17 @@ response_time_bucket{method="GetImage",le="10"} 0
     render(
       <BarChart
         siteProps={fakeSitePropMap}
-        metrics={['GetPatient','GetImage']}
-        sites={['abc1','abc12','abc123','abc1234','abc12345','abc123456']}
+        metrics={['GetPatient', 'GetImage']}
+        sites={['abc1', 'abc12', 'abc123', 'abc1234', 'abc12345', 'abc123456']}
         fileHandler={fileHandler}
       />
     );
-  
+
     const victoryBars = screen.queryAllByTestId('getdata');
-  
-    victoryBars.forEach((bar, index) => {
+
+    victoryBars.forEach((bar) => {
       const elementWidth = parseFloat(getComputedStyle(bar).width);
-      if(!Number.isNaN(elementWidth)){
+      if (!Number.isNaN(elementWidth)) {
         expect(elementWidth).toBeGreaterThan(6); // change this if we update mergeXvalues's target width
       }
     });

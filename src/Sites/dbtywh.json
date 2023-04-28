@@ -1,0 +1,49 @@
+{
+ "site_id": "bg0klh_230413",
+ "site_name": "dbtywh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Freestyle",
+   "cpu": 19,
+   "memory": 55,
+   "services": [
+    "ids7",
+    "risapp",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Millennium",
+   "cpu": 31,
+   "memory": 26,
+   "services": [
+    "risapp",
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Millennium",
+   "cpu": 10,
+   "memory": 44,
+   "services": [
+    "wise",
+    "haproxy",
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_2",
+   "cpu": 20,
+   "memory": 37,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "risapp"
+   ]
+  }
+ }
+}

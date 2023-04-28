@@ -1,0 +1,81 @@
+{
+ "site_id": "9mk5q1_230413",
+ "site_name": "krmptt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Redstone_4",
+   "cpu": 25,
+   "memory": 54,
+   "services": [
+    "haproxy",
+    "iss",
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_4",
+   "cpu": 9,
+   "memory": 29,
+   "services": [
+    "shs",
+    "risapp",
+    "ids7",
+    "es",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_1",
+   "cpu": 21,
+   "memory": 25,
+   "services": [
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Chicago",
+   "cpu": 32,
+   "memory": 62,
+   "services": [
+    "uvclient",
+    "ids7",
+    "shs",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_8",
+   "cpu": 21,
+   "memory": 54,
+   "services": [
+    "sql2019",
+    "ad",
+    "shs",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_3",
+   "cpu": 4,
+   "memory": 39,
+   "services": [
+    "shs",
+    "ad",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_3",
+   "cpu": 1,
+   "memory": 29,
+   "services": [
+    "risapp",
+    "ad",
+    "iss",
+    "es"
+   ]
+  }
+ }
+}

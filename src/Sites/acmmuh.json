@@ -1,0 +1,70 @@
+{
+ "site_id": "4o3rgo_230413",
+ "site_name": "acmmuh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 21,
+   "memory": 42,
+   "services": [
+    "shs",
+    "iss",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Emerald",
+   "cpu": 7,
+   "memory": 63,
+   "services": [
+    "risapp",
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_7",
+   "cpu": 7,
+   "memory": 1,
+   "services": [
+    "dpat",
+    "haproxy",
+    "iss",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Blue",
+   "cpu": 14,
+   "memory": 13,
+   "services": [
+    "es",
+    "wise",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Daytona",
+   "cpu": 32,
+   "memory": 47,
+   "services": [
+    "haproxy",
+    "dpat",
+    "ad",
+    "shs",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Daytona",
+   "cpu": 30,
+   "memory": 62,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

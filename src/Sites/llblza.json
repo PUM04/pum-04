@@ -1,0 +1,47 @@
+{
+ "site_id": "n130m1_230413",
+ "site_name": "llblza",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Windows_8",
+   "cpu": 27,
+   "memory": 37,
+   "services": [
+    "ids7",
+    "uvcore",
+    "riscore",
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Razzle",
+   "cpu": 14,
+   "memory": 35,
+   "services": [
+    "es",
+    "iss",
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Razzle",
+   "cpu": 18,
+   "memory": 46,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_2",
+   "cpu": 22,
+   "memory": 1,
+   "services": [
+    "sql2019",
+    "wise"
+   ]
+  }
+ }
+}

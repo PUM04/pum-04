@@ -1,0 +1,96 @@
+{
+ "site_id": "8cu4jf_230413",
+ "site_name": "ildelv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Threshold_2",
+   "cpu": 14,
+   "memory": 9,
+   "services": [
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Memphis",
+   "cpu": 26,
+   "memory": 33,
+   "services": [
+    "risapp",
+    "sql2019",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_Valley",
+   "cpu": 12,
+   "memory": 2,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 23,
+   "memory": 51,
+   "services": [
+    "ad",
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Sun_Valley",
+   "cpu": 13,
+   "memory": 60,
+   "services": [
+    "haproxy",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Vibranium",
+   "cpu": 23,
+   "memory": 42,
+   "services": [
+    "risapp",
+    "shs",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Anvil",
+   "cpu": 22,
+   "memory": 16,
+   "services": [
+    "uvcore",
+    "ad",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Anvil",
+   "cpu": 6,
+   "memory": 31,
+   "services": [
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Whistler",
+   "cpu": 18,
+   "memory": 25,
+   "services": [
+    "ids7",
+    "sql2019",
+    "iss",
+    "haproxy"
+   ]
+  }
+ }
+}

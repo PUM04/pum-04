@@ -1,0 +1,59 @@
+{
+ "site_id": "f6b197_230413",
+ "site_name": "tqlmvd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Anvil",
+   "cpu": 3,
+   "memory": 46,
+   "services": [
+    "es",
+    "riscore",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_1",
+   "cpu": 30,
+   "memory": 50,
+   "services": [
+    "dpat",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vanadium",
+   "cpu": 7,
+   "memory": 60,
+   "services": [
+    "iss",
+    "es",
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Whistler",
+   "cpu": 1,
+   "memory": 18,
+   "services": [
+    "haproxy",
+    "es",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Longhorn",
+   "cpu": 29,
+   "memory": 12,
+   "services": [
+    "uvclient",
+    "shs",
+    "sql2019"
+   ]
+  }
+ }
+}

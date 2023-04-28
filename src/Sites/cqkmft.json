@@ -1,0 +1,64 @@
+{
+ "site_id": "l7fit9_230413",
+ "site_name": "cqkmft",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Emerald",
+   "cpu": 19,
+   "memory": 3,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 1,
+   "memory": 1,
+   "services": [
+    "ad",
+    "iss",
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_valley_2",
+   "cpu": 28,
+   "memory": 20,
+   "services": [
+    "shs",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Sparta",
+   "cpu": 17,
+   "memory": 52,
+   "services": [
+    "sql2019",
+    "riscore",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Memphis",
+   "cpu": 17,
+   "memory": 9,
+   "services": [
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 30,
+   "memory": 28,
+   "services": [
+    "sql2019",
+    "ad",
+    "ids7",
+    "iss"
+   ]
+  }
+ }
+}

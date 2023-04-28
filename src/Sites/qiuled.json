@@ -1,0 +1,45 @@
+{
+ "site_id": "k2de71_230413",
+ "site_name": "qiuled",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Razzle",
+   "cpu": 21,
+   "memory": 43,
+   "services": [
+    "es",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Chicago",
+   "cpu": 31,
+   "memory": 61,
+   "services": [
+    "es",
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 28,
+   "memory": 26,
+   "services": [
+    "ad",
+    "iss",
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 31,
+   "memory": 12,
+   "services": [
+    "dpat",
+    "ids7"
+   ]
+  }
+ }
+}

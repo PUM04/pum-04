@@ -1,0 +1,78 @@
+{
+ "site_id": "gffv77_230413",
+ "site_name": "yedgln",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Threshold",
+   "cpu": 14,
+   "memory": 28,
+   "services": [
+    "dpat",
+    "uvclient",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Whistler",
+   "cpu": 16,
+   "memory": 49,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Chicago",
+   "cpu": 29,
+   "memory": 36,
+   "services": [
+    "risapp",
+    "ad",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 26,
+   "memory": 41,
+   "services": [
+    "ids7",
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Snowball",
+   "cpu": 21,
+   "memory": 43,
+   "services": [
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Blue",
+   "cpu": 32,
+   "memory": 5,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Sun_valley_2",
+   "cpu": 24,
+   "memory": 18,
+   "services": [
+    "risapp"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_4",
+   "cpu": 31,
+   "memory": 55,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

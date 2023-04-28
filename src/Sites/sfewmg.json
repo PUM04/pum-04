@@ -1,0 +1,89 @@
+{
+ "site_id": "a1761p_230413",
+ "site_name": "sfewmg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 9,
+   "memory": 37,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "iss",
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Symphony",
+   "cpu": 4,
+   "memory": 50,
+   "services": [
+    "risapp",
+    "es",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Longhorn",
+   "cpu": 32,
+   "memory": 1,
+   "services": [
+    "riscore",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_3",
+   "cpu": 6,
+   "memory": 4,
+   "services": [
+    "sql2019",
+    "wise",
+    "riscore",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Blue",
+   "cpu": 22,
+   "memory": 27,
+   "services": [
+    "shs"
+   ]
+  },
+  "pacsapp": {
+   "os": "Daytona",
+   "cpu": 3,
+   "memory": 47,
+   "services": [
+    "sql2019",
+    "uvcore",
+    "ids7",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Whistler",
+   "cpu": 12,
+   "memory": 35,
+   "services": [
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Razzle",
+   "cpu": 14,
+   "memory": 42,
+   "services": [
+    "risapp",
+    "es",
+    "ids7",
+    "wise"
+   ]
+  }
+ }
+}

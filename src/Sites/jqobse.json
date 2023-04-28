@@ -1,0 +1,64 @@
+{
+ "site_id": "1k6c22_230413",
+ "site_name": "jqobse",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Sparta",
+   "cpu": 20,
+   "memory": 11,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_1",
+   "cpu": 5,
+   "memory": 25,
+   "services": [
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Symphony",
+   "cpu": 26,
+   "memory": 8,
+   "services": [
+    "ids7",
+    "uvclient",
+    "ad",
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 27,
+   "memory": 5,
+   "services": [
+    "ids7",
+    "wise",
+    "es",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Threshold",
+   "cpu": 10,
+   "memory": 34,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Blue",
+   "cpu": 8,
+   "memory": 28,
+   "services": [
+    "ad",
+    "uvclient",
+    "haproxy"
+   ]
+  }
+ }
+}

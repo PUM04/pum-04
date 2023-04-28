@@ -1,0 +1,34 @@
+{
+ "site_id": "lqyv02_230413",
+ "site_name": "evonto",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Threshold",
+   "cpu": 26,
+   "memory": 57,
+   "services": [
+    "dpat",
+    "ad",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vanadium",
+   "cpu": 13,
+   "memory": 47,
+   "services": [
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Snowball",
+   "cpu": 4,
+   "memory": 53,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

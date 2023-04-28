@@ -1,0 +1,26 @@
+{
+ "site_id": "b9748t_230413",
+ "site_name": "uqkxbl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Freestyle",
+   "cpu": 19,
+   "memory": 60,
+   "services": [
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Millennium",
+   "cpu": 20,
+   "memory": 4,
+   "services": [
+    "sql2019",
+    "ad",
+    "iss"
+   ]
+  }
+ }
+}

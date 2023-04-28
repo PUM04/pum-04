@@ -1,0 +1,43 @@
+{
+ "site_id": "gb3d06_230413",
+ "site_name": "bwdhli",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Blue",
+   "cpu": 30,
+   "memory": 39,
+   "services": [
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Snowball",
+   "cpu": 22,
+   "memory": 57,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 8,
+   "memory": 36,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Razzle",
+   "cpu": 30,
+   "memory": 40,
+   "services": [
+    "iss",
+    "ad",
+    "risapp"
+   ]
+  }
+ }
+}

@@ -1,0 +1,97 @@
+{
+ "site_id": "243kh0_230413",
+ "site_name": "netqsz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Whistler",
+   "cpu": 30,
+   "memory": 22,
+   "services": [
+    "ids7",
+    "haproxy",
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 26,
+   "memory": 42,
+   "services": [
+    "es",
+    "dpat",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Emerald",
+   "cpu": 4,
+   "memory": 24,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Memphis",
+   "cpu": 20,
+   "memory": 43,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Longhorn",
+   "cpu": 26,
+   "memory": 64,
+   "services": [
+    "haproxy",
+    "ids7",
+    "wise",
+    "ad",
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 7,
+   "memory": 46,
+   "services": [
+    "ad",
+    "riscore",
+    "es",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Freestyle",
+   "cpu": 24,
+   "memory": 15,
+   "services": [
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_2",
+   "cpu": 23,
+   "memory": 11,
+   "services": [
+    "uvcore",
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Harmony",
+   "cpu": 28,
+   "memory": 4,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

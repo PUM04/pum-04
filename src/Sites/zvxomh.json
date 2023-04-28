@@ -1,0 +1,89 @@
+{
+ "site_id": "2u28a2_230413",
+ "site_name": "zvxomh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 6,
+   "memory": 26,
+   "services": [
+    "iss",
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Windows_7",
+   "cpu": 6,
+   "memory": 16,
+   "services": [
+    "ad",
+    "haproxy",
+    "shs",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 3,
+   "memory": 64,
+   "services": [
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_Valley",
+   "cpu": 6,
+   "memory": 59,
+   "services": [
+    "es",
+    "shs",
+    "iss",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 2,
+   "memory": 46,
+   "services": [
+    "dpat",
+    "ids7",
+    "ad",
+    "wise",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 6,
+   "memory": 49,
+   "services": [
+    "riscore",
+    "dpat",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "sss": {
+   "os": "Harmony",
+   "cpu": 9,
+   "memory": 30,
+   "services": [
+    "shs",
+    "dpat",
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Symphony",
+   "cpu": 9,
+   "memory": 3,
+   "services": [
+    "uvclient",
+    "riscore"
+   ]
+  }
+ }
+}

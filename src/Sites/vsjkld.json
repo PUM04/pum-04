@@ -1,0 +1,49 @@
+{
+ "site_id": "a7907m_230413",
+ "site_name": "vsjkld",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Longhorn",
+   "cpu": 19,
+   "memory": 16,
+   "services": [
+    "risapp",
+    "dpat"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 8,
+   "memory": 56,
+   "services": [
+    "sql2019",
+    "wise",
+    "iss",
+    "ad",
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Snowball",
+   "cpu": 30,
+   "memory": 13,
+   "services": [
+    "ids7",
+    "iss",
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Sparta",
+   "cpu": 10,
+   "memory": 18,
+   "services": [
+    "shs",
+    "ad",
+    "wise"
+   ]
+  }
+ }
+}

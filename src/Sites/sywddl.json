@@ -1,0 +1,55 @@
+{
+ "site_id": "86qa0j_230413",
+ "site_name": "sywddl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Daytona",
+   "cpu": 2,
+   "memory": 59,
+   "services": [
+    "haproxy",
+    "es",
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "sss": {
+   "os": "Vanadium",
+   "cpu": 27,
+   "memory": 53,
+   "services": [
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 12,
+   "memory": 30,
+   "services": [
+    "risapp",
+    "uvclient",
+    "ids7",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Emerald",
+   "cpu": 9,
+   "memory": 58,
+   "services": [
+    "es",
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Whistler",
+   "cpu": 18,
+   "memory": 23,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

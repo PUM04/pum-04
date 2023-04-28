@@ -1,0 +1,88 @@
+{
+ "site_id": "25o90h_230413",
+ "site_name": "zauaph",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Redstone_4",
+   "cpu": 18,
+   "memory": 47,
+   "services": [
+    "ad",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Whistler",
+   "cpu": 28,
+   "memory": 49,
+   "services": [
+    "uvclient",
+    "riscore",
+    "iss",
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_3",
+   "cpu": 7,
+   "memory": 13,
+   "services": [
+    "iss",
+    "ids7",
+    "riscore",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 14,
+   "memory": 30,
+   "services": [
+    "dpat",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Longhorn",
+   "cpu": 1,
+   "memory": 54,
+   "services": [
+    "ad",
+    "es",
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Freestyle",
+   "cpu": 29,
+   "memory": 43,
+   "services": [
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Chicago",
+   "cpu": 32,
+   "memory": 41,
+   "services": [
+    "es",
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Symphony",
+   "cpu": 32,
+   "memory": 39,
+   "services": [
+    "risapp",
+    "riscore",
+    "sql2019",
+    "es",
+    "wise"
+   ]
+  }
+ }
+}

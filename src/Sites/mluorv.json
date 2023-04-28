@@ -1,0 +1,35 @@
+{
+ "site_id": "2n35fq_230413",
+ "site_name": "mluorv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 2,
+   "memory": 62,
+   "services": [
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Snowball",
+   "cpu": 23,
+   "memory": 21,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Anvil",
+   "cpu": 13,
+   "memory": 53,
+   "services": [
+    "iss",
+    "ids7",
+    "ad",
+    "risapp"
+   ]
+  }
+ }
+}

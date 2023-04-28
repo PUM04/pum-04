@@ -1,0 +1,78 @@
+{
+ "site_id": "k1kf2o_230413",
+ "site_name": "cuhsdk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Threshold",
+   "cpu": 3,
+   "memory": 30,
+   "services": [
+    "riscore",
+    "uvclient",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 7,
+   "memory": 62,
+   "services": [
+    "riscore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Whistler",
+   "cpu": 29,
+   "memory": 25,
+   "services": [
+    "wise",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Longhorn",
+   "cpu": 31,
+   "memory": 12,
+   "services": [
+    "riscore",
+    "ids7",
+    "haproxy",
+    "shs"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_5",
+   "cpu": 16,
+   "memory": 62,
+   "services": [
+    "dpat",
+    "es",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_2",
+   "cpu": 23,
+   "memory": 45,
+   "services": [
+    "ad",
+    "haproxy",
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Whistler",
+   "cpu": 8,
+   "memory": 27,
+   "services": [
+    "shs",
+    "sql2019",
+    "uvclient",
+    "dpat"
+   ]
+  }
+ }
+}

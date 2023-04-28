@@ -1,0 +1,103 @@
+{
+ "site_id": "fsi3ah_230413",
+ "site_name": "yfdmsf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Daytona",
+   "cpu": 14,
+   "memory": 33,
+   "services": [
+    "dpat",
+    "wise",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Daytona",
+   "cpu": 9,
+   "memory": 25,
+   "services": [
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 28,
+   "memory": 63,
+   "services": [
+    "shs",
+    "ad",
+    "iss",
+    "dpat",
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Millennium",
+   "cpu": 17,
+   "memory": 64,
+   "services": [
+    "wise",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Redstone_4",
+   "cpu": 28,
+   "memory": 53,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "wise",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold",
+   "cpu": 17,
+   "memory": 37,
+   "services": [
+    "ids7",
+    "iss",
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 19,
+   "memory": 58,
+   "services": [
+    "uvcore",
+    "riscore",
+    "uvclient",
+    "ad",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Sun_valley_2",
+   "cpu": 9,
+   "memory": 20,
+   "services": [
+    "iss",
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Millennium",
+   "cpu": 9,
+   "memory": 45,
+   "services": [
+    "ad",
+    "riscore",
+    "iss",
+    "wise"
+   ]
+  }
+ }
+}

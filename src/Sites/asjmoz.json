@@ -1,0 +1,101 @@
+{
+ "site_id": "tydbvn_230413",
+ "site_name": "asjmoz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Freestyle",
+   "cpu": 5,
+   "memory": 46,
+   "services": [
+    "es",
+    "wise",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Anvil",
+   "cpu": 1,
+   "memory": 64,
+   "services": [
+    "sql2019",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Sparta",
+   "cpu": 21,
+   "memory": 16,
+   "services": [
+    "risapp",
+    "uvclient",
+    "ad",
+    "riscore",
+    "shs"
+   ]
+  },
+  "ad": {
+   "os": "Snowball",
+   "cpu": 15,
+   "memory": 26,
+   "services": [
+    "dpat",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Harmony",
+   "cpu": 17,
+   "memory": 61,
+   "services": [
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Redstone_1",
+   "cpu": 4,
+   "memory": 34,
+   "services": [
+    "dpat",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_7",
+   "cpu": 4,
+   "memory": 53,
+   "services": [
+    "risapp",
+    "es",
+    "iss",
+    "shs",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Millennium",
+   "cpu": 25,
+   "memory": 21,
+   "services": [
+    "riscore",
+    "haproxy",
+    "ids7",
+    "wise",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Harmony",
+   "cpu": 18,
+   "memory": 40,
+   "services": [
+    "haproxy",
+    "risapp",
+    "es",
+    "uvclient"
+   ]
+  }
+ }
+}

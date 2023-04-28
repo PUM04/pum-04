@@ -1,0 +1,56 @@
+{
+ "site_id": "60cal1_230413",
+ "site_name": "xxyvou",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Windows_8",
+   "cpu": 19,
+   "memory": 35,
+   "services": [
+    "risapp",
+    "dpat",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 31,
+   "memory": 55,
+   "services": [
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Whistler",
+   "cpu": 4,
+   "memory": 16,
+   "services": [
+    "ad",
+    "haproxy"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_8",
+   "cpu": 8,
+   "memory": 11,
+   "services": [
+    "ad",
+    "wise",
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Freestyle",
+   "cpu": 5,
+   "memory": 31,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

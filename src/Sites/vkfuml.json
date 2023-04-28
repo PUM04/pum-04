@@ -1,0 +1,99 @@
+{
+ "site_id": "l0it75_230413",
+ "site_name": "vkfuml",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Snowball",
+   "cpu": 7,
+   "memory": 61,
+   "services": [
+    "ids7",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Vanadium",
+   "cpu": 1,
+   "memory": 57,
+   "services": [
+    "ad",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Anvil",
+   "cpu": 5,
+   "memory": 58,
+   "services": [
+    "riscore",
+    "ad",
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_valley_2",
+   "cpu": 31,
+   "memory": 61,
+   "services": [
+    "ids7",
+    "haproxy",
+    "shs",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Freestyle",
+   "cpu": 32,
+   "memory": 4,
+   "services": [
+    "shs",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_4",
+   "cpu": 26,
+   "memory": 8,
+   "services": [
+    "ad",
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_1",
+   "cpu": 32,
+   "memory": 4,
+   "services": [
+    "sql2019",
+    "ad",
+    "riscore",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 31,
+   "memory": 34,
+   "services": [
+    "ad",
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold_2",
+   "cpu": 26,
+   "memory": 57,
+   "services": [
+    "haproxy",
+    "dpat",
+    "iss",
+    "ids7"
+   ]
+  }
+ }
+}

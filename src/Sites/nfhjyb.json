@@ -1,0 +1,46 @@
+{
+ "site_id": "nh28tq_230413",
+ "site_name": "nfhjyb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Chicago",
+   "cpu": 20,
+   "memory": 51,
+   "services": [
+    "ids7",
+    "es",
+    "shs",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold_2",
+   "cpu": 16,
+   "memory": 50,
+   "services": [
+    "wise",
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Daytona",
+   "cpu": 7,
+   "memory": 36,
+   "services": [
+    "ad",
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_8",
+   "cpu": 10,
+   "memory": 59,
+   "services": [
+    "ad",
+    "riscore"
+   ]
+  }
+ }
+}

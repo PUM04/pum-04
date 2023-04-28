@@ -1,0 +1,59 @@
+{
+ "site_id": "o9y2el_230413",
+ "site_name": "olezbx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 28,
+   "memory": 5,
+   "services": [
+    "shs",
+    "haproxy",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_8",
+   "cpu": 27,
+   "memory": 21,
+   "services": [
+    "shs",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Daytona",
+   "cpu": 1,
+   "memory": 58,
+   "services": [
+    "es",
+    "uvcore",
+    "shs"
+   ]
+  },
+  "pacscore": {
+   "os": "Razzle",
+   "cpu": 15,
+   "memory": 40,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Threshold_2",
+   "cpu": 19,
+   "memory": 53,
+   "services": [
+    "wise",
+    "ids7",
+    "haproxy",
+    "uvclient",
+    "shs"
+   ]
+  }
+ }
+}

@@ -1,0 +1,82 @@
+{
+ "site_id": "5ey615_230413",
+ "site_name": "sfkgfs",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Windows_7",
+   "cpu": 26,
+   "memory": 27,
+   "services": [
+    "shs",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_valley_2",
+   "cpu": 7,
+   "memory": 44,
+   "services": [
+    "es",
+    "shs",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 3,
+   "memory": 60,
+   "services": [
+    "uvcore",
+    "es",
+    "shs",
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Sun_valley_2",
+   "cpu": 27,
+   "memory": 13,
+   "services": [
+    "es",
+    "wise",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 9,
+   "memory": 21,
+   "services": [
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Longhorn",
+   "cpu": 28,
+   "memory": 48,
+   "services": [
+    "haproxy",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold_2",
+   "cpu": 27,
+   "memory": 11,
+   "services": [
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Vibranium",
+   "cpu": 6,
+   "memory": 39,
+   "services": [
+    "wise",
+    "ids7"
+   ]
+  }
+ }
+}

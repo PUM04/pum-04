@@ -1,0 +1,16 @@
+{
+ "site_id": "7ex1ni_230413",
+ "site_name": "knlcdi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Chicago",
+   "cpu": 25,
+   "memory": 7,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

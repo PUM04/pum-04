@@ -1,0 +1,19 @@
+{
+ "site_id": "3af7eu_230413",
+ "site_name": "wpqire",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Vibranium",
+   "cpu": 1,
+   "memory": 7,
+   "services": [
+    "ad",
+    "risapp",
+    "shs",
+    "riscore"
+   ]
+  }
+ }
+}

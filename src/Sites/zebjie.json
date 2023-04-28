@@ -1,0 +1,41 @@
+{
+ "site_id": "9ie2c6_230413",
+ "site_name": "zebjie",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Snowball",
+   "cpu": 12,
+   "memory": 51,
+   "services": [
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_1",
+   "cpu": 28,
+   "memory": 30,
+   "services": [
+    "ids7",
+    "dpat",
+    "iss",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Sparta",
+   "cpu": 26,
+   "memory": 19,
+   "services": [
+    "iss",
+    "wise",
+    "shs",
+    "risapp",
+    "ad"
+   ]
+  }
+ }
+}

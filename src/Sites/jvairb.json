@@ -1,0 +1,96 @@
+{
+ "site_id": "l4jpb2_230413",
+ "site_name": "jvairb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 21,
+   "memory": 3,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_3",
+   "cpu": 9,
+   "memory": 60,
+   "services": [
+    "haproxy",
+    "shs",
+    "wise",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_7",
+   "cpu": 28,
+   "memory": 42,
+   "services": [
+    "haproxy",
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Memphis",
+   "cpu": 29,
+   "memory": 30,
+   "services": [
+    "es",
+    "riscore",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Anvil",
+   "cpu": 11,
+   "memory": 14,
+   "services": [
+    "uvcore",
+    "iss",
+    "shs",
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 26,
+   "memory": 44,
+   "services": [
+    "sql2019",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_3",
+   "cpu": 19,
+   "memory": 37,
+   "services": [
+    "iss",
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Harmony",
+   "cpu": 2,
+   "memory": 1,
+   "services": [
+    "ids7",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Whistler",
+   "cpu": 4,
+   "memory": 45,
+   "services": [
+    "iss",
+    "riscore",
+    "shs"
+   ]
+  }
+ }
+}

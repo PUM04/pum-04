@@ -1,0 +1,48 @@
+{
+ "site_id": "4xul7n_230413",
+ "site_name": "phnvdx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Longhorn",
+   "cpu": 31,
+   "memory": 46,
+   "services": [
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold",
+   "cpu": 23,
+   "memory": 13,
+   "services": [
+    "riscore",
+    "iss",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 12,
+   "memory": 33,
+   "services": [
+    "riscore",
+    "wise",
+    "dpat",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_8",
+   "cpu": 23,
+   "memory": 22,
+   "services": [
+    "iss",
+    "ad",
+    "shs"
+   ]
+  }
+ }
+}

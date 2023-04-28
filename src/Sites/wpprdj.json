@@ -1,0 +1,108 @@
+{
+ "site_id": "svmi75_230413",
+ "site_name": "wpprdj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Redstone_1",
+   "cpu": 15,
+   "memory": 59,
+   "services": [
+    "uvcore",
+    "wise",
+    "es",
+    "ids7",
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vanadium",
+   "cpu": 4,
+   "memory": 7,
+   "services": [
+    "risapp",
+    "ad",
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 22,
+   "memory": 61,
+   "services": [
+    "uvclient",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_3",
+   "cpu": 20,
+   "memory": 53,
+   "services": [
+    "dpat",
+    "iss",
+    "haproxy",
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold_2",
+   "cpu": 14,
+   "memory": 38,
+   "services": [
+    "ids7",
+    "iss",
+    "es",
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Sparta",
+   "cpu": 6,
+   "memory": 8,
+   "services": [
+    "wise",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 27,
+   "memory": 61,
+   "services": [
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Whistler",
+   "cpu": 27,
+   "memory": 27,
+   "services": [
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 14,
+   "memory": 9,
+   "services": [
+    "haproxy",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Emerald",
+   "cpu": 29,
+   "memory": 20,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

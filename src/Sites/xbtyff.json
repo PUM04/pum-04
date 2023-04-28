@@ -1,0 +1,88 @@
+{
+ "site_id": "c0w3x8_230413",
+ "site_name": "xbtyff",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Redstone_4",
+   "cpu": 17,
+   "memory": 29,
+   "services": [
+    "uvcore",
+    "wise",
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Sparta",
+   "cpu": 23,
+   "memory": 59,
+   "services": [
+    "wise",
+    "riscore",
+    "iss",
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Freestyle",
+   "cpu": 22,
+   "memory": 62,
+   "services": [
+    "es",
+    "shs",
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_7",
+   "cpu": 5,
+   "memory": 43,
+   "services": [
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_7",
+   "cpu": 26,
+   "memory": 63,
+   "services": [
+    "haproxy",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vanadium",
+   "cpu": 8,
+   "memory": 12,
+   "services": [
+    "wise",
+    "haproxy",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Harmony",
+   "cpu": 10,
+   "memory": 48,
+   "services": [
+    "riscore",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Sun_Valley",
+   "cpu": 32,
+   "memory": 16,
+   "services": [
+    "wise",
+    "shs"
+   ]
+  }
+ }
+}

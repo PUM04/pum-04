@@ -1,0 +1,16 @@
+{
+ "site_id": "f2zwy0_230413",
+ "site_name": "zqczsk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Windows_8",
+   "cpu": 3,
+   "memory": 64,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "site_id": "uuo156_230413",
+ "site_name": "bdakud",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Daytona",
+   "cpu": 14,
+   "memory": 54,
+   "services": [
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Sun_Valley",
+   "cpu": 4,
+   "memory": 60,
+   "services": [
+    "shs",
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 17,
+   "memory": 40,
+   "services": [
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Snowball",
+   "cpu": 19,
+   "memory": 43,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

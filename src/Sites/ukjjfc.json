@@ -1,0 +1,87 @@
+{
+ "site_id": "9tyxr6_230413",
+ "site_name": "ukjjfc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Redstone_2",
+   "cpu": 18,
+   "memory": 35,
+   "services": [
+    "ids7",
+    "wise",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 10,
+   "memory": 29,
+   "services": [
+    "riscore",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Symphony",
+   "cpu": 24,
+   "memory": 12,
+   "services": [
+    "uvcore",
+    "shs",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 17,
+   "memory": 1,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sparta",
+   "cpu": 30,
+   "memory": 1,
+   "services": [
+    "sql2019",
+    "iss",
+    "wise",
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 20,
+   "memory": 33,
+   "services": [
+    "ids7",
+    "uvcore",
+    "uvclient",
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 24,
+   "memory": 54,
+   "services": [
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_8",
+   "cpu": 28,
+   "memory": 3,
+   "services": [
+    "uvcore",
+    "ad",
+    "sql2019"
+   ]
+  }
+ }
+}

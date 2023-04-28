@@ -1,0 +1,47 @@
+{
+ "site_id": "f4gi4w_230413",
+ "site_name": "namaku",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Whistler",
+   "cpu": 10,
+   "memory": 26,
+   "services": [
+    "uvclient",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_5",
+   "cpu": 1,
+   "memory": 40,
+   "services": [
+    "es",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_3",
+   "cpu": 27,
+   "memory": 28,
+   "services": [
+    "risapp",
+    "shs",
+    "uvcore",
+    "ad",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold_2",
+   "cpu": 7,
+   "memory": 22,
+   "services": [
+    "ids7",
+    "uvclient"
+   ]
+  }
+ }
+}

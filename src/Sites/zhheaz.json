@@ -1,0 +1,83 @@
+{
+ "site_id": "ckef38_230413",
+ "site_name": "zhheaz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Redstone_5",
+   "cpu": 8,
+   "memory": 44,
+   "services": [
+    "ids7",
+    "haproxy",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 29,
+   "memory": 46,
+   "services": [
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Threshold",
+   "cpu": 31,
+   "memory": 52,
+   "services": [
+    "risapp",
+    "ad",
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Vibranium",
+   "cpu": 3,
+   "memory": 15,
+   "services": [
+    "wise",
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_2",
+   "cpu": 5,
+   "memory": 50,
+   "services": [
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 10,
+   "memory": 19,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Chicago",
+   "cpu": 2,
+   "memory": 10,
+   "services": [
+    "uvcore",
+    "haproxy",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Vibranium",
+   "cpu": 12,
+   "memory": 30,
+   "services": [
+    "es",
+    "uvcore",
+    "ids7"
+   ]
+  }
+ }
+}

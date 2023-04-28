@@ -1,0 +1,60 @@
+{
+ "site_id": "1x298t_230413",
+ "site_name": "mwywai",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 32,
+   "memory": 20,
+   "services": [
+    "riscore",
+    "uvclient",
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold",
+   "cpu": 16,
+   "memory": 45,
+   "services": [
+    "ad",
+    "wise",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_4",
+   "cpu": 32,
+   "memory": 42,
+   "services": [
+    "wise",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Razzle",
+   "cpu": 22,
+   "memory": 3,
+   "services": [
+    "sql2019",
+    "ids7",
+    "wise",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 13,
+   "memory": 51,
+   "services": [
+    "sql2019",
+    "uvcore",
+    "iss",
+    "riscore"
+   ]
+  }
+ }
+}

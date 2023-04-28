@@ -1,0 +1,50 @@
+{
+ "site_id": "5q6nn8_230413",
+ "site_name": "tjxfao",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 12,
+   "memory": 22,
+   "services": [
+    "riscore",
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Vibranium",
+   "cpu": 31,
+   "memory": 1,
+   "services": [
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Sparta",
+   "cpu": 4,
+   "memory": 26,
+   "services": [
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold_2",
+   "cpu": 30,
+   "memory": 13,
+   "services": [
+    "haproxy",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Blue",
+   "cpu": 9,
+   "memory": 43,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "site_id": "6ow796_230413",
+ "site_name": "uovyxc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Anvil",
+   "cpu": 6,
+   "memory": 42,
+   "services": [
+    "ad",
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_1",
+   "cpu": 26,
+   "memory": 25,
+   "services": [
+    "iss",
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Blue",
+   "cpu": 23,
+   "memory": 12,
+   "services": [
+    "ad",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Freestyle",
+   "cpu": 4,
+   "memory": 54,
+   "services": [
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Harmony",
+   "cpu": 17,
+   "memory": 60,
+   "services": [
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_4",
+   "cpu": 1,
+   "memory": 60,
+   "services": [
+    "haproxy",
+    "iss",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Emerald",
+   "cpu": 17,
+   "memory": 35,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "iss",
+    "riscore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Whistler",
+   "cpu": 26,
+   "memory": 11,
+   "services": [
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_3",
+   "cpu": 15,
+   "memory": 38,
+   "services": [
+    "risapp",
+    "ad",
+    "uvclient"
+   ]
+  }
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "site_id": "1wel63_230413",
+ "site_name": "jusnup",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Symphony",
+   "cpu": 31,
+   "memory": 9,
+   "services": [
+    "uvcore",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Razzle",
+   "cpu": 26,
+   "memory": 42,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_5",
+   "cpu": 4,
+   "memory": 20,
+   "services": [
+    "shs",
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Daytona",
+   "cpu": 13,
+   "memory": 39,
+   "services": [
+    "shs",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 18,
+   "memory": 8,
+   "services": [
+    "dpat",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Longhorn",
+   "cpu": 8,
+   "memory": 39,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 16,
+   "memory": 54,
+   "services": [
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Blue",
+   "cpu": 27,
+   "memory": 60,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "ad",
+    "risapp",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Millennium",
+   "cpu": 2,
+   "memory": 44,
+   "services": [
+    "shs",
+    "dpat"
+   ]
+  }
+ }
+}

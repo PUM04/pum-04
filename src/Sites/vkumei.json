@@ -1,0 +1,87 @@
+{
+ "site_id": "3yf005_230413",
+ "site_name": "vkumei",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Windows_8",
+   "cpu": 11,
+   "memory": 8,
+   "services": [
+    "ad",
+    "risapp",
+    "haproxy",
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Windows_7",
+   "cpu": 22,
+   "memory": 45,
+   "services": [
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_4",
+   "cpu": 12,
+   "memory": 12,
+   "services": [
+    "riscore",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_valley_2",
+   "cpu": 28,
+   "memory": 62,
+   "services": [
+    "ad",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Freestyle",
+   "cpu": 30,
+   "memory": 32,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Vibranium",
+   "cpu": 9,
+   "memory": 16,
+   "services": [
+    "riscore",
+    "haproxy",
+    "wise",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 31,
+   "memory": 62,
+   "services": [
+    "riscore",
+    "uvclient",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Vanadium",
+   "cpu": 29,
+   "memory": 63,
+   "services": [
+    "iss",
+    "ids7",
+    "es",
+    "uvclient"
+   ]
+  }
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "site_id": "6b64r2_230413",
+ "site_name": "noqejm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Daytona",
+   "cpu": 6,
+   "memory": 44,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_4",
+   "cpu": 24,
+   "memory": 17,
+   "services": [
+    "haproxy",
+    "risapp",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Anvil",
+   "cpu": 19,
+   "memory": 31,
+   "services": [
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Memphis",
+   "cpu": 6,
+   "memory": 44,
+   "services": [
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "pacscore": {
+   "os": "Whistler",
+   "cpu": 2,
+   "memory": 2,
+   "services": [
+    "dpat",
+    "uvcore"
+   ]
+  }
+ }
+}

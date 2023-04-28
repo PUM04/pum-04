@@ -1,0 +1,76 @@
+{
+ "site_id": "w7b9te_230413",
+ "site_name": "osbtbu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Chicago",
+   "cpu": 11,
+   "memory": 39,
+   "services": [
+    "wise",
+    "ad",
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_3",
+   "cpu": 15,
+   "memory": 27,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vibranium",
+   "cpu": 29,
+   "memory": 57,
+   "services": [
+    "shs",
+    "ad",
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 18,
+   "memory": 53,
+   "services": [
+    "iss",
+    "haproxy",
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Symphony",
+   "cpu": 25,
+   "memory": 50,
+   "services": [
+    "shs",
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 18,
+   "memory": 16,
+   "services": [
+    "iss",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 22,
+   "memory": 27,
+   "services": [
+    "haproxy",
+    "sql2019",
+    "dpat",
+    "wise"
+   ]
+  }
+ }
+}

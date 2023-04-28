@@ -1,0 +1,16 @@
+{
+ "site_id": "f2vnfh_230413",
+ "site_name": "zuxztx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Threshold",
+   "cpu": 28,
+   "memory": 4,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

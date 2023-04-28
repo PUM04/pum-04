@@ -1,0 +1,53 @@
+{
+ "site_id": "nqhd13_230413",
+ "site_name": "ivrrro",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Sparta",
+   "cpu": 13,
+   "memory": 57,
+   "services": [
+    "sql2019",
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_8",
+   "cpu": 26,
+   "memory": 62,
+   "services": [
+    "dpat",
+    "es",
+    "risapp",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Millennium",
+   "cpu": 23,
+   "memory": 29,
+   "services": [
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Daytona",
+   "cpu": 27,
+   "memory": 24,
+   "services": [
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold_2",
+   "cpu": 18,
+   "memory": 20,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

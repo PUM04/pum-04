@@ -1,0 +1,85 @@
+{
+ "site_id": "hy462w_230413",
+ "site_name": "pnkwjg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Longhorn",
+   "cpu": 19,
+   "memory": 9,
+   "services": [
+    "haproxy",
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Windows_7",
+   "cpu": 19,
+   "memory": 9,
+   "services": [
+    "wise",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Millennium",
+   "cpu": 26,
+   "memory": 52,
+   "services": [
+    "wise",
+    "risapp",
+    "shs",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Sun_Valley",
+   "cpu": 7,
+   "memory": 18,
+   "services": [
+    "risapp",
+    "shs",
+    "dpat",
+    "es",
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold",
+   "cpu": 13,
+   "memory": 28,
+   "services": [
+    "shs",
+    "uvcore",
+    "wise",
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_7",
+   "cpu": 21,
+   "memory": 1,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Millennium",
+   "cpu": 12,
+   "memory": 1,
+   "services": [
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Millennium",
+   "cpu": 29,
+   "memory": 37,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

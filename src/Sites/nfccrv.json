@@ -1,0 +1,105 @@
+{
+ "site_id": "xz20al_230413",
+ "site_name": "nfccrv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Harmony",
+   "cpu": 19,
+   "memory": 50,
+   "services": [
+    "es",
+    "uvclient",
+    "shs",
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Blue",
+   "cpu": 3,
+   "memory": 44,
+   "services": [
+    "wise",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Whistler",
+   "cpu": 2,
+   "memory": 27,
+   "services": [
+    "risapp",
+    "haproxy",
+    "riscore",
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vanadium",
+   "cpu": 23,
+   "memory": 16,
+   "services": [
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_1",
+   "cpu": 28,
+   "memory": 55,
+   "services": [
+    "haproxy",
+    "wise"
+   ]
+  },
+  "sqlla": {
+   "os": "Emerald",
+   "cpu": 19,
+   "memory": 16,
+   "services": [
+    "ids7",
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Chicago",
+   "cpu": 26,
+   "memory": 55,
+   "services": [
+    "wise",
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Memphis",
+   "cpu": 16,
+   "memory": 59,
+   "services": [
+    "sql2019",
+    "riscore",
+    "ad",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Emerald",
+   "cpu": 15,
+   "memory": 13,
+   "services": [
+    "es",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Vanadium",
+   "cpu": 21,
+   "memory": 20,
+   "services": [
+    "iss",
+    "dpat",
+    "haproxy"
+   ]
+  }
+ }
+}

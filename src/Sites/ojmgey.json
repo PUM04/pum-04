@@ -1,0 +1,29 @@
+{
+ "site_id": "193i02_230413",
+ "site_name": "ojmgey",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Threshold",
+   "cpu": 16,
+   "memory": 19,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "wise",
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_1",
+   "cpu": 13,
+   "memory": 60,
+   "services": [
+    "haproxy",
+    "risapp"
+   ]
+  }
+ }
+}

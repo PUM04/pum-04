@@ -1,0 +1,82 @@
+{
+ "site_id": "b6923t_230413",
+ "site_name": "ltbxwr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Threshold",
+   "cpu": 8,
+   "memory": 10,
+   "services": [
+    "risapp",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Razzle",
+   "cpu": 22,
+   "memory": 19,
+   "services": [
+    "es",
+    "riscore",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Sparta",
+   "cpu": 10,
+   "memory": 41,
+   "services": [
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Threshold",
+   "cpu": 4,
+   "memory": 29,
+   "services": [
+    "wise",
+    "es",
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Millennium",
+   "cpu": 16,
+   "memory": 39,
+   "services": [
+    "es",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_4",
+   "cpu": 29,
+   "memory": 23,
+   "services": [
+    "iss",
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Threshold_2",
+   "cpu": 11,
+   "memory": 51,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_3",
+   "cpu": 7,
+   "memory": 25,
+   "services": [
+    "dpat",
+    "uvclient",
+    "uvcore",
+    "wise"
+   ]
+  }
+ }
+}

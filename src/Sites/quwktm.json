@@ -1,0 +1,49 @@
+{
+ "site_id": "ypam65_230413",
+ "site_name": "quwktm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Harmony",
+   "cpu": 24,
+   "memory": 14,
+   "services": [
+    "haproxy",
+    "ad",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 7,
+   "memory": 14,
+   "services": [
+    "ids7",
+    "risapp",
+    "es",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 3,
+   "memory": 18,
+   "services": [
+    "ids7",
+    "wise"
+   ]
+  },
+  "sss": {
+   "os": "Memphis",
+   "cpu": 11,
+   "memory": 34,
+   "services": [
+    "uvcore",
+    "ids7",
+    "dpat",
+    "wise"
+   ]
+  }
+ }
+}

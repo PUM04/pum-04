@@ -1,0 +1,90 @@
+{
+ "site_id": "4rv3x6_230413",
+ "site_name": "cfmmwi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Chicago",
+   "cpu": 9,
+   "memory": 55,
+   "services": [
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 23,
+   "memory": 62,
+   "services": [
+    "ad",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 15,
+   "memory": 38,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 21,
+   "memory": 33,
+   "services": [
+    "dpat",
+    "ad",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_4",
+   "cpu": 28,
+   "memory": 10,
+   "services": [
+    "shs",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Harmony",
+   "cpu": 3,
+   "memory": 33,
+   "services": [
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sparta",
+   "cpu": 4,
+   "memory": 6,
+   "services": [
+    "uvcore",
+    "iss",
+    "shs",
+    "es",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 12,
+   "memory": 61,
+   "services": [
+    "sql2019",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Emerald",
+   "cpu": 6,
+   "memory": 25,
+   "services": [
+    "dpat"
+   ]
+  }
+ }
+}

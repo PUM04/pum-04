@@ -1,0 +1,71 @@
+{
+ "site_id": "me1nmv_230413",
+ "site_name": "vlydyp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 6,
+   "memory": 47,
+   "services": [
+    "es",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Blue",
+   "cpu": 15,
+   "memory": 31,
+   "services": [
+    "dpat",
+    "iss",
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Emerald",
+   "cpu": 14,
+   "memory": 13,
+   "services": [
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold",
+   "cpu": 12,
+   "memory": 50,
+   "services": [
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Whistler",
+   "cpu": 32,
+   "memory": 44,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Sun_valley_2",
+   "cpu": 20,
+   "memory": 29,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "wise",
+    "risapp"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold_2",
+   "cpu": 2,
+   "memory": 9,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

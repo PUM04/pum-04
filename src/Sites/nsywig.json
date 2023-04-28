@@ -1,0 +1,92 @@
+{
+ "site_id": "t33k4y_230413",
+ "site_name": "nsywig",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 13,
+   "memory": 13,
+   "services": [
+    "ids7",
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Memphis",
+   "cpu": 24,
+   "memory": 18,
+   "services": [
+    "es",
+    "uvcore",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_Valley",
+   "cpu": 19,
+   "memory": 24,
+   "services": [
+    "haproxy",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Vanadium",
+   "cpu": 26,
+   "memory": 8,
+   "services": [
+    "es",
+    "dpat",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_7",
+   "cpu": 22,
+   "memory": 16,
+   "services": [
+    "ad",
+    "shs",
+    "uvclient",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 6,
+   "memory": 61,
+   "services": [
+    "ids7",
+    "iss",
+    "shs",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Windows_7",
+   "cpu": 26,
+   "memory": 50,
+   "services": [
+    "ad",
+    "iss",
+    "shs"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_4",
+   "cpu": 12,
+   "memory": 34,
+   "services": [
+    "dpat",
+    "uvclient",
+    "haproxy",
+    "uvcore",
+    "sql2019"
+   ]
+  }
+ }
+}

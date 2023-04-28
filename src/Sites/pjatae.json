@@ -1,0 +1,80 @@
+{
+ "site_id": "u8m55s_230413",
+ "site_name": "pjatae",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Sun_Valley",
+   "cpu": 25,
+   "memory": 12,
+   "services": [
+    "dpat",
+    "sql2019",
+    "ad",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_1",
+   "cpu": 1,
+   "memory": 28,
+   "services": [
+    "shs",
+    "ids7",
+    "ad",
+    "es",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_8",
+   "cpu": 7,
+   "memory": 43,
+   "services": [
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 31,
+   "memory": 9,
+   "services": [
+    "ids7",
+    "sql2019",
+    "dpat",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Windows_8",
+   "cpu": 27,
+   "memory": 28,
+   "services": [
+    "iss",
+    "es",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Longhorn",
+   "cpu": 6,
+   "memory": 27,
+   "services": [
+    "wise",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Freestyle",
+   "cpu": 22,
+   "memory": 57,
+   "services": [
+    "uvclient",
+    "risapp"
+   ]
+  }
+ }
+}

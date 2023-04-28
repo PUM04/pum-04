@@ -1,0 +1,85 @@
+{
+ "site_id": "r9d39m_230413",
+ "site_name": "gcfwud",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Longhorn",
+   "cpu": 6,
+   "memory": 3,
+   "services": [
+    "iss",
+    "ad",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 28,
+   "memory": 52,
+   "services": [
+    "risapp",
+    "shs",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 21,
+   "memory": 48,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_Valley",
+   "cpu": 5,
+   "memory": 18,
+   "services": [
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Blue",
+   "cpu": 13,
+   "memory": 21,
+   "services": [
+    "es",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Sun_valley_2",
+   "cpu": 26,
+   "memory": 57,
+   "services": [
+    "risapp",
+    "wise",
+    "uvclient",
+    "shs",
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_valley_2",
+   "cpu": 19,
+   "memory": 49,
+   "services": [
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Snowball",
+   "cpu": 25,
+   "memory": 5,
+   "services": [
+    "riscore",
+    "uvcore",
+    "ad",
+    "es"
+   ]
+  }
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "site_id": "490473_230413",
+ "site_name": "uqlumb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Redstone_5",
+   "cpu": 8,
+   "memory": 28,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Anvil",
+   "cpu": 28,
+   "memory": 48,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Millennium",
+   "cpu": 7,
+   "memory": 16,
+   "services": [
+    "risapp",
+    "iss",
+    "wise",
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Blue",
+   "cpu": 6,
+   "memory": 55,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

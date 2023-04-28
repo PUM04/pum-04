@@ -1,0 +1,65 @@
+{
+ "site_id": "5j1ewq_230413",
+ "site_name": "oelkrv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Windows_7",
+   "cpu": 6,
+   "memory": 17,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Freestyle",
+   "cpu": 22,
+   "memory": 30,
+   "services": [
+    "iss",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_7",
+   "cpu": 22,
+   "memory": 6,
+   "services": [
+    "risapp",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 2,
+   "memory": 3,
+   "services": [
+    "risapp",
+    "ids7",
+    "uvclient",
+    "dpat",
+    "riscore"
+   ]
+  },
+  "lb": {
+   "os": "Chicago",
+   "cpu": 22,
+   "memory": 44,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Blue",
+   "cpu": 30,
+   "memory": 33,
+   "services": [
+    "ids7",
+    "sql2019",
+    "uvcore",
+    "iss"
+   ]
+  }
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "site_id": "1x2aou_230413",
+ "site_name": "uoftpk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Redstone_3",
+   "cpu": 12,
+   "memory": 51,
+   "services": [
+    "iss",
+    "es",
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 14,
+   "memory": 49,
+   "services": [
+    "wise",
+    "es",
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Memphis",
+   "cpu": 29,
+   "memory": 50,
+   "services": [
+    "ad",
+    "uvclient",
+    "riscore",
+    "uvcore"
+   ]
+  }
+ }
+}

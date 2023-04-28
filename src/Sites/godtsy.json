@@ -1,0 +1,63 @@
+{
+ "site_id": "518o9h_230413",
+ "site_name": "godtsy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Millennium",
+   "cpu": 32,
+   "memory": 40,
+   "services": [
+    "ids7",
+    "ad",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 32,
+   "memory": 13,
+   "services": [
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Harmony",
+   "cpu": 27,
+   "memory": 55,
+   "services": [
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Vibranium",
+   "cpu": 18,
+   "memory": 47,
+   "services": [
+    "uvcore",
+    "es",
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 6,
+   "memory": 8,
+   "services": [
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Threshold",
+   "cpu": 9,
+   "memory": 17,
+   "services": [
+    "uvclient",
+    "es",
+    "uvcore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,50 @@
+{
+ "site_id": "3qrf8z_230413",
+ "site_name": "twseag",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Redstone_4",
+   "cpu": 22,
+   "memory": 23,
+   "services": [
+    "dpat",
+    "es",
+    "iss",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Harmony",
+   "cpu": 16,
+   "memory": 34,
+   "services": [
+    "uvclient",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 1,
+   "memory": 10,
+   "services": [
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Anvil",
+   "cpu": 26,
+   "memory": 58,
+   "services": [
+    "ad",
+    "risapp",
+    "uvclient",
+    "wise",
+    "es"
+   ]
+  }
+ }
+}

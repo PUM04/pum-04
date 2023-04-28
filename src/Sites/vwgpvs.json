@@ -1,0 +1,71 @@
+{
+ "site_id": "fpoxyb_230413",
+ "site_name": "vwgpvs",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 25,
+   "memory": 5,
+   "services": [
+    "wise",
+    "shs",
+    "haproxy",
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_7",
+   "cpu": 1,
+   "memory": 56,
+   "services": [
+    "iss",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Vanadium",
+   "cpu": 13,
+   "memory": 41,
+   "services": [
+    "dpat",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Anvil",
+   "cpu": 26,
+   "memory": 37,
+   "services": [
+    "es",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Blue",
+   "cpu": 22,
+   "memory": 61,
+   "services": [
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_4",
+   "cpu": 26,
+   "memory": 47,
+   "services": [
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 21,
+   "memory": 27,
+   "services": [
+    "shs",
+    "ad"
+   ]
+  }
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "site_id": "e6s9r6_230413",
+ "site_name": "iceydh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 16,
+   "memory": 42,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 18,
+   "memory": 26,
+   "services": [
+    "wise",
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Emerald",
+   "cpu": 32,
+   "memory": 61,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Vibranium",
+   "cpu": 25,
+   "memory": 14,
+   "services": [
+    "es",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Chicago",
+   "cpu": 27,
+   "memory": 43,
+   "services": [
+    "ids7",
+    "sql2019"
+   ]
+  }
+ }
+}

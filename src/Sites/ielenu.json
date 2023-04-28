@@ -1,0 +1,61 @@
+{
+ "site_id": "2cx8x6_230413",
+ "site_name": "ielenu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Sun_valley_2",
+   "cpu": 19,
+   "memory": 62,
+   "services": [
+    "dpat",
+    "haproxy",
+    "es",
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_valley_2",
+   "cpu": 26,
+   "memory": 22,
+   "services": [
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vanadium",
+   "cpu": 27,
+   "memory": 6,
+   "services": [
+    "ids7",
+    "haproxy",
+    "ad",
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_2",
+   "cpu": 7,
+   "memory": 7,
+   "services": [
+    "ids7",
+    "wise",
+    "uvcore",
+    "dpat",
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_NT_5.0",
+   "cpu": 27,
+   "memory": 19,
+   "services": [
+    "wise",
+    "uvclient",
+    "ids7"
+   ]
+  }
+ }
+}

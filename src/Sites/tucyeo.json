@@ -1,0 +1,49 @@
+{
+ "site_id": "77z348_230413",
+ "site_name": "tucyeo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Whistler",
+   "cpu": 19,
+   "memory": 17,
+   "services": [
+    "shs",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "ad": {
+   "os": "Emerald",
+   "cpu": 27,
+   "memory": 62,
+   "services": [
+    "riscore",
+    "es",
+    "uvclient",
+    "wise"
+   ]
+  },
+  "sss": {
+   "os": "Vanadium",
+   "cpu": 29,
+   "memory": 23,
+   "services": [
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 12,
+   "memory": 22,
+   "services": [
+    "riscore",
+    "shs",
+    "wise",
+    "haproxy",
+    "es"
+   ]
+  }
+ }
+}

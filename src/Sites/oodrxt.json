@@ -1,0 +1,90 @@
+{
+ "site_id": "qdh67s_230413",
+ "site_name": "oodrxt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Whistler",
+   "cpu": 6,
+   "memory": 14,
+   "services": [
+    "sql2019",
+    "shs",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_7",
+   "cpu": 24,
+   "memory": 2,
+   "services": [
+    "uvcore",
+    "shs",
+    "iss",
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_3",
+   "cpu": 14,
+   "memory": 32,
+   "services": [
+    "wise",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_3",
+   "cpu": 8,
+   "memory": 25,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 15,
+   "memory": 50,
+   "services": [
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Symphony",
+   "cpu": 17,
+   "memory": 28,
+   "services": [
+    "shs"
+   ]
+  },
+  "ad": {
+   "os": "Threshold",
+   "cpu": 10,
+   "memory": 21,
+   "services": [
+    "iss",
+    "shs",
+    "risapp"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 17,
+   "memory": 7,
+   "services": [
+    "wise"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_2",
+   "cpu": 17,
+   "memory": 28,
+   "services": [
+    "shs",
+    "ids7"
+   ]
+  }
+ }
+}

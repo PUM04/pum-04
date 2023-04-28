@@ -1,0 +1,16 @@
+{
+ "site_id": "n5836r_230413",
+ "site_name": "akngdu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Freestyle",
+   "cpu": 1,
+   "memory": 19,
+   "services": [
+    "iss"
+   ]
+  }
+ }
+}

@@ -1,0 +1,78 @@
+{
+ "site_id": "6wtg41_230413",
+ "site_name": "pfhetb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Razzle",
+   "cpu": 20,
+   "memory": 21,
+   "services": [
+    "sql2019",
+    "wise",
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 13,
+   "memory": 40,
+   "services": [
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Blue",
+   "cpu": 11,
+   "memory": 1,
+   "services": [
+    "uvclient",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_4",
+   "cpu": 21,
+   "memory": 60,
+   "services": [
+    "es",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Memphis",
+   "cpu": 14,
+   "memory": 60,
+   "services": [
+    "es",
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Vanadium",
+   "cpu": 30,
+   "memory": 56,
+   "services": [
+    "iss",
+    "ad",
+    "wise",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 15,
+   "memory": 20,
+   "services": [
+    "shs",
+    "ad",
+    "haproxy"
+   ]
+  }
+ }
+}

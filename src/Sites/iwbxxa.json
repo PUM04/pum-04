@@ -1,0 +1,25 @@
+{
+ "site_id": "c7q1l7_230413",
+ "site_name": "iwbxxa",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Chicago",
+   "cpu": 30,
+   "memory": 46,
+   "services": [
+    "iss",
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Freestyle",
+   "cpu": 3,
+   "memory": 21,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

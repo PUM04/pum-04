@@ -1,0 +1,58 @@
+{
+ "site_id": "ag5jkx_230413",
+ "site_name": "vzjgxq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Redstone_3",
+   "cpu": 27,
+   "memory": 11,
+   "services": [
+    "ad",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 29,
+   "memory": 39,
+   "services": [
+    "ids7",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Blue",
+   "cpu": 12,
+   "memory": 48,
+   "services": [
+    "uvcore",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Freestyle",
+   "cpu": 17,
+   "memory": 21,
+   "services": [
+    "iss",
+    "wise",
+    "risapp",
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 6,
+   "memory": 62,
+   "services": [
+    "risapp",
+    "uvclient",
+    "iss",
+    "uvcore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,60 @@
+{
+ "site_id": "2z056h_230413",
+ "site_name": "pkepiv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 22,
+   "memory": 8,
+   "services": [
+    "dpat",
+    "sql2019",
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Vanadium",
+   "cpu": 14,
+   "memory": 16,
+   "services": [
+    "uvcore",
+    "wise",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_2",
+   "cpu": 28,
+   "memory": 28,
+   "services": [
+    "uvcore",
+    "es",
+    "riscore",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_3",
+   "cpu": 7,
+   "memory": 23,
+   "services": [
+    "uvcore",
+    "shs",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Vibranium",
+   "cpu": 23,
+   "memory": 64,
+   "services": [
+    "wise",
+    "riscore",
+    "sql2019",
+    "dpat"
+   ]
+  }
+ }
+}

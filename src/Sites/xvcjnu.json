@@ -1,0 +1,81 @@
+{
+ "site_id": "f1trku_230413",
+ "site_name": "xvcjnu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Symphony",
+   "cpu": 6,
+   "memory": 28,
+   "services": [
+    "dpat",
+    "shs",
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Sun_valley_2",
+   "cpu": 28,
+   "memory": 7,
+   "services": [
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Memphis",
+   "cpu": 8,
+   "memory": 33,
+   "services": [
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Anvil",
+   "cpu": 4,
+   "memory": 2,
+   "services": [
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Chicago",
+   "cpu": 11,
+   "memory": 45,
+   "services": [
+    "sql2019",
+    "es",
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Freestyle",
+   "cpu": 5,
+   "memory": 8,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold_2",
+   "cpu": 8,
+   "memory": 62,
+   "services": [
+    "es",
+    "wise",
+    "uvclient",
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Millennium",
+   "cpu": 26,
+   "memory": 63,
+   "services": [
+    "ids7",
+    "wise"
+   ]
+  }
+ }
+}

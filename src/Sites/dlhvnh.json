@@ -1,0 +1,80 @@
+{
+ "site_id": "3971h0_230413",
+ "site_name": "dlhvnh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 27,
+   "memory": 35,
+   "services": [
+    "iss",
+    "wise",
+    "uvclient",
+    "ids7",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 8,
+   "memory": 6,
+   "services": [
+    "sql2019",
+    "wise",
+    "riscore",
+    "ids7",
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Millennium",
+   "cpu": 14,
+   "memory": 53,
+   "services": [
+    "es",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 17,
+   "memory": 12,
+   "services": [
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Windows_8",
+   "cpu": 24,
+   "memory": 5,
+   "services": [
+    "dpat",
+    "ad",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Millennium",
+   "cpu": 16,
+   "memory": 39,
+   "services": [
+    "shs",
+    "wise",
+    "uvclient",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold",
+   "cpu": 18,
+   "memory": 34,
+   "services": [
+    "ids7",
+    "haproxy"
+   ]
+  }
+ }
+}

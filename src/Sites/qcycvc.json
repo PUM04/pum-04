@@ -1,0 +1,65 @@
+{
+ "site_id": "2umy6v_230413",
+ "site_name": "qcycvc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Anvil",
+   "cpu": 23,
+   "memory": 38,
+   "services": [
+    "haproxy",
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Daytona",
+   "cpu": 28,
+   "memory": 19,
+   "services": [
+    "risapp"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_valley_2",
+   "cpu": 2,
+   "memory": 40,
+   "services": [
+    "sql2019",
+    "wise",
+    "ad",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_4",
+   "cpu": 28,
+   "memory": 44,
+   "services": [
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Emerald",
+   "cpu": 14,
+   "memory": 11,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Symphony",
+   "cpu": 27,
+   "memory": 23,
+   "services": [
+    "wise",
+    "sql2019",
+    "risapp",
+    "uvcore",
+    "riscore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,90 @@
+{
+ "site_id": "yf13br_230413",
+ "site_name": "nidzns",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Sun_Valley",
+   "cpu": 26,
+   "memory": 13,
+   "services": [
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Chicago",
+   "cpu": 9,
+   "memory": 16,
+   "services": [
+    "ad",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Threshold_2",
+   "cpu": 5,
+   "memory": 15,
+   "services": [
+    "wise",
+    "iss",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 4,
+   "memory": 57,
+   "services": [
+    "uvclient",
+    "es",
+    "ad",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Chicago",
+   "cpu": 18,
+   "memory": 13,
+   "services": [
+    "sql2019",
+    "riscore",
+    "risapp",
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold_2",
+   "cpu": 23,
+   "memory": 52,
+   "services": [
+    "es",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Whistler",
+   "cpu": 31,
+   "memory": 12,
+   "services": [
+    "wise",
+    "uvclient",
+    "es",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 28,
+   "memory": 29,
+   "services": [
+    "es",
+    "uvclient",
+    "iss",
+    "risapp",
+    "dpat"
+   ]
+  }
+ }
+}

@@ -1,0 +1,87 @@
+{
+ "site_id": "crq9n7_230413",
+ "site_name": "xcuaso",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 3,
+   "memory": 48,
+   "services": [
+    "ids7",
+    "riscore",
+    "shs",
+    "wise",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Emerald",
+   "cpu": 22,
+   "memory": 5,
+   "services": [
+    "uvclient",
+    "riscore",
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_1",
+   "cpu": 9,
+   "memory": 5,
+   "services": [
+    "uvcore",
+    "haproxy",
+    "iss",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold",
+   "cpu": 30,
+   "memory": 13,
+   "services": [
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 13,
+   "memory": 25,
+   "services": [
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_8",
+   "cpu": 7,
+   "memory": 38,
+   "services": [
+    "uvcore",
+    "riscore",
+    "es",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Vanadium",
+   "cpu": 18,
+   "memory": 28,
+   "services": [
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_1",
+   "cpu": 19,
+   "memory": 50,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

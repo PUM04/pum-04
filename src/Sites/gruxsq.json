@@ -1,0 +1,60 @@
+{
+ "site_id": "7beeu2_230413",
+ "site_name": "gruxsq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 7,
+   "memory": 9,
+   "services": [
+    "wise"
+   ]
+  },
+  "sqlla": {
+   "os": "Daytona",
+   "cpu": 2,
+   "memory": 25,
+   "services": [
+    "shs",
+    "uvcore",
+    "ids7",
+    "iss",
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Windows_NT_5.0",
+   "cpu": 10,
+   "memory": 21,
+   "services": [
+    "ids7",
+    "es",
+    "risapp",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Snowball",
+   "cpu": 2,
+   "memory": 17,
+   "services": [
+    "haproxy",
+    "shs",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vibranium",
+   "cpu": 30,
+   "memory": 39,
+   "services": [
+    "iss",
+    "sql2019",
+    "shs",
+    "haproxy"
+   ]
+  }
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "site_id": "j89280_230413",
+ "site_name": "phxdrr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 28,
+   "memory": 6,
+   "services": [
+    "ids7",
+    "riscore",
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Snowball",
+   "cpu": 21,
+   "memory": 3,
+   "services": [
+    "sql2019",
+    "wise",
+    "risapp",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sparta",
+   "cpu": 2,
+   "memory": 55,
+   "services": [
+    "iss",
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sparta",
+   "cpu": 25,
+   "memory": 20,
+   "services": [
+    "iss",
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Blue",
+   "cpu": 9,
+   "memory": 61,
+   "services": [
+    "risapp",
+    "riscore",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 18,
+   "memory": 18,
+   "services": [
+    "ad",
+    "uvclient"
+   ]
+  }
+ }
+}

@@ -1,0 +1,70 @@
+{
+ "site_id": "af84mn_230413",
+ "site_name": "cgcpxx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Anvil",
+   "cpu": 11,
+   "memory": 6,
+   "services": [
+    "ids7",
+    "riscore",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Harmony",
+   "cpu": 28,
+   "memory": 14,
+   "services": [
+    "iss",
+    "riscore",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 9,
+   "memory": 19,
+   "services": [
+    "es",
+    "uvclient",
+    "haproxy",
+    "iss",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Harmony",
+   "cpu": 28,
+   "memory": 27,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Memphis",
+   "cpu": 10,
+   "memory": 60,
+   "services": [
+    "risapp",
+    "ad",
+    "dpat",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Sparta",
+   "cpu": 12,
+   "memory": 3,
+   "services": [
+    "iss",
+    "ids7",
+    "uvclient"
+   ]
+  }
+ }
+}

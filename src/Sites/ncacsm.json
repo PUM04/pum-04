@@ -1,0 +1,70 @@
+{
+ "site_id": "13ct69_230413",
+ "site_name": "ncacsm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 1,
+   "memory": 3,
+   "services": [
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vibranium",
+   "cpu": 1,
+   "memory": 19,
+   "services": [
+    "ad",
+    "uvclient",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 8,
+   "memory": 52,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_2",
+   "cpu": 31,
+   "memory": 4,
+   "services": [
+    "risapp",
+    "ad",
+    "wise",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold_2",
+   "cpu": 6,
+   "memory": 36,
+   "services": [
+    "dpat",
+    "iss",
+    "riscore",
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_7",
+   "cpu": 25,
+   "memory": 62,
+   "services": [
+    "wise",
+    "dpat",
+    "uvclient",
+    "riscore",
+    "ad"
+   ]
+  }
+ }
+}

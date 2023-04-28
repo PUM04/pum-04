@@ -1,0 +1,39 @@
+{
+ "site_id": "lcf5d6_230413",
+ "site_name": "lxaiah",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Vanadium",
+   "cpu": 9,
+   "memory": 18,
+   "services": [
+    "risapp",
+    "ids7",
+    "dpat",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Razzle",
+   "cpu": 29,
+   "memory": 11,
+   "services": [
+    "ids7",
+    "haproxy",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold_2",
+   "cpu": 7,
+   "memory": 28,
+   "services": [
+    "uvclient",
+    "ad",
+    "riscore"
+   ]
+  }
+ }
+}

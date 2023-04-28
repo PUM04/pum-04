@@ -1,0 +1,52 @@
+{
+ "site_id": "fwxv2a_230413",
+ "site_name": "stlbbo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Redstone_3",
+   "cpu": 7,
+   "memory": 18,
+   "services": [
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Chicago",
+   "cpu": 3,
+   "memory": 55,
+   "services": [
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Harmony",
+   "cpu": 18,
+   "memory": 36,
+   "services": [
+    "risapp",
+    "ad",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Freestyle",
+   "cpu": 28,
+   "memory": 59,
+   "services": [
+    "risapp",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Razzle",
+   "cpu": 28,
+   "memory": 49,
+   "services": [
+    "shs",
+    "wise"
+   ]
+  }
+ }
+}

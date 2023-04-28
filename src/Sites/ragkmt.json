@@ -1,0 +1,39 @@
+{
+ "site_id": "dor4x3_230413",
+ "site_name": "ragkmt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Freestyle",
+   "cpu": 8,
+   "memory": 62,
+   "services": [
+    "sql2019",
+    "es",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 24,
+   "memory": 26,
+   "services": [
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 22,
+   "memory": 24,
+   "services": [
+    "risapp",
+    "ids7",
+    "ad",
+    "shs",
+    "wise"
+   ]
+  }
+ }
+}

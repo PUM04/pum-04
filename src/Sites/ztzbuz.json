@@ -1,0 +1,19 @@
+{
+ "site_id": "8v0032_230413",
+ "site_name": "ztzbuz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Redstone_5",
+   "cpu": 15,
+   "memory": 12,
+   "services": [
+    "wise",
+    "shs",
+    "es",
+    "uvclient"
+   ]
+  }
+ }
+}

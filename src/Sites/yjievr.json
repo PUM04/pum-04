@@ -1,0 +1,68 @@
+{
+ "site_id": "jh97h9_230413",
+ "site_name": "yjievr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Millennium",
+   "cpu": 7,
+   "memory": 18,
+   "services": [
+    "uvclient",
+    "ad",
+    "haproxy",
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Threshold",
+   "cpu": 21,
+   "memory": 56,
+   "services": [
+    "wise",
+    "iss",
+    "ids7",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Millennium",
+   "cpu": 16,
+   "memory": 18,
+   "services": [
+    "shs",
+    "uvclient",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Vanadium",
+   "cpu": 16,
+   "memory": 64,
+   "services": [
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_5",
+   "cpu": 18,
+   "memory": 47,
+   "services": [
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Anvil",
+   "cpu": 6,
+   "memory": 33,
+   "services": [
+    "es",
+    "riscore",
+    "ad",
+    "sql2019"
+   ]
+  }
+ }
+}

@@ -1,0 +1,62 @@
+{
+ "site_id": "d27o79_230413",
+ "site_name": "awjnfr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Blue",
+   "cpu": 20,
+   "memory": 1,
+   "services": [
+    "risapp",
+    "uvclient",
+    "shs",
+    "uvcore",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Freestyle",
+   "cpu": 21,
+   "memory": 57,
+   "services": [
+    "uvclient",
+    "iss",
+    "dpat",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 12,
+   "memory": 54,
+   "services": [
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_2",
+   "cpu": 28,
+   "memory": 50,
+   "services": [
+    "risapp",
+    "ad",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 12,
+   "memory": 44,
+   "services": [
+    "risapp",
+    "wise",
+    "uvclient",
+    "ids7",
+    "sql2019"
+   ]
+  }
+ }
+}

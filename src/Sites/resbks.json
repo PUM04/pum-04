@@ -1,0 +1,84 @@
+{
+ "site_id": "7ifz9c_230413",
+ "site_name": "resbks",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Vanadium",
+   "cpu": 1,
+   "memory": 19,
+   "services": [
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Emerald",
+   "cpu": 5,
+   "memory": 8,
+   "services": [
+    "iss",
+    "es",
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 7,
+   "memory": 17,
+   "services": [
+    "wise",
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_4",
+   "cpu": 31,
+   "memory": 8,
+   "services": [
+    "sql2019",
+    "shs",
+    "dpat",
+    "haproxy",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_5",
+   "cpu": 30,
+   "memory": 51,
+   "services": [
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Daytona",
+   "cpu": 15,
+   "memory": 32,
+   "services": [
+    "shs",
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 21,
+   "memory": 23,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Vibranium",
+   "cpu": 13,
+   "memory": 43,
+   "services": [
+    "riscore",
+    "dpat",
+    "sql2019"
+   ]
+  }
+ }
+}

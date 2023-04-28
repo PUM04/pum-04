@@ -1,0 +1,91 @@
+{
+ "site_id": "92c2g7_230413",
+ "site_name": "tpfctt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Longhorn",
+   "cpu": 31,
+   "memory": 62,
+   "services": [
+    "wise",
+    "iss",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Anvil",
+   "cpu": 13,
+   "memory": 63,
+   "services": [
+    "uvcore",
+    "shs",
+    "ad",
+    "dpat"
+   ]
+  },
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 31,
+   "memory": 2,
+   "services": [
+    "risapp",
+    "es",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 14,
+   "memory": 13,
+   "services": [
+    "riscore",
+    "wise",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Vanadium",
+   "cpu": 19,
+   "memory": 54,
+   "services": [
+    "riscore",
+    "iss",
+    "es",
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Emerald",
+   "cpu": 9,
+   "memory": 22,
+   "services": [
+    "risapp",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sparta",
+   "cpu": 2,
+   "memory": 27,
+   "services": [
+    "es",
+    "ids7",
+    "uvclient",
+    "wise",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_3",
+   "cpu": 26,
+   "memory": 23,
+   "services": [
+    "ad",
+    "haproxy"
+   ]
+  }
+ }
+}

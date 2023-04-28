@@ -1,0 +1,60 @@
+{
+ "site_id": "2w22j0_230413",
+ "site_name": "cbuolg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Redstone_3",
+   "cpu": 31,
+   "memory": 9,
+   "services": [
+    "shs",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_valley_2",
+   "cpu": 1,
+   "memory": 29,
+   "services": [
+    "risapp",
+    "haproxy",
+    "ad",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Anvil",
+   "cpu": 18,
+   "memory": 41,
+   "services": [
+    "risapp",
+    "wise",
+    "dpat",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_4",
+   "cpu": 9,
+   "memory": 31,
+   "services": [
+    "iss",
+    "ad",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_1",
+   "cpu": 28,
+   "memory": 38,
+   "services": [
+    "ids7",
+    "iss"
+   ]
+  }
+ }
+}

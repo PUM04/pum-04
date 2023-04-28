@@ -1,0 +1,28 @@
+{
+ "site_id": "15b6zc_230413",
+ "site_name": "bqwbsg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Symphony",
+   "cpu": 28,
+   "memory": 13,
+   "services": [
+    "ids7",
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Millennium",
+   "cpu": 8,
+   "memory": 32,
+   "services": [
+    "es",
+    "shs",
+    "risapp",
+    "haproxy"
+   ]
+  }
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "site_id": "3c2ff8_230413",
+ "site_name": "iugljx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Redstone_3",
+   "cpu": 8,
+   "memory": 49,
+   "services": [
+    "wise",
+    "shs",
+    "ad",
+    "sql2019",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 14,
+   "memory": 29,
+   "services": [
+    "ids7",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Vibranium",
+   "cpu": 12,
+   "memory": 27,
+   "services": [
+    "iss",
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_valley_2",
+   "cpu": 1,
+   "memory": 41,
+   "services": [
+    "iss",
+    "wise"
+   ]
+  }
+ }
+}

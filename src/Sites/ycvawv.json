@@ -1,0 +1,65 @@
+{
+ "site_id": "j434v4_230413",
+ "site_name": "ycvawv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Blue",
+   "cpu": 2,
+   "memory": 14,
+   "services": [
+    "ids7",
+    "dpat",
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_5",
+   "cpu": 5,
+   "memory": 42,
+   "services": [
+    "risapp",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Memphis",
+   "cpu": 28,
+   "memory": 30,
+   "services": [
+    "wise",
+    "ad",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Anvil",
+   "cpu": 18,
+   "memory": 4,
+   "services": [
+    "uvclient",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Symphony",
+   "cpu": 16,
+   "memory": 63,
+   "services": [
+    "ids7",
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_1",
+   "cpu": 20,
+   "memory": 40,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

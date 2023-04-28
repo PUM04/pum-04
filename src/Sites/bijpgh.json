@@ -1,0 +1,108 @@
+{
+ "site_id": "9c634r_230413",
+ "site_name": "bijpgh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Redstone_1",
+   "cpu": 1,
+   "memory": 7,
+   "services": [
+    "iss",
+    "sql2019",
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sun_Valley",
+   "cpu": 11,
+   "memory": 64,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_valley_2",
+   "cpu": 31,
+   "memory": 22,
+   "services": [
+    "es",
+    "uvclient",
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Sparta",
+   "cpu": 9,
+   "memory": 8,
+   "services": [
+    "ids7",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 7,
+   "memory": 15,
+   "services": [
+    "iss",
+    "riscore",
+    "haproxy",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Windows_8",
+   "cpu": 26,
+   "memory": 39,
+   "services": [
+    "iss",
+    "risapp",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_5",
+   "cpu": 3,
+   "memory": 24,
+   "services": [
+    "es",
+    "dpat",
+    "riscore",
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Razzle",
+   "cpu": 26,
+   "memory": 20,
+   "services": [
+    "sql2019",
+    "uvcore",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_1",
+   "cpu": 12,
+   "memory": 7,
+   "services": [
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 14,
+   "memory": 17,
+   "services": [
+    "shs",
+    "sql2019",
+    "es"
+   ]
+  }
+ }
+}

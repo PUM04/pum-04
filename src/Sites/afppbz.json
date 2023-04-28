@@ -1,0 +1,79 @@
+{
+ "site_id": "npf053_230413",
+ "site_name": "afppbz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Blue",
+   "cpu": 9,
+   "memory": 30,
+   "services": [
+    "iss",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_2",
+   "cpu": 21,
+   "memory": 5,
+   "services": [
+    "riscore",
+    "dpat",
+    "wise",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Freestyle",
+   "cpu": 6,
+   "memory": 63,
+   "services": [
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 26,
+   "memory": 12,
+   "services": [
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Symphony",
+   "cpu": 15,
+   "memory": 62,
+   "services": [
+    "ids7",
+    "wise",
+    "ad",
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Longhorn",
+   "cpu": 26,
+   "memory": 25,
+   "services": [
+    "uvcore",
+    "iss",
+    "dpat",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 25,
+   "memory": 11,
+   "services": [
+    "dpat",
+    "riscore",
+    "risapp",
+    "wise",
+    "es"
+   ]
+  }
+ }
+}

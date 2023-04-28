@@ -1,0 +1,83 @@
+{
+ "site_id": "jj685s_230413",
+ "site_name": "mitgvd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Whistler",
+   "cpu": 8,
+   "memory": 60,
+   "services": [
+    "uvcore",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_5",
+   "cpu": 3,
+   "memory": 51,
+   "services": [
+    "es",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 29,
+   "memory": 11,
+   "services": [
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_valley_2",
+   "cpu": 2,
+   "memory": 50,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 10,
+   "memory": 34,
+   "services": [
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Vibranium",
+   "cpu": 7,
+   "memory": 47,
+   "services": [
+    "ids7",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 20,
+   "memory": 11,
+   "services": [
+    "es",
+    "haproxy",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Windows_7",
+   "cpu": 31,
+   "memory": 20,
+   "services": [
+    "sql2019",
+    "es"
+   ]
+  }
+ }
+}

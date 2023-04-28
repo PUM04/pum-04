@@ -1,0 +1,85 @@
+{
+ "site_id": "v3hbh2_230413",
+ "site_name": "wfxnui",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Symphony",
+   "cpu": 17,
+   "memory": 45,
+   "services": [
+    "dpat",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 5,
+   "memory": 47,
+   "services": [
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Threshold_2",
+   "cpu": 17,
+   "memory": 12,
+   "services": [
+    "haproxy",
+    "uvclient",
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 30,
+   "memory": 34,
+   "services": [
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Anvil",
+   "cpu": 19,
+   "memory": 45,
+   "services": [
+    "sql2019",
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_7",
+   "cpu": 28,
+   "memory": 53,
+   "services": [
+    "shs",
+    "ids7",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Memphis",
+   "cpu": 15,
+   "memory": 58,
+   "services": [
+    "riscore",
+    "wise",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Chicago",
+   "cpu": 10,
+   "memory": 57,
+   "services": [
+    "uvclient",
+    "shs"
+   ]
+  }
+ }
+}

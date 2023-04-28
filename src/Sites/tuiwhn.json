@@ -1,0 +1,57 @@
+{
+ "site_id": "gl6sqp_230413",
+ "site_name": "tuiwhn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Redstone_3",
+   "cpu": 19,
+   "memory": 35,
+   "services": [
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_3",
+   "cpu": 14,
+   "memory": 55,
+   "services": [
+    "risapp",
+    "shs",
+    "riscore",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_Valley",
+   "cpu": 2,
+   "memory": 49,
+   "services": [
+    "uvcore",
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Snowball",
+   "cpu": 17,
+   "memory": 29,
+   "services": [
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Whistler",
+   "cpu": 12,
+   "memory": 31,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "wise",
+    "risapp",
+    "ad"
+   ]
+  }
+ }
+}

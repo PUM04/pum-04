@@ -1,0 +1,17 @@
+{
+ "site_id": "r3lrae_230413",
+ "site_name": "rnudjs",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Redstone_3",
+   "cpu": 7,
+   "memory": 46,
+   "services": [
+    "riscore",
+    "shs"
+   ]
+  }
+ }
+}

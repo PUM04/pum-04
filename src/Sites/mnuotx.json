@@ -1,0 +1,56 @@
+{
+ "site_id": "t24sog_230413",
+ "site_name": "mnuotx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Sun_valley_2",
+   "cpu": 20,
+   "memory": 36,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Symphony",
+   "cpu": 2,
+   "memory": 34,
+   "services": [
+    "iss",
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "pacsapp": {
+   "os": "Chicago",
+   "cpu": 31,
+   "memory": 31,
+   "services": [
+    "shs",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Chicago",
+   "cpu": 8,
+   "memory": 10,
+   "services": [
+    "ids7",
+    "uvclient",
+    "uvcore",
+    "wise",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Snowball",
+   "cpu": 24,
+   "memory": 32,
+   "services": [
+    "riscore",
+    "ad"
+   ]
+  }
+ }
+}

@@ -1,0 +1,65 @@
+{
+ "site_id": "vgxfr8_230413",
+ "site_name": "umdfcn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Sun_Valley",
+   "cpu": 6,
+   "memory": 54,
+   "services": [
+    "riscore",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Windows_8",
+   "cpu": 16,
+   "memory": 1,
+   "services": [
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_1",
+   "cpu": 6,
+   "memory": 9,
+   "services": [
+    "dpat",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Symphony",
+   "cpu": 13,
+   "memory": 14,
+   "services": [
+    "haproxy",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 13,
+   "memory": 43,
+   "services": [
+    "ids7",
+    "ad",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 14,
+   "memory": 36,
+   "services": [
+    "es",
+    "uvclient",
+    "uvcore",
+    "risapp"
+   ]
+  }
+ }
+}

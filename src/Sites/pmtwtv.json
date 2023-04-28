@@ -1,0 +1,68 @@
+{
+ "site_id": "04axc0_230413",
+ "site_name": "pmtwtv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Redstone_3",
+   "cpu": 6,
+   "memory": 26,
+   "services": [
+    "sql2019",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_2",
+   "cpu": 27,
+   "memory": 39,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_4",
+   "cpu": 23,
+   "memory": 24,
+   "services": [
+    "riscore",
+    "ids7",
+    "shs",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_4",
+   "cpu": 31,
+   "memory": 41,
+   "services": [
+    "uvcore",
+    "wise",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_valley_2",
+   "cpu": 11,
+   "memory": 28,
+   "services": [
+    "uvcore",
+    "ad",
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Freestyle",
+   "cpu": 16,
+   "memory": 39,
+   "services": [
+    "ad",
+    "haproxy",
+    "es",
+    "wise"
+   ]
+  }
+ }
+}

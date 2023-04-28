@@ -1,0 +1,56 @@
+{
+ "site_id": "1f9fnq_230413",
+ "site_name": "sjrclk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Sun_Valley",
+   "cpu": 1,
+   "memory": 20,
+   "services": [
+    "riscore",
+    "uvclient",
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Windows_NT_5.0",
+   "cpu": 15,
+   "memory": 13,
+   "services": [
+    "uvcore",
+    "shs",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 26,
+   "memory": 37,
+   "services": [
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vanadium",
+   "cpu": 20,
+   "memory": 17,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Symphony",
+   "cpu": 31,
+   "memory": 9,
+   "services": [
+    "uvcore",
+    "ids7",
+    "risapp",
+    "shs"
+   ]
+  }
+ }
+}

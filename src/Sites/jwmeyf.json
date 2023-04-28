@@ -1,0 +1,80 @@
+{
+ "site_id": "28x1lo_230413",
+ "site_name": "jwmeyf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Daytona",
+   "cpu": 16,
+   "memory": 20,
+   "services": [
+    "uvcore",
+    "es",
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Memphis",
+   "cpu": 2,
+   "memory": 45,
+   "services": [
+    "iss",
+    "sql2019",
+    "riscore",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Razzle",
+   "cpu": 14,
+   "memory": 62,
+   "services": [
+    "es",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Daytona",
+   "cpu": 10,
+   "memory": 50,
+   "services": [
+    "sql2019",
+    "uvcore",
+    "shs",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Harmony",
+   "cpu": 13,
+   "memory": 13,
+   "services": [
+    "ad",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Daytona",
+   "cpu": 19,
+   "memory": 14,
+   "services": [
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_1",
+   "cpu": 22,
+   "memory": 36,
+   "services": [
+    "uvclient",
+    "ids7",
+    "risapp",
+    "dpat"
+   ]
+  }
+ }
+}

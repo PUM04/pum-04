@@ -1,0 +1,96 @@
+{
+ "site_id": "47cfeu_230413",
+ "site_name": "astxia",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Longhorn",
+   "cpu": 7,
+   "memory": 19,
+   "services": [
+    "iss",
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_Valley",
+   "cpu": 2,
+   "memory": 9,
+   "services": [
+    "risapp",
+    "wise",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 21,
+   "memory": 6,
+   "services": [
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 20,
+   "memory": 57,
+   "services": [
+    "ids7",
+    "wise",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_3",
+   "cpu": 22,
+   "memory": 3,
+   "services": [
+    "dpat",
+    "uvclient",
+    "es",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_5",
+   "cpu": 19,
+   "memory": 50,
+   "services": [
+    "wise",
+    "shs",
+    "es",
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Threshold_2",
+   "cpu": 28,
+   "memory": 40,
+   "services": [
+    "ad",
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold",
+   "cpu": 21,
+   "memory": 53,
+   "services": [
+    "uvclient",
+    "ad",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_4",
+   "cpu": 6,
+   "memory": 51,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

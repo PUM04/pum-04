@@ -1,0 +1,78 @@
+{
+ "site_id": "wcz8j0_230413",
+ "site_name": "cqfjyz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Whistler",
+   "cpu": 12,
+   "memory": 8,
+   "services": [
+    "ids7",
+    "uvclient",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Symphony",
+   "cpu": 27,
+   "memory": 39,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "shs",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Anvil",
+   "cpu": 17,
+   "memory": 22,
+   "services": [
+    "shs",
+    "risapp",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_7",
+   "cpu": 32,
+   "memory": 24,
+   "services": [
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_4",
+   "cpu": 8,
+   "memory": 45,
+   "services": [
+    "riscore",
+    "es",
+    "uvclient",
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sun_valley_2",
+   "cpu": 9,
+   "memory": 45,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "riscore",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sparta",
+   "cpu": 5,
+   "memory": 43,
+   "services": [
+    "es",
+    "ids7"
+   ]
+  }
+ }
+}

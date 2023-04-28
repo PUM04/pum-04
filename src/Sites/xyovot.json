@@ -1,0 +1,70 @@
+{
+ "site_id": "a5keo1_230413",
+ "site_name": "xyovot",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Freestyle",
+   "cpu": 10,
+   "memory": 28,
+   "services": [
+    "wise",
+    "sql2019",
+    "iss",
+    "risapp",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 31,
+   "memory": 30,
+   "services": [
+    "iss",
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_1",
+   "cpu": 3,
+   "memory": 17,
+   "services": [
+    "shs",
+    "sql2019",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Snowball",
+   "cpu": 4,
+   "memory": 5,
+   "services": [
+    "riscore",
+    "iss",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Emerald",
+   "cpu": 26,
+   "memory": 54,
+   "services": [
+    "es",
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Windows_7",
+   "cpu": 18,
+   "memory": 2,
+   "services": [
+    "uvcore",
+    "haproxy",
+    "iss"
+   ]
+  }
+ }
+}

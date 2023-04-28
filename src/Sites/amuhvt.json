@@ -1,0 +1,104 @@
+{
+ "site_id": "201k37_230413",
+ "site_name": "amuhvt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Sparta",
+   "cpu": 24,
+   "memory": 42,
+   "services": [
+    "iss",
+    "uvcore",
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Windows_7",
+   "cpu": 22,
+   "memory": 46,
+   "services": [
+    "dpat",
+    "wise",
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Blue",
+   "cpu": 28,
+   "memory": 14,
+   "services": [
+    "sql2019",
+    "es",
+    "uvclient",
+    "ad",
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Anvil",
+   "cpu": 18,
+   "memory": 53,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_Valley",
+   "cpu": 5,
+   "memory": 35,
+   "services": [
+    "wise",
+    "ad",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sparta",
+   "cpu": 30,
+   "memory": 55,
+   "services": [
+    "ad"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 12,
+   "memory": 57,
+   "services": [
+    "es",
+    "ad",
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Threshold",
+   "cpu": 30,
+   "memory": 58,
+   "services": [
+    "risapp",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Sparta",
+   "cpu": 18,
+   "memory": 27,
+   "services": [
+    "iss",
+    "risapp",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Blue",
+   "cpu": 32,
+   "memory": 32,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  }
+ }
+}

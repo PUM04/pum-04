@@ -1,0 +1,29 @@
+{
+ "site_id": "u0zfs9_230413",
+ "site_name": "sbfbug",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Anvil",
+   "cpu": 24,
+   "memory": 53,
+   "services": [
+    "uvclient",
+    "shs",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_5",
+   "cpu": 7,
+   "memory": 35,
+   "services": [
+    "sql2019",
+    "shs",
+    "risapp",
+    "iss"
+   ]
+  }
+ }
+}

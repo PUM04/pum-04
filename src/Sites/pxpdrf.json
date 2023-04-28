@@ -1,0 +1,29 @@
+{
+ "site_id": "he568y_230413",
+ "site_name": "pxpdrf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Windows_8",
+   "cpu": 24,
+   "memory": 3,
+   "services": [
+    "riscore",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "pacsapp": {
+   "os": "Vanadium",
+   "cpu": 1,
+   "memory": 15,
+   "services": [
+    "risapp",
+    "haproxy",
+    "ad",
+    "iss"
+   ]
+  }
+ }
+}

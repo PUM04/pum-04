@@ -1,0 +1,19 @@
+{
+ "site_id": "c885hw_230413",
+ "site_name": "cpvyze",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Harmony",
+   "cpu": 20,
+   "memory": 64,
+   "services": [
+    "dpat",
+    "haproxy",
+    "riscore",
+    "uvcore"
+   ]
+  }
+ }
+}

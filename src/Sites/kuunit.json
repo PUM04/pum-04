@@ -1,0 +1,17 @@
+{
+ "site_id": "tzf35b_230413",
+ "site_name": "kuunit",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Vanadium",
+   "cpu": 20,
+   "memory": 58,
+   "services": [
+    "risapp",
+    "riscore"
+   ]
+  }
+ }
+}

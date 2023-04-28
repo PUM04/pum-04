@@ -1,0 +1,83 @@
+{
+ "site_id": "0e5rem_230413",
+ "site_name": "qggano",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Redstone_1",
+   "cpu": 21,
+   "memory": 20,
+   "services": [
+    "iss",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Millennium",
+   "cpu": 16,
+   "memory": 51,
+   "services": [
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "risapp": {
+   "os": "Vanadium",
+   "cpu": 11,
+   "memory": 12,
+   "services": [
+    "iss",
+    "uvclient",
+    "dpat",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_1",
+   "cpu": 24,
+   "memory": 28,
+   "services": [
+    "haproxy",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold_2",
+   "cpu": 14,
+   "memory": 41,
+   "services": [
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Sun_Valley",
+   "cpu": 25,
+   "memory": 25,
+   "services": [
+    "sql2019",
+    "es",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Emerald",
+   "cpu": 4,
+   "memory": 22,
+   "services": [
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Millennium",
+   "cpu": 10,
+   "memory": 41,
+   "services": [
+    "ids7",
+    "es",
+    "wise"
+   ]
+  }
+ }
+}

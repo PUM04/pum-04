@@ -1,0 +1,36 @@
+{
+ "site_id": "j96x5k_230413",
+ "site_name": "rfwqne",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Redstone_5",
+   "cpu": 30,
+   "memory": 11,
+   "services": [
+    "dpat",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 9,
+   "memory": 53,
+   "services": [
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 28,
+   "memory": 28,
+   "services": [
+    "ad",
+    "uvcore",
+    "es"
+   ]
+  }
+ }
+}

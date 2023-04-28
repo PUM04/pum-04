@@ -1,0 +1,57 @@
+{
+ "site_id": "u7116v_230413",
+ "site_name": "mwvcjk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Emerald",
+   "cpu": 32,
+   "memory": 51,
+   "services": [
+    "ids7",
+    "ad",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Sun_Valley",
+   "cpu": 13,
+   "memory": 57,
+   "services": [
+    "ad",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Daytona",
+   "cpu": 13,
+   "memory": 1,
+   "services": [
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Windows_8",
+   "cpu": 9,
+   "memory": 39,
+   "services": [
+    "ad",
+    "sql2019",
+    "es",
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Whistler",
+   "cpu": 30,
+   "memory": 61,
+   "services": [
+    "dpat",
+    "sql2019",
+    "wise",
+    "riscore"
+   ]
+  }
+ }
+}

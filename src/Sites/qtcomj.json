@@ -1,0 +1,38 @@
+{
+ "site_id": "fbvsl4_230413",
+ "site_name": "qtcomj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Windows_7",
+   "cpu": 21,
+   "memory": 32,
+   "services": [
+    "ad",
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Razzle",
+   "cpu": 31,
+   "memory": 52,
+   "services": [
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Anvil",
+   "cpu": 13,
+   "memory": 4,
+   "services": [
+    "shs",
+    "sql2019",
+    "es",
+    "risapp",
+    "uvcore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "site_id": "0ioyk2_230413",
+ "site_name": "kyeghi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Symphony",
+   "cpu": 18,
+   "memory": 48,
+   "services": [
+    "es",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_4",
+   "cpu": 25,
+   "memory": 31,
+   "services": [
+    "ids7",
+    "wise",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Chicago",
+   "cpu": 32,
+   "memory": 17,
+   "services": [
+    "iss",
+    "ad",
+    "shs"
+   ]
+  }
+ }
+}

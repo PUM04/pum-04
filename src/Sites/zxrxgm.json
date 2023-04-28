@@ -1,0 +1,82 @@
+{
+ "site_id": "58l160_230413",
+ "site_name": "zxrxgm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Vibranium",
+   "cpu": 14,
+   "memory": 62,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "wise",
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_7",
+   "cpu": 5,
+   "memory": 19,
+   "services": [
+    "es",
+    "haproxy",
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Anvil",
+   "cpu": 7,
+   "memory": 45,
+   "services": [
+    "ids7",
+    "sql2019",
+    "uvcore",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 8,
+   "memory": 6,
+   "services": [
+    "ad",
+    "wise",
+    "haproxy",
+    "es",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 9,
+   "memory": 9,
+   "services": [
+    "haproxy",
+    "uvclient",
+    "ids7",
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Chicago",
+   "cpu": 13,
+   "memory": 50,
+   "services": [
+    "sql2019",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Sun_valley_2",
+   "cpu": 22,
+   "memory": 19,
+   "services": [
+    "uvcore",
+    "haproxy",
+    "risapp"
+   ]
+  }
+ }
+}

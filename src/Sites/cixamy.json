@@ -1,0 +1,70 @@
+{
+ "site_id": "u1221p_230413",
+ "site_name": "cixamy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Snowball",
+   "cpu": 16,
+   "memory": 34,
+   "services": [
+    "haproxy",
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Snowball",
+   "cpu": 3,
+   "memory": 36,
+   "services": [
+    "dpat",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Memphis",
+   "cpu": 13,
+   "memory": 38,
+   "services": [
+    "uvcore",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Razzle",
+   "cpu": 32,
+   "memory": 9,
+   "services": [
+    "iss",
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Chicago",
+   "cpu": 10,
+   "memory": 52,
+   "services": [
+    "ad",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 24,
+   "memory": 37,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_4",
+   "cpu": 6,
+   "memory": 61,
+   "services": [
+    "dpat"
+   ]
+  }
+ }
+}

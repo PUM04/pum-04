@@ -1,0 +1,63 @@
+{
+ "site_id": "kob3te_230413",
+ "site_name": "uywvhp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Blue",
+   "cpu": 5,
+   "memory": 50,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_1",
+   "cpu": 11,
+   "memory": 11,
+   "services": [
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vanadium",
+   "cpu": 29,
+   "memory": 41,
+   "services": [
+    "haproxy",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 17,
+   "memory": 59,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "es",
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 12,
+   "memory": 31,
+   "services": [
+    "es",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Harmony",
+   "cpu": 3,
+   "memory": 60,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

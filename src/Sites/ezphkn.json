@@ -1,0 +1,27 @@
+{
+ "site_id": "z58053_230413",
+ "site_name": "ezphkn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Snowball",
+   "cpu": 14,
+   "memory": 59,
+   "services": [
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Longhorn",
+   "cpu": 8,
+   "memory": 16,
+   "services": [
+    "shs",
+    "riscore",
+    "dpat",
+    "es"
+   ]
+  }
+ }
+}

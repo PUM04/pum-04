@@ -1,0 +1,111 @@
+{
+ "site_id": "8eez03_230413",
+ "site_name": "lkghnz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Redstone_2",
+   "cpu": 10,
+   "memory": 41,
+   "services": [
+    "shs",
+    "dpat",
+    "uvclient",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Symphony",
+   "cpu": 5,
+   "memory": 5,
+   "services": [
+    "riscore",
+    "sql2019",
+    "shs",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Blue",
+   "cpu": 24,
+   "memory": 30,
+   "services": [
+    "haproxy",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 15,
+   "memory": 18,
+   "services": [
+    "es",
+    "ad",
+    "iss",
+    "riscore",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Sparta",
+   "cpu": 21,
+   "memory": 42,
+   "services": [
+    "dpat",
+    "wise",
+    "riscore",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Daytona",
+   "cpu": 3,
+   "memory": 37,
+   "services": [
+    "dpat",
+    "ids7",
+    "iss",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Memphis",
+   "cpu": 5,
+   "memory": 8,
+   "services": [
+    "ad",
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Razzle",
+   "cpu": 24,
+   "memory": 39,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Emerald",
+   "cpu": 4,
+   "memory": 29,
+   "services": [
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_1",
+   "cpu": 13,
+   "memory": 40,
+   "services": [
+    "ids7",
+    "uvcore",
+    "es"
+   ]
+  }
+ }
+}

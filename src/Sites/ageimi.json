@@ -1,0 +1,90 @@
+{
+ "site_id": "6v654n_230413",
+ "site_name": "ageimi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Sun_valley_2",
+   "cpu": 13,
+   "memory": 39,
+   "services": [
+    "wise",
+    "shs",
+    "ad",
+    "risapp",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Sparta",
+   "cpu": 24,
+   "memory": 33,
+   "services": [
+    "dpat",
+    "haproxy",
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Sun_valley_2",
+   "cpu": 16,
+   "memory": 3,
+   "services": [
+    "dpat",
+    "riscore",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Longhorn",
+   "cpu": 8,
+   "memory": 27,
+   "services": [
+    "uvclient",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 4,
+   "memory": 53,
+   "services": [
+    "iss",
+    "ids7",
+    "ad",
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Freestyle",
+   "cpu": 26,
+   "memory": 59,
+   "services": [
+    "shs",
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Blue",
+   "cpu": 19,
+   "memory": 56,
+   "services": [
+    "shs",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 22,
+   "memory": 38,
+   "services": [
+    "riscore",
+    "ids7",
+    "uvclient"
+   ]
+  }
+ }
+}

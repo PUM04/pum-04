@@ -1,0 +1,44 @@
+{
+ "site_id": "x9f61e_230413",
+ "site_name": "stauus",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Symphony",
+   "cpu": 17,
+   "memory": 1,
+   "services": [
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Vibranium",
+   "cpu": 4,
+   "memory": 58,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "iss",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_valley_2",
+   "cpu": 7,
+   "memory": 53,
+   "services": [
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_4",
+   "cpu": 31,
+   "memory": 59,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

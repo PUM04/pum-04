@@ -1,0 +1,18 @@
+{
+ "site_id": "jo0o69_230413",
+ "site_name": "ixurbk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Symphony",
+   "cpu": 21,
+   "memory": 44,
+   "services": [
+    "riscore",
+    "dpat",
+    "es"
+   ]
+  }
+ }
+}

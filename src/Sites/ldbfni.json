@@ -1,0 +1,52 @@
+{
+ "site_id": "7o7mmt_230413",
+ "site_name": "ldbfni",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Longhorn",
+   "cpu": 18,
+   "memory": 38,
+   "services": [
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Freestyle",
+   "cpu": 18,
+   "memory": 63,
+   "services": [
+    "ids7",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Threshold",
+   "cpu": 8,
+   "memory": 4,
+   "services": [
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Emerald",
+   "cpu": 25,
+   "memory": 34,
+   "services": [
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_Valley",
+   "cpu": 8,
+   "memory": 25,
+   "services": [
+    "uvcore",
+    "wise",
+    "sql2019",
+    "iss"
+   ]
+  }
+ }
+}

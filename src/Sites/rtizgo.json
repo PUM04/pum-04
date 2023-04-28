@@ -1,0 +1,48 @@
+{
+ "site_id": "is4378_230413",
+ "site_name": "rtizgo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Threshold_2",
+   "cpu": 16,
+   "memory": 63,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 23,
+   "memory": 54,
+   "services": [
+    "shs"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Symphony",
+   "cpu": 29,
+   "memory": 22,
+   "services": [
+    "riscore",
+    "dpat",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Chicago",
+   "cpu": 18,
+   "memory": 61,
+   "services": [
+    "sql2019",
+    "wise",
+    "shs",
+    "uvclient"
+   ]
+  }
+ }
+}

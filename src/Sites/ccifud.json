@@ -1,0 +1,82 @@
+{
+ "site_id": "zs9cll_230413",
+ "site_name": "ccifud",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 3,
+   "memory": 12,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_2",
+   "cpu": 6,
+   "memory": 25,
+   "services": [
+    "wise",
+    "ids7",
+    "uvclient",
+    "shs",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_2",
+   "cpu": 23,
+   "memory": 56,
+   "services": [
+    "es",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_4",
+   "cpu": 27,
+   "memory": 40,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Snowball",
+   "cpu": 27,
+   "memory": 46,
+   "services": [
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_5",
+   "cpu": 7,
+   "memory": 29,
+   "services": [
+    "ad",
+    "risapp",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold_2",
+   "cpu": 27,
+   "memory": 16,
+   "services": [
+    "es",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_7",
+   "cpu": 9,
+   "memory": 41,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

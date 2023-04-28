@@ -1,0 +1,16 @@
+{
+ "site_id": "6q2626_230413",
+ "site_name": "vlyjrd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Freestyle",
+   "cpu": 7,
+   "memory": 2,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

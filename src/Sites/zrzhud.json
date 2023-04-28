@@ -1,0 +1,59 @@
+{
+ "site_id": "5o4y67_230413",
+ "site_name": "zrzhud",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Threshold",
+   "cpu": 18,
+   "memory": 32,
+   "services": [
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Blue",
+   "cpu": 31,
+   "memory": 6,
+   "services": [
+    "iss",
+    "ad",
+    "riscore",
+    "shs"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sun_Valley",
+   "cpu": 16,
+   "memory": 58,
+   "services": [
+    "uvclient",
+    "iss",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Daytona",
+   "cpu": 1,
+   "memory": 30,
+   "services": [
+    "haproxy",
+    "riscore",
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Whistler",
+   "cpu": 26,
+   "memory": 27,
+   "services": [
+    "ad",
+    "wise",
+    "haproxy",
+    "sql2019"
+   ]
+  }
+ }
+}

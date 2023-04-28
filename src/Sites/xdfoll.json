@@ -1,0 +1,47 @@
+{
+ "site_id": "j740x1_230413",
+ "site_name": "xdfoll",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Redstone_1",
+   "cpu": 24,
+   "memory": 24,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Memphis",
+   "cpu": 4,
+   "memory": 61,
+   "services": [
+    "risapp",
+    "es",
+    "haproxy",
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 21,
+   "memory": 44,
+   "services": [
+    "sql2019",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Chicago",
+   "cpu": 24,
+   "memory": 41,
+   "services": [
+    "risapp",
+    "iss",
+    "uvclient"
+   ]
+  }
+ }
+}

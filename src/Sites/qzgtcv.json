@@ -1,0 +1,25 @@
+{
+ "site_id": "jn5ez2_230413",
+ "site_name": "qzgtcv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Razzle",
+   "cpu": 14,
+   "memory": 16,
+   "services": [
+    "es",
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 3,
+   "memory": 33,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

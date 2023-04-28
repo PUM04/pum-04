@@ -1,0 +1,69 @@
+{
+ "site_id": "ad3064_230413",
+ "site_name": "vhvxyn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Windows_8",
+   "cpu": 25,
+   "memory": 14,
+   "services": [
+    "wise",
+    "ad",
+    "ids7",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Blue",
+   "cpu": 32,
+   "memory": 45,
+   "services": [
+    "risapp",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 9,
+   "memory": 2,
+   "services": [
+    "riscore",
+    "es",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 11,
+   "memory": 12,
+   "services": [
+    "riscore",
+    "wise",
+    "iss",
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Snowball",
+   "cpu": 29,
+   "memory": 60,
+   "services": [
+    "riscore",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Razzle",
+   "cpu": 23,
+   "memory": 20,
+   "services": [
+    "uvclient",
+    "sql2019"
+   ]
+  }
+ }
+}

@@ -1,0 +1,89 @@
+{
+ "site_id": "xfc704_230413",
+ "site_name": "hpyaox",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Longhorn",
+   "cpu": 21,
+   "memory": 56,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Memphis",
+   "cpu": 32,
+   "memory": 28,
+   "services": [
+    "ad",
+    "es",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Sparta",
+   "cpu": 25,
+   "memory": 26,
+   "services": [
+    "dpat",
+    "iss",
+    "risapp",
+    "ad",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Memphis",
+   "cpu": 6,
+   "memory": 42,
+   "services": [
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 4,
+   "memory": 35,
+   "services": [
+    "uvclient",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Freestyle",
+   "cpu": 4,
+   "memory": 16,
+   "services": [
+    "risapp",
+    "riscore",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_1",
+   "cpu": 27,
+   "memory": 26,
+   "services": [
+    "dpat",
+    "uvcore",
+    "uvclient",
+    "es",
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Sparta",
+   "cpu": 20,
+   "memory": 15,
+   "services": [
+    "riscore",
+    "iss",
+    "wise"
+   ]
+  }
+ }
+}

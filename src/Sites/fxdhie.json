@@ -1,0 +1,67 @@
+{
+ "site_id": "6qn348_230413",
+ "site_name": "fxdhie",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Longhorn",
+   "cpu": 20,
+   "memory": 11,
+   "services": [
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Windows_8",
+   "cpu": 32,
+   "memory": 46,
+   "services": [
+    "shs",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 9,
+   "memory": 23,
+   "services": [
+    "shs",
+    "sql2019",
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Threshold_2",
+   "cpu": 12,
+   "memory": 64,
+   "services": [
+    "wise",
+    "uvcore",
+    "risapp",
+    "shs"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 28,
+   "memory": 2,
+   "services": [
+    "shs",
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Daytona",
+   "cpu": 24,
+   "memory": 52,
+   "services": [
+    "uvcore",
+    "ids7",
+    "riscore"
+   ]
+  }
+ }
+}

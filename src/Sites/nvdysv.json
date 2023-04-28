@@ -1,0 +1,78 @@
+{
+ "site_id": "v54c15_230413",
+ "site_name": "nvdysv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Threshold_2",
+   "cpu": 15,
+   "memory": 47,
+   "services": [
+    "haproxy",
+    "dpat",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 12,
+   "memory": 36,
+   "services": [
+    "es",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Millennium",
+   "cpu": 11,
+   "memory": 56,
+   "services": [
+    "risapp",
+    "dpat",
+    "es",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_NT_5.0",
+   "cpu": 7,
+   "memory": 44,
+   "services": [
+    "ids7",
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Chicago",
+   "cpu": 24,
+   "memory": 2,
+   "services": [
+    "es",
+    "iss",
+    "wise",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Anvil",
+   "cpu": 32,
+   "memory": 24,
+   "services": [
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 2,
+   "memory": 27,
+   "services": [
+    "es",
+    "wise",
+    "shs",
+    "sql2019"
+   ]
+  }
+ }
+}

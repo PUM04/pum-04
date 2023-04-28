@@ -1,0 +1,19 @@
+{
+ "site_id": "ed1t2m_230413",
+ "site_name": "zghlqa",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Symphony",
+   "cpu": 8,
+   "memory": 2,
+   "services": [
+    "dpat",
+    "haproxy",
+    "uvclient",
+    "ids7"
+   ]
+  }
+ }
+}

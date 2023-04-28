@@ -1,0 +1,44 @@
+{
+ "site_id": "d44knw_230413",
+ "site_name": "gpexjs",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Longhorn",
+   "cpu": 18,
+   "memory": 55,
+   "services": [
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Anvil",
+   "cpu": 1,
+   "memory": 52,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Daytona",
+   "cpu": 30,
+   "memory": 39,
+   "services": [
+    "riscore",
+    "es",
+    "sql2019"
+   ]
+  },
+  "sss": {
+   "os": "Harmony",
+   "cpu": 32,
+   "memory": 48,
+   "services": [
+    "risapp",
+    "ad",
+    "uvcore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,27 @@
+{
+ "site_id": "ou9k0p_230413",
+ "site_name": "djbjwn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Snowball",
+   "cpu": 10,
+   "memory": 6,
+   "services": [
+    "wise",
+    "risapp",
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_7",
+   "cpu": 11,
+   "memory": 18,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

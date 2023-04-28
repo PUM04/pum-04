@@ -1,0 +1,43 @@
+{
+ "site_id": "utl362_230413",
+ "site_name": "prpnar",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Razzle",
+   "cpu": 29,
+   "memory": 57,
+   "services": [
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Freestyle",
+   "cpu": 16,
+   "memory": 49,
+   "services": [
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Vanadium",
+   "cpu": 13,
+   "memory": 48,
+   "services": [
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Longhorn",
+   "cpu": 12,
+   "memory": 10,
+   "services": [
+    "ad",
+    "risapp",
+    "shs",
+    "dpat"
+   ]
+  }
+ }
+}

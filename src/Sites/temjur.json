@@ -1,0 +1,84 @@
+{
+ "site_id": "4c3za8_230413",
+ "site_name": "temjur",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Sun_Valley",
+   "cpu": 7,
+   "memory": 33,
+   "services": [
+    "risapp",
+    "dpat",
+    "uvclient",
+    "shs",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Sparta",
+   "cpu": 21,
+   "memory": 7,
+   "services": [
+    "uvcore",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Daytona",
+   "cpu": 15,
+   "memory": 45,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Daytona",
+   "cpu": 29,
+   "memory": 24,
+   "services": [
+    "wise",
+    "sql2019",
+    "risapp",
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Vanadium",
+   "cpu": 16,
+   "memory": 46,
+   "services": [
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 8,
+   "memory": 15,
+   "services": [
+    "haproxy",
+    "shs",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Blue",
+   "cpu": 20,
+   "memory": 55,
+   "services": [
+    "ids7",
+    "risapp",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Chicago",
+   "cpu": 29,
+   "memory": 11,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

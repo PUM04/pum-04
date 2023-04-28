@@ -1,0 +1,109 @@
+{
+ "site_id": "6q9qwj_230413",
+ "site_name": "yzwvwy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Redstone_5",
+   "cpu": 9,
+   "memory": 36,
+   "services": [
+    "sql2019",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_valley_2",
+   "cpu": 29,
+   "memory": 44,
+   "services": [
+    "wise",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Chicago",
+   "cpu": 30,
+   "memory": 38,
+   "services": [
+    "uvclient",
+    "dpat",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Harmony",
+   "cpu": 16,
+   "memory": 41,
+   "services": [
+    "risapp",
+    "uvcore",
+    "es",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_7",
+   "cpu": 31,
+   "memory": 34,
+   "services": [
+    "risapp",
+    "ad",
+    "wise",
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Sparta",
+   "cpu": 1,
+   "memory": 49,
+   "services": [
+    "sql2019",
+    "es",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Daytona",
+   "cpu": 1,
+   "memory": 53,
+   "services": [
+    "uvcore",
+    "haproxy",
+    "wise",
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Daytona",
+   "cpu": 16,
+   "memory": 38,
+   "services": [
+    "iss",
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Whistler",
+   "cpu": 15,
+   "memory": 62,
+   "services": [
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Sun_Valley",
+   "cpu": 14,
+   "memory": 27,
+   "services": [
+    "wise",
+    "haproxy",
+    "ids7",
+    "riscore"
+   ]
+  }
+ }
+}

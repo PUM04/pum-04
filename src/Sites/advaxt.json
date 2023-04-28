@@ -1,0 +1,25 @@
+{
+ "site_id": "l752ro_230413",
+ "site_name": "advaxt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Vanadium",
+   "cpu": 7,
+   "memory": 64,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 30,
+   "memory": 1,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

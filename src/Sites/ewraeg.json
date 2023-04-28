@@ -1,0 +1,33 @@
+{
+ "site_id": "f9m398_230413",
+ "site_name": "ewraeg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Redstone_5",
+   "cpu": 10,
+   "memory": 41,
+   "services": [
+    "ids7",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Freestyle",
+   "cpu": 18,
+   "memory": 30,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_3",
+   "cpu": 6,
+   "memory": 1,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

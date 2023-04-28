@@ -1,0 +1,38 @@
+{
+ "site_id": "ommfxk_230413",
+ "site_name": "kwryqp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 14,
+   "memory": 52,
+   "services": [
+    "shs",
+    "uvcore",
+    "ad",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Razzle",
+   "cpu": 22,
+   "memory": 26,
+   "services": [
+    "ids7",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold_2",
+   "cpu": 5,
+   "memory": 58,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "ad"
+   ]
+  }
+ }
+}

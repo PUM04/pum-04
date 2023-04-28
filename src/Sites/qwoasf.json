@@ -1,0 +1,51 @@
+{
+ "site_id": "0x3706_230413",
+ "site_name": "qwoasf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Sun_Valley",
+   "cpu": 1,
+   "memory": 26,
+   "services": [
+    "dpat",
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Daytona",
+   "cpu": 2,
+   "memory": 13,
+   "services": [
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Symphony",
+   "cpu": 14,
+   "memory": 20,
+   "services": [
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_8",
+   "cpu": 32,
+   "memory": 53,
+   "services": [
+    "iss",
+    "dpat",
+    "shs"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sparta",
+   "cpu": 10,
+   "memory": 23,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

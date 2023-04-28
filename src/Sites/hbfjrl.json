@@ -1,0 +1,33 @@
+{
+ "site_id": "yz3e1h_230413",
+ "site_name": "hbfjrl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Sparta",
+   "cpu": 12,
+   "memory": 18,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold",
+   "cpu": 3,
+   "memory": 43,
+   "services": [
+    "riscore",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_2",
+   "cpu": 13,
+   "memory": 30,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

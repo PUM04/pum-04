@@ -1,0 +1,17 @@
+{
+ "site_id": "8137t3_230413",
+ "site_name": "acklah",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Vanadium",
+   "cpu": 8,
+   "memory": 16,
+   "services": [
+    "uvclient",
+    "risapp"
+   ]
+  }
+ }
+}

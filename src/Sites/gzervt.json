@@ -1,0 +1,77 @@
+{
+ "site_id": "lpzgl1_230413",
+ "site_name": "gzervt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 32,
+   "memory": 1,
+   "services": [
+    "riscore",
+    "iss",
+    "ids7",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Whistler",
+   "cpu": 30,
+   "memory": 8,
+   "services": [
+    "wise",
+    "dpat"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_5",
+   "cpu": 30,
+   "memory": 51,
+   "services": [
+    "risapp",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Whistler",
+   "cpu": 22,
+   "memory": 34,
+   "services": [
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Emerald",
+   "cpu": 13,
+   "memory": 30,
+   "services": [
+    "iss",
+    "ad",
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Vibranium",
+   "cpu": 31,
+   "memory": 19,
+   "services": [
+    "ids7",
+    "iss",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Emerald",
+   "cpu": 24,
+   "memory": 56,
+   "services": [
+    "ad",
+    "dpat",
+    "haproxy"
+   ]
+  }
+ }
+}

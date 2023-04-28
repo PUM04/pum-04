@@ -1,0 +1,61 @@
+{
+ "site_id": "1br862_230413",
+ "site_name": "cjxtiw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Blue",
+   "cpu": 9,
+   "memory": 44,
+   "services": [
+    "uvcore",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Harmony",
+   "cpu": 29,
+   "memory": 58,
+   "services": [
+    "uvclient",
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Daytona",
+   "cpu": 13,
+   "memory": 48,
+   "services": [
+    "ids7",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_1",
+   "cpu": 14,
+   "memory": 19,
+   "services": [
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Blue",
+   "cpu": 30,
+   "memory": 48,
+   "services": [
+    "wise",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Emerald",
+   "cpu": 1,
+   "memory": 27,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

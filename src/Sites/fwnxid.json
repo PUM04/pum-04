@@ -1,0 +1,39 @@
+{
+ "site_id": "543wj9_230413",
+ "site_name": "fwnxid",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Chicago",
+   "cpu": 30,
+   "memory": 9,
+   "services": [
+    "sql2019",
+    "ad",
+    "shs",
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Freestyle",
+   "cpu": 24,
+   "memory": 42,
+   "services": [
+    "riscore",
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Sun_Valley",
+   "cpu": 9,
+   "memory": 44,
+   "services": [
+    "wise",
+    "uvcore"
+   ]
+  }
+ }
+}

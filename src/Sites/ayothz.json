@@ -1,0 +1,17 @@
+{
+ "site_id": "06okjz_230413",
+ "site_name": "ayothz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Redstone_3",
+   "cpu": 13,
+   "memory": 20,
+   "services": [
+    "wise",
+    "sql2019"
+   ]
+  }
+ }
+}

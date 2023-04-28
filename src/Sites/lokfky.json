@@ -1,0 +1,78 @@
+{
+ "site_id": "a6y6dn_230413",
+ "site_name": "lokfky",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Redstone_2",
+   "cpu": 9,
+   "memory": 19,
+   "services": [
+    "risapp",
+    "dpat",
+    "iss",
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Daytona",
+   "cpu": 32,
+   "memory": 28,
+   "services": [
+    "dpat",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 22,
+   "memory": 49,
+   "services": [
+    "wise",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_8",
+   "cpu": 23,
+   "memory": 35,
+   "services": [
+    "ids7",
+    "wise",
+    "uvcore",
+    "sql2019",
+    "ad"
+   ]
+  },
+  "sss": {
+   "os": "Sun_Valley",
+   "cpu": 14,
+   "memory": 6,
+   "services": [
+    "haproxy",
+    "sql2019",
+    "ad",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 18,
+   "memory": 13,
+   "services": [
+    "riscore",
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 27,
+   "memory": 43,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

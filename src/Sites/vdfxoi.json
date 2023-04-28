@@ -1,0 +1,67 @@
+{
+ "site_id": "j1s132_230413",
+ "site_name": "vdfxoi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 13,
+   "memory": 40,
+   "services": [
+    "sql2019",
+    "es",
+    "shs",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Longhorn",
+   "cpu": 24,
+   "memory": 55,
+   "services": [
+    "uvclient",
+    "iss",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Windows_8",
+   "cpu": 23,
+   "memory": 25,
+   "services": [
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "ad": {
+   "os": "Blue",
+   "cpu": 16,
+   "memory": 42,
+   "services": [
+    "iss",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Vanadium",
+   "cpu": 27,
+   "memory": 51,
+   "services": [
+    "riscore",
+    "risapp",
+    "haproxy",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Millennium",
+   "cpu": 2,
+   "memory": 46,
+   "services": [
+    "ids7",
+    "riscore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "site_id": "xpexy5_230413",
+ "site_name": "gpzeka",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Daytona",
+   "cpu": 18,
+   "memory": 30,
+   "services": [
+    "haproxy",
+    "iss",
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Razzle",
+   "cpu": 22,
+   "memory": 39,
+   "services": [
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Sparta",
+   "cpu": 16,
+   "memory": 46,
+   "services": [
+    "wise",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Windows_8",
+   "cpu": 19,
+   "memory": 15,
+   "services": [
+    "ids7",
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Freestyle",
+   "cpu": 27,
+   "memory": 43,
+   "services": [
+    "ids7",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Daytona",
+   "cpu": 20,
+   "memory": 60,
+   "services": [
+    "es",
+    "ad",
+    "dpat",
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 12,
+   "memory": 33,
+   "services": [
+    "iss",
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_valley_2",
+   "cpu": 18,
+   "memory": 17,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "ad",
+    "iss"
+   ]
+  }
+ }
+}

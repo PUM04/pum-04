@@ -1,0 +1,60 @@
+{
+ "site_id": "7qk791_230413",
+ "site_name": "ofsthx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Redstone_1",
+   "cpu": 8,
+   "memory": 5,
+   "services": [
+    "ids7",
+    "shs",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Symphony",
+   "cpu": 3,
+   "memory": 35,
+   "services": [
+    "dpat",
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Longhorn",
+   "cpu": 12,
+   "memory": 49,
+   "services": [
+    "ad",
+    "wise",
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_4",
+   "cpu": 18,
+   "memory": 22,
+   "services": [
+    "ids7",
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Vibranium",
+   "cpu": 10,
+   "memory": 23,
+   "services": [
+    "riscore",
+    "ad",
+    "iss",
+    "uvclient",
+    "haproxy"
+   ]
+  }
+ }
+}

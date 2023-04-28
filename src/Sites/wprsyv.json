@@ -1,0 +1,80 @@
+{
+ "site_id": "14a870_230413",
+ "site_name": "wprsyv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Razzle",
+   "cpu": 28,
+   "memory": 51,
+   "services": [
+    "uvclient",
+    "ids7",
+    "wise",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_2",
+   "cpu": 28,
+   "memory": 45,
+   "services": [
+    "iss",
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 13,
+   "memory": 53,
+   "services": [
+    "shs",
+    "ad",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_2",
+   "cpu": 8,
+   "memory": 46,
+   "services": [
+    "iss",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Windows_8",
+   "cpu": 4,
+   "memory": 52,
+   "services": [
+    "sql2019",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Sparta",
+   "cpu": 16,
+   "memory": 45,
+   "services": [
+    "uvcore",
+    "shs",
+    "haproxy",
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Blue",
+   "cpu": 28,
+   "memory": 62,
+   "services": [
+    "uvclient",
+    "dpat",
+    "shs",
+    "iss"
+   ]
+  }
+ }
+}

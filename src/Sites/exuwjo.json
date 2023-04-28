@@ -1,0 +1,33 @@
+{
+ "site_id": "3tqjzk_230413",
+ "site_name": "exuwjo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Sparta",
+   "cpu": 28,
+   "memory": 55,
+   "services": [
+    "sql2019",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Blue",
+   "cpu": 25,
+   "memory": 41,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Anvil",
+   "cpu": 27,
+   "memory": 31,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

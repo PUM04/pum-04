@@ -1,0 +1,29 @@
+{
+ "site_id": "510039_230413",
+ "site_name": "gnnjhs",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 21,
+   "memory": 3,
+   "services": [
+    "risapp",
+    "uvclient",
+    "iss",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 6,
+   "memory": 34,
+   "services": [
+    "iss",
+    "ids7",
+    "wise"
+   ]
+  }
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "site_id": "yd43jf_230413",
+ "site_name": "lpdppk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Threshold_2",
+   "cpu": 7,
+   "memory": 51,
+   "services": [
+    "risapp",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 28,
+   "memory": 56,
+   "services": [
+    "haproxy",
+    "risapp",
+    "dpat",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Millennium",
+   "cpu": 25,
+   "memory": 26,
+   "services": [
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Emerald",
+   "cpu": 29,
+   "memory": 49,
+   "services": [
+    "ad",
+    "uvcore",
+    "shs",
+    "riscore",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_5",
+   "cpu": 17,
+   "memory": 53,
+   "services": [
+    "dpat"
+   ]
+  }
+ }
+}

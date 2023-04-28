@@ -1,0 +1,75 @@
+{
+ "site_id": "xw8lsc_230413",
+ "site_name": "jtroaq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Harmony",
+   "cpu": 18,
+   "memory": 43,
+   "services": [
+    "riscore",
+    "haproxy",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sun_valley_2",
+   "cpu": 23,
+   "memory": 31,
+   "services": [
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold",
+   "cpu": 22,
+   "memory": 42,
+   "services": [
+    "ad",
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Windows_8",
+   "cpu": 7,
+   "memory": 8,
+   "services": [
+    "ids7",
+    "uvcore",
+    "uvclient",
+    "risapp",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Chicago",
+   "cpu": 25,
+   "memory": 28,
+   "services": [
+    "sql2019",
+    "riscore",
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Freestyle",
+   "cpu": 20,
+   "memory": 6,
+   "services": [
+    "ad"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 7,
+   "memory": 55,
+   "services": [
+    "dpat"
+   ]
+  }
+ }
+}

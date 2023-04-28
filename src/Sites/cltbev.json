@@ -1,0 +1,70 @@
+{
+ "site_id": "subo88_230413",
+ "site_name": "cltbev",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Sparta",
+   "cpu": 30,
+   "memory": 55,
+   "services": [
+    "ids7",
+    "es",
+    "dpat",
+    "riscore",
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Sparta",
+   "cpu": 14,
+   "memory": 50,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Harmony",
+   "cpu": 20,
+   "memory": 5,
+   "services": [
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Emerald",
+   "cpu": 25,
+   "memory": 42,
+   "services": [
+    "uvcore",
+    "risapp",
+    "ad",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Millennium",
+   "cpu": 9,
+   "memory": 33,
+   "services": [
+    "shs",
+    "ids7",
+    "uvclient",
+    "risapp"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold_2",
+   "cpu": 9,
+   "memory": 23,
+   "services": [
+    "ids7",
+    "haproxy",
+    "uvclient"
+   ]
+  }
+ }
+}

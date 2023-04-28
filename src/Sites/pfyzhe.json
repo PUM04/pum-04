@@ -1,0 +1,50 @@
+{
+ "site_id": "y8qahn_230413",
+ "site_name": "pfyzhe",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Snowball",
+   "cpu": 30,
+   "memory": 46,
+   "services": [
+    "ad",
+    "haproxy",
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Snowball",
+   "cpu": 32,
+   "memory": 31,
+   "services": [
+    "riscore",
+    "es",
+    "sql2019",
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Harmony",
+   "cpu": 31,
+   "memory": 58,
+   "services": [
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 5,
+   "memory": 54,
+   "services": [
+    "es",
+    "haproxy",
+    "uvcore",
+    "uvclient",
+    "sql2019"
+   ]
+  }
+ }
+}

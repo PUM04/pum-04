@@ -1,0 +1,39 @@
+{
+ "site_id": "uy5190_230413",
+ "site_name": "qlefvq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Emerald",
+   "cpu": 25,
+   "memory": 17,
+   "services": [
+    "uvcore",
+    "iss",
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_3",
+   "cpu": 1,
+   "memory": 58,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 10,
+   "memory": 35,
+   "services": [
+    "dpat",
+    "ad",
+    "sql2019",
+    "shs"
+   ]
+  }
+ }
+}

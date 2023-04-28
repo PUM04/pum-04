@@ -1,0 +1,37 @@
+{
+ "site_id": "eyr178_230413",
+ "site_name": "xnzslv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Emerald",
+   "cpu": 24,
+   "memory": 15,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Windows_7",
+   "cpu": 12,
+   "memory": 3,
+   "services": [
+    "es",
+    "iss",
+    "wise",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Daytona",
+   "cpu": 3,
+   "memory": 29,
+   "services": [
+    "iss",
+    "dpat"
+   ]
+  }
+ }
+}

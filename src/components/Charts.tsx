@@ -2,6 +2,7 @@
  *
  * @file Contains the component that paints Charts. Gets data for chart.
  */
+// eslint-disable-next-line
 import React, { useEffect, useMemo, useState } from 'react';
 import { Divider } from '@mui/material';
 import {
@@ -12,7 +13,6 @@ import {
   VictoryTooltip,
   VictoryCandlestick,
   VictoryLabel,
-  VictoryLine,
 } from 'victory';
 import { TextProps } from 'victory-core';
 import { Site } from './SiteInterface';
@@ -33,11 +33,25 @@ interface ChartProps {
   fileHandler: any;
 }
 
+/**
+ *
+ * Data for drawing a single bar in a histogram
+ * { x: '700', y: 200, fill: 'yellow' }
+ */
 class Bar {
   public x: string;
+
   public y: number;
+
   public fill: string;
 
+  /**
+   * Constructor for a single bar
+   *
+   * @param x x value in a histogram
+   * @param y y value in a histogram
+   * @param fill Color for a single bar
+   */
   constructor(x: string = '0', y: number = 0, fill = 'black') {
     this.x = x;
     this.y = y;
@@ -45,36 +59,30 @@ class Bar {
   }
 }
 
+/**
+ * Structure for a single histogram
+ */
 class Histogram {
   public bars: Array<Bar>;
 
+  /**
+   * Constructor for creating datastructure used to draw a single histogram
+   *
+    @param bars Datastructure for drawing a histogram
+    Example
+   * {bars = [
+      { x: '500', y: 20, fill: 'yellow' },
+      { x: '600', y: 150, fill: 'yellow' },
+      { x: '700', y: 200, fill: 'yellow' },
+    ];}
+   */
   constructor(bars: Array<Bar> = []) {
     this.bars = bars;
   }
 }
 
-/* Datastructure for drawing a histogram
-  Example
-* {bars = [
-      { x: '500', y: 20, fill: 'yellow' },
-      { x: '600', y: 150, fill: 'yellow' },
-      { x: '700', y: 200, fill: 'yellow' },
-    ];}
-*/
-interface HistogramInterface {
-  bars: Array<Bar>;
-}
 /**
- * Data for drawing a single bar in a histogram
- * { x: '700', y: 200, fill: 'yellow' }
- */
-interface BarInterface {
-  x: string;
-  y: number;
-  fill: string;
-}
-/**
- * Data structure for drawing one CandleChart based on one metric
+ * Data structure for drawing one CandleChart based on one site
  * {candles = [
       { x: 1, open: 5, close: 10, high: 25, low: 1 },
       { x: 2, open: 6, close: 8, high: 15, low: 3 },
@@ -122,9 +130,9 @@ function getBarChartData(
   const metricData = jsonData ? jsonData[metric]?.data : null;
 
   metricData?.forEach((bar: any) => {
-    //if (bar.length <= 3000) {
-      histogram.bars.push({ x: String(bar.length), y: bar.count, fill: color });
-    //}
+    // if (bar.length <= 3000) {
+    histogram.bars.push({ x: String(bar.length), y: bar.count, fill: color });
+    // }
   });
   return histogram;
 }
@@ -132,16 +140,15 @@ function getBarChartData(
 /**
  * getCandleChartData parse and get the data for the correct metric and sites.
  *
- * @param metric a string with the name of the metric to show in the candlechart.
+ * @param metrics a string array with the name of the metrics to show in the candlechart.
  * example 'getPatient'
- * @param sites a string list containing 1-n sites that will be shown in the candlechart.
- * example ['s1','s2','s3','s4']
+ * @param site a string with the name of the site to get data from
  * @param boxDiagramData data from backend.
  * @param siteProps map ecah siteKey to a color
  * @returns a data structure in correct format to paint a candleChart.
  */
-function getCandleChartData( //rewrite this function
-  metrics: Array<string>, //should be a metric array
+function getCandleChartData( // rewrite this function
+  metrics: Array<string>, // should be a metric array
   site: string,
   boxDiagramData: Map<string, string>,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -155,7 +162,7 @@ function getCandleChartData( //rewrite this function
    *
    */
 
-  metrics.forEach((metric, index) => {
+  metrics.forEach((metric) => {
     const siteData = boxDiagramData.get(site);
     if (!siteData) return;
 
@@ -163,26 +170,26 @@ function getCandleChartData( //rewrite this function
     const metricData = jsonData ? jsonData[metric] : null;
     if (!metricData) return;
     const maxHeight = 30000;
-    /**Todo: This should not be calculated in frontend.
+    /**
+     * Todo: This should not be calculated in frontend.
      * Add new calculations in backend that does not include infinite when
      * calculating median,min,max(should probably still be inf),q1,q3. This fix is only to make boxplotsChart
      * readable when adding a victoryCandle with inf values
      */
-    if(metricData.max > maxHeight){
+    if (metricData.max > maxHeight) {
       metricData.max = maxHeight;
-      //Remove closeLine
+      // Remove closeLine
     }
-    if( metricData.first_quartile>  maxHeight){
-      metricData.first_quartile =  maxHeight;
+    if (metricData.first_quartile > maxHeight) {
+      metricData.first_quartile = maxHeight;
     }
-    if(metricData.third_quartile >  maxHeight){
-      metricData.third_quartile =  maxHeight;
+    if (metricData.third_quartile > maxHeight) {
+      metricData.third_quartile = maxHeight;
     }
-    if(metricData.min >  maxHeight){
-      metricData.min =  maxHeight;
+    if (metricData.min > maxHeight) {
+      metricData.min = maxHeight;
     }
     candle.candles.push({
-
       x: metric,
       open: metricData.first_quartile,
       close: metricData.third_quartile,
@@ -206,7 +213,8 @@ function getCandleChartData( //rewrite this function
     Note that width might need to be changed depending on number of sites.
  * @returns a VictoryCandlestick .
  */
-function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
+function drawVictoryCandle(data: Array<Candle>, width: number): JSX.Element {
+  const color: string = 'blue';
   return (
     <VictoryCandlestick
       key={JSON.stringify(data)}
@@ -222,7 +230,7 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
       data={data}
       style={{
         data: {
-          fill: 'orange',
+          fill: color,
           stroke: 'gray',
         },
       }}
@@ -230,18 +238,24 @@ function drawVictoryCandle(data: Array<Candle>, width: any): JSX.Element {
   );
 }
 
+/**
+ *
+ * Tick for x axis used in barChart
+ *
+ * @param props props for customTickLabel
+ * @returns JSX element used to set tickLabel
+ */
 function CustomTickLabel(props: CustomTickLabelProps): JSX.Element {
-  let { x, y, text, ticks = Array<string>(), index } = props;
+  const { x, y, text, ticks = Array<string>() } = props;
   const padding = 1; // adjust the value to increase/decrease padding between labels
 
   const strokeWidth = 1;
   const color = 'grey';
   const lineLength = 20;
-  const someValue = 0;
   const someOffset = 210;
 
-  //let xValue = someValue*(index/ticks.length)+someOffset;
-  let xValue = someOffset / ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific
+  // let xValue = someValue*(index/ticks.length)+someOffset;
+  const xValue = someOffset / ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific
 
   return (
     <g transform={`translate(${x}, ${y})`}>
@@ -250,7 +264,7 @@ function CustomTickLabel(props: CustomTickLabelProps): JSX.Element {
         verticalAnchor="end"
         angle="30"
         style={{ fontSize: Math.min(125 / text.length, 10), fill: '#404040' }}
-        //style={{ fontSize: 10, fill: '#404040' }}
+        // style={{ fontSize: 10, fill: '#404040' }}
         x={0}
         y={0}
         dy={padding / 2}
@@ -267,26 +281,24 @@ function CustomTickLabel(props: CustomTickLabelProps): JSX.Element {
     </g>
   );
 }
+/* eslint-disable */
 interface CustomTickLabelProps extends TextProps {
   x?: number;
   y?: number;
-  verticalAnchor?: string;
-  textAnchor?: string;
   ticks?: Array<string>;
-  angle?: number;
-  scale?: any; // Use the appropriate type based on your use case
-  tick?: any; // Use the appropriate type based on your use case
   text?: any; // Use the appropriate type based on your use case
-  index?: number;
-  datum?: any; // Use the appropriate type based on your use case
-  style?: React.CSSProperties;
-  events?: any; // Use the appropriate type based on your use case
 }
+/* eslint-enable */
 
-function CustomTickLabelBoxPlot(props:CustomTickLabelProps): JSX.Element {
+/**
+ *  Tick for x axis used in boxplot
+ *
+ * @param props props for customTickLabel
+ * @returns JSX element used to set tickLabel
+ */
+function CustomTickLabelBoxPlot(props: CustomTickLabelProps): JSX.Element {
+  const { x, y, text, ticks = Array<string>() } = props;
 
-  let { x, y, text, index, ticks= Array<string>()} = props;
-  
   const padding = 1; // adjust the value to increase/decrease padding between labels
 
   const strokeWidth = 1;
@@ -294,16 +306,14 @@ function CustomTickLabelBoxPlot(props:CustomTickLabelProps): JSX.Element {
   const lineLength = 20;
   const someOffset = 210;
 
-  //let xValue = someValue*(index/ticks.length)+someOffset;
-  let xValue = someOffset / ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific
+  const xValue = someOffset / ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific
 
   return (
     <g transform={`translate(${x}, ${y})`}>
       <VictoryLabel
-
         angle="0"
         style={{ fontSize: 10, fill: '#404040' }}
-        //x={-text.length}
+        // x={-text.length}
         x={0}
         y={0}
         dy={padding / 2}
@@ -331,7 +341,9 @@ function CustomTickLabelBoxPlot(props:CustomTickLabelProps): JSX.Element {
 function useBoxDiagrams(siteIds: string[], fileHandler: any) {
   return useMemo(() => {
     const histograms: Map<string, string> = new Map();
-    siteIds.forEach((id) => histograms.set(id, String(fileHandler.GetBoxDiagram(id))));
+    siteIds.forEach((id) =>
+      histograms.set(id, String(fileHandler.GetBoxDiagram(id)))
+    );
     return histograms;
   }, [JSON.stringify(siteIds)]);
 }
@@ -345,7 +357,6 @@ function useBoxDiagrams(siteIds: string[], fileHandler: any) {
  * @returns A VictoryChart with an array of VictoryCandles.
  */
 export function BoxPlotChart(props: ChartProps): JSX.Element {
-  
   const { metrics, sites, siteProps, fileHandler } = props;
   const width = 10;
   const offsetPadding = 5;
@@ -357,7 +368,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   }
 
   // For sites in props.site skapa victorycandles som innehåller alla props.sites
-  //Loopa igenom sites och bygg data för alla i klickade metrics
+  // Loopa igenom sites och bygg data för alla i klickade metrics
   sites.forEach((site) => {
     const data: CandleChart = getCandleChartData(
       metrics,
@@ -371,9 +382,9 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   return (
     <VictoryChart
       data-testid="victory-chart"
-      //this below is a start for the new
-      //horizontal
-      //height={500}//set this depending on the total amount of sites in buckets (ticks)
+      // this below is a start for the new
+      // horizontal
+      // height={500}//set this depending on the total amount of sites in buckets (ticks)
     >
       <VictoryAxis
         dependentAxis
@@ -396,8 +407,8 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
           },
           axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
         }}
-        tickLabelComponent={<CustomTickLabelBoxPlot  />}
-        tickFormat={(tick: any, index: number, ticks: any) => `${tick}`}
+        tickLabelComponent={<CustomTickLabelBoxPlot />}
+        tickFormat={(tick: any) => `${tick}`}
       />
 
       <VictoryGroup
@@ -461,37 +472,6 @@ function numberOfXvalues(histograms: Array<Histogram>): number {
   return uniqueXvalues;
 }
 
-enum ScaleTypes {
-  'Log',
-  'Linear',
-  'Percent',
-}
-let graphScaleType = ScaleTypes.Linear; // change with a button somewhere else
-
-function getScaleProps() {
-  switch (graphScaleType) {
-    case ScaleTypes.Linear: {
-      return {
-        scale: { x: 'linear', y: 'linear' }, //default is already this but to make the code more readable
-      };
-    }
-    case ScaleTypes.Log: {
-      return {
-        scale: { x: 'linear', y: 'log' },
-        minDomain: { y: 1 }, //default is y=0 but then the graph is wacky
-      };
-    }
-    case ScaleTypes.Percent: {
-      console.warn('TODO: NO PERCENT FUNCTION MADE!');
-    }
-    default: {
-      console.warn('A type not supported was called!');
-    }
-  }
-  //if something breaks return empty
-  return {};
-}
-
 /**
  *  drawHistogram draws a victoryChart containing 1..n bar charts.
  *
@@ -507,14 +487,13 @@ function drawHistogram(
   width: number
 ) {
   const formatTickDifference = (tick: any, index: number, ticksArray: any) => {
-    //console.log(ticksArray);
+    // console.log(ticksArray);
     if (index < ticksArray.length - 1) {
-      if (tick == ticksArray[index + 1] - 1) {
+      if (tick === ticksArray[index + 1] - 1) {
         return `${tick} ms`;
-      } else {
-        const difference = `${tick} - ${Number(ticksArray[index + 1]) - 1} ms`;
-        return difference;
       }
+      const difference = `${tick} - ${Number(ticksArray[index + 1]) - 1} ms`;
+      return difference;
     }
     return `${ticksArray[index]} ms - `;
   };
@@ -556,12 +535,12 @@ function drawHistogram(
           }}
         />
         <VictoryAxis
-          //tickComponent={GroupLine}
+          // tickComponent={GroupLine}
           tickLabelComponent={<CustomTickLabel />}
-          tickFormat={(tick: any, index: number, ticks: any) => {
-            return formatTickDifference(tick, index, ticks);
-          }}
-          //tickComponent={<CustomTick />}
+          tickFormat={(tick: any, index: number, ticks: any) =>
+            formatTickDifference(tick, index, ticks)
+          }
+          // tickComponent={<CustomTick />}
           style={{
             tickLabels: {
               fontSize: 8,
@@ -588,7 +567,10 @@ function drawHistogram(
  * @param fileHandler filehandler to get histograms from
  * @returns a map of histograms
  */
-function useHistograms(siteIds: string[], fileHandler: any):Map<string,string> {
+function useHistograms(
+  siteIds: string[],
+  fileHandler: any
+): Map<string, string> {
   return useMemo(() => {
     const histograms: Map<string, string> = new Map();
     siteIds.forEach((id) => histograms.set(id, fileHandler.GetHistogram(id)));
@@ -596,6 +578,132 @@ function useHistograms(siteIds: string[], fileHandler: any):Map<string,string> {
   }, [JSON.stringify(siteIds)]);
 }
 
+/**
+ *Removes all bars that has y = 0
+ *
+ * @param barGraph Takes in a list of Histograms
+ * @returns Returns a new list of Histograms where all bars that have y value 0
+ * is removed
+ */
+function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram> {
+  /**
+   * @param _barGraph List of histograms
+   * @returns array containing all x values = 0
+   */
+  const getEmptyXValues = (_barGraph: Histogram[]): Set<String> => {
+    const emptyXValues = new Set<String>();
+
+    let nonEmptyBars: Bar[] = [];
+    _barGraph.forEach((histogram) => {
+      nonEmptyBars = nonEmptyBars.concat(
+        histogram.bars.filter((bar: { y: number }) => bar.y !== 0)
+      );
+    });
+    _barGraph.forEach((histogram) => {
+      histogram.bars.forEach((bar: { y: number; x: string }) => {
+        if (
+          bar.y === 0 &&
+          !nonEmptyBars.some((b: { x: string }) => b.x === bar.x)
+        ) {
+          emptyXValues.add(bar.x);
+        }
+      });
+    });
+    return emptyXValues;
+  };
+
+  const removeEmptyXValuesFromHistograms = (
+    oldBarGraph: Histogram[],
+    emptyXValues: Set<String>
+  ): Histogram[] => {
+    const newBarGraph: Histogram[] = [];
+    oldBarGraph.forEach((histogram: { bars: Bar[] }) => {
+      const newHistogram: Histogram = new Histogram();
+      let keepZero: boolean = true;
+      histogram.bars.forEach((bar) => {
+        if (emptyXValues.has(bar.x)) {
+          if (keepZero) {
+            newHistogram.bars.push(bar);
+          }
+          keepZero = false;
+        } else {
+          newHistogram.bars.push(bar);
+          keepZero = true;
+        }
+      });
+      newBarGraph.push(newHistogram);
+    });
+    return newBarGraph;
+  };
+
+  const emptyXvalues = getEmptyXValues(barGraph);
+  const newBarGraph = removeEmptyXValuesFromHistograms(barGraph, emptyXvalues);
+  return newBarGraph;
+}
+
+/**
+ * Merges adjacent bars in each histogram of the barGraph array if their width is smaller than a threshold.
+ *
+ * @param barGraph An array of Histogram objects to be processed.
+ * @param graphWidth The width of the graph in pixels.
+ * @param sites A list of sites.
+ * @returns A new array of Histogram objects with merged bars.
+ */
+function mergeXvalues(
+  barGraph: Array<Histogram>,
+  graphWidth: number,
+  sites: Array<String>
+): Array<Histogram> {
+  let newBarGraph: Array<Histogram> = [];
+  let width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
+
+  const tooSmallWidth = 6; // target width of single bars
+  const maxLoopCount = 50; // a fail safe in case something goes wrong
+  let mergeAmount = 1; // start merge amount
+  let loopCount = 0;
+  if (width >= tooSmallWidth) {
+    console.log('no changes when running mergeXvalues()');
+    return barGraph;
+  }
+
+  // const maxXvalues = tooSmallWidth/graphWidth;
+  // const current XValues = (numberOfXvalues(barGraph);
+  // const mergeCount =
+  const smallerHistogram = (mergeCount: number, oldHistogram: Histogram) => {
+    const newHistogram: Histogram = new Histogram([]);
+    oldHistogram.bars.forEach((bar, i) => {
+      const newIndex = Math.floor(i / mergeAmount);
+
+      if (newHistogram.bars[newIndex] === undefined) {
+        newHistogram.bars.push(new Bar(bar.x, bar.y, bar.fill)); // bar.fill causes unexpected colors at weird times
+      } else {
+        newHistogram.bars[newIndex].y += bar.y;
+      }
+    });
+    return newHistogram;
+  };
+
+  while (width < tooSmallWidth) {
+    newBarGraph = [];
+
+    barGraph.forEach((histogram) => { // eslint-disable-line
+      const newHistogram = smallerHistogram(mergeAmount, histogram);
+      newBarGraph.push(newHistogram);
+    });
+
+    if (loopCount > maxLoopCount) {
+      console.warn(
+        '----------------------WARNING REACHED LOOP MAX!----------------------'
+      );
+      break;
+    }
+    loopCount += 1;
+    mergeAmount += 1;
+    width = graphWidth / (numberOfXvalues(newBarGraph) * sites.length);
+  }
+
+  return newBarGraph;
+}
 /**
  *  Draws 1-n VictoryCharts containing 1-n VictoryBars.
  *  metrics.length = number of VictoryCharts
@@ -645,115 +753,4 @@ export function BarChart(props: ChartProps): JSX.Element {
   }, [fileHandler, metrics, siteProps, sites]);
 
   return <div data-testid="barchart">{barGraphList}</div>;
-}
-
-/**
- * 
- *
- * @param barGraph Takes in a list of Histograms
- * @returns Returns a new list of Histograms where all bars that have x value 0
- * is removed
- */
-function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram> {
-
-  /**
-   * @returns a array contain
-   */
-  const getEmptyXValues = (_barGraph: Histogram[]):Set<String> => {
-    const emptyXValues = new Set<String>();
-
-    let nonEmptyBars: Bar[] = [];
-    _barGraph.forEach((histogram) => {
-      nonEmptyBars = nonEmptyBars.concat(histogram.bars.filter((bar: { y: number }) => bar.y !== 0));
-    });
-    _barGraph.forEach((histogram) => {
-      histogram.bars.forEach((bar: { y: number; x: string }) => {
-        if (
-          bar.y === 0 &&
-          !nonEmptyBars.some((b: { x: string }) => b.x === bar.x)
-        ) {
-          emptyXValues.add(bar.x);
-        }
-      });
-    });
-    return emptyXValues;
-  };
-
-  const removeEmptyXValuesFromHistograms = (barGraph: Histogram[], emptyXValues: Set<String>):Histogram[] => {
-    let newBarGraph: Histogram[] = [];
-    barGraph.forEach((histogram: { bars: Bar[] }) => {
-      let newHistogram: Histogram = new Histogram();
-      let keepZero: boolean = true;
-      histogram.bars.forEach((bar, i) => {
-        if (emptyXValues.has(bar.x)) {
-          if (keepZero) {
-            newHistogram.bars.push(bar);
-          }
-          keepZero = false;
-        } else {
-          newHistogram.bars.push(bar);
-          keepZero = true;
-        }
-      });
-      newBarGraph.push(newHistogram);
-    });
-    return newBarGraph;
-  };
-  
-  const emptyXvalues = getEmptyXValues(barGraph);
-  barGraph = removeEmptyXValuesFromHistograms(barGraph, emptyXvalues);
-  return barGraph;
-}
-
-/**
- * Merges adjacent bars in each histogram of the barGraph array if their width is smaller than a threshold.
- * @param barGraph An array of Histogram objects to be processed.
- * @param graphWidth The width of the graph in pixels.
- * @param sites A list of sites.
- * @returns A new array of Histogram objects with merged bars.
- */
-function mergeXvalues(
-  barGraph: Array<Histogram>,
-  graphWidth: number,
-  sites: Array<String>
-): Array<Histogram> {
-  let newBarGraph: Array<Histogram> = [];
-  let width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
-
-  const tooSmallWidth = 6; //target width of single bars
-  const maxLoopCount = 50; // a fail safe in case something goes wrong
-  let mergeAmount = 1; //start merge amount
-  let loopCount = 0;
-  if (width >= tooSmallWidth) {
-    console.log('no changes when running mergeXvalues()');
-    return barGraph;
-  }
-  while (width < tooSmallWidth) {
-    newBarGraph = [];
-    barGraph.forEach((histo) => {
-      let newHisto: Histogram = new Histogram([]);
-      histo.bars.forEach((bar, i) => {
-        const newIndex = Math.floor(i / mergeAmount);
-
-        if (newHisto.bars[newIndex] === undefined) {
-          newHisto.bars.push(new Bar(bar.x, bar.y, bar.fill));//bar.fill causes unexpected colors at weird times
-        } else {
-          newHisto.bars[newIndex].y += bar.y;
-        }
-      });
-      newBarGraph.push(newHisto);
-    });
-
-    if (loopCount > maxLoopCount) {
-      console.warn(
-        '----------------------WARNING REACHED LOOP MAX!----------------------'
-      );
-      break;
-    }
-    loopCount += 1;
-    mergeAmount += 1;
-    width = graphWidth / (numberOfXvalues(newBarGraph) * sites.length);
-  }
-
-  return newBarGraph;
 }

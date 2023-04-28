@@ -1,0 +1,63 @@
+{
+ "site_id": "jowf4n_230413",
+ "site_name": "mgxsnd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Snowball",
+   "cpu": 15,
+   "memory": 41,
+   "services": [
+    "riscore",
+    "wise"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 14,
+   "memory": 5,
+   "services": [
+    "es",
+    "ad",
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 19,
+   "memory": 19,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold_2",
+   "cpu": 4,
+   "memory": 19,
+   "services": [
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Threshold",
+   "cpu": 13,
+   "memory": 35,
+   "services": [
+    "es",
+    "risapp",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Chicago",
+   "cpu": 19,
+   "memory": 28,
+   "services": [
+    "es",
+    "haproxy"
+   ]
+  }
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "site_id": "719k16_230413",
+ "site_name": "xjauhz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 32,
+   "memory": 64,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "ids7",
+    "haproxy",
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold",
+   "cpu": 8,
+   "memory": 44,
+   "services": [
+    "haproxy",
+    "wise",
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Threshold_2",
+   "cpu": 15,
+   "memory": 45,
+   "services": [
+    "riscore",
+    "dpat",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Snowball",
+   "cpu": 32,
+   "memory": 62,
+   "services": [
+    "wise",
+    "dpat"
+   ]
+  }
+ }
+}

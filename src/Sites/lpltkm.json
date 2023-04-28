@@ -1,0 +1,49 @@
+{
+ "site_id": "kh9g0a_230413",
+ "site_name": "lpltkm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Windows_7",
+   "cpu": 26,
+   "memory": 28,
+   "services": [
+    "uvcore",
+    "risapp",
+    "es",
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 29,
+   "memory": 23,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 5,
+   "memory": 41,
+   "services": [
+    "risapp",
+    "sql2019",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Daytona",
+   "cpu": 18,
+   "memory": 2,
+   "services": [
+    "ad",
+    "wise",
+    "es"
+   ]
+  }
+ }
+}

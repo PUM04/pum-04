@@ -1,0 +1,85 @@
+{
+ "site_id": "yt2o3j_230413",
+ "site_name": "ysjeuw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Anvil",
+   "cpu": 7,
+   "memory": 49,
+   "services": [
+    "ad",
+    "es",
+    "uvcore",
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Freestyle",
+   "cpu": 5,
+   "memory": 41,
+   "services": [
+    "sql2019",
+    "ad",
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Razzle",
+   "cpu": 2,
+   "memory": 1,
+   "services": [
+    "shs",
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 6,
+   "memory": 40,
+   "services": [
+    "risapp",
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Blue",
+   "cpu": 24,
+   "memory": 44,
+   "services": [
+    "shs",
+    "ad"
+   ]
+  },
+  "sss": {
+   "os": "Harmony",
+   "cpu": 6,
+   "memory": 47,
+   "services": [
+    "shs",
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Snowball",
+   "cpu": 26,
+   "memory": 18,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Razzle",
+   "cpu": 4,
+   "memory": 41,
+   "services": [
+    "ad",
+    "wise",
+    "es",
+    "shs"
+   ]
+  }
+ }
+}

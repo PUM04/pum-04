@@ -1,0 +1,56 @@
+{
+ "site_id": "7984ti_230413",
+ "site_name": "gqrwdj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Daytona",
+   "cpu": 4,
+   "memory": 59,
+   "services": [
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 25,
+   "memory": 54,
+   "services": [
+    "ids7",
+    "wise",
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 1,
+   "memory": 58,
+   "services": [
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Chicago",
+   "cpu": 1,
+   "memory": 11,
+   "services": [
+    "haproxy",
+    "sql2019",
+    "wise",
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_valley_2",
+   "cpu": 27,
+   "memory": 27,
+   "services": [
+    "risapp",
+    "haproxy",
+    "ids7"
+   ]
+  }
+ }
+}

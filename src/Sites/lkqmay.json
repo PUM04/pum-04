@@ -1,0 +1,77 @@
+{
+ "site_id": "8h86xq_230413",
+ "site_name": "lkqmay",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Vibranium",
+   "cpu": 6,
+   "memory": 2,
+   "services": [
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_7",
+   "cpu": 8,
+   "memory": 8,
+   "services": [
+    "uvcore",
+    "es",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Freestyle",
+   "cpu": 7,
+   "memory": 36,
+   "services": [
+    "wise",
+    "shs",
+    "es",
+    "ids7",
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Daytona",
+   "cpu": 22,
+   "memory": 49,
+   "services": [
+    "dpat",
+    "wise",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Harmony",
+   "cpu": 9,
+   "memory": 26,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_2",
+   "cpu": 26,
+   "memory": 17,
+   "services": [
+    "dpat",
+    "uvcore",
+    "iss",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 30,
+   "memory": 48,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "site_id": "6t7sxr_230413",
+ "site_name": "mhfinr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Symphony",
+   "cpu": 4,
+   "memory": 15,
+   "services": [
+    "uvclient",
+    "wise",
+    "iss",
+    "riscore",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Chicago",
+   "cpu": 1,
+   "memory": 43,
+   "services": [
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_3",
+   "cpu": 23,
+   "memory": 47,
+   "services": [
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Chicago",
+   "cpu": 25,
+   "memory": 9,
+   "services": [
+    "riscore",
+    "iss",
+    "risapp",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 1,
+   "memory": 55,
+   "services": [
+    "riscore",
+    "ids7",
+    "iss",
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_4",
+   "cpu": 5,
+   "memory": 27,
+   "services": [
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Windows_7",
+   "cpu": 1,
+   "memory": 56,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

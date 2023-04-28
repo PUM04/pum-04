@@ -1,0 +1,83 @@
+{
+ "site_id": "3e0764_230413",
+ "site_name": "uvixnb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Emerald",
+   "cpu": 30,
+   "memory": 5,
+   "services": [
+    "dpat",
+    "es",
+    "risapp",
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 8,
+   "memory": 60,
+   "services": [
+    "ids7",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Blue",
+   "cpu": 22,
+   "memory": 11,
+   "services": [
+    "shs"
+   ]
+  },
+  "ad": {
+   "os": "Vibranium",
+   "cpu": 6,
+   "memory": 54,
+   "services": [
+    "ad",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_8",
+   "cpu": 24,
+   "memory": 1,
+   "services": [
+    "iss",
+    "es",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Blue",
+   "cpu": 26,
+   "memory": 52,
+   "services": [
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sun_Valley",
+   "cpu": 12,
+   "memory": 1,
+   "services": [
+    "ids7",
+    "iss",
+    "wise",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_valley_2",
+   "cpu": 32,
+   "memory": 39,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

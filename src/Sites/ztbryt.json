@@ -1,0 +1,94 @@
+{
+ "site_id": "lmh7em_230413",
+ "site_name": "ztbryt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 19,
+   "memory": 56,
+   "services": [
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold_2",
+   "cpu": 32,
+   "memory": 16,
+   "services": [
+    "riscore",
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold_2",
+   "cpu": 30,
+   "memory": 41,
+   "services": [
+    "riscore",
+    "dpat",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Longhorn",
+   "cpu": 16,
+   "memory": 46,
+   "services": [
+    "sql2019",
+    "ids7",
+    "haproxy",
+    "es",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Sparta",
+   "cpu": 18,
+   "memory": 52,
+   "services": [
+    "shs",
+    "ids7",
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Symphony",
+   "cpu": 7,
+   "memory": 18,
+   "services": [
+    "haproxy",
+    "shs",
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Vibranium",
+   "cpu": 21,
+   "memory": 15,
+   "services": [
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Memphis",
+   "cpu": 29,
+   "memory": 36,
+   "services": [
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Blue",
+   "cpu": 5,
+   "memory": 55,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "site_id": "0bb1i7_230413",
+ "site_name": "rhdsjm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Redstone_2",
+   "cpu": 32,
+   "memory": 39,
+   "services": [
+    "riscore",
+    "shs",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Windows_8",
+   "cpu": 1,
+   "memory": 24,
+   "services": [
+    "uvclient",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Chicago",
+   "cpu": 30,
+   "memory": 42,
+   "services": [
+    "risapp"
+   ]
+  }
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "site_id": "14j985_230413",
+ "site_name": "wvlgrl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Redstone_1",
+   "cpu": 27,
+   "memory": 57,
+   "services": [
+    "wise",
+    "iss",
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Freestyle",
+   "cpu": 3,
+   "memory": 49,
+   "services": [
+    "ad",
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 19,
+   "memory": 30,
+   "services": [
+    "haproxy",
+    "iss",
+    "sql2019",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Chicago",
+   "cpu": 14,
+   "memory": 40,
+   "services": [
+    "haproxy",
+    "uvclient",
+    "iss",
+    "uvcore",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Whistler",
+   "cpu": 25,
+   "memory": 48,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "haproxy",
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 30,
+   "memory": 39,
+   "services": [
+    "wise",
+    "ids7",
+    "iss"
+   ]
+  },
+  "es": {
+   "os": "Razzle",
+   "cpu": 18,
+   "memory": 56,
+   "services": [
+    "uvclient",
+    "riscore",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Daytona",
+   "cpu": 15,
+   "memory": 24,
+   "services": [
+    "haproxy",
+    "wise",
+    "risapp",
+    "riscore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "site_id": "e5urzb_230413",
+ "site_name": "rdaehb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Sun_valley_2",
+   "cpu": 28,
+   "memory": 33,
+   "services": [
+    "iss",
+    "uvclient",
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Harmony",
+   "cpu": 20,
+   "memory": 49,
+   "services": [
+    "dpat",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_3",
+   "cpu": 1,
+   "memory": 39,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Threshold",
+   "cpu": 32,
+   "memory": 13,
+   "services": [
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Razzle",
+   "cpu": 1,
+   "memory": 17,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Memphis",
+   "cpu": 6,
+   "memory": 44,
+   "services": [
+    "es",
+    "wise",
+    "ad",
+    "risapp"
+   ]
+  }
+ }
+}

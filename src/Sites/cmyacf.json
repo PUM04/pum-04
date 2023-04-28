@@ -1,0 +1,48 @@
+{
+ "site_id": "62sef4_230413",
+ "site_name": "cmyacf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Threshold",
+   "cpu": 24,
+   "memory": 39,
+   "services": [
+    "risapp",
+    "haproxy",
+    "shs",
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Sparta",
+   "cpu": 14,
+   "memory": 21,
+   "services": [
+    "dpat",
+    "uvcore",
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Symphony",
+   "cpu": 4,
+   "memory": 37,
+   "services": [
+    "ad",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Redstone_2",
+   "cpu": 19,
+   "memory": 37,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "iss"
+   ]
+  }
+ }
+}

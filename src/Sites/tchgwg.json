@@ -1,0 +1,93 @@
+{
+ "site_id": "3wye74_230413",
+ "site_name": "tchgwg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Razzle",
+   "cpu": 28,
+   "memory": 15,
+   "services": [
+    "es",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Snowball",
+   "cpu": 11,
+   "memory": 28,
+   "services": [
+    "risapp",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Redstone_1",
+   "cpu": 7,
+   "memory": 4,
+   "services": [
+    "haproxy",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Emerald",
+   "cpu": 18,
+   "memory": 48,
+   "services": [
+    "haproxy",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_4",
+   "cpu": 28,
+   "memory": 23,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 32,
+   "memory": 13,
+   "services": [
+    "ids7",
+    "sql2019",
+    "riscore",
+    "es",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Vibranium",
+   "cpu": 8,
+   "memory": 48,
+   "services": [
+    "iss",
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Blue",
+   "cpu": 11,
+   "memory": 43,
+   "services": [
+    "wise",
+    "dpat",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 18,
+   "memory": 10,
+   "services": [
+    "wise",
+    "ad"
+   ]
+  }
+ }
+}

@@ -1,0 +1,53 @@
+{
+ "site_id": "8cosx5_230413",
+ "site_name": "fklmqs",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Millennium",
+   "cpu": 1,
+   "memory": 54,
+   "services": [
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Harmony",
+   "cpu": 9,
+   "memory": 61,
+   "services": [
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Emerald",
+   "cpu": 21,
+   "memory": 27,
+   "services": [
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Millennium",
+   "cpu": 15,
+   "memory": 59,
+   "services": [
+    "iss",
+    "riscore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 32,
+   "memory": 39,
+   "services": [
+    "dpat",
+    "wise",
+    "ad",
+    "sql2019"
+   ]
+  }
+ }
+}

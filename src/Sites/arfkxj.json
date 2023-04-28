@@ -1,0 +1,16 @@
+{
+ "site_id": "3brc0v_230413",
+ "site_name": "arfkxj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Emerald",
+   "cpu": 32,
+   "memory": 8,
+   "services": [
+    "risapp"
+   ]
+  }
+ }
+}

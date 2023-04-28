@@ -1,0 +1,79 @@
+{
+ "site_id": "p728i6_230413",
+ "site_name": "insena",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Sparta",
+   "cpu": 24,
+   "memory": 26,
+   "services": [
+    "riscore",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Razzle",
+   "cpu": 29,
+   "memory": 53,
+   "services": [
+    "iss",
+    "uvcore",
+    "shs",
+    "sql2019",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_NT_5.0",
+   "cpu": 13,
+   "memory": 62,
+   "services": [
+    "es",
+    "uvcore",
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Snowball",
+   "cpu": 28,
+   "memory": 3,
+   "services": [
+    "es",
+    "haproxy",
+    "riscore",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 19,
+   "memory": 4,
+   "services": [
+    "uvclient",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Longhorn",
+   "cpu": 24,
+   "memory": 39,
+   "services": [
+    "shs",
+    "haproxy",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_3",
+   "cpu": 30,
+   "memory": 18,
+   "services": [
+    "shs"
+   ]
+  }
+ }
+}

@@ -1,0 +1,81 @@
+{
+ "site_id": "eea0l4_230413",
+ "site_name": "nqsnck",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Windows_8",
+   "cpu": 28,
+   "memory": 44,
+   "services": [
+    "ad",
+    "dpat",
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Freestyle",
+   "cpu": 31,
+   "memory": 15,
+   "services": [
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Snowball",
+   "cpu": 23,
+   "memory": 58,
+   "services": [
+    "dpat",
+    "sql2019",
+    "ids7",
+    "wise"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_4",
+   "cpu": 4,
+   "memory": 31,
+   "services": [
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Windows_7",
+   "cpu": 11,
+   "memory": 49,
+   "services": [
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Symphony",
+   "cpu": 6,
+   "memory": 30,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Vanadium",
+   "cpu": 16,
+   "memory": 46,
+   "services": [
+    "riscore",
+    "wise",
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "sqlla": {
+   "os": "Whistler",
+   "cpu": 3,
+   "memory": 59,
+   "services": [
+    "riscore",
+    "ids7"
+   ]
+  }
+ }
+}

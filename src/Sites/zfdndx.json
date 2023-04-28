@@ -1,0 +1,68 @@
+{
+ "site_id": "2yv4p8_230413",
+ "site_name": "zfdndx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 29,
+   "memory": 35,
+   "services": [
+    "shs"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_4",
+   "cpu": 12,
+   "memory": 31,
+   "services": [
+    "es",
+    "ids7",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold_2",
+   "cpu": 22,
+   "memory": 24,
+   "services": [
+    "dpat",
+    "es",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Vibranium",
+   "cpu": 8,
+   "memory": 39,
+   "services": [
+    "dpat",
+    "iss",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Vanadium",
+   "cpu": 25,
+   "memory": 27,
+   "services": [
+    "ids7",
+    "dpat",
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 22,
+   "memory": 48,
+   "services": [
+    "sql2019",
+    "ad",
+    "uvclient",
+    "shs"
+   ]
+  }
+ }
+}

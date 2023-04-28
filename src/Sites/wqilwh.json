@@ -1,0 +1,86 @@
+{
+ "site_id": "29j3ol_230413",
+ "site_name": "wqilwh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Whistler",
+   "cpu": 16,
+   "memory": 64,
+   "services": [
+    "ids7",
+    "shs",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Anvil",
+   "cpu": 2,
+   "memory": 59,
+   "services": [
+    "risapp",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sparta",
+   "cpu": 11,
+   "memory": 13,
+   "services": [
+    "risapp",
+    "uvclient",
+    "wise",
+    "iss",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 2,
+   "memory": 55,
+   "services": [
+    "uvcore",
+    "riscore",
+    "ad",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Millennium",
+   "cpu": 15,
+   "memory": 49,
+   "services": [
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Sun_valley_2",
+   "cpu": 25,
+   "memory": 15,
+   "services": [
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 22,
+   "memory": 18,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Memphis",
+   "cpu": 17,
+   "memory": 20,
+   "services": [
+    "sql2019",
+    "risapp",
+    "ad"
+   ]
+  }
+ }
+}

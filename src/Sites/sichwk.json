@@ -1,0 +1,68 @@
+{
+ "site_id": "120619_230413",
+ "site_name": "sichwk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Whistler",
+   "cpu": 17,
+   "memory": 1,
+   "services": [
+    "shs",
+    "sql2019",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Sparta",
+   "cpu": 9,
+   "memory": 58,
+   "services": [
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 14,
+   "memory": 21,
+   "services": [
+    "ad",
+    "shs",
+    "risapp"
+   ]
+  },
+  "wisecllb": {
+   "os": "Memphis",
+   "cpu": 26,
+   "memory": 62,
+   "services": [
+    "ad",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold",
+   "cpu": 4,
+   "memory": 22,
+   "services": [
+    "wise",
+    "shs",
+    "ad",
+    "riscore",
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Anvil",
+   "cpu": 27,
+   "memory": 27,
+   "services": [
+    "es",
+    "ids7",
+    "ad",
+    "riscore"
+   ]
+  }
+ }
+}

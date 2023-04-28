@@ -1,0 +1,20 @@
+{
+ "site_id": "bgb8xx_230413",
+ "site_name": "qhowtb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Longhorn",
+   "cpu": 20,
+   "memory": 63,
+   "services": [
+    "ids7",
+    "sql2019",
+    "risapp",
+    "uvcore",
+    "dpat"
+   ]
+  }
+ }
+}

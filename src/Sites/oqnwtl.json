@@ -1,0 +1,60 @@
+{
+ "site_id": "9698l4_230413",
+ "site_name": "oqnwtl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Sun_valley_2",
+   "cpu": 19,
+   "memory": 13,
+   "services": [
+    "wise",
+    "haproxy",
+    "risapp",
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Sparta",
+   "cpu": 28,
+   "memory": 25,
+   "services": [
+    "risapp",
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Harmony",
+   "cpu": 22,
+   "memory": 54,
+   "services": [
+    "ids7",
+    "uvclient",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_1",
+   "cpu": 25,
+   "memory": 46,
+   "services": [
+    "wise",
+    "uvcore",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Snowball",
+   "cpu": 2,
+   "memory": 56,
+   "services": [
+    "dpat",
+    "iss",
+    "wise"
+   ]
+  }
+ }
+}

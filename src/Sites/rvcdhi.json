@@ -1,0 +1,38 @@
+{
+ "site_id": "pj6rb4_230413",
+ "site_name": "rvcdhi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Sparta",
+   "cpu": 26,
+   "memory": 46,
+   "services": [
+    "es",
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Longhorn",
+   "cpu": 22,
+   "memory": 24,
+   "services": [
+    "ad",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 15,
+   "memory": 7,
+   "services": [
+    "iss",
+    "risapp",
+    "uvclient",
+    "haproxy",
+    "ids7"
+   ]
+  }
+ }
+}

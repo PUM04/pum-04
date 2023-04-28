@@ -1,0 +1,19 @@
+{
+ "site_id": "m8faxy_230413",
+ "site_name": "lglxqi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 24,
+   "memory": 49,
+   "services": [
+    "haproxy",
+    "risapp",
+    "ids7",
+    "iss"
+   ]
+  }
+ }
+}

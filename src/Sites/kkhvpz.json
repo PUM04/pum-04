@@ -1,0 +1,49 @@
+{
+ "site_id": "1ivvc8_230413",
+ "site_name": "kkhvpz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Daytona",
+   "cpu": 5,
+   "memory": 5,
+   "services": [
+    "es",
+    "shs",
+    "uvcore",
+    "uvclient",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 18,
+   "memory": 58,
+   "services": [
+    "uvclient",
+    "dpat",
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold_2",
+   "cpu": 8,
+   "memory": 26,
+   "services": [
+    "wise",
+    "uvcore",
+    "sql2019",
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Emerald",
+   "cpu": 24,
+   "memory": 10,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

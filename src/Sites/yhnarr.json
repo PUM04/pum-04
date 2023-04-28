@@ -1,0 +1,79 @@
+{
+ "site_id": "dzphub_230413",
+ "site_name": "yhnarr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Memphis",
+   "cpu": 2,
+   "memory": 14,
+   "services": [
+    "ids7",
+    "dpat",
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Threshold_2",
+   "cpu": 4,
+   "memory": 34,
+   "services": [
+    "uvcore",
+    "ad",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 8,
+   "memory": 46,
+   "services": [
+    "ad",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sparta",
+   "cpu": 8,
+   "memory": 46,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 16,
+   "memory": 7,
+   "services": [
+    "ids7",
+    "uvclient",
+    "ad",
+    "wise",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Chicago",
+   "cpu": 31,
+   "memory": 53,
+   "services": [
+    "es",
+    "ad",
+    "shs",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Harmony",
+   "cpu": 18,
+   "memory": 6,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "iss",
+    "es"
+   ]
+  }
+ }
+}

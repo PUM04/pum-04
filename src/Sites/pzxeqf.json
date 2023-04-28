@@ -1,0 +1,61 @@
+{
+ "site_id": "x94236_230413",
+ "site_name": "pzxeqf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Razzle",
+   "cpu": 30,
+   "memory": 19,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Vibranium",
+   "cpu": 30,
+   "memory": 54,
+   "services": [
+    "ad",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Vanadium",
+   "cpu": 4,
+   "memory": 56,
+   "services": [
+    "uvclient",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 5,
+   "memory": 60,
+   "services": [
+    "risapp",
+    "wise",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 32,
+   "memory": 33,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_2",
+   "cpu": 17,
+   "memory": 54,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

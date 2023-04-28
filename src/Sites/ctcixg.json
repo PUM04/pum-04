@@ -1,0 +1,102 @@
+{
+ "site_id": "706vu2_230413",
+ "site_name": "ctcixg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 14,
+   "memory": 24,
+   "services": [
+    "es",
+    "dpat",
+    "wise",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Harmony",
+   "cpu": 6,
+   "memory": 31,
+   "services": [
+    "ad",
+    "dpat"
+   ]
+  },
+  "riscore": {
+   "os": "Razzle",
+   "cpu": 18,
+   "memory": 6,
+   "services": [
+    "wise",
+    "riscore",
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 7,
+   "memory": 20,
+   "services": [
+    "riscore",
+    "ids7",
+    "es",
+    "shs",
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_5",
+   "cpu": 13,
+   "memory": 10,
+   "services": [
+    "ids7",
+    "sql2019",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 25,
+   "memory": 25,
+   "services": [
+    "uvclient",
+    "ids7",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_2",
+   "cpu": 10,
+   "memory": 60,
+   "services": [
+    "riscore"
+   ]
+  },
+  "lb": {
+   "os": "Snowball",
+   "cpu": 26,
+   "memory": 9,
+   "services": [
+    "dpat",
+    "wise",
+    "haproxy",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Freestyle",
+   "cpu": 4,
+   "memory": 22,
+   "services": [
+    "es",
+    "iss",
+    "wise",
+    "uvclient"
+   ]
+  }
+ }
+}

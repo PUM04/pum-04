@@ -1,0 +1,60 @@
+{
+ "site_id": "nwj121_230413",
+ "site_name": "kbffnk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Snowball",
+   "cpu": 10,
+   "memory": 47,
+   "services": [
+    "shs",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 23,
+   "memory": 44,
+   "services": [
+    "uvclient",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_4",
+   "cpu": 29,
+   "memory": 17,
+   "services": [
+    "shs",
+    "uvclient",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_4",
+   "cpu": 32,
+   "memory": 28,
+   "services": [
+    "dpat",
+    "haproxy",
+    "uvclient",
+    "shs"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_4",
+   "cpu": 27,
+   "memory": 6,
+   "services": [
+    "riscore",
+    "dpat",
+    "risapp",
+    "iss"
+   ]
+  }
+ }
+}

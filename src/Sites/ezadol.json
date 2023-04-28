@@ -1,0 +1,17 @@
+{
+ "site_id": "pkyh2p_230413",
+ "site_name": "ezadol",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Daytona",
+   "cpu": 29,
+   "memory": 40,
+   "services": [
+    "uvclient",
+    "iss"
+   ]
+  }
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "site_id": "gws733_230413",
+ "site_name": "odvbhf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Anvil",
+   "cpu": 12,
+   "memory": 34,
+   "services": [
+    "wise",
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "sqlla": {
+   "os": "Symphony",
+   "cpu": 30,
+   "memory": 55,
+   "services": [
+    "riscore",
+    "es",
+    "uvcore",
+    "sql2019",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Chicago",
+   "cpu": 29,
+   "memory": 39,
+   "services": [
+    "ids7",
+    "es",
+    "wise"
+   ]
+  }
+ }
+}

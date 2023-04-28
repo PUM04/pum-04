@@ -1,0 +1,80 @@
+{
+ "site_id": "3ashj1_230413",
+ "site_name": "cubesn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Blue",
+   "cpu": 26,
+   "memory": 44,
+   "services": [
+    "dpat",
+    "sql2019",
+    "riscore",
+    "uvclient",
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Harmony",
+   "cpu": 18,
+   "memory": 62,
+   "services": [
+    "shs",
+    "uvcore",
+    "es",
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Whistler",
+   "cpu": 18,
+   "memory": 55,
+   "services": [
+    "ad",
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Blue",
+   "cpu": 6,
+   "memory": 58,
+   "services": [
+    "sql2019",
+    "riscore",
+    "risapp"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_4",
+   "cpu": 20,
+   "memory": 51,
+   "services": [
+    "haproxy",
+    "shs"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold_2",
+   "cpu": 3,
+   "memory": 44,
+   "services": [
+    "haproxy",
+    "uvclient",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_2",
+   "cpu": 20,
+   "memory": 7,
+   "services": [
+    "es",
+    "haproxy",
+    "uvclient"
+   ]
+  }
+ }
+}

@@ -1,0 +1,88 @@
+{
+ "site_id": "k4z68v_230413",
+ "site_name": "ixyzwc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Chicago",
+   "cpu": 21,
+   "memory": 53,
+   "services": [
+    "shs",
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vibranium",
+   "cpu": 18,
+   "memory": 6,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "risapp",
+    "wise"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 13,
+   "memory": 46,
+   "services": [
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Threshold_2",
+   "cpu": 22,
+   "memory": 53,
+   "services": [
+    "risapp",
+    "haproxy",
+    "wise",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Chicago",
+   "cpu": 12,
+   "memory": 36,
+   "services": [
+    "iss",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Longhorn",
+   "cpu": 4,
+   "memory": 41,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "haproxy",
+    "uvcore",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Razzle",
+   "cpu": 23,
+   "memory": 37,
+   "services": [
+    "wise",
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Blue",
+   "cpu": 3,
+   "memory": 40,
+   "services": [
+    "uvcore",
+    "iss",
+    "ids7"
+   ]
+  }
+ }
+}

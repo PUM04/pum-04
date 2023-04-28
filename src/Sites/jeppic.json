@@ -1,0 +1,53 @@
+{
+ "site_id": "gfb3ms_230413",
+ "site_name": "jeppic",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 10,
+   "memory": 34,
+   "services": [
+    "dpat",
+    "haproxy",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Anvil",
+   "cpu": 1,
+   "memory": 26,
+   "services": [
+    "ids7",
+    "iss",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_4",
+   "cpu": 4,
+   "memory": 5,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Emerald",
+   "cpu": 6,
+   "memory": 33,
+   "services": [
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Symphony",
+   "cpu": 19,
+   "memory": 41,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

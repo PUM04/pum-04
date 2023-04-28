@@ -1,0 +1,55 @@
+{
+ "site_id": "718vy1_230413",
+ "site_name": "rinasc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Redstone_5",
+   "cpu": 31,
+   "memory": 40,
+   "services": [
+    "sql2019",
+    "shs"
+   ]
+  },
+  "ad": {
+   "os": "Whistler",
+   "cpu": 14,
+   "memory": 16,
+   "services": [
+    "uvclient",
+    "shs",
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Snowball",
+   "cpu": 7,
+   "memory": 57,
+   "services": [
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Whistler",
+   "cpu": 8,
+   "memory": 64,
+   "services": [
+    "iss",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "pacscore": {
+   "os": "Blue",
+   "cpu": 16,
+   "memory": 28,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

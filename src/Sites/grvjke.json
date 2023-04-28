@@ -1,0 +1,34 @@
+{
+ "site_id": "4kt3g0_230413",
+ "site_name": "grvjke",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Millennium",
+   "cpu": 3,
+   "memory": 5,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_4",
+   "cpu": 28,
+   "memory": 28,
+   "services": [
+    "ad",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Daytona",
+   "cpu": 2,
+   "memory": 45,
+   "services": [
+    "risapp",
+    "es"
+   ]
+  }
+ }
+}

@@ -1,0 +1,104 @@
+{
+ "site_id": "n25i89_230413",
+ "site_name": "wsytoq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Memphis",
+   "cpu": 26,
+   "memory": 4,
+   "services": [
+    "ids7",
+    "dpat",
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Sun_valley_2",
+   "cpu": 30,
+   "memory": 2,
+   "services": [
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Redstone_1",
+   "cpu": 8,
+   "memory": 32,
+   "services": [
+    "uvclient",
+    "dpat",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold_2",
+   "cpu": 23,
+   "memory": 47,
+   "services": [
+    "ids7",
+    "es",
+    "risapp"
+   ]
+  },
+  "pacscore": {
+   "os": "Harmony",
+   "cpu": 30,
+   "memory": 25,
+   "services": [
+    "ad",
+    "ids7",
+    "shs",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Emerald",
+   "cpu": 32,
+   "memory": 28,
+   "services": [
+    "wise",
+    "uvclient",
+    "ids7",
+    "sql2019",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Chicago",
+   "cpu": 26,
+   "memory": 49,
+   "services": [
+    "uvcore",
+    "dpat",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vanadium",
+   "cpu": 24,
+   "memory": 24,
+   "services": [
+    "ad",
+    "iss",
+    "wise",
+    "shs"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_4",
+   "cpu": 20,
+   "memory": 55,
+   "services": [
+    "uvclient",
+    "wise",
+    "haproxy",
+    "ids7",
+    "risapp"
+   ]
+  }
+ }
+}

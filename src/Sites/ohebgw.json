@@ -1,0 +1,74 @@
+{
+ "site_id": "4y1087_230413",
+ "site_name": "ohebgw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Sparta",
+   "cpu": 1,
+   "memory": 14,
+   "services": [
+    "ad",
+    "iss",
+    "wise",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Sparta",
+   "cpu": 14,
+   "memory": 55,
+   "services": [
+    "riscore",
+    "ad",
+    "shs"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Longhorn",
+   "cpu": 18,
+   "memory": 44,
+   "services": [
+    "ad",
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Threshold_2",
+   "cpu": 31,
+   "memory": 35,
+   "services": [
+    "uvclient",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Snowball",
+   "cpu": 13,
+   "memory": 52,
+   "services": [
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Whistler",
+   "cpu": 10,
+   "memory": 20,
+   "services": [
+    "risapp",
+    "ad",
+    "dpat",
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_2",
+   "cpu": 7,
+   "memory": 49,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

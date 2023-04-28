@@ -1,0 +1,69 @@
+{
+ "site_id": "9gyv64_230413",
+ "site_name": "gkaxit",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 22,
+   "memory": 63,
+   "services": [
+    "haproxy",
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 31,
+   "memory": 14,
+   "services": [
+    "shs",
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Millennium",
+   "cpu": 18,
+   "memory": 36,
+   "services": [
+    "iss",
+    "shs",
+    "wise",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Freestyle",
+   "cpu": 13,
+   "memory": 18,
+   "services": [
+    "wise",
+    "risapp",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Vanadium",
+   "cpu": 3,
+   "memory": 40,
+   "services": [
+    "uvclient",
+    "risapp",
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold_2",
+   "cpu": 6,
+   "memory": 17,
+   "services": [
+    "dpat",
+    "iss",
+    "wise",
+    "ids7"
+   ]
+  }
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "site_id": "556y2s_230413",
+ "site_name": "ibxhzr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 8,
+   "memory": 16,
+   "services": [
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_2",
+   "cpu": 18,
+   "memory": 24,
+   "services": [
+    "dpat",
+    "risapp",
+    "wise",
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 17,
+   "memory": 34,
+   "services": [
+    "riscore",
+    "haproxy",
+    "shs",
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Whistler",
+   "cpu": 22,
+   "memory": 39,
+   "services": [
+    "riscore",
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Chicago",
+   "cpu": 6,
+   "memory": 56,
+   "services": [
+    "shs",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold",
+   "cpu": 27,
+   "memory": 11,
+   "services": [
+    "uvclient",
+    "sql2019"
+   ]
+  }
+ }
+}

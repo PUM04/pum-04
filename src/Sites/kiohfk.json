@@ -1,0 +1,29 @@
+{
+ "site_id": "6401cu_230413",
+ "site_name": "kiohfk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Windows_7",
+   "cpu": 12,
+   "memory": 20,
+   "services": [
+    "uvclient",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold_2",
+   "cpu": 31,
+   "memory": 23,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "dpat",
+    "es"
+   ]
+  }
+ }
+}

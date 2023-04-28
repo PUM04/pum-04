@@ -1,0 +1,88 @@
+{
+ "site_id": "55iq01_230413",
+ "site_name": "aftjee",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Daytona",
+   "cpu": 6,
+   "memory": 29,
+   "services": [
+    "uvclient",
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Memphis",
+   "cpu": 21,
+   "memory": 60,
+   "services": [
+    "sql2019",
+    "es",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Vibranium",
+   "cpu": 19,
+   "memory": 36,
+   "services": [
+    "ad",
+    "es",
+    "risapp",
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Redstone_5",
+   "cpu": 26,
+   "memory": 15,
+   "services": [
+    "ad",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Razzle",
+   "cpu": 6,
+   "memory": 8,
+   "services": [
+    "es",
+    "sql2019",
+    "dpat",
+    "iss",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Emerald",
+   "cpu": 17,
+   "memory": 60,
+   "services": [
+    "wise",
+    "dpat",
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 22,
+   "memory": 11,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Symphony",
+   "cpu": 29,
+   "memory": 42,
+   "services": [
+    "riscore",
+    "ids7"
+   ]
+  }
+ }
+}

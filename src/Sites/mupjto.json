@@ -1,0 +1,69 @@
+{
+ "site_id": "kp9bms_230413",
+ "site_name": "mupjto",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 2,
+   "memory": 3,
+   "services": [
+    "ad",
+    "risapp",
+    "iss"
+   ]
+  },
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 24,
+   "memory": 13,
+   "services": [
+    "haproxy",
+    "ids7",
+    "ad",
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 8,
+   "memory": 59,
+   "services": [
+    "wise",
+    "sql2019",
+    "shs",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Chicago",
+   "cpu": 18,
+   "memory": 61,
+   "services": [
+    "ad",
+    "haproxy",
+    "wise",
+    "ids7",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Windows_7",
+   "cpu": 12,
+   "memory": 9,
+   "services": [
+    "iss",
+    "haproxy"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold_2",
+   "cpu": 21,
+   "memory": 64,
+   "services": [
+    "shs"
+   ]
+  }
+ }
+}

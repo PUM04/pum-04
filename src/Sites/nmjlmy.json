@@ -1,0 +1,60 @@
+{
+ "site_id": "9a946x_230413",
+ "site_name": "nmjlmy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Redstone_4",
+   "cpu": 25,
+   "memory": 20,
+   "services": [
+    "uvclient",
+    "ad",
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Sun_valley_2",
+   "cpu": 9,
+   "memory": 49,
+   "services": [
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 27,
+   "memory": 16,
+   "services": [
+    "uvclient",
+    "shs",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 8,
+   "memory": 6,
+   "services": [
+    "ids7",
+    "uvcore",
+    "iss",
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 14,
+   "memory": 28,
+   "services": [
+    "wise",
+    "dpat",
+    "uvcore"
+   ]
+  }
+ }
+}

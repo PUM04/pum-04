@@ -1,0 +1,19 @@
+{
+ "site_id": "5g16u0_230413",
+ "site_name": "xsvgnx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Longhorn",
+   "cpu": 26,
+   "memory": 46,
+   "services": [
+    "wise",
+    "risapp",
+    "haproxy",
+    "riscore"
+   ]
+  }
+ }
+}

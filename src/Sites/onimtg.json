@@ -1,0 +1,67 @@
+{
+ "site_id": "1gk28z_230413",
+ "site_name": "onimtg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 2,
+   "memory": 20,
+   "services": [
+    "es",
+    "uvcore",
+    "haproxy",
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Freestyle",
+   "cpu": 4,
+   "memory": 29,
+   "services": [
+    "uvclient",
+    "shs",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Blue",
+   "cpu": 21,
+   "memory": 13,
+   "services": [
+    "uvcore",
+    "shs",
+    "uvclient",
+    "riscore",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_2",
+   "cpu": 19,
+   "memory": 39,
+   "services": [
+    "dpat",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Anvil",
+   "cpu": 16,
+   "memory": 11,
+   "services": [
+    "es",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_2",
+   "cpu": 23,
+   "memory": 23,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

@@ -1,0 +1,71 @@
+{
+ "site_id": "2z6bb2_230413",
+ "site_name": "pgbjfa",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Vanadium",
+   "cpu": 23,
+   "memory": 48,
+   "services": [
+    "wise",
+    "ids7",
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 26,
+   "memory": 41,
+   "services": [
+    "risapp",
+    "wise",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 7,
+   "memory": 50,
+   "services": [
+    "dpat",
+    "shs",
+    "uvcore",
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Longhorn",
+   "cpu": 1,
+   "memory": 22,
+   "services": [
+    "haproxy",
+    "es",
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 2,
+   "memory": 21,
+   "services": [
+    "risapp",
+    "iss",
+    "dpat",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Daytona",
+   "cpu": 25,
+   "memory": 54,
+   "services": [
+    "wise",
+    "es"
+   ]
+  }
+ }
+}

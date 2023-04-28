@@ -1,0 +1,72 @@
+{
+ "site_id": "61es0d_230413",
+ "site_name": "frqbqj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Redstone_5",
+   "cpu": 7,
+   "memory": 1,
+   "services": [
+    "sql2019",
+    "uvcore",
+    "riscore",
+    "ad",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_8",
+   "cpu": 9,
+   "memory": 1,
+   "services": [
+    "uvclient",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 9,
+   "memory": 47,
+   "services": [
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Millennium",
+   "cpu": 6,
+   "memory": 59,
+   "services": [
+    "wise",
+    "shs",
+    "uvcore",
+    "ad",
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_NT_5.0",
+   "cpu": 7,
+   "memory": 42,
+   "services": [
+    "wise",
+    "dpat",
+    "uvclient",
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Threshold_2",
+   "cpu": 25,
+   "memory": 49,
+   "services": [
+    "shs",
+    "uvcore",
+    "es",
+    "ids7",
+    "ad"
+   ]
+  }
+ }
+}

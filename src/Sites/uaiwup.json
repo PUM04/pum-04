@@ -1,0 +1,51 @@
+{
+ "site_id": "sehx62_230413",
+ "site_name": "uaiwup",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 16,
+   "memory": 27,
+   "services": [
+    "dpat",
+    "uvcore",
+    "iss",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_3",
+   "cpu": 9,
+   "memory": 31,
+   "services": [
+    "iss",
+    "shs",
+    "haproxy",
+    "dpat",
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_1",
+   "cpu": 15,
+   "memory": 44,
+   "services": [
+    "ids7",
+    "uvclient",
+    "risapp",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Redstone_1",
+   "cpu": 14,
+   "memory": 39,
+   "services": [
+    "haproxy",
+    "ad"
+   ]
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "site_id": "83vasd_230413",
+ "site_name": "dcscku",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Millennium",
+   "cpu": 24,
+   "memory": 49,
+   "services": [
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sparta",
+   "cpu": 2,
+   "memory": 48,
+   "services": [
+    "es",
+    "ad",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_Valley",
+   "cpu": 10,
+   "memory": 21,
+   "services": [
+    "haproxy",
+    "risapp",
+    "ad",
+    "iss"
+   ]
+  }
+ }
+}

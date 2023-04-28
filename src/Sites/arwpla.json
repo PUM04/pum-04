@@ -1,0 +1,91 @@
+{
+ "site_id": "u88bog_230413",
+ "site_name": "arwpla",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Anvil",
+   "cpu": 11,
+   "memory": 38,
+   "services": [
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_5",
+   "cpu": 15,
+   "memory": 33,
+   "services": [
+    "ad",
+    "ids7",
+    "dpat",
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_5",
+   "cpu": 7,
+   "memory": 63,
+   "services": [
+    "wise",
+    "risapp",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sparta",
+   "cpu": 21,
+   "memory": 62,
+   "services": [
+    "shs",
+    "haproxy",
+    "es",
+    "uvclient",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Anvil",
+   "cpu": 2,
+   "memory": 49,
+   "services": [
+    "ad",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Anvil",
+   "cpu": 16,
+   "memory": 8,
+   "services": [
+    "uvcore",
+    "risapp",
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Chicago",
+   "cpu": 19,
+   "memory": 35,
+   "services": [
+    "iss",
+    "ids7",
+    "dpat",
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Emerald",
+   "cpu": 20,
+   "memory": 26,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

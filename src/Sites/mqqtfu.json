@@ -1,0 +1,62 @@
+{
+ "site_id": "96ux5d_230413",
+ "site_name": "mqqtfu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Freestyle",
+   "cpu": 7,
+   "memory": 64,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "sqlla": {
+   "os": "Freestyle",
+   "cpu": 15,
+   "memory": 19,
+   "services": [
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_NT_5.0",
+   "cpu": 6,
+   "memory": 47,
+   "services": [
+    "ids7",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Razzle",
+   "cpu": 32,
+   "memory": 46,
+   "services": [
+    "ad",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 5,
+   "memory": 61,
+   "services": [
+    "iss",
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_valley_2",
+   "cpu": 16,
+   "memory": 55,
+   "services": [
+    "ids7",
+    "dpat",
+    "uvclient"
+   ]
+  }
+ }
+}

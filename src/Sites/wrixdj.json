@@ -1,0 +1,95 @@
+{
+ "site_id": "s97kmc_230413",
+ "site_name": "wrixdj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 6,
+   "memory": 9,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Sun_Valley",
+   "cpu": 20,
+   "memory": 52,
+   "services": [
+    "shs",
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_2",
+   "cpu": 29,
+   "memory": 24,
+   "services": [
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_valley_2",
+   "cpu": 27,
+   "memory": 45,
+   "services": [
+    "wise",
+    "es",
+    "ad"
+   ]
+  },
+  "sss": {
+   "os": "Symphony",
+   "cpu": 17,
+   "memory": 6,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "wise",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Millennium",
+   "cpu": 28,
+   "memory": 53,
+   "services": [
+    "dpat",
+    "risapp",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_5",
+   "cpu": 13,
+   "memory": 5,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Vanadium",
+   "cpu": 23,
+   "memory": 56,
+   "services": [
+    "ids7",
+    "uvcore",
+    "es",
+    "dpat",
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Harmony",
+   "cpu": 12,
+   "memory": 37,
+   "services": [
+    "shs",
+    "iss",
+    "haproxy"
+   ]
+  }
+ }
+}

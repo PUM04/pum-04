@@ -1,0 +1,62 @@
+{
+ "site_id": "4xnd31_230413",
+ "site_name": "sssgaj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Blue",
+   "cpu": 31,
+   "memory": 11,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "dpat",
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 19,
+   "memory": 38,
+   "services": [
+    "shs",
+    "sql2019",
+    "uvclient",
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Millennium",
+   "cpu": 28,
+   "memory": 5,
+   "services": [
+    "dpat",
+    "sql2019",
+    "es",
+    "ids7",
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Snowball",
+   "cpu": 18,
+   "memory": 44,
+   "services": [
+    "wise",
+    "ad",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_Valley",
+   "cpu": 13,
+   "memory": 5,
+   "services": [
+    "riscore",
+    "uvclient"
+   ]
+  }
+ }
+}

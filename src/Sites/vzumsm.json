@@ -1,0 +1,75 @@
+{
+ "site_id": "iw5r50_230413",
+ "site_name": "vzumsm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Windows_NT_5.0",
+   "cpu": 20,
+   "memory": 19,
+   "services": [
+    "iss",
+    "haproxy",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Sparta",
+   "cpu": 26,
+   "memory": 1,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 29,
+   "memory": 61,
+   "services": [
+    "ad",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Whistler",
+   "cpu": 32,
+   "memory": 25,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Whistler",
+   "cpu": 25,
+   "memory": 54,
+   "services": [
+    "wise",
+    "uvclient",
+    "haproxy",
+    "shs",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 16,
+   "memory": 40,
+   "services": [
+    "dpat"
+   ]
+  },
+  "riscore": {
+   "os": "Snowball",
+   "cpu": 4,
+   "memory": 49,
+   "services": [
+    "ad",
+    "sql2019",
+    "risapp"
+   ]
+  }
+ }
+}

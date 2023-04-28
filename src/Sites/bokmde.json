@@ -1,0 +1,87 @@
+{
+ "site_id": "vq8563_230413",
+ "site_name": "bokmde",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 32,
+   "memory": 26,
+   "services": [
+    "haproxy",
+    "iss"
+   ]
+  },
+  "es": {
+   "os": "Windows_8",
+   "cpu": 13,
+   "memory": 27,
+   "services": [
+    "shs",
+    "riscore",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 22,
+   "memory": 18,
+   "services": [
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Chicago",
+   "cpu": 21,
+   "memory": 12,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Emerald",
+   "cpu": 12,
+   "memory": 22,
+   "services": [
+    "iss",
+    "ad",
+    "sql2019",
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Whistler",
+   "cpu": 14,
+   "memory": 61,
+   "services": [
+    "iss",
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 24,
+   "memory": 38,
+   "services": [
+    "risapp",
+    "riscore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sparta",
+   "cpu": 24,
+   "memory": 27,
+   "services": [
+    "riscore",
+    "wise",
+    "iss",
+    "uvcore",
+    "shs"
+   ]
+  }
+ }
+}

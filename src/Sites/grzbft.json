@@ -1,0 +1,32 @@
+{
+ "site_id": "xxj5ls_230413",
+ "site_name": "grzbft",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Harmony",
+   "cpu": 30,
+   "memory": 50,
+   "services": [
+    "es",
+    "iss",
+    "uvcore",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Freestyle",
+   "cpu": 30,
+   "memory": 17,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "haproxy",
+    "es",
+    "shs"
+   ]
+  }
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "site_id": "p5z475_230413",
+ "site_name": "vwoqpj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Vibranium",
+   "cpu": 17,
+   "memory": 64,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_1",
+   "cpu": 25,
+   "memory": 10,
+   "services": [
+    "shs",
+    "es",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Longhorn",
+   "cpu": 14,
+   "memory": 36,
+   "services": [
+    "shs",
+    "es",
+    "dpat",
+    "sql2019"
+   ]
+  }
+ }
+}

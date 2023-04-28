@@ -1,0 +1,35 @@
+{
+ "site_id": "00m041_230413",
+ "site_name": "uvnuxq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Sun_valley_2",
+   "cpu": 19,
+   "memory": 16,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold",
+   "cpu": 4,
+   "memory": 47,
+   "services": [
+    "uvclient",
+    "wise",
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Memphis",
+   "cpu": 5,
+   "memory": 20,
+   "services": [
+    "haproxy",
+    "ad"
+   ]
+  }
+ }
+}

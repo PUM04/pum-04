@@ -1,0 +1,18 @@
+{
+ "site_id": "hx76ct_230413",
+ "site_name": "rjaszx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Redstone_2",
+   "cpu": 18,
+   "memory": 60,
+   "services": [
+    "iss",
+    "ad",
+    "wise"
+   ]
+  }
+ }
+}

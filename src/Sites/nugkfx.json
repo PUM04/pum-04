@@ -1,0 +1,63 @@
+{
+ "site_id": "yf6k32_230413",
+ "site_name": "nugkfx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Threshold_2",
+   "cpu": 21,
+   "memory": 20,
+   "services": [
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Chicago",
+   "cpu": 6,
+   "memory": 55,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_5",
+   "cpu": 15,
+   "memory": 20,
+   "services": [
+    "ids7",
+    "riscore",
+    "shs"
+   ]
+  },
+  "pacscore": {
+   "os": "Whistler",
+   "cpu": 2,
+   "memory": 54,
+   "services": [
+    "dpat",
+    "ad",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Emerald",
+   "cpu": 12,
+   "memory": 49,
+   "services": [
+    "dpat",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Daytona",
+   "cpu": 14,
+   "memory": 10,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

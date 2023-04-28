@@ -1,0 +1,75 @@
+{
+ "site_id": "28i91x_230413",
+ "site_name": "gpnppz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Blue",
+   "cpu": 3,
+   "memory": 39,
+   "services": [
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_3",
+   "cpu": 1,
+   "memory": 48,
+   "services": [
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Chicago",
+   "cpu": 26,
+   "memory": 4,
+   "services": [
+    "wise",
+    "ad",
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_3",
+   "cpu": 18,
+   "memory": 29,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "es",
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Razzle",
+   "cpu": 23,
+   "memory": 19,
+   "services": [
+    "wise",
+    "haproxy",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Sparta",
+   "cpu": 3,
+   "memory": 51,
+   "services": [
+    "es",
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold_2",
+   "cpu": 24,
+   "memory": 21,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

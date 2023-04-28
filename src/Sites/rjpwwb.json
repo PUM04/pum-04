@@ -1,0 +1,46 @@
+{
+ "site_id": "g5fstg_230413",
+ "site_name": "rjpwwb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Whistler",
+   "cpu": 1,
+   "memory": 25,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_7",
+   "cpu": 5,
+   "memory": 19,
+   "services": [
+    "riscore",
+    "ids7",
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_1",
+   "cpu": 24,
+   "memory": 57,
+   "services": [
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Sparta",
+   "cpu": 5,
+   "memory": 53,
+   "services": [
+    "wise",
+    "uvcore",
+    "ad",
+    "ids7"
+   ]
+  }
+ }
+}

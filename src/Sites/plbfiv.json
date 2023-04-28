@@ -1,0 +1,57 @@
+{
+ "site_id": "l448pt_230413",
+ "site_name": "plbfiv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Windows_7",
+   "cpu": 12,
+   "memory": 2,
+   "services": [
+    "wise",
+    "uvclient",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Redstone_1",
+   "cpu": 6,
+   "memory": 27,
+   "services": [
+    "es",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_valley_2",
+   "cpu": 7,
+   "memory": 50,
+   "services": [
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_7",
+   "cpu": 16,
+   "memory": 27,
+   "services": [
+    "risapp",
+    "haproxy",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Whistler",
+   "cpu": 12,
+   "memory": 25,
+   "services": [
+    "uvclient",
+    "risapp",
+    "uvcore",
+    "dpat"
+   ]
+  }
+ }
+}

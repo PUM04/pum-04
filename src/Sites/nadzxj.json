@@ -1,0 +1,18 @@
+{
+ "site_id": "3k63z1_230413",
+ "site_name": "nadzxj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Memphis",
+   "cpu": 18,
+   "memory": 1,
+   "services": [
+    "iss",
+    "uvclient",
+    "sql2019"
+   ]
+  }
+ }
+}

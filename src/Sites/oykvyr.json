@@ -1,0 +1,40 @@
+{
+ "site_id": "q599u1_230413",
+ "site_name": "oykvyr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 16,
+   "memory": 59,
+   "services": [
+    "iss",
+    "wise",
+    "ids7",
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Whistler",
+   "cpu": 32,
+   "memory": 57,
+   "services": [
+    "ids7",
+    "es",
+    "dpat",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Sparta",
+   "cpu": 22,
+   "memory": 26,
+   "services": [
+    "sql2019",
+    "uvcore",
+    "risapp"
+   ]
+  }
+ }
+}

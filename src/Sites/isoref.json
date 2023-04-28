@@ -1,0 +1,57 @@
+{
+ "site_id": "814821_230413",
+ "site_name": "isoref",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 31,
+   "memory": 26,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Sun_valley_2",
+   "cpu": 31,
+   "memory": 22,
+   "services": [
+    "ad",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Millennium",
+   "cpu": 29,
+   "memory": 39,
+   "services": [
+    "es",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 21,
+   "memory": 22,
+   "services": [
+    "sql2019",
+    "risapp",
+    "dpat",
+    "ad",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_1",
+   "cpu": 7,
+   "memory": 9,
+   "services": [
+    "shs",
+    "iss",
+    "es",
+    "wise"
+   ]
+  }
+ }
+}

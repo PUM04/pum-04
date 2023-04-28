@@ -1,0 +1,90 @@
+{
+ "site_id": "ei1a43_230413",
+ "site_name": "nyyhlv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Redstone_3",
+   "cpu": 4,
+   "memory": 38,
+   "services": [
+    "uvclient",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Razzle",
+   "cpu": 29,
+   "memory": 1,
+   "services": [
+    "shs",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_5",
+   "cpu": 14,
+   "memory": 55,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_5",
+   "cpu": 11,
+   "memory": 46,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 19,
+   "memory": 26,
+   "services": [
+    "shs",
+    "iss",
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Snowball",
+   "cpu": 20,
+   "memory": 17,
+   "services": [
+    "iss",
+    "ad",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Threshold_2",
+   "cpu": 32,
+   "memory": 51,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Whistler",
+   "cpu": 14,
+   "memory": 59,
+   "services": [
+    "ids7",
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_8",
+   "cpu": 12,
+   "memory": 47,
+   "services": [
+    "ad",
+    "wise",
+    "es"
+   ]
+  }
+ }
+}

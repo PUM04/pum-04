@@ -1,0 +1,47 @@
+{
+ "site_id": "c1rkou_230413",
+ "site_name": "gqxayy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Emerald",
+   "cpu": 11,
+   "memory": 9,
+   "services": [
+    "dpat",
+    "sql2019",
+    "ad",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 15,
+   "memory": 4,
+   "services": [
+    "riscore",
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 13,
+   "memory": 23,
+   "services": [
+    "wise",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Razzle",
+   "cpu": 29,
+   "memory": 7,
+   "services": [
+    "wise",
+    "ad",
+    "dpat"
+   ]
+  }
+ }
+}

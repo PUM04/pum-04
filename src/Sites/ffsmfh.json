@@ -1,0 +1,28 @@
+{
+ "site_id": "61qnhp_230413",
+ "site_name": "ffsmfh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Symphony",
+   "cpu": 5,
+   "memory": 9,
+   "services": [
+    "risapp",
+    "ad",
+    "uvcore",
+    "haproxy",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 17,
+   "memory": 37,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

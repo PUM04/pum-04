@@ -1,0 +1,61 @@
+{
+ "site_id": "hn4s47_230413",
+ "site_name": "tnibnx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Windows_8",
+   "cpu": 5,
+   "memory": 16,
+   "services": [
+    "ad",
+    "haproxy",
+    "shs",
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Windows_NT_5.0",
+   "cpu": 14,
+   "memory": 30,
+   "services": [
+    "wise",
+    "shs",
+    "es",
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Anvil",
+   "cpu": 13,
+   "memory": 44,
+   "services": [
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Vanadium",
+   "cpu": 15,
+   "memory": 22,
+   "services": [
+    "ad",
+    "iss",
+    "es",
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Memphis",
+   "cpu": 21,
+   "memory": 64,
+   "services": [
+    "risapp",
+    "iss",
+    "haproxy",
+    "sql2019",
+    "es"
+   ]
+  }
+ }
+}

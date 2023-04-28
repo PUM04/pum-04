@@ -1,0 +1,82 @@
+{
+ "site_id": "a2x4ux_230413",
+ "site_name": "cdlbht",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Sparta",
+   "cpu": 31,
+   "memory": 46,
+   "services": [
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_7",
+   "cpu": 29,
+   "memory": 7,
+   "services": [
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_3",
+   "cpu": 15,
+   "memory": 11,
+   "services": [
+    "uvcore",
+    "ad",
+    "ids7",
+    "shs",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Whistler",
+   "cpu": 10,
+   "memory": 58,
+   "services": [
+    "es",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vibranium",
+   "cpu": 12,
+   "memory": 20,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 15,
+   "memory": 27,
+   "services": [
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Windows_7",
+   "cpu": 6,
+   "memory": 21,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_4",
+   "cpu": 15,
+   "memory": 29,
+   "services": [
+    "shs",
+    "ids7",
+    "es"
+   ]
+  }
+ }
+}

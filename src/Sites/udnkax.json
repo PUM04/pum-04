@@ -1,0 +1,82 @@
+{
+ "site_id": "24l48y_230413",
+ "site_name": "udnkax",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Daytona",
+   "cpu": 22,
+   "memory": 2,
+   "services": [
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sun_Valley",
+   "cpu": 15,
+   "memory": 18,
+   "services": [
+    "ids7",
+    "es",
+    "shs",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Daytona",
+   "cpu": 11,
+   "memory": 11,
+   "services": [
+    "shs",
+    "uvclient",
+    "ad",
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Freestyle",
+   "cpu": 9,
+   "memory": 58,
+   "services": [
+    "iss",
+    "es",
+    "dpat",
+    "haproxy",
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sparta",
+   "cpu": 30,
+   "memory": 38,
+   "services": [
+    "wise",
+    "es",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 2,
+   "memory": 2,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Windows_7",
+   "cpu": 14,
+   "memory": 58,
+   "services": [
+    "dpat",
+    "sql2019",
+    "risapp",
+    "uvcore",
+    "wise"
+   ]
+  }
+ }
+}

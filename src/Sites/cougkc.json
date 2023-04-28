@@ -1,0 +1,69 @@
+{
+ "site_id": "0v001v_230413",
+ "site_name": "cougkc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Sun_valley_2",
+   "cpu": 10,
+   "memory": 47,
+   "services": [
+    "wise",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Freestyle",
+   "cpu": 17,
+   "memory": 7,
+   "services": [
+    "riscore",
+    "haproxy",
+    "uvclient",
+    "wise",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Vibranium",
+   "cpu": 17,
+   "memory": 15,
+   "services": [
+    "risapp",
+    "dpat",
+    "iss",
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Whistler",
+   "cpu": 8,
+   "memory": 21,
+   "services": [
+    "wise",
+    "shs",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Emerald",
+   "cpu": 29,
+   "memory": 2,
+   "services": [
+    "ids7",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Razzle",
+   "cpu": 29,
+   "memory": 12,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

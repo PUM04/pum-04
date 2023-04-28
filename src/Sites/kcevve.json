@@ -1,0 +1,59 @@
+{
+ "site_id": "502iu1_230413",
+ "site_name": "kcevve",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 22,
+   "memory": 62,
+   "services": [
+    "iss",
+    "es",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Daytona",
+   "cpu": 12,
+   "memory": 3,
+   "services": [
+    "shs",
+    "iss",
+    "es",
+    "wise",
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Vibranium",
+   "cpu": 23,
+   "memory": 24,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Windows_8",
+   "cpu": 4,
+   "memory": 62,
+   "services": [
+    "ids7",
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_5",
+   "cpu": 7,
+   "memory": 11,
+   "services": [
+    "sql2019",
+    "haproxy"
+   ]
+  }
+ }
+}

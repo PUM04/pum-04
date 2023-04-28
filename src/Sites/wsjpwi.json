@@ -1,0 +1,27 @@
+{
+ "site_id": "02upal_230413",
+ "site_name": "wsjpwi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Daytona",
+   "cpu": 2,
+   "memory": 44,
+   "services": [
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_4",
+   "cpu": 24,
+   "memory": 63,
+   "services": [
+    "uvclient",
+    "es",
+    "risapp"
+   ]
+  }
+ }
+}

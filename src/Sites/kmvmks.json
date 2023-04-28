@@ -1,0 +1,16 @@
+{
+ "site_id": "x99vnz_230413",
+ "site_name": "kmvmks",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Memphis",
+   "cpu": 16,
+   "memory": 5,
+   "services": [
+    "risapp"
+   ]
+  }
+ }
+}

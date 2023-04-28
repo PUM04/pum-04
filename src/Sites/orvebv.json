@@ -1,0 +1,90 @@
+{
+ "site_id": "9ks783_230413",
+ "site_name": "orvebv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Windows_7",
+   "cpu": 25,
+   "memory": 57,
+   "services": [
+    "ids7",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 11,
+   "memory": 59,
+   "services": [
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_1",
+   "cpu": 20,
+   "memory": 5,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_Valley",
+   "cpu": 20,
+   "memory": 54,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Freestyle",
+   "cpu": 24,
+   "memory": 19,
+   "services": [
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Harmony",
+   "cpu": 6,
+   "memory": 55,
+   "services": [
+    "haproxy",
+    "wise",
+    "es",
+    "ids7",
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 1,
+   "memory": 11,
+   "services": [
+    "dpat",
+    "ids7",
+    "uvclient",
+    "shs",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 10,
+   "memory": 20,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 17,
+   "memory": 45,
+   "services": [
+    "es"
+   ]
+  }
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "site_id": "h8cvsw_230413",
+ "site_name": "zwltkm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Threshold_2",
+   "cpu": 4,
+   "memory": 8,
+   "services": [
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold",
+   "cpu": 21,
+   "memory": 39,
+   "services": [
+    "sql2019",
+    "shs",
+    "risapp",
+    "wise"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold",
+   "cpu": 2,
+   "memory": 51,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Whistler",
+   "cpu": 21,
+   "memory": 3,
+   "services": [
+    "ids7",
+    "risapp",
+    "dpat",
+    "ad",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Millennium",
+   "cpu": 9,
+   "memory": 34,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "shs"
+   ]
+  },
+  "ad": {
+   "os": "Chicago",
+   "cpu": 27,
+   "memory": 48,
+   "services": [
+    "uvclient",
+    "dpat",
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 7,
+   "memory": 59,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Chicago",
+   "cpu": 17,
+   "memory": 5,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "es"
+   ]
+  }
+ }
+}

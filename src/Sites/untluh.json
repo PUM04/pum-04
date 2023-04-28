@@ -1,0 +1,60 @@
+{
+ "site_id": "75jqo4_230413",
+ "site_name": "untluh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Windows_7",
+   "cpu": 25,
+   "memory": 2,
+   "services": [
+    "sql2019",
+    "shs",
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 25,
+   "memory": 13,
+   "services": [
+    "wise",
+    "ids7",
+    "sql2019",
+    "dpat",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 32,
+   "memory": 44,
+   "services": [
+    "shs",
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Snowball",
+   "cpu": 19,
+   "memory": 27,
+   "services": [
+    "risapp",
+    "ad",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Blue",
+   "cpu": 3,
+   "memory": 18,
+   "services": [
+    "sql2019",
+    "riscore",
+    "ids7"
+   ]
+  }
+ }
+}

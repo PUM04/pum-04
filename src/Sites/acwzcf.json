@@ -1,0 +1,69 @@
+{
+ "site_id": "04pw5u_230413",
+ "site_name": "acwzcf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 2,
+   "memory": 11,
+   "services": [
+    "uvcore",
+    "shs",
+    "iss",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Freestyle",
+   "cpu": 27,
+   "memory": 9,
+   "services": [
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Anvil",
+   "cpu": 18,
+   "memory": 54,
+   "services": [
+    "iss",
+    "ids7",
+    "uvcore",
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Anvil",
+   "cpu": 20,
+   "memory": 60,
+   "services": [
+    "uvcore",
+    "shs",
+    "dpat",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Symphony",
+   "cpu": 1,
+   "memory": 12,
+   "services": [
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Freestyle",
+   "cpu": 19,
+   "memory": 12,
+   "services": [
+    "uvclient",
+    "riscore",
+    "haproxy",
+    "shs"
+   ]
+  }
+ }
+}

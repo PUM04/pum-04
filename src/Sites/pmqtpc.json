@@ -1,0 +1,25 @@
+{
+ "site_id": "pl37j1_230413",
+ "site_name": "pmqtpc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Freestyle",
+   "cpu": 8,
+   "memory": 22,
+   "services": [
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Blue",
+   "cpu": 13,
+   "memory": 57,
+   "services": [
+    "shs"
+   ]
+  }
+ }
+}

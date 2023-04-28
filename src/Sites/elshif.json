@@ -1,0 +1,44 @@
+{
+ "site_id": "z9ha2t_230413",
+ "site_name": "elshif",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Blue",
+   "cpu": 11,
+   "memory": 49,
+   "services": [
+    "es",
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Sparta",
+   "cpu": 29,
+   "memory": 39,
+   "services": [
+    "ids7",
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Blue",
+   "cpu": 30,
+   "memory": 13,
+   "services": [
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_1",
+   "cpu": 1,
+   "memory": 58,
+   "services": [
+    "iss",
+    "uvcore"
+   ]
+  }
+ }
+}

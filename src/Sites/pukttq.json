@@ -1,0 +1,54 @@
+{
+ "site_id": "pz6bre_230413",
+ "site_name": "pukttq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Windows_7",
+   "cpu": 15,
+   "memory": 23,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Symphony",
+   "cpu": 23,
+   "memory": 3,
+   "services": [
+    "es",
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Daytona",
+   "cpu": 16,
+   "memory": 14,
+   "services": [
+    "shs",
+    "es",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_8",
+   "cpu": 5,
+   "memory": 56,
+   "services": [
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Anvil",
+   "cpu": 23,
+   "memory": 4,
+   "services": [
+    "sql2019",
+    "uvcore",
+    "haproxy"
+   ]
+  }
+ }
+}

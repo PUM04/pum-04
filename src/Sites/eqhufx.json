@@ -1,0 +1,79 @@
+{
+ "site_id": "3q7539_230413",
+ "site_name": "eqhufx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 20,
+   "memory": 40,
+   "services": [
+    "dpat",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Anvil",
+   "cpu": 16,
+   "memory": 52,
+   "services": [
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Sun_Valley",
+   "cpu": 28,
+   "memory": 1,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Longhorn",
+   "cpu": 32,
+   "memory": 33,
+   "services": [
+    "shs",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Razzle",
+   "cpu": 15,
+   "memory": 1,
+   "services": [
+    "uvcore",
+    "dpat",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Anvil",
+   "cpu": 26,
+   "memory": 52,
+   "services": [
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_3",
+   "cpu": 22,
+   "memory": 10,
+   "services": [
+    "es",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_8",
+   "cpu": 18,
+   "memory": 62,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "site_id": "2ir829_230413",
+ "site_name": "fwfigw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Chicago",
+   "cpu": 25,
+   "memory": 33,
+   "services": [
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Millennium",
+   "cpu": 25,
+   "memory": 53,
+   "services": [
+    "haproxy",
+    "uvclient",
+    "ad",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_Valley",
+   "cpu": 17,
+   "memory": 41,
+   "services": [
+    "es",
+    "risapp",
+    "ad",
+    "riscore"
+   ]
+  }
+ }
+}

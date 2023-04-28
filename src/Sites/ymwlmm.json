@@ -1,0 +1,51 @@
+{
+ "site_id": "890epx_230413",
+ "site_name": "ymwlmm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Longhorn",
+   "cpu": 10,
+   "memory": 57,
+   "services": [
+    "uvcore",
+    "riscore",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Anvil",
+   "cpu": 19,
+   "memory": 3,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Emerald",
+   "cpu": 26,
+   "memory": 11,
+   "services": [
+    "shs",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Vanadium",
+   "cpu": 1,
+   "memory": 42,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "wise",
+    "dpat"
+   ]
+  }
+ }
+}

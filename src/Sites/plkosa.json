@@ -1,0 +1,69 @@
+{
+ "site_id": "047f9j_230413",
+ "site_name": "plkosa",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Vanadium",
+   "cpu": 8,
+   "memory": 29,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_4",
+   "cpu": 31,
+   "memory": 26,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 6,
+   "memory": 8,
+   "services": [
+    "risapp",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Freestyle",
+   "cpu": 7,
+   "memory": 25,
+   "services": [
+    "uvclient",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Freestyle",
+   "cpu": 13,
+   "memory": 9,
+   "services": [
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Emerald",
+   "cpu": 20,
+   "memory": 1,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_4",
+   "cpu": 2,
+   "memory": 20,
+   "services": [
+    "iss",
+    "sql2019",
+    "wise"
+   ]
+  }
+ }
+}

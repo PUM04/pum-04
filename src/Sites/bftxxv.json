@@ -1,0 +1,49 @@
+{
+ "site_id": "q2dt35_230413",
+ "site_name": "bftxxv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Redstone_1",
+   "cpu": 9,
+   "memory": 64,
+   "services": [
+    "uvclient",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Vanadium",
+   "cpu": 24,
+   "memory": 27,
+   "services": [
+    "ids7",
+    "sql2019",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Millennium",
+   "cpu": 29,
+   "memory": 38,
+   "services": [
+    "iss",
+    "ad",
+    "sql2019",
+    "haproxy",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Chicago",
+   "cpu": 14,
+   "memory": 64,
+   "services": [
+    "shs",
+    "uvcore"
+   ]
+  }
+ }
+}

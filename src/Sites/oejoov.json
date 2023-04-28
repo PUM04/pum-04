@@ -1,0 +1,90 @@
+{
+ "site_id": "pv723l_230413",
+ "site_name": "oejoov",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Millennium",
+   "cpu": 3,
+   "memory": 57,
+   "services": [
+    "haproxy",
+    "es",
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Symphony",
+   "cpu": 14,
+   "memory": 51,
+   "services": [
+    "risapp",
+    "dpat",
+    "sql2019",
+    "shs"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 8,
+   "memory": 13,
+   "services": [
+    "ids7",
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Harmony",
+   "cpu": 3,
+   "memory": 38,
+   "services": [
+    "ad",
+    "uvclient",
+    "risapp",
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold_2",
+   "cpu": 32,
+   "memory": 60,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 4,
+   "memory": 20,
+   "services": [
+    "iss",
+    "sql2019",
+    "ad",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Anvil",
+   "cpu": 22,
+   "memory": 36,
+   "services": [
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_7",
+   "cpu": 28,
+   "memory": 59,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "uvcore",
+    "riscore",
+    "iss"
+   ]
+  }
+ }
+}

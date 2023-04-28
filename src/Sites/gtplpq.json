@@ -1,0 +1,56 @@
+{
+ "site_id": "764vnc_230413",
+ "site_name": "gtplpq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 26,
+   "memory": 36,
+   "services": [
+    "shs",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Freestyle",
+   "cpu": 24,
+   "memory": 64,
+   "services": [
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Anvil",
+   "cpu": 20,
+   "memory": 31,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Freestyle",
+   "cpu": 30,
+   "memory": 41,
+   "services": [
+    "sql2019",
+    "uvcore",
+    "es",
+    "wise",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_5",
+   "cpu": 32,
+   "memory": 55,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "riscore",
+    "uvcore"
+   ]
+  }
+ }
+}

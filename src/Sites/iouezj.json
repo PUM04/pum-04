@@ -1,0 +1,36 @@
+{
+ "site_id": "i4293h_230413",
+ "site_name": "iouezj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Razzle",
+   "cpu": 1,
+   "memory": 31,
+   "services": [
+    "dpat",
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_3",
+   "cpu": 29,
+   "memory": 8,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Harmony",
+   "cpu": 6,
+   "memory": 14,
+   "services": [
+    "uvclient",
+    "iss"
+   ]
+  }
+ }
+}

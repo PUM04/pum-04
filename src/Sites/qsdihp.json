@@ -1,0 +1,31 @@
+{
+ "site_id": "808uq2_230413",
+ "site_name": "qsdihp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Windows_8",
+   "cpu": 18,
+   "memory": 37,
+   "services": [
+    "ids7",
+    "dpat",
+    "uvcore",
+    "iss",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_3",
+   "cpu": 31,
+   "memory": 41,
+   "services": [
+    "ids7",
+    "risapp",
+    "dpat",
+    "shs"
+   ]
+  }
+ }
+}

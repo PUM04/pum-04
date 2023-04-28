@@ -1,0 +1,64 @@
+{
+ "site_id": "bxglp0_230413",
+ "site_name": "oguvrj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Longhorn",
+   "cpu": 12,
+   "memory": 12,
+   "services": [
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_8",
+   "cpu": 32,
+   "memory": 20,
+   "services": [
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_1",
+   "cpu": 17,
+   "memory": 21,
+   "services": [
+    "ids7",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Chicago",
+   "cpu": 14,
+   "memory": 36,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_5",
+   "cpu": 17,
+   "memory": 21,
+   "services": [
+    "dpat",
+    "wise",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 5,
+   "memory": 19,
+   "services": [
+    "dpat",
+    "risapp",
+    "sql2019",
+    "uvcore"
+   ]
+  }
+ }
+}

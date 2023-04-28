@@ -1,0 +1,31 @@
+{
+ "site_id": "5p5mv3_230413",
+ "site_name": "pwmdom",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Millennium",
+   "cpu": 21,
+   "memory": 17,
+   "services": [
+    "risapp",
+    "ad",
+    "iss",
+    "es",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 29,
+   "memory": 39,
+   "services": [
+    "haproxy",
+    "wise",
+    "uvcore",
+    "uvclient"
+   ]
+  }
+ }
+}

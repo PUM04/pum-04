@@ -1,0 +1,67 @@
+{
+ "site_id": "zm025c_230413",
+ "site_name": "fwvwwo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Emerald",
+   "cpu": 13,
+   "memory": 43,
+   "services": [
+    "ids7",
+    "risapp",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 32,
+   "memory": 55,
+   "services": [
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Freestyle",
+   "cpu": 14,
+   "memory": 28,
+   "services": [
+    "uvcore",
+    "shs",
+    "ad",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Daytona",
+   "cpu": 13,
+   "memory": 56,
+   "services": [
+    "es",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Vanadium",
+   "cpu": 8,
+   "memory": 45,
+   "services": [
+    "dpat",
+    "es",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Harmony",
+   "cpu": 25,
+   "memory": 14,
+   "services": [
+    "iss",
+    "riscore",
+    "dpat",
+    "ids7"
+   ]
+  }
+ }
+}

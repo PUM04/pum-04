@@ -1,0 +1,86 @@
+{
+ "site_id": "757l52_230413",
+ "site_name": "pypnxw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Anvil",
+   "cpu": 29,
+   "memory": 9,
+   "services": [
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Symphony",
+   "cpu": 3,
+   "memory": 61,
+   "services": [
+    "uvclient",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Chicago",
+   "cpu": 15,
+   "memory": 9,
+   "services": [
+    "risapp",
+    "es",
+    "dpat",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_2",
+   "cpu": 30,
+   "memory": 18,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "wise",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 19,
+   "memory": 37,
+   "services": [
+    "iss",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Daytona",
+   "cpu": 5,
+   "memory": 43,
+   "services": [
+    "wise",
+    "dpat",
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Harmony",
+   "cpu": 24,
+   "memory": 57,
+   "services": [
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Threshold_2",
+   "cpu": 31,
+   "memory": 32,
+   "services": [
+    "haproxy",
+    "dpat",
+    "sql2019",
+    "uvclient"
+   ]
+  }
+ }
+}

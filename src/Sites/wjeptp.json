@@ -1,0 +1,38 @@
+{
+ "site_id": "96ks11_230413",
+ "site_name": "wjeptp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Memphis",
+   "cpu": 29,
+   "memory": 12,
+   "services": [
+    "wise",
+    "ad",
+    "ids7",
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Freestyle",
+   "cpu": 22,
+   "memory": 7,
+   "services": [
+    "ad",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Anvil",
+   "cpu": 2,
+   "memory": 43,
+   "services": [
+    "haproxy",
+    "risapp",
+    "sql2019"
+   ]
+  }
+ }
+}

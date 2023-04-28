@@ -1,0 +1,65 @@
+{
+ "site_id": "4uve51_230413",
+ "site_name": "tuuskf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Chicago",
+   "cpu": 17,
+   "memory": 46,
+   "services": [
+    "es",
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 16,
+   "memory": 16,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Anvil",
+   "cpu": 13,
+   "memory": 4,
+   "services": [
+    "risapp",
+    "ids7",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Longhorn",
+   "cpu": 16,
+   "memory": 50,
+   "services": [
+    "wise",
+    "risapp",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Whistler",
+   "cpu": 25,
+   "memory": 18,
+   "services": [
+    "ad",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_4",
+   "cpu": 22,
+   "memory": 40,
+   "services": [
+    "uvcore",
+    "ad"
+   ]
+  }
+ }
+}

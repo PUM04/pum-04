@@ -1,0 +1,34 @@
+{
+ "site_id": "k76e62_230413",
+ "site_name": "kdzzhi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Blue",
+   "cpu": 32,
+   "memory": 64,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Blue",
+   "cpu": 6,
+   "memory": 8,
+   "services": [
+    "wise"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 23,
+   "memory": 28,
+   "services": [
+    "dpat",
+    "iss",
+    "haproxy"
+   ]
+  }
+ }
+}

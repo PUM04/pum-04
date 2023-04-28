@@ -1,0 +1,58 @@
+{
+ "site_id": "1azn2g_230413",
+ "site_name": "niefdw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 28,
+   "memory": 45,
+   "services": [
+    "dpat",
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 25,
+   "memory": 52,
+   "services": [
+    "dpat",
+    "sql2019",
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 32,
+   "memory": 40,
+   "services": [
+    "uvcore",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Vibranium",
+   "cpu": 22,
+   "memory": 6,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "shs",
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_4",
+   "cpu": 2,
+   "memory": 3,
+   "services": [
+    "uvcore",
+    "iss"
+   ]
+  }
+ }
+}

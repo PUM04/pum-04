@@ -1,0 +1,18 @@
+{
+ "site_id": "lpg0s0_230413",
+ "site_name": "nkzqrr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 7,
+   "memory": 10,
+   "services": [
+    "uvclient",
+    "shs",
+    "iss"
+   ]
+  }
+ }
+}

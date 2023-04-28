@@ -1,0 +1,24 @@
+{
+ "site_id": "mukcgo_230413",
+ "site_name": "exlvnp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Chicago",
+   "cpu": 23,
+   "memory": 22,
+   "services": [
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Symphony",
+   "cpu": 17,
+   "memory": 8,
+   "services": [
+    "dpat"
+   ]
+  }
+ }
+}

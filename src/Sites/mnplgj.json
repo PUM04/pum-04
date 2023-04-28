@@ -1,0 +1,85 @@
+{
+ "site_id": "tajq3c_230413",
+ "site_name": "mnplgj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Sun_Valley",
+   "cpu": 12,
+   "memory": 53,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Harmony",
+   "cpu": 7,
+   "memory": 23,
+   "services": [
+    "iss",
+    "uvcore",
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Razzle",
+   "cpu": 22,
+   "memory": 43,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Millennium",
+   "cpu": 30,
+   "memory": 21,
+   "services": [
+    "ids7",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_4",
+   "cpu": 7,
+   "memory": 1,
+   "services": [
+    "uvcore",
+    "shs",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Longhorn",
+   "cpu": 18,
+   "memory": 29,
+   "services": [
+    "riscore",
+    "uvclient",
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Emerald",
+   "cpu": 22,
+   "memory": 52,
+   "services": [
+    "ad",
+    "dpat",
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Sun_Valley",
+   "cpu": 15,
+   "memory": 17,
+   "services": [
+    "dpat"
+   ]
+  }
+ }
+}

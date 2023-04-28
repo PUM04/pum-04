@@ -1,0 +1,61 @@
+{
+ "site_id": "88947y_230413",
+ "site_name": "uqjvvl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Redstone_3",
+   "cpu": 18,
+   "memory": 30,
+   "services": [
+    "riscore",
+    "wise",
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_2",
+   "cpu": 19,
+   "memory": 4,
+   "services": [
+    "wise",
+    "iss",
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 26,
+   "memory": 52,
+   "services": [
+    "shs",
+    "sql2019"
+   ]
+  },
+  "sss": {
+   "os": "Razzle",
+   "cpu": 27,
+   "memory": 58,
+   "services": [
+    "uvclient",
+    "shs",
+    "haproxy",
+    "wise",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Longhorn",
+   "cpu": 5,
+   "memory": 39,
+   "services": [
+    "risapp",
+    "riscore",
+    "ids7",
+    "uvcore"
+   ]
+  }
+ }
+}

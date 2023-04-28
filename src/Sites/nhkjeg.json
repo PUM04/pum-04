@@ -1,0 +1,97 @@
+{
+ "site_id": "99s0q4_230413",
+ "site_name": "nhkjeg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Redstone_2",
+   "cpu": 29,
+   "memory": 28,
+   "services": [
+    "dpat",
+    "risapp",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_2",
+   "cpu": 16,
+   "memory": 15,
+   "services": [
+    "dpat",
+    "wise",
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Daytona",
+   "cpu": 6,
+   "memory": 40,
+   "services": [
+    "dpat",
+    "uvcore",
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "wisecllb": {
+   "os": "Millennium",
+   "cpu": 19,
+   "memory": 49,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Vibranium",
+   "cpu": 4,
+   "memory": 58,
+   "services": [
+    "uvcore",
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Vanadium",
+   "cpu": 4,
+   "memory": 30,
+   "services": [
+    "ad",
+    "riscore",
+    "uvclient",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Symphony",
+   "cpu": 26,
+   "memory": 25,
+   "services": [
+    "es",
+    "risapp",
+    "shs"
+   ]
+  },
+  "ad": {
+   "os": "Windows_7",
+   "cpu": 12,
+   "memory": 24,
+   "services": [
+    "riscore",
+    "ad",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Vanadium",
+   "cpu": 22,
+   "memory": 3,
+   "services": [
+    "risapp"
+   ]
+  }
+ }
+}

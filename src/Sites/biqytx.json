@@ -1,0 +1,48 @@
+{
+ "site_id": "7zu0ae_230413",
+ "site_name": "biqytx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Vibranium",
+   "cpu": 11,
+   "memory": 42,
+   "services": [
+    "dpat",
+    "uvclient",
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Millennium",
+   "cpu": 3,
+   "memory": 22,
+   "services": [
+    "ids7",
+    "sql2019",
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Chicago",
+   "cpu": 32,
+   "memory": 25,
+   "services": [
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Windows_8",
+   "cpu": 15,
+   "memory": 4,
+   "services": [
+    "haproxy",
+    "shs",
+    "wise"
+   ]
+  }
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "site_id": "8u0dp5_230413",
+ "site_name": "vzicyd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Blue",
+   "cpu": 27,
+   "memory": 48,
+   "services": [
+    "risapp",
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Windows_8",
+   "cpu": 23,
+   "memory": 31,
+   "services": [
+    "risapp",
+    "es",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sparta",
+   "cpu": 29,
+   "memory": 40,
+   "services": [
+    "uvclient",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Snowball",
+   "cpu": 1,
+   "memory": 7,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Vanadium",
+   "cpu": 23,
+   "memory": 13,
+   "services": [
+    "haproxy",
+    "dpat",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_5",
+   "cpu": 10,
+   "memory": 64,
+   "services": [
+    "uvcore",
+    "ids7",
+    "es",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Harmony",
+   "cpu": 26,
+   "memory": 50,
+   "services": [
+    "es"
+   ]
+  }
+ }
+}

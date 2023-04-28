@@ -1,0 +1,84 @@
+{
+ "site_id": "ahp23w_230413",
+ "site_name": "hqtlnq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 9,
+   "memory": 48,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold_2",
+   "cpu": 25,
+   "memory": 15,
+   "services": [
+    "iss",
+    "haproxy",
+    "ids7",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold_2",
+   "cpu": 27,
+   "memory": 60,
+   "services": [
+    "ids7",
+    "ad",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_4",
+   "cpu": 28,
+   "memory": 15,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 16,
+   "memory": 27,
+   "services": [
+    "risapp",
+    "uvcore",
+    "shs"
+   ]
+  },
+  "ad": {
+   "os": "Vibranium",
+   "cpu": 7,
+   "memory": 35,
+   "services": [
+    "es",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Memphis",
+   "cpu": 25,
+   "memory": 12,
+   "services": [
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Chicago",
+   "cpu": 24,
+   "memory": 37,
+   "services": [
+    "risapp",
+    "uvcore",
+    "haproxy"
+   ]
+  }
+ }
+}

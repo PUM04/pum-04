@@ -1,0 +1,37 @@
+{
+ "site_id": "7jr54j_230413",
+ "site_name": "sqwchi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 29,
+   "memory": 43,
+   "services": [
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 27,
+   "memory": 21,
+   "services": [
+    "risapp",
+    "dpat",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 13,
+   "memory": 25,
+   "services": [
+    "es",
+    "ids7",
+    "uvclient"
+   ]
+  }
+ }
+}

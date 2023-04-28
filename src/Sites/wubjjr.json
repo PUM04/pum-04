@@ -1,0 +1,17 @@
+{
+ "site_id": "5x836v_230413",
+ "site_name": "wubjjr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Razzle",
+   "cpu": 18,
+   "memory": 22,
+   "services": [
+    "risapp",
+    "ids7"
+   ]
+  }
+ }
+}

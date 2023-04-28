@@ -1,0 +1,65 @@
+{
+ "site_id": "4b8zcu_230413",
+ "site_name": "ktllyh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Razzle",
+   "cpu": 13,
+   "memory": 21,
+   "services": [
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Vanadium",
+   "cpu": 21,
+   "memory": 15,
+   "services": [
+    "haproxy",
+    "es",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_4",
+   "cpu": 22,
+   "memory": 60,
+   "services": [
+    "haproxy",
+    "sql2019",
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 25,
+   "memory": 64,
+   "services": [
+    "riscore",
+    "dpat",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Freestyle",
+   "cpu": 30,
+   "memory": 14,
+   "services": [
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_2",
+   "cpu": 30,
+   "memory": 22,
+   "services": [
+    "uvcore",
+    "es",
+    "dpat"
+   ]
+  }
+ }
+}

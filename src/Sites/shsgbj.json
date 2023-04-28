@@ -1,0 +1,91 @@
+{
+ "site_id": "h01xht_230413",
+ "site_name": "shsgbj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Sun_valley_2",
+   "cpu": 9,
+   "memory": 50,
+   "services": [
+    "dpat",
+    "uvcore",
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold",
+   "cpu": 17,
+   "memory": 43,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Memphis",
+   "cpu": 31,
+   "memory": 13,
+   "services": [
+    "ids7",
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Chicago",
+   "cpu": 24,
+   "memory": 43,
+   "services": [
+    "uvcore",
+    "dpat",
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Snowball",
+   "cpu": 32,
+   "memory": 47,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "uvcore",
+    "riscore",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_5",
+   "cpu": 30,
+   "memory": 59,
+   "services": [
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Vibranium",
+   "cpu": 15,
+   "memory": 61,
+   "services": [
+    "dpat",
+    "es",
+    "riscore",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Vanadium",
+   "cpu": 25,
+   "memory": 30,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "riscore",
+    "risapp"
+   ]
+  }
+ }
+}

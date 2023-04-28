@@ -1,0 +1,70 @@
+{
+ "site_id": "t7xd15_230413",
+ "site_name": "brsnlj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Symphony",
+   "cpu": 29,
+   "memory": 36,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "ids7",
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Vanadium",
+   "cpu": 8,
+   "memory": 31,
+   "services": [
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Sparta",
+   "cpu": 4,
+   "memory": 47,
+   "services": [
+    "sql2019",
+    "dpat",
+    "ids7",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Whistler",
+   "cpu": 19,
+   "memory": 11,
+   "services": [
+    "uvclient",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "pacsapp": {
+   "os": "Snowball",
+   "cpu": 32,
+   "memory": 58,
+   "services": [
+    "uvcore",
+    "iss",
+    "ad",
+    "es",
+    "dpat"
+   ]
+  },
+  "riscore": {
+   "os": "Sparta",
+   "cpu": 4,
+   "memory": 10,
+   "services": [
+    "sql2019",
+    "shs",
+    "riscore"
+   ]
+  }
+ }
+}

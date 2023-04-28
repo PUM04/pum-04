@@ -1,0 +1,76 @@
+{
+ "site_id": "d670j5_230413",
+ "site_name": "igrcnw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Windows_7",
+   "cpu": 22,
+   "memory": 19,
+   "services": [
+    "dpat",
+    "shs",
+    "uvclient",
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 30,
+   "memory": 41,
+   "services": [
+    "dpat",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Memphis",
+   "cpu": 4,
+   "memory": 24,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 29,
+   "memory": 51,
+   "services": [
+    "uvcore",
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Freestyle",
+   "cpu": 24,
+   "memory": 25,
+   "services": [
+    "risapp",
+    "dpat",
+    "ids7",
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Anvil",
+   "cpu": 10,
+   "memory": 29,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_4",
+   "cpu": 27,
+   "memory": 1,
+   "services": [
+    "wise",
+    "shs"
+   ]
+  }
+ }
+}

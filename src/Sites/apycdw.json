@@ -1,0 +1,48 @@
+{
+ "site_id": "u6l734_230413",
+ "site_name": "apycdw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 20,
+   "memory": 44,
+   "services": [
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_2",
+   "cpu": 27,
+   "memory": 6,
+   "services": [
+    "sql2019",
+    "riscore",
+    "wise",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Millennium",
+   "cpu": 2,
+   "memory": 2,
+   "services": [
+    "uvclient",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_7",
+   "cpu": 27,
+   "memory": 40,
+   "services": [
+    "iss",
+    "shs",
+    "dpat"
+   ]
+  }
+ }
+}

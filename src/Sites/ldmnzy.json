@@ -1,0 +1,25 @@
+{
+ "site_id": "fc4wq5_230413",
+ "site_name": "ldmnzy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Sparta",
+   "cpu": 12,
+   "memory": 9,
+   "services": [
+    "uvclient",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Redstone_5",
+   "cpu": 17,
+   "memory": 20,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

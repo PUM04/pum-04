@@ -1,0 +1,19 @@
+{
+ "site_id": "e7v816_230413",
+ "site_name": "flusgh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Threshold_2",
+   "cpu": 32,
+   "memory": 13,
+   "services": [
+    "ids7",
+    "risapp",
+    "ad",
+    "sql2019"
+   ]
+  }
+ }
+}

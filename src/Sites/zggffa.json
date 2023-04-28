@@ -1,0 +1,82 @@
+{
+ "site_id": "i1146l_230413",
+ "site_name": "zggffa",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Blue",
+   "cpu": 25,
+   "memory": 61,
+   "services": [
+    "ad",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Blue",
+   "cpu": 10,
+   "memory": 35,
+   "services": [
+    "uvclient",
+    "ids7",
+    "haproxy",
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Sparta",
+   "cpu": 24,
+   "memory": 54,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Chicago",
+   "cpu": 22,
+   "memory": 3,
+   "services": [
+    "uvcore",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Sparta",
+   "cpu": 29,
+   "memory": 8,
+   "services": [
+    "haproxy",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Razzle",
+   "cpu": 2,
+   "memory": 46,
+   "services": [
+    "es",
+    "sql2019",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_1",
+   "cpu": 22,
+   "memory": 21,
+   "services": [
+    "es",
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Anvil",
+   "cpu": 24,
+   "memory": 36,
+   "services": [
+    "iss"
+   ]
+  }
+ }
+}

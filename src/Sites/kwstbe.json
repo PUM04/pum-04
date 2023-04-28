@@ -1,0 +1,63 @@
+{
+ "site_id": "i4uzmz_230413",
+ "site_name": "kwstbe",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Harmony",
+   "cpu": 4,
+   "memory": 13,
+   "services": [
+    "uvcore",
+    "haproxy",
+    "es",
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_1",
+   "cpu": 31,
+   "memory": 39,
+   "services": [
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Harmony",
+   "cpu": 28,
+   "memory": 30,
+   "services": [
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Razzle",
+   "cpu": 25,
+   "memory": 2,
+   "services": [
+    "haproxy",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Freestyle",
+   "cpu": 27,
+   "memory": 7,
+   "services": [
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 6,
+   "memory": 45,
+   "services": [
+    "riscore",
+    "haproxy",
+    "sql2019"
+   ]
+  }
+ }
+}

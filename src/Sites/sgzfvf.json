@@ -1,0 +1,104 @@
+{
+ "site_id": "2h7t17_230413",
+ "site_name": "sgzfvf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Snowball",
+   "cpu": 23,
+   "memory": 35,
+   "services": [
+    "uvclient",
+    "ad",
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Symphony",
+   "cpu": 13,
+   "memory": 38,
+   "services": [
+    "risapp",
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 14,
+   "memory": 41,
+   "services": [
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sparta",
+   "cpu": 24,
+   "memory": 27,
+   "services": [
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Whistler",
+   "cpu": 10,
+   "memory": 63,
+   "services": [
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Millennium",
+   "cpu": 5,
+   "memory": 31,
+   "services": [
+    "haproxy",
+    "es",
+    "risapp",
+    "ad",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Daytona",
+   "cpu": 25,
+   "memory": 30,
+   "services": [
+    "ad",
+    "es",
+    "haproxy",
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Emerald",
+   "cpu": 3,
+   "memory": 2,
+   "services": [
+    "ids7",
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Millennium",
+   "cpu": 8,
+   "memory": 60,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 19,
+   "memory": 18,
+   "services": [
+    "uvcore",
+    "risapp",
+    "ids7",
+    "dpat"
+   ]
+  }
+ }
+}

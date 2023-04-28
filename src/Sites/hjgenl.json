@@ -1,0 +1,17 @@
+{
+ "site_id": "4z544m_230413",
+ "site_name": "hjgenl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Sun_valley_2",
+   "cpu": 30,
+   "memory": 14,
+   "services": [
+    "sql2019",
+    "ids7"
+   ]
+  }
+ }
+}

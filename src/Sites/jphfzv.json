@@ -1,0 +1,84 @@
+{
+ "site_id": "3cp1te_230413",
+ "site_name": "jphfzv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 24,
+   "memory": 7,
+   "services": [
+    "uvcore",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_7",
+   "cpu": 2,
+   "memory": 2,
+   "services": [
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Sparta",
+   "cpu": 24,
+   "memory": 28,
+   "services": [
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Whistler",
+   "cpu": 20,
+   "memory": 29,
+   "services": [
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Longhorn",
+   "cpu": 1,
+   "memory": 2,
+   "services": [
+    "ids7",
+    "iss",
+    "uvclient",
+    "dpat",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Harmony",
+   "cpu": 17,
+   "memory": 5,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 31,
+   "memory": 55,
+   "services": [
+    "ids7",
+    "wise",
+    "shs",
+    "iss",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Vanadium",
+   "cpu": 19,
+   "memory": 60,
+   "services": [
+    "haproxy",
+    "sql2019",
+    "es",
+    "ids7"
+   ]
+  }
+ }
+}

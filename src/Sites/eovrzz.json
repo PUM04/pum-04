@@ -1,0 +1,32 @@
+{
+ "site_id": "2qjlmm_230413",
+ "site_name": "eovrzz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 16,
+   "memory": 18,
+   "services": [
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Freestyle",
+   "cpu": 3,
+   "memory": 12,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 8,
+   "memory": 23,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

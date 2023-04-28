@@ -1,0 +1,64 @@
+{
+ "site_id": "18cim5_230413",
+ "site_name": "enkeyb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 20,
+   "memory": 13,
+   "services": [
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Chicago",
+   "cpu": 20,
+   "memory": 44,
+   "services": [
+    "riscore",
+    "haproxy",
+    "shs"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Memphis",
+   "cpu": 2,
+   "memory": 42,
+   "services": [
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_1",
+   "cpu": 3,
+   "memory": 8,
+   "services": [
+    "dpat",
+    "haproxy",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Threshold",
+   "cpu": 26,
+   "memory": 19,
+   "services": [
+    "dpat",
+    "ids7",
+    "shs"
+   ]
+  },
+  "ad": {
+   "os": "Blue",
+   "cpu": 25,
+   "memory": 7,
+   "services": [
+    "riscore",
+    "uvclient",
+    "dpat"
+   ]
+  }
+ }
+}

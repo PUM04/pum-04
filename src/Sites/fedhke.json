@@ -1,0 +1,56 @@
+{
+ "site_id": "0606o4_230413",
+ "site_name": "fedhke",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Redstone_3",
+   "cpu": 20,
+   "memory": 6,
+   "services": [
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Windows_8",
+   "cpu": 7,
+   "memory": 5,
+   "services": [
+    "es",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Sun_valley_2",
+   "cpu": 13,
+   "memory": 61,
+   "services": [
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold",
+   "cpu": 31,
+   "memory": 45,
+   "services": [
+    "ids7",
+    "haproxy",
+    "es",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 29,
+   "memory": 58,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "shs",
+    "ad"
+   ]
+  }
+ }
+}

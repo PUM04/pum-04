@@ -1,0 +1,55 @@
+{
+ "site_id": "3934p3_230413",
+ "site_name": "kptqkm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Windows_8",
+   "cpu": 10,
+   "memory": 22,
+   "services": [
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Millennium",
+   "cpu": 14,
+   "memory": 36,
+   "services": [
+    "dpat",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_3",
+   "cpu": 30,
+   "memory": 16,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Memphis",
+   "cpu": 27,
+   "memory": 2,
+   "services": [
+    "wise",
+    "uvcore",
+    "ad",
+    "iss",
+    "riscore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 17,
+   "memory": 5,
+   "services": [
+    "risapp",
+    "shs"
+   ]
+  }
+ }
+}

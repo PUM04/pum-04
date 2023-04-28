@@ -1,0 +1,51 @@
+{
+ "site_id": "676yr3_230413",
+ "site_name": "ikbnok",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Redstone_2",
+   "cpu": 26,
+   "memory": 34,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Daytona",
+   "cpu": 4,
+   "memory": 40,
+   "services": [
+    "sql2019",
+    "ids7",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_7",
+   "cpu": 23,
+   "memory": 23,
+   "services": [
+    "risapp",
+    "ad",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 7,
+   "memory": 45,
+   "services": [
+    "haproxy",
+    "wise",
+    "uvclient",
+    "dpat"
+   ]
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "site_id": "t1a8lm_230413",
+ "site_name": "gcbpxx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Threshold",
+   "cpu": 20,
+   "memory": 22,
+   "services": [
+    "risapp",
+    "wise"
+   ]
+  }
+ }
+}

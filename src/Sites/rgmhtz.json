@@ -1,0 +1,81 @@
+{
+ "site_id": "6szc91_230413",
+ "site_name": "rgmhtz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Blue",
+   "cpu": 2,
+   "memory": 27,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_NT_5.0",
+   "cpu": 32,
+   "memory": 4,
+   "services": [
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Harmony",
+   "cpu": 11,
+   "memory": 51,
+   "services": [
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Millennium",
+   "cpu": 17,
+   "memory": 4,
+   "services": [
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Razzle",
+   "cpu": 31,
+   "memory": 6,
+   "services": [
+    "wise",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 11,
+   "memory": 50,
+   "services": [
+    "wise",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_NT_5.0",
+   "cpu": 10,
+   "memory": 14,
+   "services": [
+    "risapp",
+    "ids7",
+    "haproxy",
+    "wise"
+   ]
+  },
+  "sqlla": {
+   "os": "Sun_valley_2",
+   "cpu": 14,
+   "memory": 23,
+   "services": [
+    "es",
+    "ad",
+    "haproxy"
+   ]
+  }
+ }
+}

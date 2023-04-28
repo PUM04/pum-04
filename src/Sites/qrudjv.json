@@ -1,0 +1,82 @@
+{
+ "site_id": "h624zd_230413",
+ "site_name": "qrudjv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Harmony",
+   "cpu": 25,
+   "memory": 47,
+   "services": [
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Whistler",
+   "cpu": 29,
+   "memory": 46,
+   "services": [
+    "uvclient",
+    "es",
+    "ad"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_5",
+   "cpu": 3,
+   "memory": 32,
+   "services": [
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 26,
+   "memory": 35,
+   "services": [
+    "risapp",
+    "shs",
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Vibranium",
+   "cpu": 21,
+   "memory": 37,
+   "services": [
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_valley_2",
+   "cpu": 9,
+   "memory": 5,
+   "services": [
+    "uvcore",
+    "ad",
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "pacsapp": {
+   "os": "Vanadium",
+   "cpu": 21,
+   "memory": 7,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Snowball",
+   "cpu": 27,
+   "memory": 56,
+   "services": [
+    "es",
+    "sql2019",
+    "shs"
+   ]
+  }
+ }
+}

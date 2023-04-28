@@ -1,0 +1,35 @@
+{
+ "site_id": "wry076_230413",
+ "site_name": "srufun",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Redstone_3",
+   "cpu": 7,
+   "memory": 19,
+   "services": [
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold_2",
+   "cpu": 5,
+   "memory": 44,
+   "services": [
+    "sql2019",
+    "wise",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 15,
+   "memory": 35,
+   "services": [
+    "risapp",
+    "ad"
+   ]
+  }
+ }
+}

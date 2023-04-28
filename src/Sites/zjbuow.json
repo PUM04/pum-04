@@ -1,0 +1,83 @@
+{
+ "site_id": "m22sw2_230413",
+ "site_name": "zjbuow",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 8,
+   "memory": 46,
+   "services": [
+    "iss",
+    "es",
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Windows_7",
+   "cpu": 1,
+   "memory": 17,
+   "services": [
+    "risapp",
+    "ad",
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_5",
+   "cpu": 4,
+   "memory": 29,
+   "services": [
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vanadium",
+   "cpu": 3,
+   "memory": 2,
+   "services": [
+    "ad",
+    "risapp",
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Freestyle",
+   "cpu": 6,
+   "memory": 56,
+   "services": [
+    "ad",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Threshold_2",
+   "cpu": 17,
+   "memory": 4,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Memphis",
+   "cpu": 12,
+   "memory": 27,
+   "services": [
+    "haproxy",
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 1,
+   "memory": 35,
+   "services": [
+    "sql2019",
+    "dpat"
+   ]
+  }
+ }
+}

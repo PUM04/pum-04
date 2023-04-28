@@ -1,0 +1,42 @@
+{
+ "site_id": "504f2n_230413",
+ "site_name": "wdckvv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Whistler",
+   "cpu": 20,
+   "memory": 60,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_4",
+   "cpu": 21,
+   "memory": 45,
+   "services": [
+    "haproxy",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Whistler",
+   "cpu": 27,
+   "memory": 6,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Razzle",
+   "cpu": 25,
+   "memory": 64,
+   "services": [
+    "haproxy",
+    "uvcore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,91 @@
+{
+ "site_id": "71p2q8_230413",
+ "site_name": "tmvmht",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Longhorn",
+   "cpu": 28,
+   "memory": 26,
+   "services": [
+    "haproxy",
+    "wise",
+    "uvcore",
+    "shs",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Snowball",
+   "cpu": 19,
+   "memory": 2,
+   "services": [
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Memphis",
+   "cpu": 21,
+   "memory": 32,
+   "services": [
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Memphis",
+   "cpu": 9,
+   "memory": 49,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Sparta",
+   "cpu": 14,
+   "memory": 3,
+   "services": [
+    "ids7",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Harmony",
+   "cpu": 23,
+   "memory": 58,
+   "services": [
+    "ids7",
+    "risapp",
+    "iss",
+    "ad",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Freestyle",
+   "cpu": 7,
+   "memory": 1,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 2,
+   "memory": 43,
+   "services": [
+    "uvclient",
+    "wise",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Threshold_2",
+   "cpu": 14,
+   "memory": 6,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

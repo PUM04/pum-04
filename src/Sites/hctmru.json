@@ -1,0 +1,46 @@
+{
+ "site_id": "67bkem_230413",
+ "site_name": "hctmru",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Daytona",
+   "cpu": 20,
+   "memory": 61,
+   "services": [
+    "ad",
+    "sql2019",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 28,
+   "memory": 34,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vanadium",
+   "cpu": 20,
+   "memory": 58,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Millennium",
+   "cpu": 15,
+   "memory": 61,
+   "services": [
+    "uvclient",
+    "shs",
+    "es"
+   ]
+  }
+ }
+}

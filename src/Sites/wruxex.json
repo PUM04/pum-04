@@ -1,0 +1,56 @@
+{
+ "site_id": "3n70at_230413",
+ "site_name": "wruxex",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Snowball",
+   "cpu": 28,
+   "memory": 36,
+   "services": [
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Freestyle",
+   "cpu": 32,
+   "memory": 61,
+   "services": [
+    "ids7",
+    "es",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 21,
+   "memory": 21,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vibranium",
+   "cpu": 31,
+   "memory": 64,
+   "services": [
+    "risapp",
+    "shs",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Vanadium",
+   "cpu": 3,
+   "memory": 52,
+   "services": [
+    "ad",
+    "iss",
+    "uvcore",
+    "riscore"
+   ]
+  }
+ }
+}

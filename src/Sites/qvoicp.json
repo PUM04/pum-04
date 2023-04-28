@@ -1,0 +1,97 @@
+{
+ "site_id": "552o66_230413",
+ "site_name": "qvoicp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Redstone_4",
+   "cpu": 16,
+   "memory": 11,
+   "services": [
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Sparta",
+   "cpu": 19,
+   "memory": 56,
+   "services": [
+    "iss",
+    "ad",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Sparta",
+   "cpu": 4,
+   "memory": 50,
+   "services": [
+    "riscore",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Longhorn",
+   "cpu": 23,
+   "memory": 41,
+   "services": [
+    "dpat",
+    "shs",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Freestyle",
+   "cpu": 12,
+   "memory": 12,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "dpat",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 30,
+   "memory": 4,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 2,
+   "memory": 11,
+   "services": [
+    "shs",
+    "riscore",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Longhorn",
+   "cpu": 14,
+   "memory": 37,
+   "services": [
+    "shs",
+    "iss",
+    "sql2019",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Daytona",
+   "cpu": 15,
+   "memory": 40,
+   "services": [
+    "shs",
+    "sql2019",
+    "uvclient",
+    "wise"
+   ]
+  }
+ }
+}

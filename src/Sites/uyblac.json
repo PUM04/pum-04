@@ -1,0 +1,67 @@
+{
+ "site_id": "0qi1j7_230413",
+ "site_name": "uyblac",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Sparta",
+   "cpu": 19,
+   "memory": 58,
+   "services": [
+    "uvcore",
+    "wise",
+    "iss",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Memphis",
+   "cpu": 8,
+   "memory": 30,
+   "services": [
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Daytona",
+   "cpu": 8,
+   "memory": 51,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "risapp",
+    "riscore",
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_3",
+   "cpu": 11,
+   "memory": 3,
+   "services": [
+    "wise",
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_1",
+   "cpu": 1,
+   "memory": 9,
+   "services": [
+    "iss",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 18,
+   "memory": 47,
+   "services": [
+    "iss",
+    "ids7",
+    "es"
+   ]
+  }
+ }
+}

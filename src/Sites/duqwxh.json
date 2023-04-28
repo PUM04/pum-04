@@ -1,0 +1,79 @@
+{
+ "site_id": "t32907_230413",
+ "site_name": "duqwxh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Snowball",
+   "cpu": 10,
+   "memory": 51,
+   "services": [
+    "risapp",
+    "sql2019",
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Snowball",
+   "cpu": 12,
+   "memory": 23,
+   "services": [
+    "dpat",
+    "haproxy",
+    "wise",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Snowball",
+   "cpu": 11,
+   "memory": 5,
+   "services": [
+    "risapp",
+    "wise",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Sparta",
+   "cpu": 28,
+   "memory": 54,
+   "services": [
+    "es",
+    "shs",
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Symphony",
+   "cpu": 16,
+   "memory": 28,
+   "services": [
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Millennium",
+   "cpu": 23,
+   "memory": 52,
+   "services": [
+    "shs",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_Valley",
+   "cpu": 3,
+   "memory": 31,
+   "services": [
+    "dpat",
+    "es",
+    "ad"
+   ]
+  }
+ }
+}

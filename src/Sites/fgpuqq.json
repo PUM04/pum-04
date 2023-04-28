@@ -1,0 +1,26 @@
+{
+ "site_id": "237r2r_230413",
+ "site_name": "fgpuqq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 1,
+   "memory": 54,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_1",
+   "cpu": 28,
+   "memory": 23,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "ad"
+   ]
+  }
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "site_id": "q12b40_230413",
+ "site_name": "hxkrkf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 29,
+   "memory": 3,
+   "services": [
+    "dpat",
+    "riscore",
+    "wise",
+    "uvclient",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Daytona",
+   "cpu": 21,
+   "memory": 30,
+   "services": [
+    "ad",
+    "wise",
+    "risapp",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Threshold",
+   "cpu": 18,
+   "memory": 63,
+   "services": [
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 14,
+   "memory": 19,
+   "services": [
+    "riscore",
+    "shs"
+   ]
+  }
+ }
+}

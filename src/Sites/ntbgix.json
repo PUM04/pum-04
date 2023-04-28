@@ -1,0 +1,53 @@
+{
+ "site_id": "uypqtq_230413",
+ "site_name": "ntbgix",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Millennium",
+   "cpu": 17,
+   "memory": 4,
+   "services": [
+    "shs",
+    "haproxy",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_3",
+   "cpu": 23,
+   "memory": 61,
+   "services": [
+    "es",
+    "ids7",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Sparta",
+   "cpu": 17,
+   "memory": 23,
+   "services": [
+    "es",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_3",
+   "cpu": 21,
+   "memory": 15,
+   "services": [
+    "shs"
+   ]
+  },
+  "pacsapp": {
+   "os": "Vanadium",
+   "cpu": 10,
+   "memory": 13,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

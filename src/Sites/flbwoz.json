@@ -1,0 +1,56 @@
+{
+ "site_id": "3c6s2v_230413",
+ "site_name": "flbwoz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Longhorn",
+   "cpu": 17,
+   "memory": 49,
+   "services": [
+    "iss",
+    "dpat",
+    "sql2019",
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Windows_8",
+   "cpu": 31,
+   "memory": 50,
+   "services": [
+    "uvclient",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_1",
+   "cpu": 14,
+   "memory": 3,
+   "services": [
+    "sql2019",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 23,
+   "memory": 61,
+   "services": [
+    "riscore",
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Emerald",
+   "cpu": 8,
+   "memory": 48,
+   "services": [
+    "sql2019",
+    "risapp",
+    "ad"
+   ]
+  }
+ }
+}

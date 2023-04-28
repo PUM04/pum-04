@@ -1,0 +1,70 @@
+{
+ "site_id": "12hb24_230413",
+ "site_name": "ysstpu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 20,
+   "memory": 13,
+   "services": [
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Redstone_1",
+   "cpu": 20,
+   "memory": 48,
+   "services": [
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Snowball",
+   "cpu": 24,
+   "memory": 14,
+   "services": [
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Sparta",
+   "cpu": 14,
+   "memory": 6,
+   "services": [
+    "shs",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Sun_valley_2",
+   "cpu": 2,
+   "memory": 20,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 28,
+   "memory": 13,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Blue",
+   "cpu": 27,
+   "memory": 34,
+   "services": [
+    "wise",
+    "uvclient",
+    "risapp"
+   ]
+  }
+ }
+}

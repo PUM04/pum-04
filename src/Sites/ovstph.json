@@ -1,0 +1,16 @@
+{
+ "site_id": "2w9ivv_230413",
+ "site_name": "ovstph",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Windows_8",
+   "cpu": 28,
+   "memory": 5,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

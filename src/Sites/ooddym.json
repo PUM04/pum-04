@@ -1,0 +1,27 @@
+{
+ "site_id": "2zqo18_230413",
+ "site_name": "ooddym",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Vanadium",
+   "cpu": 32,
+   "memory": 36,
+   "services": [
+    "uvclient",
+    "iss",
+    "ad",
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Millennium",
+   "cpu": 12,
+   "memory": 20,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

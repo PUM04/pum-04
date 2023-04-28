@@ -1,0 +1,27 @@
+{
+ "site_id": "3k7k8h_230413",
+ "site_name": "nxorgg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 16,
+   "memory": 42,
+   "services": [
+    "dpat",
+    "risapp",
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_7",
+   "cpu": 9,
+   "memory": 62,
+   "services": [
+    "ad",
+    "uvclient"
+   ]
+  }
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "site_id": "pf39p7_230413",
+ "site_name": "sfnejd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 30,
+   "memory": 18,
+   "services": [
+    "wise",
+    "shs",
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_4",
+   "cpu": 28,
+   "memory": 42,
+   "services": [
+    "riscore",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Chicago",
+   "cpu": 6,
+   "memory": 13,
+   "services": [
+    "dpat",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 30,
+   "memory": 40,
+   "services": [
+    "haproxy",
+    "ids7",
+    "risapp",
+    "uvclient"
+   ]
+  }
+ }
+}

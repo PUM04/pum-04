@@ -1,0 +1,17 @@
+{
+ "site_id": "v082d6_230413",
+ "site_name": "taikzk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Millennium",
+   "cpu": 24,
+   "memory": 49,
+   "services": [
+    "riscore",
+    "ad"
+   ]
+  }
+ }
+}

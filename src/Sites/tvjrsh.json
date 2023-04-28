@@ -1,0 +1,66 @@
+{
+ "site_id": "q2pa87_230413",
+ "site_name": "tvjrsh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Vanadium",
+   "cpu": 7,
+   "memory": 64,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "riscore",
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Emerald",
+   "cpu": 22,
+   "memory": 9,
+   "services": [
+    "ad",
+    "haproxy",
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_valley_2",
+   "cpu": 19,
+   "memory": 36,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 26,
+   "memory": 28,
+   "services": [
+    "iss",
+    "wise",
+    "ad",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Sparta",
+   "cpu": 32,
+   "memory": 45,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Symphony",
+   "cpu": 32,
+   "memory": 28,
+   "services": [
+    "risapp",
+    "uvcore"
+   ]
+  }
+ }
+}

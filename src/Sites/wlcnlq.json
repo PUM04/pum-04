@@ -1,0 +1,72 @@
+{
+ "site_id": "du6i07_230413",
+ "site_name": "wlcnlq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 14,
+   "memory": 54,
+   "services": [
+    "es",
+    "riscore",
+    "shs",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Memphis",
+   "cpu": 23,
+   "memory": 39,
+   "services": [
+    "dpat",
+    "haproxy",
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vanadium",
+   "cpu": 13,
+   "memory": 61,
+   "services": [
+    "haproxy",
+    "ad",
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 20,
+   "memory": 22,
+   "services": [
+    "es",
+    "wise",
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_valley_2",
+   "cpu": 27,
+   "memory": 38,
+   "services": [
+    "ids7",
+    "dpat",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 12,
+   "memory": 30,
+   "services": [
+    "risapp",
+    "ad",
+    "riscore",
+    "dpat"
+   ]
+  }
+ }
+}

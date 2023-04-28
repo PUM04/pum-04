@@ -1,0 +1,45 @@
+{
+ "site_id": "y2w563_230413",
+ "site_name": "oujvdv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Memphis",
+   "cpu": 28,
+   "memory": 31,
+   "services": [
+    "wise",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Vanadium",
+   "cpu": 6,
+   "memory": 18,
+   "services": [
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Windows_NT_5.0",
+   "cpu": 1,
+   "memory": 59,
+   "services": [
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Snowball",
+   "cpu": 7,
+   "memory": 14,
+   "services": [
+    "risapp",
+    "shs",
+    "ad",
+    "ids7",
+    "iss"
+   ]
+  }
+ }
+}

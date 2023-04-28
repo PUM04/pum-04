@@ -1,0 +1,38 @@
+{
+ "site_id": "6dea2d_230413",
+ "site_name": "xtdqyh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Longhorn",
+   "cpu": 31,
+   "memory": 40,
+   "services": [
+    "shs",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_4",
+   "cpu": 9,
+   "memory": 15,
+   "services": [
+    "wise",
+    "dpat",
+    "es",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_3",
+   "cpu": 24,
+   "memory": 52,
+   "services": [
+    "wise",
+    "shs",
+    "uvclient"
+   ]
+  }
+ }
+}

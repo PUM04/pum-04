@@ -1,0 +1,86 @@
+{
+ "site_id": "6l2vnb_230413",
+ "site_name": "scxjrr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Chicago",
+   "cpu": 8,
+   "memory": 17,
+   "services": [
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Chicago",
+   "cpu": 26,
+   "memory": 21,
+   "services": [
+    "riscore",
+    "es",
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Symphony",
+   "cpu": 13,
+   "memory": 57,
+   "services": [
+    "sql2019",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Freestyle",
+   "cpu": 5,
+   "memory": 5,
+   "services": [
+    "uvcore",
+    "dpat",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Anvil",
+   "cpu": 28,
+   "memory": 26,
+   "services": [
+    "dpat",
+    "es",
+    "haproxy",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Blue",
+   "cpu": 27,
+   "memory": 36,
+   "services": [
+    "risapp",
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Snowball",
+   "cpu": 18,
+   "memory": 4,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Razzle",
+   "cpu": 1,
+   "memory": 35,
+   "services": [
+    "uvcore",
+    "ids7",
+    "ad",
+    "shs",
+    "dpat"
+   ]
+  }
+ }
+}

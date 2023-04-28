@@ -1,0 +1,59 @@
+{
+ "site_id": "6q9xr3_230413",
+ "site_name": "tfqrfg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Redstone_5",
+   "cpu": 32,
+   "memory": 46,
+   "services": [
+    "iss",
+    "ids7",
+    "shs",
+    "risapp",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 10,
+   "memory": 56,
+   "services": [
+    "sql2019",
+    "shs",
+    "uvcore",
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 21,
+   "memory": 12,
+   "services": [
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Freestyle",
+   "cpu": 2,
+   "memory": 41,
+   "services": [
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Sparta",
+   "cpu": 24,
+   "memory": 64,
+   "services": [
+    "es",
+    "ids7",
+    "sql2019",
+    "riscore"
+   ]
+  }
+ }
+}

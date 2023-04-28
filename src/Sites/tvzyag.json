@@ -1,0 +1,47 @@
+{
+ "site_id": "p4eotu_230413",
+ "site_name": "tvzyag",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Windows_8",
+   "cpu": 27,
+   "memory": 43,
+   "services": [
+    "risapp",
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Blue",
+   "cpu": 23,
+   "memory": 44,
+   "services": [
+    "shs",
+    "riscore",
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Vanadium",
+   "cpu": 13,
+   "memory": 47,
+   "services": [
+    "wise",
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Windows_NT_5.0",
+   "cpu": 4,
+   "memory": 26,
+   "services": [
+    "uvclient",
+    "dpat"
+   ]
+  }
+ }
+}

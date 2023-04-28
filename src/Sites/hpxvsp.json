@@ -1,0 +1,46 @@
+{
+ "site_id": "htt78u_230413",
+ "site_name": "hpxvsp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Redstone_2",
+   "cpu": 19,
+   "memory": 36,
+   "services": [
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Vanadium",
+   "cpu": 27,
+   "memory": 22,
+   "services": [
+    "riscore",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold_2",
+   "cpu": 8,
+   "memory": 31,
+   "services": [
+    "risapp",
+    "wise",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Symphony",
+   "cpu": 10,
+   "memory": 54,
+   "services": [
+    "risapp",
+    "iss",
+    "dpat"
+   ]
+  }
+ }
+}

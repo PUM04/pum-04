@@ -1,0 +1,54 @@
+{
+ "site_id": "l2ww5z_230413",
+ "site_name": "fdlqev",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Vanadium",
+   "cpu": 27,
+   "memory": 47,
+   "services": [
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vibranium",
+   "cpu": 12,
+   "memory": 30,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_1",
+   "cpu": 23,
+   "memory": 16,
+   "services": [
+    "shs",
+    "dpat",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_3",
+   "cpu": 15,
+   "memory": 39,
+   "services": [
+    "uvclient",
+    "shs",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Razzle",
+   "cpu": 5,
+   "memory": 27,
+   "services": [
+    "uvcore",
+    "riscore",
+    "dpat"
+   ]
+  }
+ }
+}

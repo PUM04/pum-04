@@ -1,0 +1,59 @@
+{
+ "site_id": "e7nk4v_230413",
+ "site_name": "fwlrls",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Sun_valley_2",
+   "cpu": 19,
+   "memory": 24,
+   "services": [
+    "risapp",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_3",
+   "cpu": 18,
+   "memory": 12,
+   "services": [
+    "riscore",
+    "dpat",
+    "es",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_2",
+   "cpu": 18,
+   "memory": 30,
+   "services": [
+    "shs",
+    "risapp"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_Valley",
+   "cpu": 23,
+   "memory": 49,
+   "services": [
+    "uvclient",
+    "ad",
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Memphis",
+   "cpu": 29,
+   "memory": 49,
+   "services": [
+    "wise",
+    "uvclient",
+    "uvcore",
+    "iss",
+    "haproxy"
+   ]
+  }
+ }
+}

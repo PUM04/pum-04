@@ -1,0 +1,31 @@
+{
+ "site_id": "g6144j_230413",
+ "site_name": "yfsubc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Sun_Valley",
+   "cpu": 8,
+   "memory": 34,
+   "services": [
+    "ad",
+    "dpat",
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Longhorn",
+   "cpu": 31,
+   "memory": 62,
+   "services": [
+    "iss",
+    "dpat",
+    "shs",
+    "ad",
+    "uvclient"
+   ]
+  }
+ }
+}

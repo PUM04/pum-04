@@ -1,0 +1,28 @@
+{
+ "site_id": "76ijj6_230413",
+ "site_name": "gjjupq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Redstone_5",
+   "cpu": 19,
+   "memory": 44,
+   "services": [
+    "ad",
+    "shs",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Chicago",
+   "cpu": 13,
+   "memory": 56,
+   "services": [
+    "risapp",
+    "dpat"
+   ]
+  }
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "site_id": "219454_230413",
+ "site_name": "zoxhxr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 4,
+   "memory": 43,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "dpat",
+    "iss",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 21,
+   "memory": 54,
+   "services": [
+    "shs",
+    "es",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Snowball",
+   "cpu": 14,
+   "memory": 38,
+   "services": [
+    "iss",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Threshold_2",
+   "cpu": 31,
+   "memory": 30,
+   "services": [
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Anvil",
+   "cpu": 23,
+   "memory": 53,
+   "services": [
+    "iss",
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 18,
+   "memory": 6,
+   "services": [
+    "wise",
+    "shs"
+   ]
+  }
+ }
+}

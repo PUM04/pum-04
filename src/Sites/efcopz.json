@@ -1,0 +1,38 @@
+{
+ "site_id": "j21746_230413",
+ "site_name": "efcopz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Whistler",
+   "cpu": 26,
+   "memory": 21,
+   "services": [
+    "risapp",
+    "es",
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_7",
+   "cpu": 7,
+   "memory": 40,
+   "services": [
+    "uvcore",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Symphony",
+   "cpu": 32,
+   "memory": 3,
+   "services": [
+    "risapp",
+    "dpat",
+    "riscore",
+    "shs"
+   ]
+  }
+ }
+}

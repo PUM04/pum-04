@@ -1,0 +1,66 @@
+{
+ "site_id": "2vhol7_230413",
+ "site_name": "euptko",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Symphony",
+   "cpu": 30,
+   "memory": 55,
+   "services": [
+    "ad",
+    "wise",
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_valley_2",
+   "cpu": 14,
+   "memory": 53,
+   "services": [
+    "ad",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_1",
+   "cpu": 27,
+   "memory": 14,
+   "services": [
+    "sql2019",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 31,
+   "memory": 9,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 30,
+   "memory": 59,
+   "services": [
+    "ids7",
+    "uvcore",
+    "iss",
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 16,
+   "memory": 47,
+   "services": [
+    "wise",
+    "ids7",
+    "ad"
+   ]
+  }
+ }
+}

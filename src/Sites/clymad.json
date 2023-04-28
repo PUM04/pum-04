@@ -1,0 +1,37 @@
+{
+ "site_id": "86cjn8_230413",
+ "site_name": "clymad",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Redstone_4",
+   "cpu": 27,
+   "memory": 23,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Vanadium",
+   "cpu": 16,
+   "memory": 36,
+   "services": [
+    "ids7",
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vibranium",
+   "cpu": 9,
+   "memory": 13,
+   "services": [
+    "ids7",
+    "wise",
+    "uvcore",
+    "riscore"
+   ]
+  }
+ }
+}

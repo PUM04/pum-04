@@ -1,0 +1,25 @@
+{
+ "site_id": "i12frp_230413",
+ "site_name": "cqmzvy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Threshold",
+   "cpu": 1,
+   "memory": 36,
+   "services": [
+    "riscore",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Harmony",
+   "cpu": 2,
+   "memory": 14,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

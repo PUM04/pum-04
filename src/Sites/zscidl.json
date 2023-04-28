@@ -1,0 +1,87 @@
+{
+ "site_id": "943a2a_230413",
+ "site_name": "zscidl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Symphony",
+   "cpu": 5,
+   "memory": 58,
+   "services": [
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Threshold_2",
+   "cpu": 24,
+   "memory": 16,
+   "services": [
+    "riscore",
+    "sql2019",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Vanadium",
+   "cpu": 32,
+   "memory": 35,
+   "services": [
+    "uvclient",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Sun_Valley",
+   "cpu": 13,
+   "memory": 17,
+   "services": [
+    "iss",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Millennium",
+   "cpu": 9,
+   "memory": 1,
+   "services": [
+    "uvclient",
+    "dpat",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 10,
+   "memory": 18,
+   "services": [
+    "risapp",
+    "dpat"
+   ]
+  },
+  "ad": {
+   "os": "Memphis",
+   "cpu": 24,
+   "memory": 60,
+   "services": [
+    "dpat",
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_3",
+   "cpu": 5,
+   "memory": 4,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "shs",
+    "risapp"
+   ]
+  }
+ }
+}

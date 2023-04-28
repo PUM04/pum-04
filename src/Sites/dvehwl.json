@@ -1,0 +1,38 @@
+{
+ "site_id": "93g0l6_230413",
+ "site_name": "dvehwl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Whistler",
+   "cpu": 12,
+   "memory": 12,
+   "services": [
+    "sql2019",
+    "ad",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Snowball",
+   "cpu": 8,
+   "memory": 17,
+   "services": [
+    "uvclient",
+    "iss",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_4",
+   "cpu": 7,
+   "memory": 2,
+   "services": [
+    "ad",
+    "shs",
+    "wise"
+   ]
+  }
+ }
+}

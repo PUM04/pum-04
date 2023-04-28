@@ -1,0 +1,25 @@
+{
+ "site_id": "760b4z_230413",
+ "site_name": "jspgub",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Daytona",
+   "cpu": 12,
+   "memory": 30,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 9,
+   "memory": 3,
+   "services": [
+    "ad",
+    "ids7"
+   ]
+  }
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "site_id": "vr798k_230413",
+ "site_name": "hafunm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Daytona",
+   "cpu": 17,
+   "memory": 22,
+   "services": [
+    "uvcore",
+    "riscore",
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Millennium",
+   "cpu": 5,
+   "memory": 10,
+   "services": [
+    "ids7",
+    "es",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Threshold_2",
+   "cpu": 2,
+   "memory": 2,
+   "services": [
+    "shs",
+    "dpat",
+    "wise",
+    "risapp"
+   ]
+  }
+ }
+}

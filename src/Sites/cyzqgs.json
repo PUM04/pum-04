@@ -1,0 +1,59 @@
+{
+ "site_id": "g0qp84_230413",
+ "site_name": "cyzqgs",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Whistler",
+   "cpu": 26,
+   "memory": 18,
+   "services": [
+    "shs",
+    "wise",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_2",
+   "cpu": 1,
+   "memory": 42,
+   "services": [
+    "haproxy",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 30,
+   "memory": 23,
+   "services": [
+    "dpat",
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_1",
+   "cpu": 14,
+   "memory": 19,
+   "services": [
+    "riscore",
+    "iss",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Millennium",
+   "cpu": 22,
+   "memory": 57,
+   "services": [
+    "ids7",
+    "haproxy",
+    "sql2019",
+    "wise",
+    "iss"
+   ]
+  }
+ }
+}

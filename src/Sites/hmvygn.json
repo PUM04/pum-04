@@ -1,0 +1,26 @@
+{
+ "site_id": "7u9yll_230413",
+ "site_name": "hmvygn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Sun_valley_2",
+   "cpu": 30,
+   "memory": 37,
+   "services": [
+    "riscore",
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Freestyle",
+   "cpu": 15,
+   "memory": 61,
+   "services": [
+    "ad",
+    "wise"
+   ]
+  }
+ }
+}

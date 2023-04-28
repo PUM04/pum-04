@@ -1,0 +1,37 @@
+{
+ "site_id": "74k03a_230413",
+ "site_name": "lllkil",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Whistler",
+   "cpu": 10,
+   "memory": 22,
+   "services": [
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Symphony",
+   "cpu": 5,
+   "memory": 52,
+   "services": [
+    "riscore",
+    "sql2019",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Vanadium",
+   "cpu": 12,
+   "memory": 41,
+   "services": [
+    "wise",
+    "shs",
+    "iss"
+   ]
+  }
+ }
+}

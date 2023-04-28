@@ -1,0 +1,47 @@
+{
+ "site_id": "78jr79_230413",
+ "site_name": "iefmbi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Freestyle",
+   "cpu": 17,
+   "memory": 60,
+   "services": [
+    "uvclient",
+    "iss",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Freestyle",
+   "cpu": 12,
+   "memory": 15,
+   "services": [
+    "risapp",
+    "uvclient",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_2",
+   "cpu": 9,
+   "memory": 45,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_3",
+   "cpu": 4,
+   "memory": 37,
+   "services": [
+    "risapp",
+    "ids7",
+    "riscore"
+   ]
+  }
+ }
+}

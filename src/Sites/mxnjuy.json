@@ -1,0 +1,88 @@
+{
+ "site_id": "5yo5uk_230413",
+ "site_name": "mxnjuy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Vanadium",
+   "cpu": 19,
+   "memory": 1,
+   "services": [
+    "ids7",
+    "wise",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Memphis",
+   "cpu": 10,
+   "memory": 18,
+   "services": [
+    "haproxy",
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Redstone_1",
+   "cpu": 17,
+   "memory": 24,
+   "services": [
+    "dpat",
+    "riscore",
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Windows_8",
+   "cpu": 27,
+   "memory": 43,
+   "services": [
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Chicago",
+   "cpu": 20,
+   "memory": 34,
+   "services": [
+    "wise",
+    "risapp",
+    "dpat",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_5",
+   "cpu": 28,
+   "memory": 19,
+   "services": [
+    "iss",
+    "ad",
+    "ids7",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vanadium",
+   "cpu": 13,
+   "memory": 57,
+   "services": [
+    "riscore",
+    "haproxy",
+    "uvclient",
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Symphony",
+   "cpu": 24,
+   "memory": 26,
+   "services": [
+    "uvclient",
+    "ad"
+   ]
+  }
+ }
+}

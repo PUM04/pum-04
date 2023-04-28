@@ -1,0 +1,61 @@
+{
+ "site_id": "ld5mr3_230413",
+ "site_name": "mflbbz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Memphis",
+   "cpu": 3,
+   "memory": 62,
+   "services": [
+    "shs",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Vibranium",
+   "cpu": 18,
+   "memory": 29,
+   "services": [
+    "ids7",
+    "riscore",
+    "sql2019",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Harmony",
+   "cpu": 23,
+   "memory": 48,
+   "services": [
+    "ids7",
+    "risapp",
+    "uvcore",
+    "riscore",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 10,
+   "memory": 47,
+   "services": [
+    "wise",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Snowball",
+   "cpu": 6,
+   "memory": 38,
+   "services": [
+    "es",
+    "riscore",
+    "iss"
+   ]
+  }
+ }
+}

@@ -1,0 +1,37 @@
+{
+ "site_id": "vjgshk_230413",
+ "site_name": "ctvsyc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Sparta",
+   "cpu": 6,
+   "memory": 48,
+   "services": [
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 22,
+   "memory": 6,
+   "services": [
+    "riscore",
+    "iss",
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 1,
+   "memory": 6,
+   "services": [
+    "uvcore",
+    "riscore",
+    "haproxy"
+   ]
+  }
+ }
+}

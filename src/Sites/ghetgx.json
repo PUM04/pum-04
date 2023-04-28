@@ -1,0 +1,41 @@
+{
+ "site_id": "20jkh9_230413",
+ "site_name": "ghetgx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Whistler",
+   "cpu": 27,
+   "memory": 28,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Harmony",
+   "cpu": 16,
+   "memory": 21,
+   "services": [
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_Valley",
+   "cpu": 12,
+   "memory": 24,
+   "services": [
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_3",
+   "cpu": 17,
+   "memory": 3,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

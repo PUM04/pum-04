@@ -1,0 +1,61 @@
+{
+ "site_id": "c7n99n_230413",
+ "site_name": "vsjelf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Sun_valley_2",
+   "cpu": 25,
+   "memory": 30,
+   "services": [
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_1",
+   "cpu": 9,
+   "memory": 42,
+   "services": [
+    "riscore",
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 1,
+   "memory": 4,
+   "services": [
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Anvil",
+   "cpu": 24,
+   "memory": 18,
+   "services": [
+    "risapp",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Daytona",
+   "cpu": 27,
+   "memory": 15,
+   "services": [
+    "ids7",
+    "dpat",
+    "wise"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_3",
+   "cpu": 1,
+   "memory": 53,
+   "services": [
+    "risapp",
+    "uvclient"
+   ]
+  }
+ }
+}

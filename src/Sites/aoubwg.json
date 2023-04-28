@@ -1,0 +1,67 @@
+{
+ "site_id": "x1s387_230413",
+ "site_name": "aoubwg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Freestyle",
+   "cpu": 24,
+   "memory": 62,
+   "services": [
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 7,
+   "memory": 44,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Emerald",
+   "cpu": 28,
+   "memory": 37,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Blue",
+   "cpu": 15,
+   "memory": 57,
+   "services": [
+    "wise",
+    "shs",
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Harmony",
+   "cpu": 6,
+   "memory": 27,
+   "services": [
+    "wise",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Sun_Valley",
+   "cpu": 27,
+   "memory": 16,
+   "services": [
+    "sql2019",
+    "ad",
+    "iss",
+    "dpat",
+    "haproxy"
+   ]
+  }
+ }
+}

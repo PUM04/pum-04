@@ -1,0 +1,89 @@
+{
+ "site_id": "90auf1_230413",
+ "site_name": "xofhqe",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Windows_8",
+   "cpu": 13,
+   "memory": 55,
+   "services": [
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Blue",
+   "cpu": 13,
+   "memory": 33,
+   "services": [
+    "uvcore",
+    "risapp",
+    "ad",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Emerald",
+   "cpu": 26,
+   "memory": 11,
+   "services": [
+    "ad",
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "lb": {
+   "os": "Windows_7",
+   "cpu": 6,
+   "memory": 32,
+   "services": [
+    "dpat",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Vanadium",
+   "cpu": 6,
+   "memory": 60,
+   "services": [
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 12,
+   "memory": 35,
+   "services": [
+    "risapp",
+    "riscore",
+    "uvclient",
+    "wise",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Threshold_2",
+   "cpu": 2,
+   "memory": 4,
+   "services": [
+    "iss",
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold_2",
+   "cpu": 1,
+   "memory": 36,
+   "services": [
+    "ad",
+    "wise",
+    "uvclient",
+    "ids7"
+   ]
+  }
+ }
+}

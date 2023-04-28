@@ -1,0 +1,82 @@
+{
+ "site_id": "6bb6mt_230413",
+ "site_name": "dqvtnq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 5,
+   "memory": 42,
+   "services": [
+    "shs",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 27,
+   "memory": 26,
+   "services": [
+    "uvclient",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 6,
+   "memory": 20,
+   "services": [
+    "es",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 1,
+   "memory": 43,
+   "services": [
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Blue",
+   "cpu": 1,
+   "memory": 46,
+   "services": [
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 1,
+   "memory": 25,
+   "services": [
+    "es",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Windows_7",
+   "cpu": 17,
+   "memory": 48,
+   "services": [
+    "riscore",
+    "uvcore",
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Windows_8",
+   "cpu": 14,
+   "memory": 26,
+   "services": [
+    "iss",
+    "haproxy"
+   ]
+  }
+ }
+}

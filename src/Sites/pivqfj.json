@@ -1,0 +1,59 @@
+{
+ "site_id": "721wa0_230413",
+ "site_name": "pivqfj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Freestyle",
+   "cpu": 19,
+   "memory": 32,
+   "services": [
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Snowball",
+   "cpu": 10,
+   "memory": 30,
+   "services": [
+    "es",
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Millennium",
+   "cpu": 1,
+   "memory": 45,
+   "services": [
+    "uvclient",
+    "es",
+    "shs",
+    "dpat",
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Redstone_2",
+   "cpu": 28,
+   "memory": 51,
+   "services": [
+    "riscore",
+    "wise",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Millennium",
+   "cpu": 16,
+   "memory": 14,
+   "services": [
+    "uvcore",
+    "iss",
+    "shs",
+    "risapp"
+   ]
+  }
+ }
+}

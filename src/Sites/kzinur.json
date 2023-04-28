@@ -1,0 +1,39 @@
+{
+ "site_id": "q859y3_230413",
+ "site_name": "kzinur",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Redstone_2",
+   "cpu": 28,
+   "memory": 19,
+   "services": [
+    "wise",
+    "sql2019",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Millennium",
+   "cpu": 13,
+   "memory": 2,
+   "services": [
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 1,
+   "memory": 3,
+   "services": [
+    "es",
+    "ids7",
+    "riscore",
+    "sql2019",
+    "uvclient"
+   ]
+  }
+ }
+}

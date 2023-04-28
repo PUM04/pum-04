@@ -1,0 +1,54 @@
+{
+ "site_id": "5vbe8b_230413",
+ "site_name": "qpevhf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Millennium",
+   "cpu": 3,
+   "memory": 43,
+   "services": [
+    "ids7",
+    "sql2019",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Harmony",
+   "cpu": 22,
+   "memory": 49,
+   "services": [
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_5",
+   "cpu": 5,
+   "memory": 12,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sparta",
+   "cpu": 32,
+   "memory": 15,
+   "services": [
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Emerald",
+   "cpu": 9,
+   "memory": 10,
+   "services": [
+    "risapp"
+   ]
+  }
+ }
+}

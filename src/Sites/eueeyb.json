@@ -1,0 +1,39 @@
+{
+ "site_id": "d3o0no_230413",
+ "site_name": "eueeyb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Sparta",
+   "cpu": 5,
+   "memory": 56,
+   "services": [
+    "iss",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vanadium",
+   "cpu": 28,
+   "memory": 52,
+   "services": [
+    "iss",
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_4",
+   "cpu": 31,
+   "memory": 21,
+   "services": [
+    "ad",
+    "es",
+    "dpat",
+    "wise"
+   ]
+  }
+ }
+}

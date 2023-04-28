@@ -1,0 +1,72 @@
+{
+ "site_id": "u7i3va_230413",
+ "site_name": "milysy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Sun_Valley",
+   "cpu": 6,
+   "memory": 4,
+   "services": [
+    "haproxy",
+    "iss",
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Chicago",
+   "cpu": 30,
+   "memory": 34,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Freestyle",
+   "cpu": 4,
+   "memory": 28,
+   "services": [
+    "haproxy",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_3",
+   "cpu": 29,
+   "memory": 52,
+   "services": [
+    "iss",
+    "es",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_7",
+   "cpu": 9,
+   "memory": 5,
+   "services": [
+    "uvcore",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_8",
+   "cpu": 31,
+   "memory": 22,
+   "services": [
+    "uvclient",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Windows_8",
+   "cpu": 17,
+   "memory": 42,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

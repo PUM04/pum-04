@@ -1,0 +1,86 @@
+{
+ "site_id": "n0r3pj_230413",
+ "site_name": "bgtezi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Vibranium",
+   "cpu": 25,
+   "memory": 14,
+   "services": [
+    "haproxy",
+    "ids7",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Vanadium",
+   "cpu": 14,
+   "memory": 18,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Sparta",
+   "cpu": 15,
+   "memory": 64,
+   "services": [
+    "risapp",
+    "riscore",
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_3",
+   "cpu": 16,
+   "memory": 7,
+   "services": [
+    "ids7",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_5",
+   "cpu": 22,
+   "memory": 1,
+   "services": [
+    "sql2019",
+    "ad",
+    "risapp",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 13,
+   "memory": 5,
+   "services": [
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold_2",
+   "cpu": 15,
+   "memory": 60,
+   "services": [
+    "dpat",
+    "es",
+    "riscore",
+    "shs",
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Freestyle",
+   "cpu": 27,
+   "memory": 42,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

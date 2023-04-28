@@ -1,0 +1,112 @@
+{
+ "site_id": "7ss8k4_230413",
+ "site_name": "tdslxb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Millennium",
+   "cpu": 7,
+   "memory": 15,
+   "services": [
+    "uvclient",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 20,
+   "memory": 54,
+   "services": [
+    "es",
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_2",
+   "cpu": 29,
+   "memory": 17,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 4,
+   "memory": 62,
+   "services": [
+    "ad",
+    "riscore",
+    "shs",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 4,
+   "memory": 61,
+   "services": [
+    "haproxy",
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Memphis",
+   "cpu": 9,
+   "memory": 44,
+   "services": [
+    "haproxy",
+    "dpat",
+    "iss",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Memphis",
+   "cpu": 24,
+   "memory": 11,
+   "services": [
+    "uvcore",
+    "iss",
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Vanadium",
+   "cpu": 5,
+   "memory": 33,
+   "services": [
+    "riscore",
+    "sql2019",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "es": {
+   "os": "Redstone_5",
+   "cpu": 9,
+   "memory": 64,
+   "services": [
+    "haproxy",
+    "ad",
+    "dpat",
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_2",
+   "cpu": 29,
+   "memory": 28,
+   "services": [
+    "ad",
+    "risapp",
+    "iss",
+    "dpat",
+    "shs"
+   ]
+  }
+ }
+}

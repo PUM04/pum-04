@@ -1,0 +1,87 @@
+{
+ "site_id": "w85981_230413",
+ "site_name": "ymsydw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Snowball",
+   "cpu": 5,
+   "memory": 13,
+   "services": [
+    "iss",
+    "ids7",
+    "ad",
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 26,
+   "memory": 31,
+   "services": [
+    "riscore",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Vanadium",
+   "cpu": 8,
+   "memory": 25,
+   "services": [
+    "wise",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Chicago",
+   "cpu": 29,
+   "memory": 25,
+   "services": [
+    "es",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Whistler",
+   "cpu": 11,
+   "memory": 55,
+   "services": [
+    "iss",
+    "ids7",
+    "wise",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Whistler",
+   "cpu": 13,
+   "memory": 38,
+   "services": [
+    "riscore",
+    "dpat"
+   ]
+  },
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 15,
+   "memory": 51,
+   "services": [
+    "ids7",
+    "riscore",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_4",
+   "cpu": 23,
+   "memory": 24,
+   "services": [
+    "ad",
+    "iss",
+    "shs",
+    "sql2019"
+   ]
+  }
+ }
+}

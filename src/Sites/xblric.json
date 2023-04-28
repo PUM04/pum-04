@@ -1,0 +1,55 @@
+{
+ "site_id": "4deb87_230413",
+ "site_name": "xblric",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Freestyle",
+   "cpu": 12,
+   "memory": 56,
+   "services": [
+    "riscore",
+    "ad",
+    "uvclient",
+    "haproxy",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Vibranium",
+   "cpu": 17,
+   "memory": 40,
+   "services": [
+    "ids7",
+    "uvclient",
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Redstone_2",
+   "cpu": 15,
+   "memory": 55,
+   "services": [
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Anvil",
+   "cpu": 28,
+   "memory": 45,
+   "services": [
+    "risapp"
+   ]
+  },
+  "wisecllb": {
+   "os": "Emerald",
+   "cpu": 2,
+   "memory": 24,
+   "services": [
+    "es"
+   ]
+  }
+ }
+}

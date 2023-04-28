@@ -1,0 +1,48 @@
+{
+ "site_id": "zj9832_230413",
+ "site_name": "guejxl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Threshold_2",
+   "cpu": 21,
+   "memory": 45,
+   "services": [
+    "risapp",
+    "shs",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 5,
+   "memory": 31,
+   "services": [
+    "risapp",
+    "es",
+    "shs"
+   ]
+  },
+  "pacsapp": {
+   "os": "Harmony",
+   "cpu": 4,
+   "memory": 4,
+   "services": [
+    "es",
+    "risapp",
+    "wise",
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_1",
+   "cpu": 30,
+   "memory": 58,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

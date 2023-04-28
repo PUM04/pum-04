@@ -1,0 +1,73 @@
+{
+ "site_id": "7pvs66_230413",
+ "site_name": "blybwl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Sparta",
+   "cpu": 9,
+   "memory": 7,
+   "services": [
+    "risapp",
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Anvil",
+   "cpu": 30,
+   "memory": 13,
+   "services": [
+    "risapp",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Millennium",
+   "cpu": 12,
+   "memory": 28,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 15,
+   "memory": 15,
+   "services": [
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Sparta",
+   "cpu": 28,
+   "memory": 20,
+   "services": [
+    "uvcore",
+    "ad",
+    "wise",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Daytona",
+   "cpu": 4,
+   "memory": 20,
+   "services": [
+    "uvcore",
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 17,
+   "memory": 52,
+   "services": [
+    "uvcore",
+    "ids7"
+   ]
+  }
+ }
+}

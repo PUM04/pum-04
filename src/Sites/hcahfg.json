@@ -1,0 +1,35 @@
+{
+ "site_id": "4x2h9j_230413",
+ "site_name": "hcahfg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Redstone_3",
+   "cpu": 23,
+   "memory": 3,
+   "services": [
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Memphis",
+   "cpu": 9,
+   "memory": 51,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_7",
+   "cpu": 6,
+   "memory": 8,
+   "services": [
+    "uvclient",
+    "uvcore"
+   ]
+  }
+ }
+}

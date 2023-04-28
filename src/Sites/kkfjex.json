@@ -1,0 +1,69 @@
+{
+ "site_id": "y43ax2_230413",
+ "site_name": "kkfjex",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Vanadium",
+   "cpu": 21,
+   "memory": 23,
+   "services": [
+    "iss",
+    "dpat",
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Millennium",
+   "cpu": 15,
+   "memory": 44,
+   "services": [
+    "risapp",
+    "iss",
+    "es",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_valley_2",
+   "cpu": 22,
+   "memory": 64,
+   "services": [
+    "haproxy",
+    "iss",
+    "wise",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Razzle",
+   "cpu": 24,
+   "memory": 10,
+   "services": [
+    "haproxy",
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 12,
+   "memory": 6,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_1",
+   "cpu": 9,
+   "memory": 1,
+   "services": [
+    "riscore",
+    "ad",
+    "uvclient"
+   ]
+  }
+ }
+}

@@ -1,0 +1,97 @@
+{
+ "site_id": "rrcrru_230413",
+ "site_name": "ypesfx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Vanadium",
+   "cpu": 14,
+   "memory": 12,
+   "services": [
+    "sql2019",
+    "dpat",
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Redstone_5",
+   "cpu": 6,
+   "memory": 48,
+   "services": [
+    "dpat",
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Vanadium",
+   "cpu": 23,
+   "memory": 7,
+   "services": [
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_2",
+   "cpu": 27,
+   "memory": 5,
+   "services": [
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 26,
+   "memory": 14,
+   "services": [
+    "ids7",
+    "uvcore",
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Memphis",
+   "cpu": 2,
+   "memory": 26,
+   "services": [
+    "ad",
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Chicago",
+   "cpu": 2,
+   "memory": 44,
+   "services": [
+    "wise",
+    "uvcore",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 20,
+   "memory": 35,
+   "services": [
+    "haproxy",
+    "es",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Vibranium",
+   "cpu": 4,
+   "memory": 26,
+   "services": [
+    "shs",
+    "riscore",
+    "haproxy",
+    "ids7",
+    "risapp"
+   ]
+  }
+ }
+}

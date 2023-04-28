@@ -1,0 +1,70 @@
+{
+ "site_id": "865z9r_230413",
+ "site_name": "gffbcz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Harmony",
+   "cpu": 12,
+   "memory": 34,
+   "services": [
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_valley_2",
+   "cpu": 1,
+   "memory": 61,
+   "services": [
+    "uvclient",
+    "es",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 2,
+   "memory": 43,
+   "services": [
+    "iss",
+    "ad",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 19,
+   "memory": 5,
+   "services": [
+    "uvcore",
+    "ad",
+    "wise",
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Millennium",
+   "cpu": 4,
+   "memory": 22,
+   "services": [
+    "dpat",
+    "sql2019",
+    "ad",
+    "iss",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Snowball",
+   "cpu": 10,
+   "memory": 27,
+   "services": [
+    "iss",
+    "shs"
+   ]
+  }
+ }
+}

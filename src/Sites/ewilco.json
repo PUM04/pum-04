@@ -1,0 +1,77 @@
+{
+ "site_id": "8hofnm_230413",
+ "site_name": "ewilco",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Millennium",
+   "cpu": 9,
+   "memory": 28,
+   "services": [
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 16,
+   "memory": 14,
+   "services": [
+    "dpat",
+    "sql2019",
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 18,
+   "memory": 54,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Redstone_2",
+   "cpu": 10,
+   "memory": 25,
+   "services": [
+    "riscore",
+    "iss",
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Harmony",
+   "cpu": 4,
+   "memory": 27,
+   "services": [
+    "sql2019",
+    "ids7",
+    "riscore",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Daytona",
+   "cpu": 2,
+   "memory": 4,
+   "services": [
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Windows_NT_5.0",
+   "cpu": 1,
+   "memory": 40,
+   "services": [
+    "risapp",
+    "uvclient",
+    "shs",
+    "wise"
+   ]
+  }
+ }
+}

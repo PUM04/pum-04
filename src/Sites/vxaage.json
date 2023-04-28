@@ -1,0 +1,98 @@
+{
+ "site_id": "4da5x7_230413",
+ "site_name": "vxaage",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Windows_8",
+   "cpu": 22,
+   "memory": 27,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 5,
+   "memory": 24,
+   "services": [
+    "uvclient",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_3",
+   "cpu": 25,
+   "memory": 24,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 7,
+   "memory": 24,
+   "services": [
+    "sql2019",
+    "ad",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_5",
+   "cpu": 2,
+   "memory": 27,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Snowball",
+   "cpu": 13,
+   "memory": 38,
+   "services": [
+    "uvclient",
+    "ids7",
+    "ad",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Vibranium",
+   "cpu": 9,
+   "memory": 25,
+   "services": [
+    "shs",
+    "dpat",
+    "uvclient",
+    "riscore",
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 13,
+   "memory": 14,
+   "services": [
+    "es",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Redstone_1",
+   "cpu": 21,
+   "memory": 32,
+   "services": [
+    "ad",
+    "es",
+    "dpat"
+   ]
+  }
+ }
+}

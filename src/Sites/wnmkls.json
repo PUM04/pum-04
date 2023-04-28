@@ -1,0 +1,65 @@
+{
+ "site_id": "t53wvj_230413",
+ "site_name": "wnmkls",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Longhorn",
+   "cpu": 9,
+   "memory": 53,
+   "services": [
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 16,
+   "memory": 2,
+   "services": [
+    "shs",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Anvil",
+   "cpu": 31,
+   "memory": 21,
+   "services": [
+    "iss",
+    "dpat",
+    "uvcore",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sun_Valley",
+   "cpu": 14,
+   "memory": 53,
+   "services": [
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 11,
+   "memory": 1,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_valley_2",
+   "cpu": 28,
+   "memory": 42,
+   "services": [
+    "shs",
+    "haproxy",
+    "risapp",
+    "uvclient"
+   ]
+  }
+ }
+}

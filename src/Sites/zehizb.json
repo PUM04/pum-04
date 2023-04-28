@@ -1,0 +1,70 @@
+{
+ "site_id": "h1fns4_230413",
+ "site_name": "zehizb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Sun_valley_2",
+   "cpu": 9,
+   "memory": 18,
+   "services": [
+    "dpat",
+    "riscore",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 22,
+   "memory": 34,
+   "services": [
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 8,
+   "memory": 41,
+   "services": [
+    "sql2019",
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold",
+   "cpu": 1,
+   "memory": 10,
+   "services": [
+    "ad",
+    "haproxy",
+    "shs",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_1",
+   "cpu": 6,
+   "memory": 38,
+   "services": [
+    "riscore",
+    "es",
+    "dpat",
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Anvil",
+   "cpu": 20,
+   "memory": 50,
+   "services": [
+    "dpat",
+    "iss",
+    "shs",
+    "sql2019",
+    "ids7"
+   ]
+  }
+ }
+}

@@ -1,0 +1,81 @@
+{
+ "site_id": "451oj0_230413",
+ "site_name": "geyetk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Snowball",
+   "cpu": 11,
+   "memory": 7,
+   "services": [
+    "iss",
+    "es",
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold_2",
+   "cpu": 30,
+   "memory": 56,
+   "services": [
+    "ad",
+    "uvcore",
+    "uvclient",
+    "wise",
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_valley_2",
+   "cpu": 6,
+   "memory": 18,
+   "services": [
+    "shs",
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_5",
+   "cpu": 26,
+   "memory": 26,
+   "services": [
+    "wise",
+    "iss",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 28,
+   "memory": 2,
+   "services": [
+    "riscore",
+    "iss",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Symphony",
+   "cpu": 14,
+   "memory": 32,
+   "services": [
+    "ad",
+    "riscore",
+    "ids7",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Blue",
+   "cpu": 32,
+   "memory": 17,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

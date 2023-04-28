@@ -1,0 +1,75 @@
+{
+ "site_id": "zqp8a6_230413",
+ "site_name": "norlnw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Redstone_4",
+   "cpu": 17,
+   "memory": 36,
+   "services": [
+    "iss",
+    "riscore",
+    "dpat",
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Sparta",
+   "cpu": 21,
+   "memory": 9,
+   "services": [
+    "haproxy",
+    "es",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vanadium",
+   "cpu": 14,
+   "memory": 42,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Memphis",
+   "cpu": 2,
+   "memory": 51,
+   "services": [
+    "es",
+    "ad",
+    "wise",
+    "sql2019"
+   ]
+  },
+  "sss": {
+   "os": "Windows_7",
+   "cpu": 8,
+   "memory": 64,
+   "services": [
+    "es",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Snowball",
+   "cpu": 13,
+   "memory": 40,
+   "services": [
+    "haproxy",
+    "es",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_5",
+   "cpu": 5,
+   "memory": 6,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

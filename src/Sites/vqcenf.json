@@ -1,0 +1,39 @@
+{
+ "site_id": "hie9gv_230413",
+ "site_name": "vqcenf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Redstone_5",
+   "cpu": 30,
+   "memory": 3,
+   "services": [
+    "haproxy",
+    "wise",
+    "shs",
+    "ad",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 29,
+   "memory": 47,
+   "services": [
+    "es",
+    "haproxy",
+    "shs",
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vanadium",
+   "cpu": 3,
+   "memory": 41,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

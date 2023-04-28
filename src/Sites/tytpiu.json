@@ -1,0 +1,76 @@
+{
+ "site_id": "317t0o_230413",
+ "site_name": "tytpiu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Redstone_4",
+   "cpu": 7,
+   "memory": 61,
+   "services": [
+    "uvclient",
+    "ad",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 26,
+   "memory": 60,
+   "services": [
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sparta",
+   "cpu": 14,
+   "memory": 3,
+   "services": [
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Memphis",
+   "cpu": 21,
+   "memory": 4,
+   "services": [
+    "uvclient",
+    "ad",
+    "riscore",
+    "sql2019",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_3",
+   "cpu": 31,
+   "memory": 11,
+   "services": [
+    "shs",
+    "wise",
+    "riscore",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Freestyle",
+   "cpu": 31,
+   "memory": 2,
+   "services": [
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 26,
+   "memory": 49,
+   "services": [
+    "ids7",
+    "uvcore"
+   ]
+  }
+ }
+}

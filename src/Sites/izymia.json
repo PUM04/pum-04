@@ -1,0 +1,86 @@
+{
+ "site_id": "pk0wih_230413",
+ "site_name": "izymia",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Chicago",
+   "cpu": 26,
+   "memory": 1,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vibranium",
+   "cpu": 20,
+   "memory": 21,
+   "services": [
+    "ids7",
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_7",
+   "cpu": 10,
+   "memory": 47,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "es",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Whistler",
+   "cpu": 30,
+   "memory": 46,
+   "services": [
+    "es",
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Chicago",
+   "cpu": 12,
+   "memory": 18,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "shs",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 3,
+   "memory": 37,
+   "services": [
+    "wise",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_4",
+   "cpu": 24,
+   "memory": 29,
+   "services": [
+    "dpat",
+    "riscore",
+    "wise",
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Daytona",
+   "cpu": 30,
+   "memory": 6,
+   "services": [
+    "dpat",
+    "ids7"
+   ]
+  }
+ }
+}

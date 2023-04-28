@@ -1,0 +1,66 @@
+{
+ "site_id": "fv701v_230413",
+ "site_name": "qpwfcl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 21,
+   "memory": 60,
+   "services": [
+    "haproxy",
+    "es",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 3,
+   "memory": 55,
+   "services": [
+    "shs",
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Threshold_2",
+   "cpu": 6,
+   "memory": 16,
+   "services": [
+    "ids7",
+    "shs",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Snowball",
+   "cpu": 14,
+   "memory": 54,
+   "services": [
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Chicago",
+   "cpu": 25,
+   "memory": 38,
+   "services": [
+    "uvclient",
+    "wise",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Snowball",
+   "cpu": 12,
+   "memory": 20,
+   "services": [
+    "haproxy",
+    "ids7"
+   ]
+  }
+ }
+}

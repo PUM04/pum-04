@@ -1,0 +1,36 @@
+{
+ "site_id": "58d1w1_230413",
+ "site_name": "vnzsov",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 8,
+   "memory": 56,
+   "services": [
+    "es",
+    "ids7",
+    "dpat",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Vanadium",
+   "cpu": 14,
+   "memory": 10,
+   "services": [
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_2",
+   "cpu": 23,
+   "memory": 63,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

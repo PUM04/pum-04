@@ -1,0 +1,89 @@
+{
+ "site_id": "c2pk39_230413",
+ "site_name": "henhpi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Redstone_5",
+   "cpu": 15,
+   "memory": 10,
+   "services": [
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Sparta",
+   "cpu": 6,
+   "memory": 12,
+   "services": [
+    "ad",
+    "uvclient",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Memphis",
+   "cpu": 21,
+   "memory": 25,
+   "services": [
+    "iss",
+    "riscore",
+    "es",
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Daytona",
+   "cpu": 25,
+   "memory": 47,
+   "services": [
+    "iss",
+    "es",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 20,
+   "memory": 38,
+   "services": [
+    "wise",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 16,
+   "memory": 56,
+   "services": [
+    "risapp",
+    "ids7",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 16,
+   "memory": 51,
+   "services": [
+    "dpat",
+    "uvcore",
+    "shs",
+    "riscore",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_4",
+   "cpu": 28,
+   "memory": 34,
+   "services": [
+    "wise",
+    "riscore",
+    "risapp"
+   ]
+  }
+ }
+}

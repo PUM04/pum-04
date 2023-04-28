@@ -1,0 +1,87 @@
+{
+ "site_id": "650wz5_230413",
+ "site_name": "ewyygu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Millennium",
+   "cpu": 21,
+   "memory": 9,
+   "services": [
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 13,
+   "memory": 57,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "ids7",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Millennium",
+   "cpu": 14,
+   "memory": 63,
+   "services": [
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 9,
+   "memory": 17,
+   "services": [
+    "uvcore",
+    "shs",
+    "haproxy",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Emerald",
+   "cpu": 1,
+   "memory": 36,
+   "services": [
+    "uvclient",
+    "wise",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Anvil",
+   "cpu": 16,
+   "memory": 52,
+   "services": [
+    "wise",
+    "sql2019",
+    "iss",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_3",
+   "cpu": 25,
+   "memory": 18,
+   "services": [
+    "uvclient",
+    "iss",
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 14,
+   "memory": 62,
+   "services": [
+    "es",
+    "iss",
+    "wise"
+   ]
+  }
+ }
+}

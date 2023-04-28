@@ -1,0 +1,43 @@
+{
+ "site_id": "m9723c_230413",
+ "site_name": "rphdaw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Vibranium",
+   "cpu": 3,
+   "memory": 6,
+   "services": [
+    "wise"
+   ]
+  },
+  "sqlla": {
+   "os": "Emerald",
+   "cpu": 12,
+   "memory": 11,
+   "services": [
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Sun_valley_2",
+   "cpu": 10,
+   "memory": 34,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_8",
+   "cpu": 22,
+   "memory": 43,
+   "services": [
+    "ids7",
+    "dpat",
+    "risapp",
+    "riscore"
+   ]
+  }
+ }
+}

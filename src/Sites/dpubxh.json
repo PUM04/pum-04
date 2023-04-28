@@ -1,0 +1,59 @@
+{
+ "site_id": "45uf34_230413",
+ "site_name": "dpubxh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Sun_Valley",
+   "cpu": 14,
+   "memory": 39,
+   "services": [
+    "dpat",
+    "risapp",
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Threshold",
+   "cpu": 27,
+   "memory": 38,
+   "services": [
+    "wise",
+    "iss",
+    "haproxy",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Millennium",
+   "cpu": 29,
+   "memory": 53,
+   "services": [
+    "shs",
+    "es",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Daytona",
+   "cpu": 3,
+   "memory": 16,
+   "services": [
+    "ids7",
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Chicago",
+   "cpu": 24,
+   "memory": 56,
+   "services": [
+    "shs",
+    "wise",
+    "sql2019",
+    "es"
+   ]
+  }
+ }
+}

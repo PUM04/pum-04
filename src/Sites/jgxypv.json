@@ -1,0 +1,79 @@
+{
+ "site_id": "51j36h_230413",
+ "site_name": "jgxypv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Windows_7",
+   "cpu": 15,
+   "memory": 15,
+   "services": [
+    "shs",
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 29,
+   "memory": 20,
+   "services": [
+    "es",
+    "risapp",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Sun_Valley",
+   "cpu": 27,
+   "memory": 9,
+   "services": [
+    "sql2019",
+    "es",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sparta",
+   "cpu": 6,
+   "memory": 61,
+   "services": [
+    "shs",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 3,
+   "memory": 53,
+   "services": [
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_4",
+   "cpu": 21,
+   "memory": 23,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_3",
+   "cpu": 24,
+   "memory": 4,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Blue",
+   "cpu": 1,
+   "memory": 17,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

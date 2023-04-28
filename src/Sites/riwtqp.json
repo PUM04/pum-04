@@ -1,0 +1,76 @@
+{
+ "site_id": "59dp81_230413",
+ "site_name": "riwtqp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Millennium",
+   "cpu": 20,
+   "memory": 44,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_Valley",
+   "cpu": 29,
+   "memory": 45,
+   "services": [
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_Valley",
+   "cpu": 16,
+   "memory": 4,
+   "services": [
+    "uvcore",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_NT_5.0",
+   "cpu": 13,
+   "memory": 32,
+   "services": [
+    "uvclient",
+    "dpat",
+    "uvcore",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Longhorn",
+   "cpu": 8,
+   "memory": 3,
+   "services": [
+    "shs",
+    "iss",
+    "es",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 28,
+   "memory": 18,
+   "services": [
+    "uvclient",
+    "iss",
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Millennium",
+   "cpu": 23,
+   "memory": 20,
+   "services": [
+    "dpat",
+    "uvclient",
+    "wise"
+   ]
+  }
+ }
+}

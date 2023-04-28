@@ -1,0 +1,52 @@
+{
+ "site_id": "8908mf_230413",
+ "site_name": "kinogy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Symphony",
+   "cpu": 4,
+   "memory": 15,
+   "services": [
+    "risapp",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Sun_Valley",
+   "cpu": 9,
+   "memory": 47,
+   "services": [
+    "ids7",
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 22,
+   "memory": 18,
+   "services": [
+    "dpat",
+    "risapp"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold",
+   "cpu": 5,
+   "memory": 37,
+   "services": [
+    "wise",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Whistler",
+   "cpu": 14,
+   "memory": 43,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

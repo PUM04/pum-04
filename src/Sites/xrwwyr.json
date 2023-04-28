@@ -1,0 +1,84 @@
+{
+ "site_id": "8xckqx_230413",
+ "site_name": "xrwwyr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Sun_valley_2",
+   "cpu": 26,
+   "memory": 43,
+   "services": [
+    "risapp",
+    "uvclient",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Freestyle",
+   "cpu": 4,
+   "memory": 4,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Whistler",
+   "cpu": 11,
+   "memory": 64,
+   "services": [
+    "uvcore",
+    "dpat",
+    "iss",
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Razzle",
+   "cpu": 23,
+   "memory": 42,
+   "services": [
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_5",
+   "cpu": 10,
+   "memory": 49,
+   "services": [
+    "riscore",
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Harmony",
+   "cpu": 21,
+   "memory": 27,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_4",
+   "cpu": 32,
+   "memory": 9,
+   "services": [
+    "riscore",
+    "sql2019",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Millennium",
+   "cpu": 13,
+   "memory": 31,
+   "services": [
+    "ids7",
+    "wise",
+    "iss",
+    "uvclient"
+   ]
+  }
+ }
+}

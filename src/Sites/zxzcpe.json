@@ -1,0 +1,46 @@
+{
+ "site_id": "0v746k_230413",
+ "site_name": "zxzcpe",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 30,
+   "memory": 5,
+   "services": [
+    "sql2019",
+    "iss",
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Daytona",
+   "cpu": 28,
+   "memory": 5,
+   "services": [
+    "ids7",
+    "dpat"
+   ]
+  },
+  "riscore": {
+   "os": "Blue",
+   "cpu": 10,
+   "memory": 56,
+   "services": [
+    "shs",
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_3",
+   "cpu": 32,
+   "memory": 20,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

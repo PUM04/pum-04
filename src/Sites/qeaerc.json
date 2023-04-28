@@ -1,0 +1,105 @@
+{
+ "site_id": "a9dd4i_230413",
+ "site_name": "qeaerc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Anvil",
+   "cpu": 3,
+   "memory": 23,
+   "services": [
+    "es",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Whistler",
+   "cpu": 30,
+   "memory": 15,
+   "services": [
+    "sql2019",
+    "risapp",
+    "haproxy",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Memphis",
+   "cpu": 27,
+   "memory": 3,
+   "services": [
+    "shs",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Longhorn",
+   "cpu": 29,
+   "memory": 5,
+   "services": [
+    "wise",
+    "ad",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold_2",
+   "cpu": 20,
+   "memory": 11,
+   "services": [
+    "shs",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Memphis",
+   "cpu": 20,
+   "memory": 54,
+   "services": [
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 5,
+   "memory": 48,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "riscore": {
+   "os": "Memphis",
+   "cpu": 8,
+   "memory": 46,
+   "services": [
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Emerald",
+   "cpu": 27,
+   "memory": 19,
+   "services": [
+    "ids7",
+    "uvcore",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Sparta",
+   "cpu": 28,
+   "memory": 44,
+   "services": [
+    "uvclient",
+    "ids7",
+    "shs"
+   ]
+  }
+ }
+}

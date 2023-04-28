@@ -1,0 +1,28 @@
+{
+ "site_id": "120fts_230413",
+ "site_name": "zvtokh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Redstone_2",
+   "cpu": 32,
+   "memory": 47,
+   "services": [
+    "shs",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Chicago",
+   "cpu": 10,
+   "memory": 12,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "haproxy"
+   ]
+  }
+ }
+}

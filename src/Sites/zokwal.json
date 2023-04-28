@@ -1,0 +1,50 @@
+{
+ "site_id": "jjab80_230413",
+ "site_name": "zokwal",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Millennium",
+   "cpu": 5,
+   "memory": 30,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "ids7",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Harmony",
+   "cpu": 13,
+   "memory": 49,
+   "services": [
+    "iss",
+    "uvcore",
+    "risapp",
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Daytona",
+   "cpu": 5,
+   "memory": 28,
+   "services": [
+    "shs",
+    "dpat",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 25,
+   "memory": 16,
+   "services": [
+    "sql2019",
+    "ids7"
+   ]
+  }
+ }
+}

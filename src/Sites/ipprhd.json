@@ -1,0 +1,81 @@
+{
+ "site_id": "1gvc66_230413",
+ "site_name": "ipprhd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Razzle",
+   "cpu": 2,
+   "memory": 15,
+   "services": [
+    "riscore",
+    "uvclient",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_4",
+   "cpu": 28,
+   "memory": 27,
+   "services": [
+    "risapp",
+    "ids7",
+    "wise",
+    "dpat",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Symphony",
+   "cpu": 22,
+   "memory": 24,
+   "services": [
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 32,
+   "memory": 8,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Chicago",
+   "cpu": 10,
+   "memory": 45,
+   "services": [
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Snowball",
+   "cpu": 18,
+   "memory": 47,
+   "services": [
+    "es",
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Vanadium",
+   "cpu": 19,
+   "memory": 41,
+   "services": [
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vibranium",
+   "cpu": 1,
+   "memory": 60,
+   "services": [
+    "dpat",
+    "risapp"
+   ]
+  }
+ }
+}

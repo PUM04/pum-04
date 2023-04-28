@@ -1,0 +1,34 @@
+{
+ "site_id": "v53e3h_230413",
+ "site_name": "ghxumq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Sun_Valley",
+   "cpu": 30,
+   "memory": 6,
+   "services": [
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Razzle",
+   "cpu": 21,
+   "memory": 29,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_3",
+   "cpu": 31,
+   "memory": 10,
+   "services": [
+    "ids7",
+    "dpat",
+    "es"
+   ]
+  }
+ }
+}

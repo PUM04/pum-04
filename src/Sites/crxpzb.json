@@ -1,0 +1,86 @@
+{
+ "site_id": "on95h2_230413",
+ "site_name": "crxpzb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 16,
+   "memory": 41,
+   "services": [
+    "ids7",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 13,
+   "memory": 17,
+   "services": [
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Freestyle",
+   "cpu": 12,
+   "memory": 37,
+   "services": [
+    "wise",
+    "risapp",
+    "ad",
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_2",
+   "cpu": 21,
+   "memory": 48,
+   "services": [
+    "shs",
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Threshold",
+   "cpu": 21,
+   "memory": 31,
+   "services": [
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 10,
+   "memory": 19,
+   "services": [
+    "shs",
+    "uvclient",
+    "ad",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Snowball",
+   "cpu": 16,
+   "memory": 3,
+   "services": [
+    "sql2019",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Anvil",
+   "cpu": 31,
+   "memory": 3,
+   "services": [
+    "dpat",
+    "iss",
+    "wise"
+   ]
+  }
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "site_id": "av4266_230413",
+ "site_name": "hjtunh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Sun_Valley",
+   "cpu": 22,
+   "memory": 3,
+   "services": [
+    "haproxy",
+    "shs",
+    "sql2019",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Sun_Valley",
+   "cpu": 13,
+   "memory": 44,
+   "services": [
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Blue",
+   "cpu": 25,
+   "memory": 64,
+   "services": [
+    "ad",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Vanadium",
+   "cpu": 23,
+   "memory": 25,
+   "services": [
+    "risapp",
+    "sql2019",
+    "riscore",
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold_2",
+   "cpu": 31,
+   "memory": 33,
+   "services": [
+    "shs",
+    "uvclient"
+   ]
+  }
+ }
+}

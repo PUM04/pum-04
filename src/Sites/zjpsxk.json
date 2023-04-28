@@ -1,0 +1,88 @@
+{
+ "site_id": "b09614_230413",
+ "site_name": "zjpsxk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 32,
+   "memory": 45,
+   "services": [
+    "shs",
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 6,
+   "memory": 35,
+   "services": [
+    "ids7",
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Razzle",
+   "cpu": 29,
+   "memory": 40,
+   "services": [
+    "riscore",
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 19,
+   "memory": 23,
+   "services": [
+    "sql2019",
+    "iss",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Blue",
+   "cpu": 17,
+   "memory": 9,
+   "services": [
+    "ids7",
+    "dpat",
+    "es",
+    "ad"
+   ]
+  },
+  "sss": {
+   "os": "Razzle",
+   "cpu": 6,
+   "memory": 6,
+   "services": [
+    "uvclient",
+    "dpat",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Redstone_4",
+   "cpu": 7,
+   "memory": 48,
+   "services": [
+    "risapp",
+    "riscore",
+    "haproxy",
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sun_Valley",
+   "cpu": 30,
+   "memory": 58,
+   "services": [
+    "wise",
+    "dpat",
+    "shs",
+    "sql2019"
+   ]
+  }
+ }
+}

@@ -1,0 +1,79 @@
+{
+ "site_id": "eqm83p_230413",
+ "site_name": "elvdnd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Redstone_1",
+   "cpu": 4,
+   "memory": 51,
+   "services": [
+    "sql2019",
+    "ad",
+    "iss",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 20,
+   "memory": 53,
+   "services": [
+    "ad",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Daytona",
+   "cpu": 4,
+   "memory": 34,
+   "services": [
+    "uvcore",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Harmony",
+   "cpu": 24,
+   "memory": 50,
+   "services": [
+    "riscore",
+    "wise",
+    "es",
+    "risapp",
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Daytona",
+   "cpu": 15,
+   "memory": 18,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Harmony",
+   "cpu": 8,
+   "memory": 45,
+   "services": [
+    "haproxy",
+    "shs",
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Blue",
+   "cpu": 25,
+   "memory": 34,
+   "services": [
+    "ad",
+    "uvcore",
+    "dpat"
+   ]
+  }
+ }
+}

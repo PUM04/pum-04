@@ -1,0 +1,36 @@
+{
+ "site_id": "7o0993_230413",
+ "site_name": "ftumfy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Millennium",
+   "cpu": 5,
+   "memory": 43,
+   "services": [
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 21,
+   "memory": 36,
+   "services": [
+    "uvcore",
+    "shs",
+    "iss",
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Memphis",
+   "cpu": 27,
+   "memory": 62,
+   "services": [
+    "risapp"
+   ]
+  }
+ }
+}

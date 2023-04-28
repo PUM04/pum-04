@@ -1,0 +1,78 @@
+{
+ "site_id": "5qgfa4_230413",
+ "site_name": "fdsgvy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Emerald",
+   "cpu": 30,
+   "memory": 7,
+   "services": [
+    "haproxy",
+    "risapp",
+    "dpat",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Blue",
+   "cpu": 22,
+   "memory": 7,
+   "services": [
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold",
+   "cpu": 6,
+   "memory": 21,
+   "services": [
+    "es",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Memphis",
+   "cpu": 25,
+   "memory": 1,
+   "services": [
+    "riscore",
+    "sql2019",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 22,
+   "memory": 16,
+   "services": [
+    "shs",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Threshold",
+   "cpu": 20,
+   "memory": 20,
+   "services": [
+    "ids7",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vanadium",
+   "cpu": 16,
+   "memory": 47,
+   "services": [
+    "uvclient",
+    "es",
+    "dpat",
+    "ad",
+    "shs"
+   ]
+  }
+ }
+}

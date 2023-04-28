@@ -1,0 +1,89 @@
+{
+ "site_id": "50300w_230413",
+ "site_name": "agteod",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Redstone_1",
+   "cpu": 25,
+   "memory": 25,
+   "services": [
+    "shs",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Symphony",
+   "cpu": 23,
+   "memory": 57,
+   "services": [
+    "ad",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_4",
+   "cpu": 23,
+   "memory": 39,
+   "services": [
+    "risapp",
+    "uvcore",
+    "riscore",
+    "shs",
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Millennium",
+   "cpu": 4,
+   "memory": 3,
+   "services": [
+    "dpat",
+    "uvclient",
+    "iss",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 28,
+   "memory": 29,
+   "services": [
+    "uvclient",
+    "iss",
+    "es",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 30,
+   "memory": 53,
+   "services": [
+    "shs",
+    "dpat",
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 9,
+   "memory": 55,
+   "services": [
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Memphis",
+   "cpu": 15,
+   "memory": 54,
+   "services": [
+    "uvcore",
+    "wise",
+    "riscore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "site_id": "1t1xol_230413",
+ "site_name": "vbwrtl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Razzle",
+   "cpu": 12,
+   "memory": 45,
+   "services": [
+    "uvcore",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Whistler",
+   "cpu": 1,
+   "memory": 4,
+   "services": [
+    "sql2019",
+    "shs",
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Snowball",
+   "cpu": 24,
+   "memory": 10,
+   "services": [
+    "dpat",
+    "haproxy",
+    "shs",
+    "ad"
+   ]
+  }
+ }
+}

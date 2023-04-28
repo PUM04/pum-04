@@ -1,0 +1,84 @@
+{
+ "site_id": "4p16d4_230413",
+ "site_name": "picerm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Symphony",
+   "cpu": 27,
+   "memory": 33,
+   "services": [
+    "sql2019",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Freestyle",
+   "cpu": 19,
+   "memory": 35,
+   "services": [
+    "es",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_Valley",
+   "cpu": 21,
+   "memory": 30,
+   "services": [
+    "uvcore",
+    "ids7",
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_2",
+   "cpu": 30,
+   "memory": 64,
+   "services": [
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Daytona",
+   "cpu": 27,
+   "memory": 10,
+   "services": [
+    "dpat",
+    "haproxy",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Chicago",
+   "cpu": 13,
+   "memory": 3,
+   "services": [
+    "uvcore",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Chicago",
+   "cpu": 8,
+   "memory": 2,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Symphony",
+   "cpu": 29,
+   "memory": 20,
+   "services": [
+    "wise",
+    "ad",
+    "uvclient"
+   ]
+  }
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "site_id": "a8wtd7_230413",
+ "site_name": "iehuay",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 27,
+   "memory": 8,
+   "services": [
+    "riscore",
+    "wise",
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Sun_valley_2",
+   "cpu": 13,
+   "memory": 26,
+   "services": [
+    "sql2019",
+    "es",
+    "shs"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Daytona",
+   "cpu": 24,
+   "memory": 52,
+   "services": [
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_3",
+   "cpu": 31,
+   "memory": 22,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "shs",
+    "risapp"
+   ]
+  }
+ }
+}

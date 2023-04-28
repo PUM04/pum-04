@@ -1,0 +1,38 @@
+{
+ "site_id": "n0hosk_230413",
+ "site_name": "incjif",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Chicago",
+   "cpu": 28,
+   "memory": 19,
+   "services": [
+    "wise",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Sun_Valley",
+   "cpu": 22,
+   "memory": 12,
+   "services": [
+    "dpat",
+    "risapp",
+    "uvcore",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Emerald",
+   "cpu": 13,
+   "memory": 7,
+   "services": [
+    "shs",
+    "iss",
+    "haproxy"
+   ]
+  }
+ }
+}

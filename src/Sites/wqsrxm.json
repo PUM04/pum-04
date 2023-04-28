@@ -1,0 +1,47 @@
+{
+ "site_id": "0d8375_230413",
+ "site_name": "wqsrxm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Daytona",
+   "cpu": 8,
+   "memory": 11,
+   "services": [
+    "es",
+    "dpat",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_1",
+   "cpu": 1,
+   "memory": 60,
+   "services": [
+    "uvcore",
+    "dpat",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Razzle",
+   "cpu": 25,
+   "memory": 47,
+   "services": [
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Razzle",
+   "cpu": 11,
+   "memory": 25,
+   "services": [
+    "haproxy",
+    "riscore",
+    "es"
+   ]
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "site_id": "f35sp3_230413",
+ "site_name": "jebnui",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Longhorn",
+   "cpu": 8,
+   "memory": 54,
+   "services": [
+    "iss",
+    "haproxy"
+   ]
+  }
+ }
+}

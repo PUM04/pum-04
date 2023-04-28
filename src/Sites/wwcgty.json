@@ -1,0 +1,65 @@
+{
+ "site_id": "x26g04_230413",
+ "site_name": "wwcgty",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Snowball",
+   "cpu": 32,
+   "memory": 61,
+   "services": [
+    "wise",
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_1",
+   "cpu": 22,
+   "memory": 26,
+   "services": [
+    "dpat",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Threshold",
+   "cpu": 24,
+   "memory": 32,
+   "services": [
+    "sql2019",
+    "ad",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold_2",
+   "cpu": 17,
+   "memory": 49,
+   "services": [
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Snowball",
+   "cpu": 28,
+   "memory": 51,
+   "services": [
+    "ids7",
+    "sql2019",
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Threshold",
+   "cpu": 28,
+   "memory": 37,
+   "services": [
+    "shs",
+    "risapp",
+    "es",
+    "haproxy"
+   ]
+  }
+ }
+}

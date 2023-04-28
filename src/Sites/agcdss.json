@@ -1,0 +1,59 @@
+{
+ "site_id": "6538mp_230413",
+ "site_name": "agcdss",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Redstone_5",
+   "cpu": 32,
+   "memory": 1,
+   "services": [
+    "shs",
+    "es",
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Freestyle",
+   "cpu": 22,
+   "memory": 2,
+   "services": [
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 14,
+   "memory": 18,
+   "services": [
+    "wise",
+    "dpat",
+    "es",
+    "risapp",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 18,
+   "memory": 59,
+   "services": [
+    "dpat",
+    "iss",
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Whistler",
+   "cpu": 22,
+   "memory": 17,
+   "services": [
+    "iss",
+    "sql2019",
+    "shs"
+   ]
+  }
+ }
+}

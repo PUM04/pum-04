@@ -1,0 +1,64 @@
+{
+ "site_id": "a3dli9_230413",
+ "site_name": "lauxaw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Vanadium",
+   "cpu": 24,
+   "memory": 23,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_1",
+   "cpu": 11,
+   "memory": 46,
+   "services": [
+    "wise",
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 23,
+   "memory": 60,
+   "services": [
+    "ids7",
+    "ad",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 12,
+   "memory": 20,
+   "services": [
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 21,
+   "memory": 7,
+   "services": [
+    "wise",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Harmony",
+   "cpu": 1,
+   "memory": 35,
+   "services": [
+    "wise",
+    "ids7",
+    "dpat",
+    "risapp"
+   ]
+  }
+ }
+}

@@ -1,0 +1,81 @@
+{
+ "site_id": "i3l4x6_230413",
+ "site_name": "nugwaw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Anvil",
+   "cpu": 4,
+   "memory": 15,
+   "services": [
+    "ids7",
+    "wise",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Freestyle",
+   "cpu": 17,
+   "memory": 64,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Symphony",
+   "cpu": 7,
+   "memory": 64,
+   "services": [
+    "haproxy",
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Freestyle",
+   "cpu": 27,
+   "memory": 26,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_7",
+   "cpu": 22,
+   "memory": 46,
+   "services": [
+    "shs",
+    "uvcore",
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 11,
+   "memory": 55,
+   "services": [
+    "ad",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Chicago",
+   "cpu": 1,
+   "memory": 24,
+   "services": [
+    "shs",
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Anvil",
+   "cpu": 24,
+   "memory": 13,
+   "services": [
+    "iss"
+   ]
+  }
+ }
+}

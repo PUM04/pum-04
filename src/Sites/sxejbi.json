@@ -1,0 +1,38 @@
+{
+ "site_id": "yu7663_230413",
+ "site_name": "sxejbi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Millennium",
+   "cpu": 15,
+   "memory": 62,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "sqlla": {
+   "os": "Vanadium",
+   "cpu": 28,
+   "memory": 32,
+   "services": [
+    "risapp",
+    "ids7",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 11,
+   "memory": 16,
+   "services": [
+    "shs",
+    "wise",
+    "ids7"
+   ]
+  }
+ }
+}

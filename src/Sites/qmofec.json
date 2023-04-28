@@ -1,0 +1,104 @@
+{
+ "site_id": "wa75d8_230413",
+ "site_name": "qmofec",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Blue",
+   "cpu": 23,
+   "memory": 35,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Chicago",
+   "cpu": 12,
+   "memory": 27,
+   "services": [
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 7,
+   "memory": 62,
+   "services": [
+    "ids7",
+    "wise",
+    "es",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 7,
+   "memory": 28,
+   "services": [
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Harmony",
+   "cpu": 25,
+   "memory": 60,
+   "services": [
+    "ad",
+    "risapp",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Snowball",
+   "cpu": 24,
+   "memory": 11,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Freestyle",
+   "cpu": 1,
+   "memory": 32,
+   "services": [
+    "risapp",
+    "riscore",
+    "sql2019",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Threshold",
+   "cpu": 2,
+   "memory": 36,
+   "services": [
+    "ad",
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Blue",
+   "cpu": 10,
+   "memory": 18,
+   "services": [
+    "uvclient",
+    "es",
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Vibranium",
+   "cpu": 24,
+   "memory": 4,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "ad"
+   ]
+  }
+ }
+}

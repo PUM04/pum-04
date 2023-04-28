@@ -1,0 +1,39 @@
+{
+ "site_id": "r0ye28_230413",
+ "site_name": "htasap",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 26,
+   "memory": 53,
+   "services": [
+    "wise",
+    "risapp",
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold",
+   "cpu": 8,
+   "memory": 40,
+   "services": [
+    "sql2019",
+    "ids7",
+    "dpat",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Whistler",
+   "cpu": 29,
+   "memory": 45,
+   "services": [
+    "dpat",
+    "uvcore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,85 @@
+{
+ "site_id": "b1zuoz_230413",
+ "site_name": "kyrsyj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Anvil",
+   "cpu": 14,
+   "memory": 47,
+   "services": [
+    "dpat",
+    "wise",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Whistler",
+   "cpu": 8,
+   "memory": 35,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 32,
+   "memory": 24,
+   "services": [
+    "dpat",
+    "es",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_1",
+   "cpu": 30,
+   "memory": 26,
+   "services": [
+    "sql2019",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold_2",
+   "cpu": 8,
+   "memory": 36,
+   "services": [
+    "iss",
+    "sql2019"
+   ]
+  },
+  "pacscore": {
+   "os": "Harmony",
+   "cpu": 23,
+   "memory": 32,
+   "services": [
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sparta",
+   "cpu": 5,
+   "memory": 24,
+   "services": [
+    "wise",
+    "ids7",
+    "es",
+    "haproxy"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sparta",
+   "cpu": 10,
+   "memory": 10,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

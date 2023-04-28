@@ -1,0 +1,56 @@
+{
+ "site_id": "7j2by6_230413",
+ "site_name": "yarhdl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Redstone_1",
+   "cpu": 3,
+   "memory": 40,
+   "services": [
+    "riscore",
+    "sql2019",
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Threshold_2",
+   "cpu": 15,
+   "memory": 58,
+   "services": [
+    "iss",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Snowball",
+   "cpu": 25,
+   "memory": 32,
+   "services": [
+    "dpat",
+    "sql2019",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_4",
+   "cpu": 3,
+   "memory": 39,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Vibranium",
+   "cpu": 13,
+   "memory": 54,
+   "services": [
+    "dpat",
+    "risapp",
+    "ad",
+    "es"
+   ]
+  }
+ }
+}

@@ -1,0 +1,48 @@
+{
+ "site_id": "d6s8i9_230413",
+ "site_name": "vqdugm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Windows_8",
+   "cpu": 3,
+   "memory": 29,
+   "services": [
+    "ad",
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Anvil",
+   "cpu": 26,
+   "memory": 33,
+   "services": [
+    "dpat",
+    "shs",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Anvil",
+   "cpu": 17,
+   "memory": 64,
+   "services": [
+    "iss",
+    "es",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Whistler",
+   "cpu": 32,
+   "memory": 27,
+   "services": [
+    "sql2019",
+    "haproxy",
+    "riscore"
+   ]
+  }
+ }
+}

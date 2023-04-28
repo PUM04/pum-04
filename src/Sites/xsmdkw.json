@@ -1,0 +1,72 @@
+{
+ "site_id": "jw0a2a_230413",
+ "site_name": "xsmdkw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Vanadium",
+   "cpu": 6,
+   "memory": 47,
+   "services": [
+    "ids7",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_3",
+   "cpu": 27,
+   "memory": 32,
+   "services": [
+    "haproxy",
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Snowball",
+   "cpu": 12,
+   "memory": 45,
+   "services": [
+    "uvcore",
+    "es"
+   ]
+  },
+  "risapp": {
+   "os": "Symphony",
+   "cpu": 27,
+   "memory": 20,
+   "services": [
+    "riscore",
+    "wise",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_3",
+   "cpu": 25,
+   "memory": 61,
+   "services": [
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_2",
+   "cpu": 12,
+   "memory": 57,
+   "services": [
+    "risapp",
+    "sql2019",
+    "riscore",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_Valley",
+   "cpu": 1,
+   "memory": 62,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

@@ -1,0 +1,45 @@
+{
+ "site_id": "h34zir_230413",
+ "site_name": "iltwmy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Sun_valley_2",
+   "cpu": 31,
+   "memory": 26,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vibranium",
+   "cpu": 18,
+   "memory": 29,
+   "services": [
+    "sql2019",
+    "shs",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 1,
+   "memory": 25,
+   "services": [
+    "shs",
+    "ad",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Windows_7",
+   "cpu": 26,
+   "memory": 45,
+   "services": [
+    "iss",
+    "dpat"
+   ]
+  }
+ }
+}

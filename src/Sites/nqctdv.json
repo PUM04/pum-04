@@ -1,0 +1,59 @@
+{
+ "site_id": "hy9957_230413",
+ "site_name": "nqctdv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Daytona",
+   "cpu": 10,
+   "memory": 47,
+   "services": [
+    "ad",
+    "es",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 6,
+   "memory": 53,
+   "services": [
+    "shs",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Snowball",
+   "cpu": 11,
+   "memory": 6,
+   "services": [
+    "risapp",
+    "shs",
+    "uvclient",
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_4",
+   "cpu": 15,
+   "memory": 51,
+   "services": [
+    "wise",
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold_2",
+   "cpu": 3,
+   "memory": 34,
+   "services": [
+    "iss",
+    "risapp",
+    "wise",
+    "sql2019"
+   ]
+  }
+ }
+}

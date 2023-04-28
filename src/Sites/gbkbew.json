@@ -1,0 +1,71 @@
+{
+ "site_id": "h1ifcw_230413",
+ "site_name": "gbkbew",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Sparta",
+   "cpu": 3,
+   "memory": 55,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Millennium",
+   "cpu": 31,
+   "memory": 25,
+   "services": [
+    "es",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 20,
+   "memory": 3,
+   "services": [
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Threshold_2",
+   "cpu": 15,
+   "memory": 5,
+   "services": [
+    "riscore",
+    "haproxy",
+    "dpat",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Freestyle",
+   "cpu": 10,
+   "memory": 20,
+   "services": [
+    "uvclient",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Freestyle",
+   "cpu": 13,
+   "memory": 49,
+   "services": [
+    "risapp"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold_2",
+   "cpu": 15,
+   "memory": 32,
+   "services": [
+    "risapp"
+   ]
+  }
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "site_id": "ps45gp_230413",
+ "site_name": "vielum",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Emerald",
+   "cpu": 10,
+   "memory": 27,
+   "services": [
+    "es",
+    "dpat",
+    "uvclient",
+    "ad",
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Freestyle",
+   "cpu": 28,
+   "memory": 41,
+   "services": [
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 24,
+   "memory": 37,
+   "services": [
+    "es",
+    "haproxy",
+    "dpat"
+   ]
+  }
+ }
+}

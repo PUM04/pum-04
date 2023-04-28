@@ -1,0 +1,24 @@
+{
+ "site_id": "92009o_230413",
+ "site_name": "dncdlx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Memphis",
+   "cpu": 5,
+   "memory": 9,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 3,
+   "memory": 2,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "site_id": "5aik86_230413",
+ "site_name": "twkgtb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Emerald",
+   "cpu": 8,
+   "memory": 36,
+   "services": [
+    "es",
+    "haproxy",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Harmony",
+   "cpu": 13,
+   "memory": 48,
+   "services": [
+    "iss",
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 30,
+   "memory": 37,
+   "services": [
+    "ad",
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Memphis",
+   "cpu": 29,
+   "memory": 14,
+   "services": [
+    "es",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Harmony",
+   "cpu": 27,
+   "memory": 32,
+   "services": [
+    "uvcore",
+    "dpat",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_Valley",
+   "cpu": 14,
+   "memory": 58,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_NT_5.0",
+   "cpu": 19,
+   "memory": 3,
+   "services": [
+    "uvcore",
+    "risapp",
+    "es",
+    "ad"
+   ]
+  }
+ }
+}

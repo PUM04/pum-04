@@ -1,0 +1,16 @@
+{
+ "site_id": "790ddq_230413",
+ "site_name": "rwcvln",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Chicago",
+   "cpu": 27,
+   "memory": 46,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

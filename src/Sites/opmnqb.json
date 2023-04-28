@@ -1,0 +1,44 @@
+{
+ "site_id": "e332h4_230413",
+ "site_name": "opmnqb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Emerald",
+   "cpu": 19,
+   "memory": 24,
+   "services": [
+    "ad",
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_7",
+   "cpu": 4,
+   "memory": 61,
+   "services": [
+    "wise",
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold",
+   "cpu": 9,
+   "memory": 57,
+   "services": [
+    "risapp",
+    "uvclient",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_1",
+   "cpu": 7,
+   "memory": 27,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

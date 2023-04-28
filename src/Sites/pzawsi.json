@@ -1,0 +1,77 @@
+{
+ "site_id": "15k3hu_230413",
+ "site_name": "pzawsi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Freestyle",
+   "cpu": 10,
+   "memory": 17,
+   "services": [
+    "risapp",
+    "uvcore",
+    "shs",
+    "ids7",
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Freestyle",
+   "cpu": 14,
+   "memory": 32,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "ad",
+    "ids7"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_5",
+   "cpu": 10,
+   "memory": 63,
+   "services": [
+    "uvclient",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sun_valley_2",
+   "cpu": 16,
+   "memory": 61,
+   "services": [
+    "dpat",
+    "iss",
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 28,
+   "memory": 39,
+   "services": [
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_4",
+   "cpu": 14,
+   "memory": 44,
+   "services": [
+    "dpat",
+    "es",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_5",
+   "cpu": 28,
+   "memory": 18,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

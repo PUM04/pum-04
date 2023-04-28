@@ -1,0 +1,58 @@
+{
+ "site_id": "15z2a6_230413",
+ "site_name": "rgbfeb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Millennium",
+   "cpu": 16,
+   "memory": 5,
+   "services": [
+    "wise",
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "risapp": {
+   "os": "Freestyle",
+   "cpu": 6,
+   "memory": 59,
+   "services": [
+    "uvcore",
+    "ids7",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Whistler",
+   "cpu": 30,
+   "memory": 63,
+   "services": [
+    "risapp",
+    "ids7",
+    "uvcore",
+    "es",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_3",
+   "cpu": 29,
+   "memory": 46,
+   "services": [
+    "iss",
+    "es",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 6,
+   "memory": 37,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

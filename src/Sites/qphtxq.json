@@ -1,0 +1,37 @@
+{
+ "site_id": "46wo1w_230413",
+ "site_name": "qphtxq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Sparta",
+   "cpu": 29,
+   "memory": 15,
+   "services": [
+    "ids7",
+    "sql2019",
+    "haproxy"
+   ]
+  },
+  "pacsapp": {
+   "os": "Longhorn",
+   "cpu": 17,
+   "memory": 30,
+   "services": [
+    "dpat",
+    "es",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 11,
+   "memory": 13,
+   "services": [
+    "haproxy",
+    "ids7"
+   ]
+  }
+ }
+}

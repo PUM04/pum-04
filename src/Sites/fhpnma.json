@@ -1,0 +1,53 @@
+{
+ "site_id": "qon6t1_230413",
+ "site_name": "fhpnma",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Anvil",
+   "cpu": 31,
+   "memory": 23,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Vanadium",
+   "cpu": 17,
+   "memory": 57,
+   "services": [
+    "shs",
+    "ids7",
+    "iss",
+    "risapp",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Blue",
+   "cpu": 26,
+   "memory": 50,
+   "services": [
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Sun_Valley",
+   "cpu": 3,
+   "memory": 33,
+   "services": [
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Longhorn",
+   "cpu": 6,
+   "memory": 47,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

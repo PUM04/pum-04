@@ -1,0 +1,50 @@
+{
+ "site_id": "fcweg7_230413",
+ "site_name": "meqlqp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Harmony",
+   "cpu": 7,
+   "memory": 16,
+   "services": [
+    "ad",
+    "uvclient",
+    "iss",
+    "dpat",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Anvil",
+   "cpu": 8,
+   "memory": 3,
+   "services": [
+    "haproxy",
+    "ids7",
+    "shs",
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_1",
+   "cpu": 8,
+   "memory": 28,
+   "services": [
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Symphony",
+   "cpu": 25,
+   "memory": 33,
+   "services": [
+    "uvclient",
+    "dpat",
+    "es",
+    "riscore"
+   ]
+  }
+ }
+}

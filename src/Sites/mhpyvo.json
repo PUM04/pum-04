@@ -1,0 +1,57 @@
+{
+ "site_id": "63gue3_230413",
+ "site_name": "mhpyvo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Redstone_2",
+   "cpu": 20,
+   "memory": 30,
+   "services": [
+    "sql2019",
+    "dpat",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Symphony",
+   "cpu": 9,
+   "memory": 52,
+   "services": [
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Blue",
+   "cpu": 11,
+   "memory": 38,
+   "services": [
+    "wise",
+    "haproxy",
+    "ids7",
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 17,
+   "memory": 38,
+   "services": [
+    "haproxy",
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Daytona",
+   "cpu": 4,
+   "memory": 33,
+   "services": [
+    "uvclient",
+    "ids7",
+    "haproxy"
+   ]
+  }
+ }
+}

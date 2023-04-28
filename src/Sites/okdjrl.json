@@ -1,0 +1,84 @@
+{
+ "site_id": "52rveb_230413",
+ "site_name": "okdjrl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Windows_7",
+   "cpu": 31,
+   "memory": 4,
+   "services": [
+    "ad",
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Harmony",
+   "cpu": 10,
+   "memory": 28,
+   "services": [
+    "shs",
+    "riscore",
+    "dpat",
+    "risapp",
+    "wise"
+   ]
+  },
+  "pacsapp": {
+   "os": "Razzle",
+   "cpu": 21,
+   "memory": 63,
+   "services": [
+    "ad",
+    "haproxy",
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_8",
+   "cpu": 17,
+   "memory": 34,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sun_Valley",
+   "cpu": 6,
+   "memory": 27,
+   "services": [
+    "uvcore",
+    "sql2019",
+    "iss",
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 3,
+   "memory": 49,
+   "services": [
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_4",
+   "cpu": 29,
+   "memory": 44,
+   "services": [
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Anvil",
+   "cpu": 21,
+   "memory": 33,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

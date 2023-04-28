@@ -1,0 +1,55 @@
+{
+ "site_id": "anumnx_230413",
+ "site_name": "tydtnr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Millennium",
+   "cpu": 3,
+   "memory": 34,
+   "services": [
+    "shs",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Snowball",
+   "cpu": 1,
+   "memory": 18,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "dpat",
+    "iss",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Emerald",
+   "cpu": 22,
+   "memory": 50,
+   "services": [
+    "wise"
+   ]
+  },
+  "sss": {
+   "os": "Sun_Valley",
+   "cpu": 18,
+   "memory": 44,
+   "services": [
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 25,
+   "memory": 16,
+   "services": [
+    "es",
+    "iss"
+   ]
+  }
+ }
+}

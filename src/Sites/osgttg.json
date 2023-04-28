@@ -1,0 +1,74 @@
+{
+ "site_id": "x12ngu_230413",
+ "site_name": "osgttg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 31,
+   "memory": 43,
+   "services": [
+    "ad",
+    "risapp",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Vanadium",
+   "cpu": 26,
+   "memory": 4,
+   "services": [
+    "sql2019",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_2",
+   "cpu": 6,
+   "memory": 3,
+   "services": [
+    "uvclient",
+    "risapp",
+    "shs",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 10,
+   "memory": 26,
+   "services": [
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 2,
+   "memory": 21,
+   "services": [
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Vibranium",
+   "cpu": 16,
+   "memory": 37,
+   "services": [
+    "wise",
+    "es",
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Blue",
+   "cpu": 16,
+   "memory": 13,
+   "services": [
+    "riscore",
+    "uvclient",
+    "es"
+   ]
+  }
+ }
+}

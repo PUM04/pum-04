@@ -1,0 +1,36 @@
+{
+ "site_id": "21ln4s_230413",
+ "site_name": "sqeiby",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Redstone_1",
+   "cpu": 24,
+   "memory": 42,
+   "services": [
+    "risapp",
+    "iss",
+    "ad"
+   ]
+  },
+  "sss": {
+   "os": "Freestyle",
+   "cpu": 6,
+   "memory": 19,
+   "services": [
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Windows_7",
+   "cpu": 27,
+   "memory": 14,
+   "services": [
+    "haproxy",
+    "es"
+   ]
+  }
+ }
+}

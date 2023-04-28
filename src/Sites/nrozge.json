@@ -1,0 +1,33 @@
+{
+ "site_id": "xnndzn_230413",
+ "site_name": "nrozge",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Longhorn",
+   "cpu": 22,
+   "memory": 4,
+   "services": [
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 26,
+   "memory": 21,
+   "services": [
+    "riscore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Harmony",
+   "cpu": 28,
+   "memory": 18,
+   "services": [
+    "ad",
+    "iss"
+   ]
+  }
+ }
+}

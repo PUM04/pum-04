@@ -1,0 +1,78 @@
+{
+ "site_id": "4p25nu_230413",
+ "site_name": "xhxqhi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Vibranium",
+   "cpu": 24,
+   "memory": 42,
+   "services": [
+    "haproxy",
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold",
+   "cpu": 7,
+   "memory": 20,
+   "services": [
+    "ids7",
+    "dpat",
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 25,
+   "memory": 42,
+   "services": [
+    "ids7",
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Sparta",
+   "cpu": 13,
+   "memory": 16,
+   "services": [
+    "riscore",
+    "ad",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 9,
+   "memory": 13,
+   "services": [
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_valley_2",
+   "cpu": 13,
+   "memory": 64,
+   "services": [
+    "dpat",
+    "es",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Longhorn",
+   "cpu": 28,
+   "memory": 50,
+   "services": [
+    "es",
+    "uvclient",
+    "ids7",
+    "sql2019",
+    "iss"
+   ]
+  }
+ }
+}

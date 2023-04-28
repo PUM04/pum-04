@@ -1,0 +1,85 @@
+{
+ "site_id": "43hdm6_230413",
+ "site_name": "lfmsae",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Snowball",
+   "cpu": 5,
+   "memory": 14,
+   "services": [
+    "sql2019",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_3",
+   "cpu": 9,
+   "memory": 64,
+   "services": [
+    "ad",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Snowball",
+   "cpu": 9,
+   "memory": 12,
+   "services": [
+    "uvclient",
+    "riscore",
+    "iss",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold_2",
+   "cpu": 32,
+   "memory": 3,
+   "services": [
+    "ids7",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Snowball",
+   "cpu": 10,
+   "memory": 60,
+   "services": [
+    "dpat",
+    "shs",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Memphis",
+   "cpu": 2,
+   "memory": 25,
+   "services": [
+    "iss",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 15,
+   "memory": 21,
+   "services": [
+    "ids7",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 20,
+   "memory": 14,
+   "services": [
+    "iss",
+    "ids7"
+   ]
+  }
+ }
+}

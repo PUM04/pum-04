@@ -1,0 +1,83 @@
+{
+ "site_id": "4070b8_230413",
+ "site_name": "bpfuvl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Emerald",
+   "cpu": 2,
+   "memory": 38,
+   "services": [
+    "wise",
+    "uvcore",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_2",
+   "cpu": 3,
+   "memory": 32,
+   "services": [
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Symphony",
+   "cpu": 26,
+   "memory": 46,
+   "services": [
+    "haproxy",
+    "uvclient",
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_3",
+   "cpu": 24,
+   "memory": 10,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Razzle",
+   "cpu": 1,
+   "memory": 15,
+   "services": [
+    "uvclient",
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_8",
+   "cpu": 19,
+   "memory": 9,
+   "services": [
+    "haproxy",
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 18,
+   "memory": 43,
+   "services": [
+    "dpat",
+    "uvclient",
+    "ad"
+   ]
+  },
+  "riscore": {
+   "os": "Razzle",
+   "cpu": 16,
+   "memory": 44,
+   "services": [
+    "wise",
+    "shs",
+    "haproxy"
+   ]
+  }
+ }
+}

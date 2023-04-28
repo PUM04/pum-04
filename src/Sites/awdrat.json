@@ -1,0 +1,55 @@
+{
+ "site_id": "9x5o24_230413",
+ "site_name": "awdrat",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Windows_NT_5.0",
+   "cpu": 16,
+   "memory": 17,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacsapp": {
+   "os": "Freestyle",
+   "cpu": 22,
+   "memory": 28,
+   "services": [
+    "wise",
+    "uvcore",
+    "es",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Vibranium",
+   "cpu": 22,
+   "memory": 57,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Anvil",
+   "cpu": 30,
+   "memory": 54,
+   "services": [
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Anvil",
+   "cpu": 10,
+   "memory": 30,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "haproxy"
+   ]
+  }
+ }
+}

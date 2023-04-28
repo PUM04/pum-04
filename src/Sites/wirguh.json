@@ -1,0 +1,63 @@
+{
+ "site_id": "blw4w1_230413",
+ "site_name": "wirguh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Threshold",
+   "cpu": 10,
+   "memory": 4,
+   "services": [
+    "risapp",
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Sun_Valley",
+   "cpu": 22,
+   "memory": 49,
+   "services": [
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Longhorn",
+   "cpu": 25,
+   "memory": 42,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Whistler",
+   "cpu": 27,
+   "memory": 48,
+   "services": [
+    "uvcore",
+    "dpat",
+    "iss"
+   ]
+  },
+  "es": {
+   "os": "Sun_Valley",
+   "cpu": 1,
+   "memory": 2,
+   "services": [
+    "ids7",
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_3",
+   "cpu": 12,
+   "memory": 62,
+   "services": [
+    "shs",
+    "uvclient",
+    "haproxy"
+   ]
+  }
+ }
+}

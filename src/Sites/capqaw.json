@@ -1,0 +1,67 @@
+{
+ "site_id": "wbyy6v_230413",
+ "site_name": "capqaw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Threshold",
+   "cpu": 14,
+   "memory": 50,
+   "services": [
+    "ids7",
+    "shs",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 9,
+   "memory": 49,
+   "services": [
+    "shs",
+    "wise",
+    "ids7",
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 28,
+   "memory": 46,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_NT_5.0",
+   "cpu": 5,
+   "memory": 46,
+   "services": [
+    "riscore"
+   ]
+  },
+  "lb": {
+   "os": "Freestyle",
+   "cpu": 6,
+   "memory": 38,
+   "services": [
+    "risapp",
+    "uvclient",
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Sun_valley_2",
+   "cpu": 27,
+   "memory": 52,
+   "services": [
+    "haproxy",
+    "risapp",
+    "uvclient",
+    "shs",
+    "dpat"
+   ]
+  }
+ }
+}

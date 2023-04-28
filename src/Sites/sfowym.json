@@ -1,0 +1,18 @@
+{
+ "site_id": "95vvor_230413",
+ "site_name": "sfowym",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Threshold_2",
+   "cpu": 4,
+   "memory": 15,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "dpat"
+   ]
+  }
+ }
+}

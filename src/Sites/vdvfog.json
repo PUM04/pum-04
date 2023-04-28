@@ -1,0 +1,70 @@
+{
+ "site_id": "21615m_230413",
+ "site_name": "vdvfog",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 15,
+   "memory": 59,
+   "services": [
+    "sql2019",
+    "risapp",
+    "dpat",
+    "wise"
+   ]
+  },
+  "es": {
+   "os": "Daytona",
+   "cpu": 8,
+   "memory": 57,
+   "services": [
+    "shs",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Longhorn",
+   "cpu": 28,
+   "memory": 38,
+   "services": [
+    "haproxy",
+    "ids7",
+    "ad",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_8",
+   "cpu": 30,
+   "memory": 32,
+   "services": [
+    "iss",
+    "dpat",
+    "es",
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 2,
+   "memory": 17,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold",
+   "cpu": 2,
+   "memory": 8,
+   "services": [
+    "riscore",
+    "es",
+    "iss",
+    "uvcore",
+    "shs"
+   ]
+  }
+ }
+}

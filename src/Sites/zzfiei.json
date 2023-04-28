@@ -1,0 +1,92 @@
+{
+ "site_id": "9mb8ep_230413",
+ "site_name": "zzfiei",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Redstone_3",
+   "cpu": 6,
+   "memory": 57,
+   "services": [
+    "uvcore",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Emerald",
+   "cpu": 6,
+   "memory": 7,
+   "services": [
+    "ids7",
+    "ad",
+    "wise",
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_Valley",
+   "cpu": 2,
+   "memory": 9,
+   "services": [
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Sparta",
+   "cpu": 3,
+   "memory": 56,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_7",
+   "cpu": 22,
+   "memory": 32,
+   "services": [
+    "iss",
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 9,
+   "memory": 9,
+   "services": [
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Windows_8",
+   "cpu": 13,
+   "memory": 10,
+   "services": [
+    "wise",
+    "iss",
+    "haproxy",
+    "risapp",
+    "shs"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_7",
+   "cpu": 20,
+   "memory": 14,
+   "services": [
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Sun_Valley",
+   "cpu": 7,
+   "memory": 7,
+   "services": [
+    "es",
+    "ad"
+   ]
+  }
+ }
+}

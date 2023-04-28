@@ -1,0 +1,40 @@
+{
+ "site_id": "q4g6c7_230413",
+ "site_name": "sfbvkk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Sparta",
+   "cpu": 29,
+   "memory": 56,
+   "services": [
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Razzle",
+   "cpu": 15,
+   "memory": 26,
+   "services": [
+    "haproxy",
+    "wise",
+    "uvclient",
+    "shs",
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_valley_2",
+   "cpu": 1,
+   "memory": 10,
+   "services": [
+    "riscore",
+    "shs",
+    "haproxy",
+    "ids7"
+   ]
+  }
+ }
+}

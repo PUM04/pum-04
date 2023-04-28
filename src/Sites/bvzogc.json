@@ -1,0 +1,44 @@
+{
+ "site_id": "365mmv_230413",
+ "site_name": "bvzogc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Redstone_5",
+   "cpu": 4,
+   "memory": 11,
+   "services": [
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 32,
+   "memory": 45,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Blue",
+   "cpu": 23,
+   "memory": 63,
+   "services": [
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_2",
+   "cpu": 26,
+   "memory": 59,
+   "services": [
+    "ad",
+    "uvcore",
+    "iss",
+    "ids7"
+   ]
+  }
+ }
+}

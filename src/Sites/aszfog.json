@@ -1,0 +1,51 @@
+{
+ "site_id": "9084ob_230413",
+ "site_name": "aszfog",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 4,
+   "memory": 11,
+   "services": [
+    "dpat",
+    "wise",
+    "risapp",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Daytona",
+   "cpu": 15,
+   "memory": 44,
+   "services": [
+    "risapp",
+    "uvcore",
+    "uvclient",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Sun_valley_2",
+   "cpu": 28,
+   "memory": 43,
+   "services": [
+    "shs",
+    "ids7",
+    "dpat",
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold_2",
+   "cpu": 11,
+   "memory": 59,
+   "services": [
+    "risapp",
+    "wise",
+    "es"
+   ]
+  }
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "site_id": "v4ug3k_230413",
+ "site_name": "cvnhpj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 3,
+   "memory": 24,
+   "services": [
+    "uvclient",
+    "sql2019",
+    "uvcore",
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 25,
+   "memory": 43,
+   "services": [
+    "riscore",
+    "sql2019",
+    "es",
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 29,
+   "memory": 26,
+   "services": [
+    "es",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Daytona",
+   "cpu": 24,
+   "memory": 7,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Memphis",
+   "cpu": 1,
+   "memory": 4,
+   "services": [
+    "ids7",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Millennium",
+   "cpu": 12,
+   "memory": 5,
+   "services": [
+    "wise"
+   ]
+  }
+ }
+}

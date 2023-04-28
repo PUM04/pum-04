@@ -1,0 +1,18 @@
+{
+ "site_id": "98sv40_230413",
+ "site_name": "lsgxob",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 6,
+   "memory": 32,
+   "services": [
+    "risapp",
+    "es",
+    "riscore"
+   ]
+  }
+ }
+}

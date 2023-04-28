@@ -1,0 +1,38 @@
+{
+ "site_id": "s1t87k_230413",
+ "site_name": "ptzzgw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Symphony",
+   "cpu": 25,
+   "memory": 16,
+   "services": [
+    "ids7",
+    "dpat",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_2",
+   "cpu": 31,
+   "memory": 11,
+   "services": [
+    "es",
+    "riscore"
+   ]
+  },
+  "sqlla": {
+   "os": "Freestyle",
+   "cpu": 4,
+   "memory": 53,
+   "services": [
+    "uvclient",
+    "iss",
+    "wise",
+    "riscore"
+   ]
+  }
+ }
+}

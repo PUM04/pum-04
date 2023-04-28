@@ -1,0 +1,96 @@
+{
+ "site_id": "yt508z_230413",
+ "site_name": "gkgcai",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Threshold_2",
+   "cpu": 30,
+   "memory": 8,
+   "services": [
+    "ids7",
+    "ad",
+    "sql2019",
+    "shs"
+   ]
+  },
+  "pacsapp": {
+   "os": "Snowball",
+   "cpu": 9,
+   "memory": 29,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_2",
+   "cpu": 27,
+   "memory": 51,
+   "services": [
+    "uvcore",
+    "uvclient",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_4",
+   "cpu": 17,
+   "memory": 48,
+   "services": [
+    "haproxy",
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold",
+   "cpu": 23,
+   "memory": 43,
+   "services": [
+    "haproxy",
+    "iss",
+    "wise",
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Razzle",
+   "cpu": 25,
+   "memory": 41,
+   "services": [
+    "es",
+    "ad",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_3",
+   "cpu": 14,
+   "memory": 8,
+   "services": [
+    "uvcore",
+    "wise",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Chicago",
+   "cpu": 3,
+   "memory": 23,
+   "services": [
+    "sql2019",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Redstone_4",
+   "cpu": 31,
+   "memory": 24,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

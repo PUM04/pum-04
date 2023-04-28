@@ -1,0 +1,73 @@
+{
+ "site_id": "09976w_230413",
+ "site_name": "lqpsqb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Snowball",
+   "cpu": 11,
+   "memory": 34,
+   "services": [
+    "shs",
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Memphis",
+   "cpu": 28,
+   "memory": 27,
+   "services": [
+    "iss",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Sun_Valley",
+   "cpu": 1,
+   "memory": 13,
+   "services": [
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 16,
+   "memory": 63,
+   "services": [
+    "ids7",
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Blue",
+   "cpu": 18,
+   "memory": 44,
+   "services": [
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 13,
+   "memory": 12,
+   "services": [
+    "risapp",
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Chicago",
+   "cpu": 22,
+   "memory": 13,
+   "services": [
+    "sql2019",
+    "es",
+    "dpat",
+    "uvcore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "site_id": "5kh2zd_230413",
+ "site_name": "dxfteq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Redstone_2",
+   "cpu": 17,
+   "memory": 17,
+   "services": [
+    "ids7",
+    "riscore"
+   ]
+  },
+  "lb": {
+   "os": "Threshold",
+   "cpu": 13,
+   "memory": 34,
+   "services": [
+    "ids7",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 16,
+   "memory": 56,
+   "services": [
+    "es",
+    "iss",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Freestyle",
+   "cpu": 24,
+   "memory": 39,
+   "services": [
+    "risapp",
+    "ids7",
+    "es"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_3",
+   "cpu": 16,
+   "memory": 1,
+   "services": [
+    "haproxy",
+    "es",
+    "dpat",
+    "shs",
+    "uvcore"
+   ]
+  }
+ }
+}

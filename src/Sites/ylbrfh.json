@@ -1,0 +1,105 @@
+{
+ "site_id": "0u7t8i_230413",
+ "site_name": "ylbrfh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Daytona",
+   "cpu": 9,
+   "memory": 7,
+   "services": [
+    "ids7",
+    "uvclient",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Memphis",
+   "cpu": 26,
+   "memory": 23,
+   "services": [
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 3,
+   "memory": 54,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "iss",
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Threshold_2",
+   "cpu": 11,
+   "memory": 13,
+   "services": [
+    "ad",
+    "wise",
+    "uvclient"
+   ]
+  },
+  "es": {
+   "os": "Vanadium",
+   "cpu": 12,
+   "memory": 56,
+   "services": [
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Longhorn",
+   "cpu": 32,
+   "memory": 33,
+   "services": [
+    "riscore",
+    "dpat",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_3",
+   "cpu": 14,
+   "memory": 37,
+   "services": [
+    "haproxy",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_Valley",
+   "cpu": 1,
+   "memory": 27,
+   "services": [
+    "uvcore",
+    "riscore",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_3",
+   "cpu": 24,
+   "memory": 36,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Freestyle",
+   "cpu": 4,
+   "memory": 52,
+   "services": [
+    "sql2019",
+    "dpat",
+    "haproxy"
+   ]
+  }
+ }
+}

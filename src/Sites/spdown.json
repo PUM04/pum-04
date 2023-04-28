@@ -1,0 +1,27 @@
+{
+ "site_id": "462t74_230413",
+ "site_name": "spdown",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Daytona",
+   "cpu": 20,
+   "memory": 58,
+   "services": [
+    "sql2019",
+    "shs",
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold",
+   "cpu": 27,
+   "memory": 25,
+   "services": [
+    "sql2019",
+    "uvcore"
+   ]
+  }
+ }
+}

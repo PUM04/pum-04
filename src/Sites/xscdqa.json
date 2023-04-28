@@ -1,0 +1,37 @@
+{
+ "site_id": "26e078_230413",
+ "site_name": "xscdqa",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 3,
+   "memory": 8,
+   "services": [
+    "wise",
+    "shs",
+    "uvclient",
+    "riscore",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Sun_Valley",
+   "cpu": 23,
+   "memory": 8,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Symphony",
+   "cpu": 10,
+   "memory": 2,
+   "services": [
+    "uvcore",
+    "wise"
+   ]
+  }
+ }
+}

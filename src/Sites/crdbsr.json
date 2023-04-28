@@ -1,0 +1,63 @@
+{
+ "site_id": "18dkx9_230413",
+ "site_name": "crdbsr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 11,
+   "memory": 4,
+   "services": [
+    "es",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Daytona",
+   "cpu": 30,
+   "memory": 2,
+   "services": [
+    "shs",
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Emerald",
+   "cpu": 21,
+   "memory": 50,
+   "services": [
+    "shs"
+   ]
+  },
+  "wisecllb": {
+   "os": "Blue",
+   "cpu": 12,
+   "memory": 11,
+   "services": [
+    "sql2019",
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "sss": {
+   "os": "Memphis",
+   "cpu": 24,
+   "memory": 57,
+   "services": [
+    "sql2019",
+    "shs",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "ad": {
+   "os": "Memphis",
+   "cpu": 26,
+   "memory": 48,
+   "services": [
+    "ids7"
+   ]
+  }
+ }
+}

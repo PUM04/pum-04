@@ -1,0 +1,26 @@
+{
+ "site_id": "5130ja_230413",
+ "site_name": "siqshp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Daytona",
+   "cpu": 20,
+   "memory": 43,
+   "services": [
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Whistler",
+   "cpu": 27,
+   "memory": 29,
+   "services": [
+    "riscore",
+    "uvcore",
+    "haproxy"
+   ]
+  }
+ }
+}

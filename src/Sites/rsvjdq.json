@@ -1,0 +1,19 @@
+{
+ "site_id": "4v668d_230413",
+ "site_name": "rsvjdq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Redstone_5",
+   "cpu": 1,
+   "memory": 49,
+   "services": [
+    "haproxy",
+    "iss",
+    "risapp",
+    "shs"
+   ]
+  }
+ }
+}

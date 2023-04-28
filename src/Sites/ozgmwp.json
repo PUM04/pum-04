@@ -1,0 +1,89 @@
+{
+ "site_id": "u0t7s6_230413",
+ "site_name": "ozgmwp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Redstone_3",
+   "cpu": 6,
+   "memory": 23,
+   "services": [
+    "ids7",
+    "es"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_2",
+   "cpu": 20,
+   "memory": 63,
+   "services": [
+    "ids7",
+    "shs",
+    "ad",
+    "haproxy",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Redstone_5",
+   "cpu": 29,
+   "memory": 6,
+   "services": [
+    "shs",
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 25,
+   "memory": 32,
+   "services": [
+    "uvclient",
+    "wise",
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Harmony",
+   "cpu": 12,
+   "memory": 13,
+   "services": [
+    "ad",
+    "riscore",
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 32,
+   "memory": 52,
+   "services": [
+    "iss",
+    "ad",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Daytona",
+   "cpu": 21,
+   "memory": 7,
+   "services": [
+    "wise",
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Razzle",
+   "cpu": 20,
+   "memory": 39,
+   "services": [
+    "shs",
+    "haproxy"
+   ]
+  }
+ }
+}

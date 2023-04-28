@@ -1,0 +1,18 @@
+{
+ "site_id": "h29o8u_230413",
+ "site_name": "qncxgg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Vanadium",
+   "cpu": 14,
+   "memory": 25,
+   "services": [
+    "iss",
+    "wise",
+    "riscore"
+   ]
+  }
+ }
+}

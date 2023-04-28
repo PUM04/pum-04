@@ -1,0 +1,61 @@
+{
+ "site_id": "312v53_230413",
+ "site_name": "jbbsvg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Sparta",
+   "cpu": 30,
+   "memory": 31,
+   "services": [
+    "iss"
+   ]
+  },
+  "iss": {
+   "os": "Sun_Valley",
+   "cpu": 18,
+   "memory": 13,
+   "services": [
+    "haproxy",
+    "iss",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Sparta",
+   "cpu": 1,
+   "memory": 58,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_4",
+   "cpu": 1,
+   "memory": 55,
+   "services": [
+    "iss",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 31,
+   "memory": 9,
+   "services": [
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Sparta",
+   "cpu": 31,
+   "memory": 60,
+   "services": [
+    "dpat",
+    "es"
+   ]
+  }
+ }
+}

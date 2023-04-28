@@ -1,0 +1,85 @@
+{
+ "site_id": "6i679q_230413",
+ "site_name": "ejeydt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Blue",
+   "cpu": 19,
+   "memory": 16,
+   "services": [
+    "dpat",
+    "uvcore",
+    "es",
+    "wise",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_4",
+   "cpu": 26,
+   "memory": 1,
+   "services": [
+    "uvclient",
+    "dpat",
+    "es",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_5",
+   "cpu": 9,
+   "memory": 20,
+   "services": [
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 26,
+   "memory": 36,
+   "services": [
+    "wise",
+    "es",
+    "riscore",
+    "ids7"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold",
+   "cpu": 19,
+   "memory": 57,
+   "services": [
+    "ids7"
+   ]
+  },
+  "iss": {
+   "os": "Emerald",
+   "cpu": 21,
+   "memory": 31,
+   "services": [
+    "sql2019",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Threshold_2",
+   "cpu": 17,
+   "memory": 61,
+   "services": [
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Anvil",
+   "cpu": 18,
+   "memory": 58,
+   "services": [
+    "riscore",
+    "risapp",
+    "wise"
+   ]
+  }
+ }
+}

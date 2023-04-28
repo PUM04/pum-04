@@ -1,0 +1,67 @@
+{
+ "site_id": "42771a_230413",
+ "site_name": "ukegre",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Threshold",
+   "cpu": 11,
+   "memory": 19,
+   "services": [
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Millennium",
+   "cpu": 32,
+   "memory": 5,
+   "services": [
+    "shs"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold",
+   "cpu": 28,
+   "memory": 52,
+   "services": [
+    "haproxy",
+    "ids7",
+    "wise",
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_4",
+   "cpu": 2,
+   "memory": 46,
+   "services": [
+    "riscore",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Vanadium",
+   "cpu": 27,
+   "memory": 62,
+   "services": [
+    "shs",
+    "es",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 20,
+   "memory": 49,
+   "services": [
+    "iss",
+    "riscore",
+    "uvclient",
+    "dpat"
+   ]
+  }
+ }
+}

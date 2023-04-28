@@ -1,0 +1,48 @@
+{
+ "site_id": "767387_230413",
+ "site_name": "joyaju",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Vanadium",
+   "cpu": 18,
+   "memory": 41,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "sql2019",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_3",
+   "cpu": 18,
+   "memory": 26,
+   "services": [
+    "ad",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_5",
+   "cpu": 18,
+   "memory": 52,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_valley_2",
+   "cpu": 27,
+   "memory": 18,
+   "services": [
+    "riscore",
+    "es",
+    "sql2019",
+    "ids7",
+    "uvcore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,68 @@
+{
+ "site_id": "wcc4zc_230413",
+ "site_name": "stisbu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Redstone_4",
+   "cpu": 17,
+   "memory": 38,
+   "services": [
+    "sql2019",
+    "es",
+    "shs",
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Harmony",
+   "cpu": 14,
+   "memory": 3,
+   "services": [
+    "dpat",
+    "ad",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Memphis",
+   "cpu": 30,
+   "memory": 8,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vibranium",
+   "cpu": 15,
+   "memory": 7,
+   "services": [
+    "iss",
+    "riscore",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Millennium",
+   "cpu": 31,
+   "memory": 36,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "ad",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Memphis",
+   "cpu": 22,
+   "memory": 61,
+   "services": [
+    "wise",
+    "uvclient"
+   ]
+  }
+ }
+}

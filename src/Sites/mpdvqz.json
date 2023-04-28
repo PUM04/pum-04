@@ -1,0 +1,62 @@
+{
+ "site_id": "024429_230413",
+ "site_name": "mpdvqz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Redstone_1",
+   "cpu": 29,
+   "memory": 4,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_3",
+   "cpu": 4,
+   "memory": 6,
+   "services": [
+    "uvcore",
+    "dpat",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Daytona",
+   "cpu": 9,
+   "memory": 9,
+   "services": [
+    "ad",
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Redstone_4",
+   "cpu": 3,
+   "memory": 56,
+   "services": [
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Sun_Valley",
+   "cpu": 1,
+   "memory": 39,
+   "services": [
+    "haproxy",
+    "iss",
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Anvil",
+   "cpu": 22,
+   "memory": 40,
+   "services": [
+    "ids7",
+    "sql2019"
+   ]
+  }
+ }
+}

@@ -1,0 +1,86 @@
+{
+ "site_id": "4yg0uz_230413",
+ "site_name": "drxaoi",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Longhorn",
+   "cpu": 28,
+   "memory": 24,
+   "services": [
+    "wise",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_Valley",
+   "cpu": 30,
+   "memory": 62,
+   "services": [
+    "uvcore",
+    "ad",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Whistler",
+   "cpu": 31,
+   "memory": 9,
+   "services": [
+    "wise",
+    "haproxy",
+    "ids7",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "ad": {
+   "os": "Longhorn",
+   "cpu": 12,
+   "memory": 64,
+   "services": [
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Razzle",
+   "cpu": 23,
+   "memory": 41,
+   "services": [
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold",
+   "cpu": 12,
+   "memory": 53,
+   "services": [
+    "ids7",
+    "ad",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 17,
+   "memory": 22,
+   "services": [
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_3",
+   "cpu": 1,
+   "memory": 26,
+   "services": [
+    "ad",
+    "wise",
+    "haproxy",
+    "uvcore",
+    "riscore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "site_id": "636mhd_230413",
+ "site_name": "unwpfm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Snowball",
+   "cpu": 3,
+   "memory": 20,
+   "services": [
+    "ad",
+    "wise",
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 12,
+   "memory": 32,
+   "services": [
+    "ad",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Symphony",
+   "cpu": 22,
+   "memory": 57,
+   "services": [
+    "haproxy",
+    "sql2019",
+    "riscore",
+    "uvcore"
+   ]
+  }
+ }
+}

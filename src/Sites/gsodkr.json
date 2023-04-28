@@ -1,0 +1,77 @@
+{
+ "site_id": "3wjog9_230413",
+ "site_name": "gsodkr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Sun_valley_2",
+   "cpu": 31,
+   "memory": 4,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 16,
+   "memory": 46,
+   "services": [
+    "uvcore",
+    "wise",
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Symphony",
+   "cpu": 14,
+   "memory": 39,
+   "services": [
+    "uvclient",
+    "es",
+    "wise",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vibranium",
+   "cpu": 32,
+   "memory": 42,
+   "services": [
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Emerald",
+   "cpu": 23,
+   "memory": 63,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Emerald",
+   "cpu": 17,
+   "memory": 35,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "ad",
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_5",
+   "cpu": 27,
+   "memory": 52,
+   "services": [
+    "es",
+    "dpat",
+    "uvclient",
+    "sql2019"
+   ]
+  }
+ }
+}

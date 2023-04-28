@@ -1,0 +1,59 @@
+{
+ "site_id": "055pn1_230413",
+ "site_name": "oazjvy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Windows_8",
+   "cpu": 15,
+   "memory": 22,
+   "services": [
+    "es",
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 23,
+   "memory": 64,
+   "services": [
+    "ad",
+    "iss",
+    "haproxy",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Redstone_4",
+   "cpu": 18,
+   "memory": 49,
+   "services": [
+    "riscore",
+    "risapp",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Memphis",
+   "cpu": 8,
+   "memory": 3,
+   "services": [
+    "wise",
+    "shs",
+    "dpat",
+    "risapp",
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Threshold",
+   "cpu": 21,
+   "memory": 43,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

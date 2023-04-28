@@ -1,0 +1,52 @@
+{
+ "site_id": "km90w9_230413",
+ "site_name": "oywmzr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Razzle",
+   "cpu": 1,
+   "memory": 57,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Sparta",
+   "cpu": 27,
+   "memory": 28,
+   "services": [
+    "iss",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_3",
+   "cpu": 29,
+   "memory": 53,
+   "services": [
+    "iss",
+    "haproxy",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Whistler",
+   "cpu": 9,
+   "memory": 46,
+   "services": [
+    "risapp"
+   ]
+  },
+  "pacscore": {
+   "os": "Chicago",
+   "cpu": 31,
+   "memory": 55,
+   "services": [
+    "ids7",
+    "shs"
+   ]
+  }
+ }
+}

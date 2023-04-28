@@ -1,0 +1,16 @@
+{
+ "site_id": "2ygr29_230413",
+ "site_name": "ztfegc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 26,
+   "memory": 10,
+   "services": [
+    "risapp"
+   ]
+  }
+ }
+}

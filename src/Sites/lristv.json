@@ -1,0 +1,97 @@
+{
+ "site_id": "c756p8_230413",
+ "site_name": "lristv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Vanadium",
+   "cpu": 2,
+   "memory": 41,
+   "services": [
+    "risapp"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 8,
+   "memory": 60,
+   "services": [
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Chicago",
+   "cpu": 11,
+   "memory": 38,
+   "services": [
+    "es",
+    "shs",
+    "haproxy",
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_1",
+   "cpu": 22,
+   "memory": 8,
+   "services": [
+    "es",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Vibranium",
+   "cpu": 23,
+   "memory": 62,
+   "services": [
+    "shs",
+    "dpat",
+    "wise",
+    "ids7",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 20,
+   "memory": 9,
+   "services": [
+    "shs",
+    "ad",
+    "es"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Emerald",
+   "cpu": 20,
+   "memory": 48,
+   "services": [
+    "ids7",
+    "risapp",
+    "iss",
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold_2",
+   "cpu": 5,
+   "memory": 16,
+   "services": [
+    "dpat",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_1",
+   "cpu": 30,
+   "memory": 35,
+   "services": [
+    "risapp",
+    "uvclient",
+    "sql2019"
+   ]
+  }
+ }
+}

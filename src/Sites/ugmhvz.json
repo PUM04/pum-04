@@ -1,0 +1,27 @@
+{
+ "site_id": "r1y913_230413",
+ "site_name": "ugmhvz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Threshold",
+   "cpu": 24,
+   "memory": 3,
+   "services": [
+    "haproxy",
+    "iss",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Harmony",
+   "cpu": 21,
+   "memory": 27,
+   "services": [
+    "risapp",
+    "ids7"
+   ]
+  }
+ }
+}

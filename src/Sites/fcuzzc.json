@@ -1,0 +1,76 @@
+{
+ "site_id": "t3j052_230413",
+ "site_name": "fcuzzc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Blue",
+   "cpu": 31,
+   "memory": 64,
+   "services": [
+    "riscore",
+    "risapp",
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Memphis",
+   "cpu": 17,
+   "memory": 51,
+   "services": [
+    "wise",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_2",
+   "cpu": 12,
+   "memory": 62,
+   "services": [
+    "es",
+    "sql2019",
+    "shs",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Anvil",
+   "cpu": 7,
+   "memory": 34,
+   "services": [
+    "uvcore",
+    "shs",
+    "sql2019"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_1",
+   "cpu": 18,
+   "memory": 3,
+   "services": [
+    "haproxy",
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "es": {
+   "os": "Emerald",
+   "cpu": 20,
+   "memory": 34,
+   "services": [
+    "shs",
+    "sql2019",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Emerald",
+   "cpu": 17,
+   "memory": 2,
+   "services": [
+    "risapp"
+   ]
+  }
+ }
+}

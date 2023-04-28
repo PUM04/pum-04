@@ -1,0 +1,19 @@
+{
+ "site_id": "t9gosm_230413",
+ "site_name": "vfkvby",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Windows_NT_5.0",
+   "cpu": 4,
+   "memory": 45,
+   "services": [
+    "shs",
+    "ids7",
+    "uvcore",
+    "iss"
+   ]
+  }
+ }
+}

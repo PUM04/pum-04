@@ -1,0 +1,19 @@
+{
+ "site_id": "g2201o_230413",
+ "site_name": "kogrsn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Whistler",
+   "cpu": 15,
+   "memory": 33,
+   "services": [
+    "es",
+    "uvclient",
+    "shs",
+    "iss"
+   ]
+  }
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "site_id": "njzdj4_230413",
+ "site_name": "ypllcj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Millennium",
+   "cpu": 17,
+   "memory": 36,
+   "services": [
+    "haproxy",
+    "riscore",
+    "ad",
+    "wise"
+   ]
+  }
+ }
+}

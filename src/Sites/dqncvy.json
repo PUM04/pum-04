@@ -1,0 +1,26 @@
+{
+ "site_id": "huav6x_230413",
+ "site_name": "dqncvy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Redstone_1",
+   "cpu": 17,
+   "memory": 24,
+   "services": [
+    "haproxy",
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sun_Valley",
+   "cpu": 31,
+   "memory": 33,
+   "services": [
+    "dpat"
+   ]
+  }
+ }
+}

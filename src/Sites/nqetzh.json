@@ -1,0 +1,26 @@
+{
+ "site_id": "3z9n3a_230413",
+ "site_name": "nqetzh",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Symphony",
+   "cpu": 26,
+   "memory": 26,
+   "services": [
+    "ad",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 23,
+   "memory": 4,
+   "services": [
+    "dpat",
+    "iss"
+   ]
+  }
+ }
+}

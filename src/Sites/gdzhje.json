@@ -1,0 +1,41 @@
+{
+ "site_id": "0g8442_230413",
+ "site_name": "gdzhje",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Symphony",
+   "cpu": 2,
+   "memory": 56,
+   "services": [
+    "dpat",
+    "wise",
+    "iss",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Blue",
+   "cpu": 20,
+   "memory": 21,
+   "services": [
+    "iss",
+    "uvcore",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Redstone_2",
+   "cpu": 4,
+   "memory": 47,
+   "services": [
+    "riscore",
+    "uvclient",
+    "uvcore",
+    "iss",
+    "ad"
+   ]
+  }
+ }
+}

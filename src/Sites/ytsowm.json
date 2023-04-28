@@ -1,0 +1,17 @@
+{
+ "site_id": "a25cce_230413",
+ "site_name": "ytsowm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Threshold",
+   "cpu": 30,
+   "memory": 46,
+   "services": [
+    "wise",
+    "haproxy"
+   ]
+  }
+ }
+}

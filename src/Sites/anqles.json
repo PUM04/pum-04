@@ -1,0 +1,37 @@
+{
+ "site_id": "w9rmdp_230413",
+ "site_name": "anqles",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Redstone_2",
+   "cpu": 19,
+   "memory": 42,
+   "services": [
+    "ad",
+    "uvcore",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "pacscore": {
+   "os": "Whistler",
+   "cpu": 23,
+   "memory": 13,
+   "services": [
+    "risapp"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_7",
+   "cpu": 11,
+   "memory": 47,
+   "services": [
+    "shs",
+    "uvclient",
+    "risapp"
+   ]
+  }
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "site_id": "n02yio_230413",
+ "site_name": "juoclp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Whistler",
+   "cpu": 26,
+   "memory": 56,
+   "services": [
+    "sql2019",
+    "uvcore",
+    "uvclient",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Chicago",
+   "cpu": 6,
+   "memory": 24,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

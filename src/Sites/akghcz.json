@@ -1,0 +1,88 @@
+{
+ "site_id": "5u62a0_230413",
+ "site_name": "akghcz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 15,
+   "memory": 64,
+   "services": [
+    "riscore",
+    "ids7",
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Snowball",
+   "cpu": 4,
+   "memory": 33,
+   "services": [
+    "ad",
+    "riscore"
+   ]
+  },
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 12,
+   "memory": 30,
+   "services": [
+    "ad",
+    "shs",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Whistler",
+   "cpu": 3,
+   "memory": 46,
+   "services": [
+    "iss",
+    "ad",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_4",
+   "cpu": 29,
+   "memory": 13,
+   "services": [
+    "risapp"
+   ]
+  },
+  "sqlla": {
+   "os": "Snowball",
+   "cpu": 5,
+   "memory": 59,
+   "services": [
+    "sql2019",
+    "uvcore",
+    "ad",
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Razzle",
+   "cpu": 19,
+   "memory": 49,
+   "services": [
+    "es",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "riscore": {
+   "os": "Razzle",
+   "cpu": 10,
+   "memory": 45,
+   "services": [
+    "ids7",
+    "es",
+    "ad"
+   ]
+  }
+ }
+}

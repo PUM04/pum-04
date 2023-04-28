@@ -1,0 +1,39 @@
+{
+ "site_id": "8clg6e_230413",
+ "site_name": "exnwdp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Anvil",
+   "cpu": 25,
+   "memory": 22,
+   "services": [
+    "uvcore",
+    "haproxy",
+    "risapp",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 6,
+   "memory": 35,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 5,
+   "memory": 59,
+   "services": [
+    "uvcore",
+    "shs",
+    "riscore",
+    "wise",
+    "ad"
+   ]
+  }
+ }
+}

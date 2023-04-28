@@ -1,0 +1,56 @@
+{
+ "site_id": "1w0d6z_230413",
+ "site_name": "xllxaf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Windows_8",
+   "cpu": 23,
+   "memory": 53,
+   "services": [
+    "uvcore",
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Snowball",
+   "cpu": 32,
+   "memory": 36,
+   "services": [
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Blue",
+   "cpu": 2,
+   "memory": 15,
+   "services": [
+    "wise",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Sparta",
+   "cpu": 6,
+   "memory": 31,
+   "services": [
+    "risapp",
+    "riscore",
+    "shs",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Windows_7",
+   "cpu": 9,
+   "memory": 52,
+   "services": [
+    "haproxy",
+    "ids7"
+   ]
+  }
+ }
+}

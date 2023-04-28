@@ -1,0 +1,67 @@
+{
+ "site_id": "ifowu0_230413",
+ "site_name": "dtnaah",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Chicago",
+   "cpu": 14,
+   "memory": 22,
+   "services": [
+    "es"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_3",
+   "cpu": 28,
+   "memory": 11,
+   "services": [
+    "es",
+    "ad",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Longhorn",
+   "cpu": 31,
+   "memory": 61,
+   "services": [
+    "sql2019",
+    "risapp",
+    "uvclient",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Freestyle",
+   "cpu": 13,
+   "memory": 13,
+   "services": [
+    "risapp",
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Anvil",
+   "cpu": 31,
+   "memory": 25,
+   "services": [
+    "riscore",
+    "uvclient",
+    "ids7",
+    "wise"
+   ]
+  },
+  "sqlla": {
+   "os": "Razzle",
+   "cpu": 21,
+   "memory": 16,
+   "services": [
+    "iss"
+   ]
+  }
+ }
+}

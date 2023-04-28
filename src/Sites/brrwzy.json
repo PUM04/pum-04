@@ -1,0 +1,64 @@
+{
+ "site_id": "9631c7_230413",
+ "site_name": "brrwzy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Emerald",
+   "cpu": 28,
+   "memory": 14,
+   "services": [
+    "wise",
+    "ad"
+   ]
+  },
+  "sqllb": {
+   "os": "Freestyle",
+   "cpu": 8,
+   "memory": 56,
+   "services": [
+    "wise",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 18,
+   "memory": 15,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 28,
+   "memory": 37,
+   "services": [
+    "haproxy",
+    "risapp",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 23,
+   "memory": 57,
+   "services": [
+    "shs",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Whistler",
+   "cpu": 25,
+   "memory": 6,
+   "services": [
+    "riscore",
+    "sql2019",
+    "wise",
+    "iss"
+   ]
+  }
+ }
+}

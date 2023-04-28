@@ -1,0 +1,50 @@
+{
+ "site_id": "655f48_230413",
+ "site_name": "kaudiu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Millennium",
+   "cpu": 6,
+   "memory": 6,
+   "services": [
+    "ids7",
+    "shs",
+    "wise",
+    "dpat",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Harmony",
+   "cpu": 1,
+   "memory": 46,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Threshold_2",
+   "cpu": 17,
+   "memory": 4,
+   "services": [
+    "iss",
+    "ids7",
+    "riscore",
+    "ad",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Sun_valley_2",
+   "cpu": 18,
+   "memory": 34,
+   "services": [
+    "risapp",
+    "shs",
+    "dpat"
+   ]
+  }
+ }
+}

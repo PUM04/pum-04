@@ -1,0 +1,29 @@
+{
+ "site_id": "7ngxjl_230413",
+ "site_name": "jfxyhr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Vibranium",
+   "cpu": 21,
+   "memory": 49,
+   "services": [
+    "sql2019",
+    "shs",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Longhorn",
+   "cpu": 21,
+   "memory": 64,
+   "services": [
+    "risapp",
+    "haproxy",
+    "iss"
+   ]
+  }
+ }
+}

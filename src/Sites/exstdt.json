@@ -1,0 +1,37 @@
+{
+ "site_id": "jv2i3o_230413",
+ "site_name": "exstdt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Blue",
+   "cpu": 4,
+   "memory": 59,
+   "services": [
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Snowball",
+   "cpu": 1,
+   "memory": 35,
+   "services": [
+    "uvcore",
+    "riscore",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Sparta",
+   "cpu": 22,
+   "memory": 37,
+   "services": [
+    "iss",
+    "ad",
+    "riscore"
+   ]
+  }
+ }
+}

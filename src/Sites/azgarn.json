@@ -1,0 +1,48 @@
+{
+ "site_id": "5f5dnv_230413",
+ "site_name": "azgarn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Symphony",
+   "cpu": 6,
+   "memory": 47,
+   "services": [
+    "sql2019",
+    "dpat",
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 28,
+   "memory": 29,
+   "services": [
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_4",
+   "cpu": 8,
+   "memory": 21,
+   "services": [
+    "ids7",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 26,
+   "memory": 27,
+   "services": [
+    "haproxy",
+    "ids7",
+    "risapp",
+    "uvcore"
+   ]
+  }
+ }
+}

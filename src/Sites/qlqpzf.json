@@ -1,0 +1,35 @@
+{
+ "site_id": "06q0rz_230413",
+ "site_name": "qlqpzf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 27,
+   "memory": 9,
+   "services": [
+    "ids7"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_7",
+   "cpu": 3,
+   "memory": 54,
+   "services": [
+    "wise",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 27,
+   "memory": 8,
+   "services": [
+    "sql2019",
+    "iss",
+    "haproxy"
+   ]
+  }
+ }
+}

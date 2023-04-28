@@ -1,0 +1,57 @@
+{
+ "site_id": "475w1i_230413",
+ "site_name": "kvozvw",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Snowball",
+   "cpu": 27,
+   "memory": 23,
+   "services": [
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "lb": {
+   "os": "Millennium",
+   "cpu": 28,
+   "memory": 8,
+   "services": [
+    "shs",
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_8",
+   "cpu": 32,
+   "memory": 45,
+   "services": [
+    "es",
+    "risapp",
+    "dpat",
+    "haproxy",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_3",
+   "cpu": 23,
+   "memory": 40,
+   "services": [
+    "haproxy",
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_1",
+   "cpu": 22,
+   "memory": 7,
+   "services": [
+    "sql2019",
+    "uvclient",
+    "es"
+   ]
+  }
+ }
+}

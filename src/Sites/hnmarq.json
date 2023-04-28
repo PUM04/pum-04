@@ -1,0 +1,46 @@
+{
+ "site_id": "d34294_230413",
+ "site_name": "hnmarq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Redstone_3",
+   "cpu": 30,
+   "memory": 23,
+   "services": [
+    "wise",
+    "risapp",
+    "dpat",
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vibranium",
+   "cpu": 27,
+   "memory": 56,
+   "services": [
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 10,
+   "memory": 52,
+   "services": [
+    "riscore",
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Snowball",
+   "cpu": 24,
+   "memory": 26,
+   "services": [
+    "iss"
+   ]
+  }
+ }
+}

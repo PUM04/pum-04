@@ -1,0 +1,55 @@
+{
+ "site_id": "1712pf_230413",
+ "site_name": "hptdbf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Anvil",
+   "cpu": 31,
+   "memory": 13,
+   "services": [
+    "ids7",
+    "shs",
+    "sql2019"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vanadium",
+   "cpu": 21,
+   "memory": 63,
+   "services": [
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_3",
+   "cpu": 6,
+   "memory": 23,
+   "services": [
+    "sql2019",
+    "es",
+    "dpat",
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Sparta",
+   "cpu": 23,
+   "memory": 38,
+   "services": [
+    "riscore",
+    "iss"
+   ]
+  },
+  "risapp": {
+   "os": "Windows_NT_5.0",
+   "cpu": 9,
+   "memory": 51,
+   "services": [
+    "es",
+    "risapp"
+   ]
+  }
+ }
+}

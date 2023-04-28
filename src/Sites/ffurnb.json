@@ -1,0 +1,61 @@
+{
+ "site_id": "6r9vh7_230413",
+ "site_name": "ffurnb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Anvil",
+   "cpu": 32,
+   "memory": 9,
+   "services": [
+    "ad",
+    "wise",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "sss": {
+   "os": "Blue",
+   "cpu": 15,
+   "memory": 4,
+   "services": [
+    "wise",
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Sparta",
+   "cpu": 6,
+   "memory": 22,
+   "services": [
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_3",
+   "cpu": 23,
+   "memory": 49,
+   "services": [
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Threshold",
+   "cpu": 26,
+   "memory": 5,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Chicago",
+   "cpu": 13,
+   "memory": 47,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

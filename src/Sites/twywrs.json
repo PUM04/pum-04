@@ -1,0 +1,107 @@
+{
+ "site_id": "2d8znt_230413",
+ "site_name": "twywrs",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Sparta",
+   "cpu": 8,
+   "memory": 38,
+   "services": [
+    "ad",
+    "shs",
+    "sql2019",
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Razzle",
+   "cpu": 21,
+   "memory": 43,
+   "services": [
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Memphis",
+   "cpu": 2,
+   "memory": 38,
+   "services": [
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Symphony",
+   "cpu": 18,
+   "memory": 42,
+   "services": [
+    "sql2019",
+    "es",
+    "ad"
+   ]
+  },
+  "sss": {
+   "os": "Symphony",
+   "cpu": 30,
+   "memory": 48,
+   "services": [
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Symphony",
+   "cpu": 27,
+   "memory": 28,
+   "services": [
+    "risapp",
+    "uvcore",
+    "ad",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_Valley",
+   "cpu": 25,
+   "memory": 53,
+   "services": [
+    "wise",
+    "shs",
+    "risapp",
+    "riscore"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_1",
+   "cpu": 7,
+   "memory": 7,
+   "services": [
+    "uvclient",
+    "shs"
+   ]
+  },
+  "lb": {
+   "os": "Symphony",
+   "cpu": 6,
+   "memory": 23,
+   "services": [
+    "wise",
+    "risapp",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_2",
+   "cpu": 12,
+   "memory": 32,
+   "services": [
+    "dpat",
+    "uvcore",
+    "uvclient",
+    "ids7"
+   ]
+  }
+ }
+}

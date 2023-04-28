@@ -1,0 +1,37 @@
+{
+ "site_id": "77n9bm_230413",
+ "site_name": "yopxab",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Windows_8",
+   "cpu": 3,
+   "memory": 16,
+   "services": [
+    "shs",
+    "ad",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 6,
+   "memory": 31,
+   "services": [
+    "riscore",
+    "wise",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Razzle",
+   "cpu": 25,
+   "memory": 46,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

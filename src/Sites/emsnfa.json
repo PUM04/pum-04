@@ -1,0 +1,90 @@
+{
+ "site_id": "q3pm21_230413",
+ "site_name": "emsnfa",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Whistler",
+   "cpu": 25,
+   "memory": 37,
+   "services": [
+    "ids7",
+    "wise",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_8",
+   "cpu": 15,
+   "memory": 64,
+   "services": [
+    "dpat",
+    "wise",
+    "ids7"
+   ]
+  },
+  "riscore": {
+   "os": "Symphony",
+   "cpu": 28,
+   "memory": 28,
+   "services": [
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 21,
+   "memory": 12,
+   "services": [
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Razzle",
+   "cpu": 30,
+   "memory": 31,
+   "services": [
+    "ad",
+    "haproxy",
+    "sql2019",
+    "dpat",
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Sparta",
+   "cpu": 32,
+   "memory": 50,
+   "services": [
+    "risapp",
+    "riscore",
+    "ad",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_5",
+   "cpu": 29,
+   "memory": 55,
+   "services": [
+    "shs",
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Windows_7",
+   "cpu": 28,
+   "memory": 27,
+   "services": [
+    "uvcore",
+    "wise",
+    "dpat",
+    "sql2019",
+    "ad"
+   ]
+  }
+ }
+}

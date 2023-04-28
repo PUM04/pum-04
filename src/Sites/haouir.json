@@ -1,0 +1,67 @@
+{
+ "site_id": "kaj0y5_230413",
+ "site_name": "haouir",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Redstone_1",
+   "cpu": 11,
+   "memory": 17,
+   "services": [
+    "riscore",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 21,
+   "memory": 63,
+   "services": [
+    "dpat",
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Razzle",
+   "cpu": 11,
+   "memory": 20,
+   "services": [
+    "haproxy",
+    "risapp",
+    "ad",
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 23,
+   "memory": 33,
+   "services": [
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Memphis",
+   "cpu": 10,
+   "memory": 15,
+   "services": [
+    "risapp",
+    "shs",
+    "ad"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Symphony",
+   "cpu": 23,
+   "memory": 8,
+   "services": [
+    "uvclient",
+    "iss",
+    "es",
+    "shs"
+   ]
+  }
+ }
+}

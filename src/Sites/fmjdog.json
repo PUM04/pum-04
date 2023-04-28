@@ -1,0 +1,81 @@
+{
+ "site_id": "o1bcqa_230413",
+ "site_name": "fmjdog",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Sun_Valley",
+   "cpu": 17,
+   "memory": 57,
+   "services": [
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "riscore": {
+   "os": "Threshold",
+   "cpu": 2,
+   "memory": 34,
+   "services": [
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Anvil",
+   "cpu": 3,
+   "memory": 10,
+   "services": [
+    "shs"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 25,
+   "memory": 55,
+   "services": [
+    "es",
+    "sql2019",
+    "riscore",
+    "shs"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vanadium",
+   "cpu": 28,
+   "memory": 56,
+   "services": [
+    "es",
+    "uvclient",
+    "riscore"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_3",
+   "cpu": 16,
+   "memory": 35,
+   "services": [
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 3,
+   "memory": 11,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Sun_Valley",
+   "cpu": 23,
+   "memory": 55,
+   "services": [
+    "iss",
+    "ad",
+    "uvclient",
+    "es"
+   ]
+  }
+ }
+}

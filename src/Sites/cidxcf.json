@@ -1,0 +1,64 @@
+{
+ "site_id": "h57r55_230413",
+ "site_name": "cidxcf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Emerald",
+   "cpu": 8,
+   "memory": 20,
+   "services": [
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Longhorn",
+   "cpu": 1,
+   "memory": 21,
+   "services": [
+    "dpat",
+    "haproxy",
+    "iss",
+    "sql2019"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_5",
+   "cpu": 25,
+   "memory": 51,
+   "services": [
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Blue",
+   "cpu": 16,
+   "memory": 36,
+   "services": [
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Anvil",
+   "cpu": 14,
+   "memory": 50,
+   "services": [
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Harmony",
+   "cpu": 19,
+   "memory": 37,
+   "services": [
+    "shs",
+    "dpat",
+    "iss",
+    "uvcore"
+   ]
+  }
+ }
+}

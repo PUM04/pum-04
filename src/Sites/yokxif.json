@@ -1,0 +1,57 @@
+{
+ "site_id": "x81423_230413",
+ "site_name": "yokxif",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Razzle",
+   "cpu": 22,
+   "memory": 24,
+   "services": [
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold",
+   "cpu": 21,
+   "memory": 33,
+   "services": [
+    "sql2019",
+    "iss",
+    "shs",
+    "wise"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_2",
+   "cpu": 29,
+   "memory": 13,
+   "services": [
+    "shs",
+    "uvcore",
+    "riscore",
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Chicago",
+   "cpu": 2,
+   "memory": 22,
+   "services": [
+    "dpat",
+    "ad",
+    "es",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Sparta",
+   "cpu": 12,
+   "memory": 57,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

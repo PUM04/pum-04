@@ -1,0 +1,87 @@
+{
+ "site_id": "b8o7z0_230413",
+ "site_name": "tygptu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Windows_NT_5.0",
+   "cpu": 25,
+   "memory": 20,
+   "services": [
+    "ad",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 20,
+   "memory": 63,
+   "services": [
+    "ids7",
+    "es",
+    "wise"
+   ]
+  },
+  "lb": {
+   "os": "Vanadium",
+   "cpu": 8,
+   "memory": 48,
+   "services": [
+    "shs",
+    "wise",
+    "uvcore"
+   ]
+  },
+  "risapp": {
+   "os": "Freestyle",
+   "cpu": 13,
+   "memory": 37,
+   "services": [
+    "es"
+   ]
+  },
+  "sss": {
+   "os": "Razzle",
+   "cpu": 4,
+   "memory": 35,
+   "services": [
+    "shs",
+    "es",
+    "risapp"
+   ]
+  },
+  "ad": {
+   "os": "Longhorn",
+   "cpu": 15,
+   "memory": 37,
+   "services": [
+    "ids7",
+    "es",
+    "ad",
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Memphis",
+   "cpu": 5,
+   "memory": 43,
+   "services": [
+    "risapp",
+    "wise",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Razzle",
+   "cpu": 21,
+   "memory": 45,
+   "services": [
+    "dpat",
+    "iss"
+   ]
+  }
+ }
+}

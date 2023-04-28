@@ -1,0 +1,87 @@
+{
+ "site_id": "h71h81_230413",
+ "site_name": "fomjmf",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Harmony",
+   "cpu": 15,
+   "memory": 26,
+   "services": [
+    "shs",
+    "risapp",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_1",
+   "cpu": 11,
+   "memory": 40,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Harmony",
+   "cpu": 5,
+   "memory": 40,
+   "services": [
+    "wise",
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Whistler",
+   "cpu": 9,
+   "memory": 35,
+   "services": [
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_4",
+   "cpu": 18,
+   "memory": 14,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "pacscore": {
+   "os": "Harmony",
+   "cpu": 21,
+   "memory": 35,
+   "services": [
+    "ids7",
+    "haproxy",
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_4",
+   "cpu": 30,
+   "memory": 61,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vanadium",
+   "cpu": 7,
+   "memory": 56,
+   "services": [
+    "ids7",
+    "sql2019",
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_NT_5.0",
+   "cpu": 10,
+   "memory": 28,
+   "services": [
+    "haproxy"
+   ]
+  }
+ }
+}

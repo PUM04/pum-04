@@ -1,0 +1,65 @@
+{
+ "site_id": "u4i652_230413",
+ "site_name": "bqnxjx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Longhorn",
+   "cpu": 16,
+   "memory": 41,
+   "services": [
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Windows_7",
+   "cpu": 6,
+   "memory": 38,
+   "services": [
+    "ad",
+    "ids7",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 9,
+   "memory": 25,
+   "services": [
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Daytona",
+   "cpu": 1,
+   "memory": 63,
+   "services": [
+    "uvclient",
+    "shs"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Memphis",
+   "cpu": 6,
+   "memory": 7,
+   "services": [
+    "dpat",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Razzle",
+   "cpu": 3,
+   "memory": 26,
+   "services": [
+    "wise",
+    "sql2019",
+    "risapp",
+    "dpat",
+    "es"
+   ]
+  }
+ }
+}

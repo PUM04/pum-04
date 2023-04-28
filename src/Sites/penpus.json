@@ -1,0 +1,19 @@
+{
+ "site_id": "9pf49z_230413",
+ "site_name": "penpus",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 30,
+   "memory": 35,
+   "services": [
+    "haproxy",
+    "sql2019",
+    "wise",
+    "riscore"
+   ]
+  }
+ }
+}

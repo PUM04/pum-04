@@ -1,0 +1,38 @@
+{
+ "site_id": "8qwle0_230413",
+ "site_name": "jaqbkm",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Vibranium",
+   "cpu": 31,
+   "memory": 51,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "es",
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_5",
+   "cpu": 29,
+   "memory": 32,
+   "services": [
+    "ad",
+    "ids7"
+   ]
+  },
+  "sss": {
+   "os": "Whistler",
+   "cpu": 10,
+   "memory": 40,
+   "services": [
+    "wise",
+    "iss",
+    "ids7"
+   ]
+  }
+ }
+}

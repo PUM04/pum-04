@@ -1,0 +1,117 @@
+{
+ "site_id": "3g2se6_230413",
+ "site_name": "hmybpo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 27,
+   "memory": 23,
+   "services": [
+    "riscore",
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Sparta",
+   "cpu": 2,
+   "memory": 15,
+   "services": [
+    "ad"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold_2",
+   "cpu": 4,
+   "memory": 43,
+   "services": [
+    "shs",
+    "es",
+    "riscore",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 10,
+   "memory": 50,
+   "services": [
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Daytona",
+   "cpu": 26,
+   "memory": 30,
+   "services": [
+    "ad",
+    "iss",
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_2",
+   "cpu": 31,
+   "memory": 26,
+   "services": [
+    "riscore",
+    "ad"
+   ]
+  },
+  "risapp": {
+   "os": "Sparta",
+   "cpu": 30,
+   "memory": 17,
+   "services": [
+    "haproxy",
+    "ids7",
+    "shs",
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Snowball",
+   "cpu": 16,
+   "memory": 9,
+   "services": [
+    "risapp",
+    "es",
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Emerald",
+   "cpu": 17,
+   "memory": 21,
+   "services": [
+    "shs",
+    "wise",
+    "iss"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Windows_NT_5.0",
+   "cpu": 11,
+   "memory": 59,
+   "services": [
+    "uvcore",
+    "iss",
+    "dpat"
+   ]
+  },
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 18,
+   "memory": 35,
+   "services": [
+    "es",
+    "wise",
+    "dpat",
+    "riscore"
+   ]
+  }
+ }
+}

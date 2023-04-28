@@ -1,0 +1,63 @@
+{
+ "site_id": "6g6h48_230413",
+ "site_name": "redjbc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Memphis",
+   "cpu": 13,
+   "memory": 13,
+   "services": [
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Anvil",
+   "cpu": 21,
+   "memory": 58,
+   "services": [
+    "uvcore",
+    "iss",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Windows_7",
+   "cpu": 18,
+   "memory": 50,
+   "services": [
+    "dpat"
+   ]
+  },
+  "sqllb": {
+   "os": "Longhorn",
+   "cpu": 20,
+   "memory": 61,
+   "services": [
+    "iss"
+   ]
+  },
+  "ad": {
+   "os": "Sun_valley_2",
+   "cpu": 32,
+   "memory": 7,
+   "services": [
+    "ad",
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold",
+   "cpu": 12,
+   "memory": 6,
+   "services": [
+    "wise",
+    "uvcore",
+    "iss",
+    "ids7"
+   ]
+  }
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "site_id": "9v5c1b_230413",
+ "site_name": "whgdaa",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Threshold_2",
+   "cpu": 4,
+   "memory": 39,
+   "services": [
+    "ad",
+    "iss"
+   ]
+  },
+  "es": {
+   "os": "Redstone_5",
+   "cpu": 16,
+   "memory": 40,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Razzle",
+   "cpu": 4,
+   "memory": 40,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "risapp"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_3",
+   "cpu": 4,
+   "memory": 24,
+   "services": [
+    "wise"
+   ]
+  },
+  "wiseclla": {
+   "os": "Millennium",
+   "cpu": 22,
+   "memory": 5,
+   "services": [
+    "dpat"
+   ]
+  }
+ }
+}

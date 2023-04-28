@@ -1,0 +1,43 @@
+{
+ "site_id": "uyd41p_230413",
+ "site_name": "awjmee",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Sparta",
+   "cpu": 1,
+   "memory": 57,
+   "services": [
+    "dpat",
+    "risapp",
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_4",
+   "cpu": 17,
+   "memory": 48,
+   "services": [
+    "sql2019",
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Windows_7",
+   "cpu": 32,
+   "memory": 56,
+   "services": [
+    "wise"
+   ]
+  },
+  "sqlla": {
+   "os": "Daytona",
+   "cpu": 24,
+   "memory": 26,
+   "services": [
+    "shs"
+   ]
+  }
+ }
+}

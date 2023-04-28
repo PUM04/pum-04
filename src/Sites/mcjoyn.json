@@ -1,0 +1,63 @@
+{
+ "site_id": "3ypf03_230413",
+ "site_name": "mcjoyn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Freestyle",
+   "cpu": 7,
+   "memory": 14,
+   "services": [
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 16,
+   "memory": 63,
+   "services": [
+    "ad",
+    "es",
+    "wise",
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Harmony",
+   "cpu": 30,
+   "memory": 7,
+   "services": [
+    "ids7",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Whistler",
+   "cpu": 19,
+   "memory": 52,
+   "services": [
+    "dpat",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold",
+   "cpu": 29,
+   "memory": 27,
+   "services": [
+    "ids7",
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Threshold",
+   "cpu": 32,
+   "memory": 8,
+   "services": [
+    "sql2019"
+   ]
+  }
+ }
+}

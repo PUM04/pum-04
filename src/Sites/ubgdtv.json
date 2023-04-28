@@ -1,0 +1,59 @@
+{
+ "site_id": "22b1s2_230413",
+ "site_name": "ubgdtv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Whistler",
+   "cpu": 25,
+   "memory": 58,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_1",
+   "cpu": 14,
+   "memory": 7,
+   "services": [
+    "iss",
+    "haproxy",
+    "wise",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 13,
+   "memory": 30,
+   "services": [
+    "ids7",
+    "wise",
+    "dpat",
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 14,
+   "memory": 4,
+   "services": [
+    "uvcore",
+    "risapp",
+    "wise",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Anvil",
+   "cpu": 21,
+   "memory": 29,
+   "services": [
+    "uvclient",
+    "iss",
+    "uvcore"
+   ]
+  }
+ }
+}

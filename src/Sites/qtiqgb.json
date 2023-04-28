@@ -1,0 +1,82 @@
+{
+ "site_id": "r666pz_230413",
+ "site_name": "qtiqgb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Redstone_5",
+   "cpu": 29,
+   "memory": 26,
+   "services": [
+    "haproxy",
+    "ids7",
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Symphony",
+   "cpu": 6,
+   "memory": 3,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "sqllb": {
+   "os": "Windows_8",
+   "cpu": 26,
+   "memory": 34,
+   "services": [
+    "ad",
+    "uvclient"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sun_Valley",
+   "cpu": 27,
+   "memory": 16,
+   "services": [
+    "es",
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_4",
+   "cpu": 15,
+   "memory": 34,
+   "services": [
+    "ids7",
+    "es",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 16,
+   "memory": 24,
+   "services": [
+    "es",
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Millennium",
+   "cpu": 32,
+   "memory": 44,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Whistler",
+   "cpu": 27,
+   "memory": 64,
+   "services": [
+    "riscore",
+    "es"
+   ]
+  }
+ }
+}

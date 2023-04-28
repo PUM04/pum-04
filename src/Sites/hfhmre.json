@@ -1,0 +1,54 @@
+{
+ "site_id": "km053b_230413",
+ "site_name": "hfhmre",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Sparta",
+   "cpu": 14,
+   "memory": 16,
+   "services": [
+    "dpat",
+    "shs"
+   ]
+  },
+  "ad": {
+   "os": "Windows_NT_5.0",
+   "cpu": 2,
+   "memory": 56,
+   "services": [
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "lb": {
+   "os": "Chicago",
+   "cpu": 3,
+   "memory": 24,
+   "services": [
+    "es",
+    "wise"
+   ]
+  },
+  "sqllb": {
+   "os": "Harmony",
+   "cpu": 17,
+   "memory": 52,
+   "services": [
+    "risapp",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_8",
+   "cpu": 14,
+   "memory": 1,
+   "services": [
+    "sql2019",
+    "riscore",
+    "ad"
+   ]
+  }
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "site_id": "qk38w3_230413",
+ "site_name": "bjpdlq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Threshold_2",
+   "cpu": 27,
+   "memory": 59,
+   "services": [
+    "dpat",
+    "es"
+   ]
+  },
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 21,
+   "memory": 14,
+   "services": [
+    "es",
+    "wise",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_2",
+   "cpu": 1,
+   "memory": 33,
+   "services": [
+    "es",
+    "ad"
+   ]
+  },
+  "pacscore": {
+   "os": "Blue",
+   "cpu": 1,
+   "memory": 24,
+   "services": [
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_5",
+   "cpu": 28,
+   "memory": 2,
+   "services": [
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 32,
+   "memory": 15,
+   "services": [
+    "dpat",
+    "ad",
+    "uvcore",
+    "shs",
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Whistler",
+   "cpu": 11,
+   "memory": 18,
+   "services": [
+    "haproxy",
+    "ids7",
+    "ad",
+    "iss",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_5",
+   "cpu": 17,
+   "memory": 63,
+   "services": [
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Sun_Valley",
+   "cpu": 22,
+   "memory": 28,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "site_id": "270bos_230413",
+ "site_name": "nmfodq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Snowball",
+   "cpu": 13,
+   "memory": 52,
+   "services": [
+    "shs"
+   ]
+  },
+  "riscore": {
+   "os": "Anvil",
+   "cpu": 21,
+   "memory": 31,
+   "services": [
+    "shs",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Anvil",
+   "cpu": 10,
+   "memory": 23,
+   "services": [
+    "riscore",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Memphis",
+   "cpu": 23,
+   "memory": 25,
+   "services": [
+    "haproxy",
+    "uvclient",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Daytona",
+   "cpu": 24,
+   "memory": 45,
+   "services": [
+    "dpat",
+    "wise",
+    "shs",
+    "uvcore"
+   ]
+  },
+  "sqllb": {
+   "os": "Daytona",
+   "cpu": 29,
+   "memory": 47,
+   "services": [
+    "wise",
+    "shs",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_4",
+   "cpu": 8,
+   "memory": 28,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

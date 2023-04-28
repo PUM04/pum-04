@@ -1,0 +1,38 @@
+{
+ "site_id": "4d4iz2_230413",
+ "site_name": "laoycb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Memphis",
+   "cpu": 32,
+   "memory": 38,
+   "services": [
+    "wise"
+   ]
+  },
+  "sss": {
+   "os": "Emerald",
+   "cpu": 8,
+   "memory": 41,
+   "services": [
+    "uvcore",
+    "iss",
+    "ids7"
+   ]
+  },
+  "risapp": {
+   "os": "Sun_Valley",
+   "cpu": 10,
+   "memory": 44,
+   "services": [
+    "risapp",
+    "iss",
+    "uvclient",
+    "es",
+    "haproxy"
+   ]
+  }
+ }
+}

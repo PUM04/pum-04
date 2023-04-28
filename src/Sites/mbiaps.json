@@ -1,0 +1,36 @@
+{
+ "site_id": "78o2d3_230413",
+ "site_name": "mbiaps",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Snowball",
+   "cpu": 10,
+   "memory": 44,
+   "services": [
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Sun_valley_2",
+   "cpu": 16,
+   "memory": 50,
+   "services": [
+    "sql2019",
+    "ad"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 31,
+   "memory": 46,
+   "services": [
+    "haproxy",
+    "iss",
+    "shs",
+    "uvclient"
+   ]
+  }
+ }
+}

@@ -1,0 +1,42 @@
+{
+ "site_id": "3c3okn_230413",
+ "site_name": "gmqdmd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Vibranium",
+   "cpu": 24,
+   "memory": 54,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Longhorn",
+   "cpu": 4,
+   "memory": 49,
+   "services": [
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_Valley",
+   "cpu": 22,
+   "memory": 41,
+   "services": [
+    "risapp",
+    "ad",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Blue",
+   "cpu": 19,
+   "memory": 53,
+   "services": [
+    "shs"
+   ]
+  }
+ }
+}

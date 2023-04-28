@@ -1,0 +1,29 @@
+{
+ "site_id": "7vd7p7_230413",
+ "site_name": "ykjggx",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Razzle",
+   "cpu": 15,
+   "memory": 5,
+   "services": [
+    "sql2019",
+    "dpat",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "sss": {
+   "os": "Windows_NT_5.0",
+   "cpu": 9,
+   "memory": 62,
+   "services": [
+    "sql2019",
+    "es",
+    "risapp"
+   ]
+  }
+ }
+}

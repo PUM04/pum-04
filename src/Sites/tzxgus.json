@@ -1,0 +1,75 @@
+{
+ "site_id": "9ar527_230413",
+ "site_name": "tzxgus",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Chicago",
+   "cpu": 2,
+   "memory": 55,
+   "services": [
+    "dpat",
+    "sql2019",
+    "haproxy",
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "es": {
+   "os": "Chicago",
+   "cpu": 13,
+   "memory": 22,
+   "services": [
+    "shs",
+    "risapp"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_5",
+   "cpu": 8,
+   "memory": 6,
+   "services": [
+    "sql2019",
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_1",
+   "cpu": 17,
+   "memory": 24,
+   "services": [
+    "es",
+    "uvclient",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_3",
+   "cpu": 15,
+   "memory": 17,
+   "services": [
+    "wise",
+    "iss",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 16,
+   "memory": 11,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "wisecllb": {
+   "os": "Blue",
+   "cpu": 24,
+   "memory": 21,
+   "services": [
+    "wise",
+    "shs"
+   ]
+  }
+ }
+}

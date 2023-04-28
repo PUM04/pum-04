@@ -1,0 +1,29 @@
+{
+ "site_id": "93j665_230413",
+ "site_name": "meemmq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Redstone_1",
+   "cpu": 20,
+   "memory": 9,
+   "services": [
+    "uvclient",
+    "risapp",
+    "riscore"
+   ]
+  },
+  "iss": {
+   "os": "Symphony",
+   "cpu": 24,
+   "memory": 48,
+   "services": [
+    "dpat",
+    "sql2019",
+    "risapp",
+    "riscore"
+   ]
+  }
+ }
+}

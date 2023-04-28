@@ -1,0 +1,69 @@
+{
+ "site_id": "u5y5il_230413",
+ "site_name": "ecmdgc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Redstone_5",
+   "cpu": 28,
+   "memory": 17,
+   "services": [
+    "sql2019",
+    "risapp",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Vanadium",
+   "cpu": 30,
+   "memory": 21,
+   "services": [
+    "risapp",
+    "riscore",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Threshold_2",
+   "cpu": 28,
+   "memory": 52,
+   "services": [
+    "es",
+    "shs"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_5",
+   "cpu": 21,
+   "memory": 63,
+   "services": [
+    "riscore",
+    "sql2019",
+    "dpat",
+    "shs",
+    "ad"
+   ]
+  },
+  "ad": {
+   "os": "Vanadium",
+   "cpu": 19,
+   "memory": 24,
+   "services": [
+    "sql2019",
+    "dpat"
+   ]
+  },
+  "sss": {
+   "os": "Symphony",
+   "cpu": 25,
+   "memory": 55,
+   "services": [
+    "es",
+    "uvcore",
+    "dpat",
+    "iss"
+   ]
+  }
+ }
+}

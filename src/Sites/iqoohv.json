@@ -1,0 +1,91 @@
+{
+ "site_id": "7o7px1_230413",
+ "site_name": "iqoohv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Harmony",
+   "cpu": 22,
+   "memory": 24,
+   "services": [
+    "riscore",
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 3,
+   "memory": 26,
+   "services": [
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Symphony",
+   "cpu": 19,
+   "memory": 28,
+   "services": [
+    "riscore",
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Daytona",
+   "cpu": 15,
+   "memory": 3,
+   "services": [
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Symphony",
+   "cpu": 19,
+   "memory": 39,
+   "services": [
+    "dpat",
+    "uvclient",
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Harmony",
+   "cpu": 13,
+   "memory": 64,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Blue",
+   "cpu": 13,
+   "memory": 8,
+   "services": [
+    "shs",
+    "risapp",
+    "uvclient"
+   ]
+  },
+  "riscore": {
+   "os": "Redstone_5",
+   "cpu": 17,
+   "memory": 16,
+   "services": [
+    "haproxy",
+    "uvcore",
+    "uvclient"
+   ]
+  },
+  "sqllb": {
+   "os": "Snowball",
+   "cpu": 17,
+   "memory": 64,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

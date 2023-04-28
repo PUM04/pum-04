@@ -1,0 +1,28 @@
+{
+ "site_id": "gt0bx9_230413",
+ "site_name": "hmzhpr",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Symphony",
+   "cpu": 29,
+   "memory": 39,
+   "services": [
+    "ad",
+    "ids7",
+    "es",
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Daytona",
+   "cpu": 21,
+   "memory": 47,
+   "services": [
+    "uvcore",
+    "wise"
+   ]
+  }
+ }
+}

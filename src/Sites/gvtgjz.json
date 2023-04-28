@@ -1,0 +1,74 @@
+{
+ "site_id": "9a5u3r_230413",
+ "site_name": "gvtgjz",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "riscore": {
+   "os": "Emerald",
+   "cpu": 25,
+   "memory": 16,
+   "services": [
+    "sql2019",
+    "riscore",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_8",
+   "cpu": 30,
+   "memory": 39,
+   "services": [
+    "ad"
+   ]
+  },
+  "sss": {
+   "os": "Sun_valley_2",
+   "cpu": 16,
+   "memory": 8,
+   "services": [
+    "dpat",
+    "shs",
+    "es",
+    "wise",
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Harmony",
+   "cpu": 23,
+   "memory": 50,
+   "services": [
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Snowball",
+   "cpu": 8,
+   "memory": 21,
+   "services": [
+    "risapp",
+    "riscore",
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Memphis",
+   "cpu": 20,
+   "memory": 59,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Anvil",
+   "cpu": 31,
+   "memory": 26,
+   "services": [
+    "iss",
+    "dpat",
+    "sql2019"
+   ]
+  }
+ }
+}

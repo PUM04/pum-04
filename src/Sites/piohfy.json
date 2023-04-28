@@ -1,0 +1,73 @@
+{
+ "site_id": "97lexa_230413",
+ "site_name": "piohfy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Sun_valley_2",
+   "cpu": 17,
+   "memory": 15,
+   "services": [
+    "sql2019",
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sparta",
+   "cpu": 22,
+   "memory": 29,
+   "services": [
+    "dpat"
+   ]
+  },
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 22,
+   "memory": 12,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Whistler",
+   "cpu": 3,
+   "memory": 5,
+   "services": [
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Redstone_5",
+   "cpu": 5,
+   "memory": 24,
+   "services": [
+    "dpat",
+    "uvclient",
+    "shs",
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Blue",
+   "cpu": 19,
+   "memory": 50,
+   "services": [
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Symphony",
+   "cpu": 12,
+   "memory": 26,
+   "services": [
+    "ids7",
+    "ad",
+    "es",
+    "dpat"
+   ]
+  }
+ }
+}

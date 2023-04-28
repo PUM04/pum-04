@@ -1,0 +1,77 @@
+{
+ "site_id": "n43824_230413",
+ "site_name": "udvqxj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Snowball",
+   "cpu": 25,
+   "memory": 7,
+   "services": [
+    "es",
+    "ids7",
+    "sql2019"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_2",
+   "cpu": 30,
+   "memory": 4,
+   "services": [
+    "sql2019",
+    "dpat",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Longhorn",
+   "cpu": 29,
+   "memory": 57,
+   "services": [
+    "haproxy",
+    "riscore",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Threshold",
+   "cpu": 24,
+   "memory": 48,
+   "services": [
+    "uvclient",
+    "iss",
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Memphis",
+   "cpu": 20,
+   "memory": 52,
+   "services": [
+    "es"
+   ]
+  },
+  "sqllb": {
+   "os": "Redstone_1",
+   "cpu": 28,
+   "memory": 34,
+   "services": [
+    "wise",
+    "ad",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Blue",
+   "cpu": 18,
+   "memory": 8,
+   "services": [
+    "ad",
+    "risapp",
+    "riscore"
+   ]
+  }
+ }
+}

@@ -1,0 +1,56 @@
+{
+ "site_id": "12xx45_230413",
+ "site_name": "wtvvfo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Symphony",
+   "cpu": 1,
+   "memory": 61,
+   "services": [
+    "riscore"
+   ]
+  },
+  "lb": {
+   "os": "Snowball",
+   "cpu": 15,
+   "memory": 18,
+   "services": [
+    "ad",
+    "riscore",
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Harmony",
+   "cpu": 27,
+   "memory": 16,
+   "services": [
+    "shs",
+    "ad",
+    "riscore"
+   ]
+  },
+  "sss": {
+   "os": "Blue",
+   "cpu": 9,
+   "memory": 7,
+   "services": [
+    "iss",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Razzle",
+   "cpu": 7,
+   "memory": 30,
+   "services": [
+    "uvcore",
+    "ids7",
+    "ad",
+    "shs"
+   ]
+  }
+ }
+}

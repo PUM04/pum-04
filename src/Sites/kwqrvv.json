@@ -1,0 +1,86 @@
+{
+ "site_id": "1c9t29_230413",
+ "site_name": "kwqrvv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Redstone_1",
+   "cpu": 12,
+   "memory": 55,
+   "services": [
+    "iss",
+    "ad",
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Daytona",
+   "cpu": 18,
+   "memory": 47,
+   "services": [
+    "risapp",
+    "sql2019",
+    "riscore",
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Emerald",
+   "cpu": 10,
+   "memory": 44,
+   "services": [
+    "wise",
+    "sql2019"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Razzle",
+   "cpu": 13,
+   "memory": 12,
+   "services": [
+    "shs",
+    "haproxy",
+    "wise",
+    "sql2019"
+   ]
+  },
+  "sss": {
+   "os": "Redstone_1",
+   "cpu": 32,
+   "memory": 12,
+   "services": [
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vanadium",
+   "cpu": 2,
+   "memory": 7,
+   "services": [
+    "risapp",
+    "uvclient",
+    "wise",
+    "dpat",
+    "riscore"
+   ]
+  },
+  "sqllb": {
+   "os": "Sun_valley_2",
+   "cpu": 2,
+   "memory": 39,
+   "services": [
+    "uvclient",
+    "es"
+   ]
+  },
+  "pacscore": {
+   "os": "Sparta",
+   "cpu": 18,
+   "memory": 13,
+   "services": [
+    "uvcore"
+   ]
+  }
+ }
+}

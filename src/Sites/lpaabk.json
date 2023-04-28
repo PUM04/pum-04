@@ -1,0 +1,18 @@
+{
+ "site_id": "2yz0rs_230413",
+ "site_name": "lpaabk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Redstone_1",
+   "cpu": 20,
+   "memory": 22,
+   "services": [
+    "riscore",
+    "wise",
+    "uvclient"
+   ]
+  }
+ }
+}

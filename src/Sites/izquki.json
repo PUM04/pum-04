@@ -1,0 +1,66 @@
+{
+ "site_id": "cmyu00_230413",
+ "site_name": "izquki",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Redstone_4",
+   "cpu": 16,
+   "memory": 23,
+   "services": [
+    "haproxy",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "risapp": {
+   "os": "Anvil",
+   "cpu": 1,
+   "memory": 11,
+   "services": [
+    "riscore",
+    "uvcore"
+   ]
+  },
+  "pacscore": {
+   "os": "Freestyle",
+   "cpu": 4,
+   "memory": 43,
+   "services": [
+    "ids7",
+    "uvcore",
+    "sql2019"
+   ]
+  },
+  "sqlla": {
+   "os": "Harmony",
+   "cpu": 11,
+   "memory": 22,
+   "services": [
+    "shs",
+    "uvclient",
+    "dpat"
+   ]
+  },
+  "es": {
+   "os": "Redstone_3",
+   "cpu": 19,
+   "memory": 13,
+   "services": [
+    "haproxy",
+    "es",
+    "shs",
+    "sql2019"
+   ]
+  },
+  "wisecllb": {
+   "os": "Symphony",
+   "cpu": 25,
+   "memory": 4,
+   "services": [
+    "ad"
+   ]
+  }
+ }
+}

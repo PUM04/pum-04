@@ -1,0 +1,46 @@
+{
+ "site_id": "haz53d_230413",
+ "site_name": "fpbhqv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Emerald",
+   "cpu": 28,
+   "memory": 61,
+   "services": [
+    "uvcore",
+    "iss",
+    "haproxy"
+   ]
+  },
+  "ad": {
+   "os": "Vibranium",
+   "cpu": 28,
+   "memory": 12,
+   "services": [
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vanadium",
+   "cpu": 13,
+   "memory": 63,
+   "services": [
+    "es"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vanadium",
+   "cpu": 5,
+   "memory": 32,
+   "services": [
+    "sql2019",
+    "iss",
+    "uvcore",
+    "haproxy"
+   ]
+  }
+ }
+}

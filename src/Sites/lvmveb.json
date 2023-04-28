@@ -1,0 +1,88 @@
+{
+ "site_id": "qi1i0m_230413",
+ "site_name": "lvmveb",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Threshold_2",
+   "cpu": 1,
+   "memory": 64,
+   "services": [
+    "sql2019",
+    "ad",
+    "uvcore",
+    "shs",
+    "wise"
+   ]
+  },
+  "iss": {
+   "os": "Razzle",
+   "cpu": 2,
+   "memory": 9,
+   "services": [
+    "shs",
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Chicago",
+   "cpu": 22,
+   "memory": 14,
+   "services": [
+    "es",
+    "shs"
+   ]
+  },
+  "risapp": {
+   "os": "Vibranium",
+   "cpu": 31,
+   "memory": 22,
+   "services": [
+    "haproxy",
+    "uvclient"
+   ]
+  },
+  "sqlla": {
+   "os": "Millennium",
+   "cpu": 7,
+   "memory": 33,
+   "services": [
+    "haproxy",
+    "sql2019",
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold_2",
+   "cpu": 8,
+   "memory": 2,
+   "services": [
+    "ids7",
+    "dpat",
+    "shs",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Daytona",
+   "cpu": 20,
+   "memory": 18,
+   "services": [
+    "riscore"
+   ]
+  },
+  "pacscore": {
+   "os": "Redstone_2",
+   "cpu": 31,
+   "memory": 10,
+   "services": [
+    "dpat",
+    "es",
+    "uvclient",
+    "shs"
+   ]
+  }
+ }
+}

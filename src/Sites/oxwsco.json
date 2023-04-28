@@ -1,0 +1,25 @@
+{
+ "site_id": "51epu5_230413",
+ "site_name": "oxwsco",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Freestyle",
+   "cpu": 21,
+   "memory": 1,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_NT_5.0",
+   "cpu": 31,
+   "memory": 13,
+   "services": [
+    "riscore",
+    "dpat"
+   ]
+  }
+ }
+}

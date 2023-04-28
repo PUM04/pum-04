@@ -1,0 +1,40 @@
+{
+ "site_id": "619831_230413",
+ "site_name": "njahqk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Windows_8",
+   "cpu": 10,
+   "memory": 37,
+   "services": [
+    "shs",
+    "uvclient",
+    "riscore",
+    "dpat",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Threshold_2",
+   "cpu": 22,
+   "memory": 48,
+   "services": [
+    "shs",
+    "uvclient",
+    "ids7",
+    "dpat"
+   ]
+  },
+  "ad": {
+   "os": "Windows_8",
+   "cpu": 21,
+   "memory": 19,
+   "services": [
+    "es",
+    "ids7"
+   ]
+  }
+ }
+}

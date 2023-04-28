@@ -1,0 +1,92 @@
+{
+ "site_id": "7n0366_230413",
+ "site_name": "kuseip",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Redstone_5",
+   "cpu": 3,
+   "memory": 40,
+   "services": [
+    "riscore",
+    "iss",
+    "dpat",
+    "sql2019"
+   ]
+  },
+  "iss": {
+   "os": "Blue",
+   "cpu": 2,
+   "memory": 48,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacscore": {
+   "os": "Vanadium",
+   "cpu": 13,
+   "memory": 48,
+   "services": [
+    "sql2019",
+    "risapp",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "sqllb": {
+   "os": "Memphis",
+   "cpu": 2,
+   "memory": 28,
+   "services": [
+    "dpat",
+    "uvcore",
+    "ids7",
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_3",
+   "cpu": 9,
+   "memory": 42,
+   "services": [
+    "es",
+    "ids7",
+    "haproxy"
+   ]
+  },
+  "risapp": {
+   "os": "Daytona",
+   "cpu": 24,
+   "memory": 9,
+   "services": [
+    "iss",
+    "haproxy",
+    "wise",
+    "ad"
+   ]
+  },
+  "es": {
+   "os": "Blue",
+   "cpu": 1,
+   "memory": 31,
+   "services": [
+    "es",
+    "iss",
+    "wise",
+    "dpat",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Sun_Valley",
+   "cpu": 9,
+   "memory": 8,
+   "services": [
+    "shs",
+    "iss",
+    "uvclient"
+   ]
+  }
+ }
+}

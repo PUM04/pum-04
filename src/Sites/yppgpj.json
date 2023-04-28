@@ -1,0 +1,29 @@
+{
+ "site_id": "1fr1np_230413",
+ "site_name": "yppgpj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Blue",
+   "cpu": 24,
+   "memory": 15,
+   "services": [
+    "ids7",
+    "iss",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Sparta",
+   "cpu": 12,
+   "memory": 2,
+   "services": [
+    "wise",
+    "uvcore",
+    "ad",
+    "es"
+   ]
+  }
+ }
+}

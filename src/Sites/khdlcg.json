@@ -1,0 +1,26 @@
+{
+ "site_id": "xi7qta_230413",
+ "site_name": "khdlcg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 29,
+   "memory": 56,
+   "services": [
+    "es",
+    "ad",
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Harmony",
+   "cpu": 7,
+   "memory": 19,
+   "services": [
+    "shs"
+   ]
+  }
+ }
+}

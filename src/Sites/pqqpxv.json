@@ -1,0 +1,62 @@
+{
+ "site_id": "4yssbp_230413",
+ "site_name": "pqqpxv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Anvil",
+   "cpu": 10,
+   "memory": 27,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Longhorn",
+   "cpu": 10,
+   "memory": 8,
+   "services": [
+    "sql2019",
+    "ad",
+    "uvcore"
+   ]
+  },
+  "sqlla": {
+   "os": "Redstone_4",
+   "cpu": 5,
+   "memory": 4,
+   "services": [
+    "iss",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_5",
+   "cpu": 19,
+   "memory": 44,
+   "services": [
+    "dpat",
+    "shs",
+    "wise",
+    "ad"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 12,
+   "memory": 15,
+   "services": [
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Daytona",
+   "cpu": 17,
+   "memory": 45,
+   "services": [
+    "dpat"
+   ]
+  }
+ }
+}

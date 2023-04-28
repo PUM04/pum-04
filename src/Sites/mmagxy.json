@@ -1,0 +1,41 @@
+{
+ "site_id": "2052t7_230413",
+ "site_name": "mmagxy",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Longhorn",
+   "cpu": 16,
+   "memory": 36,
+   "services": [
+    "uvclient",
+    "iss",
+    "dpat"
+   ]
+  },
+  "wisecllb": {
+   "os": "Threshold_2",
+   "cpu": 7,
+   "memory": 10,
+   "services": [
+    "dpat",
+    "uvcore",
+    "es",
+    "wise"
+   ]
+  },
+  "risapp": {
+   "os": "Memphis",
+   "cpu": 17,
+   "memory": 52,
+   "services": [
+    "iss",
+    "ad",
+    "ids7",
+    "wise",
+    "dpat"
+   ]
+  }
+ }
+}

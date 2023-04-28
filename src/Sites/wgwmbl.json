@@ -1,0 +1,72 @@
+{
+ "site_id": "g24o63_230413",
+ "site_name": "wgwmbl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Chicago",
+   "cpu": 21,
+   "memory": 21,
+   "services": [
+    "es",
+    "haproxy"
+   ]
+  },
+  "sqlla": {
+   "os": "Razzle",
+   "cpu": 4,
+   "memory": 3,
+   "services": [
+    "iss",
+    "uvcore",
+    "haproxy",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Anvil",
+   "cpu": 22,
+   "memory": 61,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Symphony",
+   "cpu": 2,
+   "memory": 38,
+   "services": [
+    "dpat",
+    "riscore",
+    "risapp",
+    "sql2019",
+    "wise"
+   ]
+  },
+  "ad": {
+   "os": "Sun_Valley",
+   "cpu": 30,
+   "memory": 58,
+   "services": [
+    "riscore",
+    "ids7",
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "iss": {
+   "os": "Threshold",
+   "cpu": 30,
+   "memory": 6,
+   "services": [
+    "wise",
+    "haproxy",
+    "ad",
+    "iss"
+   ]
+  }
+ }
+}

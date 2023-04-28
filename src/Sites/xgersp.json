@@ -1,0 +1,57 @@
+{
+ "site_id": "0x5b00_230413",
+ "site_name": "xgersp",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Threshold_2",
+   "cpu": 11,
+   "memory": 8,
+   "services": [
+    "wise",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Vibranium",
+   "cpu": 22,
+   "memory": 7,
+   "services": [
+    "haproxy",
+    "iss"
+   ]
+  },
+  "wisecllb": {
+   "os": "Windows_7",
+   "cpu": 5,
+   "memory": 15,
+   "services": [
+    "es",
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Vanadium",
+   "cpu": 7,
+   "memory": 10,
+   "services": [
+    "dpat",
+    "wise",
+    "uvclient",
+    "ids7"
+   ]
+  },
+  "ad": {
+   "os": "Harmony",
+   "cpu": 27,
+   "memory": 16,
+   "services": [
+    "ids7",
+    "uvcore",
+    "sql2019",
+    "dpat"
+   ]
+  }
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "site_id": "sd3583_230413",
+ "site_name": "ojrpnq",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sss": {
+   "os": "Sun_Valley",
+   "cpu": 21,
+   "memory": 52,
+   "services": [
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_4",
+   "cpu": 17,
+   "memory": 55,
+   "services": [
+    "riscore",
+    "iss",
+    "shs"
+   ]
+  },
+  "sqllb": {
+   "os": "Millennium",
+   "cpu": 2,
+   "memory": 21,
+   "services": [
+    "riscore",
+    "uvcore",
+    "risapp",
+    "dpat"
+   ]
+  },
+  "pacscore": {
+   "os": "Emerald",
+   "cpu": 21,
+   "memory": 12,
+   "services": [
+    "wise",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "iss": {
+   "os": "Vibranium",
+   "cpu": 9,
+   "memory": 31,
+   "services": [
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Harmony",
+   "cpu": 17,
+   "memory": 7,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "wiseclla": {
+   "os": "Daytona",
+   "cpu": 2,
+   "memory": 6,
+   "services": [
+    "wise",
+    "sql2019",
+    "uvclient"
+   ]
+  },
+  "risapp": {
+   "os": "Daytona",
+   "cpu": 3,
+   "memory": 63,
+   "services": [
+    "iss",
+    "wise",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Longhorn",
+   "cpu": 5,
+   "memory": 58,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

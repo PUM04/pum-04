@@ -1,0 +1,17 @@
+{
+ "site_id": "3h3qri_230413",
+ "site_name": "yyxrwc",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Redstone_1",
+   "cpu": 2,
+   "memory": 9,
+   "services": [
+    "ids7",
+    "iss"
+   ]
+  }
+ }
+}

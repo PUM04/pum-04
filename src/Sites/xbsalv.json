@@ -1,0 +1,74 @@
+{
+ "site_id": "8y7y53_230413",
+ "site_name": "xbsalv",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Whistler",
+   "cpu": 16,
+   "memory": 47,
+   "services": [
+    "risapp",
+    "uvcore",
+    "uvclient",
+    "sql2019"
+   ]
+  },
+  "lb": {
+   "os": "Memphis",
+   "cpu": 8,
+   "memory": 2,
+   "services": [
+    "risapp",
+    "wise",
+    "iss",
+    "sql2019",
+    "es"
+   ]
+  },
+  "es": {
+   "os": "Longhorn",
+   "cpu": 27,
+   "memory": 27,
+   "services": [
+    "uvcore",
+    "ad",
+    "uvclient",
+    "wise"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_valley_2",
+   "cpu": 9,
+   "memory": 13,
+   "services": [
+    "risapp",
+    "riscore",
+    "uvcore",
+    "dpat"
+   ]
+  },
+  "ad": {
+   "os": "Sun_valley_2",
+   "cpu": 11,
+   "memory": 49,
+   "services": [
+    "uvclient",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Redstone_3",
+   "cpu": 30,
+   "memory": 49,
+   "services": [
+    "dpat",
+    "wise",
+    "shs",
+    "uvclient"
+   ]
+  }
+ }
+}

@@ -1,0 +1,47 @@
+{
+ "site_id": "u37t9b_230413",
+ "site_name": "aqkdex",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 6,
+   "memory": 8,
+   "services": [
+    "uvcore"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_7",
+   "cpu": 17,
+   "memory": 63,
+   "services": [
+    "risapp",
+    "haproxy",
+    "wise",
+    "shs"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_1",
+   "cpu": 32,
+   "memory": 27,
+   "services": [
+    "shs",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Blue",
+   "cpu": 2,
+   "memory": 18,
+   "services": [
+    "riscore",
+    "ids7",
+    "haproxy",
+    "uvcore"
+   ]
+  }
+ }
+}

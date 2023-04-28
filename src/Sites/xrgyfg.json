@@ -1,0 +1,68 @@
+{
+ "site_id": "8sa0yp_230413",
+ "site_name": "xrgyfg",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Longhorn",
+   "cpu": 10,
+   "memory": 1,
+   "services": [
+    "sql2019",
+    "dpat",
+    "ad",
+    "iss",
+    "es"
+   ]
+  },
+  "lb": {
+   "os": "Emerald",
+   "cpu": 13,
+   "memory": 11,
+   "services": [
+    "dpat",
+    "risapp"
+   ]
+  },
+  "sss": {
+   "os": "Threshold",
+   "cpu": 31,
+   "memory": 8,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "wisecllb": {
+   "os": "Blue",
+   "cpu": 16,
+   "memory": 54,
+   "services": [
+    "ad",
+    "wise",
+    "uvcore",
+    "iss"
+   ]
+  },
+  "sqlla": {
+   "os": "Windows_7",
+   "cpu": 25,
+   "memory": 32,
+   "services": [
+    "shs",
+    "ad",
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Anvil",
+   "cpu": 24,
+   "memory": 38,
+   "services": [
+    "ad",
+    "dpat",
+    "uvcore"
+   ]
+  }
+ }
+}

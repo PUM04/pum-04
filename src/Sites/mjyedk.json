@@ -1,0 +1,51 @@
+{
+ "site_id": "lub47c_230413",
+ "site_name": "mjyedk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Vibranium",
+   "cpu": 19,
+   "memory": 16,
+   "services": [
+    "sql2019",
+    "iss"
+   ]
+  },
+  "lb": {
+   "os": "Freestyle",
+   "cpu": 29,
+   "memory": 45,
+   "services": [
+    "haproxy",
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Longhorn",
+   "cpu": 19,
+   "memory": 25,
+   "services": [
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_1",
+   "cpu": 32,
+   "memory": 17,
+   "services": [
+    "ad"
+   ]
+  },
+  "wiseclla": {
+   "os": "Windows_7",
+   "cpu": 22,
+   "memory": 5,
+   "services": [
+    "risapp",
+    "uvclient"
+   ]
+  }
+ }
+}

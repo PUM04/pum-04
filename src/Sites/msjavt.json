@@ -1,0 +1,69 @@
+{
+ "site_id": "z9uyl0_230413",
+ "site_name": "msjavt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wiseclla": {
+   "os": "Windows_NT_5.0",
+   "cpu": 31,
+   "memory": 7,
+   "services": [
+    "es",
+    "ad"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 23,
+   "memory": 57,
+   "services": [
+    "ad",
+    "shs",
+    "sql2019",
+    "uvcore"
+   ]
+  },
+  "ad": {
+   "os": "Symphony",
+   "cpu": 30,
+   "memory": 37,
+   "services": [
+    "wise",
+    "ad",
+    "dpat"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_8",
+   "cpu": 29,
+   "memory": 55,
+   "services": [
+    "dpat",
+    "uvcore",
+    "iss",
+    "risapp"
+   ]
+  },
+  "iss": {
+   "os": "Windows_7",
+   "cpu": 14,
+   "memory": 46,
+   "services": [
+    "ad",
+    "riscore",
+    "dpat"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vibranium",
+   "cpu": 13,
+   "memory": 10,
+   "services": [
+    "ids7",
+    "uvclient",
+    "sql2019"
+   ]
+  }
+ }
+}

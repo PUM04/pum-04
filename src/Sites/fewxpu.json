@@ -1,0 +1,66 @@
+{
+ "site_id": "t4810q_230413",
+ "site_name": "fewxpu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "es": {
+   "os": "Freestyle",
+   "cpu": 2,
+   "memory": 31,
+   "services": [
+    "ad",
+    "uvcore",
+    "dpat",
+    "uvclient",
+    "shs"
+   ]
+  },
+  "sss": {
+   "os": "Emerald",
+   "cpu": 26,
+   "memory": 42,
+   "services": [
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Harmony",
+   "cpu": 17,
+   "memory": 27,
+   "services": [
+    "risapp"
+   ]
+  },
+  "pacsapp": {
+   "os": "Windows_8",
+   "cpu": 12,
+   "memory": 43,
+   "services": [
+    "uvcore",
+    "es",
+    "ad",
+    "risapp"
+   ]
+  },
+  "pacscore": {
+   "os": "Anvil",
+   "cpu": 2,
+   "memory": 14,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "iss": {
+   "os": "Vibranium",
+   "cpu": 11,
+   "memory": 58,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "riscore",
+    "ids7"
+   ]
+  }
+ }
+}

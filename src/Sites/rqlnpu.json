@@ -1,0 +1,17 @@
+{
+ "site_id": "rz618v_230413",
+ "site_name": "rqlnpu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqlla": {
+   "os": "Longhorn",
+   "cpu": 7,
+   "memory": 24,
+   "services": [
+    "risapp",
+    "wise"
+   ]
+  }
+ }
+}

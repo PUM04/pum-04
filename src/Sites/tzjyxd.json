@@ -1,0 +1,56 @@
+{
+ "site_id": "wfl55t_230413",
+ "site_name": "tzjyxd",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Emerald",
+   "cpu": 29,
+   "memory": 64,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "riscore",
+    "risapp"
+   ]
+  },
+  "wisecllb": {
+   "os": "Razzle",
+   "cpu": 12,
+   "memory": 52,
+   "services": [
+    "es",
+    "wise",
+    "dpat"
+   ]
+  },
+  "sqlla": {
+   "os": "Symphony",
+   "cpu": 14,
+   "memory": 44,
+   "services": [
+    "haproxy"
+   ]
+  },
+  "lb": {
+   "os": "Redstone_2",
+   "cpu": 25,
+   "memory": 36,
+   "services": [
+    "iss"
+   ]
+  },
+  "es": {
+   "os": "Whistler",
+   "cpu": 30,
+   "memory": 55,
+   "services": [
+    "shs",
+    "riscore",
+    "iss",
+    "uvcore"
+   ]
+  }
+ }
+}

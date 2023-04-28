@@ -1,0 +1,54 @@
+{
+ "site_id": "h3di2s_230413",
+ "site_name": "yuqaem",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Redstone_5",
+   "cpu": 24,
+   "memory": 40,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "risapp",
+    "es",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Sparta",
+   "cpu": 19,
+   "memory": 38,
+   "services": [
+    "shs",
+    "ad",
+    "riscore"
+   ]
+  },
+  "wiseclla": {
+   "os": "Harmony",
+   "cpu": 4,
+   "memory": 22,
+   "services": [
+    "risapp"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Snowball",
+   "cpu": 12,
+   "memory": 19,
+   "services": [
+    "risapp"
+   ]
+  },
+  "es": {
+   "os": "Vanadium",
+   "cpu": 14,
+   "memory": 13,
+   "services": [
+    "iss"
+   ]
+  }
+ }
+}

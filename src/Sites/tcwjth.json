@@ -1,0 +1,35 @@
+{
+ "site_id": "90yw82_230413",
+ "site_name": "tcwjth",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Memphis",
+   "cpu": 19,
+   "memory": 16,
+   "services": [
+    "wise",
+    "sql2019"
+   ]
+  },
+  "pacsapp": {
+   "os": "Redstone_2",
+   "cpu": 5,
+   "memory": 64,
+   "services": [
+    "shs",
+    "iss",
+    "ids7"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_4",
+   "cpu": 2,
+   "memory": 3,
+   "services": [
+    "iss"
+   ]
+  }
+ }
+}

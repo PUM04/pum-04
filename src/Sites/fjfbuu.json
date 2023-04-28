@@ -1,0 +1,59 @@
+{
+ "site_id": "fm6y4z_230413",
+ "site_name": "fjfbuu",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Memphis",
+   "cpu": 4,
+   "memory": 38,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "ad",
+    "es",
+    "risapp"
+   ]
+  },
+  "wiseclla": {
+   "os": "Threshold_2",
+   "cpu": 31,
+   "memory": 44,
+   "services": [
+    "risapp",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Longhorn",
+   "cpu": 30,
+   "memory": 5,
+   "services": [
+    "uvcore",
+    "haproxy"
+   ]
+  },
+  "sqllb": {
+   "os": "Sparta",
+   "cpu": 8,
+   "memory": 1,
+   "services": [
+    "wise",
+    "sql2019",
+    "ids7"
+   ]
+  },
+  "sqlla": {
+   "os": "Vibranium",
+   "cpu": 15,
+   "memory": 55,
+   "services": [
+    "ids7",
+    "shs",
+    "uvcore",
+    "es"
+   ]
+  }
+ }
+}

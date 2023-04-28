@@ -1,0 +1,17 @@
+{
+ "site_id": "00nnqj_230413",
+ "site_name": "qocabk",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "sqllb": {
+   "os": "Emerald",
+   "cpu": 27,
+   "memory": 56,
+   "services": [
+    "uvclient",
+    "sql2019"
+   ]
+  }
+ }
+}

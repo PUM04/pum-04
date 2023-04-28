@@ -1,0 +1,46 @@
+{
+ "site_id": "m41m0r_230413",
+ "site_name": "djtoxn",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "lb": {
+   "os": "Vibranium",
+   "cpu": 25,
+   "memory": 20,
+   "services": [
+    "es",
+    "haproxy",
+    "iss"
+   ]
+  },
+  "pacsapp": {
+   "os": "Anvil",
+   "cpu": 22,
+   "memory": 22,
+   "services": [
+    "uvcore",
+    "shs",
+    "es"
+   ]
+  },
+  "ad": {
+   "os": "Vanadium",
+   "cpu": 5,
+   "memory": 52,
+   "services": [
+    "iss",
+    "wise"
+   ]
+  },
+  "wisecllb": {
+   "os": "Vibranium",
+   "cpu": 28,
+   "memory": 38,
+   "services": [
+    "riscore",
+    "haproxy"
+   ]
+  }
+ }
+}

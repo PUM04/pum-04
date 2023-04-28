@@ -1,0 +1,56 @@
+{
+ "site_id": "cheh7w_230413",
+ "site_name": "fjqann",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp2": {
+   "os": "Redstone_1",
+   "cpu": 12,
+   "memory": 40,
+   "services": [
+    "dpat"
+   ]
+  },
+  "iss": {
+   "os": "Symphony",
+   "cpu": 19,
+   "memory": 37,
+   "services": [
+    "dpat",
+    "uvclient",
+    "sql2019",
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_3",
+   "cpu": 27,
+   "memory": 23,
+   "services": [
+    "wise",
+    "uvcore",
+    "ids7"
+   ]
+  },
+  "pacscore": {
+   "os": "Symphony",
+   "cpu": 21,
+   "memory": 14,
+   "services": [
+    "uvcore",
+    "shs",
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Longhorn",
+   "cpu": 25,
+   "memory": 45,
+   "services": [
+    "riscore"
+   ]
+  }
+ }
+}

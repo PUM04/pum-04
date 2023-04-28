@@ -1,0 +1,38 @@
+{
+ "site_id": "6jk22z_230413",
+ "site_name": "hkbggl",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "iss": {
+   "os": "Sun_Valley",
+   "cpu": 4,
+   "memory": 44,
+   "services": [
+    "uvclient",
+    "uvcore",
+    "haproxy",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Redstone_2",
+   "cpu": 19,
+   "memory": 23,
+   "services": [
+    "ids7",
+    "wise",
+    "ad",
+    "dpat"
+   ]
+  },
+  "lb": {
+   "os": "Symphony",
+   "cpu": 15,
+   "memory": 57,
+   "services": [
+    "uvclient"
+   ]
+  }
+ }
+}

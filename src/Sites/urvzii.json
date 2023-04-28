@@ -1,0 +1,36 @@
+{
+ "site_id": "h5qf1s_230413",
+ "site_name": "urvzii",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "wisecllb": {
+   "os": "Freestyle",
+   "cpu": 21,
+   "memory": 22,
+   "services": [
+    "ids7",
+    "riscore"
+   ]
+  },
+  "ad": {
+   "os": "Redstone_1",
+   "cpu": 25,
+   "memory": 63,
+   "services": [
+    "iss",
+    "es",
+    "wise"
+   ]
+  },
+  "sss": {
+   "os": "Vibranium",
+   "cpu": 21,
+   "memory": 14,
+   "services": [
+    "es",
+    "uvclient"
+   ]
+  }
+ }
+}

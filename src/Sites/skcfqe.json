@@ -1,0 +1,74 @@
+{
+ "site_id": "8huxl3_230413",
+ "site_name": "skcfqe",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacscore": {
+   "os": "Windows_7",
+   "cpu": 27,
+   "memory": 1,
+   "services": [
+    "uvcore",
+    "riscore"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Blue",
+   "cpu": 16,
+   "memory": 44,
+   "services": [
+    "haproxy",
+    "shs",
+    "es",
+    "risapp",
+    "ids7"
+   ]
+  },
+  "wisecllb": {
+   "os": "Memphis",
+   "cpu": 8,
+   "memory": 13,
+   "services": [
+    "uvclient",
+    "haproxy",
+    "sql2019",
+    "riscore",
+    "iss"
+   ]
+  },
+  "sss": {
+   "os": "Windows_8",
+   "cpu": 23,
+   "memory": 25,
+   "services": [
+    "riscore",
+    "risapp",
+    "es",
+    "iss"
+   ]
+  },
+  "wiseclla": {
+   "os": "Redstone_3",
+   "cpu": 14,
+   "memory": 23,
+   "services": [
+    "wise",
+    "riscore",
+    "risapp",
+    "sql2019",
+    "shs"
+   ]
+  },
+  "es": {
+   "os": "Memphis",
+   "cpu": 15,
+   "memory": 8,
+   "services": [
+    "shs",
+    "dpat",
+    "uvclient"
+   ]
+  }
+ }
+}

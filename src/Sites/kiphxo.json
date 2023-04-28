@@ -1,0 +1,89 @@
+{
+ "site_id": "a85ety_230413",
+ "site_name": "kiphxo",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Vibranium",
+   "cpu": 12,
+   "memory": 7,
+   "services": [
+    "uvclient"
+   ]
+  },
+  "wiseclla": {
+   "os": "Sun_Valley",
+   "cpu": 19,
+   "memory": 62,
+   "services": [
+    "sql2019"
+   ]
+  },
+  "riscore": {
+   "os": "Windows_NT_5.0",
+   "cpu": 31,
+   "memory": 13,
+   "services": [
+    "uvcore",
+    "es"
+   ]
+  },
+  "iss": {
+   "os": "Daytona",
+   "cpu": 28,
+   "memory": 30,
+   "services": [
+    "shs",
+    "riscore"
+   ]
+  },
+  "risapp": {
+   "os": "Snowball",
+   "cpu": 15,
+   "memory": 32,
+   "services": [
+    "uvclient",
+    "uvcore"
+   ]
+  },
+  "lb": {
+   "os": "Vibranium",
+   "cpu": 30,
+   "memory": 8,
+   "services": [
+    "uvcore",
+    "ad",
+    "shs"
+   ]
+  },
+  "pacscore": {
+   "os": "Sun_Valley",
+   "cpu": 24,
+   "memory": 36,
+   "services": [
+    "risapp",
+    "haproxy"
+   ]
+  },
+  "es": {
+   "os": "Whistler",
+   "cpu": 12,
+   "memory": 27,
+   "services": [
+    "dpat",
+    "haproxy"
+   ]
+  },
+  "wisecllb": {
+   "os": "Daytona",
+   "cpu": 14,
+   "memory": 24,
+   "services": [
+    "wise",
+    "dpat",
+    "riscore"
+   ]
+  }
+ }
+}

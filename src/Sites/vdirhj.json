@@ -1,0 +1,28 @@
+{
+ "site_id": "32l557_230413",
+ "site_name": "vdirhj",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "risapp": {
+   "os": "Freestyle",
+   "cpu": 3,
+   "memory": 13,
+   "services": [
+    "haproxy",
+    "shs",
+    "ad"
+   ]
+  },
+  "iss": {
+   "os": "Redstone_1",
+   "cpu": 25,
+   "memory": 61,
+   "services": [
+    "dpat",
+    "sql2019",
+    "risapp"
+   ]
+  }
+ }
+}

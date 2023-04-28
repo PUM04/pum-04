@@ -1,0 +1,53 @@
+{
+ "site_id": "p7794i_230413",
+ "site_name": "tebctt",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "pacsapp": {
+   "os": "Sparta",
+   "cpu": 21,
+   "memory": 55,
+   "services": [
+    "wise"
+   ]
+  },
+  "riscore": {
+   "os": "Sun_Valley",
+   "cpu": 28,
+   "memory": 33,
+   "services": [
+    "shs",
+    "wise"
+   ]
+  },
+  "pacsapp2": {
+   "os": "Vibranium",
+   "cpu": 11,
+   "memory": 31,
+   "services": [
+    "ad",
+    "es",
+    "sql2019"
+   ]
+  },
+  "es": {
+   "os": "Sparta",
+   "cpu": 12,
+   "memory": 3,
+   "services": [
+    "risapp",
+    "shs"
+   ]
+  },
+  "wiseclla": {
+   "os": "Vanadium",
+   "cpu": 16,
+   "memory": 4,
+   "services": [
+    "haproxy",
+    "shs"
+   ]
+  }
+ }
+}
