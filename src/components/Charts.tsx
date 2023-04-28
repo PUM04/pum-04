@@ -14,7 +14,7 @@ import {
   VictoryCandlestick,
   VictoryLabel,
 } from 'victory';
-import { TextProps } from 'victory-core';
+import { ScaleName, TextProps } from 'victory-core';
 import { Site } from './SiteInterface';
 /**
  * Top level component.
@@ -380,44 +380,48 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   });
 
   return (
-    <VictoryChart
-      data-testid="victory-chart"
-      // this below is a start for the new
-      // horizontal
-      // height={500}//set this depending on the total amount of sites in buckets (ticks)
-    >
-      <VictoryAxis
-        dependentAxis
-        style={{
-          tickLabels: {
-            fontSize: 10,
-            stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
-          },
-          axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
-        }}
-      />
-      <VictoryAxis
-        style={{
-          tickLabels: {
-            padding: 20,
-            fontSize: 40 / metrics.length,
-            angle: 45,
-            // offset x-labels
-            stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
-          },
-          axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
-        }}
-        tickLabelComponent={<CustomTickLabelBoxPlot />}
-        tickFormat={(tick: any) => `${tick}`}
-      />
-
-      <VictoryGroup
-        offset={width + offsetPadding}
-        domainPadding={{ x: offsetPadding }}
+    <>
+      <p>HELLO</p>
+      <VictoryChart
+        data-testid="victory-chart"
+        // this below is a start for the new
+        // horizontal
+        // height={500}//set this depending on the total amount of sites in buckets (ticks)
+        {...getScaleProps()}
       >
-        {victoryCandles}
-      </VictoryGroup>
-    </VictoryChart>
+        <VictoryAxis
+          dependentAxis
+          style={{
+            tickLabels: {
+              fontSize: 10,
+              stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
+            },
+            axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
+          }}
+        />
+        <VictoryAxis
+          style={{
+            tickLabels: {
+              padding: 20,
+              fontSize: 40 / metrics.length,
+              angle: 45,
+              // offset x-labels
+              stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
+            },
+            axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
+          }}
+          tickLabelComponent={<CustomTickLabelBoxPlot />}
+          tickFormat={(tick: any) => `${tick}`}
+        />
+
+        <VictoryGroup
+          offset={width + offsetPadding}
+          domainPadding={{ x: offsetPadding }}
+        >
+          {victoryCandles}
+        </VictoryGroup>
+      </VictoryChart>
+    </>
   );
 }
 
@@ -472,6 +476,40 @@ function numberOfXvalues(histograms: Array<Histogram>): number {
   return uniqueXvalues;
 }
 
+enum ScaleTypes {
+  'Log',
+  'Linear',
+  'Percent',
+}
+let graphScaleType = ScaleTypes.Log; // change with a button somewhere else
+
+function getScaleProps() {
+  switch (graphScaleType) {
+    case ScaleTypes.Linear: {
+      return {
+        scale: { x: 'linear' as ScaleName, y: 'linear' as ScaleName }, // default is already this but to make the code more readable
+        minDomain: { y: 0 },
+      };
+    }
+    case ScaleTypes.Log: {
+      return {
+        scale: { x: 'linear' as ScaleName, y: 'log' as ScaleName },
+        minDomain: { y: 0.5 }, // default is y=0 but then the graph is wacky
+      };
+    }
+    case ScaleTypes.Percent: {
+      console.warn('TODO: NO PERCENT FUNCTION MADE!');
+      break;
+    }
+    default: {
+      console.warn('A type not supported was called!');
+      break;
+    }
+  }
+  // if something breaks return empty
+  return {};
+}
+
 /**
  *  drawHistogram draws a victoryChart containing 1..n bar charts.
  *
@@ -523,7 +561,7 @@ function drawHistogram(
           marginRight: '30%',
         }}
       />
-      <VictoryChart>
+      <VictoryChart {...getScaleProps()}>
         <VictoryAxis
           dependentAxis
           style={{
@@ -752,5 +790,18 @@ export function BarChart(props: ChartProps): JSX.Element {
     setBarGraphList(newBarGraphList);
   }, [fileHandler, metrics, siteProps, sites]);
 
-  return <div data-testid="barchart">{barGraphList}</div>;
+  return (
+  <>
+  <p>Hello</p>
+     <div data-testid="barchart">{barGraphList}</div>
+  </>);
+}
+
+function ScaleTypeButton(){
+  return (
+    <ButtonGroup variant="contained" aria-label="outlined primary button group">
+      <Button>One</Button>
+      <Button>Two</Button>
+      <Button>Three</Button>
+    </ButtonGroup>);
 }
