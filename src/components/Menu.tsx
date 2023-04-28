@@ -221,24 +221,24 @@ export default function Menu(props: MenuProps) {
     });
     setSiteProps(newMap);
   };
-    const minNavWidth = (window.outerWidth - drawerWidth)/window.outerWidth;
+  const minNavWidth = (window.outerWidth - drawerWidth) / window.outerWidth;
   return (
     <div className="App">
       <Box sx={{ display: 'fixed' }}>
-              <AppBar id="appbar"
-                  position="sticky"
-                  
-              sx={{
-                  ...(open ? {
-                      minWidth: minNavWidth,
-                  } :
-                      {
-                          minWidth: '100%',
-                      }    ),
-              }}
-              
-                  
-                  open={open}>
+        <AppBar
+          id="appbar"
+          position="sticky"
+          sx={{
+            ...(open
+              ? {
+                  minWidth: minNavWidth,
+                }
+              : {
+                  minWidth: '100%',
+                }),
+          }}
+          open={open}
+        >
           <DrawerHeader>
             <IconButton
               color="inherit"
@@ -254,8 +254,7 @@ export default function Menu(props: MenuProps) {
             >
               <MenuIcon />
             </IconButton>
-           <LegendBar siteProps={siteProps} />
-            
+            <LegendBar siteProps={siteProps} />
           </DrawerHeader>
         </AppBar>
         <Drawer
