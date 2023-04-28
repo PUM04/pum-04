@@ -155,12 +155,10 @@ function getCandleChartData( // rewrite this function
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   siteProps: Map<string, Site> // used later when structure for candlechart is known.
 ): CandleChart {
-
   let siteColor = siteProps.get(site)?.color;
-  if(!siteColor) siteColor = 'black';
+  if (!siteColor) siteColor = 'black';
 
-
-  const candle: CandleChart = { candles: [], color: siteColor};
+  const candle: CandleChart = { candles: [], color: siteColor };
   /**
    * Todo- At the moment this function only contains dummy data.
    * Implement code to get data from backend
@@ -220,7 +218,6 @@ function getCandleChartData( // rewrite this function
  * @returns a VictoryCandlestick .
  */
 function drawVictoryCandle(data: CandleChart, width: number): JSX.Element {
-  const color: string = 'blue';
   return (
     <VictoryCandlestick
       key={JSON.stringify(data.candles)}
@@ -232,8 +229,6 @@ function drawVictoryCandle(data: CandleChart, width: number): JSX.Element {
         \nopen:${datum.open}
         \nmean:${'30'}`
       }
-      
-     
       candleWidth={width}
       data={data.candles}
       style={{
@@ -674,10 +669,6 @@ function mergeXvalues(
     return barGraph;
   }
 
-  const maxXvalues:number = tooSmallWidth/graphWidth; // Max antal tillåtna xvärden
-  const currentXValues:number = numberOfXvalues(barGraph)// Hur många har vi
-  const mergeCount = currentXValues/maxXvalues;
-  
   const smallerHistogram = (mergeCount: number, oldHistogram: Histogram) => {
     const newHistogram: Histogram = new Histogram([]);
     oldHistogram.bars.forEach((bar, i) => {
@@ -707,7 +698,7 @@ function mergeXvalues(
     }
     loopCount += 1;
     mergeAmount += 1;
-    width = graphWidth / (numberOfXvalues(newBarGraph) * sites.length+c);
+    width = graphWidth / (numberOfXvalues(newBarGraph) * sites.length);
   }
 
   return newBarGraph;
