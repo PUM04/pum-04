@@ -50,8 +50,8 @@ export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
         <BoxPlotChart
           metrics={metrics}
           sites={getSiteIds()}
-          siteProps={siteProps}
           fileHandler={fileHandler}
+          siteProps={siteProps}
         />{' '}
       </Box>
     </Box>
@@ -92,14 +92,6 @@ export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
           sites={getSiteIds()}
           siteProps={siteProps}
           fileHandler={fileHandler}
-        />{' '}
-      </Box>
-      <Box>
-        <BoxPlotChart
-          metrics={metrics}
-          sites={getSiteIds()}
-          fileHandler={fileHandler}
-          siteProps={siteProps}
         />{' '}
       </Box>
     </Box>
