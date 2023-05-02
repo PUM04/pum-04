@@ -145,7 +145,7 @@ function getBarChartData(
  * @param siteProps map ecah siteKey to a color
  * @returns a data structure in correct format to paint a candleChart.
  */
-function getCandleChartData( // rewrite this function
+function getCandleChartData(
   metrics: Array<string>, // should be a metric array
   site: string,
   boxDiagramData: Map<string, string>,
@@ -153,12 +153,6 @@ function getCandleChartData( // rewrite this function
   siteProps: Map<string, Site> // used later when structure for candlechart is known.
 ): CandleChart {
   const candle: CandleChart = { candles: [] };
-  /**
-   * Todo- At the moment this function only contains dummy data.
-   * Implement code to get data from backend
-   * Make sure correct color is retrived from Legends component
-   *
-   */
 
   metrics.forEach((metric) => {
     const siteData = boxDiagramData.get(site);
