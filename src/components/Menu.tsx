@@ -19,6 +19,7 @@ import CHART_COLORS from './CHART_COLORS';
 import Dropdown from './Dropdown';
 import { Site } from './SiteInterface';
 import '../App.css';
+import { Button } from '@mui/material';
 
 const size = 75;
 const drawerWidth = 240;
@@ -146,6 +147,7 @@ export default function Menu(props: MenuProps) {
   const [oldFiles, setOldFiles] = useState<File[]>([]);
 
   const [sites, setSites] = useState<Site[]>([]);
+  const [combinedSites, setCombinedSites] = useState<any[]>([]);
   const [metrics, setMetrics] = useState<string[]>([]);
 
   const [selectedSites, setSelectedSites] = useState<Record<string, boolean>>(
@@ -188,6 +190,26 @@ export default function Menu(props: MenuProps) {
     });
     setMetricProps(newSelectedMetrics);
   };
+
+  const handleSelectedCombinedSites = (key:string,value:boolean)=>{
+    
+
+  }
+
+  const handleCombineSites = () => {
+    // const selectedSiteIds=[]
+    // for ( const key of Object.keys(selectedSites) ){
+    //   if ( selectedSites[key]) {
+    //     const siteId = Array.from(siteProps.values()).find((site)=>site.name===key)?.id
+    //     if(siteId)selectedSiteIds.push(key)
+    // }
+    const selectedSiteIds=Array.from(siteProps.values()).filter((site)=>selectedSites[site.name])
+
+
+    const newCombinedSites = fileHandler ? JSON.parse(fileHandler.CombineSites(selectedSiteIds)).sites : [];
+    setCombinedSites(newCombinedSites)
+    
+  }
 
   const handleSelectedSites = (key: string, value: boolean) => {
     selectedSites[key] = value;
@@ -281,18 +303,22 @@ export default function Menu(props: MenuProps) {
               left: 5,
               width: drawerWidth - 10,
             }}
-          >
+          > 
+            <Button onClick={handleCombineSites} >Combine</Button>
             <Dropdown
               dropdownName="Sites"
               value={sites.map((site) => site.name)}
               onSelected={handleSelectedSites}
-              setSiteProps={setSiteProps}
+            />
+            <Dropdown
+              dropdownName="Combined sites"
+              value={combinedSites}
+              onSelected={handleSelectedCombinedSites}
             />
             <Dropdown
               dropdownName="Metrics"
               value={metrics}
               onSelected={handleSelectedMetrics}
-              setSiteProps={setSiteProps}
             />
           </Paper>
           <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>

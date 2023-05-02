@@ -157,6 +157,7 @@ std::string FileHandler::GetBoxDiagram(std::string site_id) const
     return box_diagram.dump();
 }
 
+// TODO make it possible to call this with multiple sites
 void FileHandler::CalculateCategories(struct Site &site, json &categories) const
 {
     // Populate with the different categories
@@ -454,4 +455,16 @@ std::string FileHandler::GetMetrics() const
     metric_json["metrics"] = metrics;
 
     return metric_json.dump();
+}
+
+std::string CombineSites(std::vector &site_ids) const
+{
+    std:string combined_id = "combined_" + (combined_sites.size() + 1)
+    combinedSites.insert({combined_id, site_ids}); 
+
+    json combined_site_data;
+
+    combined_site_data["combined_sites"] = combined_sites;
+
+    return combined_site_data.dump();
 }
