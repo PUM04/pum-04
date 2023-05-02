@@ -34,6 +34,7 @@ interface ChartProps {
   sites: Array<string>;
   siteProps: Map<string, Site>;
   fileHandler: any;
+  getScaleProps: any;
 }
 
 /**
@@ -241,59 +242,6 @@ function drawVictoryCandle(data: Array<Candle>, width: number): JSX.Element {
   );
 }
 
-enum ScaleTypes {
-  'Log',
-  'Linear',
-  'Percent',
-}
-let graphScaleType = ScaleTypes.Log; // change with a button somewhere else
-
-/**
- * TODO
- * @returns
- */
-function getScaleProps() {
-  switch (graphScaleType) {
-    case ScaleTypes.Linear: {
-      return {
-        scale: { x: 'linear' as ScaleName, y: 'linear' as ScaleName }, // default is already this but to make the code more readable
-        minDomain: { y: 0 },
-      };
-    }
-    case ScaleTypes.Log: {
-      return {
-        scale: { x: 'linear' as ScaleName, y: 'log' as ScaleName },
-        minDomain: { y: 0.5 }, // default is y=0 but then the graph is wacky
-      };
-    }
-    case ScaleTypes.Percent: {
-      console.warn('TODO: NO PERCENT FUNCTION MADE!');
-      break;
-    }
-    default: {
-      console.warn('A type not supported was called!');
-      break;
-    }
-  }
-  // if something breaks return empty
-  return {};
-}
-
-/**
- * TODO:
- *
- * @returns A HTML element with three MUI buttons
- */
-function ScaleTypeButton(): JSX.Element {
-  return (
-    <ButtonGroup variant="contained" aria-label="outlined primary button group">
-      <Button onClick={graphScaleType=ScaleTypes.Linear}>Linear</Button>
-      <Button onClick={graphScaleType=ScaleTypes.Log}>Log</Button>
-      <Button>%</Button>
-    </ButtonGroup>
-  );
-}
-
 /**
  *
  * Tick for x axis used in barChart
@@ -413,11 +361,12 @@ function useBoxDiagrams(siteIds: string[], fileHandler: any) {
  * @returns A VictoryChart with an array of VictoryCandles.
  */
 export function BoxPlotChart(props: ChartProps): JSX.Element {
-  const { metrics, sites, siteProps, fileHandler } = props;
+  const { metrics, sites, siteProps, fileHandler, getScaleProps } = props;
   const width = 10;
   const offsetPadding = 5;
   const victoryCandles: Array<JSX.Element> = [];
   const boxDiagramData = useBoxDiagrams(sites, fileHandler);
+  // const [graphScaleTypeBox, setGraphScaleTypeBox] = useState(ScaleTypes);
 
   if (fileHandler === undefined) {
     return <div />;
@@ -434,50 +383,46 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
     );
     victoryCandles.push(drawVictoryCandle(data.candles, width));
   });
-
   return (
-    <>
-      {ScaleTypeButton()}
-      <VictoryChart
-        data-testid="victory-chart"
-        // this below is a start for the new
-        // horizontal
-        // height={500}//set this depending on the total amount of sites in buckets (ticks)
-        {...getScaleProps()}
-      >
-        <VictoryAxis
-          dependentAxis
-          style={{
-            tickLabels: {
-              fontSize: 10,
-              stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
-            },
-            axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
-          }}
-        />
-        <VictoryAxis
-          style={{
-            tickLabels: {
-              padding: 20,
-              fontSize: 40 / metrics.length,
-              angle: 45,
-              // offset x-labels
-              stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
-            },
-            axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
-          }}
-          tickLabelComponent={<CustomTickLabelBoxPlot />}
-          tickFormat={(tick: any) => `${tick}`}
-        />
+    <VictoryChart
+      data-testid="victory-chart"
+      // this below is a start for the new
+      // horizontal
+      // height={500}//set this depending on the total amount of sites in buckets (ticks)
+      {...getScaleProps()}
+    >
+      <VictoryAxis
+        dependentAxis
+        style={{
+          tickLabels: {
+            fontSize: 10,
+            stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
+          },
+          axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
+        }}
+      />
+      <VictoryAxis
+        style={{
+          tickLabels: {
+            padding: 20,
+            fontSize: 40 / metrics.length,
+            angle: 45,
+            // offset x-labels
+            stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
+          },
+          axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
+        }}
+        tickLabelComponent={<CustomTickLabelBoxPlot />}
+        tickFormat={(tick: any) => `${tick}`}
+      />
 
-        <VictoryGroup
-          offset={width + offsetPadding}
-          domainPadding={{ x: offsetPadding }}
-        >
-          {victoryCandles}
-        </VictoryGroup>
-      </VictoryChart>
-    </>
+      <VictoryGroup
+        offset={width + offsetPadding}
+        domainPadding={{ x: offsetPadding }}
+      >
+        {victoryCandles}
+      </VictoryGroup>
+    </VictoryChart>
   );
 }
 
@@ -532,8 +477,6 @@ function numberOfXvalues(histograms: Array<Histogram>): number {
   return uniqueXvalues;
 }
 
-
-
 /**
  *  drawHistogram draws a victoryChart containing 1..n bar charts.
  *
@@ -585,7 +528,9 @@ function drawHistogram(
           marginRight: '30%',
         }}
       />
-      <VictoryChart {...getScaleProps()}>
+      <VictoryChart 
+      {...getScaleProps()}
+      >
         <VictoryAxis
           dependentAxis
           style={{
@@ -784,6 +729,7 @@ export function BarChart(props: ChartProps): JSX.Element {
   const [barGraphList, setBarGraphList] = useState<any[]>([]);
 
   const histogramData = useHistograms(sites, fileHandler);
+  // const [graphScaleTypeBar, setGraphScaleTypeBar] = useState(ScaleTypes);
 
   // This does not effect the actual graph width,
   // width of BarChart is based on parent container
@@ -817,7 +763,6 @@ export function BarChart(props: ChartProps): JSX.Element {
 
   return (
     <>
-      {ScaleTypeButton()}
       <div data-testid="barchart">{barGraphList}</div>
     </>
   );
