@@ -17,6 +17,7 @@ RUN ./emsdk install latest
 RUN ./emsdk activate latest
 # Activate PATH and other environment variables in the current terminal
 RUN bash emsdk_env.sh
+RUN echo "source /emsdk/emsdk_env.sh" >>~/.bashrc
 
 WORKDIR /app
 
