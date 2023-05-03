@@ -16,6 +16,7 @@ import {
 } from 'victory';
 import { TextProps } from 'victory-core';
 import { Site } from './SiteInterface';
+import { FileHandler } from './FileHandler';
 /**
  * Top level component.
  *
@@ -30,7 +31,7 @@ interface ChartProps {
   metrics: Array<string>;
   sites: Array<string>;
   siteProps: Map<string, Site>;
-  fileHandler: any;
+  fileHandler: FileHandler;
 }
 
 /**
@@ -327,7 +328,7 @@ function CustomTickLabelBoxPlot(props: CustomTickLabelProps): JSX.Element {
  * @param fileHandler filehandler to get data from backend
  * @returns a map with siteId as key and the data as value
  */
-function useBoxDiagrams(siteIds: string[], fileHandler: any) {
+function useBoxDiagrams(siteIds: string[], fileHandler: FileHandler) {
   return useMemo(() => {
     const histograms: Map<string, string> = new Map();
     siteIds.forEach((id) =>
@@ -550,7 +551,7 @@ function drawHistogram(
  */
 function useHistograms(
   siteIds: string[],
-  fileHandler: any
+  fileHandler: FileHandler
 ): Map<string, string> {
   return useMemo(() => {
     const histograms: Map<string, string> = new Map();
