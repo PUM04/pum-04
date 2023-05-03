@@ -23,6 +23,7 @@ interface TabPanelProps {
   value: number;
 }
 
+const StyledContainer = styled('div')({ p: 2, padding: 0 });
 /**
  * This is the TabPanel "component". MUI does not have an off the shelf TabPanel to use.
  * This is the given source code by MUI for creating a TabPanel.
@@ -32,7 +33,7 @@ interface TabPanelProps {
  * and an index to tell the two rendern child components apart.
  * @returns a tabpanel to use in viewtabs.
  */
-const TabPanel = styled((props: TabPanelProps) => {
+function TabPanel(props: TabPanelProps) {
   const { children, value, index } = props;
 
   return (
@@ -43,10 +44,12 @@ const TabPanel = styled((props: TabPanelProps) => {
       data-testid={`tab-panel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
     >
-      {value === index && <Box sx={{ p: 2, padding: 0 }}>{children}</Box>}
+      <StyledContainer>
+        {value === index && <Box>{children}</Box>}
+      </StyledContainer>
     </div>
   );
-})<TabPanelProps>();
+}
 
 /**
  * This contains the ViewTabs component.
