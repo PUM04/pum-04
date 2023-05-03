@@ -7,7 +7,7 @@ export class FileHandler extends React.Component<any> {
    * @brief Get the histogram for a given site
    * @param site_id The site id
    */
-  GetHistogram(id: string): Map<string, string>;
+  GetHistogram(id: string): string;
   /**
    * @brief Get the box diagram for a given site
    * @param site_id The site id
