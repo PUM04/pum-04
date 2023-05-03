@@ -221,7 +221,7 @@ export default function Menu(props: MenuProps) {
     });
     setSiteProps(newMap);
   };
-  const minNavWidth = (window.outerWidth - drawerWidth) / window.outerWidth;
+  const minNavWidth = `calc(100% - ${drawerWidth}px)`;
   return (
     <div className="App">
       <Box sx={{ display: 'fixed' }}>
@@ -234,7 +234,7 @@ export default function Menu(props: MenuProps) {
                   minWidth: minNavWidth,
                 }
               : {
-                  minWidth: '100%',
+                  minWidth: '100vw',
                 }),
           }}
           open={open}
