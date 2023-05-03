@@ -65,7 +65,7 @@ function LegendBar(props: LegendBarProps) {
     <Box
       data-testid="legendBar-component"
       sx={{
-          display: 'flex',
+        display: 'flex',
         flexWrap: 'wrap',
         gap: '10px',
         padding: '8px',
