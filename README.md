@@ -151,12 +151,18 @@ Note that the script might need to be set as a runnable with
 chmod +x test_run.sh
 ```
 
-#### Run manually
-1. Navigate to the backend_test folder
-2. ```emcmake cmake .```
-3. ```emmake cmake --build .```
-4. Rename test_runner.js to test_runner.cjs (I'm looking for ways to circumvent this)
-5. ```node test_runner.cjs```
+## Generating code coverage for the backend
+To simply check the percentage of code run in file_handler.cpp just run the following command in the ```backend_test/``` folder. It also runs automatically in Git after every push. A bash shell and GCC/G++ is needed for the script.
+```bash
+./gcov_run.sh -git
+```
+To generate a full report, including data about specific functions and lines, LCOV must be installed on the system. It should be available in most package managers for both Linux and Mac. Once it is installed, run the following command:
+```bash
+./gcov_run.sh
+```
+Afterwards, navigate to the ```backend_test/res/``` folder and open ```index.html``` in a browser to see the full report.
+
+*Note*: This does not work with CMake hence whý the solution is hard coded. The scripts would need to be modified if new source files are added.
    
 ## Testing the frontend
 The tests run in GitHub Actions on each push to the repo.
