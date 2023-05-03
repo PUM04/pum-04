@@ -75,11 +75,17 @@ public:
      */
     std::string GetMetrics() const;
 
-    std::string CombineSites(std::vector<std::string> &site_ids) const;
+    /**
+    * @brief Combine the sites into one site.
+    *
+    * @param site_ids The ids of the sites to combine
+    * @return std::string The ids of all combined sites
+    */
+    std::string CombineSites(std::vector<std::string> &site_ids);
 
   private:
     std::unordered_map<std::string, struct Site> sites;
-    std::unordered_map<std::string, vector<std::string>> combinedSites;
+    std::unordered_map<std::string, std::vector<std::string>> combined_site_ids;
     std::vector<struct LoadedFile> host_files; 
     std::vector<struct LoadedFile> performance_files; 
     

@@ -240,5 +240,86 @@ TEST_CASE("FileHandler") {
         CHECK(info_box["hosts"] == 2);
     }
 
+    SUBCASE("Combine multiple sites") {
+        std::string performance1 =
+            "response_time_bucket{method=\"Test\",le=\"1\"} 1\n"
+            "response_time_bucket{method=\"Test1\",le=\"6\"} 1\n"
+            "response_time_bucket{method=\"Test2\",le=\"6\"} 1\n";
+
+        std::string performance1_name = "testid1_230102.txt";
+
+        std::string host1 =
+            "{\"site_name\": \"test1\", \"site_id\": \"testid1\"}";
+        std::string host1_name = "test.json";
+
+        fh->AddFile(performance1, performance1_name);
+        fh->AddFile(host1, host1_name);
+
+        std::string performance2 =
+            "response_time_bucket{method=\"Test\",le=\"1\"} 1\n"
+            "response_time_bucket{method=\"Test1\",le=\"6\"} 1\n"
+            "response_time_bucket{method=\"Test3\",le=\"6\"} 1\n";
+
+        std::string performance2_name = "testid2_230103.txt";
+
+        std::string host2 =
+            "{\"site_name\": \"test2\", \"site_id\": \"testid2\"}";
+        std::string host2_name = "test.json";
+
+        fh->AddFile(performance2, performance2_name);
+        fh->AddFile(host2, host2_name);
+
+        fh->ComputeFiles();
+
+        std::vector<std::string> site_ids = {"testid1", "testid2"};
+        json result = json::parse(fh->CombineSites(site_ids));
+        
+        CHECK(result["combined_sites"]["combined_1"].size() == 2);
+        CHECK(result["combined_sites"]["combined_1"][0] == "testid1");
+        CHECK(result["combined_sites"]["combined_1"][1] == "testid2");
+    }
+
+    SUBCASE("get combined site data") {
+        std::string performance1 =
+            "response_time_bucket{method=\"Test\",le=\"1\"} 1\n"
+            "response_time_bucket{method=\"Test1\",le=\"6\"} 1\n"
+            "response_time_bucket{method=\"Test2\",le=\"6\"} 1\n";
+
+        std::string performance1_name = "testid1_230102.txt";
+
+        std::string host1 =
+            "{\"site_name\": \"test1\", \"site_id\": \"testid1\"}";
+        std::string host1_name = "test.json";
+
+        fh->AddFile(performance1, performance1_name);
+        fh->AddFile(host1, host1_name);
+
+        std::string performance2 =
+            "response_time_bucket{method=\"Test\",le=\"1\"} 1\n"
+            "response_time_bucket{method=\"Test1\",le=\"6\"} 1\n"
+            "response_time_bucket{method=\"Test3\",le=\"6\"} 1\n";
+
+
+
+        std::string performance2_name = "testid2_230103.txt";
+
+        std::string host2 =
+            "{\"site_name\": \"test2\", \"site_id\": \"testid2\"}";
+        std::string host2_name = "test.json";
+
+        fh->AddFile(performance2, performance2_name);
+        fh->AddFile(host2, host2_name);
+
+        fh->ComputeFiles();
+
+        std::vector<std::string> site_ids = {"testid1", "testid2"};
+        fh->CombineSites(site_ids);
+
+        json result = json::parse(fh->GetHistogram("combined_1"));
+        std::cout << result.dump() << std::endl;
+
+        
+    }
+
     delete fh;
 }

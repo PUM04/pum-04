@@ -110,40 +110,62 @@ std::string FileHandler::GetInfoBox(std::string site_id) {
 }
 
 std::string FileHandler::GetHistogram(std::string site_id) const
-{
+{   
+    json categories;
     // Make sure the site exists
-    if (sites.find(site_id) == sites.end())
+    if (!(sites.find(site_id) == sites.end())){
+        struct Site site = sites.at(site_id);
+        CalculateCategories(site, categories);
+    }
+    else if(!(combined_site_ids.find(site_id) == combined_site_ids.end())) {
+        std::vector<std::string> site_ids = combined_site_ids.at(site_id);
+        
+        for (std::string id : site_ids){
+            struct Site site = sites.at(id);
+            std::cout << categories.dump() << std::endl;
+            CalculateCategories(site, categories);
+        }
+    }
+    else
     {
 #ifdef DEBUG
         std::cout << "Could not find site with id " << site_id << std::endl;
 #endif
         return "{}";
     }
-
-    struct Site site = sites.at(site_id);
-    json categories;
-
-    CalculateCategories(site, categories);
-
+    
     return categories.dump();
 }
 
 std::string FileHandler::GetBoxDiagram(std::string site_id) const
 {
+    //TODO break out duplicate code into function
+    //------------------------------------------
+    json categories;
+    json box_diagram;
     // Make sure the site exists
-    if (sites.find(site_id) == sites.end())
+    if (!(sites.find(site_id) == sites.end())){
+        struct Site site = sites.at(site_id);
+        CalculateCategories(site, categories);
+    }
+    else if(!(combined_site_ids.find(site_id) == combined_site_ids.end())) {
+        std::vector<std::string> site_ids = combined_site_ids.at(site_id);
+
+        
+        for (std::string id : site_ids){
+            struct Site site = sites.at(id);
+            CalculateCategories(site, categories);
+
+        }
+    }
+    else
     {
 #ifdef DEBUG
         std::cout << "Could not find site with id " << site_id << std::endl;
 #endif
         return "{}";
     }
-
-    struct Site site = sites.at(site_id);
-    json categories;
-    json box_diagram;
-
-    CalculateCategories(site, categories);
+    //------------------------------------------
 
     for (auto &el : categories.items())
     {
@@ -157,15 +179,17 @@ std::string FileHandler::GetBoxDiagram(std::string site_id) const
     return box_diagram.dump();
 }
 
-// TODO make it possible to call this with multiple sites
 void FileHandler::CalculateCategories(struct Site &site, json &categories) const
 {
-    // Populate with the different categories
+    // Populate with the different categories   
     for (json log : site.logs)
     {
         for (auto &el : log.items())
         {
-            categories[el.key()] = {};
+            std::cout << categories[el.key()] << ", " << categories[el.key()].is_object() << std::endl;
+            if(!categories[el.key()].is_object()){
+                categories[el.key()] = {};
+            }
         }
     }
 
@@ -253,10 +277,25 @@ int FileHandler::GetBoxMax(json &category) const
 
 void FileHandler::MergeCategory(struct Site &site, std::string key, json &result) const
 {
-    result[key] = {};
-    result[key]["total"] = 0;
-
     std::map<int, int> length_count;
+
+    if(!result[key].is_object()){
+        result[key] = {};
+        result[key]["total"] = 0;
+    }
+    else{
+        for(auto count_length_map : result[key]["data"]){
+            std::cout << count_length_map << " " << count_length_map.at("length") << " " << count_length_map.at("count") << std::endl;
+            length_count.insert({int(count_length_map.at("length")), int(count_length_map.at("count"))});
+            std::cout << "inserted" << std::endl;
+        }
+    }
+    
+    for(auto it = length_count.cbegin(); it != length_count.cend(); ++it)
+{
+    std::cout << it->first << " " << it->second << "\n" << std::endl;
+}
+    
 
     for (json log : site.logs)
     {
@@ -457,14 +496,14 @@ std::string FileHandler::GetMetrics() const
     return metric_json.dump();
 }
 
-std::string CombineSites(std::vector &site_ids) const
+std::string FileHandler::CombineSites(std::vector<std::string> &site_ids)
 {
-    std:string combined_id = "combined_" + (combined_sites.size() + 1)
-    combinedSites.insert({combined_id, site_ids}); 
+    std::string combined_id = "combined_" + std::to_string(combined_site_ids.size() + 1);    
+    combined_site_ids.insert({combined_id, site_ids}); 
 
     json combined_site_data;
 
-    combined_site_data["combined_sites"] = combined_sites;
+    combined_site_data["combined_sites"] = combined_site_ids;
 
     return combined_site_data.dump();
 }
