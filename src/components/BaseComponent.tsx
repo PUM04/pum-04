@@ -3,10 +3,10 @@
  */
 import Box from '@mui/material/Box';
 import React, { useEffect, useState } from 'react';
+import { List } from '@mui/material';
 import { BoxPlotChart, BarChart } from './Charts';
 import InfoBox from './InfoBox';
 import { Site } from './SiteInterface';
-import { List } from '@mui/material';
 
 interface GraphComponentProps {
   metrics: Array<string>;
@@ -106,14 +106,13 @@ export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
  */
 export function InfoboxContainer(props: InfoContainerProps): JSX.Element {
   const { siteProps, fileHandler } = props;
-  const [content, setContent] = useState<any[]>([]);
+  const [siteIds, setSiteIds] = useState<any[]>([]);
 
   useEffect(() => {
     const sites = Array.from(siteProps.keys()).filter(
       (key) => siteProps.get(key)?.enabled
     );
-    // console.log(sites);
-    setContent(sites);
+    setSiteIds(sites);
   }, [siteProps]);
   return (
     <Box
@@ -135,8 +134,8 @@ export function InfoboxContainer(props: InfoContainerProps): JSX.Element {
           flexWrap: 'wrap',
         }}
       >
-        {content.map((item) => (
-          <InfoBox siteId={item} fileHandler={fileHandler} />
+        {siteIds.map((id) => (
+          <InfoBox siteId={id} fileHandler={fileHandler} />
         ))}
       </List>
     </Box>
