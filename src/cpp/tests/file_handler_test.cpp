@@ -240,5 +240,49 @@ TEST_CASE("FileHandler") {
         CHECK(info_box["hosts"] == 2);
     }
 
+    SUBCASE("Remove a site") {
+        std::string performance =
+            "response_time_bucket{method=\"Test\",le=\"1\"} 1\n"
+            "response_time_bucket{method=\"Test1\",le=\"6\"} 1\n"
+            "response_time_bucket{method=\"Test2\",le=\"6\"} 1\n";
+
+        std::string performance1_name = "testid1_230102.txt";
+        std::string performance2_name = "testid2_230102.txt";
+        std::string performance3_name = "testid3_230102.txt";
+
+        std::string host1 =
+            "{\"site_name\": \"test1\", \"site_id\": \"testid1\"}";
+        std::string host2 =
+            "{\"site_name\": \"test2\", \"site_id\": \"testid2\"}";
+        std::string host3 =
+            "{\"site_name\": \"test3\", \"site_id\": \"testid3\"}";
+
+        std::string host_name = "test.json";
+
+        fh->AddFile(performance, performance1_name);
+        fh->AddFile(performance, performance2_name);
+        fh->AddFile(performance, performance3_name);
+
+        fh->AddFile(host1, host_name);
+        fh->AddFile(host2, host_name);
+        fh->AddFile(host3, host_name);
+
+        fh->ComputeFiles();
+
+        fh->RemoveSite("testid1");
+
+        // The site should be removed
+        CHECK(fh->GetBoxDiagram("testid1") == "{}");
+        // The other should still be intact
+        CHECK(fh->GetBoxDiagram("testid2") != "{}");
+
+        fh->ClearSites();
+
+        // All sites should be removed
+        CHECK(fh->GetBoxDiagram("testid1") == "{}");
+        CHECK(fh->GetBoxDiagram("testid2") == "{}");
+        CHECK(fh->GetBoxDiagram("testid3") == "{}");
+    }
+
     delete fh;
 }

@@ -455,3 +455,27 @@ std::string FileHandler::GetMetrics() const
 
     return metric_json.dump();
 }
+
+void FileHandler::RemoveSite(std::string site_id) {
+    // Make sure the site exists
+    auto site_it = sites.find(site_id);
+
+    if (site_it == sites.end()) {
+#ifdef DEBUG
+        std::cout << "Could not find site with id " << site_id << std::endl;
+#endif
+    } else {
+        sites.erase(site_it);
+
+#ifdef DEBUG
+        std::cout << "Removed site with id " << site_id << std::endl;
+#endif
+    }
+}
+
+void FileHandler::ClearSites() {
+    sites.clear();
+#ifdef DEBUG
+    std::cout << "Removed all sites" << std::endl;
+#endif
+}

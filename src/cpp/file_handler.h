@@ -74,6 +74,18 @@ public:
      * @return std::string The metrics
      */
     std::string GetMetrics() const;
+    
+    /**
+     * @brief Remove a specific site
+     *
+     * @param site_id The site id
+     */
+    void RemoveSite(std::string site_id);
+
+    /**
+     * @brief Remove all sites
+     */
+    void ClearSites();
 
   private:
     std::unordered_map<std::string, struct Site> sites;
@@ -198,6 +210,8 @@ EMSCRIPTEN_BINDINGS(file_handler) {
         .function("GetSites", &FileHandler::GetSites)
         .function("GetHistogram", &FileHandler::GetHistogram)
         .function("GetMetrics", &FileHandler::GetMetrics)
-        .function("GetInfoBox", &FileHandler::GetInfoBox);
+        .function("GetInfoBox", &FileHandler::GetInfoBox)
+        .function("RemoveSite", &FileHandler::RemoveSite)
+        .function("ClearSites", &FileHandler::ClearSites);
 }
 #endif
