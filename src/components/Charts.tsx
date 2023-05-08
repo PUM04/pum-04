@@ -180,7 +180,7 @@ function getCandleChartData(
 function drawVictoryCandle(data: Array<Candle>, width: number): JSX.Element {
   const color: string = 'blue';
   return (
-    <VictoryCandlestick
+    <VictoryCandlestick 
       key={JSON.stringify(data)}
       labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
       labels={({ datum }) =>
@@ -281,15 +281,17 @@ function CustomTickLabelBoxPlot(props: CustomTickLabelProps): JSX.Element {
         dy={padding / 2}
         text={text}
       />
-      <line
+      {/* <line
         x1={xValue}
         x2={xValue}
         y1={0 - 11}
         y2={0 - 11 - lineLength}
         stroke={color}
         strokeWidth={strokeWidth}
-      />
+      /> */}
+      
     </g>
+    
   );
 }
 
@@ -341,12 +343,16 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
     victoryCandles.push(drawVictoryCandle(data.candles, width));
   });
 
+  const candleHeight = sites.length * (width + offsetPadding);
+  const scale = metrics.length * 120;
+  const graphHeight = candleHeight + scale;
+
   return (
     <VictoryChart
       data-testid="victory-chart"
       // this below is a start for the new
-      // horizontal
-      // height={500}//set this depending on the total amount of sites in buckets (ticks)
+      horizontal
+      height={graphHeight} // set this depending on the total amount of sites in buckets (ticks)
       {...getScaleProps}
     >
       <VictoryAxis
