@@ -131,9 +131,7 @@ function getBarChartData(
   const metricData = jsonData ? jsonData[metric]?.data : null;
 
   metricData?.forEach((bar: any) => {
-    // if (bar.length <= 3000) {
     histogram.bars.push({ x: String(bar.length), y: bar.count, fill: color });
-    // }
   });
   return histogram;
 }
@@ -148,7 +146,7 @@ function getBarChartData(
  * @param siteProps map ecah siteKey to a color
  * @returns a data structure in correct format to paint a candleChart.
  */
-function getCandleChartData( // rewrite this function
+function getCandleChartData(
   metrics: Array<string>, // should be a metric array
   site: string,
   boxDiagramData: Map<string, string>,
@@ -257,7 +255,6 @@ function CustomTickLabel(props: CustomTickLabelProps): JSX.Element {
   const lineLength = 20;
   const someOffset = 210;
 
-  // let xValue = someValue*(index/ticks.length)+someOffset;
   const xValue = someOffset / ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific
 
   return (
@@ -267,7 +264,6 @@ function CustomTickLabel(props: CustomTickLabelProps): JSX.Element {
         verticalAnchor="end"
         angle="30"
         style={{ fontSize: Math.min(125 / text.length, 10), fill: '#404040' }}
-        // style={{ fontSize: 10, fill: '#404040' }}
         x={0}
         y={0}
         dy={padding / 2}
@@ -316,7 +312,6 @@ function CustomTickLabelBoxPlot(props: CustomTickLabelProps): JSX.Element {
       <VictoryLabel
         angle="0"
         style={{ fontSize: 10, fill: '#404040' }}
-        // x={-text.length}
         x={0}
         y={0}
         dy={padding / 2}
@@ -370,8 +365,8 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
     return <div />;
   }
 
-  // For sites in props.site skapa victorycandles som innehåller alla props.sites
-  // Loopa igenom sites och bygg data för alla i klickade metrics
+  // For sites in props.site create victorycandles that contains props.sites
+  // Loop through sites and build data for all marked metrics
   sites.forEach((site) => {
     const data: CandleChart = getCandleChartData(
       metrics,
@@ -383,12 +378,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   });
 
   return (
-    <VictoryChart
-      data-testid="victory-chart"
-      // this below is a start for the new
-      // horizontal
-      // height={500}//set this depending on the total amount of sites in buckets (ticks)
-    >
+    <VictoryChart data-testid="victory-chart">
       <VictoryAxis
         dependentAxis
         style={{
@@ -490,7 +480,6 @@ function drawHistogram(
   width: number
 ) {
   const formatTickDifference = (tick: any, index: number, ticksArray: any) => {
-    // console.log(ticksArray);
     if (index < ticksArray.length - 1) {
       if (tick === ticksArray[index + 1] - 1) {
         return `${tick} ms`;
@@ -538,12 +527,10 @@ function drawHistogram(
           }}
         />
         <VictoryAxis
-          // tickComponent={GroupLine}
           tickLabelComponent={<CustomTickLabel />}
           tickFormat={(tick: any, index: number, ticks: any) =>
             formatTickDifference(tick, index, ticks)
           }
-          // tickComponent={<CustomTick />}
           style={{
             tickLabels: {
               fontSize: 8,
@@ -672,7 +659,8 @@ function mergeXvalues(
   const smallerHistogram = (mergeCount: number, oldHistogram: Histogram) => {
     const newHistogram: Histogram = new Histogram([]);
     oldHistogram.bars.forEach((bar, i) => {
-      const newIndex = Math.floor(i / mergeAmount); // mergeAmount = 2 halvera antal x värden margeAMount = 3
+      const newIndex = Math.floor(i / mergeCount);
+
       if (newHistogram.bars[newIndex] === undefined) {
         newHistogram.bars.push(new Bar(bar.x, bar.y, bar.fill)); // bar.fill causes unexpected colors at weird times
       } else {
