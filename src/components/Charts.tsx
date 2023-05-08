@@ -2,7 +2,6 @@
  *
  * @file Contains the component that paints Charts. Gets data for chart.
  */
-// eslint-disable-next-line
 import React, { useEffect, useMemo, useState } from 'react';
 import { Divider } from '@mui/material';
 import {
@@ -13,10 +12,11 @@ import {
   VictoryTooltip,
   VictoryCandlestick,
   VictoryLabel,
+  VictoryChartProps,
 } from 'victory';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
-import { ScaleName, TextProps } from 'victory-core';
+import { TextProps } from 'victory-core';
+import Histogram from '../Histogram';
+import Bar from '../Bar';
 import { Site } from './SiteInterface';
 /**
  * Top level component.
@@ -33,55 +33,8 @@ interface ChartProps {
   sites: Array<string>;
   siteProps: Map<string, Site>;
   fileHandler: any;
-  getScaleProps: any;
-}
-
-/**
- *
- * Data for drawing a single bar in a histogram
- * { x: '700', y: 200, fill: 'yellow' }
- */
-class Bar {
-  public x: string;
-
-  public y: number;
-
-  public fill: string;
-
-  /**
-   * Constructor for a single bar
-   *
-   * @param x x value in a histogram
-   * @param y y value in a histogram
-   * @param fill Color for a single bar
-   */
-  constructor(x: string = '0', y: number = 0, fill = 'black') {
-    this.x = x;
-    this.y = y;
-    this.fill = fill;
-  }
-}
-
-/**
- * Structure for a single histogram
- */
-class Histogram {
-  public bars: Array<Bar>;
-
-  /**
-   * Constructor for creating datastructure used to draw a single histogram
-   *
-    @param bars Datastructure for drawing a histogram
-    Example
-   * {bars = [
-      { x: '500', y: 20, fill: 'yellow' },
-      { x: '600', y: 150, fill: 'yellow' },
-      { x: '700', y: 200, fill: 'yellow' },
-    ];}
-   */
-  constructor(bars: Array<Bar> = []) {
-    this.bars = bars;
-  }
+  getScaleProps: VictoryChartProps;
+  percent: boolean;
 }
 
 /**
@@ -115,13 +68,15 @@ interface Candle {
  * @param metric what metric to get data from.
  * @param color what color to paint the bars.
  * @param histogramData data from backend.
+ * @param percent a boolen for special logic when percent is used.
  * @returns a Histogram object containing all data for drawing a BarChart.
  */
 function getBarChartData(
   site: string,
   metric: string,
   color: string,
-  histogramData: any
+  histogramData: any,
+  percent: boolean
 ): Histogram {
   /**
    * Make sure corret color is retrived from Legends component
@@ -132,9 +87,21 @@ function getBarChartData(
 
   const metricData = jsonData ? jsonData[metric]?.data : null;
 
+  // Should be total number of buckets for using percent, else it should be 1
+  let factorY = 1;
+  if (percent) {
+    metricData?.forEach((bar: any) => {
+      factorY += bar.count;
+    });
+    factorY = (factorY - 1) / 100;
+  }
+
   metricData?.forEach((bar: any) => {
-    // if (bar.length <= 3000) {
-    histogram.bars.push({ x: String(bar.length), y: bar.count, fill: color });
+    histogram.bars.push({
+      x: String(bar.length),
+      y: bar.count / factorY,
+      fill: color,
+    });
     // }
   });
   return histogram;
@@ -158,12 +125,6 @@ function getCandleChartData( // rewrite this function
   siteProps: Map<string, Site> // used later when structure for candlechart is known.
 ): CandleChart {
   const candle: CandleChart = { candles: [] };
-  /**
-   * Todo- At the moment this function only contains dummy data.
-   * Implement code to get data from backend
-   * Make sure correct color is retrived from Legends component
-   *
-   */
 
   metrics.forEach((metric) => {
     const siteData = boxDiagramData.get(site);
@@ -258,7 +219,7 @@ function CustomTickLabel(props: CustomTickLabelProps): JSX.Element {
   const someOffset = 210;
 
   // let xValue = someValue*(index/ticks.length)+someOffset;
-  const xValue = someOffset / ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific
+  const xValue = someOffset / ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific!!!
 
   return (
     <g transform={`translate(${x}, ${y})`}>
@@ -309,7 +270,7 @@ function CustomTickLabelBoxPlot(props: CustomTickLabelProps): JSX.Element {
   const lineLength = 20;
   const someOffset = 210;
 
-  const xValue = someOffset / ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific
+  const xValue = someOffset / ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific!!!
 
   return (
     <g transform={`translate(${x}, ${y})`}>
@@ -365,7 +326,6 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   const offsetPadding = 5;
   const victoryCandles: Array<JSX.Element> = [];
   const boxDiagramData = useBoxDiagrams(sites, fileHandler);
-  // const [graphScaleTypeBox, setGraphScaleTypeBox] = useState(ScaleTypes);
 
   if (fileHandler === undefined) {
     return <div />;
@@ -382,6 +342,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
     );
     victoryCandles.push(drawVictoryCandle(data.candles, width));
   });
+
   return (
     <VictoryChart
       data-testid="victory-chart"
@@ -475,41 +436,6 @@ function numberOfXvalues(histograms: Array<Histogram>): number {
   ).length;
   return uniqueXvalues;
 }
-/*
-enum ScaleTypes {
-  'Log',
-  'Linear',
-  'Percent',
-}
-let graphScaleType = ScaleTypes.Log; // change with a button somewhere else
-
-function getScaleProps() {
-  switch (graphScaleType) {
-    case ScaleTypes.Linear: {
-      return {
-        scale: { x: 'linear' as ScaleName, y: 'linear' as ScaleName }, // default is already this but to make the code more readable
-        minDomain: { y: 0 },
-      };
-    }
-    case ScaleTypes.Log: {
-      return {
-        scale: { x: 'linear' as ScaleName, y: 'log' as ScaleName },
-        minDomain: { y: 0.5 }, // default is y=0 but then the graph is wacky
-      };
-    }
-    case ScaleTypes.Percent: {
-      console.warn('TODO: NO PERCENT FUNCTION MADE!');
-      break;
-    }
-    default: {
-      console.warn('A type not supported was called!');
-      break;
-    }
-  }
-  // if something breaks return empty
-  return {};
-}
-*/
 
 /**
  *  drawHistogram draws a victoryChart containing 1..n bar charts.
@@ -518,15 +444,17 @@ function getScaleProps() {
  * @param metric a single metric. Used to print metricname in graph.
  * Example 'getPatient'
  * @param width width of a single bar
- * @param getScaleProps scale property as a HTML element
+ * @param getScaleProps scale property
  * @returns a single victoryChart, <VictoryChart>...</VictoryChart>
  */
 function drawHistogram(
   histograms: Array<Histogram>,
   metric: string,
   width: number,
-  getScaleProps: any // TODO: Type is HTML something
+  getScaleProps: VictoryChartProps
 ) {
+  console.log(getScaleProps);
+
   const formatTickDifference = (tick: any, index: number, ticksArray: any) => {
     if (index < ticksArray.length - 1) {
       if (tick === ticksArray[index + 1] - 1) {
@@ -694,25 +622,20 @@ function mergeXvalues(
   graphWidth: number,
   sites: Array<String>
 ): Array<Histogram> {
-  let newBarGraph: Array<Histogram> = [];
   let width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
 
   const tooSmallWidth = 6; // target width of single bars
   const maxLoopCount = 50; // a fail safe in case something goes wrong
-  let mergeAmount = 1; // start merge amount
   let loopCount = 0;
   if (width >= tooSmallWidth) {
     console.log('no changes when running mergeXvalues()');
     return barGraph;
   }
 
-  // const maxXvalues = tooSmallWidth/graphWidth;
-  // const current XValues = (numberOfXvalues(barGraph);
-  // const mergeCount =
   const smallerHistogram = (mergeCount: number, oldHistogram: Histogram) => {
     const newHistogram: Histogram = new Histogram([]);
     oldHistogram.bars.forEach((bar, i) => {
-      const newIndex = Math.floor(i / mergeAmount);
+      const newIndex = Math.floor(i / mergeCount);
 
       if (newHistogram.bars[newIndex] === undefined) {
         newHistogram.bars.push(new Bar(bar.x, bar.y, bar.fill)); // bar.fill causes unexpected colors at weird times
@@ -723,11 +646,13 @@ function mergeXvalues(
     return newHistogram;
   };
 
+  let mergeAmount = 1; // start merge amount
   while (width < tooSmallWidth) {
-    newBarGraph = [];
+    const newBarGraph: Array<Histogram> = [];
 
-    barGraph.forEach((histogram) => { // eslint-disable-line
-      const newHistogram = smallerHistogram(mergeAmount, histogram);
+    const currentMergeAmount = mergeAmount; // to avoid the 'eslint problem' no-func-loop
+    barGraph.forEach((histogram) => {
+      const newHistogram = smallerHistogram(currentMergeAmount, histogram);
       newBarGraph.push(newHistogram);
     });
 
@@ -735,14 +660,16 @@ function mergeXvalues(
       console.warn(
         '----------------------WARNING REACHED LOOP MAX!----------------------'
       );
-      break;
+      return newBarGraph;
     }
     loopCount += 1;
     mergeAmount += 1;
     width = graphWidth / (numberOfXvalues(newBarGraph) * sites.length);
+    if (width >= tooSmallWidth) {
+      return newBarGraph;
+    }
   }
-
-  return newBarGraph;
+  return barGraph; // will never happen
 }
 /**
  *  Draws 1-n VictoryCharts containing 1-n VictoryBars.
@@ -755,16 +682,12 @@ function mergeXvalues(
  * [<VictoryChart>BarchartsArray</VictoryChart>,<VictoryChart>BarChartsArray</VictoryChart>]
  */
 export function BarChart(props: ChartProps): JSX.Element {
-  const { metrics, sites, siteProps, getScaleProps } = props;
+  const { metrics, sites, siteProps, getScaleProps, percent } = props;
   const { fileHandler } = props;
 
   const [barGraphList, setBarGraphList] = useState<any[]>([]);
 
   const histogramData = useHistograms(sites, fileHandler);
-  // const [graphScaleTypeBar, setGraphScaleTypeBar] = useState(ScaleTypes);
-
-  // This does not effect the actual graph width,
-  // width of BarChart is based on parent container
 
   useEffect(() => {
     const graphWidth = 300;
@@ -781,7 +704,8 @@ export function BarChart(props: ChartProps): JSX.Element {
           site,
           metric,
           color,
-          histogramData
+          histogramData,
+          percent
         );
         barGraph.push(data);
       });
