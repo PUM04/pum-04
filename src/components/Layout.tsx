@@ -36,7 +36,6 @@ interface MenuProps {
  * @returns MUI box component with the layout of the website.
  */
 function Layout(props: MenuProps) {
-  console.log(props);
   const { fileHandler } = props;
   const map = new Map();
   // Maps each site key to a site name and a color

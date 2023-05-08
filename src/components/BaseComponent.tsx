@@ -32,19 +32,31 @@ export enum ScaleTypes {
  * Buttons used to switch between scaletypes
  *
  * @param setGraphScaleTypeBox useState that sets the current scaleType
+ * @param graphScaleType the current scale type
  * @returns A JSX element with three MUI buttons
  */
 function ScaleTypeButton(
-  setGraphScaleTypeBox: React.Dispatch<React.SetStateAction<ScaleTypes>>
+  setGraphScaleTypeBox: React.Dispatch<React.SetStateAction<ScaleTypes>>,
+  graphScaleType: ScaleTypes
 ): JSX.Element {
   return (
     <ButtonGroup variant="contained" aria-label="outlined primary button group">
-      <Button onClick={() => setGraphScaleTypeBox(ScaleTypes.Linear)}>
+      <Button
+        color={graphScaleType === ScaleTypes.Linear ? 'info' : 'primary'}
+        onClick={() => setGraphScaleTypeBox(ScaleTypes.Linear)}
+      >
         Linear
       </Button>
-      <Button onClick={() => setGraphScaleTypeBox(ScaleTypes.Log)}>Log</Button>
-      <Button onClick={() => setGraphScaleTypeBox(ScaleTypes.Percent)}>
-        {' '}
+      <Button
+        color={graphScaleType === ScaleTypes.Log ? 'info' : 'primary'}
+        onClick={() => setGraphScaleTypeBox(ScaleTypes.Log)}
+      >
+        Log
+      </Button>
+      <Button
+        color={graphScaleType === ScaleTypes.Percent ? 'info' : 'primary'}
+        onClick={() => setGraphScaleTypeBox(ScaleTypes.Percent)}
+      >
         %
       </Button>
     </ButtonGroup>
@@ -126,7 +138,7 @@ export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
   const getSiteIds = (): string[] =>
     Array.from(siteProps.keys()).filter((key) => siteProps.get(key)?.enabled);
 
-  const [graphScaleType, setGraphScaleTypeBox] = useState(ScaleTypes.Log);
+  const [graphScaleType, setGraphScaleTypeBox] = useState(ScaleTypes.Linear);
 
   return (
     <Box
@@ -142,7 +154,7 @@ export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
         },
       }}
     >
-      {ScaleTypeButton(setGraphScaleTypeBox)}
+      {ScaleTypeButton(setGraphScaleTypeBox, graphScaleType)}
       <Box>
         {' '}
         <BoxPlotChart
@@ -169,7 +181,7 @@ export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
 export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
   const { metrics, siteProps, fileHandler } = props;
 
-  const [graphScaleType, setGraphScaleTypeBox] = useState(ScaleTypes.Log);
+  const [graphScaleType, setGraphScaleTypeBox] = useState(ScaleTypes.Linear);
 
   const getSiteIds = (): string[] =>
     Array.from(siteProps.keys()).filter((key) => siteProps.get(key)?.enabled);
@@ -187,7 +199,7 @@ export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
         },
       }}
     >
-      {ScaleTypeButton(setGraphScaleTypeBox)}
+      {ScaleTypeButton(setGraphScaleTypeBox, graphScaleType)}
       <Box>
         {' '}
         <BarChart
