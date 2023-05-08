@@ -21,7 +21,7 @@ interface InfoContainerProps {
   fileHandler: any;
 }
 
-enum ScaleTypes {
+export enum ScaleTypes {
   'NOTSET' = 0, // for testing remove
   'Log',
   'Linear',
@@ -62,7 +62,7 @@ interface ScaleTypeProp {
  * @param graphScaleType Which type of scale: Linear, Logaritmic or Percentage
  * @returns ScaleTypeProp, where Scale is the primary return, but includes a bool for percentage
  */
-function getScaleProps(graphScaleType: ScaleTypes): ScaleTypeProp {
+export function getScaleProps(graphScaleType: ScaleTypes): ScaleTypeProp {
   switch (graphScaleType) {
     case ScaleTypes.Linear: {
       const scale: VictoryChartProps = {
@@ -75,7 +75,6 @@ function getScaleProps(graphScaleType: ScaleTypes): ScaleTypeProp {
       };
     }
     case ScaleTypes.Log: {
-      console.log('log');
       const scale: VictoryChartProps = {
         scale: { x: 'linear', y: 'log' },
         minDomain: { y: 0.5 }, // default is y=0 but then the graph is wacky
@@ -86,7 +85,6 @@ function getScaleProps(graphScaleType: ScaleTypes): ScaleTypeProp {
       };
     }
     case ScaleTypes.Percent: {
-      console.log('%');
       const scale: VictoryChartProps = {
         scale: { x: 'linear', y: 'linear' }, // default is already this but to make the code more readable
         minDomain: { y: 0 },

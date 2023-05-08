@@ -453,8 +453,6 @@ function drawHistogram(
   width: number,
   getScaleProps: VictoryChartProps
 ) {
-  console.log(getScaleProps);
-
   const formatTickDifference = (tick: any, index: number, ticksArray: any) => {
     if (index < ticksArray.length - 1) {
       if (tick === ticksArray[index + 1] - 1) {
