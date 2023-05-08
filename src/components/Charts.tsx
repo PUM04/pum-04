@@ -14,6 +14,8 @@ import {
   VictoryCandlestick,
   VictoryLabel,
 } from 'victory';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 import { ScaleName, TextProps } from 'victory-core';
 import { Site } from './SiteInterface';
 /**
@@ -381,39 +383,37 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
     victoryCandles.push(drawVictoryCandle(data.candles, width));
   });
   return (
-    <>
-      {ScaleTypeButton()}
-      <VictoryChart
-        data-testid="victory-chart"
-        // this below is a start for the new
-        // horizontal
-        // height={500}//set this depending on the total amount of sites in buckets (ticks)
-        {...getScaleProps()}
-      >
-        <VictoryAxis
-          dependentAxis
-          style={{
-            tickLabels: {
-              fontSize: 10,
-              stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
-            },
-            axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
-          }}
-        />
-        <VictoryAxis
-          style={{
-            tickLabels: {
-              padding: 20,
-              fontSize: 40 / metrics.length,
-              angle: 45,
-              // offset x-labels
-              stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
-            },
-            axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
-          }}
-          tickLabelComponent={<CustomTickLabelBoxPlot />}
-          tickFormat={(tick: any) => `${tick}`}
-        />
+    <VictoryChart
+      data-testid="victory-chart"
+      // this below is a start for the new
+      // horizontal
+      // height={500}//set this depending on the total amount of sites in buckets (ticks)
+      {...getScaleProps}
+    >
+      <VictoryAxis
+        dependentAxis
+        style={{
+          tickLabels: {
+            fontSize: 10,
+            stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
+          },
+          axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
+        }}
+      />
+      <VictoryAxis
+        style={{
+          tickLabels: {
+            padding: 20,
+            fontSize: 40 / metrics.length,
+            angle: 45,
+            // offset x-labels
+            stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
+          },
+          axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
+        }}
+        tickLabelComponent={<CustomTickLabelBoxPlot />}
+        tickFormat={(tick: any) => `${tick}`}
+      />
 
       <VictoryGroup
         offset={width + offsetPadding}
@@ -422,7 +422,6 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
         {victoryCandles}
       </VictoryGroup>
     </VictoryChart>
-    </>
   );
 }
 
@@ -438,7 +437,6 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
  * @param width width of a bar.
  * @returns a single VictoryBar.
  */
-
 function drawVictoryBar(data: Array<Bar>, width: number): JSX.Element {
   return (
     <VictoryBar
@@ -477,7 +475,7 @@ function numberOfXvalues(histograms: Array<Histogram>): number {
   ).length;
   return uniqueXvalues;
 }
-
+/*
 enum ScaleTypes {
   'Log',
   'Linear',
@@ -511,6 +509,7 @@ function getScaleProps() {
   // if something breaks return empty
   return {};
 }
+*/
 
 /**
  *  drawHistogram draws a victoryChart containing 1..n bar charts.
@@ -519,15 +518,16 @@ function getScaleProps() {
  * @param metric a single metric. Used to print metricname in graph.
  * Example 'getPatient'
  * @param width width of a single bar
+ * @param getScaleProps scale property as a HTML element
  * @returns a single victoryChart, <VictoryChart>...</VictoryChart>
  */
 function drawHistogram(
   histograms: Array<Histogram>,
   metric: string,
-  width: number
+  width: number,
+  getScaleProps: any // TODO: Type is HTML something
 ) {
   const formatTickDifference = (tick: any, index: number, ticksArray: any) => {
-    // console.log(ticksArray);
     if (index < ticksArray.length - 1) {
       if (tick === ticksArray[index + 1] - 1) {
         return `${tick} ms`;
@@ -563,9 +563,7 @@ function drawHistogram(
           marginRight: '30%',
         }}
       />
-      <VictoryChart 
-      {...getScaleProps()}
-      >
+      <VictoryChart {...getScaleProps}>
         <VictoryAxis
           dependentAxis
           style={{
@@ -757,7 +755,7 @@ function mergeXvalues(
  * [<VictoryChart>BarchartsArray</VictoryChart>,<VictoryChart>BarChartsArray</VictoryChart>]
  */
 export function BarChart(props: ChartProps): JSX.Element {
-  const { metrics, sites, siteProps } = props;
+  const { metrics, sites, siteProps, getScaleProps } = props;
   const { fileHandler } = props;
 
   const [barGraphList, setBarGraphList] = useState<any[]>([]);
@@ -785,28 +783,17 @@ export function BarChart(props: ChartProps): JSX.Element {
           color,
           histogramData
         );
-        barGraph.push(data); 
+        barGraph.push(data);
       });
       barGraph = removeEmptyXValues(barGraph);
       barGraph = mergeXvalues(barGraph, graphWidth, sites);
       const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
-      newBarGraphList.push(drawHistogram(barGraph, metric, width));
+      newBarGraphList.push(
+        drawHistogram(barGraph, metric, width, getScaleProps)
+      );
     });
     setBarGraphList(newBarGraphList);
   }, [fileHandler, metrics, siteProps, sites]);
 
-  return (
-  <>
-  <p>Hello</p>
-     <div data-testid="barchart">{barGraphList}</div>
-  </>);
-}
-
-function ScaleTypeButton(){
-  return (
-    <ButtonGroup variant="contained" aria-label="outlined primary button group">
-      <Button>One</Button>
-      <Button>Two</Button>
-      <Button>Three</Button>
-    </ButtonGroup>);
+  return <div data-testid="barchart">{barGraphList}</div>;
 }

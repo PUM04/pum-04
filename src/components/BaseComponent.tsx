@@ -4,7 +4,7 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BoxPlotChart, BarChart } from './Charts';
 import InfoBox from './InfoBox';
 import { Site } from './SiteInterface';
@@ -21,13 +21,11 @@ interface InfoContainerProps {
 }
 
 enum ScaleTypes {
+  'NOTSET' = 0, // for testing remove
   'Log',
   'Linear',
   'Percent',
 }
-
-
-
 
 /**
  * TODO:
@@ -35,64 +33,16 @@ enum ScaleTypes {
  * @returns A HTML element with three MUI buttons
  */
 function ScaleTypeButton(
-  onClickFunc: (scaleType: ScaleTypes) => void
+  setGraphScaleTypeBox: React.Dispatch<React.SetStateAction<ScaleTypes>>
 ): JSX.Element {
   return (
     <ButtonGroup variant="contained" aria-label="outlined primary button group">
-      <Button onClick={() => onClickFunc(ScaleTypes.Linear)}>Linear</Button>
-      <Button onClick={() => onClickFunc(ScaleTypes.Log)}>Log</Button>
+      <Button onClick={() => setGraphScaleTypeBox(ScaleTypes.Linear)}>
+        Linear
+      </Button>
+      <Button onClick={() => setGraphScaleTypeBox(ScaleTypes.Log)}>Log</Button>
       <Button>%</Button>
     </ButtonGroup>
-  );
-}
-
-
-/**
- * Component that contains all Box graphs
- *
- * @param props contains fileHandler siteprops with siteId as key and SiteProperties as value
- * @returns MUI box component
- */
-export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
-  const { metrics } = props;
-  const { siteProps } = props;
-  const { fileHandler } = props;
-
-  const [graphScaleType, setGraphScaleTypeBox] = useState(ScaleTypes.Linear);
-
-  const handleButtonClick = (scaleType: ScaleTypes) => {
-    setGraphScaleTypeBox(scaleType);
-  };
-
-  const getSiteIds = (): string[] =>
-    Array.from(siteProps.keys()).filter((key) => siteProps.get(key)?.enabled);
-
-  return (
-    <Box
-      data-testid="boxgraph-component"
-      sx={{
-        flexDirection: 'column',
-        display: 'flex',
-        paddingTop: '0vh',
-        paddingBottom: '3vh',
-        backgroundColor: 'primary.light2',
-        '&:hover': {
-          backgroundColor: 'primary.light2',
-        },
-      }}
-    >
-      {ScaleTypeButton(handleButtonClick)}
-      <Box>
-        {' '}
-        <BoxPlotChart
-          metrics={metrics}
-          sites={getSiteIds()}
-          fileHandler={fileHandler}
-          siteProps={siteProps}
-          getScaleProps={getScaleProps}
-        />{' '}
-      </Box>
-    </Box>
   );
 }
 
@@ -100,7 +50,7 @@ export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
  * TODO
  * @returns
  */
-function getScaleProps(graphScaleType) {
+function getScaleProps(graphScaleType: ScaleTypes) {
   switch (graphScaleType) {
     case ScaleTypes.Linear: {
       return {
@@ -127,6 +77,52 @@ function getScaleProps(graphScaleType) {
   return {};
 }
 
+/**
+ * Component that contains all Box graphs
+ *
+ * @param props contains fileHandler siteprops with siteId as key and SiteProperties as value
+ * @returns MUI box component
+ */
+export function BoxGraphComponent(props: GraphComponentProps): JSX.Element {
+  const { metrics } = props;
+  const { siteProps } = props;
+  const { fileHandler } = props;
+
+  const getSiteIds = (): string[] =>
+    Array.from(siteProps.keys()).filter((key) => siteProps.get(key)?.enabled);
+
+    
+  const [graphScaleType, setGraphScaleTypeBox] = useState(ScaleTypes.Log);
+
+  return (
+    <Box
+      data-testid="boxgraph-component"
+      sx={{
+        flexDirection: 'column',
+        display: 'flex',
+        paddingTop: '0vh',
+        paddingBottom: '3vh',
+        backgroundColor: 'primary.light2',
+        '&:hover': {
+          backgroundColor: 'primary.light2',
+        },
+      }}
+    >
+      {ScaleTypeButton(setGraphScaleTypeBox)}
+      <Box>
+        {' '}
+        <BoxPlotChart
+          metrics={metrics}
+          sites={getSiteIds()}
+          fileHandler={fileHandler}
+          siteProps={siteProps}
+          getScaleProps={getScaleProps(graphScaleType)}
+        />{' '}
+      </Box>
+    </Box>
+  );
+}
+
 
 /**
  * Component that contains all bar graphs
@@ -136,6 +132,8 @@ function getScaleProps(graphScaleType) {
  */
 export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
   const { metrics, siteProps, fileHandler } = props;
+
+  const [graphScaleType, setGraphScaleTypeBox] = useState(ScaleTypes.Log);
 
   const getSiteIds = (): string[] =>
     Array.from(siteProps.keys()).filter((key) => siteProps.get(key)?.enabled);
@@ -155,6 +153,7 @@ export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
         },
       }}
     >
+      {ScaleTypeButton(setGraphScaleTypeBox)}
       <Box>
         {' '}
         <BarChart
@@ -162,6 +161,7 @@ export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
           sites={getSiteIds()}
           siteProps={siteProps}
           fileHandler={fileHandler}
+          getScaleProps={getScaleProps(graphScaleType)}
         />{' '}
       </Box>
     </Box>
