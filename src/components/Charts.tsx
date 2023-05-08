@@ -15,10 +15,7 @@ import {
   VictoryLabel,
 } from 'victory';
 import { ScaleName, TextProps } from 'victory-core';
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
 import { Site } from './SiteInterface';
-
 /**
  * Top level component.
  *
@@ -384,37 +381,39 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
     victoryCandles.push(drawVictoryCandle(data.candles, width));
   });
   return (
-    <VictoryChart
-      data-testid="victory-chart"
-      // this below is a start for the new
-      // horizontal
-      // height={500}//set this depending on the total amount of sites in buckets (ticks)
-      {...getScaleProps()}
-    >
-      <VictoryAxis
-        dependentAxis
-        style={{
-          tickLabels: {
-            fontSize: 10,
-            stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
-          },
-          axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
-        }}
-      />
-      <VictoryAxis
-        style={{
-          tickLabels: {
-            padding: 20,
-            fontSize: 40 / metrics.length,
-            angle: 45,
-            // offset x-labels
-            stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
-          },
-          axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
-        }}
-        tickLabelComponent={<CustomTickLabelBoxPlot />}
-        tickFormat={(tick: any) => `${tick}`}
-      />
+    <>
+      {ScaleTypeButton()}
+      <VictoryChart
+        data-testid="victory-chart"
+        // this below is a start for the new
+        // horizontal
+        // height={500}//set this depending on the total amount of sites in buckets (ticks)
+        {...getScaleProps()}
+      >
+        <VictoryAxis
+          dependentAxis
+          style={{
+            tickLabels: {
+              fontSize: 10,
+              stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
+            },
+            axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
+          }}
+        />
+        <VictoryAxis
+          style={{
+            tickLabels: {
+              padding: 20,
+              fontSize: 40 / metrics.length,
+              angle: 45,
+              // offset x-labels
+              stroke: 'gray', // Anyone who has a browser in dark mode needs the axis stroke in another color.
+            },
+            axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
+          }}
+          tickLabelComponent={<CustomTickLabelBoxPlot />}
+          tickFormat={(tick: any) => `${tick}`}
+        />
 
       <VictoryGroup
         offset={width + offsetPadding}
@@ -423,6 +422,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
         {victoryCandles}
       </VictoryGroup>
     </VictoryChart>
+    </>
   );
 }
 
@@ -438,6 +438,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
  * @param width width of a bar.
  * @returns a single VictoryBar.
  */
+
 function drawVictoryBar(data: Array<Bar>, width: number): JSX.Element {
   return (
     <VictoryBar
@@ -475,6 +476,40 @@ function numberOfXvalues(histograms: Array<Histogram>): number {
     (value: any, index: any, array: any) => array.indexOf(value) === index
   ).length;
   return uniqueXvalues;
+}
+
+enum ScaleTypes {
+  'Log',
+  'Linear',
+  'Percent',
+}
+let graphScaleType = ScaleTypes.Log; // change with a button somewhere else
+
+function getScaleProps() {
+  switch (graphScaleType) {
+    case ScaleTypes.Linear: {
+      return {
+        scale: { x: 'linear' as ScaleName, y: 'linear' as ScaleName }, // default is already this but to make the code more readable
+        minDomain: { y: 0 },
+      };
+    }
+    case ScaleTypes.Log: {
+      return {
+        scale: { x: 'linear' as ScaleName, y: 'log' as ScaleName },
+        minDomain: { y: 0.5 }, // default is y=0 but then the graph is wacky
+      };
+    }
+    case ScaleTypes.Percent: {
+      console.warn('TODO: NO PERCENT FUNCTION MADE!');
+      break;
+    }
+    default: {
+      console.warn('A type not supported was called!');
+      break;
+    }
+  }
+  // if something breaks return empty
+  return {};
 }
 
 /**
@@ -711,7 +746,6 @@ function mergeXvalues(
 
   return newBarGraph;
 }
-
 /**
  *  Draws 1-n VictoryCharts containing 1-n VictoryBars.
  *  metrics.length = number of VictoryCharts
@@ -751,7 +785,7 @@ export function BarChart(props: ChartProps): JSX.Element {
           color,
           histogramData
         );
-        barGraph.push(data);
+        barGraph.push(data); 
       });
       barGraph = removeEmptyXValues(barGraph);
       barGraph = mergeXvalues(barGraph, graphWidth, sites);
@@ -762,8 +796,17 @@ export function BarChart(props: ChartProps): JSX.Element {
   }, [fileHandler, metrics, siteProps, sites]);
 
   return (
-    <>
-      <div data-testid="barchart">{barGraphList}</div>
-    </>
-  );
+  <>
+  <p>Hello</p>
+     <div data-testid="barchart">{barGraphList}</div>
+  </>);
+}
+
+function ScaleTypeButton(){
+  return (
+    <ButtonGroup variant="contained" aria-label="outlined primary button group">
+      <Button>One</Button>
+      <Button>Two</Button>
+      <Button>Three</Button>
+    </ButtonGroup>);
 }
