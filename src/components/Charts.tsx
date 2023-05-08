@@ -262,21 +262,21 @@ interface CustomTickLabelProps extends TextProps {
  * @param props props for customTickLabel
  * @returns JSX element used to set tickLabel
  */
-function CustomTickLabelBoxPlot(props: CustomTickLabelProp): JSX.Element {
-  const { x, y, text, candleHeight } = props;
-  let lineLength = 450;
-  let strokeWidth = 1;
-  let color = "gray";
-  const padding = 1; // adjust the value to increase/decrease padding between labels
-  
+function CustomTickLabelBoxPlot(props: CustomTickLabelProps): JSX.Element {
+  const { x, y, text } = props;
+
   return (
     <g transform={`translate(${x}, ${y})`}>
       <VictoryLabel
         textAnchor="middle"
         verticalAnchor="middle"
         angle="0"
-        style={{ fontSize: 40-Math.sqrt(text.length), fill: '#404040', opacity: 0.05 }}
-        x={450/2}
+        style={{
+          fontSize: 40 - Math.sqrt(text.length),
+          fill: '#404040',
+          opacity: 0.05,
+        }}
+        x={450 / 2}
         y={0}
         dy={0}
         text={text}
@@ -353,7 +353,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
 
   const candleHeight = sites.length * (width + offsetPadding);
   const scale = 100;
-  const graphHeight = (candleHeight+scale)*metrics.length;
+  const graphHeight = (candleHeight + scale) * metrics.length;
 
   return (
     <VictoryChart
