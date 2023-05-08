@@ -180,7 +180,7 @@ function getCandleChartData(
 function drawVictoryCandle(data: Array<Candle>, width: number): JSX.Element {
   const color: string = 'blue';
   return (
-    <VictoryCandlestick 
+    <VictoryCandlestick
       key={JSON.stringify(data)}
       labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
       labels={({ datum }) =>
@@ -250,6 +250,9 @@ interface CustomTickLabelProps extends TextProps {
   y?: number;
   ticks?: Array<string>;
   text?: any; // Use the appropriate type based on your use case
+  height?: number;
+
+  
 }
 /* eslint-enable */
 
@@ -259,39 +262,44 @@ interface CustomTickLabelProps extends TextProps {
  * @param props props for customTickLabel
  * @returns JSX element used to set tickLabel
  */
-function CustomTickLabelBoxPlot(props: CustomTickLabelProps): JSX.Element {
-  const { x, y, text, ticks = Array<string>() } = props;
-
+function CustomTickLabelBoxPlot(props: CustomTickLabelProp): JSX.Element {
+  const { x, y, text, candleHeight } = props;
+  let lineLength = 450;
+  let strokeWidth = 1;
+  let color = "gray";
   const padding = 1; // adjust the value to increase/decrease padding between labels
-
-  const strokeWidth = 1;
-  const color = 'grey';
-  const lineLength = 20;
-  const someOffset = 210;
-
-  const xValue = someOffset / ticks.length; // a bit fucky wucky, not tried with too many metrics or so, it is basiclly only gussed values. TODO: make more scientific!!!
-
+  
   return (
     <g transform={`translate(${x}, ${y})`}>
       <VictoryLabel
+        textAnchor="middle"
+        verticalAnchor="middle"
         angle="0"
-        style={{ fontSize: 10, fill: '#404040' }}
-        x={0}
+        style={{ fontSize: 40-Math.sqrt(text.length), fill: '#404040', opacity: 0.05 }}
+        x={450/2}
         y={0}
-        dy={padding / 2}
+        dy={0}
+        text={text}
+      />
+      <VictoryLabel
+        textAnchor="middle"
+        verticalAnchor="middle"
+        angle="90"
+        style={{ fontSize: 10, fill: '#404040' }}
+        x={40}
+        y={0}
+        dy={0}
         text={text}
       />
       {/* <line
-        x1={xValue}
-        x2={xValue}
-        y1={0 - 11}
-        y2={0 - 11 - lineLength}
+        x1={55}
+        x2={450}
+        y1={-30}
+        y2={-30}
         stroke={color}
         strokeWidth={strokeWidth}
       /> */}
-      
     </g>
-    
   );
 }
 
@@ -344,8 +352,8 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
   });
 
   const candleHeight = sites.length * (width + offsetPadding);
-  const scale = metrics.length * 120;
-  const graphHeight = candleHeight + scale;
+  const scale = 100;
+  const graphHeight = (candleHeight+scale)*metrics.length;
 
   return (
     <VictoryChart
@@ -368,7 +376,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
       <VictoryAxis
         style={{
           tickLabels: {
-            padding: 20,
+            padding: 60,
             fontSize: 40 / metrics.length,
             angle: 45,
             // offset x-labels
@@ -376,7 +384,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
           },
           axis: { stroke: 'gray' }, // Anyone who has a browser in dark mode needs the axis stroke in another color.
         }}
-        tickLabelComponent={<CustomTickLabelBoxPlot />}
+        tickLabelComponent={<CustomTickLabelBoxPlot height={candleHeight} />}
         tickFormat={(tick: any) => `${tick}`}
       />
 
