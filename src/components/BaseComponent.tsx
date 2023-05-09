@@ -78,7 +78,8 @@ export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
         display: 'flex',
         paddingTop: '0vh',
         paddingBottom: '3vh',
-        backgroundColor: 'primary.light2',
+          backgroundColor: 'primary.light2',
+        minWidth: '50vw',
         '&:hover': {
           backgroundColor: 'primary.light2',
         },
