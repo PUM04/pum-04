@@ -59,7 +59,7 @@ function Layout(props: MenuProps) {
         sx={{
           flexDirection: 'column',
           display: 'flex',
-          marginTop: `60px`,
+          marginTop: `0vh`,
           textAlign: 'left',
           margin: '0',
         }}
@@ -69,7 +69,7 @@ function Layout(props: MenuProps) {
           metricProps={metricProps}
           fileHandler={fileHandler}
         />
-        <InfoboxContainer fileHandler={fileHandler} />
+        <InfoboxContainer siteProps={siteProps} fileHandler={fileHandler} />
       </Box>
     </Box>
   );
