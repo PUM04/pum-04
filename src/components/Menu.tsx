@@ -22,7 +22,7 @@ import Dropdown from './Dropdown';
 import { Site } from './SiteInterface';
 import '../App.css';
 
-const size = 75;
+const size = 55;
 const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
@@ -220,8 +220,8 @@ export default function Menu(props: MenuProps) {
       }
     });
     setSiteProps(newMap);
-    };
-    const minNavWidth = `calc(100vw - ${drawerWidth}px)`;
+  };
+  const minNavWidth = `calc(100vw - ${drawerWidth}px)`;
   return (
     <div className="App">
       <Box sx={{ display: 'fixed' }}>
@@ -231,11 +231,13 @@ export default function Menu(props: MenuProps) {
           sx={{
             ...(open
               ? {
-                   minWidth: minNavWidth,
-                  maxWidth: minNavWidth
+                  minWidth: minNavWidth,
+                  maxWidth: minNavWidth,
+                  minHeight: size,
                 }
               : {
                   minWidth: '100vw',
+                  minHeight: size,
                 }),
           }}
           open={open}

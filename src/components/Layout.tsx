@@ -43,7 +43,7 @@ function Layout(props: MenuProps) {
   const [metricProps, setMetricProps] = useState<string[]>([]);
 
   return (
-      <Box>
+    <Box>
       <Box
         sx={{
           display: 'flex',
@@ -56,13 +56,13 @@ function Layout(props: MenuProps) {
           setMetricProps={setMetricProps}
         />
       </Box>
-
       <Box
         sx={{
           flexDirection: 'column',
           display: 'inline-flex',
-                  textAlign: 'left',
-                  minWidth: '60vw', //Should be dependant on navbarwidth.
+          textAlign: 'left',
+          minWidth: '70vw', // Should be dependant on navbarwidth.
+          minHeight: '46vw',
           margin: '0',
           paddingTop: '10px',
         }}

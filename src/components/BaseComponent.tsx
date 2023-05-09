@@ -7,7 +7,6 @@ import { BoxPlotChart, BarChart } from './Charts';
 import InfoBox from './InfoBox';
 import { Site } from './SiteInterface';
 
-
 interface GraphComponentProps {
   metrics: Array<string>;
   siteProps: Map<string, Site>;
@@ -78,7 +77,7 @@ export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
         flexDirection: 'column',
         display: 'flex',
         paddingTop: '0vh',
-          paddingBottom: '3vh',
+        paddingBottom: '3vh',
         minHeight: '30vw',
         backgroundColor: 'primary.light2',
         '&:hover': {
