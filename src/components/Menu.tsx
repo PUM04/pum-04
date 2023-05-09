@@ -18,6 +18,7 @@ import LegendBar from './LegendBar';
 import CHART_COLORS from './CHART_COLORS';
 import Dropdown from './Dropdown';
 import { Site } from './SiteInterface';
+import { FileHandler } from './FileHandler';
 import '../App.css';
 
 const size = 75;
@@ -77,7 +78,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 interface MenuProps {
   // TODO: Get the actual type
-  fileHandler: any;
+  fileHandler: FileHandler;
   siteProps: Map<string, Site>;
   setSiteProps: Dispatch<React.SetStateAction<Map<string, Site>>>;
   setMetricProps: Dispatch<React.SetStateAction<string[]>>;
@@ -89,7 +90,7 @@ interface MenuProps {
  * @param files files which are added to the backend
  * @param fileHandler is used to add the files to the backend
  */
-export const addFilesToBackend = (files: File[], fileHandler: any) => {
+export const addFilesToBackend = (files: File[], fileHandler: FileHandler) => {
   if (files.length > 0) {
     files.forEach((file) => {
       const filereader = new FileReader();
@@ -112,7 +113,7 @@ export const addFilesToBackend = (files: File[], fileHandler: any) => {
  * @param fileHandler used to get the site names
  * @returns an array of site names
  */
-const getSites = (fileHandler: any): Site[] => {
+const getSites = (fileHandler: FileHandler): Site[] => {
   const sites = fileHandler ? JSON.parse(fileHandler.GetSites()).sites : [];
   return sites;
 };
@@ -123,7 +124,7 @@ const getSites = (fileHandler: any): Site[] => {
  * @param fileHandler used to get the metrics
  * @returns an array of metrics
  */
-const getMetrics = (fileHandler: any): string[] => {
+const getMetrics = (fileHandler: FileHandler): string[] => {
   const metrics = fileHandler
     ? JSON.parse(fileHandler.GetMetrics()).metrics
     : [];

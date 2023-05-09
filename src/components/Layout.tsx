@@ -7,6 +7,7 @@ import Menu from './Menu';
 import { InfoboxContainer } from './BaseComponent';
 import ViewTabs from './ViewTabs';
 import { Site } from './SiteInterface';
+import { FileHandler } from './FileHandler';
 
 //        ____Layout_____
 //       /       |       \
@@ -18,8 +19,7 @@ import { Site } from './SiteInterface';
 //
 
 interface MenuProps {
-  // TODO: Get the actual type
-  fileHandler: any;
+  fileHandler: FileHandler;
 }
 
 /**

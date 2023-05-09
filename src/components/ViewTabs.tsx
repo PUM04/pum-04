@@ -9,12 +9,14 @@ import Box from '@mui/material/Box';
 
 import { styled } from '@mui/material/styles';
 
+import { FileHandler } from './FileHandler';
+
 import { BoxGraphComponent, BarGraphComponent } from './BaseComponent';
 
 interface ViewTabsProps {
   siteProps: any;
   metricProps: any;
-  fileHandler: any;
+  fileHandler: FileHandler;
 }
 
 interface TabPanelProps {
