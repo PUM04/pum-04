@@ -110,7 +110,6 @@ export const addFilesToBackend = async (files: File[], fileHandler: any) => {
           };
         })
     );
-    console.log(addFilesPromises.length);
     await Promise.all(addFilesPromises);
   }
 };
@@ -170,12 +169,9 @@ export default function Menu(props: MenuProps) {
       const newFiles = files.filter(
         (file) => !oldFileNames.includes(file.name)
       );
-      console.log(newFiles);
       await addFilesToBackend(newFiles, fileHandler);
       setOldFiles(oldFiles.concat(newFiles));
-      console.log('added all files');
       fileHandler?.ComputeFiles();
-      console.log('computed all files');
       setSites(getSites(fileHandler));
       setMetrics(getMetrics(fileHandler));
     };
