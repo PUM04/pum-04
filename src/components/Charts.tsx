@@ -47,6 +47,7 @@ interface ChartProps {
  */
 interface CandleChart {
   candles: Array<Candle>;
+  color: string;
 }
 
 /**
@@ -124,7 +125,10 @@ function getCandleChartData(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   siteProps: Map<string, Site> // used later when structure for candlechart is known.
 ): CandleChart {
-  const candle: CandleChart = { candles: [] };
+  let siteColor = siteProps.get(site)?.color;
+  if (!siteColor) siteColor = 'black';
+
+  const candle: CandleChart = { candles: [], color: siteColor };
 
   metrics.forEach((metric) => {
     const siteData = boxDiagramData.get(site);
@@ -177,11 +181,10 @@ function getCandleChartData(
     Note that width might need to be changed depending on number of sites.
  * @returns a VictoryCandlestick .
  */
-function drawVictoryCandle(data: Array<Candle>, width: number): JSX.Element {
-  const color: string = 'blue';
+function drawVictoryCandle(data: CandleChart, width: number): JSX.Element {
   return (
     <VictoryCandlestick
-      key={JSON.stringify(data)}
+      key={JSON.stringify(data.candles)}
       labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
       labels={({ datum }) =>
         `min:${datum.low}
@@ -191,10 +194,10 @@ function drawVictoryCandle(data: Array<Candle>, width: number): JSX.Element {
         \nmean:${'30'}`
       }
       candleWidth={width}
-      data={data}
+      data={data.candles}
       style={{
         data: {
-          fill: color,
+          fill: data.color,
           stroke: 'gray',
         },
       }}
@@ -348,7 +351,7 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
       boxDiagramData,
       siteProps
     );
-    victoryCandles.push(drawVictoryCandle(data.candles, width));
+    victoryCandles.push(drawVictoryCandle(data, width));
   });
 
   const candleHeight = sites.length * (width + offsetPadding);
