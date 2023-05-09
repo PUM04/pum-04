@@ -4,7 +4,7 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import React, { useState }, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { VictoryChartProps } from 'victory';
 import { List, ListItem } from '@mui/material';
 import { BoxPlotChart, BarChart } from './Charts';
