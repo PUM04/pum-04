@@ -31,6 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: cd backend_test && ./test_run.sh
+      - run: cd backend_test && ./gcov_run.sh -git
 
   frontend-test:
     runs-on: ubuntu-latest
