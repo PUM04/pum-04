@@ -157,12 +157,6 @@ function getCandleChartData(
   if (!siteColor) siteColor = 'black';
 
   const candle: CandleChart = { candles: [], color: siteColor };
-  /**
-   * Todo- At the moment this function only contains dummy data.
-   * Implement code to get data from backend
-   * Make sure correct color is retrived from Legends component
-   *
-   */
 
   metrics.forEach((metric) => {
     const siteData = boxDiagramData.get(site);
