@@ -6,16 +6,17 @@ import React from 'react';
 import { BoxPlotChart, BarChart } from './Charts';
 import InfoBox from './InfoBox';
 import { Site } from './SiteInterface';
+import { FileHandler } from './FileHandler';
 
 interface GraphComponentProps {
   metrics: Array<string>;
   siteProps: Map<string, Site>;
-  fileHandler: any;
+  fileHandler: FileHandler;
 }
 
 interface InfoContainerProps {
   // sites: Array<string>;
-  fileHandler: any;
+  fileHandler: FileHandler;
 }
 /**
  * Component that contains all Box graphs

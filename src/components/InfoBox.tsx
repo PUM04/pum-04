@@ -5,10 +5,11 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
+import { FileHandler } from './FileHandler';
 
 interface InfoBoxProps {
   siteId: string;
-  fileHandler: any;
+  fileHandler: FileHandler;
 }
 
 const style1 = { display: 'inline', color: 'primary.light3' };
