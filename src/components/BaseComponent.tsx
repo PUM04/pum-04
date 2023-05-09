@@ -3,7 +3,7 @@
  */
 import Box from '@mui/material/Box';
 import React, { useEffect, useState } from 'react';
-import { List } from '@mui/material';
+import { List, ListItem, Grid } from '@mui/material';
 import { BoxPlotChart, BarChart } from './Charts';
 import InfoBox from './InfoBox';
 import { Site } from './SiteInterface';
@@ -119,7 +119,7 @@ export function InfoboxContainer(props: InfoContainerProps): JSX.Element {
       data-testid="infobox-component"
       sx={{
         flexDirection: 'row',
-        display: 'flex',
+        display: 'inline-flex',
         backgroundColor: 'primary.light1',
         color: 'secondary.main',
         flexWrap: 'wrap',
@@ -129,13 +129,13 @@ export function InfoboxContainer(props: InfoContainerProps): JSX.Element {
     >
       <List
         style={{
-          display: 'inline-flex',
           flexDirection: 'row',
-          flexWrap: 'wrap',
         }}
       >
         {siteIds.map((id) => (
-          <InfoBox siteId={id} fileHandler={fileHandler} />
+          <ListItem key={id}>
+            <InfoBox siteId={id} fileHandler={fileHandler} />
+          </ListItem>
         ))}
       </List>
     </Box>
