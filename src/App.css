@@ -1,9 +1,12 @@
 #root {
   /* max-width: 1280px; */
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0;
   text-align: center;
+  position: fixed;
+  top: 0;
 }
+
 
 /* Definition for sectra theme used by SectraTheme
   used by mui components

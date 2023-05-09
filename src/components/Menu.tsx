@@ -31,13 +31,13 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   padding: theme.spacing(0),
   transition: theme.transitions.create('margin', {
     easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
+    duration: 0,
   }),
   marginLeft: `-${drawerWidth}px`,
   ...(open && {
     transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
+      easing: theme.transitions.easing.sharp,
+      duration: 0,
     }),
     marginLeft: 0,
   }),
@@ -220,8 +220,8 @@ export default function Menu(props: MenuProps) {
       }
     });
     setSiteProps(newMap);
-  };
-  const minNavWidth = `calc(100% - ${drawerWidth}px)`;
+    };
+    const minNavWidth = `calc(100vw - ${drawerWidth}px)`;
   return (
     <div className="App">
       <Box sx={{ display: 'fixed' }}>
@@ -231,7 +231,8 @@ export default function Menu(props: MenuProps) {
           sx={{
             ...(open
               ? {
-                  minWidth: minNavWidth,
+                   minWidth: minNavWidth,
+                  maxWidth: minNavWidth
                 }
               : {
                   minWidth: '100vw',

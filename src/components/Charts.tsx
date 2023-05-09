@@ -487,7 +487,7 @@ function drawHistogram(
   });
 
   return (
-    <div key={metric}>
+    <div key={metric} min-height="100%">
       <p
         data-testid="graph-header"
         style={{
@@ -730,5 +730,5 @@ export function BarChart(props: ChartProps): JSX.Element {
     setBarGraphList(newBarGraphList);
   }, [fileHandler, metrics, siteProps, sites]);
 
-  return <div data-testid="barchart">{barGraphList}</div>;
+    return <div data-testid="barchart" >{barGraphList}</div>;
 }

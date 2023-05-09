@@ -41,7 +41,7 @@ const TabPanel = styled((props: TabPanelProps) => {
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       data-testid={`tab-panel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
+          aria-labelledby={`simple-tab-${index}`}
     >
       {value === index && <Box sx={{ p: 2, padding: 0 }}>{children}</Box>}
     </div>
@@ -69,7 +69,8 @@ function ViewTabs(props: ViewTabsProps) {
     <Box sx={{ width: '100%' }}>
       <Box
         sx={{
-          display: 'inline-block',
+                  display: 'inline-block',
+
         }}
       >
         <Tabs
@@ -86,7 +87,9 @@ function ViewTabs(props: ViewTabsProps) {
               color: 'primary.dark3',
               textTransform: 'none',
               fontSize: 17,
-              marginRight: 0.1,
+                  marginRight: 0.1,
+
+                  minHeight: '100%',
               backgroundColor: 'primary.light4',
             },
             '& button.Mui-selected': {
