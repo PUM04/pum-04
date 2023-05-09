@@ -102,11 +102,11 @@ export const addFilesToBackend = async (files: File[], fileHandler: any) => {
           };
           filereader.onabort = () => {
             console.error(`Reading file ${file.name} was aborted`);
-            reject(`Reading file ${file.name} was aborted`);
+            reject(new Error(`Reading file ${file.name} was aborted`));
           };
           filereader.onerror = () => {
             console.error(`Reading file ${file.name} failed.`);
-            reject(`Reading file ${file.name} failed.`);
+            reject(new Error(`Reading file ${file.name} failed.`));
           };
         })
     );
