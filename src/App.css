@@ -6,6 +6,7 @@
   position: sticky;
   top: 0;
   overflow: clip;
+  height: 100vh;
 }
 
 /* Definition for sectra theme used by SectraTheme
