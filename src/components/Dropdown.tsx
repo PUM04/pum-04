@@ -99,7 +99,11 @@ export default function Dropdown(props: any): JSX.Element {
         },
       }}
     >
-      <ListItemButton onClick={handleClick} data-testid="dropdown-button">
+      <ListItemButton
+        onClick={handleClick}
+        data-testid="dropdown-button"
+        sx={{ boxShadow: 1, p: 2 }}
+      >
         <ListItemIcon>
           <Checkbox
             checked={checked}
