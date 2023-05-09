@@ -2,7 +2,8 @@
  * @file Contains components that is the base structure.
  */
 import Box from '@mui/material/Box';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { List, ListItem } from '@mui/material';
 import { BoxPlotChart, BarChart } from './Charts';
 import InfoBox from './InfoBox';
 import { Site } from './SiteInterface';
@@ -14,7 +15,7 @@ interface GraphComponentProps {
 }
 
 interface InfoContainerProps {
-  // sites: Array<string>;
+  siteProps: Map<string, Site>;
   fileHandler: any;
 }
 /**
@@ -105,13 +106,21 @@ export function BarGraphComponent(props: GraphComponentProps): JSX.Element {
  * @returns MUI box component
  */
 export function InfoboxContainer(props: InfoContainerProps): JSX.Element {
-  const { /** sites */ fileHandler } = props;
+  const { siteProps, fileHandler } = props;
+  const [siteIds, setSiteIds] = useState<any[]>([]);
+
+  useEffect(() => {
+    const sites = Array.from(siteProps.keys()).filter(
+      (key) => siteProps.get(key)?.enabled
+    );
+    setSiteIds(sites);
+  }, [siteProps]);
   return (
     <Box
       data-testid="infobox-component"
       sx={{
         flexDirection: 'row',
-        display: 'flex',
+        display: 'inline-flex',
         backgroundColor: 'primary.light1',
         color: 'secondary.main',
         flexWrap: 'wrap',
@@ -119,7 +128,17 @@ export function InfoboxContainer(props: InfoContainerProps): JSX.Element {
         padding: '1vw',
       }}
     >
-      <InfoBox siteId="4b14a8" fileHandler={fileHandler} />
+      <List
+        style={{
+          flexDirection: 'row',
+        }}
+      >
+        {siteIds.map((id) => (
+          <ListItem key={id}>
+            <InfoBox siteId={id} fileHandler={fileHandler} />
+          </ListItem>
+        ))}
+      </List>
     </Box>
   );
 }
