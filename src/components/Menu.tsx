@@ -89,20 +89,29 @@ interface MenuProps {
  * @param files files which are added to the backend
  * @param fileHandler is used to add the files to the backend
  */
-export const addFilesToBackend = (files: File[], fileHandler: any) => {
+export const addFilesToBackend = async (files: File[], fileHandler: any) => {
   if (files.length > 0) {
-    files.forEach((file) => {
-      const filereader = new FileReader();
-      filereader.readAsText(file);
-      filereader.onload = () => {
-        // Send the file to the backend
-        fileHandler.AddFile(filereader.result, file.name);
-      };
-      filereader.onabort = () =>
-        console.error(`Reading file ${file.name} was aborted`);
-      filereader.onerror = () =>
-        console.error(`Reading file ${file.name} failed.`);
-    });
+    const addFilesPromises = files.map(
+      (file) =>
+        new Promise<void>((resolve, reject) => {
+          const filereader = new FileReader();
+          filereader.readAsText(file);
+          filereader.onload = () => {
+            fileHandler.AddFile(filereader.result, file.name);
+            resolve();
+          };
+          filereader.onabort = () => {
+            console.error(`Reading file ${file.name} was aborted`);
+            reject(`Reading file ${file.name} was aborted`);
+          };
+          filereader.onerror = () => {
+            console.error(`Reading file ${file.name} failed.`);
+            reject(`Reading file ${file.name} failed.`);
+          };
+        })
+    );
+    console.log(addFilesPromises.length);
+    await Promise.all(addFilesPromises);
   }
 };
 
@@ -156,19 +165,22 @@ export default function Menu(props: MenuProps) {
   >({});
 
   useEffect(() => {
-    const oldFileNames = oldFiles.map((v) => v.name);
-    const newFiles = files.filter((file) => !oldFileNames.includes(file.name));
-    setOldFiles(oldFiles.concat(newFiles));
-    addFilesToBackend(newFiles, fileHandler);
+    const addData = async () => {
+      const oldFileNames = oldFiles.map((v) => v.name);
+      const newFiles = files.filter(
+        (file) => !oldFileNames.includes(file.name)
+      );
+      console.log(newFiles);
+      await addFilesToBackend(newFiles, fileHandler);
+      setOldFiles(oldFiles.concat(newFiles));
+      console.log('added all files');
+      fileHandler?.ComputeFiles();
+      console.log('computed all files');
+      setSites(getSites(fileHandler));
+      setMetrics(getMetrics(fileHandler));
+    };
+    addData();
   }, [files]);
-
-  // get site names and metrics from backend when files are added to the backend
-  useEffect(() => {
-    fileHandler?.ComputeFiles();
-
-    setSites(getSites(fileHandler));
-    setMetrics(getMetrics(fileHandler));
-  }, [oldFiles]);
 
   const handleDrawerOpen = () => {
     setOpen(true);
