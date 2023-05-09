@@ -3,7 +3,7 @@
   margin: 0 auto;
   padding: 0;
   text-align: center;
-  position: fixed;
+  position: sticky;
   top: 0;
 }
 
