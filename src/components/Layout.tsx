@@ -60,6 +60,7 @@ function Layout(props: MenuProps) {
         sx={{
           flexDirection: 'column',
           display: 'inline-flex',
+          marginTop: `0vh`,
           textAlign: 'left',
           minWidth: '70vw', // Should be dependant on navbarwidth.
           minHeight: '46vw',
@@ -73,7 +74,7 @@ function Layout(props: MenuProps) {
           fileHandler={fileHandler}
         />
 
-        <InfoboxContainer fileHandler={fileHandler} />
+        <InfoboxContainer siteProps={siteProps} fileHandler={fileHandler} />
       </Box>
     </Box>
   );

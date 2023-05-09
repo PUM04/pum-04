@@ -6,6 +6,7 @@ import { cleanup, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect';
 import FileHandlerModule from '../../cpp/file_handler';
+import { getScaleProps, ScaleTypes } from '../../components/BaseComponent';
 
 // Component to test
 import { BoxPlotChart, BarChart } from '../../components/Charts';
@@ -52,12 +53,15 @@ response_time_bucket{method="GetImage",le="4"} 0
     fileHandler.ComputeFiles();
 
     const fakeSitePropMap = new Map<string, Site>();
+
     render(
       <BoxPlotChart
         siteProps={fakeSitePropMap}
         metrics={['GetPatient']}
         sites={['abc123']}
         fileHandler={fileHandler}
+        getScaleProps={getScaleProps(ScaleTypes.Log).scaleType}
+        percent={getScaleProps(ScaleTypes.Log).percent}
       />
     );
     const candelChart = screen.getByTestId('victory-chart');
@@ -74,6 +78,8 @@ response_time_bucket{method="GetImage",le="4"} 0
         sites={['abc123']}
         fileHandler={fileHandler}
         siteProps={fakeSitePropMap}
+        getScaleProps={getScaleProps(ScaleTypes.Percent).scaleType}
+        percent={getScaleProps(ScaleTypes.Percent).percent}
       />
     );
 
@@ -86,6 +92,8 @@ response_time_bucket{method="GetImage",le="4"} 0
         sites={['abc123']}
         fileHandler={fileHandler}
         siteProps={fakeSitePropMap}
+        getScaleProps={getScaleProps(ScaleTypes.Linear).scaleType}
+        percent={getScaleProps(ScaleTypes.Linear).percent}
       />
     );
     const histograms = screen.getAllByTestId('graph-header');
@@ -162,6 +170,8 @@ response_time_bucket{method="GetImage",le="10"} 0
         metrics={['GetPatient', 'GetImage']}
         sites={['abc1', 'abc12', 'abc123', 'abc1234', 'abc12345', 'abc123456']}
         fileHandler={fileHandler}
+        getScaleProps={getScaleProps(ScaleTypes.Linear).scaleType}
+        percent={getScaleProps(ScaleTypes.Linear).percent}
       />
     );
 
