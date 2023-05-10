@@ -200,7 +200,19 @@ export default function Menu(props: MenuProps) {
     const PHI = (1 + Math.sqrt(5)) / 2;
     let index = newMap.size;
     // sort sites after name
-    setSites([...sites].sort((a, b) => a.name.localeCompare(b.name)));
+    setSites(
+      [...sites].sort((a, b) => {
+        if (a.name && b.name) {
+          return a.name.localeCompare(b.name);
+        }
+        // fallback. In test data, some sites are missing names
+        if (a.id && b.id) {
+          return a.id.localeCompare(b.id);
+        }
+        // fallback since id's can be null
+        return 0;
+      })
+    );
     // Map colors to the sites
     sites.forEach((site) => {
       if (site.id) {

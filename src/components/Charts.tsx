@@ -643,7 +643,6 @@ function mergeXvalues(
   let mergeAmount = 1; // start merge amount
   let loopCount = 0;
   if (width >= tooSmallWidth) {
-    console.log('no changes when running mergeXvalues()');
     return barGraph;
   }
 
