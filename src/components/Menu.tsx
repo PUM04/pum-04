@@ -181,7 +181,10 @@ export default function Menu(props: MenuProps) {
   const handleSelectedMetrics = (key: string, value: boolean) => {
     selectedMetrics[key] = value;
     setSelectedMetrics(selectedMetrics);
-
+    // sort metrics after name
+    setMetrics(
+      [...Object.keys(selectedMetrics)].sort((a, b) => a.localeCompare(b))
+    );
     const newSelectedMetrics: string[] = [];
     Object.keys(selectedMetrics).forEach((metric) => {
       if (selectedMetrics[metric]) newSelectedMetrics.push(metric);
@@ -196,7 +199,8 @@ export default function Menu(props: MenuProps) {
     const newMap = new Map<string, Site>(siteProps);
     const PHI = (1 + Math.sqrt(5)) / 2;
     let index = newMap.size;
-
+    // sort sites after name
+    setSites([...sites].sort((a, b) => a.name.localeCompare(b.name)));
     // Map colors to the sites
     sites.forEach((site) => {
       if (site.id) {
