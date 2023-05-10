@@ -14,13 +14,15 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Paper from '@mui/material/Paper';
 import DragAndDropzone from './DragAndDropzone';
+
 import LegendBar from './LegendBar';
+
 import CHART_COLORS from './CHART_COLORS';
 import Dropdown from './Dropdown';
 import { Site } from './SiteInterface';
 import '../App.css';
 
-const size = 75;
+const size = 55;
 const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
@@ -29,13 +31,13 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   padding: theme.spacing(0),
   transition: theme.transitions.create('margin', {
     easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
+    duration: 0,
   }),
   marginLeft: `-${drawerWidth}px`,
   ...(open && {
     transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
+      easing: theme.transitions.easing.sharp,
+      duration: 0,
     }),
     marginLeft: 0,
   }),
@@ -227,11 +229,27 @@ export default function Menu(props: MenuProps) {
     });
     setSiteProps(newMap);
   };
-
+  const minNavWidth = `calc(100vw - ${drawerWidth}px)`;
   return (
     <div className="App">
-      <Box sx={{ display: 'flex' }}>
-        <AppBar position="fixed" open={open}>
+      <Box sx={{ display: 'fixed' }}>
+        <AppBar
+          id="appbar"
+          position="sticky"
+          sx={{
+            ...(open
+              ? {
+                  minWidth: minNavWidth,
+                  maxWidth: minNavWidth,
+                  minHeight: size,
+                }
+              : {
+                  minWidth: '100vw',
+                  minHeight: size,
+                }),
+          }}
+          open={open}
+        >
           <DrawerHeader>
             <IconButton
               color="inherit"
@@ -247,7 +265,6 @@ export default function Menu(props: MenuProps) {
             >
               <MenuIcon />
             </IconButton>
-
             <LegendBar siteProps={siteProps} />
           </DrawerHeader>
         </AppBar>
