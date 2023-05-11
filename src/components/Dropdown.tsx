@@ -34,7 +34,6 @@ export default function Dropdown(props: any): JSX.Element {
   useEffect(() => {
     givenItems.forEach((Item: any) => {
       extractedItems.push({ item: Item, selected: false });
-      onSelected(Item, false);
     });
     setContent(extractedItems);
   }, [JSON.stringify(givenItems)]);
@@ -55,7 +54,6 @@ export default function Dropdown(props: any): JSX.Element {
         const item = { ...contentItem };
         item.selected = false;
         newContent.push(item);
-        onSelected(item.item, item.selected);
       });
     } else {
       // If checkbox currently unchecked and gets clicked on, check it.
@@ -63,9 +61,10 @@ export default function Dropdown(props: any): JSX.Element {
         const item = { ...contentItem };
         item.selected = true;
         newContent.push(item);
-        onSelected(item.item, item.selected);
       });
     }
+    newContent.forEach((contentItem) => onSelected(contentItem.item, contentItem.selected)
+    )
     setContent(newContent);
   };
   // When a sub-checkbox get clicked on.

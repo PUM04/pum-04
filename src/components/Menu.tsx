@@ -201,14 +201,15 @@ export default function Menu(props: MenuProps) {
 
   const handleSelectedSites = (key: string, value: boolean) => {
     selectedSites[key] = value;
-    setSelectedSites(selectedSites);
 
     const newMap = new Map<string, Site>(siteProps);
     const PHI = (1 + Math.sqrt(5)) / 2;
     let index = newMap.size;
-
-    // Map colors to the sites
-    sites.forEach((site) => {
+   
+    console.log("handle selected sites");
+    
+    
+    sites.filter((site)=> site.name ? selectedSites[site.name] : false).forEach((site) => {
       if (site.id) {
         let hexColor = '';
         if (index < CHART_COLORS.length) {
@@ -227,8 +228,10 @@ export default function Menu(props: MenuProps) {
         index++;
       }
     });
+
     setSiteProps(newMap);
   };
+  
   const minNavWidth = `calc(100vw - ${drawerWidth}px)`;
   return (
     <div className="App">

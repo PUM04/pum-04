@@ -137,26 +137,7 @@ function getCandleChartData(
     const jsonData = JSON.parse(siteData);
     const metricData = jsonData ? jsonData[metric] : null;
     if (!metricData) return;
-    const maxHeight = 30000;
-    /**
-     * Todo: This should not be calculated in frontend.
-     * Add new calculations in backend that does not include infinite when
-     * calculating median,min,max(should probably still be inf),q1,q3. This fix is only to make boxplotsChart
-     * readable when adding a victoryCandle with inf values
-     */
-    if (metricData.max > maxHeight) {
-      metricData.max = maxHeight;
-      // Remove closeLine
-    }
-    if (metricData.first_quartile > maxHeight) {
-      metricData.first_quartile = maxHeight;
-    }
-    if (metricData.third_quartile > maxHeight) {
-      metricData.third_quartile = maxHeight;
-    }
-    if (metricData.min > maxHeight) {
-      metricData.min = maxHeight;
-    }
+    console.log(metricData);
     candle.candles.push({
       x: metric,
       open: metricData.first_quartile,
@@ -255,7 +236,7 @@ interface CustomTickLabelProps extends TextProps {
   text?: any; // Use the appropriate type based on your use case
   height?: number;
 
-  
+
 }
 /* eslint-enable */
 
@@ -316,9 +297,10 @@ function CustomTickLabelBoxPlot(props: CustomTickLabelProps): JSX.Element {
 function useBoxDiagrams(siteIds: string[], fileHandler: any) {
   return useMemo(() => {
     const histograms: Map<string, string> = new Map();
-    siteIds.forEach((id) =>
+    siteIds.forEach((id) =>{
       histograms.set(id, String(fileHandler.GetBoxDiagram(id)))
-    );
+      console.log(String(fileHandler.GetBoxDiagram(id)));
+     } );
     return histograms;
   }, [JSON.stringify(siteIds)]);
 }
