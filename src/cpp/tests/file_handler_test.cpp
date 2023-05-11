@@ -240,5 +240,25 @@ TEST_CASE("FileHandler") {
         CHECK(info_box["hosts"] == 2);
     }
 
+    SUBCASE("Caching between computes") {
+        std::string performance =
+            "response_time_bucket{method=\"Test\",le=\"1\"} 1\n"
+            "response_time_bucket{method=\"Test1\",le=\"6\"} 1\n"
+            "response_time_bucket{method=\"Test2\",le=\"6\"} 1\n";
+
+        std::string performance_name = "test1_230102.txt";
+
+        fh->AddFile(performance, performance_name);
+        fh->ComputeFiles();
+
+        std::string host = "{\"site_name\": \"test\", \"site_id\": \"test1\"}";
+        std::string host_name = "test.json";
+
+        fh->AddFile(host, host_name);
+        fh->ComputeFiles();
+
+        CHECK(fh->GetHistogram("test1") != "{}");
+    }
+
     delete fh;
 }

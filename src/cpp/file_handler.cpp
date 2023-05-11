@@ -35,13 +35,22 @@ void FileHandler::ComputeFiles()
         AddHostFile(file.file);
     }
 
-    for (auto file : performance_files)
+    auto file_it = performance_files.begin();
+
+    // Only remove the performance files that were actually added
+    while (file_it != performance_files.end())
     {
-        AddPerformanceFile(file.file, file.name);
+        if (AddPerformanceFile(file_it->file, file_it->name))
+        {
+            performance_files.erase(file_it++);
+        } 
+        else 
+        {
+            file_it++;
+        }
     }
 
     host_files = {};
-    performance_files = {};
 
 #ifdef DEBUG
     std::cout << "Linked the host and performance files." << std::endl;
@@ -399,7 +408,7 @@ json FileHandler::GetPerformanceJson(std::string &content) const
     return performance;
 }
 
-void FileHandler::AddPerformanceFile(std::string &file, std::string &file_name)
+bool FileHandler::AddPerformanceFile(std::string &file, std::string &file_name)
 {
     std::string site_id = GetIdFromPerformance(file_name);
     // Add the host to the corresponding site if it exists
@@ -412,13 +421,12 @@ void FileHandler::AddPerformanceFile(std::string &file, std::string &file_name)
 #ifdef DEBUG
         std::cout << "Linked log " << file_name << " to " << site_id << "." << std::endl;
 #endif
+        return true;
     }
-    else
-    {
 #ifdef DEBUG
         std::cout << "The site with id " << site_id << " does not exist." << std::endl;
 #endif
-    }
+    return false;
 }
 
 std::string FileHandler::GetIdFromPerformance(std::string &file_name) const
