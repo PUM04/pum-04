@@ -6,7 +6,6 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import React, { useEffect, useState } from 'react';
 import { VictoryChartProps } from 'victory';
-import { List, ListItem } from '@mui/material';
 import { BoxPlotChart, BarChart } from './Charts';
 import InfoBox from './InfoBox';
 import { Site } from './SiteInterface';
@@ -245,21 +244,12 @@ export function InfoboxContainer(props: InfoContainerProps): JSX.Element {
         backgroundColor: 'primary.light1',
         color: 'secondary.main',
         flexWrap: 'wrap',
-        justifyContent: 'space-evenly',
         padding: '1vw',
       }}
     >
-      <List
-        style={{
-          flexDirection: 'row',
-        }}
-      >
-        {siteIds.map((id) => (
-          <ListItem key={id}>
-            <InfoBox siteId={id} fileHandler={fileHandler} />
-          </ListItem>
-        ))}
-      </List>
+      {siteIds.map((id) => (
+        <InfoBox siteId={id} key={id} fileHandler={fileHandler} />
+      ))}
     </Box>
   );
 }

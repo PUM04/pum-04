@@ -254,8 +254,6 @@ interface CustomTickLabelProps extends TextProps {
   ticks?: Array<string>;
   text?: any; // Use the appropriate type based on your use case
   height?: number;
-
-  
 }
 /* eslint-enable */
 
@@ -468,12 +466,16 @@ function drawHistogram(
   width: number,
   getScaleProps: VictoryChartProps
 ) {
-  const formatTickDifference = (tick: any, index: number, ticksArray: any) => {
+  const formatTickDifference = (
+    tick: number,
+    index: number,
+    ticksArray: Array<number>
+  ) => {
     if (index < ticksArray.length - 1) {
       if (tick === ticksArray[index + 1] - 1) {
         return `${tick} ms`;
       }
-      const difference = `${tick} - ${Number(ticksArray[index + 1]) - 1} ms`;
+      const difference = `${tick} - ${ticksArray[index + 1] - 1} ms`;
       return difference;
     }
     return `${ticksArray[index]} ms - `;
@@ -517,7 +519,7 @@ function drawHistogram(
         />
         <VictoryAxis
           tickLabelComponent={<CustomTickLabel />}
-          tickFormat={(tick: any, index: number, ticks: any) =>
+          tickFormat={(tick: number, index: number, ticks: Array<number>) =>
             formatTickDifference(tick, index, ticks)
           }
           style={{

@@ -66,6 +66,8 @@ function Layout(props: MenuProps) {
           minHeight: '46vw',
           margin: '0',
           paddingTop: '10px',
+          paddingLeft: '18vw',
+          paddingRight: '18vw',
         }}
       >
         <ViewTabs
