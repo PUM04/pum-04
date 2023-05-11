@@ -249,7 +249,7 @@ export function InfoboxContainer(props: InfoContainerProps): JSX.Element {
       }}
     >
       {siteIds.map((id) => (
-        <InfoBox siteId={id} key={id} fileHandler={fileHandler} />
+        <InfoBox siteId={id} key={id} fileHandler={fileHandler}/>
       ))}
     </Box>
   );
