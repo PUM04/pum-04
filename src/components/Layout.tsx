@@ -64,10 +64,10 @@ function Layout(props: MenuProps) {
           textAlign: 'left',
           minWidth: '70vw', // Should be dependant on navbarwidth.
           minHeight: '46vw',
-          margin: '0',
+          width: '50%',
+          transformOrigin: 'center left',
           paddingTop: '10px',
-          paddingLeft: '18vw',
-          paddingRight: '18vw',
+          margin: 'auto',
         }}
       >
         <ViewTabs

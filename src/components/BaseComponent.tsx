@@ -239,12 +239,13 @@ export function InfoboxContainer(props: InfoContainerProps): JSX.Element {
     <Box
       data-testid="infobox-component"
       sx={{
+        width: '100%',
         flexDirection: 'row',
-        display: 'inline-flex',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(275px, 1fr))',
         backgroundColor: 'primary.light1',
         color: 'secondary.main',
         flexWrap: 'wrap',
-        padding: '1vw',
       }}
     >
       {siteIds.map((id) => (
