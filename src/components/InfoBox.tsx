@@ -39,18 +39,15 @@ function InfoBox(props: InfoBoxProps) {
   }
 
   const data = JSON.parse(fileContent);
-
   return (
     <Paper
       data-testid="info-box"
       elevation={3}
       sx={{
-        display: 'flex',
         backgroundColor: 'primary.main',
         color: 'secondary.main',
         padding: '1vh',
         margin: '1vh',
-        minWidth: '20vw',
       }}
     >
       <List>
@@ -96,7 +93,7 @@ function InfoBox(props: InfoBoxProps) {
               <span /> Average:
             </Typography>
             <Typography sx={style1}>
-              <span /> {data.average_ram}
+              <span /> {Math.floor(data.average_ram)}
             </Typography>
             <br />
             <Typography sx={style2}>
@@ -131,7 +128,7 @@ function InfoBox(props: InfoBoxProps) {
               <span /> Average:
             </Typography>
             <Typography sx={style1}>
-              <span /> {data.average_cpu}
+              <span /> {Math.floor(data.average_cpu)}
             </Typography>
             <br />
             <Typography sx={style2}>
