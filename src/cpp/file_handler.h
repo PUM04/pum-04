@@ -179,12 +179,21 @@ public:
      * @return std::string 
      */
     std::string GetIdFromPerformance(std::string &file_name) const;
+
     void ParseContent(std::string &fileContent, std::regex &regex, std::vector<std::string> &result) const;
 
     json GetPerformanceJson(std::string &content) const;
 
     void SplitString(std::string &s, std::string &delim,
                      std::vector<std::string>) const;
+
+    /**
+     * @brief Check if a site is valid for calculations
+     *
+     * @param site_id The site id
+     * @return bool If it is valid or not
+     */
+    bool isSiteValid(std::string site_id) const;
 };
 
 #ifndef _TESTING_

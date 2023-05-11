@@ -111,12 +111,7 @@ std::string FileHandler::GetInfoBox(std::string site_id) {
 
 std::string FileHandler::GetHistogram(std::string site_id) const
 {
-    // Make sure the site exists
-    if (sites.find(site_id) == sites.end())
-    {
-#ifdef DEBUG
-        std::cout << "Could not find site with id " << site_id << std::endl;
-#endif
+    if (!isSiteValid(site_id)) {
         return "{}";
     }
 
@@ -130,12 +125,7 @@ std::string FileHandler::GetHistogram(std::string site_id) const
 
 std::string FileHandler::GetBoxDiagram(std::string site_id) const
 {
-    // Make sure the site exists
-    if (sites.find(site_id) == sites.end())
-    {
-#ifdef DEBUG
-        std::cout << "Could not find site with id " << site_id << std::endl;
-#endif
+    if (!isSiteValid(site_id)) {
         return "{}";
     }
 
@@ -155,6 +145,30 @@ std::string FileHandler::GetBoxDiagram(std::string site_id) const
         box_diagram[el.key()]["max"] = GetBoxMax(el.value());
     }
     return box_diagram.dump();
+}
+
+bool FileHandler::isSiteValid(std::string site_id) const 
+{
+    auto site_it = sites.find(site_id);
+
+    // Check if the site exists
+    if (site_it == sites.end())
+    {
+#ifdef DEBUG
+        std::cout << "Could not find site with id " << site_id << std::endl;
+#endif
+        return false;
+    }
+
+    if (site_it->second.logs.empty())
+    {
+#ifdef DEBUG
+        std::cout << "Could not found any performance data for site with id " << site_id << std::endl;
+#endif
+        return false;
+    }
+    
+    return true;
 }
 
 void FileHandler::CalculateCategories(struct Site &site, json &categories) const
