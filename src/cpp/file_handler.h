@@ -6,6 +6,7 @@
 #include "nlohmann/json.h"
 #include <regex>
 #include <set>
+#include <list>
 
 #ifndef _TESTING_
 #include <emscripten/bind.h>
@@ -78,7 +79,7 @@ public:
   private:
     std::unordered_map<std::string, struct Site> sites;
     std::vector<struct LoadedFile> host_files; 
-    std::vector<struct LoadedFile> performance_files; 
+    std::list<struct LoadedFile> performance_files; 
     
     void CalculateCategories(struct Site &site, json &categories, bool keepInf) const;
 
@@ -169,8 +170,9 @@ public:
      * 
      * @param file The content of the performance file
      * @param file_name  The file name
+     * @return bool If the file was added
      */
-    void AddPerformanceFile(std::string &file, std::string &file_name);
+    bool AddPerformanceFile(std::string &file, std::string &file_name);
 
     /**
      * @brief Get the id from the performance file
@@ -179,12 +181,21 @@ public:
      * @return std::string 
      */
     std::string GetIdFromPerformance(std::string &file_name) const;
+
     void ParseContent(std::string &fileContent, std::regex &regex, std::vector<std::string> &result) const;
 
     json GetPerformanceJson(std::string &content) const;
 
     void SplitString(std::string &s, std::string &delim,
                      std::vector<std::string>) const;
+
+    /**
+     * @brief Check if a site is valid for calculations
+     *
+     * @param site_id The site id
+     * @return bool If it is valid or not
+     */
+    bool isSiteValid(std::string site_id) const;
 };
 
 #ifndef _TESTING_
