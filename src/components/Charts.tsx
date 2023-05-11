@@ -470,15 +470,38 @@ function drawHistogram(
   metric: string,
   width: number
 ) {
-  const formatTickDifference = (tick: any, index: number, ticksArray: any) => {
-    if (index < ticksArray.length - 1) {
-      if (tick === ticksArray[index + 1] - 1) {
-        return `${tick} ms`;
+  const formatTickDifference = (
+    tick: number,
+    index: number,
+    ticksArray: any
+  ) => {
+    const getValue = (val: number): number => {
+      if (val === undefined) {
+        return 0;
       }
-      const difference = `${tick} - ${Number(ticksArray[index + 1]) - 1} ms`;
+      return val;
+    };
+
+    if (tick === ticksArray[0]) {
+      return `${0} - ${Number(ticksArray[index])} ms`;
+    }
+    if (index < ticksArray.length) {
+      const prevTick = getValue(ticksArray[index - 1]);
+      const currentTick = Number(ticksArray[index]);
+      const nextTick = Number(ticksArray[index + 1]);
+      if (Number(prevTick) + 1 === currentTick) {
+        return `${currentTick} ms`;
+      }
+      if (nextTick > 30000) {
+        return `${ticksArray[index]} ms - `;
+      }
+      if (tick > 30000) {
+        return `+Inf`;
+      }
+      const difference = `${Number(prevTick) + 1} - ${currentTick} ms`;
       return difference;
     }
-    return `${ticksArray[index]} ms - `;
+    return `ERROR`;
   };
 
   const victoryBars: Array<any> = [];
@@ -601,14 +624,19 @@ function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram> {
     oldBarGraph.forEach((histogram: { bars: Bar[] }) => {
       const newHistogram: Histogram = new Histogram();
       let keepZero: boolean = true;
-      histogram.bars.forEach((bar) => {
+      let prevShouldHaveBeenAdded: boolean = false;
+      histogram.bars.forEach((bar, i) => {
         if (emptyXValues.has(bar.x)) {
           if (keepZero) {
-            newHistogram.bars.push(bar);
+            prevShouldHaveBeenAdded = true;
           }
           keepZero = false;
         } else {
+          if (prevShouldHaveBeenAdded) {
+            newHistogram.bars.push(histogram.bars[i - 1]);
+          }
           newHistogram.bars.push(bar);
+          prevShouldHaveBeenAdded = false;
           keepZero = true;
         }
       });
