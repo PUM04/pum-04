@@ -81,7 +81,7 @@ public:
     std::vector<struct LoadedFile> host_files; 
     std::list<struct LoadedFile> performance_files; 
     
-    void CalculateCategories(struct Site &site, json &categories) const;
+    void CalculateCategories(struct Site &site, json &categories, bool keepInf) const;
 
     /**
      * @brief Merge all of the log files with each other on category
@@ -90,7 +90,7 @@ public:
      * @param key The category
      * @param box_diagram The json file for saving the result
      */
-    void MergeCategory(struct Site &site, std::string key, json &result) const;
+    void MergeCategory(struct Site &site, std::string key, json &result, bool keepInf) const;
 
     /**
      * @brief Get the average value from a category

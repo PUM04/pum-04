@@ -127,7 +127,7 @@ std::string FileHandler::GetHistogram(std::string site_id) const
     struct Site site = sites.at(site_id);
     json categories;
 
-    CalculateCategories(site, categories);
+    CalculateCategories(site, categories, true);
 
     return categories.dump();
 }
@@ -142,7 +142,7 @@ std::string FileHandler::GetBoxDiagram(std::string site_id) const
     json categories;
     json box_diagram;
 
-    CalculateCategories(site, categories);
+    CalculateCategories(site, categories, false);
 
     for (auto &el : categories.items())
     {
@@ -180,7 +180,7 @@ bool FileHandler::isSiteValid(std::string site_id) const
     return true;
 }
 
-void FileHandler::CalculateCategories(struct Site &site, json &categories) const
+void FileHandler::CalculateCategories(struct Site &site, json &categories, bool keepInf) const
 {
     // Populate with the different categories
     for (json log : site.logs)
@@ -193,7 +193,7 @@ void FileHandler::CalculateCategories(struct Site &site, json &categories) const
 
     for (auto &el : categories.items())
     {
-        MergeCategory(site, el.key(), categories);
+        MergeCategory(site, el.key(), categories, keepInf);
     }
 }
 
@@ -273,7 +273,7 @@ int FileHandler::GetBoxMax(json &category) const
     return 0;
 }
 
-void FileHandler::MergeCategory(struct Site &site, std::string key, json &result) const
+void FileHandler::MergeCategory(struct Site &site, std::string key, json &result, bool keepInf) const
 {
     result[key] = {};
     result[key]["total"] = 0;
@@ -320,12 +320,24 @@ void FileHandler::MergeCategory(struct Site &site, std::string key, json &result
         result[key]["total"] = (int)result[key]["total"] + sum;
     }
 
+    if (!keepInf) 
+    {
+        result[key]["infSum"] = 0;
+    }
+
     // Add the data to the json object
     for (auto const &kentry : length_count)
     {
-        result[key]["data"] += {
-            {"length", kentry.first},
-            {"count", kentry.second}};
+        if (!keepInf && kentry.first == std::numeric_limits<int>::max()) 
+        {
+            result[key]["infSum"] = kentry.second;
+            result[key]["total"] = (int) result[key]["total"] - kentry.second;
+        } else 
+        {
+            result[key]["data"] += {
+                {"length", kentry.first},
+                {"count", kentry.second}};
+        }
     }
 }
 
@@ -464,7 +476,7 @@ std::string FileHandler::GetMetrics() const
     for (auto site : sites)
     {
         json categories;
-        CalculateCategories(site.second, categories);
+        CalculateCategories(site.second, categories, true);
         // add all metric names
         for (auto &el : categories.items())
         {
