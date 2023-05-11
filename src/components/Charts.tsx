@@ -297,10 +297,10 @@ function CustomTickLabelBoxPlot(props: CustomTickLabelProps): JSX.Element {
 function useBoxDiagrams(siteIds: string[], fileHandler: any) {
   return useMemo(() => {
     const histograms: Map<string, string> = new Map();
-    siteIds.forEach((id) =>{
-      histograms.set(id, String(fileHandler.GetBoxDiagram(id)))
+    siteIds.forEach((id) => {
+      histograms.set(id, String(fileHandler.GetBoxDiagram(id)));
       console.log(String(fileHandler.GetBoxDiagram(id)));
-     } );
+    });
     return histograms;
   }, [JSON.stringify(siteIds)]);
 }

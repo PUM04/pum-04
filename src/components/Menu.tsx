@@ -158,9 +158,6 @@ export default function Menu(props: MenuProps) {
   const [sites, setSites] = useState<Site[]>([]);
   const [metrics, setMetrics] = useState<string[]>([]);
 
-  const [selectedSites, setSelectedSites] = useState<Record<string, boolean>>(
-    {}
-  );
   const [selectedMetrics, setSelectedMetrics] = useState<
     Record<string, boolean>
   >({});
@@ -179,6 +176,31 @@ export default function Menu(props: MenuProps) {
     };
     addData();
   }, [files]);
+
+  useEffect(() => {
+    const newMap = new Map<string, Site>(siteProps);
+    const PHI = (1 + Math.sqrt(5)) / 2;
+    let index = newMap.size;
+    sites.forEach((site) => {
+      if (site.id) {
+        let hexColor = '';
+        if (index < CHART_COLORS.length) {
+          hexColor = CHART_COLORS[index];
+        } else {
+          console.info('no more default colors, generating random colors');
+          const n = index * PHI - Math.floor(index * PHI);
+          const hue = Math.floor(n * 180);
+          hexColor = `#0${hue.toString(16)}`;
+        }
+        newMap.set(site.id, {
+          ...site,
+          color: hexColor,
+        });
+        index++;
+      }
+    });
+    setSiteProps(newMap);
+  }, [sites]);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -200,38 +222,21 @@ export default function Menu(props: MenuProps) {
   };
 
   const handleSelectedSites = (key: string, value: boolean) => {
-    selectedSites[key] = value;
+    console.log('handleSelectedSites');
+    const newSiteProps = new Map<string, Site>(siteProps);
 
-    const newMap = new Map<string, Site>(siteProps);
-    const PHI = (1 + Math.sqrt(5)) / 2;
-    let index = newMap.size;
-   
-    console.log("handle selected sites");
-    
-    
-    sites.filter((site)=> site.name ? selectedSites[site.name] : false).forEach((site) => {
-      if (site.id) {
-        let hexColor = '';
-        if (index < CHART_COLORS.length) {
-          hexColor = CHART_COLORS[index];
-        } else {
-          console.info('no more default colors, generating random colors');
-          const n = index * PHI - Math.floor(index * PHI);
-          const hue = Math.floor(n * 180);
-          hexColor = `#0${hue.toString(16)}`;
-        }
-        newMap.set(site.id, {
-          ...site,
-          color: hexColor,
-          enabled: selectedSites[site.name] ? selectedSites[site.name] : false,
-        });
-        index++;
-      }
-    });
+    const newSelectedSite = Array.from(newSiteProps.values()).find(
+      (site) => site.name === key
+    );
 
-    setSiteProps(newMap);
+    if (newSelectedSite?.id) {
+      newSelectedSite.enabled = value;
+      newSiteProps.set(newSelectedSite.id, newSelectedSite);
+    }
+
+    setSiteProps(newSiteProps);
   };
-  
+
   const minNavWidth = `calc(100vw - ${drawerWidth}px)`;
   return (
     <div className="App">
