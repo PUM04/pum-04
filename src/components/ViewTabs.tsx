@@ -90,8 +90,7 @@ function ViewTabs(props: ViewTabsProps) {
               textTransform: 'none',
               fontSize: 17,
               marginRight: 0.1,
-
-              minHeight: '100%',
+              // minHeight: '100%', //this added an ugly bottom margin
               backgroundColor: 'primary.light4',
             },
             '& button.Mui-selected': {

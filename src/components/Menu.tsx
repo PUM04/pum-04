@@ -213,7 +213,10 @@ export default function Menu(props: MenuProps) {
   const handleSelectedMetrics = (key: string, value: boolean) => {
     selectedMetrics[key] = value;
     setSelectedMetrics(selectedMetrics);
-
+    // sort metrics after name
+    setMetrics(
+      [...Object.keys(selectedMetrics)].sort((a, b) => a.localeCompare(b))
+    );
     const newSelectedMetrics: string[] = [];
     Object.keys(selectedMetrics).forEach((metric) => {
       if (selectedMetrics[metric]) newSelectedMetrics.push(metric);
