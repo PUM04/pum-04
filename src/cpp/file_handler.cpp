@@ -89,7 +89,8 @@ std::string FileHandler::GetInfoBox(std::string site_id) {
     for (auto host : site.hosts["nodes"]) {
         if (host["memory"] < info_box["min_ram"] ) {
             info_box["min_ram"] = host["memory"];
-        } else if (host["memory"] > info_box["max_ram"]) {
+        } 
+        if (host["memory"] > info_box["max_ram"]) {
             info_box["max_ram"] = host["memory"];
         }
 
@@ -97,7 +98,8 @@ std::string FileHandler::GetInfoBox(std::string site_id) {
 
         if (host["cpu"] < info_box["min_cpu"] ) {
             info_box["min_cpu"] = host["cpu"];
-        } else if (host["cpu"] > info_box["max_cpu"]) {
+        } 
+        if (host["cpu"] > info_box["max_cpu"]) {
             info_box["max_cpu"] = host["cpu"];
         }
 
