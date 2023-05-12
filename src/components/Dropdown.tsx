@@ -34,7 +34,6 @@ export default function Dropdown(props: any): JSX.Element {
   useEffect(() => {
     givenItems.forEach((Item: any) => {
       extractedItems.push({ item: Item, selected: false });
-      onSelected(Item, false);
     });
     setContent(extractedItems);
   }, [JSON.stringify(givenItems)]);

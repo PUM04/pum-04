@@ -240,6 +240,52 @@ TEST_CASE("FileHandler") {
         CHECK(info_box["hosts"] == 2);
     }
     
+    SUBCASE("Get info box for another site") {
+        std::string host = 
+            "{\n"
+              "\"site_id\": \"66g3qw\",\n"
+              "\"site_name\": \"bbvmvh\",\n"
+              "\"baseline_version\": \"25.1\",\n"
+              "\"type\": \"openstack\",\n"
+              "\"nodes\": {\n"
+                "\"risapp\": {\n"
+                  "\"os\": \"Freestyle\",\n"
+                  "\"cpu\": 16,\n"
+                  "\"memory\": 38,\n"
+                  "\"services\": [\n"
+                    "\"shs\"\n"
+                  "]\n"
+                "},\n"
+                "\"lb\": {\n"
+                  "\"os\": \"Redstone_4\",\n"
+                  "\"cpu\": 5,\n"
+                  "\"memory\": 57,\n"
+                  "\"services\": [\n"
+                    "\"ids7\",\n"
+                    "\"es\"\n"
+                  "]\n"
+                "}\n"
+              "}\n"
+            "}\n";
+
+        fh->AddFile(host, "66g3qw.json");
+        fh->ComputeFiles();
+        json info_box = json::parse(fh->GetInfoBox("66g3qw"));
+
+        CHECK(info_box["site_name"] == "bbvmvh");
+        CHECK(info_box["min_ram"] == 38);
+        CHECK(info_box["max_ram"] == 57);
+        CHECK(info_box["total_ram"] == 95);
+        CHECK(info_box["average_ram"] == 47.5);
+
+        CHECK(info_box["min_cpu"] == 5);
+        CHECK(info_box["max_cpu"] == 16);
+        CHECK(info_box["total_cpu"] == 21);
+        CHECK(info_box["average_cpu"] == 10.5);
+
+        CHECK(info_box["hosts"] == 2);
+    }
+
     SUBCASE("Simple box diagram with Inf") {
         std::string performance = 
             "response_time_bucket{method=\"Test\",le=\"1\"} 1\n"
@@ -266,6 +312,26 @@ TEST_CASE("FileHandler") {
         CHECK(box["Test"]["average"] == 3.875);
         CHECK(box["Test"]["first_quartile"] == 3);
         CHECK(box["Test"]["third_quartile"] == 4);
+    }
+
+    SUBCASE("Caching between computes") {
+        std::string performance =
+            "response_time_bucket{method=\"Test\",le=\"1\"} 1\n"
+            "response_time_bucket{method=\"Test1\",le=\"6\"} 1\n"
+            "response_time_bucket{method=\"Test2\",le=\"6\"} 1\n";
+
+        std::string performance_name = "test1_230102.txt";
+
+        fh->AddFile(performance, performance_name);
+        fh->ComputeFiles();
+
+        std::string host = "{\"site_name\": \"test\", \"site_id\": \"test1\"}";
+        std::string host_name = "test.json";
+
+        fh->AddFile(host, host_name);
+        fh->ComputeFiles();
+
+        CHECK(fh->GetHistogram("test1") != "{}");
     }
 
     delete fh;

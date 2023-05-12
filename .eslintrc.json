@@ -84,6 +84,7 @@
     "dist/**",
     "public/**",
     "assets/**",
-    "**/CMakeFiles/**"
+    "**/CMakeFiles/**",
+    "**/WASMExample*"
   ]
 }
