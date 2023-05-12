@@ -43,25 +43,31 @@ function Layout(props: MenuProps) {
   const [metricProps, setMetricProps] = useState<string[]>([]);
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-      }}
-    >
-      <Menu
-        fileHandler={fileHandler}
-        siteProps={siteProps}
-        setSiteProps={setSiteProps}
-        setMetricProps={setMetricProps}
-      />
-
+    <Box>
+      <Box
+        sx={{
+          display: 'flex',
+        }}
+      >
+        <Menu
+          fileHandler={fileHandler}
+          siteProps={siteProps}
+          setSiteProps={setSiteProps}
+          setMetricProps={setMetricProps}
+        />
+      </Box>
       <Box
         sx={{
           flexDirection: 'column',
-          display: 'flex',
+          display: 'inline-flex',
           marginTop: `0vh`,
           textAlign: 'left',
-          margin: '0',
+          minWidth: '70vw', // Should be dependant on navbarwidth.
+          minHeight: '46vw',
+          width: '50%',
+          transformOrigin: 'center left',
+          paddingTop: '10px',
+          margin: 'auto',
         }}
       >
         <ViewTabs
@@ -69,6 +75,7 @@ function Layout(props: MenuProps) {
           metricProps={metricProps}
           fileHandler={fileHandler}
         />
+
         <InfoboxContainer siteProps={siteProps} fileHandler={fileHandler} />
       </Box>
     </Box>

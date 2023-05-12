@@ -52,7 +52,10 @@ function LegendBar(props: LegendBarProps) {
   const { siteProps } = props;
 
   const legends: Array<JSX.Element> = [];
-  siteProps.forEach((siteprop, siteId) => {
+  const sortedSites = new Map(
+    [...siteProps.entries()].sort((a, b) => a[1].name.localeCompare(b[1].name))
+  );
+  sortedSites.forEach((siteprop, siteId) => {
     const legendKey = siteId;
     if (siteprop.enabled) {
       legends.push(

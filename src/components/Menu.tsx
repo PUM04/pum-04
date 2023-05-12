@@ -14,13 +14,15 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import Paper from '@mui/material/Paper';
 import DragAndDropzone from './DragAndDropzone';
+
 import LegendBar from './LegendBar';
+
 import CHART_COLORS from './CHART_COLORS';
 import Dropdown from './Dropdown';
 import { Site } from './SiteInterface';
 import '../App.css';
 
-const size = 75;
+const size = 55;
 const drawerWidth = 240;
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   open?: boolean;
@@ -29,13 +31,13 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })<{
   padding: theme.spacing(0),
   transition: theme.transitions.create('margin', {
     easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
+    duration: 0,
   }),
   marginLeft: `-${drawerWidth}px`,
   ...(open && {
     transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
+      easing: theme.transitions.easing.sharp,
+      duration: 0,
     }),
     marginLeft: 0,
   }),
@@ -89,20 +91,28 @@ interface MenuProps {
  * @param files files which are added to the backend
  * @param fileHandler is used to add the files to the backend
  */
-export const addFilesToBackend = (files: File[], fileHandler: any) => {
+export const addFilesToBackend = async (files: File[], fileHandler: any) => {
   if (files.length > 0) {
-    files.forEach((file) => {
-      const filereader = new FileReader();
-      filereader.readAsText(file);
-      filereader.onload = () => {
-        // Send the file to the backend
-        fileHandler.AddFile(filereader.result, file.name);
-      };
-      filereader.onabort = () =>
-        console.error(`Reading file ${file.name} was aborted`);
-      filereader.onerror = () =>
-        console.error(`Reading file ${file.name} failed.`);
-    });
+    const addFilesPromises = files.map(
+      (file) =>
+        new Promise<void>((resolve, reject) => {
+          const filereader = new FileReader();
+          filereader.readAsText(file);
+          filereader.onload = () => {
+            fileHandler.AddFile(filereader.result, file.name);
+            resolve();
+          };
+          filereader.onabort = () => {
+            console.error(`Reading file ${file.name} was aborted`);
+            reject(new Error(`Reading file ${file.name} was aborted`));
+          };
+          filereader.onerror = () => {
+            console.error(`Reading file ${file.name} failed.`);
+            reject(new Error(`Reading file ${file.name} failed.`));
+          };
+        })
+    );
+    await Promise.all(addFilesPromises);
   }
 };
 
@@ -156,19 +166,19 @@ export default function Menu(props: MenuProps) {
   >({});
 
   useEffect(() => {
-    const oldFileNames = oldFiles.map((v) => v.name);
-    const newFiles = files.filter((file) => !oldFileNames.includes(file.name));
-    setOldFiles(oldFiles.concat(newFiles));
-    addFilesToBackend(newFiles, fileHandler);
+    const addData = async () => {
+      const oldFileNames = oldFiles.map((v) => v.name);
+      const newFiles = files.filter(
+        (file) => !oldFileNames.includes(file.name)
+      );
+      await addFilesToBackend(newFiles, fileHandler);
+      setOldFiles(oldFiles.concat(newFiles));
+      fileHandler?.ComputeFiles();
+      setSites(getSites(fileHandler));
+      setMetrics(getMetrics(fileHandler));
+    };
+    addData();
   }, [files]);
-
-  // get site names and metrics from backend when files are added to the backend
-  useEffect(() => {
-    fileHandler?.ComputeFiles();
-
-    setSites(getSites(fileHandler));
-    setMetrics(getMetrics(fileHandler));
-  }, [oldFiles]);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -181,7 +191,10 @@ export default function Menu(props: MenuProps) {
   const handleSelectedMetrics = (key: string, value: boolean) => {
     selectedMetrics[key] = value;
     setSelectedMetrics(selectedMetrics);
-
+    // sort metrics after name
+    setMetrics(
+      [...Object.keys(selectedMetrics)].sort((a, b) => a.localeCompare(b))
+    );
     const newSelectedMetrics: string[] = [];
     Object.keys(selectedMetrics).forEach((metric) => {
       if (selectedMetrics[metric]) newSelectedMetrics.push(metric);
@@ -196,7 +209,20 @@ export default function Menu(props: MenuProps) {
     const newMap = new Map<string, Site>(siteProps);
     const PHI = (1 + Math.sqrt(5)) / 2;
     let index = newMap.size;
-
+    // sort sites after name
+    setSites(
+      [...sites].sort((a, b) => {
+        if (a.name && b.name) {
+          return a.name.localeCompare(b.name);
+        }
+        // fallback. In test data, some sites are missing names
+        if (a.id && b.id) {
+          return a.id.localeCompare(b.id);
+        }
+        // fallback since id's can be null
+        return 0;
+      })
+    );
     // Map colors to the sites
     sites.forEach((site) => {
       if (site.id) {
@@ -219,11 +245,27 @@ export default function Menu(props: MenuProps) {
     });
     setSiteProps(newMap);
   };
-
+  const minNavWidth = `calc(100vw - ${drawerWidth}px)`;
   return (
     <div className="App">
-      <Box sx={{ display: 'flex' }}>
-        <AppBar position="fixed" open={open}>
+      <Box sx={{ display: 'fixed' }}>
+        <AppBar
+          id="appbar"
+          position="sticky"
+          sx={{
+            ...(open
+              ? {
+                  minWidth: minNavWidth,
+                  maxWidth: minNavWidth,
+                  minHeight: size,
+                }
+              : {
+                  minWidth: '100vw',
+                  minHeight: size,
+                }),
+          }}
+          open={open}
+        >
           <DrawerHeader>
             <IconButton
               color="inherit"
@@ -239,7 +281,6 @@ export default function Menu(props: MenuProps) {
             >
               <MenuIcon />
             </IconButton>
-
             <LegendBar siteProps={siteProps} />
           </DrawerHeader>
         </AppBar>
