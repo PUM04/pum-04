@@ -48,6 +48,7 @@ interface ChartProps {
 interface CandleChart {
   candles: Array<Candle>;
   color: string;
+  siteName: string;
 }
 
 /**
@@ -68,6 +69,7 @@ interface Candle {
  * @param site what site to get data from.
  * @param metric what metric to get data from.
  * @param color what color to paint the bars.
+ * @param siteName the name of the site.
  * @param histogramData data from backend.
  * @param percent a boolen for special logic when percent is used.
  * @returns a Histogram object containing all data for drawing a BarChart.
@@ -76,6 +78,7 @@ function getBarChartData(
   site: string,
   metric: string,
   color: string,
+  siteName: string,
   histogramData: any,
   percent: boolean
 ): Histogram {
@@ -102,6 +105,7 @@ function getBarChartData(
       x: String(bar.length),
       y: bar.count / factorY,
       fill: color,
+      name: siteName,
     });
     // }
   });
@@ -126,9 +130,11 @@ function getCandleChartData(
   siteProps: Map<string, Site> // used later when structure for candlechart is known.
 ): CandleChart {
   let siteColor = siteProps.get(site)?.color;
+  let siteName = siteProps.get(site)?.name;
   if (!siteColor) siteColor = 'black';
+  if (!siteName) siteName = 'undefined';
 
-  const candle: CandleChart = { candles: [], color: siteColor };
+  const candle: CandleChart = { candles: [], color: siteColor, siteName };
 
   metrics.forEach((metric) => {
     const siteData = boxDiagramData.get(site);
@@ -172,7 +178,9 @@ function drawVictoryCandle(data: CandleChart, width: number): JSX.Element {
         \nmax:${datum.high}
         \nclose:${datum.close}
         \nopen:${datum.open}
-        \nmean:${'30'}`
+        \nmean:${'30'}
+        \nsite:${data.siteName}
+        `
       }
       candleWidth={width}
       data={data.candles}
@@ -396,6 +404,10 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
  * @returns a single VictoryBar.
  */
 function drawVictoryBar(data: Array<Bar>, width: number): JSX.Element {
+  let siteName = '';
+  if (!(data.length === 0)) {
+    siteName = data[0].name;
+  }
   return (
     <VictoryBar
       data-testid="getdata"
@@ -404,7 +416,10 @@ function drawVictoryBar(data: Array<Bar>, width: number): JSX.Element {
         <VictoryTooltip cornerRadius={0} pointerLength={0} dy={-10} />
       }
       barWidth={width}
-      labels={({ datum }) => datum.y}
+      labels={({ datum }) => `
+      site: ${siteName}\n
+      calls: ${datum.y}
+      `}
       style={{
         data: {
           fill: ({ datum }) => datum.fill,
@@ -717,13 +732,18 @@ export function BarChart(props: ChartProps): JSX.Element {
       sites.forEach((site) => {
         const siteProp = siteProps.get(site);
         let color = siteProp?.color;
+        let siteName = siteProp?.name;
         if (!color) {
           color = 'cyan';
+        }
+        if (!siteName) {
+          siteName = 'undefined';
         }
         const data: Histogram = getBarChartData(
           site,
           metric,
           color,
+          siteName,
           histogramData,
           percent
         );

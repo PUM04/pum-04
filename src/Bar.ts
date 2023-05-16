@@ -16,17 +16,21 @@ class Bar {
 
   public fill: string;
 
+  public name: string;
+
   /**
    * Constructor for a single bar
    *
    * @param x x value in a histogram
    * @param y y value in a histogram
    * @param fill Color for a single bar
+   * @param name name of site
    */
-  constructor(x: string = '0', y: number = 0, fill = 'black') {
+  constructor(x: string = '0', y: number = 0, fill = 'black', name = '') {
     this.x = x;
     this.y = y;
     this.fill = fill;
+    this.name = name;
   }
 }
 
