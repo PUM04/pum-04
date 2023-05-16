@@ -53,32 +53,25 @@ npm run dev
 The program can now be accessed on `localhost:3000`
 
 ## Data format
-\section{indata format}
-Filerna som tas som indata har ett specifikt format för att visualiseringen ska fungera. 
-ny linje efter varje
-performance filer
+Description of how the uploaded files should be formated. 
 ### Performance file
-\subsection{prestanda fil}
-Med sträng menas en godtycklig sträng och med siffra menas godtyckligt siffra och då kan varje rad ha formatet.
-\begin{verbatim}
-    sträng{"sträng",le="siffra"} siffra
-\end{verbatim}
-Filnamnet på prestanda filen ska vara 
-\begin{verbatim}
-siteid.txt
-    
-\end{verbatim}
-indata exempel är:
+The performance file which containts all method calls and the time it has taken should have the format
+```
+    response_time_bucket{method="GetPatient",le="6000"} 0
+    response_time_bucket{method="GetPatient",le="6500"} 0
+    response_time_bucket{method="GetPatient",le="7000"} 441
+```
+`method="string"` defines the name of the metric. `le="integer"` defines the time span and the last integer is the amount of calls in that timespan. 
 
-\begin{verbatim}
-    response\_time\_bucket{method="GetPatient",le="6000"} 0
-    response\_time\_bucket{method="GetPatient",le="6500"} 0
-    response\_time\_bucket{method="GetPatient",le="7000"} 441
-\end{verbatim}
+The filename of the performance file has to be same as the site_id field of of a Metrics file.
+
+
 ### Metrics file
-\subsection{metric fil}
-måste vara \texttt{.json} fil. Verktyget använder site_id för att koppla en metric fil till en prestanda fil. 
-indata exempel är:
+The metrics file contains information of different hosts and their specs of the hosts from the performance file. The site_id should be the same as the respective performance file it is connected with.
+
+The program displays an average of cpu and memory from all connected metrics.
+
+A metrics file can contain many hosts and one example is as follows.
 ```
 {
  "site_id": "8137t3_230413",
