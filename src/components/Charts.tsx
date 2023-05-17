@@ -78,14 +78,17 @@ function getBarChartData(
   site: string,
   metric: string,
   color: string,
-  siteName: string,
+  siteProps: Map<string, Site>,
   histogramData: any,
   percent: boolean
 ): Histogram {
   /**
    * Make sure corret color is retrived from Legends component
    */
-  console.log(siteName);
+  // console.log(siteName);
+  const siteProp = siteProps.get(site);
+  const siteName = siteProp ? siteProp.name : 'asdf';
+
   const histogram: Histogram = { bars: [], siteName };
   const jsonData = JSON.parse(histogramData.get(site));
 
@@ -178,7 +181,7 @@ function drawVictoryCandle(data: CandleChart, width: number): JSX.Element {
           pointerLength={0}
           // flyoutWidth={10}
           // flyoutHeight={10}
-          style={{ fontSize: 5 }}
+          style={{ fontSize: 6 }}
         />
       }
       labels={({ datum }) =>
@@ -408,31 +411,32 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
       { x: '600', y: 150, fill:colorr },
       { x: '700', y: 200, fill: color },
     ];'red'color
+ * @param histogram
  * @param width width of a bar.
  * @param siteName name of the site
  * @returns a single VictoryBar.
  */
-function drawVictoryBar(
-  data: Array<Bar>,
-  width: number,
-  siteName: string
-): JSX.Element {
-  console.log(siteName);
+function drawVictoryBar(histogram: Histogram, width: number): JSX.Element {
+  // console.log(siteName);
+  // let siteName = 'undefined';
+  // if (!(histogram.bars.length === 0)) {
+  //   siteName = histogram.bars[0].name;
+  // }
   return (
     <VictoryBar
       data-testid="getdata"
-      key={JSON.stringify(data)}
+      key={JSON.stringify(histogram.bars)}
       labelComponent={
         <VictoryTooltip
           cornerRadius={0}
           pointerLength={0}
           dy={-10}
-          style={{ fontSize: 5 }}
+          style={{ fontSize: 6 }}
         />
       }
       barWidth={width}
       labels={({ datum }) => `
-      site: ${siteName}\n
+      site: ${histogram.siteName}\n
       calls: ${datum.y}\n
       `}
       style={{
@@ -440,7 +444,7 @@ function drawVictoryBar(
           fill: ({ datum }) => datum.fill,
         },
       }}
-      data={data}
+      data={histogram.bars}
     />
   );
 }
@@ -517,7 +521,7 @@ function drawHistogram(
   const victoryBars: Array<any> = [];
   histograms.forEach((histogram) => {
     // console.log(histogram.siteName);
-    victoryBars.push(drawVictoryBar(histogram.bars, width, histogram.siteName));
+    victoryBars.push(drawVictoryBar(histogram, width));
   });
 
   return (
@@ -703,9 +707,9 @@ function mergeXvalues(
   while (width < tooSmallWidth) {
     const newBarGraph: Array<Histogram> = [];
 
-    const currentMergeAmount = mergeAmount; // to avoid the 'eslint problem' no-func-loop
+    const mergeAmountSafe = mergeAmount;
     barGraph.forEach((histogram) => {
-      const newHistogram = smallerHistogram(currentMergeAmount, histogram);
+      const newHistogram = smallerHistogram(mergeAmountSafe, histogram);
       newBarGraph.push(newHistogram);
     });
 
@@ -746,7 +750,7 @@ export function BarChart(props: ChartProps): JSX.Element {
     const graphWidth = 300;
     const newBarGraphList: Array<any> = [];
     metrics.forEach((metric) => {
-      let barGraph: Array<Histogram> = [];
+      const histograms: Array<Histogram> = [];
       sites.forEach((site) => {
         const siteProp = siteProps.get(site);
         let color = siteProp?.color;
@@ -758,21 +762,27 @@ export function BarChart(props: ChartProps): JSX.Element {
           siteName = 'undefined';
         }
         // console.log(siteName);
-        const data: Histogram = getBarChartData(
+        const histogram: Histogram = getBarChartData(
           site,
           metric,
           color,
-          siteName,
+          siteProps,
           histogramData,
           percent
         );
-        barGraph.push(data);
+        histograms.push(histogram);
       });
-      barGraph = removeEmptyXValues(barGraph);
-      barGraph = mergeXvalues(barGraph, graphWidth, sites);
-      const width = graphWidth / (numberOfXvalues(barGraph) * sites.length);
+
+      const histogramsNoEmptyXValues = removeEmptyXValues(histograms);
+      const histogramsMergedXValues = mergeXvalues(
+        histogramsNoEmptyXValues,
+        graphWidth,
+        sites
+      );
+      const width =
+        graphWidth / (numberOfXvalues(histogramsMergedXValues) * sites.length);
       newBarGraphList.push(
-        drawHistogram(barGraph, metric, width, getScaleProps)
+        drawHistogram(histogramsMergedXValues, metric, width, getScaleProps)
       );
     });
     setBarGraphList(newBarGraphList);

@@ -322,13 +322,11 @@ export default function Menu(props: MenuProps) {
               dropdownName="Sites"
               value={sites.map((site) => site.name)}
               onSelected={handleSelectedSites}
-              setSiteProps={setSiteProps}
             />
             <Dropdown
               dropdownName="Metrics"
               value={metrics}
               onSelected={handleSelectedMetrics}
-              setSiteProps={setSiteProps}
             />
           </Paper>
           <div style={{ position: 'fixed', bottom: 0, width: drawerWidth }}>
