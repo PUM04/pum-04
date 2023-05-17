@@ -85,8 +85,8 @@ function getBarChartData(
   /**
    * Make sure corret color is retrived from Legends component
    */
-
-  const histogram: Histogram = { bars: [] };
+  console.log(siteName);
+  const histogram: Histogram = { bars: [], siteName };
   const jsonData = JSON.parse(histogramData.get(site));
 
   const metricData = jsonData ? jsonData[metric]?.data : null;
@@ -172,14 +172,22 @@ function drawVictoryCandle(data: CandleChart, width: number): JSX.Element {
   return (
     <VictoryCandlestick
       key={JSON.stringify(data.candles)}
-      labelComponent={<VictoryTooltip cornerRadius={0} pointerLength={0} />}
+      labelComponent={
+        <VictoryTooltip
+          cornerRadius={0}
+          pointerLength={0}
+          // flyoutWidth={10}
+          // flyoutHeight={10}
+          style={{ fontSize: 5 }}
+        />
+      }
       labels={({ datum }) =>
         `min:${datum.low}
-        \nmax:${datum.high}
-        \nclose:${datum.close}
-        \nopen:${datum.open}
-        \nmean:${'30'}
-        \nsite:${data.siteName}
+        max:${datum.high}
+        close:${datum.close}
+        open:${datum.open}
+        mean:${'30'}
+        site:${data.siteName}
         `
       }
       candleWidth={width}
@@ -401,24 +409,31 @@ export function BoxPlotChart(props: ChartProps): JSX.Element {
       { x: '700', y: 200, fill: color },
     ];'red'color
  * @param width width of a bar.
+ * @param siteName name of the site
  * @returns a single VictoryBar.
  */
-function drawVictoryBar(data: Array<Bar>, width: number): JSX.Element {
-  let siteName = '';
-  if (!(data.length === 0)) {
-    siteName = data[0].name;
-  }
+function drawVictoryBar(
+  data: Array<Bar>,
+  width: number,
+  siteName: string
+): JSX.Element {
+  console.log(siteName);
   return (
     <VictoryBar
       data-testid="getdata"
       key={JSON.stringify(data)}
       labelComponent={
-        <VictoryTooltip cornerRadius={0} pointerLength={0} dy={-10} />
+        <VictoryTooltip
+          cornerRadius={0}
+          pointerLength={0}
+          dy={-10}
+          style={{ fontSize: 5 }}
+        />
       }
       barWidth={width}
       labels={({ datum }) => `
       site: ${siteName}\n
-      calls: ${datum.y}
+      calls: ${datum.y}\n
       `}
       style={{
         data: {
@@ -501,7 +516,8 @@ function drawHistogram(
 
   const victoryBars: Array<any> = [];
   histograms.forEach((histogram) => {
-    victoryBars.push(drawVictoryBar(histogram.bars, width));
+    // console.log(histogram.siteName);
+    victoryBars.push(drawVictoryBar(histogram.bars, width, histogram.siteName));
   });
 
   return (
@@ -616,8 +632,9 @@ function removeEmptyXValues(barGraph: Histogram[]): Array<Histogram> {
     emptyXValues: Set<String>
   ): Histogram[] => {
     const newBarGraph: Histogram[] = [];
-    oldBarGraph.forEach((histogram: { bars: Bar[] }) => {
+    oldBarGraph.forEach((histogram: { bars: Bar[]; siteName: string }) => {
       const newHistogram: Histogram = new Histogram();
+      newHistogram.siteName = histogram.siteName;
       let keepZero: boolean = true;
       let prevShouldHaveBeenAdded: boolean = false;
       histogram.bars.forEach((bar, i) => {
@@ -669,6 +686,7 @@ function mergeXvalues(
 
   const smallerHistogram = (mergeCount: number, oldHistogram: Histogram) => {
     const newHistogram: Histogram = new Histogram([]);
+    newHistogram.siteName = oldHistogram.siteName;
     oldHistogram.bars.forEach((bar, i) => {
       const newIndex = Math.floor(i / mergeCount);
 
@@ -739,6 +757,7 @@ export function BarChart(props: ChartProps): JSX.Element {
         if (!siteName) {
           siteName = 'undefined';
         }
+        // console.log(siteName);
         const data: Histogram = getBarChartData(
           site,
           metric,
