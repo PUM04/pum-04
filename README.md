@@ -1,10 +1,98 @@
 
 # pum-04
+ - [Program start](#starting-program)
+ - [Data format](#data-format)
  - [Docker setup](#docker-setup)
  - [Linting with ESLint](#linting-and-formatting-with-eslint-and-prettier)
  - [Naming conventions](#naming-conventions)
  - [Testing TypeScript code](#testing-the-frontend)
  - [Testing C++ code](#testing-the-backend-with-doctest)
+## Starting program
+
+### Docker
+Docker has a startup script which compiles the neccessary files and installs dependencies upon running. 
+
+The program can run with the following command in project root.
+```
+ docker compose up
+```
+If C++ code is changed or another npm dependency is installed make sure build the image again. 
+```
+ docker compose up --build
+```
+
+### Running locally
+To run the program locally the dependencies currently used are
+
+- [npm 9.5.1](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [NodeJS 18.16.0](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [Emscripten 3.1.37](https://emscripten.org/)
+
+With the dependencies installed following commands can be run from project root
+
+Install Node dependencies.
+```sh
+npm i
+```
+Go to C++ file directory.
+```sh
+cd src/cpp/
+```
+Make sure to build ALL .cpp files in this directory to WASM with
+```sh
+emcc -lembind -o "file name".js "file name".cpp -s EXPORT_ES6=1 -s MODULARIZE=1 -s NO_DISABLE_EXCEPTION_CATCHING -s ALLOW_MEMORY_GROWTH -O3
+```
+Go back to project root
+```sh
+cd ../../
+```
+Start app with
+```sh
+npm run dev
+```
+The program can now be accessed on `localhost:3000`
+
+## Data format
+Description of how the uploaded files should be formated. 
+### Performance file
+The performance file which containts all method calls and the time it has taken should have the format
+```
+    response_time_bucket{method="GetPatient",le="6000"} 0
+    response_time_bucket{method="GetPatient",le="6500"} 0
+    response_time_bucket{method="GetPatient",le="7000"} 441
+```
+`method="string"` defines the name of the metric. `le="integer"` defines the time span and the last integer is the amount of calls in that timespan. 
+
+The filename of the performance file has to be same as the site_id field of of a Metrics file.
+
+
+### Metrics file
+The metrics file contains information of different hosts and their specs of the hosts from the performance file. The site_id should be the same as the respective performance file it is connected with.
+
+The program displays an average of cpu and memory from all connected metrics.
+
+A metrics file can contain many hosts and one example is as follows.
+```
+{
+ "site_id": "8137t3_230413",
+ "site_name": "acklah",
+ "baseline_version": "25.1",
+ "type": "openstack",
+ "nodes": {
+  "ad": {
+   "os": "Vanadium",
+   "cpu": 8,
+   "memory": 16,
+   "services": [
+    "uvclient",
+    "risapp"
+   ]
+  }
+ }
+}
+```
+
+
 ## Docker setup
 ### Running
 Install docker and clone the repo then start the container
@@ -22,9 +110,9 @@ Recommended videos for running a container, understanding Dockerfile and docker-
 |Dockerfile|https://www.youtube.com/watch?v=QePBbG5MoKk|
 |Docker compose|https://www.youtube.com/watch?v=TSySwrQcevM|
 
-> WINDOWS USERS: Docker volumes are used for real time updating files in the container, these apparently have problems working with windows. So WSL is recommended for development in windows. Docker volumes are defined in the docker-compose.yaml file. It should work without WSL if you remove the volumes from docker-compose.yaml file but you might have to create a new container for every change to the code. **This is according to one of the tutorial vidoes, so not verified.**
+> WINDOWS USERS: Docker volumes are used for real time updating files in the container, these apparently have problems working with windows. So WSL is recommended for development in windows. Docker volumes are defined in the docker-compose.yaml file. It should work without WSL if you remove the volumes from docker-compose.yaml file but you might have to create a new container for every change to the code. **This is according to one of the tutorial vidoes.**
 
->Workaround: Changes to files come into the container, however the file is not saved inside the container so changes do not take effect. Workaround is to enter the container and manually open the file with vi and enter :wq
+>Workaround: Changes to files come into the container, however the file is not saved inside the container so changes do not take effect. Workaround is to enter the container and manually save the file.
 #### Useful commands
 
 
