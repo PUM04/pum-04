@@ -88,8 +88,8 @@ function getBarChartData(
   // console.log(siteName);
   const siteProp = siteProps.get(site);
   const siteName = siteProp ? siteProp.name : 'asdf';
-
-  const histogram: Histogram = { bars: [], siteName };
+  console.log(siteProp, site);
+  const histogram: Histogram = { bars: [], siteName: site };
   const jsonData = JSON.parse(histogramData.get(site));
 
   const metricData = jsonData ? jsonData[metric]?.data : null;
@@ -745,7 +745,8 @@ export function BarChart(props: ChartProps): JSX.Element {
   const [barGraphList, setBarGraphList] = useState<any[]>([]);
 
   const histogramData = useHistograms(sites, fileHandler);
-
+  console.log(histogramData);
+  console.log(siteProps);
   useEffect(() => {
     const graphWidth = 300;
     const newBarGraphList: Array<any> = [];
