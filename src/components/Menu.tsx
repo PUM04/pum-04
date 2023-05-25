@@ -247,7 +247,6 @@ export default function Menu(props: MenuProps) {
       newSelectedSite.enabled = value;
       newSiteProps.set(newSelectedSite.id, newSelectedSite);
     }
-    // setSiteProps(newSiteProps.sort((a, b) => a.localeCompare(b)));
     setSiteProps(newSiteProps);
   };
 
