@@ -182,16 +182,18 @@ export default function Menu(props: MenuProps) {
     const PHI = (1 + Math.sqrt(5)) / 2;
     let index = newMap.size;
     // sort metrics after name
-    setMetrics([...metrics].sort((a, b) => a.localeCompare(b)));
+    setMetrics(
+      [...metrics].sort((metric1, metric2) => metric1.localeCompare(metric2))
+    );
     // sort sites after name
     setSites(
-      sites.sort((a, b) => {
-        if (a.name && b.name) {
-          return a.name.localeCompare(b.name);
+      sites.sort((site1, site2) => {
+        if (site1.name && site2.name) {
+          return site1.name.localeCompare(site2.name);
         }
         // fallback. In test data, some sites are missing names
-        if (a.id && b.id) {
-          return a.id.localeCompare(b.id);
+        if (site1.id && site2.id) {
+          return site1.id.localeCompare(site2.id);
         }
         // fallback since id's can be null
         return 0;
@@ -233,7 +235,11 @@ export default function Menu(props: MenuProps) {
     Object.keys(selectedMetrics).forEach((metric) => {
       if (selectedMetrics[metric]) newSelectedMetrics.push(metric);
     });
-    setMetricProps(newSelectedMetrics.sort((a, b) => a.localeCompare(b)));
+    setMetricProps(
+      newSelectedMetrics.sort((metric1, metric2) =>
+        metric1.localeCompare(metric2)
+      )
+    );
   };
 
   const handleSelectedSites = (key: string, value: boolean) => {
