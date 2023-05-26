@@ -181,6 +181,24 @@ export default function Menu(props: MenuProps) {
     const newMap = new Map<string, Site>(siteProps);
     const PHI = (1 + Math.sqrt(5)) / 2;
     let index = newMap.size;
+    // sort metrics after name
+    setMetrics(
+      [...metrics].sort((metric1, metric2) => metric1.localeCompare(metric2))
+    );
+    // sort sites after name
+    setSites(
+      sites.sort((site1, site2) => {
+        if (site1.name && site2.name) {
+          return site1.name.localeCompare(site2.name);
+        }
+        // fallback. In test data, some sites are missing names
+        if (site1.id && site2.id) {
+          return site1.id.localeCompare(site2.id);
+        }
+        // fallback since id's can be null
+        return 0;
+      })
+    );
     sites.forEach((site) => {
       if (site.id) {
         let hexColor = '';
@@ -213,21 +231,20 @@ export default function Menu(props: MenuProps) {
   const handleSelectedMetrics = (key: string, value: boolean) => {
     selectedMetrics[key] = value;
     setSelectedMetrics(selectedMetrics);
-    // sort metrics after name
-    setMetrics(
-      [...Object.keys(selectedMetrics)].sort((a, b) => a.localeCompare(b))
-    );
     const newSelectedMetrics: string[] = [];
     Object.keys(selectedMetrics).forEach((metric) => {
       if (selectedMetrics[metric]) newSelectedMetrics.push(metric);
     });
-    setMetricProps(newSelectedMetrics);
+    setMetricProps(
+      newSelectedMetrics.sort((metric1, metric2) =>
+        metric1.localeCompare(metric2)
+      )
+    );
   };
 
   const handleSelectedSites = (key: string, value: boolean) => {
     console.log('handleSelectedSites');
     const newSiteProps = new Map<string, Site>(siteProps);
-
     const newSelectedSite = Array.from(newSiteProps.values()).find(
       (site) => site.name === key
     );
@@ -236,7 +253,6 @@ export default function Menu(props: MenuProps) {
       newSelectedSite.enabled = value;
       newSiteProps.set(newSelectedSite.id, newSelectedSite);
     }
-
     setSiteProps(newSiteProps);
   };
 

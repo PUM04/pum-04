@@ -105,8 +105,6 @@ export function getScaleProps(graphScaleType: ScaleTypes): ScaleTypeProp {
         scaleType: scale,
         percent: true,
       };
-      console.warn('TODO: NO PERCENT FUNCTION MADE!');
-      break;
     }
     default: {
       console.warn('A type not supported was called!');
